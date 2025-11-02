@@ -4,7 +4,7 @@
 
 This project tackles the **[#30DayMapChallenge](https://30daymapchallenge.com/)** using AI as both creative partner and primary developer. Every November, the challenge presents 30 unique cartographic themes, one per day. This project explores how frontier AI models and development platforms can transform map concepts into interactive visualizations, with a focus on comparative analysis across multiple platforms.
 
-**Core Philosophy**: Batch prompt across platforms, let them cook in parallel, document everything.
+**Idea**: Batch prompt across platforms, let them cook in parallel, document everything.
 
 ---
 
@@ -12,27 +12,28 @@ This project tackles the **[#30DayMapChallenge](https://30daymapchallenge.com/)*
 
 ### The Multi-Platform Approach
 
-Instead of building one map per day, this project runs the **same concept through multiple AI platforms simultaneously**. This parallel processing strategy provides genuine comparative data on how different tools handle identical geospatial tasks.
+Instead of building one map per day, this project runs the same concept through multiple AI platforms simultaneously. This strategy provides  comparative data on how different tools handle identical geospatial tasks.
 
 ### The Workflow
 
 **Phase 1: Ideation & Concept Selection**
-- Query 2-3 AI models with the daily theme
+- Query 3 AI models with the daily theme
 - Review generated concepts, pick 1-2 best ideas
 - Craft ONE standardized implementation prompt
 - Add any theme-specific data requirements
 
 **Phase 2: Parallel Platform Launch**
-- Open 5-10 platforms in browser tabs
+- Open 5-15 platforms in browser tabs
 - **Copy/paste same prompt to each platform**
 - Hit "generate" on all of them simultaneously
 - Let multiple AIs work in parallel while you monitor progress
 
 **Phase 3: Review & Iteration**
 - Check platforms periodically as they generate results
-- Iterate on 2-3 most promising implementations
+- Fix errors up with up to 3 tries max
+- Iterate on promising implementations
 - Screenshot all attempts (working or not)
-- Download code from successful implementations
+- Publish/deploy code if possible
 
 **Phase 4: Documentation & Analysis**
 - Create day folder with subfolders for each platform
@@ -45,33 +46,33 @@ Instead of building one map per day, this project runs the **same concept throug
 🚀 **Parallel Processing**: Multiple AIs working simultaneously generate comparative data efficiently
 🎯 **Real Comparison Data**: See which platforms excel at which map types and why
 📊 **Comprehensive Examples**: Even "failures" are valuable documentation of platform limitations
-⚡ **Scale**: Generate 5-10 implementations per theme instead of just one
-🔬 **Scientific Rigor**: Same prompt, same concept = fair comparison across platforms
+⚡ **Scale**: Generate 5-15 implementations per theme instead of just one
+🔬 **See How Platforms Compare**: Same prompt, same concept = fair comparison across platforms
 
 ---
 
 ## AI Tools Strategy (Multi-Platform Approach)
 
-### Ideation Models (Use 2-3 for variety)
-- **Claude Sonnet 4.5** ← Primary (best at creative + feasible)
-- **GPT-4o** ← Secondary (good at technical detail)
-- **Gemini 2.5 Pro** ← Wildcard (different perspective)
+### Ideation Models (Use 3 for variety)
+- **Claude Sonnet 4.5**
+- **GPT-5 Thinking**
+- **Gemini 2.5 Pro**
 
-### Implementation Platforms (Use 5-10 Daily)
+### Implementation Platforms (Use 5-15 Daily)
 
-**Tier 1 - Fast Visual Prototypes (Use Every Day)**
+**Tier 1 - Fast Visual Prototypes**
 1. **Claude Artifacts** - Fastest iteration, React + data viz
 2. **ChatGPT Canvas** - Good for complex logic, iterative
 3. **Bolt.new** - Full deployments, handles data files well
 4. **V0.dev** - Beautiful UI, design-focused maps
 5. **Google AI Studio Apps** - Gemini's platform, underrated
 
-**Tier 2 - Full-Stack & Advanced (Use 2-3 per day)**
+**Tier 2 - Full-Stack & Advanced**
 6. **Lovable** - Full apps with multiple pages
 7. **Cursor** - When you need more control over code
 8. **Windsurf** - Agentic coding, good for complex builds
 
-**Tier 3 - Specialized Tools (Use When Relevant)**
+**Tier 3 - Specialized Tools**
 10. **MagicPatterns** - Component libraries, UI systems
 11. **GitHub Spark** - Quick demos with GitHub integration
 12. **Firebase Studio** - Maps needing real-time data
@@ -152,8 +153,7 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 ### Step-by-Step Process
 
 **Step 1: Ideation**
-- Open Claude, paste: "Theme is [X]. Give me 3 creative + 2 straightforward map concepts"
-- Open GPT-4o: same prompt
+- Ask Claude, ChatGPT, and Gemini for 2 ideas for the current day's map theme
 - Review results, pick best idea(s)
 
 **Step 2: Prompt Preparation**
@@ -170,19 +170,18 @@ Open in separate tabs:
 4. V0.dev
 5. Google AI Studio Apps
 6. Lovable
-7. Cursor (if complex)
+7. Others...
 
 Paste prompt in each → Click generate → Move to next
 ```
 
 **Step 4: Active Monitoring & Iteration**
 - Check platforms periodically as they generate
-- When one looks promising → do 1-2 iterations
 - If one fails early → note why, document the failure mode
 - Screenshot everything as you go
 
 **Step 5: Collection & Organization**
-- Download/copy code from successful platforms
+- Publish/deploy code if possible
 - Create platform subfolders
 - Save screenshots with consistent naming
 - Create quick list of what worked/failed
@@ -191,8 +190,7 @@ Paste prompt in each → Click generate → Move to next
 - Create main README from template
 - Fill in platform results (names + status + insights)
 - Update DAILY-LOG.md
-- **Optional**: Create `index.html` showcase for easy sharing
-- Git commit with message: "Day X: [Theme] - [X] platforms"
+- Create `index.html` showcase for easy sharing
 
 ---
 
@@ -265,5 +263,5 @@ This is a **comparative research project** disguised as a mapping challenge:
 **Estimated Output**: 20-30 days × 5-10 platforms = **100-300 map implementations**
 **Value**: Comprehensive AI cartography platform analysis and comparison
 
-*Let's turn one mapping challenge into the most extensive AI development platform comparison in geospatial visualization.* 🗺️🤖✨
+*Let's turn one mapping challenge into an AI development platform comparison in geospatial visualization.* 🗺️🤖✨
 
