@@ -18,7 +18,7 @@ For the **[#30DayMapChallenge](https://30daymapchallenge.com/)**, I wanted to us
 
 Instead of building 1 map per day, my hope is to easily build like 10-20! I'll use multiple AI models to help come up with ideas, then choose 1-2 to run through a bunch of AI development platforms simultaneously. This way it'll show a comparison on how different tools handle the same geospatial prototyping task.
 
-## To Vibe Code or Not To Vibe Code
+### To Vibe Code or Not To Vibe Code
 For this I'll mostly be vibe coding with minimal care for code quality or longevity, which isn't right for most projects. And huge respect to everyone participating in the 30-Day Map Challenge without using any AI (or even any computers) at all!
 
 Vibe coding is just one way to use AI to help write software, people are coming up with more ways every day, and not just for prototyping but for deep specific engineering. So with my disclaimer that vibe coding isn't the answer for most people and situations, sometimes it is, and I think it's fun and amazing to ideate and prototype!
