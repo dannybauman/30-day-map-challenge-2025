@@ -1,0 +1,16 @@
+{
+  "rules": [
+    {
+      "priority": 100,
+      "description": "Always treat `maps/<day>/` as the authoritative source for showcase pages. Do not edit files under `docs/` directly; regenerate them instead."
+    },
+    {
+      "priority": 90,
+      "description": "Whenever a showcase page, shared asset, or navigation needs updating, run `node scripts/build-site.mjs` to rebuild `docs/` and `days.json`."
+    },
+    {
+      "priority": 80,
+      "description": "Ensure each day page includes the shared navigator script with correct data attributes so cross-day navigation stays in sync."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2025-11-02T21:06:35.290Z",
+  "days": [
+    {
+      "id": "01-points",
+      "dayNumber": 1,
+      "title": "Day 1: Points",
+      "theme": "Points",
+      "status": "Complete",
+      "relativeUrl": "maps/01-points/index.html",
+      "readmeUrl": "maps/01-points/README.md"
+    }
+  ]
+}

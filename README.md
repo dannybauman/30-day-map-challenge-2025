@@ -148,6 +148,26 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 
 ---
 
+## Deployment & Hosting
+
+### Build the public site
+- Requires Node.js 18+ (no other dependencies).
+- Run `node scripts/build-site.mjs` to generate the deployable site in `docs/`.
+- The script copies each `maps/<day>` directory (with an `index.html`) into `docs/maps/`, publishes shared assets to `docs/site-assets/`, and emits a `days.json` manifest used by the day selector.
+- `docs/index.html` is rebuilt every run with an overview of published days; avoid editing files inside `docs/` by hand.
+
+### Publish with GitHub Pages
+- In the repository settings, enable GitHub Pages using the `main` branch and the `/docs` folder.
+- Push the updated `docs/` directory whenever you add or edit a day page; GitHub Pages will deploy the latest build automatically.
+- The generated site uses relative paths, so it works at both `https://<user>.github.io/<repo>/` and local `file://` previews.
+
+### Adding a new day
+- Create the new showcase at `maps/<day-slug>/index.html` (using `templates/day-showcase-template.html`).
+- Ensure the `<script>` tag at the end of the page has `data-day="<day-slug>"`, `data-manifest="../../days.json"`, and `data-base-path="../../"` so navigation works locally and in production.
+- Re-run `node scripts/build-site.mjs` after adding or updating any day so the manifest, docs build, and navigation stay in sync.
+
+---
+
 ## Daily Workflow
 
 ### Step-by-Step Process
@@ -264,4 +284,3 @@ This is a **comparative research project** disguised as a mapping challenge:
 **Value**: Comprehensive AI cartography platform analysis and comparison
 
 *Let's turn one mapping challenge into an AI development platform comparison in geospatial visualization.* 🗺️🤖✨
-
