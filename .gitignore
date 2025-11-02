@@ -63,7 +63,6 @@ temp/
 
 # Platform-specific
 .bolt/
-.replit
 .cursor/
 .windsurf/
 
