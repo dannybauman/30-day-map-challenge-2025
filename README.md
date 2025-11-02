@@ -1,5 +1,7 @@
 # 30-Day Map Challenge 2025: AI-Powered Mapping Experiment
 
+![Day 1 HTML page](maps/01-points/html-screenshot.png)
+
 ## Project Overview
 
 For the **[#30DayMapChallenge](https://30daymapchallenge.com/)**, I wanted to use AI as both creative partner and primary developer. 30 unique map themes, one per day, and my project explores how top AI models and a variety of AI-first development platforms can quickly ideate and bulid map ideas into prototypes. And to see a Nov 2025 snapshot of how good these AI tools are for something like this.
