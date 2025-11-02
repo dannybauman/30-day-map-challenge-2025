@@ -117,7 +117,7 @@ maps/0X-theme/
 ### Nice-to-Have (Time Permitting)
 ```
 maps/0X-theme/
-├── index.html                   # HTML page 🆕
+├── index.html                   # HTML page
 ├── DAY-X-SUMMARY.md             # Deep analysis
 ├── platform-name/
 │   └── README.md                # Platform-specific details

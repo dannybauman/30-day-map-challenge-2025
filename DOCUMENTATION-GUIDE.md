@@ -31,7 +31,7 @@ Quick guide to what docs to create each day and why.
 
 ### ⭐ Recommended (When Time Allows - +15 min)
 
-5. **`maps/0X-theme/index.html`** 🆕
+5. **`maps/0X-theme/index.html`**
    - Visual showcase page
    - Copy from template
    - Fill in key sections
@@ -77,7 +77,7 @@ maps/0X-theme/
 ├── README.md                    # Essential
 ├── IMPLEMENTATION-PROMPT.md     # Essential
 ├── LAUNCH-TRACKER.md            # Essential
-└── index.html                   # Recommended 🆕
+└── index.html                   # Recommended
 ```
 **Time**: 30 minutes
 

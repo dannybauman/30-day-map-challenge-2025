@@ -140,7 +140,7 @@ Vibe coding is just one way to use AI to help write software, people are coming 
 
 ---
 
-## HTML Pages for Each Day 🆕
+## HTML Pages for Each Day
 
 Each day includes a simple HTML page (`index.html`) for easy browsing and sharing:
 
