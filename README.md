@@ -293,8 +293,7 @@ This is a comparative AI and usability research project within a mapping challen
 
 ---
 
-**Start Date**: November 1, 2025
-**Estimated Output**: 20-30 days × 5-10 platforms = **100-300 map implementations**
-**Value**: Complete AI mapping platform analysis and comparison
+**Date**: November, 2025
+**By**: Danny Bauman, Development Seed
 
-*Let's use a fun map challenge as an AI development platform experiment.* 🗺️🤖✨
+*Let's use a fun map challenge to make an AI development platform experiment.* 🗺️🤖✨
