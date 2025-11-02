@@ -71,26 +71,26 @@ Vibe coding is just one way to use AI to help write software, people are coming 
 ### Implementation Platforms (Use 5-15 Daily)
 
 **Tier 1 - Fast Visual Prototypes**
-1. **Claude Artifacts** - Chat-based frontend prototypes
-2. **Google Gemini Canvas** - Chat-based frontend prototypes
-3. **ChatGPT Canvas** - Chat-based frontend prototypes
-4. **Bolt.new** - Full deployments, handles data files well
-5. **V0.dev** - Nice UI, design-focused maps
-6. **Google AI Studio Apps** - Gemini's larger developer platform, new but promising
+- **Claude Artifacts** - Chat-based frontend prototypes
+- **Google Gemini Canvas** - Chat-based frontend prototypes
+- **ChatGPT Canvas** - Chat-based frontend prototypes
+- **Bolt.new** - Full deployments, handles data files well
+- **V0.dev** - Nice UI, design-focused maps
+- **Google AI Studio Apps** - Gemini's larger developer platform, new but promising
 
 
 **Tier 2 - Full-Stack & Advanced**
-7. **Lovable** - Full apps with multiple pages
-8. **Cursor** - AI powered IDE, new features added frequently
-9. **Windsurf** - Agentic coding, good for complex builds
+- **Lovable** - Full apps with multiple pages
+- **Cursor** - AI powered IDE, new features added frequently
+- **Windsurf** - Agentic coding, good for complex builds
 
 **Tier 3 - Specialized Tools**
-10. **MagicPatterns** - Tuned well for well-designed prototypes, component libraries, UI systems
-11. **GitHub Spark** - Quick demos with GitHub integration
-12. **Firebase Studio** - Part of a nice big Firebase ecosystem of dev tools
-13. **Google Sketch** - Quick mockups before coding
-14. **Base 44** - New to me, heard it's good
-15. **BMAD Method** - Workflow-based approach
+- **MagicPatterns** - Tuned well for well-designed prototypes, component libraries, UI systems
+- **GitHub Spark** - Quick demos with GitHub integration
+- **Firebase Studio** - Part of a nice big Firebase ecosystem of dev tools
+- **Google Sketch** - Quick mockups before coding
+- **Base 44** - New to me, heard it's good
+- **BMAD Method** - Workflow-based approach
 
 ---
 
