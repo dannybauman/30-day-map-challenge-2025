@@ -1,6 +1,8 @@
 # 30-Day Map Challenge 2025: AI-Powered Mapping Experiment
 
-![Day 1 HTML page](maps/01-points/html-screenshot.png)
+![Day 1 HTML page - Top](maps/01-points/html-screenshot-top.png)
+
+![Day 1 HTML page - Top 3 Results](maps/01-points/html-screenshot-top3.png)
 
 ## Project Overview
 
