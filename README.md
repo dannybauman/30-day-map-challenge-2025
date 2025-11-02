@@ -2,46 +2,51 @@
 
 ## Project Overview
 
-This project tackles the **#30DayMapChallenge** using AI as both creative partner and primary developer. Every November, the challenge presents 30 unique cartographic themes—one per day. With only **~1 hour available daily**, this project explores how frontier AI models and development platforms can transform map concepts into interactive visualizations with minimal human intervention.
+This project tackles the **[#30DayMapChallenge](https://30daymapchallenge.com/)** using AI as both creative partner and primary developer. Every November, the challenge presents 30 unique cartographic themes, one per day. This project explores how frontier AI models and development platforms can transform map concepts into interactive visualizations, with a focus on comparative analysis across multiple platforms.
 
 **Core Philosophy**: Batch prompt across platforms, let them cook in parallel, document everything.
 
 ---
 
-## The Reality: 1-Hour Parallel Processing Strategy
+## Parallel Processing Methodology
 
-### The Batch Approach (Actually Faster!)
+### The Multi-Platform Approach
 
-**Minutes 0-10**: Ideation & Prompt Crafting
-- Query 2-3 AI models with daily theme
+Instead of building one map per day, this project runs the **same concept through multiple AI platforms simultaneously**. This parallel processing strategy provides genuine comparative data on how different tools handle identical geospatial tasks.
+
+### The Workflow
+
+**Phase 1: Ideation & Concept Selection**
+- Query 2-3 AI models with the daily theme
 - Review generated concepts, pick 1-2 best ideas
 - Craft ONE standardized implementation prompt
 - Add any theme-specific data requirements
 
-**Minutes 10-20**: Rapid-Fire Platform Launch
+**Phase 2: Parallel Platform Launch**
 - Open 5-10 platforms in browser tabs
 - **Copy/paste same prompt to each platform**
-- Hit "generate" on all of them
-- Let them cook while you grab coffee ☕
+- Hit "generate" on all of them simultaneously
+- Let multiple AIs work in parallel while you monitor progress
 
-**Minutes 20-50**: Review & Curate (while AI works)
-- Check platforms every 5-10 minutes
-- Iterate on 2-3 most promising results
+**Phase 3: Review & Iteration**
+- Check platforms periodically as they generate results
+- Iterate on 2-3 most promising implementations
 - Screenshot all attempts (working or not)
 - Download code from successful implementations
 
-**Minutes 50-60**: Documentation Blitz
+**Phase 4: Documentation & Analysis**
 - Create day folder with subfolders for each platform
-- Quick README noting what worked/failed per platform
-- Commit everything to GitHub
-- One-sentence note in DAILY-LOG.md
+- Document what worked/failed per platform
+- Note patterns, strengths, and failure modes
+- Commit everything with platform comparison notes
 
-### Why This Works
+### Why This Approach Works
 
-🚀 **Parallel Processing**: 10 AIs working simultaneously = 10x output in same time
-🎯 **Real Comparison Data**: See which platforms excel at which map types
-📊 **More Examples**: Even "failures" are valuable documentation
-⚡ **No Extra Time**: Launching is fast, waiting is free, you curate results
+🚀 **Parallel Processing**: Multiple AIs working simultaneously generate comparative data efficiently
+🎯 **Real Comparison Data**: See which platforms excel at which map types and why
+📊 **Comprehensive Examples**: Even "failures" are valuable documentation of platform limitations
+⚡ **Scale**: Generate 5-10 implementations per theme instead of just one
+🔬 **Scientific Rigor**: Same prompt, same concept = fair comparison across platforms
 
 ---
 
@@ -135,29 +140,28 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 
 **How to use:**
 - Template: `templates/day-showcase-template.html`
-- Takes ~10-15 minutes to fill in
-- No complex setup - just HTML/Bootstrap
-- Makes results easy to share on social media
+- Simple to fill in - just HTML/Bootstrap
+- Makes results easy to browse and share on social media
 
 **View Day 1**: [maps/01-points/index.html](maps/01-points/index.html)
 
 ---
 
-## Streamlined Daily Workflow
+## Daily Workflow
 
-### Actual Minute-by-Minute
+### Step-by-Step Process
 
-**0:00-0:05** - Ideation Blitz
+**Step 1: Ideation**
 - Open Claude, paste: "Theme is [X]. Give me 3 creative + 2 straightforward map concepts"
 - Open GPT-4o: same prompt
-- Skim results, pick best idea
+- Review results, pick best idea(s)
 
-**0:05-0:10** - Prompt Preparation
+**Step 2: Prompt Preparation**
 - Open `implementation-base.txt` template
 - Customize with: theme, chosen concept, data source
-- Copy to clipboard
+- Copy standardized prompt to clipboard
 
-**0:10-0:15** - Launch All Platforms (Tab Blitz)
+**Step 3: Parallel Platform Launch**
 ```
 Open in separate tabs:
 1. Claude Artifacts
@@ -171,27 +175,24 @@ Open in separate tabs:
 Paste prompt in each → Click generate → Move to next
 ```
 
-**0:15-0:40** - AI Cooking Time (Review & Iterate)
-- Check platforms every 5 min
-- If one looks good → do 1-2 iterations
-- If one fails early → note why, move on
+**Step 4: Active Monitoring & Iteration**
+- Check platforms periodically as they generate
+- When one looks promising → do 1-2 iterations
+- If one fails early → note why, document the failure mode
 - Screenshot everything as you go
 
-**0:40-0:55** - Collection & Organization
+**Step 5: Collection & Organization**
 - Download/copy code from successful platforms
 - Create platform subfolders
-- Save screenshots with consistent names
-- Note which worked/failed in quick list
+- Save screenshots with consistent naming
+- Create quick list of what worked/failed
 
-**0:55-1:20** - Rapid Documentation
+**Step 6: Documentation**
 - Create main README from template
-- Fill in platform results (just names + status)
-- One-line update to DAILY-LOG.md
-- **Optional**: Create `index.html` showcase (10-15 min)
+- Fill in platform results (names + status + insights)
+- Update DAILY-LOG.md
+- **Optional**: Create `index.html` showcase for easy sharing
 - Git commit with message: "Day X: [Theme] - [X] platforms"
-
-**Speed Mode** (skip HTML): 60 min total
-**Full Mode** (with HTML showcase): 80 min total
 
 ---
 
@@ -221,7 +222,7 @@ Paste prompt in each → Click generate → Move to next
 
 ## Code of Conduct Compliance
 
-Per official challenge:
+Per the [official challenge](https://30daymapchallenge.com/):
 - ✅ All maps are original work (AI-assisted, human-directed)
 - ✅ Data sources credited in every README
 - ✅ Transparent about AI usage and methodology
@@ -234,7 +235,7 @@ Per official challenge:
 
 ## Links & Resources
 
-- **Official Challenge**: https://30daymapchallenge.com/
+- **Official Challenge**: [30daymapchallenge.com](https://30daymapchallenge.com/)
 - **Hashtag**: #30DayMapChallenge
 - **Repository**: https://github.com/[your-username]/30-day-map-challenge-2025
 
@@ -262,8 +263,7 @@ This is a **comparative research project** disguised as a mapping challenge:
 
 **Start Date**: November 1, 2025
 **Estimated Output**: 20-30 days × 5-10 platforms = **100-300 map implementations**
-**Time Investment**: ~1 hour/day = 30 hours total
-**Value**: Comprehensive AI cartography platform analysis
+**Value**: Comprehensive AI cartography platform analysis and comparison
 
 *Let's turn one mapping challenge into the most extensive AI development platform comparison in geospatial visualization.* 🗺️🤖✨
 
