@@ -1,7 +1,7 @@
 # Day 1: Points - Complete Summary
 
 **Theme**: Point data visualization
-**Date**: November 1-2, 2025
+**Date**: November 1, 2025
 **Status**: ✅ Complete
 **Concept**: Global Earthquakes - Last 30 Days
 
@@ -277,7 +277,7 @@ This isn't just about building one map. It's about:
 
 *Day 1 - Points | #30DayMapChallenge 2025*
 
-**Start Date**: November 1-2, 2025
+**Start Date**: November 1, 2025
 **Platforms**: 11 tested, 8 succeeded
 **Success Rate**: 73%
 **Total Implementations**: 11
