@@ -281,7 +281,7 @@ Per the [official challenge](https://30daymapchallenge.com/):
 
 ## The Real Goal
 
-This is a **comparative research project** disguised as a mapping challenge:
+This is a comparative AI and usability research project within a mapping challenge:
 
 1. **Benchmark**: How do 15+ AI platforms handle identical geospatial tasks?
 2. **Document**: What patterns emerge in success/failure across tools?
@@ -289,7 +289,7 @@ This is a **comparative research project** disguised as a mapping challenge:
 4. **Learn**: Build intuition for which AI tools excel where
 5. **Contribute**: 100+ map examples to the mapping community
 
-**The key insight**: With parallel processing, we can generate more comparative data in less time than traditional single-implementation approaches.
+**The key insight**: Basically, it works! You can quickly ideate and prototype at a fairly high quality level with the help of AI. Each platform has strengths, weaknesses, and quirks, but most of these tools quickly helped me build something cool or interesting or a starting point for something useful.
 
 ---
 
@@ -297,4 +297,4 @@ This is a **comparative research project** disguised as a mapping challenge:
 **Estimated Output**: 20-30 days × 5-10 platforms = **100-300 map implementations**
 **Value**: Complete AI mapping platform analysis and comparison
 
-*Let's turn one mapping challenge into an AI development platform comparison in geospatial visualization.* 🗺️🤖✨
+*Let's use a fun map challenge as an AI development platform experiment.* 🗺️🤖✨
