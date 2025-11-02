@@ -28,9 +28,9 @@ Track which AI platforms excel at different types of cartographic tasks across t
 ### Basic Cartography
 **Points, Lines, Polygons**
 - 🥇 ChatGPT Canvas, Bolt.new, Lovable (three-way tie)
-  - **ChatGPT**: Best UI polish, excellent permission model, great tooltips
-  - **Bolt**: Best data handling & stats display, excellent tooltips
-  - **Lovable**: Fast, clean, excellent tooltips
+  - **ChatGPT**: Best UI polish, good permission model, strong tooltips
+  - **Bolt**: Best data handling & stats display, strong tooltips
+  - **Lovable**: Fast, clean, strong tooltips
 - Strong Contenders: Base44 (best stats dashboard), Firebase Studio (full VS Code editor)
 
 **Notes**: *After Day 1 (Points) - Top 3 are equally strong with different specialties. ChatGPT has cleanest UI, Bolt has best data handling, Lovable has great speed. Base44 excels at stats dashboards.*
@@ -68,14 +68,14 @@ Track which AI platforms excel at different types of cartographic tasks across t
 ---
 
 ### Design & Aesthetics
-**Beautiful UI, Polish, Typography**
+**UI, Polish, Typography**
 - 🥇 ChatGPT Canvas, Bolt.new, Base44 (three-way tie for top-tier design)
   - **ChatGPT**: Cleanest, most polished UI
-  - **Bolt**: Professional, excellent stats display
-  - **Base44**: Gorgeous dark theme, best stats dashboard
+  - **Bolt**: Professional, strong stats display
+  - **Base44**: Clean dark theme, best stats dashboard
 - 🥈 Lovable, MagicPatterns (modern Tailwind aesthetic)
 
-**Notes**: *Top 3 all have excellent visual design. ChatGPT has best overall polish, Bolt has great data presentation, Base44 wins for dark theme & stats dashboard. Tooltips: Lovable, Bolt, ChatGPT best; others lag behind.*
+**Notes**: *Top 3 all have strong visual design. ChatGPT has best overall polish, Bolt has great data presentation, Base44 wins for dark theme & stats dashboard. Tooltips: Lovable, Bolt, ChatGPT best; others lag behind.*
 
 ---
 
@@ -106,15 +106,17 @@ Track which AI platforms excel at different types of cartographic tasks across t
 - Good UI structure and design sense
 - Clear code organization
 - Fast initial generation
+- Was close to working - UI rendered, just had API/sandbox issues
 
 **Struggles**:
-- CSP/CORS violations with external libraries (Leaflet CDN blocked)
+- ⚠️ CSP/CORS violations with external libraries (Leaflet CDN blocked)
 - External API data fetching fails
 - Difficult to debug/fix sandbox restrictions
 - Multiple iterations don't resolve core issues
 
-**Best For**: Self-contained visualizations with embedded data
+**Best For**: Self-contained visualizations with embedded data, scenarios without external APIs
 **Avoid For**: External API integrations, CDN-dependent libraries
+**Note**: May work well in other scenarios - worth retrying on future days with embedded data
 
 ---
 
@@ -137,7 +139,7 @@ Track which AI platforms excel at different types of cartographic tasks across t
 
 ### Bolt.new
 **Successes**:
-- Excellent data handling (7,734 earthquakes displayed)
+- Strong data handling (7,734 earthquakes displayed)
 - Shows detailed stats (max magnitude, avg depth, 24h count)
 - Robust implementation despite console errors
 - Fast generation (~5 min)
@@ -199,7 +201,7 @@ Track which AI platforms excel at different types of cartographic tasks across t
 - Good legend and UI elements
 
 **Struggles**:
-- None observed - worked perfectly
+- None observed - worked well
 
 **Best For**: Fast, clean implementations; modern web apps
 **Avoid For**: Nothing yet - top tier performer
@@ -208,8 +210,8 @@ Track which AI platforms excel at different types of cartographic tasks across t
 
 ### MagicPatterns
 **Successes**:
-- ⭐ Surprise excellent performer!
-- Tested both Tailwind and Chakra UI variants - both worked perfectly
+- ⭐ Surprise good performer
+- Tested both Tailwind and Chakra UI variants - both worked well
 - Fast generation (~5 min each)
 - Professional, polished designs
 - Reliable data handling
@@ -227,10 +229,10 @@ Track which AI platforms excel at different types of cartographic tasks across t
 **Successes**:
 - 🎨 Top-tier visual design - competes with Bolt & ChatGPT
 - 📊 **Best stats dashboard** of all platforms (total, max mag, avg depth, updated time)
-- Gorgeous dark theme
+- Clean dark theme
 - 6 depth categories (most detailed)
 - Fast one-shot success (~5 min)
-- Excellent responsive design
+- Strong responsive design
 - Professional polish
 
 **Struggles**:
@@ -239,7 +241,7 @@ Track which AI platforms excel at different types of cartographic tasks across t
 - Less documentation than established platforms
 
 **Best For**: Data dashboards, dark-themed projects, visual presentations, comprehensive stats
-**Avoid For**: When every calculation must be perfect (verify data!), when tooltip quality is critical
+**Avoid For**: When every calculation must be accurate (verify data!), when tooltip quality is critical
 
 ---
 
@@ -264,19 +266,22 @@ Track which AI platforms excel at different types of cartographic tasks across t
 
 ---
 
-### Gemini (Artifacts)
+### Google Gemini Canvas (Artifacts)
 **Successes**:
 - Good UI structure
 - Fast initial generation
+- Was close to working - just needed external API integration fixed
 
 **Struggles**:
+- ⚠️ **Had errors with external APIs when tested** (but was close!)
 - Similar issues to Claude Artifacts
 - External API data loading problems
 - Requires sign-in to view shared artifacts
 - Multiple iterations needed
 
-**Best For**: Google ecosystem work with embedded data
-**Avoid For**: External API integrations, public sharing
+**Best For**: Google ecosystem work with embedded data, scenarios where APIs aren't needed
+**Avoid For**: External API integrations (for now), public sharing
+**Note**: May work well in other scenarios - worth retrying on future days
 
 ---
 
@@ -320,7 +325,7 @@ Track which AI platforms excel at different types of cartographic tasks across t
 - **Base44**: Excellent for stats dashboards - verify calculations!
 - **Firebase Studio**: Be ready with API keys (Gemini + Google Maps), use code editor for fixes
 - **V0.dev**: May need iteration - be prepared to refine
-- **Claude/Gemini**: Avoid external CDN libraries - embed data instead
+- **Claude/Gemini Artifacts**: Struggled with external APIs, but were close - use embedded data instead when possible
 
 ---
 
@@ -337,9 +342,9 @@ Track which AI platforms excel at different types of cartographic tasks across t
 - MagicPatterns
 - Google AI Studio
 
-**Needs Hand-Holding** (Requires multiple clarifications):
-- Claude Artifacts (sandbox issues hard to fix)
-- Gemini (similar struggles to Claude)
+**Struggled but Close** (May work in other scenarios):
+- Claude Artifacts (sandbox issues with external APIs, but UI/design was good)
+- Google Gemini Canvas (similar struggles to Claude, but was close)
 
 ---
 
@@ -362,14 +367,14 @@ Track which AI platforms excel at different types of cartographic tasks across t
 **Biggest Surprises**:
 - MagicPatterns performed excellently (both variants)
 - Google AI Studio delivered quietly solid implementation
-- Claude & Gemini (top chat models) struggled with external APIs
+- Claude & Gemini Artifacts struggled with external APIs (but were close - UI worked, just API issues)
 
-**Disappointments**:
-- Claude Artifacts couldn't handle external library loading
-- Gemini similar issues to Claude
+**Areas for Improvement**:
+- Claude Artifacts couldn't handle external library loading (but UI/design was good)
+- Google Gemini Canvas had similar API issues to Claude (but was close to working)
 - V0.dev needed iteration despite reputation
 
-**Key Learning**: Top chat models ≠ best code generation platforms for web artifacts
+**Key Learning**: Top chat models ≠ best code generation platforms for web artifacts. However, Claude & Gemini Artifacts showed promise - they were close and may work well with embedded data or in other scenarios.
 
 ---
 
@@ -421,7 +426,7 @@ Track which AI platforms excel at different types of cartographic tasks across t
 - **3D visualization**: TBD
 - **Learning/experimentation**: Multiple platforms (this project!)
 
-**Avoid for external APIs**: Claude Artifacts, Gemini Artifacts
+**Avoid for external APIs** (but worth retrying in other scenarios): Claude Artifacts, Google Gemini Canvas (they were close!)
 
 ---
 

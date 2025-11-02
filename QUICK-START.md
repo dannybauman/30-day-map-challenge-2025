@@ -97,7 +97,7 @@ For each concept include:
 - Visual/shareability factor
 
 Context:
-- I'll implement this across 8-10 AI development platforms (Claude Artifacts, Bolt.new, V0.dev, Google AI Studio, etc.)
+- I'll implement this across 8-10 AI development platforms (Claude Artifacts, ChatGPT Canvas, Google Gemini Canvas, Bolt.new, V0.dev, Google AI Studio Apps, etc.)
 - Goal is comparative analysis: which platforms handle cartography best
 - Need concepts that work in ~1 hour
 - Should be web-based, interactive

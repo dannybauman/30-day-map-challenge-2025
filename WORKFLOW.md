@@ -13,9 +13,9 @@ This document describes the refined process after completing Day 1.
 
 1. Get ideation prompts from templates
 2. Paste into web versions:
-   - Claude.ai (Sonnet 4.5)
-   - ChatGPT (o3)
-   - Gemini (2.5 Pro)
+   - Claude.ai (Anthropic Claude Sonnet 4.5)
+   - ChatGPT (OpenAI GPT-5 Thinking)
+   - Gemini (Google Gemini 2.5 Pro)
 3. Review 6 ideas (2 from each)
 4. Pick the best idea
 5. Paste chosen concept into Cursor
@@ -41,9 +41,10 @@ This document describes the refined process after completing Day 1.
 - ✅ Bolt.new (great data handling)
 - ✅ Lovable (fast & clean)
 - ✅ MagicPatterns (versatile)
-- ✅ Google AI Studio (solid)
+- ✅ Google AI Studio Apps (solid)
 - ⚠️ V0.dev (may need iteration)
-- ⚠️ Claude Artifacts (avoid if using external APIs)
+- ⚠️ Google Gemini Canvas (errors with external APIs, but was close)
+- ⚠️ Claude Artifacts (errors with external APIs, but was close)
 
 ### Phase 4: Review & Iterate
 **Duration**: 20-30 minutes
@@ -200,8 +201,8 @@ maps/0X-theme/
 
 1. **Parallel testing works!** - 9 platforms in 90 minutes
 2. **ChatGPT Canvas, Bolt.new, Lovable** - most reliable
-3. **Claude/Gemini Artifacts** - avoid for external APIs
-4. **MagicPatterns** - surprise excellent performer
+3. **Claude/Gemini Artifacts** - struggled with external APIs, but were close - may work with embedded data
+4. **MagicPatterns** - surprise good performer
 5. **Documentation time** - took longer than expected (~30 min)
 6. **HTML showcase** - will make sharing results much easier
 
