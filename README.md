@@ -62,10 +62,9 @@ This project tackles the **#30DayMapChallenge** using AI as both creative partne
 5. **Google AI Studio Apps** - Gemini's platform, underrated
 
 **Tier 2 - Full-Stack & Advanced (Use 2-3 per day)**
-6. **Replit Agent** - Backend needed, API calls, databases
-7. **Lovable** - Full apps with multiple pages
-8. **Cursor** - When you need more control over code
-9. **Windsurf** - Agentic coding, good for complex builds
+6. **Lovable** - Full apps with multiple pages
+7. **Cursor** - When you need more control over code
+8. **Windsurf** - Agentic coding, good for complex builds
 
 **Tier 3 - Specialized Tools (Use When Relevant)**
 10. **MagicPatterns** - Component libraries, UI systems
@@ -109,7 +108,6 @@ This project tackles the **#30DayMapChallenge** using AI as both creative partne
 │   │   │   ├── deployed-url.txt
 │   │   │   └── screenshot.png
 │   │   ├── v0-dev/
-│   │   ├── replit/
 │   │   ├── lovable/
 │   │   └── (other platforms)
 │   ├── 02-lines/
@@ -146,9 +144,8 @@ Open in separate tabs:
 3. Bolt.new
 4. V0.dev
 5. Google AI Studio Apps
-6. Replit
-7. Lovable
-8. Cursor (if complex)
+6. Lovable
+7. Cursor (if complex)
 
 Paste prompt in each → Click generate → Move to next
 ```

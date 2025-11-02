@@ -13,7 +13,6 @@ Track which AI platforms excel at different types of cartographic tasks across t
 | Bolt.new | 0 | 0 | 0 | 0 | -- | -- |
 | V0.dev | 0 | 0 | 0 | 0 | -- | -- |
 | Google AI Studio | 0 | 0 | 0 | 0 | -- | -- |
-| Replit Agent | 0 | 0 | 0 | 0 | -- | -- |
 | Lovable | 0 | 0 | 0 | 0 | -- | -- |
 | Cursor | 0 | 0 | 0 | 0 | -- | -- |
 | Windsurf | 0 | 0 | 0 | 0 | -- | -- |
@@ -144,18 +143,6 @@ Track which AI platforms excel at different types of cartographic tasks across t
 ---
 
 ### Google AI Studio Apps
-**Successes**:
-- *To be documented*
-
-**Struggles**:
-- *To be documented*
-
-**Best For**: *TBD*
-**Avoid For**: *TBD*
-
----
-
-### Replit Agent
 **Successes**:
 - *To be documented*
 

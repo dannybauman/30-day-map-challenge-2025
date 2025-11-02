@@ -145,15 +145,7 @@ Comprehensive analysis and rankings of AI development platforms for cartographic
 
 ---
 
-### 6. Replit Agent
-
-**Overall Score**: *TBD/10*
-
-*[Same structure as above]*
-
----
-
-### 7. Lovable
+### 6. Lovable
 
 **Overall Score**: *TBD/10*
 

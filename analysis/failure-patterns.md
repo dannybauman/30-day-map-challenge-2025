@@ -116,11 +116,6 @@ Understanding failure modes is as valuable as understanding successes. This docu
 - *Triggers*: TBD
 - *Avoidance strategies*: TBD
 
-#### Replit Agent
-- *Common failures*: TBD
-- *Triggers*: TBD
-- *Avoidance strategies*: TBD
-
 #### Lovable
 - *Common failures*: TBD
 - *Triggers*: TBD

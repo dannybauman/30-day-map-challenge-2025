@@ -70,7 +70,7 @@ Requirements:
 - Implementable in 1 hour across multiple platforms
 - Free, accessible data
 - Web-based interactive visualization
-- Should work on platforms like Replit, Lovable, ChatGPT Canvas, etc.
+- Should work on platforms like Lovable, ChatGPT Canvas, etc.
 - Test case for comparing AI coding tools
 
 Be specific about data access and implementation approach.
@@ -97,7 +97,7 @@ For each concept include:
 - Visual/shareability factor
 
 Context:
-- I'll implement this across 8-10 AI development platforms (Claude Artifacts, Bolt.new, V0.dev, Google AI Studio, Replit, etc.)
+- I'll implement this across 8-10 AI development platforms (Claude Artifacts, Bolt.new, V0.dev, Google AI Studio, etc.)
 - Goal is comparative analysis: which platforms handle cartography best
 - Need concepts that work in ~1 hour
 - Should be web-based, interactive
