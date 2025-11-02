@@ -136,7 +136,7 @@ Vibe coding is just one way to use AI to help write software, people are coming 
 
 ---
 
-## Visual Showcase Pages 🆕
+## HTML Pages for Each Day 🆕
 
 Each day includes a simple HTML page (`index.html`) for easy browsing and sharing:
 
@@ -171,7 +171,7 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 - The generated site uses relative paths, so it works at both `https://<user>.github.io/<repo>/` and local `file://` previews.
 
 ### Adding a new day
-- Create the new showcase at `maps/<day-slug>/index.html` (using `templates/day-showcase-template.html`).
+- Create the new HTML page at `maps/<day-slug>/index.html` (using `templates/day-showcase-template.html`).
 - Ensure the `<script>` tag at the end of the page has `data-day="<day-slug>"`, `data-manifest="../../days.json"`, and `data-base-path="../../"` so navigation works locally and in production.
 - Re-run `node scripts/build-site.mjs` after adding or updating any day so the manifest, docs build, and navigation stay in sync.
 
@@ -220,7 +220,7 @@ Paste prompt in each → Click generate → Move to next
 - Create main README from template
 - Fill in platform results (names + status + insights)
 - Update DAILY-LOG.md
-- Create `index.html` showcase for easy sharing
+- Create `index.html` page for easy sharing
 
 ---
 

@@ -66,10 +66,10 @@ Here's my refined process after completing Day 1.
 
 **Optional (when time allows)**:
 5. Create platform-specific READMEs
-6. Create `index.html` showcase page
+6. Create `index.html` page
 7. Write `DAY-X-SUMMARY.md` for deeper analysis
 
-### Phase 6: Visual Showcase (New!)
+### Phase 6: HTML Page (New!)
 **Duration**: 20-25 minutes
 
 **Step 1: Capture Screenshots** (10 min):
@@ -117,7 +117,7 @@ maps/0X-theme/
 ### Nice-to-Have (Time Permitting)
 ```
 maps/0X-theme/
-├── index.html                   # Visual showcase 🆕
+├── index.html                   # HTML page 🆕
 ├── DAY-X-SUMMARY.md             # Deep analysis
 ├── platform-name/
 │   └── README.md                # Platform-specific details
@@ -142,15 +142,15 @@ maps/0X-theme/
 | Launch platforms | 5-10 min | 25 min |
 | Review & iterate | 20-30 min | 55 min |
 | Core documentation | 15 min | 70 min |
-| HTML showcase | 10 min | 80 min |
+| HTML page | 10 min | 80 min |
 | **Total** | **~80 min** | |
 
 **Speed mode** (just essentials): ~60 min
-**Full mode** (with showcase): ~80 min
+**Full mode** (with HTML page): ~80 min
 
 ---
 
-## HTML Showcase Guide
+## HTML Page Guide
 
 ### Quick Start
 
@@ -180,7 +180,7 @@ maps/0X-theme/
    open maps/0X-theme/index.html
    ```
 
-### What Makes a Good Showcase
+### What Makes a Good Page
 
 **Do**:
 - ✅ Quick visual summary of the day
@@ -204,7 +204,7 @@ maps/0X-theme/
 3. **Claude/Gemini Artifacts** - struggled with external APIs, but were close - may work with embedded data
 4. **MagicPatterns** - surprise good performer
 5. **Documentation time** - took longer than expected (~30 min)
-6. **HTML showcase** - will make sharing results much easier
+6. **HTML page** - will make sharing results much easier
 
 ---
 
@@ -214,7 +214,7 @@ maps/0X-theme/
 1. ✅ Use successful platforms from Day 1
 2. ✅ Skip Claude/Gemini Artifacts (unless embedded data)
 3. ✅ Focus on core documentation
-4. ✅ Create HTML showcase for visual results
+4. ✅ Create HTML page for visual results
 5. ✅ Keep platform READMEs optional
 
 **Time goal**: 60-80 minutes total

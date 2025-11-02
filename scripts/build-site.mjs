@@ -111,7 +111,7 @@ function renderIndexHtml(days) {
                             <h3 class="h5">${day.title}</h3>
                             ${subtitle}
                             <div class="d-flex gap-2 mt-3">
-                                <a class="btn btn-primary btn-sm" href="${day.relativeUrl}">View Showcase</a>
+                                <a class="btn btn-primary btn-sm" href="${day.relativeUrl}">View Page</a>
                                 ${readmeButton}
                             </div>
                         </div>
@@ -125,7 +125,7 @@ function renderIndexHtml(days) {
         ? `<div class="row">
                 ${dayCards}
             </div>`
-        : `<div class="alert alert-info">No showcases published yet. Check back soon!</div>`;
+        : `<div class="alert alert-info">No pages published yet. Check back soon!</div>`;
     const generatedOn = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(new Date());
 
     return `<!DOCTYPE html>
@@ -133,7 +133,7 @@ function renderIndexHtml(days) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#30DayMapChallenge 2025 | Daily Showcases</title>
+    <title>#30DayMapChallenge 2025 | Daily Pages</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>

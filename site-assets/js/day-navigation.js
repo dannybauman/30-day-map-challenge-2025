@@ -54,7 +54,7 @@
 
             const description = document.createElement('p');
             description.className = 'card-text text-muted';
-            description.textContent = 'Jump to another day or review previous showcases.';
+            description.textContent = 'Jump to another day or review previous pages.';
             body.appendChild(description);
 
             const formWrapper = document.createElement('div');
