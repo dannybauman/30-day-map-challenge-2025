@@ -31,6 +31,14 @@
         .rating-c { background-color: #fd7e14; color: white; padding: 4px 8px; border-radius: 4px; }
         .rating-d { background-color: #ff4500; color: white; padding: 4px 8px; border-radius: 4px; }
         .rating-f { background-color: #dc3545; color: white; padding: 4px 8px; border-radius: 4px; }
+
+        /* Chosen Concept Highlighting */
+        .concept-chosen {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #fd7e14 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -88,6 +96,7 @@
 
             <div class="row">
                 <div class="col-md-4">
+                    <!-- Note: Add "concept-chosen" class to the card div of whichever concept was chosen -->
                     <div class="card">
                         <div class="card-header text-white" style="background-color: #fd7e14;">
                             <strong>Claude.ai (Sonnet 4.5)</strong>
