@@ -155,6 +155,7 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 - Run `node scripts/build-site.mjs` to generate the deployable site in `docs/`.
 - The script copies each `maps/<day>` directory (with an `index.html`) into `docs/maps/`, publishes shared assets to `docs/site-assets/`, and emits a `days.json` manifest used by the day selector.
 - `docs/index.html` is rebuilt every run with an overview of published days; avoid editing files inside `docs/` by hand.
+- To temporarily make a specific day the homepage, set `DEFAULT_DAY=<day-slug>` before running the build (e.g., `DEFAULT_DAY=01-points node scripts/build-site.mjs`). Clear the variable to switch back to the overview grid.
 
 ### Publish with GitHub Pages
 - In the repository settings, enable GitHub Pages using the `main` branch and the `/docs` folder.

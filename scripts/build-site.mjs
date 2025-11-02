@@ -174,6 +174,36 @@ function renderIndexHtml(days) {
 </html>`;
 }
 
+function renderRedirectHtml(day) {
+    const targetUrl = day.relativeUrl;
+    const generatedOn = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(new Date());
+
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=${targetUrl}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${day.title} | #30DayMapChallenge 2025</title>
+    <link rel="canonical" href="${targetUrl}">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body style="font-family: system-ui, sans-serif; background: #0f172a; color: #e2e8f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
+    <div style="text-align: center; max-width: 480px; padding: 24px;">
+        <p style="letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 8px;">#30DayMapChallenge 2025</p>
+        <h1 style="font-size: clamp(1.75rem, 3vw, 2.25rem); margin: 0 0 12px 0;">Redirecting to ${day.title}</h1>
+        <p style="margin: 0 0 24px 0;">Hang tight—if you're not redirected automatically, <a href="${targetUrl}" style="color: #38bdf8;">click here</a>.</p>
+        <p style="font-size: 0.85rem; opacity: 0.75;">Generated ${generatedOn}</p>
+    </div>
+    <script>
+        setTimeout(() => {
+            window.location.replace('${targetUrl}');
+        }, 100);
+    </script>
+</body>
+</html>`;
+}
+
 async function build() {
     await ensureDir(docsDir);
     await emptyDir(outputMapsDir);
@@ -227,7 +257,20 @@ async function build() {
     await fs.writeFile(manifestPathRoot, manifestJson, 'utf-8');
     await fs.writeFile(manifestPathDocs, manifestJson, 'utf-8');
 
-    const indexHtml = renderIndexHtml(dayEntries);
+    const defaultDaySlug = process.env.DEFAULT_DAY?.trim();
+    let indexHtml;
+    if (defaultDaySlug) {
+        const defaultDay = dayEntries.find((entry) => entry.id === defaultDaySlug);
+        if (defaultDay) {
+            console.log(`Default day set to '${defaultDaySlug}'. Generating redirect entry page.`);
+            indexHtml = renderRedirectHtml(defaultDay);
+        } else {
+            console.warn(`DEFAULT_DAY='${defaultDaySlug}' not found in manifest. Using overview index.`);
+            indexHtml = renderIndexHtml(dayEntries);
+        }
+    } else {
+        indexHtml = renderIndexHtml(dayEntries);
+    }
     await fs.writeFile(path.join(docsDir, 'index.html'), indexHtml, 'utf-8');
 }
 
