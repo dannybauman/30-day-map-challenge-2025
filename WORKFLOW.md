@@ -1,220 +1,224 @@
 # Day-by-Day Workflow
 
-This document tracks the actual workflow for each day of the challenge.
+**Updated**: Post-Day 1 actual workflow
+
+This document describes the refined process after completing Day 1.
 
 ---
 
-## The Process
+## Refined Daily Process (Based on Day 1)
 
 ### Phase 1: Ideation (Web LLMs)
 **Duration**: 5-10 minutes
 
-1. Get ideation prompts from Cursor
+1. Get ideation prompts from templates
 2. Paste into web versions:
    - Claude.ai (Sonnet 4.5)
-   - ChatGPT (GPT-4o)
+   - ChatGPT (o3)
    - Gemini (2.5 Pro)
 3. Review 6 ideas (2 from each)
 4. Pick the best idea
-5. Paste chosen concept back into Cursor
+5. Paste chosen concept into Cursor
 
 ### Phase 2: Implementation Prep (Cursor)
 **Duration**: 5 minutes
 
 1. Cursor helps craft the implementation prompt
 2. Customize for the chosen concept
-3. Copy final prompt to clipboard
+3. Save as `IMPLEMENTATION-PROMPT.md`
+4. Copy to clipboard
 
 ### Phase 3: Multi-Platform Launch
 **Duration**: 5-10 minutes
 
-1. Open 8-10 platform tabs
+1. Open 6-9 platform tabs
 2. Paste same prompt into each
 3. Hit generate on all
-4. Let them cook!
+4. Let them cook while you take a break ☕
+
+**Recommended platforms** (based on Day 1):
+- ✅ ChatGPT Canvas (reliable)
+- ✅ Bolt.new (great data handling)
+- ✅ Lovable (fast & clean)
+- ✅ MagicPatterns (versatile)
+- ✅ Google AI Studio (solid)
+- ⚠️ V0.dev (may need iteration)
+- ⚠️ Claude Artifacts (avoid if using external APIs)
 
 ### Phase 4: Review & Iterate
-**Duration**: 30 minutes
+**Duration**: 20-30 minutes
 
 1. Check results every 5-10 minutes
-2. Iterate on 2-3 most promising
-3. Screenshot everything as you go
+2. Note which worked/failed in LAUNCH-TRACKER
+3. Iterate 1-2 times on partial successes
+4. Save links to live demos
+5. Note key observations
 
 ### Phase 5: Documentation
-**Duration**: 10-15 minutes
+**Duration**: 15-30 minutes
 
-1. Save code to platform folders
-2. Save screenshots
-3. Update DAILY-LOG.md
-4. Update PLATFORM-TRACKER.md
-5. Git commit
+**Essential (every day)**:
+1. Update `maps/0X-theme/README.md` with results
+2. Update `DAILY-LOG.md` (one line)
+3. Update `PLATFORM-TRACKER.md` stats
+4. Update `maps/0X-theme/LAUNCH-TRACKER.md`
 
----
+**Optional (when time allows)**:
+5. Create platform-specific READMEs
+6. Create `index.html` showcase page
+7. Write `DAY-X-SUMMARY.md` for deeper analysis
 
-## Day 1: Points
+### Phase 6: Visual Showcase (New!)
+**Duration**: 20-25 minutes
 
-**Theme**: Point data (locations, POIs, clusters). Focus on symbolization and density.
+**Step 1: Capture Screenshots** (10 min):
+- **Desktop**: Resize to 1440x900, capture → `screenshot.png`
+- **Mobile**: Resize to 393x852 (iPhone 15 Pro), capture → `screenshot-mobile.png`
+- Wait 5+ seconds for content to load
+- Watch for & approve permission dialogs!
+- Tests responsive design quality
 
-**Status**: 🚧 Ready for ideation
+**Step 2: Create HTML** (10-15 min):
+1. Copy `templates/day-showcase-template.html` → `index.html`
+2. Fill with REAL data (not placeholders)
+3. Include desktop & mobile screenshots side-by-side
+4. Comment on responsive design
+5. Keep times approximate (~1.5 hrs, not 87 min)
+6. Keep it simple and easy to update later
 
-### Step 1: Get Ideation Prompts ✅
+**What to include**:
+- Quick stats (platforms tested, success rate)
+- Chosen concept & why
+- Platform results with BOTH screenshots
+- Responsive design ratings
+- Key insights and lessons
+- Brief editorial
 
-Use the prompts below on each website:
-
----
-
-#### For Claude.ai
-
-```
-Today's #30DayMapChallenge theme is: POINTS
-
-Theme description: Point data (locations, POIs, clusters). Focus on symbolization and density visualization.
-
-Give me 2 map concepts for this theme - one creative/unusual and one straightforward/classic.
-
-For each concept, provide:
-1. Title and 2-sentence description
-2. Specific data source (must be free/accessible)
-3. Estimated implementation difficulty (Easy/Medium/Hard)
-4. Why it would work well across multiple AI development platforms
-5. Visual appeal for social media sharing
-
-Constraints:
-- Must be achievable in ~1 hour
-- Should work as web-based interactive map
-- Data must be free and readily available
-- Will be implemented using platforms like Claude Artifacts, Bolt.new, V0.dev, etc.
-- Goal is to test which platforms handle point visualization best
-
-Please be specific about data sources and keep concepts realistic for rapid implementation.
-```
+**What to skip**:
+- Don't overthink design
+- Don't duplicate all the markdown docs
+- Keep it visual and scannable
+- 80/20 rule: capture the essentials fast
 
 ---
 
-#### For ChatGPT (GPT-4o)
+## Streamlined Documentation Structure
 
+### Must-Have Files (Every Day)
 ```
-I'm doing the #30DayMapChallenge. Today's theme is: POINTS
+maps/0X-theme/
+├── README.md                    # Main day overview
+├── IMPLEMENTATION-PROMPT.md     # The prompt used
+├── LAUNCH-TRACKER.md            # Quick results table
+└── concept.md                   # Chosen concept (optional)
+```
 
-Description: Point data (locations, POIs, clusters). Focus on symbolization and density.
+### Nice-to-Have (Time Permitting)
+```
+maps/0X-theme/
+├── index.html                   # Visual showcase 🆕
+├── DAY-X-SUMMARY.md             # Deep analysis
+├── platform-name/
+│   └── README.md                # Platform-specific details
+└── screenshots/                 # If screenshots taken
+```
 
-Give me 2 map concepts:
-- 1 creative/unexpected interpretation
-- 1 straightforward/classic approach
-
-For each, specify:
-1. Clear concept description (2-3 sentences)
-2. Exact data source (with URL if possible)
-3. Difficulty level and estimated time
-4. Why it's good for testing AI development platforms
-5. What makes it visually compelling
-
-Requirements:
-- Implementable in 1 hour across multiple platforms
-- Free, accessible data
-- Web-based interactive visualization
-- Should work on platforms like Lovable, ChatGPT Canvas, etc.
-- Test case for comparing AI coding tools
-
-Be specific about data access and implementation approach.
+### Project-Level (Updated Daily)
+```
+/
+├── DAILY-LOG.md                 # One line per day
+└── PLATFORM-TRACKER.md          # Running comparison
 ```
 
 ---
 
-#### For Gemini (2.5 Pro)
+## Time Budget (Refined)
 
-```
-#30DayMapChallenge Theme: POINTS
+| Phase | Time | Cumulative |
+|-------|------|------------|
+| Ideation | 5-10 min | 10 min |
+| Prep prompt | 5 min | 15 min |
+| Launch platforms | 5-10 min | 25 min |
+| Review & iterate | 20-30 min | 55 min |
+| Core documentation | 15 min | 70 min |
+| HTML showcase | 10 min | 80 min |
+| **Total** | **~80 min** | |
 
-Focus: Point data - locations, POIs, clusters. Emphasize symbolization and density visualization.
-
-Please provide 2 map concepts:
-1. One creative/artistic interpretation
-2. One practical/straightforward approach
-
-For each concept include:
-- Title and description (2-3 sentences)
-- Data source (must be free and accessible)
-- Implementation complexity (Easy/Medium/Hard)
-- Why it tests AI platform capabilities well
-- Visual/shareability factor
-
-Context:
-- I'll implement this across 8-10 AI development platforms (Claude Artifacts, Bolt.new, V0.dev, Google AI Studio, etc.)
-- Goal is comparative analysis: which platforms handle cartography best
-- Need concepts that work in ~1 hour
-- Should be web-based, interactive
-- Will be shared on social media
-
-Focus on feasible, well-defined concepts with clear data sources.
-```
+**Speed mode** (just essentials): ~60 min
+**Full mode** (with showcase): ~80 min
 
 ---
 
-### Step 2: Choose Your Concept ⏳
+## HTML Showcase Guide
 
-**Instructions**:
-1. Copy each prompt above and paste into respective websites
-2. Review all 6 concepts (2 from each LLM)
-3. Pick the ONE best concept
-4. Paste your chosen concept below
+### Quick Start
 
-**Your Chosen Concept**:
-```
-[PASTE YOUR CHOSEN CONCEPT HERE - Include: title, description, data source, difficulty]
+1. **Copy template**:
+   ```bash
+   cp templates/day-showcase-template.html maps/0X-theme/index.html
+   ```
 
-Source: [Claude/ChatGPT/Gemini]
+2. **Fill in the key sections**:
+   - Stats (platforms, success rate, time)
+   - Ideation ideas (brief 1-2 sentences each)
+   - Chosen concept
+   - Platform results (use platform-card-snippet.html)
+   - Key insights
+   - Your editorial thoughts
 
-Why I chose this one:
-- [Reason 1]
-- [Reason 2]
-```
+3. **Follow the design system**:
+   - Desktop screenshots: `col-7` (larger), Mobile: `col-5` (smaller)
+   - Use CSS classes: `.screenshot-desktop` and `.screenshot-mobile`
+   - Gap spacing: `g-3` for screenshot rows
+   - Bold desktop labels, regular mobile labels
+   - Consistent header colors (see DOCUMENTATION-GUIDE.md)
+   - See `/maps/01-points/DESIGN-SYSTEM-UPDATE.md` for complete details
 
----
+4. **Test locally**:
+   ```bash
+   open maps/0X-theme/index.html
+   ```
 
-### Step 3: Implementation Prompt ⏳
+### What Makes a Good Showcase
 
-Once you paste your chosen concept above, I'll help you craft the perfect implementation prompt to use across all platforms.
+**Do**:
+- ✅ Quick visual summary of the day
+- ✅ Links to all live demos
+- ✅ Key insights and learning
+- ✅ Your honest opinion/editorial
+- ✅ Easy to skim and understand
 
----
-
-### Step 4: Platform Launch ⏳
-
-**Platforms to try today**:
-- [ ] Claude Artifacts
-- [ ] ChatGPT Canvas
-- [ ] Bolt.new
-- [ ] V0.dev
-- [ ] Google AI Studio
-- [ ] Lovable
-- [ ] Cursor
-- [ ] Windsurf
-- [ ] Others: ___________
-
----
-
-### Step 5: Results ⏳
-
-**Success**: ___ / ___ platforms
-
-**Best Platform**: ___________
-
-**Notes**: ___________
+**Don't**:
+- ❌ Duplicate everything from markdown docs
+- ❌ Spend more than 15 minutes on it
+- ❌ Overthink the design
+- ❌ Include code snippets (link to code instead)
 
 ---
 
-## Quick Reference
+## Key Learnings from Day 1
 
-### Ideation Prompts Ready For:
-- ✅ Day 1: Points (see above)
-- ⏳ Day 2: Lines (generate when ready)
-- ⏳ Day 3: Polygons (generate when ready)
-- ... (continue as needed)
-
-### Current Step:
-📍 **Day 1, Step 1** - Get ideation from web LLMs
+1. **Parallel testing works!** - 9 platforms in 90 minutes
+2. **ChatGPT Canvas, Bolt.new, Lovable** - most reliable
+3. **Claude/Gemini Artifacts** - avoid for external APIs
+4. **MagicPatterns** - surprise excellent performer
+5. **Documentation time** - took longer than expected (~30 min)
+6. **HTML showcase** - will make sharing results much easier
 
 ---
 
-**Last Updated**: November 1, 2025
+## For Tomorrow (Day 2)
 
+**Streamlined approach**:
+1. ✅ Use successful platforms from Day 1
+2. ✅ Skip Claude/Gemini Artifacts (unless embedded data)
+3. ✅ Focus on core documentation
+4. ✅ Create HTML showcase for visual results
+5. ✅ Keep platform READMEs optional
+
+**Time goal**: 60-80 minutes total
+
+---
+
+**Last Updated**: November 2, 2025 (Post Day 1)
+**Status**: Ready for Day 2

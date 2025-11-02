@@ -8,15 +8,18 @@ Track which AI platforms excel at different types of cartographic tasks across t
 
 | Platform | Attempts | Success | Partial | Failed | Success % | Avg Time |
 |----------|----------|---------|---------|--------|-----------|----------|
-| Claude Artifacts | 0 | 0 | 0 | 0 | -- | -- |
-| ChatGPT Canvas | 0 | 0 | 0 | 0 | -- | -- |
-| Bolt.new | 0 | 0 | 0 | 0 | -- | -- |
-| V0.dev | 0 | 0 | 0 | 0 | -- | -- |
-| Google AI Studio | 0 | 0 | 0 | 0 | -- | -- |
-| Lovable | 0 | 0 | 0 | 0 | -- | -- |
+| ChatGPT Canvas | 1 | 1 | 0 | 0 | 100% | 5 min |
+| Bolt.new | 1 | 1 | 0 | 0 | 100% | 5 min |
+| Lovable | 1 | 1 | 0 | 0 | 100% | 5 min |
+| Base44 | 1 | 1 | 0 | 0 | 100% | 5 min |
+| MagicPatterns | 2 | 2 | 0 | 0 | 100% | 5 min |
+| Google AI Studio | 1 | 1 | 0 | 0 | 100% | 5 min |
+| Firebase Studio | 1 | 1 | 0 | 0 | 100% | 15 min |
+| V0.dev | 1 | 0 | 1 | 0 | 0% | 10 min |
+| Claude Artifacts | 1 | 0 | 1 | 0 | 0% | 15 min |
+| Gemini | 1 | 0 | 1 | 0 | 0% | 15 min |
 | Cursor | 0 | 0 | 0 | 0 | -- | -- |
 | Windsurf | 0 | 0 | 0 | 0 | -- | -- |
-| Others | 0 | 0 | 0 | 0 | -- | -- |
 
 ---
 
@@ -24,11 +27,13 @@ Track which AI platforms excel at different types of cartographic tasks across t
 
 ### Basic Cartography
 **Points, Lines, Polygons**
-- 🥇 TBD
-- 🥈 TBD
-- 🥉 TBD
+- 🥇 ChatGPT Canvas, Bolt.new, Lovable (three-way tie)
+  - **ChatGPT**: Best UI polish, excellent permission model, great tooltips
+  - **Bolt**: Best data handling & stats display, excellent tooltips
+  - **Lovable**: Fast, clean, excellent tooltips
+- Strong Contenders: Base44 (best stats dashboard), Firebase Studio (full VS Code editor)
 
-**Notes**: *To be filled after Week 1*
+**Notes**: *After Day 1 (Points) - Top 3 are equally strong with different specialties. ChatGPT has cleanest UI, Bolt has best data handling, Lovable has great speed. Base44 excels at stats dashboards.*
 
 ---
 
@@ -64,31 +69,33 @@ Track which AI platforms excel at different types of cartographic tasks across t
 
 ### Design & Aesthetics
 **Beautiful UI, Polish, Typography**
-- 🥇 TBD
-- 🥈 TBD
-- 🥉 TBD
+- 🥇 ChatGPT Canvas, Bolt.new, Base44 (three-way tie for top-tier design)
+  - **ChatGPT**: Cleanest, most polished UI
+  - **Bolt**: Professional, excellent stats display
+  - **Base44**: Gorgeous dark theme, best stats dashboard
+- 🥈 Lovable, MagicPatterns (modern Tailwind aesthetic)
 
-**Notes**: *To be determined*
+**Notes**: *Top 3 all have excellent visual design. ChatGPT has best overall polish, Bolt has great data presentation, Base44 wins for dark theme & stats dashboard. Tooltips: Lovable, Bolt, ChatGPT best; others lag behind.*
 
 ---
 
 ### Data Handling
 **Large Datasets, API Integration, Processing**
-- 🥇 TBD
-- 🥈 TBD
-- 🥉 TBD
+- 🥇 Bolt.new (7,734 earthquakes with full stats: total, max mag, avg depth)
+- 🥈 Base44 (comprehensive dashboard: 7,729 total, max mag, updated time - but Avg Depth bug)
+- 🥉 ChatGPT Canvas, Lovable (smooth API integration)
 
-**Notes**: *To be determined*
+**Notes**: *Bolt.new excels at data presentation. Base44 has best stats dashboard but one calculation bug. ChatGPT & Lovable handle data well with no stats. Claude & Gemini struggled with external API calls - major weakness.*
 
 ---
 
 ### Speed
 **Fastest Time to Working Prototype**
-- 🥇 TBD
-- 🥈 TBD
-- 🥉 TBD
+- 🥇 Bolt.new / Lovable / MagicPatterns / Base44 (all ~5 min)
+- 🥈 ChatGPT Canvas / Google AI Studio (~5 min)
+- 🥉 V0.dev (~10 min)
 
-**Notes**: *To be determined*
+**Notes**: *Seven platforms achieved working implementations in ~5 minutes from prompt to live demo. Firebase Studio took ~15 min due to API key setup. V0.dev, Claude, and Gemini needed 10-15 min due to iterations/debugging.*
 
 ---
 
@@ -96,82 +103,189 @@ Track which AI platforms excel at different types of cartographic tasks across t
 
 ### Claude Artifacts
 **Successes**:
-- *To be documented*
+- Good UI structure and design sense
+- Clear code organization
+- Fast initial generation
 
 **Struggles**:
-- *To be documented*
+- CSP/CORS violations with external libraries (Leaflet CDN blocked)
+- External API data fetching fails
+- Difficult to debug/fix sandbox restrictions
+- Multiple iterations don't resolve core issues
 
-**Best For**: *TBD*
-**Avoid For**: *TBD*
+**Best For**: Self-contained visualizations with embedded data
+**Avoid For**: External API integrations, CDN-dependent libraries
 
 ---
 
 ### ChatGPT Canvas
 **Successes**:
-- *To be documented*
+- ⭐ Best overall implementation quality
+- Clean, polished UI design
+- Reliable external API integration
+- User permission model for data fetching (good UX)
+- Smooth interactions and hover effects
+- One-shot success (~5 min)
 
 **Struggles**:
-- *To be documented*
+- None observed in Day 1 test
 
-**Best For**: *TBD*
-**Avoid For**: *TBD*
+**Best For**: Production-quality implementations, external APIs, polished UIs
+**Avoid For**: Nothing yet - top performer
 
 ---
 
 ### Bolt.new
 **Successes**:
-- *To be documented*
+- Excellent data handling (7,734 earthquakes displayed)
+- Shows detailed stats (max magnitude, avg depth, 24h count)
+- Robust implementation despite console errors
+- Fast generation (~5 min)
+- Good Leaflet integration
+- Full deployment included
 
 **Struggles**:
-- *To be documented*
+- Some SVG circle radius errors in console (non-breaking)
+- UI slightly more generic/Tailwind-y
 
-**Best For**: *TBD*
-**Avoid For**: *TBD*
+**Best For**: Data-heavy applications, robust implementations, detailed analytics
+**Avoid For**: Nothing major - solid all-around
 
 ---
 
 ### V0.dev
 **Successes**:
-- *To be documented*
+- Points render correctly
+- Color coding works
+- One-click error fixing available
 
 **Struggles**:
-- *To be documented*
+- Initial error prevented page load
+- Missing basemap (just colored points on white)
+- Layout issues
+- Required iteration (~10 min total)
+- Shows "0 earthquakes" despite displaying points
 
-**Best For**: *TBD*
-**Avoid For**: *TBD*
+**Best For**: UI-focused designs where iteration is acceptable
+**Avoid For**: One-shot requirements, complex mapping needs
 
 ---
 
 ### Google AI Studio Apps
 **Successes**:
-- *To be documented*
+- ⭐ Surprise performer - works great!
+- Clean, minimal UI
+- All core features present
+- Fast generation (~5 min)
+- Reliable data handling
+- Good Gemini-based implementation
 
 **Struggles**:
-- *To be documented*
+- Requires Google account/sign-in to view
+- Less flashy than competitors
 
-**Best For**: *TBD*
-**Avoid For**: *TBD*
+**Best For**: Functional, minimal implementations; Google ecosystem projects
+**Avoid For**: Public sharing without Google account barriers
 
 ---
 
 ### Lovable
 **Successes**:
-- *To be documented*
+- Fast one-shot success (~5 min)
+- Clean modern Tailwind design
+- Professional appearance
+- Reliable implementation
+- Similar quality to Bolt.new
+- Good legend and UI elements
 
 **Struggles**:
-- *To be documented*
+- None observed - worked perfectly
 
-**Best For**: *TBD*
-**Avoid For**: *TBD*
+**Best For**: Fast, clean implementations; modern web apps
+**Avoid For**: Nothing yet - top tier performer
+
+---
+
+### MagicPatterns
+**Successes**:
+- ⭐ Surprise excellent performer!
+- Tested both Tailwind and Chakra UI variants - both worked perfectly
+- Fast generation (~5 min each)
+- Professional, polished designs
+- Reliable data handling
+- Great legend and UI components
+
+**Struggles**:
+- Tooltips not as polished as top 3
+
+**Best For**: Component-based designs; multiple UI library options
+**Avoid For**: When tooltip quality is critical
+
+---
+
+### Base44
+**Successes**:
+- 🎨 Top-tier visual design - competes with Bolt & ChatGPT
+- 📊 **Best stats dashboard** of all platforms (total, max mag, avg depth, updated time)
+- Gorgeous dark theme
+- 6 depth categories (most detailed)
+- Fast one-shot success (~5 min)
+- Excellent responsive design
+- Professional polish
+
+**Struggles**:
+- Avg Depth calculation bug (shows 0.0km instead of ~21km)
+- Tooltip design falls behind Lovable, Bolt, ChatGPT
+- Less documentation than established platforms
+
+**Best For**: Data dashboards, dark-themed projects, visual presentations, comprehensive stats
+**Avoid For**: When every calculation must be perfect (verify data!), when tooltip quality is critical
+
+---
+
+### Firebase Studio
+**Successes**:
+- 🔥 **Full VS Code editor in browser** - killer feature!
+- Seamless switch between AI generation and code editing
+- Firebase backend integration ready (hosting, auth, database)
+- Excellent API key UX for Gemini key (special prompt box)
+- Google Maps integration
+- Production-ready Firebase hosting
+
+**Struggles**:
+- Requires 2 API keys (Gemini + Google Maps)
+- Google Maps key not prompted (had to add manually via code editor)
+- Bland default Google Maps basemap
+- Didn't follow custom styling directions
+- Took longer (~15 min due to API key setup)
+
+**Best For**: Projects needing Firebase features, developers comfortable with code, production deployments, when full control matters
+**Avoid For**: Quick prototypes (API key friction), non-developers, beautiful default designs
+
+---
+
+### Gemini (Artifacts)
+**Successes**:
+- Good UI structure
+- Fast initial generation
+
+**Struggles**:
+- Similar issues to Claude Artifacts
+- External API data loading problems
+- Requires sign-in to view shared artifacts
+- Multiple iterations needed
+
+**Best For**: Google ecosystem work with embedded data
+**Avoid For**: External API integrations, public sharing
 
 ---
 
 ### Cursor
 **Successes**:
-- *To be documented*
+- *Not tested Day 1*
 
 **Struggles**:
-- *To be documented*
+- *Not tested Day 1*
 
 **Best For**: *TBD*
 **Avoid For**: *TBD*
@@ -180,10 +294,10 @@ Track which AI platforms excel at different types of cartographic tasks across t
 
 ### Windsurf
 **Successes**:
-- *To be documented*
+- *Not tested Day 1*
 
 **Struggles**:
-- *To be documented*
+- *Not tested Day 1*
 
 **Best For**: *TBD*
 **Avoid For**: *TBD*
@@ -195,36 +309,67 @@ Track which AI platforms excel at different types of cartographic tasks across t
 ### Prompting Strategies That Work
 
 #### Universal (Work Everywhere)
-- *To be discovered*
+- Clear data source URLs (USGS API worked well)
+- Specific visual requirements (size by X, color by Y)
+- Standard formats (GeoJSON is universally supported)
+- Single HTML file deliverable (when possible)
 
 #### Platform-Specific
-- **Claude Artifacts**: *TBD*
-- **Bolt.new**: *TBD*
-- **V0.dev**: *TBD*
+- **ChatGPT Canvas**: Prompt will ask for permission before external fetches - this is normal
+- **Bolt.new**: Can handle complex stats and analytics - lean into data-heavy features
+- **Base44**: Excellent for stats dashboards - verify calculations!
+- **Firebase Studio**: Be ready with API keys (Gemini + Google Maps), use code editor for fixes
+- **V0.dev**: May need iteration - be prepared to refine
+- **Claude/Gemini**: Avoid external CDN libraries - embed data instead
 
 ---
 
 ### Iteration Patterns
 
 **Fast Iterators** (Quick to refine):
-- *TBD*
+- V0.dev (one-click fixes available)
+- ChatGPT Canvas (responsive to feedback)
 
 **One-Shot Winners** (Get it right first time):
-- *TBD*
+- Bolt.new
+- Lovable
+- Base44
+- MagicPatterns
+- Google AI Studio
 
 **Needs Hand-Holding** (Requires multiple clarifications):
-- *TBD*
+- Claude Artifacts (sandbox issues hard to fix)
+- Gemini (similar struggles to Claude)
 
 ---
 
 ## Weekly Insights
 
 ### Week 1 (Nov 1-8): System Calibration
-*Summary to be added after completing week 1*
 
-**Top Performers**:
+**Day 1 (Points): Earthquake Visualization**
+
+**Top Performers** (three-way tie):
+1. ChatGPT Canvas - Best UI polish, great tooltips
+2. Bolt.new - Best data handling, excellent tooltips
+3. Lovable - Fast, clean, excellent tooltips
+
+**Strong Contenders**:
+- Base44 - Best stats dashboard, top-tier visual design
+- Firebase Studio - Full VS Code editor (killer feature)
+- MagicPatterns - Surprise excellent performance
+
 **Biggest Surprises**:
+- MagicPatterns performed excellently (both variants)
+- Google AI Studio delivered quietly solid implementation
+- Claude & Gemini (top chat models) struggled with external APIs
+
 **Disappointments**:
+- Claude Artifacts couldn't handle external library loading
+- Gemini similar issues to Claude
+- V0.dev needed iteration despite reputation
+
+**Key Learning**: Top chat models ≠ best code generation platforms for web artifacts
 
 ---
 
@@ -248,38 +393,40 @@ Track which AI platforms excel at different types of cartographic tasks across t
 *To be completed at end of challenge (Dec 1)*
 
 ### Overall Champion
-🏆 **TBD**
+🏆 **TBD** (Currently: ChatGPT Canvas leading)
 
 ### Category Winners
-- **Speed**: TBD
-- **Quality**: TBD
-- **Versatility**: TBD
-- **Data Handling**: TBD
-- **Design**: TBD
-- **3D/Advanced**: TBD
+- **Speed**: Bolt.new / Lovable / MagicPatterns (tie at ~5 min)
+- **Quality**: ChatGPT Canvas
+- **Versatility**: TBD (need more days)
+- **Data Handling**: Bolt.new
+- **Design**: ChatGPT Canvas
+- **3D/Advanced**: TBD (not tested yet)
 
 ### Most Improved
 *Platform that got better over time*: TBD
 
 ### Biggest Surprise
-*Unexpectedly good/bad*: TBD
+**MagicPatterns** - Exceeded expectations with both variants working perfectly
 
 ---
 
 ## Recommendations for Future Projects
 
 **If you need...**
-- **Quick prototypes**: [TBD]
-- **Production-ready**: [TBD]
-- **Beautiful design**: [TBD]
-- **Complex data**: [TBD]
-- **3D visualization**: [TBD]
-- **Learning/experimentation**: [TBD]
+- **Quick prototypes**: Bolt.new, Lovable, or MagicPatterns (~5 min)
+- **Production-ready**: ChatGPT Canvas (best polish)
+- **Beautiful design**: ChatGPT Canvas, Lovable
+- **Complex data**: Bolt.new (excellent stats/analytics)
+- **3D visualization**: TBD
+- **Learning/experimentation**: Multiple platforms (this project!)
+
+**Avoid for external APIs**: Claude Artifacts, Gemini Artifacts
 
 ---
 
-**Last Updated**: November 1, 2025
-**Days Completed**: 0/30
-**Platforms Tested**: 0
-**Total Implementations**: 0
+**Last Updated**: November 2, 2025
+**Days Completed**: 1/30
+**Platforms Tested**: 9 unique platforms (11 implementations including variants)
+**Total Implementations**: 9
 

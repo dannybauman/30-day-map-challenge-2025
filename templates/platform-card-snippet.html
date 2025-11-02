@@ -1,0 +1,35 @@
+<!-- Platform Card Template -->
+<div class="col-md-6 platform-card">
+    <div class="card h-100">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <strong>{{PLATFORM_NAME}}</strong>
+            <span class="badge bg-{{STATUS_COLOR}} badge-custom">{{STATUS}}</span>
+        </div>
+        <div class="card-body">
+            <!-- Screenshots (desktop & mobile side by side) -->
+            <div class="row g-3 mb-3">
+                <div class="col-7">
+                    <img src="{{PLATFORM_FOLDER}}/screenshot.png" alt="{{PLATFORM_NAME}} desktop" class="img-fluid screenshot-desktop" onerror="this.style.display='none'">
+                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                </div>
+                <div class="col-5">
+                    <img src="{{PLATFORM_FOLDER}}/screenshot-mobile.png" alt="{{PLATFORM_NAME}} mobile" class="img-fluid screenshot-mobile" onerror="this.style.display='none'">
+                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <p><strong>Time:</strong> {{TIME}}</p>
+            <p><strong>Quality:</strong> {{RATING}}</p>
+            <p><strong>Responsive:</strong> {{RESPONSIVE_RATING}}</p>
+            <p class="mb-2">{{NOTES}}</p>
+
+            <!-- Links -->
+            <div class="d-flex gap-2">
+                <a href="{{LIVE_DEMO_URL}}" class="btn btn-sm btn-primary" target="_blank">Live Demo</a>
+                <a href="{{PLATFORM_FOLDER}}/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+

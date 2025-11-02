@@ -122,6 +122,27 @@ This project tackles the **#30DayMapChallenge** using AI as both creative partne
 
 ---
 
+## Visual Showcase Pages 🆕
+
+Each day includes a simple HTML page (`index.html`) for easy browsing and sharing:
+
+**What's included:**
+- Quick stats and platform comparison
+- Ideation concepts from each AI
+- Platform results with live demo links
+- Key insights and lessons learned
+- Editorial thoughts
+
+**How to use:**
+- Template: `templates/day-showcase-template.html`
+- Takes ~10-15 minutes to fill in
+- No complex setup - just HTML/Bootstrap
+- Makes results easy to share on social media
+
+**View Day 1**: [maps/01-points/index.html](maps/01-points/index.html)
+
+---
+
 ## Streamlined Daily Workflow
 
 ### Actual Minute-by-Minute
@@ -162,11 +183,15 @@ Paste prompt in each → Click generate → Move to next
 - Save screenshots with consistent names
 - Note which worked/failed in quick list
 
-**0:55-1:00** - Rapid Documentation
+**0:55-1:20** - Rapid Documentation
 - Create main README from template
 - Fill in platform results (just names + status)
 - One-line update to DAILY-LOG.md
+- **Optional**: Create `index.html` showcase (10-15 min)
 - Git commit with message: "Day X: [Theme] - [X] platforms"
+
+**Speed Mode** (skip HTML): 60 min total
+**Full Mode** (with HTML showcase): 80 min total
 
 ---
 
