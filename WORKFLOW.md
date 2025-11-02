@@ -2,7 +2,7 @@
 
 **Updated**: Post-Day 1 actual workflow
 
-This document describes the refined process after completing Day 1.
+Here's my refined process after completing Day 1.
 
 ---
 

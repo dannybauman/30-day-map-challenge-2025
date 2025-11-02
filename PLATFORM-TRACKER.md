@@ -1,6 +1,6 @@
 # Platform Performance Tracker
 
-Track which AI platforms excel at different types of cartographic tasks across the 30-day challenge.
+Tracking which AI platforms excel at different types of cartographic tasks across the 30-day challenge.
 
 ---
 
