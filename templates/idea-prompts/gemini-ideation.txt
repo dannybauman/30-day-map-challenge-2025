@@ -1,0 +1,30 @@
+GEMINI IDEATION PROMPT TEMPLATE
+================================
+
+#30DayMapChallenge Theme: [THEME NAME]
+
+Theme Details: [PASTE DESCRIPTION]
+
+I need 5 diverse map concepts for this theme. Mix practical and creative approaches.
+
+For each concept provide:
+1. Title and brief description
+2. Primary data source
+3. Suggested visualization approach
+4. Implementation difficulty
+5. Why this interpretation fits the theme
+
+Constraints:
+- Must be doable in approximately 60 minutes
+- Should leverage web technologies (JavaScript, HTML5, Canvas/SVG)
+- Data should be freely available or generatable
+- Goal is to create something visually interesting and shareable
+- Will be implemented by AI development platforms
+
+Please provide a mix of:
+- Safe, tried-and-true approaches (2)
+- Creative interpretations (2)
+- One wildcard idea (1)
+
+Rank by: creativity × feasibility
+

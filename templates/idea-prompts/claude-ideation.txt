@@ -1,0 +1,27 @@
+CLAUDE IDEATION PROMPT TEMPLATE
+================================
+
+Today's #30DayMapChallenge theme is: [THEME NAME]
+
+Theme description: [PASTE DESCRIPTION FROM THEMES.MD]
+
+Please give me 5 map concepts for this theme:
+- 3 creative/unusual approaches
+- 2 straightforward/classic approaches
+
+For each concept, include:
+1. What the map shows (1-2 sentences)
+2. Data source needed
+3. Difficulty level (Easy/Medium/Hard)
+4. Estimated implementation time
+5. One unique aspect that makes it interesting
+
+Consider:
+- What can be realistically built in ~1 hour across multiple AI platforms
+- Visual appeal and shareability
+- Data availability (prefer free, accessible sources)
+- Technical feasibility for web-based visualization
+- Creativity within constraints
+
+Format your response as a numbered list for easy scanning.
+

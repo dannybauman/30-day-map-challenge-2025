@@ -1,0 +1,78 @@
+IMPLEMENTATION PROMPT TEMPLATE
+==============================
+(Customize sections marked with [BRACKETS] before pasting to platforms)
+
+---
+
+PROJECT: #30DayMapChallenge 2025 - Day [X]: [THEME NAME]
+
+CONCEPT:
+[Paste your chosen concept here - 2-3 sentences describing what the map will show]
+
+REQUIREMENTS:
+
+Visual:
+- Interactive web-based map
+- Modern, clean design
+- Responsive layout (works on mobile and desktop)
+- [Add any specific visual requirements for this theme]
+
+Data:
+- Data source: [Specify: embedded JSON, API call, or user-provided]
+- [If embedded data, describe the structure]
+- [If API, specify endpoint and parameters]
+
+Functionality:
+- [List key interactive features, e.g., "zoom/pan", "hover tooltips", "filter controls"]
+- [Any animations or transitions?]
+- [User controls needed?]
+
+Technical:
+- Single HTML file preferred (unless platform requires different structure)
+- Use modern JavaScript (ES6+)
+- Mapping library: [Leaflet / Mapbox GL / D3.js / Canvas / Other - specify or say "your choice"]
+- No external dependencies if possible (use CDN for libraries)
+
+SPECIFIC TO THIS THEME:
+[Add any theme-specific requirements, e.g.:]
+- Day 1 (Points): Focus on interesting symbolization and density visualization
+- Day 2 (Lines): Emphasize direction, flow, or hierarchy
+- Day 11 (Minimal): Use maximum 3 colors, minimal labels
+- Day 13 (10-minute): Prioritize speed over polish
+- [etc.]
+
+SAMPLE DATA STRUCTURE (if applicable):
+[Provide example data format, e.g.:]
+```json
+[
+  {
+    "name": "Location 1",
+    "lat": 40.7128,
+    "lon": -74.0060,
+    "value": 100,
+    "category": "Type A"
+  }
+]
+```
+
+DELIVERABLES:
+- Fully functional interactive map
+- Clear title and attribution
+- Legend/key if needed
+- Brief description or instructions for users
+- Clean, commented code
+
+DESIGN INSPIRATION:
+[Optional: describe visual style, e.g., "minimalist", "vibrant colors", "dark mode", "retro"]
+
+---
+
+IMPLEMENTATION NOTES:
+- Make it visually striking - this will be shared on social media
+- Prioritize working functionality over perfection
+- Include data source attribution
+- Add your creative interpretation of the theme
+- Test that it's actually interactive and responsive
+
+Ready? Create this map!
+
