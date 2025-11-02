@@ -33,7 +33,7 @@ An interactive globe or flat map displaying all earthquakes from the past 30 day
 
 ## Implementation Difficulty
 
-**Easy** - Perfect for Day 1 multi-platform testing
+**Easy** - Good for Day 1 multi-platform testing
 
 ## Testing Criteria
 

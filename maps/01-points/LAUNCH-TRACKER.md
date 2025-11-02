@@ -32,7 +32,7 @@
 | V0.dev | ⚠️ Partial | ~10 min | Had one error initially, fixed with 1 click. Points show but no basemap, layout issues | ✅ | ✅ |
 | Google AI Studio | ✅ Success | ~5 min | Works! Clean minimal UI, all features present | ✅ | ✅ |
 | Lovable | ✅ Success | ~5 min | Works great! Very similar to Bolt.new, clean Tailwind design | ✅ | ✅ |
-| MagicPatterns (Tailwind) | ✅ Success | ~5 min | Works perfectly! Similar to Lovable/Bolt designs | ✅ | ✅ |
+| MagicPatterns (Tailwind) | ✅ Success | ~5 min | Works well! Similar to Lovable/Bolt designs | ✅ | ✅ |
 | MagicPatterns (Chakra) | ✅ Success | ~5 min | Works! Same as Tailwind version but Chakra UI | ✅ | ✅ |
 | Firebase Studio | ✅ Success | ~15 min | Works after API key setup! Required Gemini + Google Maps keys. Full VS Code editor to fix Maps key. Google Maps basemap (bland). | ✅ | ✅ |
 | Base44 | ✅ Success | ~5 min | Works! Gorgeous dark theme, best stats dashboard. Avg Depth bug (0.0km). Tooltips not as good as top 3. | ✅ | ✅ |
@@ -68,10 +68,10 @@
 **Partial Success:** 3 (27%)
 **Failed:** 0 (0%)
 
-**Top 3 (Three-Way Tie):**
-- **ChatGPT Canvas** - Best UI polish, excellent permission model, great tooltips
-- **Bolt.new** - Best data handling, excellent stats display, great tooltips
-- **Lovable** - Fast, clean, excellent tooltips
+**Top 3 (Ranked by Overall Performance):**
+- **#1 - Lovable** - Best mobile experience, excellent responsive design, strong tooltips - best overall
+- **#2 - ChatGPT Canvas** - Best desktop UI polish, excellent permission model, great tooltips (mobile has issues)
+- **#3 - Bolt.new** - Best data handling, excellent stats display, great tooltips (mobile space issues)
 
 **Strong Contenders:**
 - **Base44** - Best stats dashboard, top-tier visual design (dark theme winner)

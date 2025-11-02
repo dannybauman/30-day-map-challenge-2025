@@ -33,9 +33,9 @@
 - Requires Google account to view shares
 
 ### Interesting Contrast
-**Gemini Artifacts** (chat-based artifacts) struggled with the same issues as Claude Artifacts, but **Google AI Studio Apps** (dedicated app builder) worked perfectly with identical prompt. This shows the platform matters more than the underlying model.
+**Gemini Artifacts** (chat-based artifacts) struggled with the same issues as Claude Artifacts, but **Google AI Studio Apps** (dedicated app builder) worked well with identical prompt. This shows the platform matters more than the underlying model.
 
-### Rating: ⭐⭐ (2/5)
+### Rating: **D** (Below Average)
 
 **Verdict**: Gemini Artifacts shares the same fundamental limitations as Claude Artifacts - restrictive sandboxes that break external API integrations. However, Google AI Studio Apps (using the same Gemini model) succeeded where Artifacts failed.
 

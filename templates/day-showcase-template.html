@@ -23,6 +23,14 @@
         .status-good { background: linear-gradient(135deg, #0dcaf0 0%, #20c997 100%); }
         .status-partial { background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); }
         .status-failed { background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%); }
+
+        /* Rating Tier System */
+        .rating-s { background-color: #FFD700; color: #000; font-weight: bold; padding: 4px 8px; border-radius: 4px; }
+        .rating-a { background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-b { background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-c { background-color: #fd7e14; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-d { background-color: #ff4500; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-f { background-color: #dc3545; color: white; padding: 4px 8px; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -75,7 +83,7 @@
 
         <!-- Ideation Phase -->
         <section class="mb-5">
-            <h2 class="mb-4">💡 Ideation Phase</h2>
+            <h2 class="mb-4">Ideation Phase</h2>
             <p>Asked 3 AI models for map concepts. Here's what they suggested:</p>
 
             <div class="row">
@@ -114,7 +122,7 @@
 
         <!-- Chosen Concept -->
         <section class="mb-5">
-            <h2 class="mb-4">🎯 Chosen Concept</h2>
+            <h2 class="mb-4">Chosen Concept</h2>
             <div class="card border-primary">
                 <div class="card-body">
                     <h4>{{CONCEPT_TITLE}}</h4>
@@ -127,7 +135,7 @@
 
         <!-- Implementation Prompt -->
         <section class="mb-5">
-            <h2 class="mb-4">📋 Implementation Prompt</h2>
+            <h2 class="mb-4">Implementation Prompt</h2>
             <div class="card">
                 <div class="card-body">
                     <p><small>Used the same prompt across all platforms:</small></p>
@@ -139,7 +147,7 @@
 
         <!-- Platform Results -->
         <section class="mb-5">
-            <h2 class="mb-4">🤖 Platform Results</h2>
+            <h2 class="mb-4">Platform Results</h2>
 
             <!-- Winners -->
             <h3 class="mb-3">🏆 Top Performers</h3>
@@ -157,7 +165,7 @@
 
         <!-- Key Insights -->
         <section class="mb-5">
-            <h2 class="mb-4">💡 Key Insights</h2>
+            <h2 class="mb-4">Key Insights</h2>
 
             <div class="insight-box">
                 <h5>✅ What Worked</h5>
@@ -190,7 +198,7 @@
 
         <!-- Editorial -->
         <section class="mb-5">
-            <h2 class="mb-4">✍️ Editorial</h2>
+            <h2 class="mb-4">Editorial</h2>
             <div class="card">
                 <div class="card-body">
                     {{EDITORIAL}}

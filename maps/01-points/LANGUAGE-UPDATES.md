@@ -14,7 +14,7 @@ Toned down overly excited, AI-sounding language throughout Day 1 documentation t
 - ~~"killer feature"~~ → "notable feature"
 - ~~"brilliantly"~~ → "well"
 - ~~"exceeded expectations"~~ → "performed well", "solid performance"
-- ~~"perfect"~~ / ~~"perfectly"~~ → "worked"
+- ~~"perfect"~~ / ~~"perfectly"~~ → "worked", "well", "accurate" (NEVER use perfect - nothing is perfect)
 
 ### 2. Reduced Symbol/Parenthesis Formatting
 
@@ -103,6 +103,7 @@ Toned down overly excited, AI-sounding language throughout Day 1 documentation t
 - ❌ "gorgeous", "beautiful" (too subjective/dramatic)
 - ❌ "killer feature" (cringey tech bro speak)
 - ❌ "brilliantly", "perfectly" (trying too hard)
+- ❌ "perfect" / "perfect" (NEVER - nothing is perfect, don't exaggerate or try to live up to this)
 - ❌ "exceeded expectations" (AI-sounding)
 - ❌ Multiple exclamation marks (!!)
 - ❌ Excessive parenthetical asides
@@ -113,6 +114,7 @@ Toned down overly excited, AI-sounding language throughout Day 1 documentation t
 3. **Avoid hyperbole**: If everything is excellent, nothing is
 4. **Sound human**: Write like you're telling a colleague, not marketing
 5. **One adjective max**: "clean dark theme" not "gorgeous top-tier stunning dark theme"
+6. **Never say perfect**: Nothing is perfect. Use "worked well", "accurate", "clean execution" instead. Don't exaggerate or try to live up to perfection.
 
 ## 🔍 Why This Matters
 

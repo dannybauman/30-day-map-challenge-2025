@@ -16,36 +16,39 @@
 - ⚠️ **3 partial successes** (27%)
 - ❌ **0 complete failures** (0%)
 
-**The Winners**: Three-way tie - ChatGPT Canvas, Bolt.new, Lovable 🏆
+**The Winners**: Lovable #1 (best mobile + desktop balance), ChatGPT Canvas #2 (best desktop UI), Bolt.new #3 (best data handling) 🏆
 
 **The Surprises**: MagicPatterns, Base44, and Firebase Studio all performed well
 
-**The Learning**: Top chat models ≠ best code generation platforms
+**The Learning**: One-shot prompting can generate working, interactive maps in ~5 minutes - good for rapid prototyping
 
 ---
 
 ## 🏆 Platform Rankings
 
-### 🥇 Top 3 (Three-Way Tie)
+### 🥇 Top 3 (Ranked by Overall Performance)
 
-**ChatGPT Canvas (GPT-5 Thinking)**
-**Why**: Best overall polish, good permission model, strong tooltips
+**🥇 #1 - Lovable**
+**Why**: Best mobile experience, excellent responsive design, strong tooltips - best overall balance
 - Time: ~5 min
-- Quality: ⭐⭐⭐⭐⭐
+- Quality: **A**
+- **Mobile**: Excellent responsive design
+- [Live Demo](https://quake-viz-com.lovable.app)
+
+**🥈 #2 - ChatGPT Canvas (GPT-5 Thinking)**
+**Why**: Best desktop UI polish, good permission model, strong tooltips
+- Time: ~5 min
+- Quality: **A**
+- **Mobile**: OK but imbalanced header and overlapping elements
 - [Live Demo](https://chatgpt.com/canvas/shared/6906d4f356ec81918cddaa043840c0f8)
 
-**Bolt.new**
+**🥉 #3 - Bolt.new**
 **Why**: Best data handling, strong stats display, robust implementation
 - Time: ~5 min
-- Quality: ⭐⭐⭐⭐⭐
+- Quality: **A**
 - Shows 7,734 earthquakes with max mag 7.6, avg depth 21km
+- **Mobile**: Legend takes up half the screen - space usage issues
 - [Live Demo](https://global-earthquakes-l-5bh2.bolt.host)
-
-**Lovable**
-**Why**: Fast, clean, good tooltips - similar quality to Bolt and ChatGPT
-- Time: ~5 min
-- Quality: ⭐⭐⭐⭐⭐
-- [Live Demo](https://quake-viz-com.lovable.app)
 
 ### Strong Contenders
 
@@ -113,21 +116,17 @@
 2. **Firebase Studio** - Most full-featured code editor (VS Code in browser)
 3. **MagicPatterns** - Unknown platform performed well (2 variants, both worked)
 4. **Google AI Studio** - Quietly delivered solid implementation
-5. **Three-way tie at top** - No clear single winner
+5. **Ranked top 3** - Lovable #1 (mobile winner), ChatGPT #2 (desktop winner), Bolt #3 (data winner)
 
 ### The Big Learning
 
-> **Top chat model ≠ best code generation platform**
+> **One-shot prompting can generate working, interactive maps in ~5 minutes**
 
-Claude and Gemini are strong for:
-- Ideation
-- Code discussion
-- Architecture planning
-- Problem solving
+The parallel testing revealed something exciting: **most platforms delivered functional, interactive maps from a single prompt**. Bolt, Lovable, MagicPatterns, and Base44 all generated working implementations in ~5 minutes with zero iteration. This isn't just fast—it's transformative for rapid prototyping.
 
-But their artifact platforms failed where dedicated dev tools like Bolt, Lovable, and ChatGPT Canvas succeeded.
+**The reality:** These AI-generated maps are good starting points. They're inspiring, they work, and they demonstrate the core concept. But the next step—making them truly production-ready, adding custom features, refining UX, handling edge cases—that's where human engineering takes over. And that's the cool part: AI gives you the foundation in minutes, freeing you to focus on what makes your project unique and robust.
 
-**Conclusion**: Use the best tool for each job. Claude for thinking, ChatGPT Canvas/Bolt for building.
+**Inspiration for daily engineering:** Use one-shot AI generation as your rapid prototyping superpower. Get ideas working fast, then iterate and refine with intention.
 
 ---
 
@@ -144,7 +143,7 @@ But their artifact platforms failed where dedicated dev tools like Bolt, Lovable
 | Average Time (Partial) | ~13 min |
 | Total Time Invested | ~2 hrs |
 | Fastest Platforms | Bolt/Lovable/MagicPatterns/Base44 (tie at 5 min) |
-| Top 3 (Tie) | ChatGPT Canvas, Bolt.new, Lovable |
+| Top 3 (Ranked) | Lovable (#1), ChatGPT Canvas (#2), Bolt.new (#3) |
 | Best Stats Dashboard | Base44 |
 | Best Data Handling | Bolt.new |
 | Most Full-Featured Editor | Firebase Studio |

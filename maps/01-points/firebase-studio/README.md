@@ -60,14 +60,14 @@ This is a **major advantage** - you get both AI code gen AND full IDE access.
 
 ## Rating
 
-**Overall**: ⭐⭐⭐⭐ (4/5)
+**Overall**: **B** (Good)
 
 **Breakdown**:
-- **Code Quality**: ⭐⭐⭐⭐⭐ - Clean, works perfectly after setup
-- **Initial Experience**: ⭐⭐⭐ - API key confusion hurts first impression
-- **API Key UX**: ⭐⭐⭐⭐ - Gemini key prompt is great, Maps key missing is bad
-- **Code Editor**: ⭐⭐⭐⭐⭐ - Full VS Code in browser is incredible
-- **Design**: ⭐⭐⭐ - Functional but bland Google Maps default styling
+- **Code Quality**: **B** - Clean, works well after setup
+- **Initial Experience**: **B** - API key confusion hurts first impression
+- **API Key UX**: **B** - Gemini key prompt is great, Maps key missing is bad
+- **Code Editor**: **B** - Full VS Code in browser is incredible but setup complexity
+- **Design**: **B** - Functional but bland Google Maps default styling
 - **Responsive**: ✅ Excellent - works great on mobile
 
 ## Key Takeaways

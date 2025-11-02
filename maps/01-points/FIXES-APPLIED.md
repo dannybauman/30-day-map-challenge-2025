@@ -120,7 +120,7 @@ maps/01-points/
 **Fix**:
 - Captured mobile screenshots (393x852 - iPhone 15 Pro size)
 - Saved 4 mobile screenshots alongside desktop versions:
-  - Bolt.new ✅ - Sidebar stacks perfectly
+  - Bolt.new ✅ - Sidebar stacks well
   - Lovable ✅ - Clean mobile layout
   - MagicPatterns ✅ - Legend overlays nicely
   - V0.dev ✅ - Legend stacks properly

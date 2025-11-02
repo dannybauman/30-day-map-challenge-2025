@@ -11,7 +11,7 @@ All 4 platforms that provided working implementations were tested for mobile res
 
 ## Platform Results
 
-### 🥇 Bolt.new - ⭐⭐⭐⭐⭐ Excellent
+### 🥇 Bolt.new - **A** (Excellent)
 **Desktop**: Full sidebar with legend, stats, and description
 **Mobile**: Sidebar stacks vertically above map, stats bar moves to bottom overlay
 
@@ -25,7 +25,7 @@ All 4 platforms that provided working implementations were tested for mobile res
 
 ---
 
-### 🥈 Lovable - ⭐⭐⭐⭐⭐ Great
+### 🥈 Lovable - **A** (Great)
 **Desktop**: Header + map + sidebar legend
 **Mobile**: Single column with collapsible header, legend stays below map
 
@@ -39,7 +39,7 @@ All 4 platforms that provided working implementations were tested for mobile res
 
 ---
 
-### 🥉 MagicPatterns - ⭐⭐⭐⭐⭐ Excellent
+### 🥉 MagicPatterns - **B** (Good)
 **Desktop**: Top header + full-width map + bottom legend grid
 **Mobile**: Legend becomes floating overlay, total count card in corner
 
@@ -53,7 +53,7 @@ All 4 platforms that provided working implementations were tested for mobile res
 
 ---
 
-### ⚠️ V0.dev - ⭐⭐⭐⭐ Good
+### ⚠️ V0.dev - **B** (Good)
 **Desktop**: Header + broken basemap + legend grid below
 **Mobile**: Header stacks, legend becomes single column
 
@@ -97,14 +97,16 @@ Tailwind's mobile-first approach means responsive design comes "for free" when A
 
 | Platform | Desktop | Mobile | Responsive | Notes |
 |----------|---------|--------|------------|-------|
-| **Bolt.new** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ✅ Excellent | Stats bar overlay is brilliant |
-| **Lovable** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ✅ Great | Simple, clean, functional |
-| **MagicPatterns** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ✅ Excellent | Floating legend is clever |
-| **V0.dev** | ⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ Good | Broken basemap, but layout works |
-| ChatGPT Canvas | ⭐⭐⭐⭐⭐ | (not tested) | ⭐ Unknown | Requires login |
-| Google AI Studio | ⭐⭐⭐⭐ | (not tested) | ⭐ Unknown | Requires login |
-| Claude Artifacts | ❌ Failed | — | — | Never loaded |
-| Gemini | ❌ Failed | — | — | Never loaded |
+| **Bolt.new** | **A** | **A** | ✅ Excellent | Stats bar overlay is brilliant |
+| **Lovable** | **A** | **A** | ✅ Great | Simple, clean, functional |
+| **MagicPatterns** | **B** | **B** | ✅ Good | Floating legend is clever |
+| **V0.dev** | **B** | **A** | ✅ Good | Broken basemap, but layout works |
+| ChatGPT Canvas | **A** | (not tested) | ⚠️ Unknown | Requires login |
+| Google AI Studio | **B** | (not tested) | ⚠️ Unknown | Requires login |
+| Base44 | **B** | **B** | ✅ Good | Minor bugs, good visuals |
+| Firebase Studio | **B** | **B** | ✅ Good | API key complexity |
+| Claude Artifacts | **F** | — | — | Never loaded |
+| Gemini | **F** | — | — | Never loaded |
 
 ---
 

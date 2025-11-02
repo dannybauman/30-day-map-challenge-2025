@@ -38,7 +38,7 @@
 - Clear visualization requirements (size = magnitude, color = depth)
 - Good point density for testing platform performance
 - Visually compelling - reveals natural geographic patterns
-- Perfect for Day 1 multi-platform comparison
+- Good for Day 1 multi-platform comparison
 
 ---
 
@@ -50,24 +50,24 @@
 
 ---
 
-## 🤖 Platform Results
+## Platform Results
 
 ### ✅ Successful Implementations (8/11 - 73%)
 
-1. **ChatGPT Canvas (GPT-5 Thinking)** 🏆 Top Tier
-   - Live: https://chatgpt.com/canvas/shared/6906d4f356ec81918cddaa043840c0f8
-   - Time: ~5 min
-   - Notes: Good UI polish, smooth interactions, asks permission before external data fetch. Strong tooltips.
-
-2. **Bolt.new** 🏆 Top Tier
-   - Live: https://global-earthquakes-l-5bh2.bolt.host
-   - Time: ~5 min
-   - Notes: Best data handling. Shows actual stats (7,734 earthquakes, max mag 7.6, avg depth 21km). Strong tooltips, robust implementation.
-
-3. **Lovable** 🏆 Top Tier
+1. **🥇 Lovable** - Best overall (mobile + desktop balance)
    - Live: https://quake-viz-com.lovable.app
    - Time: ~5 min
-   - Notes: Clean Tailwind design, good tooltips. Similar quality to Bolt and ChatGPT. One-shot success.
+   - Notes: Best mobile experience, excellent responsive design, strong tooltips. Fast, clean, one-shot success.
+
+2. **🥈 ChatGPT Canvas (GPT-5 Thinking)** - Best desktop UI
+   - Live: https://chatgpt.com/canvas/shared/6906d4f356ec81918cddaa043840c0f8
+   - Time: ~5 min
+   - Notes: Best UI polish, smooth interactions, asks permission before external data fetch. Strong tooltips. Mobile has overlapping elements.
+
+3. **🥉 Bolt.new** - Best data handling
+   - Live: https://global-earthquakes-l-5bh2.bolt.host
+   - Time: ~5 min
+   - Notes: Best data handling. Shows actual stats (7,734 earthquakes, max mag 7.6, avg depth 21km). Strong tooltips, robust implementation. Mobile legend takes up too much space.
 
 4. **Google AI Studio Apps**
    - Live: https://ai.studio/apps/drive/18cX2TQXmcUCY8EPeOp4qAUp9Wr_W5F-a
@@ -77,7 +77,7 @@
 5. **MagicPatterns (Tailwind)**
    - Live: https://project-playful-eagle-286.magicpatterns.app
    - Time: ~5 min
-   - Notes: Works perfectly! Professional Tailwind aesthetic.
+   - Notes: Works well! Professional Tailwind aesthetic.
 
 6. **MagicPatterns (Chakra UI)**
    - Live: (see chat link)
@@ -123,11 +123,11 @@ None! All platforms produced at least a partial implementation.
 
 ## 📊 Platform Rankings (Day 1)
 
-### 🏆 Top 3 (Tie - Each Best at Different Things)
+### 🏆 Top 3 (Ranked by Overall Performance)
 
-🥇 **ChatGPT Canvas** - Best overall UI polish, good permission model
-🥇 **Bolt.new** - Best data handling & stats display
-🥇 **Lovable** - Fast, clean, strong tooltips
+🥇 **#1 - Lovable** - Best mobile experience, excellent responsive design, strong tooltips - best overall balance
+🥈 **#2 - ChatGPT Canvas** - Best desktop UI polish, good permission model (mobile has overlapping elements)
+🥉 **#3 - Bolt.new** - Best data handling & stats display (mobile legend takes up too much space)
 
 **Strong Contenders:**
 - Base44 - Best stats dashboard, strong visual design
@@ -158,7 +158,17 @@ None! All platforms produced at least a partial implementation.
 ### Surprises
 - **MagicPatterns** performed well - tested 2 variants, both worked
 - **Google AI Studio** quietly delivered a solid implementation without fanfare
-- **Top chat models ≠ best code gen platforms** - Claude/Gemini chat are strong for ideation, but their code artifacts struggled
+- **One-shot AI generation works** - Most platforms delivered functional maps from a single prompt in ~5 minutes, good for rapid prototyping
+
+### The Big Learning
+
+> **One-shot prompting can generate working, interactive maps in ~5 minutes**
+
+The parallel testing revealed something exciting: **most platforms delivered functional, interactive maps from a single prompt**. Bolt, Lovable, MagicPatterns, and Base44 all generated working implementations in ~5 minutes with zero iteration. This isn't just fast—it's transformative for rapid prototyping.
+
+**The reality:** These AI-generated maps are good starting points. They're inspiring, they work, and they demonstrate the core concept. But the next step—making them truly production-ready, adding custom features, refining UX, handling edge cases—that's where human engineering takes over. And that's the cool part: AI gives you the foundation in minutes, freeing you to focus on what makes your project unique and robust.
+
+**Inspiration for daily engineering:** Use one-shot AI generation as your rapid prototyping superpower. Get ideas working fast, then iterate and refine with intention.
 
 ### For Next Time
 - Consider using embedded data for platforms that struggle with external APIs

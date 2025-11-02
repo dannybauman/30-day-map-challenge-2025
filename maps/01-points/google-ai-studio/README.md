@@ -33,7 +33,7 @@
 - Minimal but effective UI
 - Google ecosystem integration
 
-### Rating: 🌟🌟🌟🌟 (4/5)
+### Rating: **B** (Good)
 
 **Verdict**: Google AI Studio quietly delivered a solid, working implementation. While it lacks the visual pizzazz of ChatGPT Canvas or the data stats of Bolt.new, it simply works. A reliable choice that shouldn't be overlooked.
 
@@ -50,7 +50,7 @@
 - Maximum aesthetic appeal
 
 ### Surprise Factor
-Google AI Studio flew under the radar but delivered. While Gemini Artifacts (the chat version) struggled with the same issues as Claude, the dedicated AI Studio Apps platform worked perfectly. Don't sleep on this option!
+Google AI Studio flew under the radar but delivered. While Gemini Artifacts (the chat version) struggled with the same issues as Claude, the dedicated AI Studio Apps platform worked well. Don't sleep on this option!
 
 ---
 

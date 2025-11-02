@@ -44,16 +44,16 @@ The stats cards at the top (Total: 7,729, Max Mag: 7.6, Avg Depth: 0.0 km, Updat
 
 ## Rating
 
-**Overall**: ⭐⭐⭐⭐ (4.5/5)
+**Overall**: **B** (Good)
 
 **Breakdown**:
-- **Code Quality**: ⭐⭐⭐⭐⭐ - Clean, professional
-- **Design**: ⭐⭐⭐⭐⭐ - Top tier with Bolt and ChatGPT
-- **Data Accuracy**: ⭐⭐⭐⭐ - One bug (avg depth), rest perfect
-- **Tooltips**: ⭐⭐⭐ - Not as polished as Lovable/Bolt/ChatGPT
-- **UX**: ⭐⭐⭐⭐⭐ - Stats cards, legend, updates all great
+- **Code Quality**: **B** - Clean, professional
+- **Design**: **B** - Good visuals but tooltips not as polished
+- **Data Accuracy**: **B** - One bug (avg depth), rest accurate
+- **Tooltips**: **B** - Not as polished as Lovable/Bolt/ChatGPT
+- **UX**: **B** - Stats cards, legend, updates all great
 - **Responsive**: ✅ Excellent - mobile legend overlay works beautifully
-- **Speed**: ⭐⭐⭐⭐⭐ - One-shot success in 5 min
+- **Speed**: **A** - One-shot success in 5 min
 
 ## Key Takeaways
 
@@ -76,7 +76,7 @@ The stats cards at the top (Total: 7,729, Max Mag: 7.6, Avg Depth: 0.0 km, Updat
 - Professional presentations
 
 ### Avoid For
-- When every calculation must be perfect (check the math!)
+- When every calculation must be accurate (check the math!)
 - Light-themed requirements
 
 ## Comparison to Others
