@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Map outline/background -->
+  <rect x="10" y="10" width="80" height="80" rx="5" fill="#667eea" stroke="#764ba2" stroke-width="2"/>
+
+  <!-- Map marker/pin -->
+  <path d="M 50 25 L 45 35 L 50 40 L 55 35 Z" fill="#ffffff"/>
+  <circle cx="50" cy="30" r="3" fill="#667eea"/>
+
+  <!-- Decorative map lines (roads/rivers) -->
+  <line x1="20" y1="50" x2="35" y2="45" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+  <line x1="40" y1="55" x2="60" y2="60" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+  <line x1="65" y1="50" x2="80" y2="55" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+
+  <!-- Additional map features -->
+  <circle cx="30" cy="65" r="4" fill="#ffffff" opacity="0.7"/>
+  <circle cx="70" cy="70" r="4" fill="#ffffff" opacity="0.7"/>
+  <rect x="25" y="75" width="15" height="10" rx="2" fill="#ffffff" opacity="0.7"/>
+</svg>
