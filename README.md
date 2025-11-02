@@ -1,4 +1,4 @@
-# 30-Day Map Challenge 2025: AI-Powered Cartography Experiment
+# 30-Day Map Challenge 2025: AI-Powered Mapping Experiment
 
 ## Project Overview
 
@@ -238,7 +238,7 @@ Paste prompt in each → Click generate → Move to next
 🌟 **150+ implementations** documented
 🌟 **Platform ranking** by map type
 🌟 **Reusable prompt library** that others can use
-🌟 **"State of AI Cartography 2025" analysis post**
+🌟 **"State of AI Mapping 2025" analysis post**
 
 ### The Real Win
 📊 **Comparative Data**: Which platforms excel at geospatial work?
@@ -283,7 +283,7 @@ This is a **comparative research project** disguised as a mapping challenge:
 2. **Document**: What patterns emerge in success/failure across tools?
 3. **Share**: Create open-source examples others can learn from
 4. **Learn**: Build intuition for which AI tools excel where
-5. **Contribute**: 100+ map examples to the cartography community
+5. **Contribute**: 100+ map examples to the mapping community
 
 **The breakthrough insight**: With parallel processing, we can generate MORE comparative data in LESS time than traditional single-implementation approaches.
 
@@ -291,6 +291,6 @@ This is a **comparative research project** disguised as a mapping challenge:
 
 **Start Date**: November 1, 2025
 **Estimated Output**: 20-30 days × 5-10 platforms = **100-300 map implementations**
-**Value**: Complete AI cartography platform analysis and comparison
+**Value**: Complete AI mapping platform analysis and comparison
 
 *Let's turn one mapping challenge into an AI development platform comparison in geospatial visualization.* 🗺️🤖✨

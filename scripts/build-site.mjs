@@ -145,7 +145,7 @@ function renderIndexHtml(days) {
     <header class="hero mb-5">
         <div class="container">
             <h1 class="display-5">#30DayMapChallenge 2025</h1>
-            <p class="lead mb-0">AI-assisted cartography experiments, documented daily.</p>
+            <p class="lead mb-0">AI-assisted mapping experiments, documented daily.</p>
             <p class="mt-3 mb-0">Published days: ${dayCount} / 30</p>
         </div>
     </header>

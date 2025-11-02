@@ -25,7 +25,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 ## Best Platform By Map Type
 
-### Basic Cartography
+### Basic Mapping
 **Points, Lines, Polygons**
 - 🥇 ChatGPT Canvas, Bolt.new, Lovable (three-way tie)
   - **ChatGPT**: Best UI polish, good permission model, strong tooltips
