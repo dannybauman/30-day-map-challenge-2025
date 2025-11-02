@@ -160,27 +160,6 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 
 ---
 
-## Deployment & Hosting
-
-### Build the public site
-- Requires Node.js 18+ (no other dependencies).
-- Run `node scripts/build-site.mjs` to generate the deployable site in `docs/`.
-- The script copies each `maps/<day>` directory (with an `index.html`) into `docs/maps/`, publishes shared assets to `docs/site-assets/`, and emits a `days.json` manifest used by the day selector.
-- `docs/index.html` is rebuilt every run with an overview of published days; avoid editing files inside `docs/` by hand.
-- To temporarily make a specific day the homepage, set `DEFAULT_DAY=<day-slug>` before running the build (e.g., `DEFAULT_DAY=01-points node scripts/build-site.mjs`). Clear the variable to switch back to the overview grid.
-
-### Publish with GitHub Pages
-- In the repository settings, enable GitHub Pages using the `main` branch and the `/docs` folder.
-- Push the updated `docs/` directory whenever you add or edit a day page; GitHub Pages will deploy the latest build automatically.
-- The generated site uses relative paths, so it works at both `https://<user>.github.io/<repo>/` and local `file://` previews.
-
-### Adding a new day
-- Create the new HTML page at `maps/<day-slug>/index.html` (using `templates/day-showcase-template.html`).
-- Ensure the `<script>` tag at the end of the page has `data-day="<day-slug>"`, `data-manifest="../../days.json"`, and `data-base-path="../../"` so navigation works locally and in production.
-- Re-run `node scripts/build-site.mjs` after adding or updating any day so the manifest, docs build, and navigation stay in sync.
-
----
-
 ## Daily Workflow
 
 ### Step-by-Step Process
@@ -252,6 +231,27 @@ Paste prompt in each → Click generate → Move to next
 
 ---
 
+## Deployment & Hosting
+
+### Build the public site
+- Requires Node.js 18+ (no other dependencies).
+- Run `node scripts/build-site.mjs` to generate the deployable site in `docs/`.
+- The script copies each `maps/<day>` directory (with an `index.html`) into `docs/maps/`, publishes shared assets to `docs/site-assets/`, and emits a `days.json` manifest used by the day selector.
+- `docs/index.html` is rebuilt every run with an overview of published days; avoid editing files inside `docs/` by hand.
+- To temporarily make a specific day the homepage, set `DEFAULT_DAY=<day-slug>` before running the build (e.g., `DEFAULT_DAY=01-points node scripts/build-site.mjs`). Clear the variable to switch back to the overview grid.
+
+### Publish with GitHub Pages
+- In the repository settings, enable GitHub Pages using the `main` branch and the `/docs` folder.
+- Push the updated `docs/` directory whenever you add or edit a day page; GitHub Pages will deploy the latest build automatically.
+- The generated site uses relative paths, so it works at both `https://<user>.github.io/<repo>/` and local `file://` previews.
+
+### Adding a new day
+- Create the new HTML page at `maps/<day-slug>/index.html` (using `templates/day-showcase-template.html`).
+- Ensure the `<script>` tag at the end of the page has `data-day="<day-slug>"`, `data-manifest="../../days.json"`, and `data-base-path="../../"` so navigation works locally and in production.
+- Re-run `node scripts/build-site.mjs` after adding or updating any day so the manifest, docs build, and navigation stay in sync.
+
+---
+
 ## Code of Conduct Compliance
 
 Per the [official challenge](https://30daymapchallenge.com/):
@@ -289,7 +289,7 @@ This is a **comparative research project** disguised as a mapping challenge:
 4. **Learn**: Build intuition for which AI tools excel where
 5. **Contribute**: 100+ map examples to the mapping community
 
-**The breakthrough insight**: With parallel processing, we can generate MORE comparative data in LESS time than traditional single-implementation approaches.
+**The key insight**: With parallel processing, we can generate more comparative data in less time than traditional single-implementation approaches.
 
 ---
 

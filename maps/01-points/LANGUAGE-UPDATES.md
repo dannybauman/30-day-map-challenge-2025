@@ -88,6 +88,8 @@ Toned down overly excited, AI-sounding language throughout Day 1 documentation t
 | killer | 3 occurrences | 0 occurrences |
 | brilliantly | 2 occurrences | 0 occurrences |
 | exceeded expectations | 4 occurrences | 0 occurrences |
+| breakthrough | 7 occurrences | 0 occurrences |
+
 
 ## 🎯 Guidelines for Future Days
 
@@ -105,8 +107,10 @@ Toned down overly excited, AI-sounding language throughout Day 1 documentation t
 - ❌ "brilliantly", "perfectly" (trying too hard)
 - ❌ "perfect" / "perfect" (NEVER - nothing is perfect, don't exaggerate or try to live up to this)
 - ❌ "exceeded expectations" (AI-sounding)
+- ❌ "breakthrough" (too grandiose)
 - ❌ Multiple exclamation marks (!!)
 - ❌ Excessive parenthetical asides
+- ❌ ALL CAPS (be careful - use sparingly, only for emphasis when needed)
 
 ### Style Guidelines:
 1. **Be direct**: Say what happened, not how amazing it was
@@ -115,6 +119,8 @@ Toned down overly excited, AI-sounding language throughout Day 1 documentation t
 4. **Sound human**: Write like you're telling a colleague, not marketing
 5. **One adjective max**: "clean dark theme" not "gorgeous top-tier stunning dark theme"
 6. **Never say perfect**: Nothing is perfect. Use "worked well", "accurate", "clean execution" instead. Don't exaggerate or try to live up to perfection.
+7. **Avoid grandiose words**: "breakthrough" → "insight", "key finding", "what worked"
+8. **Use all caps sparingly**: Only when truly needed for emphasis, not for regular text
 
 ## 🔍 Why This Matters
 
