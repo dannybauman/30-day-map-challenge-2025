@@ -37,7 +37,7 @@
 #### ⚠️ V0.dev
 - **Launch Time:** [Launched]
 - **Status:** ⚠️ Partial Success (map not rendering)
-- **Notes:** UI works, data loads, tooltips work ("Northeast 43rd Ave Bearing: 72°"), but map area is BLACK. Console 404 error. Same rendering issue pattern as Day 1. Compass Rose legend (color squares, not circular). Nice loading modal.
+- **Notes:** UI works, data loads, tooltips work ("Northeast 43rd Ave Bearing: 72°"), but map area is totally black. Console 404 error. Same rendering issue pattern as Day 1. Compass Rose legend (color squares, not circular). Nice loading modal.
 - **Screenshot:** ✅ screenshot.png (shows black map), screenshot-mobile.png
 - **Mobile Check:** ✅ UI responsive but map still black
 - **Live URL:** https://v0-portland-street-map.vercel.app/

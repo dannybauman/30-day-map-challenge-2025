@@ -148,7 +148,7 @@ Never use `other-platforms/` or loose .md files.
 - Everything
 - Per-platform analysis
 - Statistical deep dive
-- Human commentary (why certain AI outputs were accepted or rejected)
+- Human commentary
 
 ---
 
