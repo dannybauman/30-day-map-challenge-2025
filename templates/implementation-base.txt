@@ -73,6 +73,6 @@ IMPLEMENTATION NOTES:
 - Include data source attribution
 - Add your creative interpretation of the theme
 - Test that it's actually interactive and responsive
+- Leave room for a final human QA pass (data sanity check + accessibility review) before shipping
 
 Ready? Create this map!
-

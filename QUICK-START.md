@@ -108,6 +108,11 @@ Focus on feasible, well-defined concepts with clear data sources.
 
 ---
 
+### Manual checkpoints during ideation
+- Note any personal context or constraints you add to the prompts (so you can document it later).
+- Flag datasets that need extra license review or human vetting before publishing.
+
+---
 #### Step 2: Review & Choose
 
 You now have **6 concepts** (2 from each LLM).
@@ -182,6 +187,11 @@ Why I chose it:
 
 5. **I'll take it from there** and help you prep for implementation!
 
+6. **Before sharing anything publicly**, run a human QA pass:
+   - Verify the dataset terms of use and attribution text.
+   - Spot-check a few entries from the API/CSV against the map output.
+   - Write a short “Human review” note capturing what you inspected or edited.
+
 ---
 
 ## 💡 Tips for Choosing
@@ -197,6 +207,13 @@ Why I chose it:
 - Requires data scraping or complex preprocessing
 - Too many moving parts for 1 hour
 - Boring to you
+
+---
+
+## ✅ Human-in-the-Loop Reminders
+- Every map must include your own judgement call about accuracy and storytelling—log it in the daily README.
+- When AI suggests styling or copy, read it carefully and adjust tone/details before publishing.
+- Keep track of any manual code edits (e.g., bug fixes, accessibility tweaks) so you can list them in the “Human review” section later.
 
 **Remember**: You'll be implementing this across 8-10 platforms today, so pick something that:
 - Has clear success criteria

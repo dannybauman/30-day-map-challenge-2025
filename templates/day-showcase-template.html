@@ -16,6 +16,20 @@
         .badge-custom { font-size: 0.9rem; }
         .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
+        .process-section .row { align-items: stretch; }
+        .process-card { background: #fff; border-radius: 12px; border-left: 4px solid #0d6efd; padding: 20px; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); position: relative; }
+        .process-card.ai { border-left-color: #6f42c1; }
+        .process-card .lane-label { position: absolute; top: -14px; left: 16px; background: #0d6efd; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .process-card.ai .lane-label { background: #6f42c1; }
+        .process-card h3, .process-card h4, .process-card h5 { margin-top: 12px; }
+        .process-card ul { padding-left: 18px; }
+        .process-connector { position: relative; padding-top: 20px; margin-bottom: 40px; }
+        .process-connector::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(180deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)); display: none; }
+        @media (min-width: 992px) {
+            .process-connector::after { display: block; }
+        }
+        .contribution-legend .badge { font-size: 0.8rem; }
+        .badge-ai { background: #6f42c1; }
 
         /* Color System for Platform Status */
         .status-winner { background: linear-gradient(135deg, #198754 0%, #20c997 100%); }
@@ -88,6 +102,111 @@
                 </div>
             </div>
         </div>
+
+        <!-- Process Timeline -->
+        <section class="mb-5 process-section">
+            <h2 class="mb-4">Process Timeline</h2>
+            <p class="text-muted">Left lane = human-led work. Right lane = AI-generated output. Every step is logged to show how the human/AI partnership unfolded.</p>
+            <div class="contribution-legend mb-4">
+                <span class="badge bg-primary me-2">Human</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Ideation Vetting</h4>
+                            {{HUMAN_IDEATION}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            {{AI_IDEATION}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Prompt Crafting</h4>
+                            {{HUMAN_PROMPT}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Prompt Drafts</h4>
+                            {{AI_PROMPT}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Launch & Supervision</h4>
+                            {{HUMAN_IMPLEMENTATION}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Generated Outputs</h4>
+                            {{AI_IMPLEMENTATION}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>QA & Edits</h4>
+                            {{HUMAN_QA}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>AI Fixes & Suggestions</h4>
+                            {{AI_QA}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Documentation & Storytelling</h4>
+                            {{HUMAN_DOCUMENTATION}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Supporting Assets</h4>
+                            {{AI_DOCUMENTATION}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Ideation Phase -->
         <section class="mb-5">

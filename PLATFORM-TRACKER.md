@@ -117,6 +117,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 **Best For**: Self-contained visualizations with embedded data, scenarios without external APIs
 **Avoid For**: External API integrations, CDN-dependent libraries
 **Note**: May work well in other scenarios - worth retrying on future days with embedded data
+**Human Oversight**: Captured the failure state and noted how the sandbox blocked external libraries for documentation.
 
 ---
 
@@ -134,6 +135,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 **Best For**: Production-quality implementations, external APIs, polished UIs
 **Avoid For**: Nothing yet - top performer
+**Human Oversight**: Approved the data-fetch prompt and logged the mobile overlap issue for follow-up.
 
 ---
 
@@ -152,6 +154,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 **Best For**: Data-heavy applications, robust implementations, detailed analytics
 **Avoid For**: Nothing major - solid all-around
+**Human Oversight**: Flagged the oversized mobile legend and left notes to revisit the layout later.
 
 ---
 
@@ -170,6 +173,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 **Best For**: UI-focused designs where iteration is acceptable
 **Avoid For**: One-shot requirements, complex mapping needs
+**Human Oversight**: Triggered the platform auto-fix and documented the missing basemap for manual coding later.
 
 ---
 
@@ -188,6 +192,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 **Best For**: Functional, minimal implementations; Google ecosystem projects
 **Avoid For**: Public sharing without Google account barriers
+**Human Oversight**: Noted the alignment quirks and bland default styling for a future polish pass.
 
 ---
 
@@ -205,6 +210,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 **Best For**: Fast, clean implementations; modern web apps
 **Avoid For**: Nothing yet - top tier performer
+**Human Oversight**: Captured desktop/mobile screenshots and jotted down legend wording to finesse later.
 
 ---
 
@@ -222,6 +228,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 **Best For**: Component-based designs; multiple UI library options
 **Avoid For**: When tooltip quality is critical
+**Human Oversight**: Compared the Tailwind vs. Chakra variants and kept the stronger option for documentation.
 
 ---
 
@@ -242,6 +249,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 **Best For**: Data dashboards, dark-themed projects, visual presentations, comprehensive stats
 **Avoid For**: When every calculation must be accurate (verify data!), when tooltip quality is critical
+**Human Oversight**: Noted the average-depth bug and added a reminder to clean up the dashboard copy later.
 
 ---
 
@@ -263,6 +271,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 **Best For**: Projects needing Firebase features, developers comfortable with code, production deployments, when full control matters
 **Avoid For**: Quick prototypes (API key friction), non-developers, beautiful default designs
+**Human Oversight**: Entered the required API keys and noted the need to improve the default styling and copy.
 
 ---
 
@@ -282,6 +291,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 **Best For**: Google ecosystem work with embedded data, scenarios where APIs aren't needed
 **Avoid For**: External API integrations (for now), public sharing
 **Note**: May work well in other scenarios - worth retrying on future days
+**Human Oversight**: Captured the failing requests and logged Gemini's sandbox limitation for future planning.
 
 ---
 
@@ -434,4 +444,3 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 **Days Completed**: 1/30
 **Platforms Tested**: 9 unique platforms (11 implementations including variants)
 **Total Implementations**: 9
-

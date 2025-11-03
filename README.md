@@ -192,7 +192,8 @@ Paste prompt in each → Click generate → Move to next
 
 **Step 4: Active Monitoring & Iteration**
 - Check as they generate results
-- If one fails early → note what went wrong
+- If one fails early, note what went wrong
+- Record any manual fixes (data cleaning, styling tweaks, bug patches) as you apply them
 - Screenshot everything as you go
 
 **Step 5: Collection & Organization**
@@ -205,6 +206,7 @@ Paste prompt in each → Click generate → Move to next
 - Create main README from template
 - Fill in platform results (names + status + insights)
 - Update DAILY-LOG.md
+- Capture a short “Human review” note that calls out what you verified or edited manually
 - Create `index.html` page for easy sharing
 
 ---
@@ -238,6 +240,7 @@ Per the [official challenge](https://30daymapchallenge.com/):
 - ✅ Transparent about AI usage and methodology
 - ✅ Focus on creativity, not just automation
 - ✅ **AI handles implementation, I handle curation and creative direction**
+- ✅ Every map includes a clearly documented human review pass before publishing
 
 **Philosophy**: This project uses AI as a *development multiplier*, not a replacement for human creativity. The insight is in concept selection, platform comparison, and pattern recognition—the AI just codes faster than I can.
 
@@ -272,6 +275,6 @@ This is a comparative AI and usability research project within a mapping challen
 ---
 
 **Date**: November, 2025
-**By**: Danny Bauman, Development Seed
+**By**: Danny Bauman
 
 *Let's use a fun map challenge to make an AI development platform experiment.* 🗺️🤖✨

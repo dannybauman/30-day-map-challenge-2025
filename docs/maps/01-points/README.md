@@ -27,6 +27,7 @@
 - Format: GeoJSON
 - Updates every 5 minutes
 - ~8,000-10,000 points
+**Human Review Summary**: Captured screenshots, documented permission prompts and UI gaps, and noted the spots where AI outputs need follow-up (e.g., Base44 depth stat copy, V0 basemap).
 
 **Difficulty**: Easy
 
@@ -50,6 +51,22 @@
 
 ---
 
+## 🧭 Human Contributions
+
+- Selected the earthquake concept and tailored the implementation prompt before distributing it across platforms.
+- Monitored each run, captured screenshots, and recorded permission prompts, mobile issues, and error states.
+- Triggered quick in-tool fixes when available (e.g., V0 auto-repair) and documented remaining gaps for later work.
+- Wrote the comparisons, rankings, and editorial commentary across the markdown docs and HTML showcase.
+
+## 🤖 AI Contributions
+
+- LLMs generated the initial concept list and expanded the implementation brief.
+- Eleven AI platforms produced working (or near-working) codebases with Leaflet wiring, styling, and data handling.
+- Auto-fix suggestions resolved quick runtime errors (e.g., V0.dev’s one-click repair) and proposed alternate styling.
+- AI tools drafted bullet summaries and layout ideas incorporated into the final documentation.
+
+---
+
 ## Platform Results
 
 ### ✅ Successful Implementations (8/11 - 73%)
@@ -58,16 +75,19 @@
    - Live: https://quake-viz-com.lovable.app
    - Time: ~5 min
    - Notes: Best mobile experience, excellent responsive design, strong tooltips. Fast, clean, one-shot success.
+   - Human review: Captured desktop/mobile screenshots and noted legend wording to polish later.
 
 2. **🥈 ChatGPT Canvas (GPT-5 Thinking)** - Best desktop UI
    - Live: https://chatgpt.com/canvas/shared/6906d4f356ec81918cddaa043840c0f8
    - Time: ~5 min
    - Notes: Best UI polish, smooth interactions, asks permission before external data fetch. Strong tooltips. Mobile has overlapping elements.
+   - Human review: Approved the external fetch dialog and logged the mobile overlap issue for a future fix.
 
 3. **🥉 Bolt.new** - Best data handling
    - Live: https://global-earthquakes-l-5bh2.bolt.host
    - Time: ~5 min
    - Notes: Best data handling. Shows actual stats (7,734 earthquakes, max mag 7.6, avg depth 21km). Strong tooltips, robust implementation. Mobile legend takes up too much space.
+   - Human review: Flagged the oversized mobile legend for future iteration.
 
 4. **Google AI Studio Apps**
    - Live: https://ai.studio/apps/drive/18cX2TQXmcUCY8EPeOp4qAUp9Wr_W5F-a

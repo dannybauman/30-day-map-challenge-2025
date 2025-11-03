@@ -52,10 +52,19 @@ Here's my refined process after completing Day 1.
 1. Check results every 5-10 minutes
 2. Note which worked/failed in LAUNCH-TRACKER
 3. Iterate 1-2 times on partial successes
-4. Save links to live demos
-5. Note key observations
+4. Manually confirm data accuracy (spot-check API responses, units, legends)
+5. Apply human tweaks (copy edits, accessibility fixes, visual polish) — log each change
+6. Save links to live demos
+7. Note key observations
 
-### Phase 5: Documentation
+### Phase 5: Human QA & Sign-off
+**Duration**: 5-10 minutes
+
+1. Verify attribution text and licenses for every dataset
+2. Write a short “Human review” summary (what was inspected or ideated or changed)
+3. Double-check that sensitive data is excluded or anonymized
+
+### Phase 6: Documentation
 **Duration**: 15-30 minutes
 
 **Essential (every day)**:
@@ -63,13 +72,14 @@ Here's my refined process after completing Day 1.
 2. Update `DAILY-LOG.md` (one line)
 3. Update `PLATFORM-TRACKER.md` stats
 4. Update `maps/0X-theme/LAUNCH-TRACKER.md`
+5. Add the “Human review” note + attribution details to each doc
 
 **Optional (when time allows)**:
 5. Create platform-specific READMEs
 6. Create `index.html` page
 7. Write `DAY-X-SUMMARY.md` for deeper analysis
 
-### Phase 6: HTML Page (New!)
+### Phase 7: HTML Page
 **Duration**: 20-25 minutes
 
 **Step 1: Capture Screenshots** (10 min):
@@ -141,12 +151,13 @@ maps/0X-theme/
 | Prep prompt | 5 min | 15 min |
 | Launch platforms | 5-10 min | 25 min |
 | Review & iterate | 20-30 min | 55 min |
-| Core documentation | 15 min | 70 min |
-| HTML page | 10 min | 80 min |
-| **Total** | **~80 min** | |
+| Human QA & sign-off | 5-10 min | 65 min |
+| Documentation | 15 min | 80 min |
+| HTML page | 10 min | 90 min |
+| **Total** | **~90 min** | |
 
-**Speed mode** (just essentials): ~60 min
-**Full mode** (with HTML page): ~80 min
+**Speed mode** (just essentials): ~65 min
+**Full mode** (with HTML page): ~90 min
 
 ---
 
