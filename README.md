@@ -288,11 +288,11 @@ Per the [official challenge](https://30daymapchallenge.com/):
 
 ---
 
-## The Real Goal
+## The Goal
 
 This is a comparative AI and usability research project within a mapping challenge:
 
-1. **Benchmark**: How do 15+ AI platforms handle identical geospatial tasks?
+1. **Benchmark**: How well do 3 AI platforms come up with mapping ideas? How do 15+ AI development platforms handle identical geospatial tasks?
 2. **Document**: What patterns emerge in success/failure across tools?
 3. **Share**: Create open-source examples others can learn from
 4. **Learn**: Build intuition for which AI tools excel where
@@ -302,7 +302,5 @@ This is a comparative AI and usability research project within a mapping challen
 
 ---
 
-**Date**: November, 2025
+**Date**: November, 2025 |
 **By**: Danny Bauman
-
-*Let's use a fun map challenge to make an AI development platform experiment.* 🗺️🤖✨
