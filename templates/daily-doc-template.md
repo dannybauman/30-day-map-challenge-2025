@@ -7,6 +7,21 @@
 **Idea Generation**: [Which AI models used, e.g., "Claude + GPT-4o"]
 **Chosen Concept**: [Brief description of the final concept]
 **Data Source**: [Where the data comes from, include links]
+**Human Review Summary**: [What you manually verified or edited before publishing]
+
+---
+
+## 🧭 Human Contributions (Left Column)
+
+- [Manual task 1 – e.g., “Confirmed USGS magnitudes & units”]
+- [Manual task 2 – e.g., “Tweaked tooltip copy for clarity”]
+- [Licensing / attribution decisions]
+
+## 🤖 AI Contributions (Right Column)
+
+- [Platform or model + what it produced]
+- [Which code or assets you kept]
+- [Any AI suggestions you intentionally declined]
 
 ---
 
@@ -110,4 +125,3 @@
 **Created**: November [X], 2025
 **Theme Category**: [Category from THEMES.md]
 **Challenge Day**: [X]/30
-

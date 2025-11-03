@@ -13,17 +13,21 @@ Quick guide to what docs to create each day and why.
    - Platform results summary
    - Key learnings (3-5 bullets)
    - Links to live demos
+   - Human Review section
 
 2. **`DAILY-LOG.md`** (one line)
    - Theme, platforms tested, success count, time
+   - Add `Human check:` shorthand (e.g., “Human check: verified USGS mag ranges”)
 
 3. **`PLATFORM-TRACKER.md`** (update stats)
    - Add to platform success rates
    - Update category rankings if needed
+   - Note any human interventions per platform if they materially changed the outcome
 
 4. **`maps/0X-theme/LAUNCH-TRACKER.md`**
    - Quick results table
    - Notes on what worked/didn't
+   - Flag where human edits happened (e.g., “Manual fix: legend colors”)
 
 **Total time**: ~15 minutes
 
@@ -144,6 +148,7 @@ Never use `other-platforms/` or loose .md files.
 - Everything
 - Per-platform analysis
 - Statistical deep dive
+- Human commentary (why certain AI outputs were accepted or rejected)
 
 ---
 
@@ -253,6 +258,7 @@ Never use `other-platforms/` or loose .md files.
    - Don't create all 30 folders upfront
    - Don't write templates for everything
    - Create docs as you go
+   - Don't fill the “Human review” note with placeholders—write the real checks you performed right after doing them
 
 3. **Perfect documentation**
    - Don't spend 2 hours on docs
@@ -383,4 +389,3 @@ Don't let documentation become the bottleneck. If you're spending more time docu
 
 **Last Updated**: November 2, 2025
 **Based on**: Day 1 actual experience
-

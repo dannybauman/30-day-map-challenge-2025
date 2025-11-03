@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: Lines | #30DayMapChallenge 2025</title>
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px 0; background: #f8f9fa; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0; margin-bottom: 40px; }
+        .platform-card { margin-bottom: 30px; }
+        .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .screenshot-desktop { border: 2px solid #495057; }
+        .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        .badge-custom { font-size: 0.9rem; }
+        .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
+        .stats-card { transition: transform 0.2s; }
+        .stats-card:hover { transform: translateY(-5px); }
+        .process-section .row { align-items: stretch; }
+        .process-card { background: #fff; border-radius: 12px; border-left: 4px solid #0d6efd; padding: 20px; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); position: relative; }
+        .process-card.ai { border-left-color: #6f42c1; }
+        .process-card .lane-label { position: absolute; top: -14px; left: 16px; background: #0d6efd; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .process-card.ai .lane-label { background: #6f42c1; }
+        .process-card h4 { margin-top: 12px; }
+        .process-card ul { padding-left: 18px; }
+        .process-connector { position: relative; padding-top: 20px; margin-bottom: 40px; }
+        .process-connector::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(180deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)); display: none; }
+        @media (min-width: 992px) {
+            .process-connector::after { display: block; }
+        }
+        .contribution-legend .badge { font-size: 0.8rem; }
+        .badge-ai { background: #6f42c1; }
+
+        /* Color System for Platform Status */
+        .status-winner { background: linear-gradient(135deg, #198754 0%, #20c997 100%); }
+        .status-strong { background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%); }
+        .status-good { background: linear-gradient(135deg, #0dcaf0 0%, #20c997 100%); }
+        .status-partial { background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); }
+        .status-failed { background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%); }
+
+        /* Rating Tier System */
+        .rating-s { background-color: #FFD700; color: #000; font-weight: bold; padding: 4px 8px; border-radius: 4px; }
+        .rating-a { background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-b { background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-c { background-color: #fd7e14; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-d { background-color: #ff4500; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-f { background-color: #dc3545; color: white; padding: 4px 8px; border-radius: 4px; }
+
+        /* Chosen Concept Highlighting */
+        .concept-chosen {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #fd7e14 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Day 2: Lines</h1>
+            <p class="lead">Street Orientation Rainbow - Portland, Oregon</p>
+            <p><strong>Date:</strong> November 2, 2025 | <strong>By:</strong> Danny Bauman</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Quick Stats -->
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="card text-center stats-card">
+                    <div class="card-body">
+                        <h3 class="text-primary">10</h3>
+                        <p class="mb-0">Platforms Tested</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center stats-card">
+                    <div class="card-body">
+                        <h3 class="text-success">3</h3>
+                        <p class="mb-0">Full Success (30%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center stats-card">
+                    <div class="card-body">
+                        <h3 class="text-warning">6</h3>
+                        <p class="mb-0">Partial Success (60%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center stats-card">
+                    <div class="card-body">
+                        <h3 class="text-danger">1</h3>
+                        <p class="mb-0">Failed (10%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center stats-card">
+                    <div class="card-body">
+                        <h3 class="text-info">~2 hrs</h3>
+                        <p class="mb-0">Time Invested</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ideation Phase -->
+        <section class="mb-5">
+            <h2 class="mb-4">Ideation Phase</h2>
+            <p class="lead">I asked three AI platforms for Day 2 "Lines" theme concept ideas. All three delivered solid suggestions:</p>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                    <div class="card h-100 concept-chosen" style="border-color: #fd7e14;">
+                        <div class="card-header bg-success text-white">
+                            <strong>ChatGPT Concept ⭐ Chosen</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5>Street Orientation Rainbow</h5>
+                            <p class="small">Turn a city's street network into a color wheel: each segment's hue encodes its compass bearing (0–360°), so cardinal directions pop as distinct colors. It's a striking fingerprint of urban form.</p>
+                            <p class="small"><strong>Data:</strong> OpenStreetMap via Overpass API</p>
+                            <p class="small mb-0"><strong>Why chosen:</strong> Outside-the-box visualization, tests geometry calculations, Portland location with interesting grid + organic mix</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header text-white" style="background-color: #fd7e14;">
+                            <strong>Claude Concept</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5>The Geometry of Street Names</h5>
+                            <p class="small">Map streets whose names contain directional words (North, South, etc.) colored by how well the street's actual geometry matches its name. Does "Straight Street" actually run straight?</p>
+                            <p class="small"><strong>Data:</strong> OpenStreetMap via Overpass API</p>
+                            <p class="small mb-0"><strong>Why interesting:</strong> Humorous results, tests geometry analysis, but harder to verify data quality</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header" style="background-color: #4285f4; color: white;">
+                            <strong>Gemini Concept</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5>Global Connections: The Arteries of the Sky</h5>
+                            <p class="small">Interactive 3D globe visualizing major flight routes as great-circle arcs. Arcs "glow" against a dark globe, hover shows airline and route.</p>
+                            <p class="small"><strong>Data:</strong> OpenFlights.org (CSV files)</p>
+                            <p class="small mb-0"><strong>Why interesting:</strong> Tests 3D visualization, data transformation (joining CSVs), visually striking, but more complex</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <strong>💡 Decision:</strong> I chose the Street Orientation Rainbow concept from ChatGPT. It offered an outside-the-box visualization that tests geometry calculations (bearing from coordinates), uses reliable OSM data similar to Day 1's USGS API, and focuses on Portland which has an interesting mix of grid patterns and organic neighborhoods. The 91MB dataset would challenge platform performance, which made it a strong test case.
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="mb-5 process-section">
+            <h2 class="mb-4">Process Timeline</h2>
+            <p class="text-muted">Left lane = human-led work. Right lane = AI-generated output. Every step is logged so the human/AI collaboration stays transparent.</p>
+            <div class="contribution-legend mb-4">
+                <span class="badge bg-primary me-2">Human</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Ideation Vetting</h4>
+                            <ul>
+                                <li>Reviewed each model's suggestions for feasibility and technical requirements.</li>
+                                <li>Chose Street Orientation Rainbow for its balance of visual appeal and test complexity.</li>
+                                <li>Noted that 91MB dataset would challenge platform performance limits.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            <ul>
+                                <li>Claude, ChatGPT, and Gemini proposed six distinct line-map concepts.</li>
+                                <li>ChatGPT's Street Orientation Rainbow concept included detailed bearing calculation approach.</li>
+                                <li>All concepts used OSM Overpass API, showing platform familiarity with standard geospatial data sources.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Prompt Crafting</h4>
+                            <ul>
+                                <li>Customized the implementation template with Portland bounding box and specific HSL color requirements.</li>
+                                <li>Added mobile responsiveness emphasis to the prompt (briefly referenced, letting platforms handle details).</li>
+                                <li>Specified bearing calculation formula and circular legend preference for directional data.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Prompt Drafts</h4>
+                            <ul>
+                                <li>Cursor expanded bullet points into a detailed, platform-agnostic implementation brief.</li>
+                                <li>Structured prompt with clear sections: Visual, Data, Functionality, Technical requirements.</li>
+                                <li>Included specific Overpass API query format and bearing calculation details.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Launch & Supervision</h4>
+                            <ul>
+                                <li>Opened ten platforms, pasted the identical brief, and tracked results in <code>LAUNCH-TRACKER.md</code>.</li>
+                                <li>Monitored data loading times and noted performance differences (ChatGPT Canvas took ~1 minute).</li>
+                                <li>Captured screenshots for desktop and mobile, noting legend implementations and UX issues.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Generated Outputs</h4>
+                            <ul>
+                                <li>Produced ten codebases (three production-ready, three partial, four failures) covering diverse stacks.</li>
+                                <li>Supplied MapLibre GL and Leaflet integrations with bearing calculations and HSL color mapping.</li>
+                                <li>Implemented various legend designs: circular (best), linear, and 4-square compass roses.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>QA & Analysis</h4>
+                            <ul>
+                                <li>Evaluated legend designs and noted circular color wheels were far more intuitive than linear.</li>
+                                <li>Tested mobile responsiveness and identified issues (Base44's non-collapsible legend, tooltip contrast).</li>
+                                <li>Compared performance: MagicPatterns fastest, ChatGPT Canvas slowest (~1 min load).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>AI Fixes & Suggestions</h4>
+                            <ul>
+                                <li>ChatGPT Canvas's "Fix Bug" button resolved initial data load error.</li>
+                                <li>Firebase Studio's autonomous debugging diagnosed 91MB data exceeding Next.js 2MB cache limit.</li>
+                                <li>Platforms attempted various fixes for CSP/CORS issues but couldn't overcome sandbox restrictions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Documentation & Storytelling</h4>
+                            <ul>
+                                <li>Wrote platform comparisons, key insights, and editorial commentary across README and HTML page.</li>
+                                <li>Captured and organized screenshots alongside platform-specific notes and live URLs.</li>
+                                <li>Documented the performance variance and legend design patterns that emerged.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Supporting Assets</h4>
+                            <ul>
+                                <li>Drafted platform summaries and insights sections based on human observations.</li>
+                                <li>Structured documentation following Day 1's format for consistency.</li>
+                                <li>Generated this HTML showcase page following Day 1's design system.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Prompt -->
+        <section class="mb-5">
+            <h2 class="mb-4">Implementation Prompt</h2>
+            <p>This is the exact prompt I used across all 10 platforms:</p>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <details>
+                        <summary class="fw-bold" style="cursor: pointer;">Click to view full prompt</summary>
+                        <pre class="mt-3 p-3 bg-white border rounded" style="max-height: 400px; overflow-y: auto; font-size: 0.85rem;"><code>PROJECT: #30DayMapChallenge 2025 - Day 2: LINES
+
+CONCEPT:
+Create an interactive "Street Orientation Rainbow" map of Portland, Oregon. Color-code every street segment by its compass bearing (0-360°) using a full HSL color wheel, so cardinal directions appear as distinct colors. This creates a visual fingerprint of Portland's urban form - revealing the city's iconic grid system alongside its more organic neighborhoods.
+
+REQUIREMENTS:
+
+Visual:
+- Interactive web-based map centered on Portland
+- Each street segment colored by its compass bearing using HSL color scale:
+  - 0° (North) = Red
+  - 90° (East) = Yellow/Green
+  - 180° (South) = Cyan
+  - 270° (West) = Purple/Magenta
+- Line thickness varies by road type (motorway/trunk thickest, service roads thinnest)
+- Dark basemap that makes colored lines stand out
+- Modern, clean design with clear visual hierarchy
+- Responsive layout (works on mobile and desktop)
+- Legend showing the color-to-direction mapping (circular color wheel preferred for directional data)
+
+Data:
+- Data source: OpenStreetMap via Overpass API (free, no API key required)
+- Endpoint: https://overpass-api.de/api/interpreter
+- Portland bounding box: 45.43,-122.84,45.65,-122.47
+- Query for streets: way["highway"]["highway"~"motorway|trunk|primary|secondary|tertiary|residential|unclassified|living_street|service"]
+- Returns street geometries with highway type and names
+
+Functionality:
+- Zoom and pan controls
+- Hover tooltips showing: street name, bearing (0-360°), road type
+- Smooth interactions (no excessive lag when panning/zooming)
+- Optional: Click to show more details in a popup
+
+Technical:
+- Calculate bearing/angle for each street segment from its coordinates
+  - Formula: bearing = Math.atan2(lon2-lon1, lat2-lat1) * (180/Math.PI)
+  - Normalize to 0-360 range
+  - Convert bearing to HSL color: hsl(bearing, 85%, 60%)
+- Use modern JavaScript (ES6+)
+- Mapping library: Your choice (Leaflet, Mapbox GL JS, MapLibre GL JS, deck.gl, or platform's preferred library)
+- Fetch and parse Overpass API JSON response
+- Handle the data and render lines efficiently
+- Use CDN links for any external libraries
+- No build step required - should run directly
+
+DELIVERABLES:
+- Fully functional interactive street orientation rainbow map
+- Title: "Street Orientation Rainbow: Portland, Oregon"
+- Attribution: "Data: © OpenStreetMap contributors"
+- Legend showing color-to-direction mapping and road type hierarchy
+- Brief description: "Portland's streets colored by compass bearing. Each color represents a different direction, revealing the city's grid patterns and organic growth."
+- Clean, commented code
+- Responsive and works in modern browsers</code></pre>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Results -->
+        <section class="mb-5">
+            <h2 class="mb-4">Platform Results</h2>
+
+            <!-- Winner -->
+            <h3 class="mb-3">🏆 Winner: MagicPatterns</h3>
+            <p class="text-muted">Ranked considering performance, legend design, and mobile responsiveness - the complete package matters!</p>
+            <div class="row">
+                <!-- MagicPatterns - Clear Winner -->
+                <div class="col-md-12 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #9b59b6; color: white;">
+                            <strong>⭐ MagicPatterns - Best Overall</strong>
+                            <span class="badge bg-light text-dark">Success</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-8">
+                                    <img src="magicpatterns/screenshot.png" alt="MagicPatterns desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-4">
+                                    <img src="magicpatterns/screenshot-mobile.png" alt="MagicPatterns mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~5 min</p>
+                            <p><strong>Quality:</strong> <span class="rating-a">A</span></p>
+                            <p><strong>Why Winner:</strong> Fastest data loading, best pan/zoom performance (~1-2 sec lag vs. ~10 sec for others), most intuitive circular legend, strong mobile UX. Zero human intervention needed. Superior out-of-the-box quality in every category.</p>
+                            <p class="mb-2 small"><strong>Mobile:</strong> Strong mobile experience - best overall considering mobile performance is crucial.</p>
+                            <p class="small"><strong>AI role:</strong> Generated clean MapLibre GL implementation with bearing calculations, circular legend, and responsive design in one pass.</p>
+                            <p class="small"><strong>Human tweaks:</strong> None required - worked out of the box. Minor issues: zoom buttons overlay header slightly, tooltip contrast could be better.</p>
+                            <div class="d-flex gap-2">
+                                <a href="https://project-portland-street-orientation-rainbow-map-450.magicpatterns.app/" class="btn btn-sm btn-success" target="_blank">Live Demo</a>
+                                <a href="magicpatterns/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Success -->
+            <h3 class="mb-3 mt-5">✅ Full Success (2 more platforms)</h3>
+            <div class="row">
+                <!-- Lovable -->
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-info text-white">
+                            <strong>Lovable</strong>
+                            <span class="badge bg-light text-dark">Success</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="lovable/screenshot.png" alt="Lovable desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                    <img src="lovable/screenshot-tooltip-issue.png" alt="Lovable tooltip issue" class="img-fluid screenshot-desktop mt-2">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop - Tooltip Issue</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="lovable/screenshot-mobile.png" alt="Lovable mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~5 min</p>
+                            <p><strong>Quality:</strong> <span class="rating-b">B</span></p>
+                            <p><strong>Specialty:</strong> Clean UI, one-shot success</p>
+                            <p class="mb-2 small">Good performance with MapLibre GL. Strong loading UX (~10 sec with status message). BUT: Tooltip bug (light text on white background, visible in screenshot). Linear legend instead of circular (less intuitive for directions).</p>
+                            <p class="mb-2 small"><strong>Mobile:</strong> Good responsive design.</p>
+                            <p class="small"><strong>AI role:</strong> Generated the full layout and MapLibre GL wiring in one pass.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Noted tooltip contrast issue for future fix.</p>
+                            <div class="d-flex gap-2">
+                                <a href="https://portland-hue-lines.lovable.app" class="btn btn-sm btn-info" target="_blank">Live Demo</a>
+                                <a href="lovable/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bolt.new -->
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+                            <strong>Bolt.new</strong>
+                            <span class="badge bg-light text-dark">Success</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="bolt-new/screenshot.png" alt="Bolt.new desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="bolt-new/screenshot-mobile.png" alt="Bolt.new mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~5 min</p>
+                            <p><strong>Quality:</strong> <span class="rating-b">B</span></p>
+                            <p><strong>Specialty:</strong> Circular legend, good UI</p>
+                            <p class="mb-2 small">Circular color wheel legend (good for directional data). Clean UI, good zoom level. Performance sluggish (~10 sec lag on pan/zoom) - same Leaflet issue as ChatGPT Canvas.</p>
+                            <p class="mb-2 small"><strong>Mobile:</strong> Good - legend works well on mobile.</p>
+                            <p class="small"><strong>AI role:</strong> Generated circular legend and Leaflet implementation with bearing calculations.</p>
+                            <p class="small"><strong>Human tweaks:</strong> None - worked as expected.</p>
+                            <div class="d-flex gap-2">
+                                <a href="https://street-orientation-r-fc5r.bolt.host/" class="btn btn-sm btn-primary" target="_blank">Live Demo</a>
+                                <a href="bolt-new/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partial Success -->
+            <h3 class="mb-3 mt-5">⚠️ Partial Success (6 platforms)</h3>
+            <div class="row">
+                <!-- ChatGPT Canvas -->
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-success text-white">
+                            <strong>ChatGPT Canvas</strong>
+                            <span class="badge bg-light text-dark">Eventual Success</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="chatgpt-canvas/screenshot.png" alt="ChatGPT Canvas desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="chatgpt-canvas/screenshot-mobile.png" alt="ChatGPT Canvas mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Quality:</strong> <span class="rating-c">C+</span></p>
+                            <p class="mb-2 small">Initial data load error, used "Fix Bug" button. After fix, extremely sluggish - took ~1 minute to show data after map appeared. Pan/zoom very slow (~10 sec). Console shows CSP violations but map eventually rendered with colors. Leaflet performance issues with large dataset.</p>
+                            <p class="mb-2 small"><strong>Mobile:</strong> Responsive but same performance issues.</p>
+                            <p class="small"><strong>AI role:</strong> "Fix Bug" button resolved initial error, but performance remained poor.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Required patience - waited ~1 minute for data to appear.</p>
+                            <div class="d-flex gap-2">
+                                <a href="https://chatgpt.com/canvas/shared/6908395f84ec8191b7d57c4c883d5354" class="btn btn-sm btn-success" target="_blank">Live Demo</a>
+                                <a href="chatgpt-canvas/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V0.dev -->
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning">
+                            <strong>V0.dev</strong>
+                            <span class="badge bg-light text-dark">Partial Success</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="v0-dev/screenshot.png" alt="V0.dev desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="v0-dev/screenshot-mobile.png" alt="V0.dev mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Quality:</strong> <span class="rating-d">D</span></p>
+                            <p class="mb-2 small">UI works, data loads, tooltips work ("Northeast 43rd Ave Bearing: 72°"), but map area is BLACK. Console 404 error. Same rendering issue pattern as Day 1. Compass Rose legend (color squares, not circular). Nice loading modal.</p>
+                            <p class="mb-2 small"><strong>Mobile:</strong> UI responsive but map still black.</p>
+                            <p class="small"><strong>AI role:</strong> Generated UI and data loading logic, but map rendering failed.</p>
+                            <p class="small"><strong>Human tweaks:</strong> None possible - platform rendering issue.</p>
+                            <div class="d-flex gap-2">
+                                <a href="https://v0-portland-street-map.vercel.app/" class="btn btn-sm btn-outline-warning" target="_blank">Live Demo</a>
+                                <a href="v0-dev/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Base44 -->
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #7c3aed; color: white;">
+                            <strong>Base44</strong>
+                            <span class="badge bg-light text-dark">Partial Success</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="base44/screenshot.png" alt="Base44 desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="base44/screenshot-mobile.png" alt="Base44 mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Quality:</strong> <span class="rating-c">C</span></p>
+                            <p class="mb-2 small">Data loads and displays well, pan/zoom performance good. BUT: Color circle legend is incorrect - colors don't follow proper HSL/compass order (red should be north/0°). Mobile fail: Legend takes up >50% of screen and can't be hidden, making map barely usable on phones.</p>
+                            <p class="mb-2 small"><strong>Mobile:</strong> Poor - legend dominates screen, no collapse option.</p>
+                            <p class="small"><strong>AI role:</strong> Generated circular legend concept but with wrong color mapping.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Would need to fix color mapping and add collapsible mobile legend.</p>
+                            <div class="d-flex gap-2">
+                                <a href="https://portland-street-atlas-3ab01ba5.base44.app/" class="btn btn-sm" style="background-color: #7c3aed; color: white;" target="_blank">Live Demo</a>
+                                <a href="base44/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Partial Success -->
+            <h3 class="mb-3 mt-5">⚠️ Partial Success (continued)</h3>
+            <div class="row">
+                <!-- Claude Artifacts -->
+                <div class="col-md-3 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning">
+                            <strong>Claude Artifacts</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-2">
+                                <div class="col-12">
+                                    <img src="claude-artifacts/screenshot.png" alt="Claude Artifacts" class="img-fluid">
+                                    <small class="text-muted d-block text-center mt-1">Desktop/Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small"><strong>Quality:</strong> <span class="rating-d">D</span></p>
+                            <p class="small"><strong>Issue:</strong> CSP/CORS violations prevent external library loading</p>
+                            <p class="small"><strong>Time:</strong> ~15 min (3 fix attempts)</p>
+                            <p class="small">Same issue as Day 1 - cannot load Leaflet. Tried 3 different approaches, all blocked by CSP. Generated nice UI/legends but no map. Platform limitation, not code quality.</p>
+                            <div class="d-flex gap-2">
+                                <a href="https://claude.ai/public/artifacts/f6ba0dae-3ad2-4c9d-bb2c-9d2f4eb812cd" class="btn btn-sm btn-outline-warning btn-sm" target="_blank">Live Demo</a>
+                                <a href="claude-artifacts/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gemini Canvas -->
+                <div class="col-md-3 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning">
+                            <strong>Gemini Canvas</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-2">
+                                <div class="col-12">
+                                    <img src="gemini/screenshot.png" alt="Gemini Canvas" class="img-fluid">
+                                    <small class="text-muted d-block text-center mt-1">Desktop/Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small"><strong>Quality:</strong> <span class="rating-d">D</span></p>
+                            <p class="small"><strong>Issue:</strong> Similar to Claude - CORS policy blocks MapLibre GL</p>
+                            <p class="small"><strong>Time:</strong> ~15 min</p>
+                            <p class="small">Same issue as Day 1 - cannot load MapLibre GL. Tried "Fix error" button 3x, all blocked by CORS. Generated beautiful color wheel legend but no map loads. Errors now hidden from users (just shows spinner).</p>
+                            <div class="d-flex gap-2">
+                                <a href="https://gemini.google.com/share/3b970078b72c" class="btn btn-sm btn-outline-warning btn-sm" target="_blank">Live Demo</a>
+                                <a href="gemini/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Firebase Studio -->
+                <div class="col-md-3 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header" style="background-color: #ff6d00; color: white;">
+                            <strong>Firebase Studio</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-2">
+                                <div class="col-12">
+                                    <img src="firebase-studio/screenshot.png" alt="Firebase Studio" class="img-fluid">
+                                    <small class="text-muted d-block text-center mt-1">Desktop/Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small"><strong>Quality:</strong> <span class="rating-d">D</span></p>
+                            <p class="small"><strong>Issue:</strong> Stuck at "Starting app" - autonomous debugging identified Next.js 2MB cache limit</p>
+                            <p class="small"><strong>Time:</strong> ~20 min (including debugging)</p>
+                            <p class="small">App stuck at startup. Autonomous debugging feature identified typo (crossorigin vs crossOrigin) and critical issue: 91MB Overpass API data exceeds Next.js's 2MB caching limit. Proposed fix (disable caching) but still couldn't start. Valuable debugging insights even if delivery failed.</p>
+                            <p class="small"><strong>Mobile:</strong> N/A (never started)</p>
+                            <div class="d-flex gap-2">
+                                <a href="firebase-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Failed -->
+            <h3 class="mb-3 mt-5">❌ Failed (1 platform)</h3>
+            <div class="row">
+                <!-- Google AI Studio -->
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header" style="background-color: #34a853; color: white;">
+                            <strong>Google AI Studio</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-2">
+                                <div class="col-12">
+                                    <img src="google-ai-studio/screenshot.png" alt="Google AI Studio error" class="img-fluid">
+                                    <small class="text-muted d-block text-center mt-1">Error Screen</small>
+                                </div>
+                            </div>
+                            <p class="small"><strong>Quality:</strong> <span class="rating-f">F</span></p>
+                            <p class="small"><strong>Issue:</strong> Internal platform error - no code generated</p>
+                            <p class="small">Platform error: "An internal error occurred." Clicked Retry, same error. Never generated any code - completely unusable. Day 1 worked fine, Day 2 broken - reliability concern.</p>
+                            <p class="small"><strong>Mobile:</strong> N/A (never generated code)</p>
+                            <div class="d-flex gap-2">
+                                <a href="google-ai-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insights -->
+        <section class="mb-5">
+            <h2 class="mb-4">Key Insights</h2>
+
+            <div class="insight-box">
+                <h5>✅ What Worked</h5>
+                <ul>
+                    <li><strong>MagicPatterns won</strong>: Fastest loading, best performance, best legend design, strong mobile UX</li>
+                    <li><strong>Circular legends superior</strong>: Bolt.new and MagicPatterns' circular color wheels were far more intuitive than linear legends for directional data</li>
+                    <li><strong>Data loading mostly successful</strong>: 6/10 platforms successfully fetched and displayed 91MB Overpass API data</li>
+                    <li><strong>Mobile responsive design</strong>: Most successful platforms adapted well to mobile viewports</li>
+                    <li><strong>Geometry calculations handled well</strong>: Bearing calculations (Math.atan2) + HSL color conversion worked across all platforms that loaded data</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>❌ What Didn't Work</h5>
+                <ul>
+                    <li><strong>Large dataset performance</strong>: 91MB of Portland street data caused sluggishness across most platforms (ChatGPT Canvas took ~1 min to render)</li>
+                    <li><strong>CSP/CORS sandbox restrictions</strong>: Claude Artifacts and Gemini Canvas continue to struggle with external library/data loading (Day 1 + Day 2 = Grade D consistently)</li>
+                    <li><strong>Platform reliability issues</strong>: Google AI Studio had internal error, Firebase Studio couldn't start app</li>
+                    <li><strong>Rendering failures</strong>: V0.dev's map rendering still problematic (black screen, same as Day 1)</li>
+                    <li><strong>Legend UX problems</strong>: Base44's incorrect color mapping and non-collapsible mobile legend made the map nearly unusable on phones</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>🤔 Surprises</h5>
+                <ul>
+                    <li><strong>Firebase Studio's autonomous debugging</strong>: Impressive feature that diagnosed the 91MB data issue and Next.js cache limit, even if it couldn't fix it</li>
+                    <li><strong>Performance variance</strong>: Huge differences in pan/zoom speed despite similar tech stacks (Leaflet vs. MapLibre GL)</li>
+                    <li><strong>Legend design creativity</strong>: Platforms interpreted "color wheel legend" differently - circular (best), linear, 4-square compass rose</li>
+                    <li><strong>ChatGPT Canvas eventually worked</strong>: Initially appeared broken but after ~1 minute of patience, fully rendered</li>
+                    <li><strong>MagicPatterns as dark horse</strong>: Not a household name but delivered the best overall result</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>📚 Lessons for Next Time</h5>
+                <ul>
+                    <li><strong>Data size matters</strong>: Consider dataset size impact on platform performance - 91MB challenged many platforms</li>
+                    <li><strong>Circular legends for directional data</strong>: Should be explicitly requested in prompts for compass bearing visualizations</li>
+                    <li><strong>Mobile responsiveness needs explicit emphasis</strong>: Most platforms got this right when prompted</li>
+                    <li><strong>Performance testing critical</strong>: Not just "does it work" but "does it work well" - MagicPatterns vs. ChatGPT Canvas shows huge variance</li>
+                    <li><strong>Patience required</strong>: Don't assume failure immediately - ChatGPT Canvas took ~1 minute to render</li>
+                    <li><strong>MapLibre GL outperformed Leaflet</strong>: For large datasets, MapLibre GL (Lovable, MagicPatterns) performed better than Leaflet (ChatGPT Canvas, Bolt.new)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Editorial -->
+        <section class="mb-5">
+            <h2 class="mb-4">Editorial</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>Day 2 worked, but revealed how data size and complexity separate robust platforms from fragile ones. The 91MB Overpass API dataset challenged performance limits, and geometry calculations (bearing from coordinates) tested platform capabilities in new ways.</p>
+
+                    <p><strong>The Winner:</strong> <strong>MagicPatterns is the clear winner for Day 2</strong> - fastest data loading, best pan/zoom performance (~1-2 sec lag vs. ~10 sec for others), most intuitive circular legend, and strong mobile UX. Zero human intervention needed. Superior out-of-the-box quality in every category. Not a household name, but delivered the best overall result.</p>
+
+                    <p><strong>The Big Challenge:</strong> The 91MB dataset exposed platform weaknesses. ChatGPT Canvas took ~1 minute to render data (initially appeared broken). Bolt.new and ChatGPT Canvas both had sluggish pan/zoom (~10 sec lag). Firebase Studio's autonomous debugging identified the Next.js 2MB cache limit issue but couldn't resolve it. Only MagicPatterns and Lovable (both using MapLibre GL) handled the large dataset smoothly.</p>
+
+                    <p><strong>The Legend Insight:</strong> Circular legends (Bolt.new, MagicPatterns) were far more intuitive than linear gradients or 4-square compass roses for directional data. This makes sense - compass bearings are cyclical (0° = 360°), and a circular color wheel visually represents that relationship. For future days with directional data, circular legends should be explicitly requested.</p>
+
+                    <p><strong>The Mobile Reality Check:</strong> Base44's non-collapsible mobile legend taking >50% of the screen shows how critical mobile UX is. Despite solid technical execution, the map was nearly unusable on phones. MagicPatterns' mobile experience was strong - another reason it won Day 2.</p>
+
+                    <p><strong>The Patterns:</strong> <strong>Consistent performers</strong>: Lovable, Bolt.new (Day 1 + Day 2 both successful). <strong>Consistent partial success</strong>: Claude Artifacts, Gemini Canvas (sandbox too restrictive, Day 1 + Day 2 = Grade D consistently due to CSP/CORS). <strong>Unreliable</strong>: Google AI Studio (Day 1 worked, Day 2 error), Firebase Studio (interesting debugging but couldn't deliver). <strong>Dark horse</strong>: MagicPatterns (delivered #1 result despite being lesser-known).</p>
+
+                    <p><strong>Day 1 vs Day 2:</strong> Day 1 had 73% success rate with a ~500KB dataset. Day 2 had 30% full success (60% usable) with a 91MB dataset. Partial success rate is 60% (6 platforms) vs. Day 1's 27% (3 platforms). One complete failure (Google AI Studio - no code generated). The conclusion is clear: larger datasets + geometry calculations created a bigger challenge, separating robust platforms from fragile ones. Day 2 was more discriminating in identifying truly capable platforms.</p>
+
+                    <p><strong>Looking ahead:</strong> Day 2 established that performance matters - not just "does it work" but "does it work well". For future days with large datasets or complex calculations, MagicPatterns and Lovable (MapLibre GL) are the top choices. For smaller datasets, the broader field remains viable. But the real lesson: data size and complexity reveal platform robustness in ways that simpler tests don't.</p>
+
+                    <p class="mb-0"><em>MagicPatterns wins Day 2, but the bigger win is understanding which platforms handle real-world complexity.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full Documentation Link -->
+        <section class="mb-5">
+            <div class="alert alert-info">
+                <h5>📚 Want More Details?</h5>
+                <p class="mb-2">This showcase highlights the key results. For comprehensive analysis, check out:</p>
+                <ul class="mb-0">
+                    <li><a href="README.md">Day 2 README</a> - Full overview</li>
+                    <li><a href="LAUNCH-TRACKER.md">Launch Tracker</a> - Detailed platform notes</li>
+                    <li><a href="DAY-2-FINAL-SUMMARY.md">Complete Summary</a> - Deep dive analysis</li>
+                    <li><a href="../../PLATFORM-TRACKER.md">Platform Tracker</a> - Running comparison across all days</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Day Navigation -->
+        <section class="mb-5" data-day-nav>
+            <div class="text-center text-muted">Loading day navigator…</div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p><strong>#30DayMapChallenge 2025</strong> | Danny Bauman</p>
+            <p>Day 2 of 30 | Theme: Lines | 10 Platforms Tested | 30% Full Success, 60% Usable</p>
+            <p class="mb-0">
+                <a href="../../README.md" class="text-white">Project Home</a> |
+                <a href="README.md" class="text-white">Day Documentation</a> |
+                <a href="https://github.com/dannyhines/30-day-map-challenge-2025" class="text-white">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../../site-assets/js/day-navigation.js" data-day="02-lines" data-manifest="../../days.json" data-base-path="../../" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

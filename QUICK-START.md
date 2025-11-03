@@ -108,6 +108,11 @@ Focus on feasible, well-defined concepts with clear data sources.
 
 ---
 
+### Manual checkpoints during ideation
+- Note any personal context or constraints you add to the prompts (so you can document it later).
+- Flag datasets that need extra license review or human vetting before publishing.
+
+---
 #### Step 2: Review & Choose
 
 You now have **6 concepts** (2 from each LLM).
@@ -182,6 +187,11 @@ Why I chose it:
 
 5. **I'll take it from there** and help you prep for implementation!
 
+6. **Before sharing anything publicly**, run a human QA pass:
+   - Verify the dataset terms of use and attribution text.
+   - Spot-check a few entries from the API/CSV against the map output.
+   - Write a short “Human review” note capturing what you inspected or edited.
+
 ---
 
 ## 💡 Tips for Choosing
@@ -198,10 +208,48 @@ Why I chose it:
 - Too many moving parts for 1 hour
 - Boring to you
 
+---
+
+## ✅ Human-in-the-Loop Reminders
+- Every map must include your own judgement call about accuracy and storytelling—log it in the daily README.
+- When AI suggests styling or copy, read it carefully and adjust tone/details before publishing.
+- Keep track of any manual code edits (e.g., bug fixes, accessibility tweaks) so you can list them in the "Human review" section later.
+
 **Remember**: You'll be implementing this across 8-10 platforms today, so pick something that:
 - Has clear success criteria
 - Will look good in screenshots
 - You'd be proud to share
+
+## 📊 Grading & Consistency Guidelines
+
+**Grading Scale** (consistent across all days):
+
+**Success Grades (A, B, C) - Full Success:**
+- **A (Excellent / Full Success)**: Fast, beautiful, fully functional, great mobile UX. Map renders correctly, all features work, responsive design is strong.
+- **B (Good / Full Success)**: Works well, minor issues (e.g., tooltip contrast, legend style), responsive. Map is functional and usable.
+- **C (OK / Full Success)**: Usable but significant issues (performance problems, UX issues like sluggish pan/zoom). Map works but has notable problems.
+
+**Partial Success (Grade D):**
+- **D (Poor / Partial Success)**: Major functionality broken but some elements work. Examples:
+  - UI/legends generated but map doesn't load (CSP/CORS issues)
+  - Data loads but visualization broken
+  - Map loads but interaction doesn't work
+  - **Key point**: Even CSP/CORS failures that generate UI/legends get Grade D (Partial Success), not F. If it generates something useful, it's at least D.
+
+**Failed (Grade F):**
+- **F (Failed)**: No code generated at all (platform error, completely unusable - rare). Examples:
+  - Platform returns "internal error" and never generates code
+  - Platform crashes before any output
+  - **Key distinction**: Grade F is reserved for when no code/output is generated at all (platform infrastructure failures), not for code that doesn't work properly.
+
+**Platform Colors** (use Day 1 as source of truth - must match across all days):
+- See `maps/01-points/index.html` for complete color scheme
+- Each platform has a consistent header color across all days
+
+**Screenshot Sizing** (important for HTML pages):
+- Single winner (full width `col-md-12`): Use `col-8` for desktop, `col-4` for mobile
+- Multiple winners (`col-md-6`): Use `col-7` for desktop, `col-5` for mobile
+- Mobile screenshot should be smaller when winner takes full width to prevent it from being too large
 
 ---
 

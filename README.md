@@ -192,7 +192,8 @@ Paste prompt in each → Click generate → Move to next
 
 **Step 4: Active Monitoring & Iteration**
 - Check as they generate results
-- If one fails early → note what went wrong
+- If one fails early, note what went wrong
+- Record any manual fixes (data cleaning, styling tweaks, bug patches) as you apply them
 - Screenshot everything as you go
 
 **Step 5: Collection & Organization**
@@ -205,6 +206,7 @@ Paste prompt in each → Click generate → Move to next
 - Create main README from template
 - Fill in platform results (names + status + insights)
 - Update DAILY-LOG.md
+- Capture a short “Human review” note that calls out what you verified or edited manually
 - Create `index.html` page for easy sharing
 
 ---
@@ -230,6 +232,28 @@ Paste prompt in each → Click generate → Move to next
 
 ---
 
+## Grading Criteria
+
+**Success Grades (A, B, C) - Full Success:**
+- **A (Excellent)**: Fast, beautiful, fully functional, great mobile UX. Map renders correctly, all features work, responsive design is strong.
+- **B (Good)**: Works well, minor issues (e.g., tooltip contrast, legend style), responsive. Map is functional and usable.
+- **C (OK)**: Usable but significant issues (performance problems, UX issues like sluggish pan/zoom). Map works but has notable problems.
+
+**Partial Success (Grade D):**
+- Major functionality broken but some elements work. Examples:
+  - UI/legends generated but map doesn't load (CSP/CORS issues)
+  - Data loads but visualization broken
+  - Map loads but interaction doesn't work
+- **Key point**: Even CSP/CORS failures that generate UI/legends get Grade D (Partial Success), not F. If it generates something useful, it's at least D.
+
+**Failed (Grade F):**
+- No code generated at all (platform error, completely unusable - rare). Examples:
+  - Platform returns "internal error" and never generates code
+  - Platform crashes before any output
+- **Key distinction**: Grade F is reserved for when no code/output is generated at all (platform infrastructure failures), not for code that doesn't work properly.
+
+---
+
 ## Code of Conduct Compliance
 
 Per the [official challenge](https://30daymapchallenge.com/):
@@ -238,6 +262,7 @@ Per the [official challenge](https://30daymapchallenge.com/):
 - ✅ Transparent about AI usage and methodology
 - ✅ Focus on creativity, not just automation
 - ✅ **AI handles implementation, I handle curation and creative direction**
+- ✅ Every map includes a clearly documented human review pass before publishing
 
 **Philosophy**: This project uses AI as a *development multiplier*, not a replacement for human creativity. The insight is in concept selection, platform comparison, and pattern recognition—the AI just codes faster than I can.
 
@@ -272,6 +297,6 @@ This is a comparative AI and usability research project within a mapping challen
 ---
 
 **Date**: November, 2025
-**By**: Danny Bauman, Development Seed
+**By**: Danny Bauman
 
 *Let's use a fun map challenge to make an AI development platform experiment.* 🗺️🤖✨

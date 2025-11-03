@@ -18,6 +18,20 @@
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
         .stats-card { transition: transform 0.2s; }
         .stats-card:hover { transform: translateY(-5px); }
+        .process-section .row { align-items: stretch; }
+        .process-card { background: #fff; border-radius: 12px; border-left: 4px solid #0d6efd; padding: 20px; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); position: relative; }
+        .process-card.ai { border-left-color: #6f42c1; }
+        .process-card .lane-label { position: absolute; top: -14px; left: 16px; background: #0d6efd; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .process-card.ai .lane-label { background: #6f42c1; }
+        .process-card h4 { margin-top: 12px; }
+        .process-card ul { padding-left: 18px; }
+        .process-connector { position: relative; padding-top: 20px; margin-bottom: 40px; }
+        .process-connector::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(180deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)); display: none; }
+        @media (min-width: 992px) {
+            .process-connector::after { display: block; }
+        }
+        .contribution-legend .badge { font-size: 0.8rem; }
+        .badge-ai { background: #6f42c1; }
 
         /* Color System for Platform Status */
         .status-winner { background: linear-gradient(135deg, #198754 0%, #20c997 100%); }
@@ -49,7 +63,7 @@
         <div class="container">
             <h1>Day 1: Points</h1>
             <p class="lead">Global Earthquakes - Last 30 Days</p>
-            <p><strong>Date:</strong> November 1, 2025 | <strong>Status:</strong> <span class="badge bg-success">Complete</span> | <strong>By:</strong> Danny Bauman, Development Seed</p>
+            <p><strong>Date:</strong> November 1, 2025 | <strong>By:</strong> Danny Bauman</p>
         </div>
     </div>
 
@@ -93,7 +107,7 @@
         <!-- Ideation Phase -->
         <section class="mb-5">
             <h2 class="mb-4">Ideation Phase</h2>
-            <p class="lead">I asked three AI platforms for Day 1 (Points theme) concept ideas. All three delivered excellent suggestions:</p>
+            <p class="lead">I asked three AI platforms for Day 1 "Points" theme concept ideas. All three delivered good suggestions:</p>
 
             <div class="row g-3 mb-4">
                 <div class="col-md-4">
@@ -102,7 +116,7 @@
                             <strong>ChatGPT Concept</strong>
                         </div>
                         <div class="card-body">
-                            <h5>"Skyfall Constellations"</h5>
+                            <h5>Skyfall Constellations</h5>
                             <p class="small">Meteorite landings as glowing "stars" on dark basemap, clustering by mass. Night-sky aesthetic.</p>
                             <p class="small"><strong>Data:</strong> NASA Meteorite Landings (50K+ points)</p>
                             <p class="small mb-0"><strong>Why interesting:</strong> Artistic "space" theme, cluster visualization, performance test with many points</p>
@@ -116,7 +130,7 @@
                             <strong>Claude Concept ⭐ Chosen</strong>
                         </div>
                         <div class="card-body">
-                            <h5>"Global Earthquakes"</h5>
+                            <h5>Global Earthquakes</h5>
                             <p class="small">30 days of earthquakes, points sized by magnitude and colored by depth. Reveals "Ring of Fire" pattern.</p>
                             <p class="small"><strong>Data:</strong> USGS Earthquake API (8K-10K points)</p>
                             <p class="small mb-0"><strong>Why chosen:</strong> Most reliable data source, universal GeoJSON support, best chance of success across all platforms</p>
@@ -130,7 +144,7 @@
                             <strong>Gemini Concept</strong>
                         </div>
                         <div class="card-body">
-                            <h5>"Cosmic Sightings"</h5>
+                            <h5>Cosmic Sightings</h5>
                             <p class="small">UFO sightings as glowing points with "sci-fi HUD" aesthetic. Tests artistic interpretation.</p>
                             <p class="small"><strong>Data:</strong> NUFORC Database (CSV)</p>
                             <p class="small mb-0"><strong>Why interesting:</strong> Tests artistic prompting, custom styling, CSV parsing, high shareability</p>
@@ -140,11 +154,156 @@
             </div>
 
             <div class="alert alert-success">
-                <strong>💡 Interesting Pattern:</strong> All three AI platforms (ChatGPT, Claude, and Gemini) <em>also</em> suggested an earthquake map as one of their ideas! This wasn't a coincidence—there must be something about my initial prompt or context that led all three to recognize earthquakes as an ideal "Points" theme. This convergence gave me extra confidence in choosing the earthquake concept.
+                <strong>💡 Interesting Pattern:</strong> All three AI platforms (ChatGPT, Claude, and Gemini) <em>also</em> suggested an earthquake map as one of their ideas! This must not be a coincidence, there must be something about my initial prompt or context that led all three to recognize earthquakes as an ideal "Points" theme. This gave me a nudge in choosing the earthquake concept.
             </div>
 
             <div class="alert alert-info">
-                <strong>Decision:</strong> I chose the Earthquake concept for Day 1 to maximize my chances of success. The USGS API is rock-solid, GeoJSON works everywhere, and the visualization requirements are clear. <em>I really want to build the other two concepts later - they're both excellent!</em>
+                <strong>Decision:</strong> I chose the Earthquake concept for Day 1 to maximize my chances of success. The USGS API is solid, GeoJSON works everywhere, and the visualization requirements are clear. But I hope to build the other two concepts sometime, they both sound fun.
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="mb-5 process-section">
+            <h2 class="mb-4">Process Timeline</h2>
+            <p class="text-muted">Left lane = human-led work. Right lane = AI-generated output. Every step is logged so the human/AI collaboration stays transparent.</p>
+            <div class="contribution-legend mb-4">
+                <span class="badge bg-primary me-2">Human</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Ideation Vetting</h4>
+                            <ul>
+                                <li>Reviewed each model’s suggestions for feasibility and personal project goals.</li>
+                                <li>Noted the USGS feed as a reliable, widely supported source for this experiment.</li>
+                                <li>Chose the earthquake concept because it aligned with personal research goals and challenge spirit.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            <ul>
+                                <li>Claude, ChatGPT, and Gemini proposed six distinct point-map concepts in minutes.</li>
+                                <li>All three independently surfaced an earthquake map, signalling a strong shared candidate.</li>
+                                <li>Cursor summarized the chosen idea into a concise brief ready for prompting.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Prompt Crafting</h4>
+                            <ul>
+                                <li>Customized the implementation template with the exact data fields, visual goals, and usability constraints.</li>
+                                <li>Added notes about tooltip copy tone and responsive expectations before sharing with any platform.</li>
+                                <li>Double-checked that the prompt clearly called for attribution and hover details.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Prompt Drafts</h4>
+                            <ul>
+                                <li>Cursor expanded the human bullet points into a clean, platform-agnostic brief.</li>
+                                <li>AI tooling suggested additional UX polish (e.g., legend, permission handling) that stayed in the final prompt.</li>
+                                <li>Auto-formatted the text so it could be pasted without manual cleanup.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Launch & Supervision</h4>
+                            <ul>
+                                <li>Opened eleven platforms, pasted the identical brief, and tracked runtimes in <code>LAUNCH-TRACKER.md</code>.</li>
+                                <li>Monitored progress, captured screenshots, and halted runs that were hitting known CORS walls.</li>
+                                <li>Logged which iterations needed retries so they could be documented honestly.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Generated Outputs</h4>
+                            <ul>
+                                <li>Produced eleven codebases (eight production-ready, three partial) covering diverse UI stacks.</li>
+                                <li>Supplied default styling, Leaflet integrations, and data-fetching logic for each deployment.</li>
+                                <li>Provided auto-fix suggestions when runtime errors surfaced (e.g., V0.dev quick repair).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>QA & Edits</h4>
+                            <ul>
+                                <li>Logged mobile overlaps, legend clutter, and missing basemaps for follow-up fixes.</li>
+                                <li>Captured console and permission prompts from partial/failing runs.</li>
+                                <li>Triggered quick auto-fixes (like V0’s one-click repair) and noted remaining gaps.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>AI Fixes & Suggestions</h4>
+                            <ul>
+                                <li>Generated proposed fixes for console warnings and offered alternative radius calculations.</li>
+                                <li>Highlighted potential accessibility tweaks (contrast, tooltip delays) for manual review.</li>
+                                <li>Supplied alternate color scales that were evaluated before selecting the human-picked palette.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Documentation & Storytelling</h4>
+                            <ul>
+                                <li>Wrote comparisons, insights, and editorial commentary across the README and HTML page.</li>
+                                <li>Captured and organized screenshots alongside the standard attribution text from the prompt template.</li>
+                                <li>Shaped the narrative for social sharing while noting where AI assistance began and ended.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Supporting Assets</h4>
+                            <ul>
+                                <li>Drafted bullet-point summaries that were edited into the final insights sections.</li>
+                                <li>Suggested layout tweaks (two-column timeline, card hierarchy) implemented with human refinements.</li>
+                                <li>Generated boilerplate navigation markup to keep the day pages consistent.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -223,7 +382,7 @@ DELIVERABLES:
             <h2 class="mb-4">Platform Results</h2>
 
             <!-- Winners -->
-            <h3 class="mb-3">🏆 Top 3 (Ranked by Overall Performance)</h3>
+            <h3 class="mb-3">🏆 Top 3 (Ranked Overall)</h3>
             <p class="text-muted">Ranked considering both desktop and mobile performance - mobile excellence matters!</p>
             <div class="row">
                 <!-- Lovable - Best Overall (Mobile Winner) -->
@@ -249,6 +408,8 @@ DELIVERABLES:
                             <p><strong>Specialty:</strong> Best mobile experience, strong tooltips</p>
                             <p class="mb-2 small">Fast, clean design. Good tooltips, one-shot success.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Excellent! Great responsive design - best overall considering mobile performance is crucial.</p>
+                            <p class="small"><strong>AI role:</strong> Generated the full Tailwind layout, Leaflet wiring, and tooltip styling in one pass.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Captured desktop/mobile screenshots and noted the legend wording to revisit later.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://quake-viz-com.lovable.app" class="btn btn-sm btn-info" target="_blank">Live Demo</a>
                                 <a href="lovable/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -280,6 +441,8 @@ DELIVERABLES:
                             <p><strong>Specialty:</strong> Best UI polish</p>
                             <p class="mb-2 small">Good permission model for external data, strong tooltips, smooth interactions. Most polished overall. See <code>chatgpt-permission-dialog.png</code> for the permission UX.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> OK but imbalanced header and overlapping legend/UI elements.</p>
+                            <p class="small"><strong>AI role:</strong> Delivered the polished UI, data-fetch consent flow, and hover interactions in a single run.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Approved the external fetch dialog and logged the mobile overlap for a future fix.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://chatgpt.com/canvas/shared/6906d4f356ec81918cddaa043840c0f8" class="btn btn-sm btn-success" target="_blank">Live Demo</a>
                                 <a href="chatgpt-canvas/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -311,6 +474,8 @@ DELIVERABLES:
                             <p><strong>Specialty:</strong> Best data handling</p>
                             <p class="mb-2 small">Shows 7,734 earthquakes with detailed stats (max mag 7.6, avg depth 21km). Strong tooltips.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Legend takes up half the screen - should be smaller, collapsible, or better use of space.</p>
+                            <p class="small"><strong>AI role:</strong> Generated the stats-rich layout, Leaflet layers, and API data processing.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Flagged the oversized legend for later CSS work and captured notes for follow-up.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://global-earthquakes-l-5bh2.bolt.host" class="btn btn-sm btn-primary" target="_blank">Live Demo</a>
                                 <a href="bolt-new/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -347,6 +512,8 @@ DELIVERABLES:
                             <p><strong>Notable Feature:</strong> Full VS Code editor in browser</p>
                             <p class="mb-2 small">Required 2 API keys (Gemini + Google Maps). Good UX for Gemini key prompt. Can switch between AI generation and code editing. Google Maps basemap, bland defaults.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Nice responsive design on mobile.</p>
+                            <p class="small"><strong>AI role:</strong> Bootstrapped the Google Maps implementation, stats cards, and data fetch pipeline once keys were provided.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Entered the required API keys and jotted down the bland defaults to improve later.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://studio--studio-5411671878-961de.us-central1.hosted.app/" class="btn btn-sm btn-warning" target="_blank">Live Demo</a>
                                 <a href="firebase-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -378,6 +545,8 @@ DELIVERABLES:
                             <p><strong>Specialty:</strong> Best stats dashboard</p>
                             <p class="mb-2 small">Clean dark theme with strong visuals. Comprehensive stats (7,729 total, max mag 7.6, updated time). Minor bug: Avg Depth shows 0.0km. Tooltips not as good as top 3.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> OK but legend overlays too much of the map.</p>
+                            <p class="small"><strong>AI role:</strong> Produced the dark theme, stats aggregation, and auto-refresh clock without additional prompts.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Noted the average-depth bug and captured copy edits to clean up later.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://seismic-watch-361323d1.base44.app/" class="btn btn-sm" style="background-color: #7c3aed; color: white;" target="_blank">Live Demo</a>
                                 <a href="base44/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -409,6 +578,8 @@ DELIVERABLES:
                             <p><strong>Responsive:</strong> ✅ Good - legend overlays well</p>
                             <p class="mb-2">Tested 2 variants (Tailwind + Chakra UI) - both worked. Unknown platform, solid performance.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Good but some UI element overlap.</p>
+                            <p class="small"><strong>AI role:</strong> Generated both Tailwind and Chakra implementations with consistent data handling.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Compared the two variants, kept the Tailwind version, and left notes to align labels across docs later.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://project-playful-eagle-286.magicpatterns.app" class="btn btn-sm btn-outline-primary" target="_blank">Live Demo</a>
                                 <a href="magicpatterns/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -440,6 +611,8 @@ DELIVERABLES:
                             <p><strong>Responsive:</strong> ✅ Good - minimal but works</p>
                             <p class="mb-2 small">Quietly delivered solid implementation. Minimal but functional UI.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Good but a little not fitting and aligned properly.</p>
+                            <p class="small"><strong>AI role:</strong> Generated the lightweight Leaflet map, dark theme, and stats footer in one pass.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Noted alignment quirks and jotted down heading copy updates for a future pass.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://global-earthquake-tracker-903076358991.us-west1.run.app/" class="btn btn-sm btn-outline-success" target="_blank">Live Demo</a>
                                 <a href="google-ai-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -473,6 +646,8 @@ DELIVERABLES:
                             <p class="small"><strong>Issue:</strong> CSP/CORS violations prevent external library loading</p>
                             <p class="small"><strong>Time:</strong> ~15 min (3 fix attempts)</p>
                             <p class="small"><strong>Mobile:</strong> Good (a bit of overlap in the footer).</p>
+                            <p class="small"><strong>AI role:</strong> Produced the interface and attempted Leaflet integration but hit the hosting sandbox limits.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Captured the error state and documented how the sandbox blocked the external libraries.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://claude.ai/public/artifacts/ec2f5f3e-867c-4d0d-a333-078749d2f831" class="btn btn-sm btn-outline-warning btn-sm" target="_blank">Live Demo</a>
                                 <a href="claude-artifacts/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -502,6 +677,8 @@ DELIVERABLES:
                             <p class="small"><strong>Issue:</strong> Similar to Claude - sandbox restrictions break external APIs</p>
                             <p class="small"><strong>Time:</strong> ~15 min</p>
                             <p class="small"><strong>Mobile:</strong> Good responsive design.</p>
+                            <p class="small"><strong>AI role:</strong> Built the UI shell and attempted fetch calls before sandbox rules blocked execution.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Captured the failing requests and noted Gemini's sandbox limitation for future planning.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://gemini.google.com/share/ca0176434f8c" class="btn btn-sm btn-outline-warning btn-sm" target="_blank">Live Demo</a>
                                 <a href="gemini/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -532,6 +709,8 @@ DELIVERABLES:
                             <p class="small"><strong>Time:</strong> ~10 min (1 iteration)</p>
                             <p class="small"><strong>Responsive:</strong> ✅ Good - legend stacks properly</p>
                             <p class="small"><strong>Mobile:</strong> Really good responsive design, but map area is small (and basemap not working as noted).</p>
+                            <p class="small"><strong>AI role:</strong> Rendered the point layer and UI layout after a single quick fix.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Triggered the auto-fix and logged the missing basemap for manual coding later.</p>
                             <div class="d-flex gap-2">
                                 <a href="https://v0-earthquake-visualization-map.vercel.app/" class="btn btn-sm btn-outline-warning btn-sm" target="_blank">Live Demo</a>
                                 <a href="v0-dev/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -640,7 +819,7 @@ DELIVERABLES:
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p><strong>#30DayMapChallenge 2025</strong> | Danny Bauman, Development Seed</p>
+            <p><strong>#30DayMapChallenge 2025</strong> | Danny Bauman</p>
             <p>Day 1 of 30 | Theme: Points | 11 Platforms Tested | 73% Success Rate</p>
             <p class="mb-0">
                 <a href="../../README.md" class="text-white">Project Home</a> |

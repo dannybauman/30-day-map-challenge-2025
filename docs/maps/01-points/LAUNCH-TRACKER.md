@@ -78,6 +78,12 @@
 - **Firebase Studio** - Full VS Code editor (killer feature for developers)
 - **MagicPatterns** - Excellent surprise performer (both variants)
 
+**Human Review Log:**
+- Approved ChatGPT Canvas' external data request prompt and captured a screenshot of the permission UX.
+- Entered the Firebase Studio API keys so the demo would load and noted the bland default styling for later polish.
+- Logged the UI issues to revisit (Lovable legend wording, Bolt/Base44 legend sizing, ChatGPT/V0 mobile overlaps).
+- Saved error details from Claude and Gemini to document their sandbox failures.
+
 **Fastest to Working:** Bolt.new, Lovable, MagicPatterns, Base44 - all ~5 min one-shot success
 **Best Stats Dashboard:** Base44 (total, max mag, avg depth, updated time)
 **Most Versatile:** Firebase Studio (AI + full code editor)
@@ -117,4 +123,3 @@
 - [ ] Download all code
 - [ ] Update README.md with comparison
 - [ ] Consider doing meteorite/UFO concepts if time permits
-

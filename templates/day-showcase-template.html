@@ -16,6 +16,20 @@
         .badge-custom { font-size: 0.9rem; }
         .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
+        .process-section .row { align-items: stretch; }
+        .process-card { background: #fff; border-radius: 12px; border-left: 4px solid #0d6efd; padding: 20px; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); position: relative; }
+        .process-card.ai { border-left-color: #6f42c1; }
+        .process-card .lane-label { position: absolute; top: -14px; left: 16px; background: #0d6efd; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .process-card.ai .lane-label { background: #6f42c1; }
+        .process-card h3, .process-card h4, .process-card h5 { margin-top: 12px; }
+        .process-card ul { padding-left: 18px; }
+        .process-connector { position: relative; padding-top: 20px; margin-bottom: 40px; }
+        .process-connector::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(180deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)); display: none; }
+        @media (min-width: 992px) {
+            .process-connector::after { display: block; }
+        }
+        .contribution-legend .badge { font-size: 0.8rem; }
+        .badge-ai { background: #6f42c1; }
 
         /* Color System for Platform Status */
         .status-winner { background: linear-gradient(135deg, #198754 0%, #20c997 100%); }
@@ -40,6 +54,23 @@
             transition: all 0.3s ease;
         }
     </style>
+
+    <!--
+        GRADING CRITERIA (Consistent across all days):
+
+        A (Excellent): Fast, beautiful, fully functional, great mobile UX
+        B (Good): Works well, minor issues, responsive
+        C (OK): Usable but significant issues (performance, UX problems)
+        D (Poor / Partial Success): Major functionality broken but some elements work (e.g., UI works but map doesn't load)
+        F (Failed): No code generated at all (platform error, completely unusable - rare)
+
+        Important distinction:
+        - Grade D (Partial Success): Even CSP/CORS failures that generate UI/legends get Grade D, not F.
+          If it generates something useful, it's at least D.
+        - Grade F (Failed): Reserved for when no code is generated at all (platform errors that prevent any output).
+
+        Be consistent but fair - if it generates something useful, it's at least D.
+    -->
 </head>
 <body>
     <!-- Hero Section -->
@@ -92,12 +123,13 @@
         <!-- Ideation Phase -->
         <section class="mb-5">
             <h2 class="mb-4">Ideation Phase</h2>
-            <p>Asked 3 AI models for map concepts. Here's what they suggested:</p>
+            <p class="lead">I asked three AI platforms for Day {{DAY_NUMBER}} "{{THEME}}" theme concept ideas. All three delivered solid suggestions:</p>
 
-            <div class="row">
+            <div class="row g-3 mb-4">
                 <div class="col-md-4">
-                    <!-- Note: Add "concept-chosen" class to the card div of whichever concept was chosen -->
-                    <div class="card">
+                    <!-- Note: Add "concept-chosen" class and style="border-color: #fd7e14;" to the card div of whichever concept was chosen -->
+                    <!-- Claude: Orange (#fd7e14) -->
+                    <div class="card h-100">
                         <div class="card-header text-white" style="background-color: #fd7e14;">
                             <strong>Claude.ai (Sonnet 4.5)</strong>
                         </div>
@@ -107,9 +139,10 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <!-- ChatGPT: Green (bg-success) -->
+                    <div class="card h-100">
                         <div class="card-header bg-success text-white">
-                            <strong>ChatGPT (o3)</strong>
+                            <strong>ChatGPT (GPT-5 Thinking)</strong>
                         </div>
                         <div class="card-body">
                             <p><small>{{CHATGPT_IDEA}}</small></p>
@@ -117,8 +150,9 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header bg-info text-white">
+                    <!-- Gemini: Blue (#4285f4) -->
+                    <div class="card h-100">
+                        <div class="card-header" style="background-color: #4285f4; color: white;">
                             <strong>Gemini (2.5 Pro)</strong>
                         </div>
                         <div class="card-body">
@@ -142,6 +176,111 @@
             </div>
         </section>
 
+        <!-- Process Timeline -->
+        <section class="mb-5 process-section">
+            <h2 class="mb-4">Process Timeline</h2>
+            <p class="text-muted">Left lane = human-led work. Right lane = AI-generated output. Every step is logged to show how the human/AI partnership unfolded.</p>
+            <div class="contribution-legend mb-4">
+                <span class="badge bg-primary me-2">Human</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Ideation Vetting</h4>
+                            {{HUMAN_IDEATION}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            {{AI_IDEATION}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Prompt Crafting</h4>
+                            {{HUMAN_PROMPT}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Prompt Drafts</h4>
+                            {{AI_PROMPT}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Launch & Supervision</h4>
+                            {{HUMAN_IMPLEMENTATION}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Generated Outputs</h4>
+                            {{AI_IMPLEMENTATION}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>QA & Edits</h4>
+                            {{HUMAN_QA}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>AI Fixes & Suggestions</h4>
+                            {{AI_QA}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Documentation & Storytelling</h4>
+                            {{HUMAN_DOCUMENTATION}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Supporting Assets</h4>
+                            {{AI_DOCUMENTATION}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Implementation Prompt -->
         <section class="mb-5">
             <h2 class="mb-4">Implementation Prompt</h2>
@@ -158,10 +297,30 @@
         <section class="mb-5">
             <h2 class="mb-4">Platform Results</h2>
 
+            <!--
+                PLATFORM COLOR SCHEME (Consistent across all days):
+                - Lovable: bg-info (blue)
+                - ChatGPT Canvas: bg-success (green)
+                - Bolt.new: bg-primary (blue)
+                - Firebase Studio: #ff6d00 (orange)
+                - Base44: #7c3aed (purple)
+                - MagicPatterns: #9b59b6 (purple/violet)
+                - Google AI Studio: #34a853 (green)
+                - Claude Artifacts: bg-warning (yellow/orange)
+                - Gemini Canvas: bg-warning (yellow/orange)
+                - V0.dev: bg-warning (yellow/orange)
+            -->
+
             <!-- Winners -->
             <h3 class="mb-3">🏆 Top Performers</h3>
             <div class="row">
                 <!-- Repeat for each successful platform -->
+                <!--
+                    SCREENSHOT SIZING GUIDE:
+                    - Single winner (full width col-md-12): Use col-8 for desktop, col-4 for mobile
+                    - Multiple winners (col-md-6): Use col-7 for desktop, col-5 for mobile (already appropriately sized)
+                    - The goal: mobile screenshot shouldn't be too large when winner takes full width
+                -->
                 {{PLATFORM_CARDS}}
             </div>
 

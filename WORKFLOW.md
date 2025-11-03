@@ -52,10 +52,19 @@ Here's my refined process after completing Day 1.
 1. Check results every 5-10 minutes
 2. Note which worked/failed in LAUNCH-TRACKER
 3. Iterate 1-2 times on partial successes
-4. Save links to live demos
-5. Note key observations
+4. Manually confirm data accuracy (spot-check API responses, units, legends)
+5. Apply human tweaks (copy edits, accessibility fixes, visual polish) — log each change
+6. Save links to live demos
+7. Note key observations
 
-### Phase 5: Documentation
+### Phase 5: Human QA & Sign-off
+**Duration**: 5-10 minutes
+
+1. Verify attribution text and licenses for every dataset
+2. Write a short “Human review” summary (what was inspected or ideated or changed)
+3. Double-check that sensitive data is excluded or anonymized
+
+### Phase 6: Documentation
 **Duration**: 15-30 minutes
 
 **Essential (every day)**:
@@ -63,13 +72,14 @@ Here's my refined process after completing Day 1.
 2. Update `DAILY-LOG.md` (one line)
 3. Update `PLATFORM-TRACKER.md` stats
 4. Update `maps/0X-theme/LAUNCH-TRACKER.md`
+5. Add the “Human review” note + attribution details to each doc
 
 **Optional (when time allows)**:
 5. Create platform-specific READMEs
 6. Create `index.html` page
 7. Write `DAY-X-SUMMARY.md` for deeper analysis
 
-### Phase 6: HTML Page (New!)
+### Phase 7: HTML Page
 **Duration**: 20-25 minutes
 
 **Step 1: Capture Screenshots** (10 min):
@@ -141,12 +151,13 @@ maps/0X-theme/
 | Prep prompt | 5 min | 15 min |
 | Launch platforms | 5-10 min | 25 min |
 | Review & iterate | 20-30 min | 55 min |
-| Core documentation | 15 min | 70 min |
-| HTML page | 10 min | 80 min |
-| **Total** | **~80 min** | |
+| Human QA & sign-off | 5-10 min | 65 min |
+| Documentation | 15 min | 80 min |
+| HTML page | 10 min | 90 min |
+| **Total** | **~90 min** | |
 
-**Speed mode** (just essentials): ~60 min
-**Full mode** (with HTML page): ~80 min
+**Speed mode** (just essentials): ~65 min
+**Full mode** (with HTML page): ~90 min
 
 ---
 
@@ -168,7 +179,10 @@ maps/0X-theme/
    - Your editorial thoughts
 
 3. **Follow the design system**:
-   - Desktop screenshots: `col-7` (larger), Mobile: `col-5` (smaller)
+   - **Screenshot sizing (important!)**:
+     - Single winner (full width `col-md-12`): Use `col-8` for desktop, `col-4` for mobile
+     - Multiple winners (`col-md-6`): Use `col-7` for desktop, `col-5` for mobile
+     - Mobile screenshot should be smaller when winner takes full width to prevent it from being too large
    - Use CSS classes: `.screenshot-desktop` and `.screenshot-mobile`
    - Gap spacing: `g-3` for screenshot rows
    - Bold desktop labels, regular mobile labels
@@ -197,25 +211,60 @@ maps/0X-theme/
 
 ---
 
-## Key Learnings from Day 1
+## Key Learnings from Day 1 & Day 2
 
-1. **Parallel testing works!** - 9 platforms in 90 minutes
-2. **ChatGPT Canvas, Bolt.new, Lovable** - most reliable
-3. **Claude/Gemini Artifacts** - struggled with external APIs, but were close - may work with embedded data
-4. **MagicPatterns** - surprise good performer
-5. **Documentation time** - took longer than expected (~30 min)
-6. **HTML page** - will make sharing results much easier
+1. **Parallel testing works!** - 10-11 platforms in 90-120 minutes
+2. **ChatGPT Canvas, Bolt.new, Lovable, MagicPatterns** - most reliable
+3. **Claude/Gemini Artifacts** - struggled with external APIs (CSP/CORS) - consistent partial success (Grade D)
+4. **Grading consistency**: All platforms get at least Grade D (Partial Success) - even CSP/CORS failures generate UI/legends. Grade F reserved only for truly unusable (rare).
+5. **Platform colors**: Consistent across days - use Day 1 as source of truth for all platform header colors
+6. **Documentation time** - took longer than expected (~30 min)
+7. **HTML page** - makes sharing results much easier
 
 ---
 
-## For Tomorrow (Day 2)
+## Grading & Platform Colors (Consistent Across Days)
+
+**Grading Scale:**
+- **A (Excellent / Full Success)**: Fast, beautiful, fully functional, great mobile UX. Map renders correctly, all features work, responsive design is strong.
+- **B (Good / Full Success)**: Works well, minor issues (e.g., tooltip contrast, legend style), responsive. Map is functional and usable.
+- **C (OK / Full Success)**: Usable but significant issues (performance problems, UX issues like sluggish pan/zoom). Map works but has notable problems.
+- **D (Poor / Partial Success)**: Major functionality broken but some elements work. Examples:
+  - UI/legends generated but map doesn't load (CSP/CORS issues)
+  - Data loads but visualization broken
+  - Map loads but interaction doesn't work
+  - **Key point**: Even CSP/CORS failures that generate UI/legends get Grade D (Partial Success), not F. If it generates something useful, it's at least D.
+- **F (Failed)**: No code generated at all (platform error, completely unusable - rare). Examples:
+  - Platform returns "internal error" and never generates code
+  - Platform crashes before any output
+  - **Key distinction**: Grade F is reserved for when no code/output is generated at all (platform infrastructure failures), not for code that doesn't work properly.
+
+**Platform Colors** (consistent across all days - use Day 1 as source of truth):
+- **Lovable**: `bg-info` (blue)
+- **ChatGPT Canvas**: `bg-success` (green)
+- **Bolt.new**: `bg-primary` (blue)
+- **Firebase Studio**: `#ff6d00` (orange)
+- **Base44**: `#7c3aed` (purple)
+- **MagicPatterns**: `#9b59b6` (purple/violet)
+- **Google AI Studio**: `#34a853` (green)
+- **Claude/Gemini/V0**: `bg-warning` (yellow/orange)
+
+**Ideation Phase Colors** (consistent across all days):
+- **Claude**: Orange `#fd7e14`
+- **ChatGPT**: Green `bg-success`
+- **Gemini**: Blue `#4285f4`
+- **Chosen concept**: Add `concept-chosen` class with `border-color: #fd7e14;`
+
+## For Tomorrow (Day 3+)
 
 **Streamlined approach**:
-1. ✅ Use successful platforms from Day 1
-2. ✅ Skip Claude/Gemini Artifacts (unless embedded data)
+1. ✅ Use successful platforms from previous days
+2. ✅ Claude/Gemini Artifacts - expect Grade D (Partial Success) due to CSP/CORS
 3. ✅ Focus on core documentation
 4. ✅ Create HTML page for visual results
 5. ✅ Keep platform READMEs optional
+6. ✅ Use consistent platform colors from Day 1
+7. ✅ Grade appropriately: even failures that generate UI get Grade D
 
 **Time goal**: 60-80 minutes total
 
