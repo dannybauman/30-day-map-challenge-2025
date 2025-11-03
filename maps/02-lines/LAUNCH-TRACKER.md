@@ -90,13 +90,13 @@
 - **Mobile Check:** ⭐ Excellent - best mobile experience
 - **Live URL:** https://project-portland-street-orientation-rainbow-map-450.magicpatterns.app/
 
-#### ✅ Base44
-- **Launch Time:**
-- **Status:**
-- **Notes:**
-- **Screenshot:**
-- **Mobile Check:**
-- **Live URL:**
+#### ⚠️ Base44
+- **Launch Time:** [Launched]
+- **Status:** ⚠️ Partial Success (UX issues)
+- **Notes:** Data loads and displays well, pan/zoom performance good. **BUT: Color circle legend is incorrect** - colors don't follow proper HSL/compass order (red should be north/0°). **Mobile fail: Legend takes up >50% of screen and can't be hidden**, making map barely usable on phones. Technical execution solid, but critical UX/design flaws.
+- **Screenshot:** ✅ screenshot.png (shows incorrect color gradient), screenshot-mobile.png (shows legend dominating screen)
+- **Mobile Check:** ❌ Poor - legend dominates, no collapse option
+- **Live URL:** https://portland-street-atlas-3ab01ba5.base44.app/
 
 ---
 
