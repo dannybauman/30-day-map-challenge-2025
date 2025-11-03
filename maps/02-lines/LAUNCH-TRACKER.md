@@ -102,27 +102,44 @@
 
 ## Quick Stats
 
-- **Total Platforms:** 11
-- **Successful:**
-- **Partial Success:**
-- **Failed:**
-- **Total Time:**
+- **Total Platforms:** 10 (tested)
+- **Full Success:** 3 (Lovable, Bolt.new, MagicPatterns)
+- **Partial Success:** 3 (ChatGPT Canvas, V0.dev, Base44)
+- **Failed:** 4 (Claude Artifacts, Gemini Canvas, Google AI Studio, Firebase Studio)
+- **Success Rate:** 30% full success, 60% usable
+- **Total Time:** ~2 hours (including ideation, prompt creation, testing, documentation)
 
 ---
 
 ## Key Observations
 
-### What Worked
--
+### What Worked ✅
+- **MagicPatterns dominated**: Fastest loading, best performance, best legend design, excellent mobile UX
+- **Circular legends superior**: Bolt.new and MagicPatterns' circular color wheels were far more intuitive than linear legends for directional data
+- **Data loading mostly successful**: 6/10 platforms successfully fetched and displayed 91MB Overpass API data
+- **Mobile responsive design**: Most successful platforms adapted well to mobile viewports
 
-### What Didn't Work
--
+### What Didn't Work ❌
+- **Large dataset performance**: 91MB of Portland street data caused sluggishness across most platforms (ChatGPT Canvas took ~1 min to render)
+- **CSP/CORS sandbox restrictions**: Claude Artifacts and Gemini Canvas continue to fail on external library/data loading
+- **Platform reliability issues**: Google AI Studio had internal error, Firebase Studio couldn't start app
+- **Rendering failures**: V0.dev's map rendering still problematic (black screen)
+- **Legend UX problems**: Base44's incorrect color mapping and non-collapsible mobile legend
 
-### Surprises
--
+### Surprises 🤔
+- **Firebase Studio's autonomous debugging**: Impressive feature that diagnosed the 91MB data issue and Next.js cache limit, even if it couldn't fix it
+- **Performance variance**: Huge differences in pan/zoom speed despite similar tech stacks (Leaflet/MapLibre)
+- **Legend design creativity**: Platforms interpreted "color wheel legend" differently - circular, linear, 4-square compass rose
+- **ChatGPT Canvas eventually worked**: Initially appeared broken but after ~1 minute of patience, fully rendered
+- **MagicPatterns as dark horse**: Not a household name but delivered the best overall result
 
-### Platform-Specific Notes
--
+### Platform-Specific Notes 📝
+- **Best for production**: MagicPatterns (performance + UX)
+- **Best legend design**: MagicPatterns (circular + responsive)
+- **Most patient required**: ChatGPT Canvas (~1 min load)
+- **Best debugging tools**: Firebase Studio (autonomous investigation)
+- **Most reliable**: Bolt.new, Lovable (consistent Day 1 → Day 2)
+- **Least reliable**: Google AI Studio (internal error), Claude/Gemini Artifacts (persistent CSP issues)
 
 ---
 
@@ -146,16 +163,23 @@
 
 | Platform | Desktop Quality | Mobile Quality | Overall |
 |----------|----------------|----------------|---------|
-| Lovable | | | |
-| ChatGPT Canvas | | | |
-| Bolt.new | | | |
-| V0.dev | | | |
-| Google AI Studio | | | |
-| Firebase Studio | | | |
-| Claude Artifacts | | | |
-| Gemini Canvas | | | |
-| MagicPatterns | | | |
-| Base44 | | | |
+| Lovable | B | B | B |
+| ChatGPT Canvas | C (slow) | B | C+ |
+| Bolt.new | B | B | B |
+| V0.dev | D (black map) | D (black map) | D |
+| Google AI Studio | F (error) | F (no code) | F |
+| Firebase Studio | F (no start) | F (no start) | F |
+| Claude Artifacts | F (CSP) | F (CSP) | F |
+| Gemini Canvas | F (CORS) | F (CORS) | F |
+| MagicPatterns | A | A | **A** ⭐ |
+| Base44 | B | D (legend issue) | C |
 
 **Rating Scale:** A (Excellent) / B (Good) / C (OK) / D (Poor) / F (Broken)
+
+**Key:**
+- **A (Excellent)**: Fast, beautiful, fully functional, great mobile UX
+- **B (Good)**: Works well, minor issues, responsive
+- **C (OK)**: Usable but significant issues (performance, UX problems)
+- **D (Poor)**: Major functionality broken but some elements work
+- **F (Broken)**: Complete failure, unusable
 
