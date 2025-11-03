@@ -19,12 +19,12 @@
 - **Live URL:** https://portland-hue-lines.lovable.app
 
 #### ✅ ChatGPT Canvas (GPT-5 Thinking)
-- **Launch Time:**
-- **Status:**
-- **Notes:**
-- **Screenshot:**
-- **Mobile Check:**
-- **Live URL:**
+- **Launch Time:** [Launched]
+- **Status:** ⚠️ Eventual Success (very slow)
+- **Notes:** Initial data load error, used "Fix Bug" button. After fix, EXTREMELY SLUGGISH - took ~1 minute to show data after map appeared. Pan/zoom very slow (~10 sec). Console shows CSP violations for Overpass API + basemap tiles but map eventually rendered with colors. Leaflet performance issues with large dataset. Linear legend. Required patience.
+- **Screenshot:** ✅ screenshot.png (manual), screenshot-mobile.png
+- **Mobile Check:** ✅ Responsive
+- **Live URL:** https://chatgpt.com/canvas/shared/6908395f84ec8191b7d57c4c883d5354
 
 #### ✅ Bolt.new
 - **Launch Time:** [Launched]
@@ -70,25 +70,25 @@
 
 ### Tier 2 - Full-Stack & Advanced
 
-#### ✅ Firebase Studio
-- **Launch Time:**
-- **Status:**
-- **Notes:** (Day 1: Requires 2 API keys - Gemini + Google Maps)
-- **Screenshot:**
-- **Mobile Check:**
-- **Live URL:**
+#### ❌ Firebase Studio
+- **Launch Time:** [Launched]
+- **Status:** ❌ Failed (stuck on "Starting app")
+- **Notes:** Autonomous "Investigate" debugging! AI found: 91MB Overpass data exceeds Next.js 2MB cache limit. Proposed fixes but couldn't resolve. Stuck at "Starting app". Impressive debugging feature but failed to deliver. Required Gemini API key.
+- **Screenshot:** ✅ screenshot.png (shows debugging attempt)
+- **Mobile Check:** N/A (never started)
+- **Live URL:** N/A
 
 ---
 
 ### Tier 3 - Specialized Tools
 
 #### ✅ MagicPatterns
-- **Launch Time:**
-- **Status:**
-- **Notes:**
-- **Screenshot:**
-- **Mobile Check:**
-- **Live URL:**
+- **Launch Time:** [Launched]
+- **Status:** ⭐ **BEST OVERALL** - Excellent Success
+- **Notes:** **Winner for Day 2!** Fastest data loading (quickest of all). Most performant pan/zoom (~1-2 sec lag, better than all others). **Best legend UI** - beautiful circular color wheel. Excellent mobile responsive. All features work. Only minor issues: zoom buttons overlay header slightly, tooltip contrast could be better. Zero human intervention needed. Superior out-of-the-box quality.
+- **Screenshot:** ✅ screenshot.png, screenshot-mobile.png
+- **Mobile Check:** ⭐ Excellent - best mobile experience
+- **Live URL:** https://project-portland-street-orientation-rainbow-map-450.magicpatterns.app/
 
 #### ✅ Base44
 - **Launch Time:**
