@@ -31,9 +31,9 @@
 3. [x] Bolt.new ✅
 4. [x] V0.dev ⚠️
 5. [x] Google AI Studio ❌
-6. [x] Claude Artifacts ❌
-7. [x] Gemini Canvas ❌
-8. [x] Firebase Studio ❌
+6. [x] Claude Artifacts ⚠️
+7. [x] Gemini Canvas ⚠️
+8. [x] Firebase Studio ⚠️
 9. [x] MagicPatterns ⭐
 10. [x] Base44 ⚠️
 
@@ -205,5 +205,4 @@ Each platform README includes:
 - Fill in stats: 5 min
 - Write observations/learnings: 10 min
 - Final commit and push: 5 min
-
 

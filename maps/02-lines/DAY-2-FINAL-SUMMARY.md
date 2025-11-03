@@ -45,9 +45,11 @@
 
 ### Success Rate
 - **Full Success:** 3/10 (30%)
-- **Partial Success:** 3/10 (30%)
-- **Complete Failure:** 4/10 (40%)
-- **Usable:** 6/10 (60%)
+- **Partial Success:** 6/10 (60%)
+- **Complete Failure:** 1/10 (10%)
+- **Usable:** 3/10 (30%)
+
+Partial successes are recorded because the UI exists, but each requires manual follow-up before it can be shared.
 
 ### Winner 🏆
 **MagicPatterns (Grade A)**
@@ -64,10 +66,10 @@
 4. **ChatGPT Canvas** (C+) - Works but very slow
 5. **Base44** (C) - Technical success, UX issues
 6. **V0.dev** (D) - UI works, map black
-7. **Claude Artifacts** (F) - CSP/CORS blocked
-8. **Gemini Canvas** (F) - CORS blocked
-9. **Google AI Studio** (F) - Internal error
-10. **Firebase Studio** (F) - Stuck on start
+7. **Claude Artifacts** (D) - UI renders but sandbox blocks data
+8. **Gemini Canvas** (D) - Same sandbox issues as Claude
+9. **Firebase Studio** (D) - Stuck at start, autonomous debugging surfaced cache limit
+10. **Google AI Studio** (F) - Internal error, no code generated
 
 ---
 
@@ -88,12 +90,11 @@
 **Consistent performers:**
 - Lovable, Bolt.new (Day 1 + Day 2 both successful)
 
-**Consistent failures:**
-- Claude Artifacts, Gemini Canvas (sandbox too restrictive)
+**Consistent partial successes:**
+- Claude Artifacts, Gemini Canvas, Firebase Studio (sandboxes or limits keep them from completing data loads)
 
 **Unreliable:**
 - Google AI Studio (Day 1 worked, Day 2 error)
-- Firebase Studio (impressive debugging, but failed delivery)
 
 **Dark horse:**
 - MagicPatterns (delivered #1 result despite being lesser-known)
@@ -115,7 +116,7 @@
 - 1 special screenshot (Lovable tooltip issue)
 - 1 debugging screenshot (Firebase Studio)
 
-**Total Files:** 34 markdown + image files
+**Total Files:** 35 markdown + image files
 
 ### Verification Documents (2)
 - `DAY-2-VERIFICATION.md` - Checklist
@@ -179,5 +180,3 @@ Day 2 is **100% complete** and ready for:
 **Verified by:** AI Agent
 **Date:** November 2, 2025
 **Status:** ✅ All checks passed, Day 2 complete
-
-

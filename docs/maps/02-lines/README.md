@@ -102,7 +102,7 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 
 ---
 
-### ⚠️ Partial Success (continued - 4 platforms)
+### ⚠️ Partial Success (continued - 3 platforms)
 
 #### Claude Artifacts (Grade D)
 - CSP/CORS restrictions block external libraries
@@ -116,12 +116,6 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 - Errors now hidden from users (just spinner)
 - Day 1 + Day 2 both failed identically
 
-#### Google AI Studio (Grade F - no code generated)
-- Internal platform error: "An internal error occurred"
-- Never generated any code - completely unusable
-- Day 1 worked, Day 2 broken - reliability concern
-- **Grade F justification**: Unlike Claude/Gemini which generated UI/legends, Google AI Studio generated nothing
-
 #### Firebase Studio (Grade D)
 - Stuck at "Starting app"
 - Autonomous debugging identified 91MB data exceeds Next.js 2MB limit
@@ -130,17 +124,29 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 
 ---
 
+### ❌ Failure (1 platform)
+
+#### Google AI Studio (Grade F - no code generated)
+- Internal platform error: "An internal error occurred"
+- Never generated any code - completely unusable
+- Day 1 worked, Day 2 broken - reliability concern
+- **Grade F justification**: Unlike Claude/Gemini which generated UI/legends, Google AI Studio generated nothing
+
+---
+
 ### 📊 Success Rates
 
 | Category | Count | Percentage |
 |----------|-------|------------|
 | Full Success | 3 | 30% |
-| Partial Success | 7 | 70% |
-| **Usable** | **6** | **60%** |
+| Partial Success | 6 | 60% |
+| Complete Failure | 1 | 10% |
+| **Usable** | **3** | **30%** |
 
 **Day 1 vs Day 2 Comparison:**
 - Day 1: 73% success rate
-- Day 2: 30% full success, 60% usable
+- Day 2: 30% full success, 30% usable (partial successes need fixes before they’re shareable)
+- Partial successes are documented because the UI exists, but they still require manual intervention before deployment.
 - **Conclusion**: Larger dataset (91MB) + geometry calculations challenged more platforms
 
 ---
@@ -165,12 +171,13 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 4. **ChatGPT Canvas**: Functional but requires patience (very slow)
 5. **Base44**: Technical success, UX failures (legend issues)
 6. **V0.dev**: UI works but rendering broken (persistent issue)
-7-10. **Failures**: Claude/Gemini Artifacts (CSP/CORS), Google AI Studio (reliability), Firebase Studio (size limits)
+7-9. **Partial successes**: Claude Artifacts, Gemini Canvas, Firebase Studio (UI generated but blocked by sandboxes or platform limits)
+10. **Failure**: Google AI Studio (internal platform error, no code generated)
 
 ### 🔮 Patterns Emerging
 - **Consistent performers**: Lovable, Bolt.new (Day 1 + Day 2 both successful)
-- **Consistent failures**: Claude Artifacts, Gemini Canvas (sandbox too restrictive)
-- **Unreliable**: Google AI Studio (Day 1 worked, Day 2 error), Firebase Studio (interesting debugging but failed delivery)
+- **Consistent partials**: Claude Artifacts, Gemini Canvas, Firebase Studio (sandboxes or caching limits keep them from full delivery)
+- **Unreliable**: Google AI Studio (Day 1 worked, Day 2 error)
 - **Dark horse**: MagicPatterns (not a household name but delivered #1 result)
 
 ### 💡 For Future Days
@@ -194,5 +201,4 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 
 Data: © OpenStreetMap contributors
 Concept: ChatGPT (GPT-5 Thinking)
-Implementation: 11 AI development platforms (parallel testing)
-
+Implementation: 10 AI development platforms (parallel testing)

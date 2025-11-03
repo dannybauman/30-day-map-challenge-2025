@@ -587,14 +587,15 @@ DELIVERABLES:
                 </div>
             </div>
 
-            <!-- More Partial Success -->
-            <h3 class="mb-3 mt-5">⚠️ Partial Success (continued)</h3>
+            <!-- Partial Success Continued -->
+            <h3 class="mb-3 mt-5">⚠️ Partial Success (continued - 3 platforms)</h3>
             <div class="row">
                 <!-- Claude Artifacts -->
                 <div class="col-md-3 platform-card">
                     <div class="card h-100">
-                        <div class="card-header bg-warning">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning">
                             <strong>Claude Artifacts</strong>
+                            <span class="badge bg-light text-dark">Partial Success</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-2">
@@ -608,7 +609,7 @@ DELIVERABLES:
                             <p class="small"><strong>Time:</strong> ~15 min (3 fix attempts)</p>
                             <p class="small">Same issue as Day 1 - cannot load Leaflet. Tried 3 different approaches, all blocked by CSP. Generated nice UI/legends but no map. Platform limitation, not code quality.</p>
                             <div class="d-flex gap-2">
-                                <a href="https://claude.ai/public/artifacts/f6ba0dae-3ad2-4c9d-bb2c-9d2f4eb812cd" class="btn btn-sm btn-outline-warning btn-sm" target="_blank">Live Demo</a>
+                                <a href="https://claude.ai/public/artifacts/f6ba0dae-3ad2-4c9d-bb2c-9d2f4eb812cd" class="btn btn-sm btn-outline-warning" target="_blank">Live Demo</a>
                                 <a href="claude-artifacts/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
                             </div>
                         </div>
@@ -618,8 +619,9 @@ DELIVERABLES:
                 <!-- Gemini Canvas -->
                 <div class="col-md-3 platform-card">
                     <div class="card h-100">
-                        <div class="card-header bg-warning">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning">
                             <strong>Gemini Canvas</strong>
+                            <span class="badge bg-light text-dark">Partial Success</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-2">
@@ -633,7 +635,7 @@ DELIVERABLES:
                             <p class="small"><strong>Time:</strong> ~15 min</p>
                             <p class="small">Same issue as Day 1 - cannot load MapLibre GL. Tried "Fix error" button 3x, all blocked by CORS. Generated beautiful color wheel legend but no map loads. Errors now hidden from users (just shows spinner).</p>
                             <div class="d-flex gap-2">
-                                <a href="https://gemini.google.com/share/3b970078b72c" class="btn btn-sm btn-outline-warning btn-sm" target="_blank">Live Demo</a>
+                                <a href="https://gemini.google.com/share/3b970078b72c" class="btn btn-sm btn-outline-warning" target="_blank">Live Demo</a>
                                 <a href="gemini/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
                             </div>
                         </div>
@@ -643,8 +645,9 @@ DELIVERABLES:
                 <!-- Firebase Studio -->
                 <div class="col-md-3 platform-card">
                     <div class="card h-100">
-                        <div class="card-header" style="background-color: #ff6d00; color: white;">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning">
                             <strong>Firebase Studio</strong>
+                            <span class="badge bg-light text-dark">Partial Success</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-2">
@@ -664,15 +667,16 @@ DELIVERABLES:
                         </div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Failed -->
-            <h3 class="mb-3 mt-5">❌ Failed (1 platform)</h3>
+            <!-- Failure -->
+            <h3 class="mb-3 mt-5">❌ Failure (1 platform)</h3>
             <div class="row">
                 <!-- Google AI Studio -->
                 <div class="col-md-4 platform-card">
                     <div class="card h-100">
-                        <div class="card-header" style="background-color: #34a853; color: white;">
+                        <div class="card-header bg-danger text-white">
                             <strong>Google AI Studio</strong>
                         </div>
                         <div class="card-body">
@@ -760,9 +764,9 @@ DELIVERABLES:
 
                     <p><strong>The Mobile Reality Check:</strong> Base44's non-collapsible mobile legend taking >50% of the screen shows how critical mobile UX is. Despite solid technical execution, the map was nearly unusable on phones. MagicPatterns' mobile experience was strong - another reason it won Day 2.</p>
 
-                    <p><strong>The Patterns:</strong> <strong>Consistent performers</strong>: Lovable, Bolt.new (Day 1 + Day 2 both successful). <strong>Consistent partial success</strong>: Claude Artifacts, Gemini Canvas (sandbox too restrictive, Day 1 + Day 2 = Grade D consistently due to CSP/CORS). <strong>Unreliable</strong>: Google AI Studio (Day 1 worked, Day 2 error), Firebase Studio (interesting debugging but couldn't deliver). <strong>Dark horse</strong>: MagicPatterns (delivered #1 result despite being lesser-known).</p>
+                    <p><strong>The Patterns:</strong> <strong>Consistent performers</strong>: Lovable, Bolt.new (Day 1 + Day 2 both successful). <strong>Consistent partial successes</strong>: Claude Artifacts, Gemini Canvas, Firebase Studio — they build UI but sandbox limits keep them from full delivery. <strong>Unreliable</strong>: Google AI Studio (Day 1 worked, Day 2 error). <strong>Dark horse</strong>: MagicPatterns (delivered #1 result despite being lesser-known).</p>
 
-                    <p><strong>Day 1 vs Day 2:</strong> Day 1 had 73% success rate with a ~500KB dataset. Day 2 had 30% full success (60% usable) with a 91MB dataset. Partial success rate is 60% (6 platforms) vs. Day 1's 27% (3 platforms). One complete failure (Google AI Studio - no code generated). The conclusion is clear: larger datasets + geometry calculations created a bigger challenge, separating robust platforms from fragile ones. Day 2 was more discriminating in identifying truly capable platforms.</p>
+                    <p><strong>Day 1 vs Day 2:</strong> Day 1 had 73% success rate with a ~500KB dataset. Day 2 had 30% full success (30% truly usable) with a 91MB dataset. Partial success rate is 60% (6 platforms) vs. Day 1's 27% (3 platforms), but those runs still need manual fixes before they're shareable. One complete failure (Google AI Studio). The conclusion is clear: larger datasets + geometry calculations created a bigger challenge, separating robust platforms from fragile ones. Day 2 was more discriminating in identifying truly capable platforms.</p>
 
                     <p><strong>Looking ahead:</strong> Day 2 established that performance matters - not just "does it work" but "does it work well". For future days with large datasets or complex calculations, MagicPatterns and Lovable (MapLibre GL) are the top choices. For smaller datasets, the broader field remains viable. But the real lesson: data size and complexity reveal platform robustness in ways that simpler tests don't.</p>
 
@@ -795,7 +799,7 @@ DELIVERABLES:
     <footer>
         <div class="container text-center">
             <p><strong>#30DayMapChallenge 2025</strong> | Danny Bauman</p>
-            <p>Day 2 of 30 | Theme: Lines | 10 Platforms Tested | 30% Full Success, 60% Usable</p>
+            <p>Day 2 of 30 | Theme: Lines | 10 Platforms Tested | 30% Full Success, 30% Usable</p>
             <p class="mb-0">
                 <a href="../../README.md" class="text-white">Project Home</a> |
                 <a href="README.md" class="text-white">Day Documentation</a> |
@@ -808,4 +812,3 @@ DELIVERABLES:
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-

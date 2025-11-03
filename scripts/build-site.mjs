@@ -14,6 +14,7 @@ const faviconSource = path.join(repoRoot, 'favicon.svg');
 const faviconTarget = path.join(docsDir, 'favicon.svg');
 const manifestPathRoot = path.join(repoRoot, 'days.json');
 const manifestPathDocs = path.join(docsDir, 'days.json');
+const rootDocsToCopy = ['PLATFORM-TRACKER.md'];
 
 async function ensureDir(dir) {
     await fs.mkdir(dir, { recursive: true });
@@ -215,6 +216,14 @@ async function build() {
 
     if (await pathExists(faviconSource)) {
         await fs.copyFile(faviconSource, faviconTarget);
+    }
+
+    for (const docName of rootDocsToCopy) {
+        const sourcePath = path.join(repoRoot, docName);
+        if (await pathExists(sourcePath)) {
+            const targetPath = path.join(docsDir, docName);
+            await fs.copyFile(sourcePath, targetPath);
+        }
     }
 
     const dayEntries = [];
