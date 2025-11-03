@@ -102,26 +102,26 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 
 ---
 
-### ❌ Complete Failures (4 platforms)
+### ⚠️ Partial Success (continued - 4 platforms)
 
-#### Claude Artifacts (Grade F)
+#### Claude Artifacts (Grade D)
 - CSP/CORS restrictions block external libraries
 - Cannot load Leaflet, tried 3 different approaches
 - Platform limitation, not code quality issue
 - Day 1 + Day 2 both failed identically
 
-#### Gemini Canvas (Grade F)
+#### Gemini Canvas (Grade D)
 - CORS policy blocks MapLibre GL
 - "Fix error" button tried 3x, all failed
 - Errors now hidden from users (just spinner)
 - Day 1 + Day 2 both failed identically
 
-#### Google AI Studio (Grade F)
+#### Google AI Studio (Grade D)
 - Internal platform error: "An internal error occurred"
 - Never generated any code
 - Day 1 worked, Day 2 broken - reliability concern
 
-#### Firebase Studio (Grade F)
+#### Firebase Studio (Grade D)
 - Stuck at "Starting app"
 - Autonomous debugging identified 91MB data exceeds Next.js 2MB limit
 - Proposed fixes but couldn't resolve
@@ -134,8 +134,7 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 | Category | Count | Percentage |
 |----------|-------|------------|
 | Full Success | 3 | 30% |
-| Partial Success | 3 | 30% |
-| Complete Failure | 4 | 40% |
+| Partial Success | 7 | 70% |
 | **Usable** | **6** | **60%** |
 
 **Day 1 vs Day 2 Comparison:**

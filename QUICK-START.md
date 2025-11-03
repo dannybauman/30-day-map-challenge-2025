@@ -213,12 +213,30 @@ Why I chose it:
 ## ✅ Human-in-the-Loop Reminders
 - Every map must include your own judgement call about accuracy and storytelling—log it in the daily README.
 - When AI suggests styling or copy, read it carefully and adjust tone/details before publishing.
-- Keep track of any manual code edits (e.g., bug fixes, accessibility tweaks) so you can list them in the “Human review” section later.
+- Keep track of any manual code edits (e.g., bug fixes, accessibility tweaks) so you can list them in the "Human review" section later.
 
 **Remember**: You'll be implementing this across 8-10 platforms today, so pick something that:
 - Has clear success criteria
 - Will look good in screenshots
 - You'd be proud to share
+
+## 📊 Grading & Consistency Guidelines
+
+**Grading Scale** (consistent across all days):
+- **A (Excellent)**: Fast, beautiful, fully functional, great mobile UX
+- **B (Good)**: Works well, minor issues, responsive
+- **C (OK)**: Usable but significant issues (performance, UX problems)
+- **D (Poor)**: Major functionality broken but some elements work (e.g., UI works but map doesn't load)
+- **Note**: Even CSP/CORS failures that generate UI get Grade D (Partial Success), not F. Be consistent but fair - if it generates something useful, it's at least D.
+
+**Platform Colors** (use Day 1 as source of truth - must match across all days):
+- See `maps/01-points/index.html` for complete color scheme
+- Each platform has a consistent header color across all days
+
+**Screenshot Sizing** (important for HTML pages):
+- Single winner (full width `col-md-12`): Use `col-8` for desktop, `col-4` for mobile
+- Multiple winners (`col-md-6`): Use `col-7` for desktop, `col-5` for mobile
+- Mobile screenshot should be smaller when winner takes full width to prevent it from being too large
 
 ---
 

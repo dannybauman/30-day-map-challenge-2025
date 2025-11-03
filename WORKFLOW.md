@@ -179,7 +179,10 @@ maps/0X-theme/
    - Your editorial thoughts
 
 3. **Follow the design system**:
-   - Desktop screenshots: `col-7` (larger), Mobile: `col-5` (smaller)
+   - **Screenshot sizing (important!)**:
+     - Single winner (full width `col-md-12`): Use `col-8` for desktop, `col-4` for mobile
+     - Multiple winners (`col-md-6`): Use `col-7` for desktop, `col-5` for mobile
+     - Mobile screenshot should be smaller when winner takes full width to prevent it from being too large
    - Use CSS classes: `.screenshot-desktop` and `.screenshot-mobile`
    - Gap spacing: `g-3` for screenshot rows
    - Bold desktop labels, regular mobile labels
@@ -208,25 +211,53 @@ maps/0X-theme/
 
 ---
 
-## Key Learnings from Day 1
+## Key Learnings from Day 1 & Day 2
 
-1. **Parallel testing works!** - 9 platforms in 90 minutes
-2. **ChatGPT Canvas, Bolt.new, Lovable** - most reliable
-3. **Claude/Gemini Artifacts** - struggled with external APIs, but were close - may work with embedded data
-4. **MagicPatterns** - surprise good performer
-5. **Documentation time** - took longer than expected (~30 min)
-6. **HTML page** - will make sharing results much easier
+1. **Parallel testing works!** - 10-11 platforms in 90-120 minutes
+2. **ChatGPT Canvas, Bolt.new, Lovable, MagicPatterns** - most reliable
+3. **Claude/Gemini Artifacts** - struggled with external APIs (CSP/CORS) - consistent partial success (Grade D)
+4. **Grading consistency**: All platforms get at least Grade D (Partial Success) - even CSP/CORS failures generate UI/legends. Grade F reserved only for truly unusable (rare).
+5. **Platform colors**: Consistent across days - use Day 1 as source of truth for all platform header colors
+6. **Documentation time** - took longer than expected (~30 min)
+7. **HTML page** - makes sharing results much easier
 
 ---
 
-## For Tomorrow (Day 2)
+## Grading & Platform Colors (Consistent Across Days)
+
+**Grading Scale:**
+- **A (Excellent)**: Fast, beautiful, fully functional, great mobile UX
+- **B (Good)**: Works well, minor issues, responsive
+- **C (OK)**: Usable but significant issues (performance, UX problems)
+- **D (Poor)**: Major functionality broken but some elements work (e.g., UI works but map doesn't load)
+- **Note**: Even CSP/CORS failures that generate UI get Grade D (Partial Success), not F. Grade F is reserved for truly unusable (rare).
+
+**Platform Colors** (consistent across all days - use Day 1 as source of truth):
+- **Lovable**: `bg-info` (blue)
+- **ChatGPT Canvas**: `bg-success` (green)
+- **Bolt.new**: `bg-primary` (blue)
+- **Firebase Studio**: `#ff6d00` (orange)
+- **Base44**: `#7c3aed` (purple)
+- **MagicPatterns**: `#9b59b6` (purple/violet)
+- **Google AI Studio**: `#34a853` (green)
+- **Claude/Gemini/V0**: `bg-warning` (yellow/orange)
+
+**Ideation Phase Colors** (consistent across all days):
+- **Claude**: Orange `#fd7e14`
+- **ChatGPT**: Green `bg-success`
+- **Gemini**: Blue `#4285f4`
+- **Chosen concept**: Add `concept-chosen` class with `border-color: #fd7e14;`
+
+## For Tomorrow (Day 3+)
 
 **Streamlined approach**:
-1. ✅ Use successful platforms from Day 1
-2. ✅ Skip Claude/Gemini Artifacts (unless embedded data)
+1. ✅ Use successful platforms from previous days
+2. ✅ Claude/Gemini Artifacts - expect Grade D (Partial Success) due to CSP/CORS
 3. ✅ Focus on core documentation
 4. ✅ Create HTML page for visual results
 5. ✅ Keep platform READMEs optional
+6. ✅ Use consistent platform colors from Day 1
+7. ✅ Grade appropriately: even failures that generate UI get Grade D
 
 **Time goal**: 60-80 minutes total
 

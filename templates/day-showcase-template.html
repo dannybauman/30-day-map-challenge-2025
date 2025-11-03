@@ -111,6 +111,7 @@
             <div class="row g-3 mb-4">
                 <div class="col-md-4">
                     <!-- Note: Add "concept-chosen" class and style="border-color: #fd7e14;" to the card div of whichever concept was chosen -->
+                    <!-- Claude: Orange (#fd7e14) -->
                     <div class="card h-100">
                         <div class="card-header text-white" style="background-color: #fd7e14;">
                             <strong>Claude.ai (Sonnet 4.5)</strong>
@@ -121,6 +122,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <!-- ChatGPT: Green (bg-success) -->
                     <div class="card h-100">
                         <div class="card-header bg-success text-white">
                             <strong>ChatGPT (GPT-5 Thinking)</strong>
@@ -131,6 +133,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <!-- Gemini: Blue (#4285f4) -->
                     <div class="card h-100">
                         <div class="card-header" style="background-color: #4285f4; color: white;">
                             <strong>Gemini (2.5 Pro)</strong>
@@ -295,6 +298,12 @@
             <h3 class="mb-3">🏆 Top Performers</h3>
             <div class="row">
                 <!-- Repeat for each successful platform -->
+                <!--
+                    SCREENSHOT SIZING GUIDE:
+                    - Single winner (full width col-md-12): Use col-8 for desktop, col-4 for mobile
+                    - Multiple winners (col-md-6): Use col-7 for desktop, col-5 for mobile (already appropriately sized)
+                    - The goal: mobile screenshot shouldn't be too large when winner takes full width
+                -->
                 {{PLATFORM_CARDS}}
             </div>
 
