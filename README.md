@@ -232,6 +232,28 @@ Paste prompt in each → Click generate → Move to next
 
 ---
 
+## Grading Criteria
+
+**Success Grades (A, B, C) - Full Success:**
+- **A (Excellent)**: Fast, beautiful, fully functional, great mobile UX. Map renders correctly, all features work, responsive design is strong.
+- **B (Good)**: Works well, minor issues (e.g., tooltip contrast, legend style), responsive. Map is functional and usable.
+- **C (OK)**: Usable but significant issues (performance problems, UX issues like sluggish pan/zoom). Map works but has notable problems.
+
+**Partial Success (Grade D):**
+- Major functionality broken but some elements work. Examples:
+  - UI/legends generated but map doesn't load (CSP/CORS issues)
+  - Data loads but visualization broken
+  - Map loads but interaction doesn't work
+- **Key point**: Even CSP/CORS failures that generate UI/legends get Grade D (Partial Success), not F. If it generates something useful, it's at least D.
+
+**Failed (Grade F):**
+- No code generated at all (platform error, completely unusable - rare). Examples:
+  - Platform returns "internal error" and never generates code
+  - Platform crashes before any output
+- **Key distinction**: Grade F is reserved for when no code/output is generated at all (platform infrastructure failures), not for code that doesn't work properly.
+
+---
+
 ## Code of Conduct Compliance
 
 Per the [official challenge](https://30daymapchallenge.com/):

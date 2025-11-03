@@ -226,11 +226,18 @@ maps/0X-theme/
 ## Grading & Platform Colors (Consistent Across Days)
 
 **Grading Scale:**
-- **A (Excellent)**: Fast, beautiful, fully functional, great mobile UX
-- **B (Good)**: Works well, minor issues, responsive
-- **C (OK)**: Usable but significant issues (performance, UX problems)
-- **D (Poor)**: Major functionality broken but some elements work (e.g., UI works but map doesn't load)
-- **Note**: Even CSP/CORS failures that generate UI/legends get Grade D (Partial Success), not F. Grade F is reserved for when no code is generated at all (platform errors that prevent any output - rare).
+- **A (Excellent / Full Success)**: Fast, beautiful, fully functional, great mobile UX. Map renders correctly, all features work, responsive design is strong.
+- **B (Good / Full Success)**: Works well, minor issues (e.g., tooltip contrast, legend style), responsive. Map is functional and usable.
+- **C (OK / Full Success)**: Usable but significant issues (performance problems, UX issues like sluggish pan/zoom). Map works but has notable problems.
+- **D (Poor / Partial Success)**: Major functionality broken but some elements work. Examples:
+  - UI/legends generated but map doesn't load (CSP/CORS issues)
+  - Data loads but visualization broken
+  - Map loads but interaction doesn't work
+  - **Key point**: Even CSP/CORS failures that generate UI/legends get Grade D (Partial Success), not F. If it generates something useful, it's at least D.
+- **F (Failed)**: No code generated at all (platform error, completely unusable - rare). Examples:
+  - Platform returns "internal error" and never generates code
+  - Platform crashes before any output
+  - **Key distinction**: Grade F is reserved for when no code/output is generated at all (platform infrastructure failures), not for code that doesn't work properly.
 
 **Platform Colors** (consistent across all days - use Day 1 as source of truth):
 - **Lovable**: `bg-info` (blue)
