@@ -8,6 +8,8 @@
 
 For the **[#30DayMapChallenge](https://30daymapchallenge.com/)**, I wanted to use AI as both creative partner and primary developer. 30 unique map themes, one per day, and my project explores how top AI models and a variety of AI-first development platforms can quickly ideate and bulid map ideas into prototypes. And to see a Nov 2025 snapshot of how good these AI tools are for something like this.
 
+I'm approaching this with the 30 Day Map Challenge [code of conduct](https://30daymapchallenge.com/#code-of-conduct) in mind: I'm publishing only my own work, sharing clear data sources, and using AI to evaluate which tools genuinely help human mapmakers instead of letting them replace the creative joy of mapmaking. Huge respect and gratitude to the artists, cartographers, designers, software engineers, storytellers, and everyone else crafting maps without AI—your craft sets the bar and keeps this community grounded in the social and environmental realities that careless AI use can ignore. My goal is to document the good, discard the noise, and feed those lessons back into workflows that stay useful for people.
+
 **Idea**: Prompt across platforms, let them cook in parallel, use AI to help journal and report everything.
 
 ---
@@ -19,9 +21,11 @@ For the **[#30DayMapChallenge](https://30daymapchallenge.com/)**, I wanted to us
 Instead of building 1 map per day, my hope is to easily build like 10-20! I'll use multiple AI models to help come up with ideas, then choose 1-2 to run through a bunch of AI development platforms simultaneously. This way it'll show a comparison on how different tools handle the same geospatial prototyping task.
 
 ### To Vibe Code or Not To Vibe Code
-For this I'll mostly be vibe coding with minimal care for code quality or longevity, which isn't right for most projects. And huge respect to everyone participating in the 30-Day Map Challenge without using any AI (or even any computers) at all!
+For this I'll mostly be vibe coding with minimal care for code quality or longevity, which is NOT right for most projects. I'm treating this as a rapid prototyping lab to watch how well AI-assisted development performs in between the human craft steps.
 
-Vibe coding is just one way to use AI to help write software, people are coming up with more ways every day, and not just for prototyping but for deep specific engineering. So with my disclaimer that vibe coding isn't the answer for most people and situations, sometimes it is, and I think it's fun and amazing to ideate and prototype!
+My earlier code of conduct note is my guardrail: I only ship work I personally guide, I cite every dataset and call out every AI-based contribution, and I log when AI shortcuts actually cost more than they save. Documenting those wins and misses should make it easier for anyone to decide what tools deserve their time.
+
+Vibe coding is just one way to use AI to help write software. People are inventing new workflows daily, from exploratory prototypes to deep, targeted engineering. My goal here is to surface the useful patterns, flag the dead ends, and keep the focus on the human creativity that makes the challenge magical.
 
 ### The Workflow
 
