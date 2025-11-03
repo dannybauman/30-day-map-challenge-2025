@@ -1,8 +1,8 @@
 # Lovable - Day 2: Lines
 
-**Platform:** Lovable  
-**Status:** ✅ Success  
-**Time:** ~10 minutes (one-shot)  
+**Platform:** Lovable
+**Status:** ✅ Success
+**Time:** ~10 minutes (one-shot)
 **Live URL:** https://portland-hue-lines.lovable.app
 
 ---
@@ -60,7 +60,7 @@ This is a significant UX issue that makes the map frustrating to use despite the
 - ❌ **Lovable:** Linear gradient (less intuitive)
 - ❌ **Claude Artifacts:** Linear gradient (less intuitive)
 
-**Why circular is better:** 
+**Why circular is better:**
 - Matches the cyclical nature of compass bearings
 - Visually represents that 0° and 360° are the same direction
 - More intuitive for understanding directional data

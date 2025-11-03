@@ -1,8 +1,8 @@
 # Gemini Canvas - Day 2: Lines
 
-**Platform:** Gemini Canvas  
-**Status:** ❌ Failed (CSP/CORS violations)  
-**Time:** ~15 minutes (3 fix attempts)  
+**Platform:** Gemini Canvas
+**Status:** ❌ Failed (CSP/CORS violations)
+**Time:** ~15 minutes (3 fix attempts)
 **Live URL:** https://gemini.google.com/share/3b970078b72c
 
 ---
@@ -20,7 +20,7 @@ Access to script at 'https://unpkg.com/maplibre-gl@4.3.2/dist/maplibre-gl.mjs' f
 Failed to load resource: net::ERR_FAILED @ https://unpkg.com/maplibre-gl@4.3.2/dist/maplibre-gl.mjs
 ```
 
-**User experience:** 
+**User experience:**
 - Generated UI loads
 - Loading spinner appears
 - But map never loads (blocked by CORS)

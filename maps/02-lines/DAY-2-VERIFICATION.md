@@ -9,7 +9,7 @@
 
 ### Phase 1: Ideation ✅
 - [x] Get ideation concepts from Claude
-- [x] Get ideation concepts from ChatGPT  
+- [x] Get ideation concepts from ChatGPT
 - [x] Get ideation concepts from Gemini
 - [x] Document all 6 concepts in `concept.md`
 - [x] User reviews and chooses concept (Street Orientation Rainbow)
