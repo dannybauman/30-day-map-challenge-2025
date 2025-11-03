@@ -1,5 +1,7 @@
 # 30-Day Map Challenge 2025: AI-Powered Mapping Experiment
 
+Live site: [https://dannybauman.github.io/30-day-map-challenge-2025/](https://dannybauman.github.io/30-day-map-challenge-2025/)
+
 ![Day 1 HTML page - Top](maps/01-points/html-screenshot-top.png)
 
 ![Day 1 HTML page - Top 3 Results](maps/01-points/html-screenshot-top3.png)
@@ -8,9 +10,9 @@
 
 For the **[#30DayMapChallenge](https://30daymapchallenge.com/)**, I wanted to use AI as both creative partner and primary developer. 30 unique map themes, one per day, and my project explores how top AI models and a variety of AI-first development platforms can quickly ideate and bulid map ideas into prototypes. And to see a Nov 2025 snapshot of how good these AI tools are for something like this.
 
-I'm approaching this with the 30 Day Map Challenge [code of conduct](https://30daymapchallenge.com/#code-of-conduct) in mind: I'm publishing only my own work, sharing clear data sources, and using AI to evaluate which tools genuinely help human mapmakers instead of letting them replace the creative joy of mapmaking. Huge respect and gratitude to the artists, cartographers, designers, software engineers, storytellers, and everyone else crafting maps without AI—your craft sets the bar and keeps this community grounded in the social and environmental realities that careless AI use can ignore. My goal is to document the good, discard the noise, and feed those lessons back into workflows that stay useful for people.
+**Idea**: Prompt across AI platforms, let them work in parallel, use AI to help journal and report everything.
 
-**Idea**: Prompt across platforms, let them cook in parallel, use AI to help journal and report everything.
+I'm approaching this with the 30 Day Map Challenge [code of conduct](https://30daymapchallenge.com/#code-of-conduct) in mind: I'm publishing only my own work, sharing clear data sources, and using AI to evaluate which tools genuinely help human mapmakers instead of letting them replace the creative joy of mapmaking. Huge respect and gratitude to the artists, cartographers, designers, software engineers, storytellers, and everyone else crafting maps without AI - your craft sets the bar and keeps this community grounded in the social and environmental realities that careless AI use can ignore. My goal is to document the good, discard the noise, and feed those lessons back into workflows that stay useful for people.
 
 ---
 
@@ -37,7 +39,7 @@ Vibe coding is just one way to use AI to help write software. People are inventi
 
 **Phase 2: Parallel Platform Launch**
 - Open 5-15 AI development platforms in browser tabs (ChatGPT, Claude, Gemini, v0, bolt, lovable, etc.)
-- **Copy/paste same prompt to each platform**
+- Copy/paste same prompt to each platform
 - Hit GO on all of them simultaneously
 - Let them work in parallel, see how it goes
 
@@ -55,17 +57,17 @@ Vibe coding is just one way to use AI to help write software. People are inventi
 - Commit everything with platform comparison notes
 - Create a visual HTML report for each day to share the results and my thoughts
 
-### Why This Approach Works
+### Why This Approach?
 
-🚀 **Parallel AI**: Multiple AIs working simultaneously generate comparative data efficiently
+**Parallel AI**: Multiple AIs working simultaneously generate comparative data efficiently
 
-🎯 **Real Comparison**: See which platforms excel at which map types and why
+**Real Comparison**: See which platforms excel at which map types and why
 
-📊 **Push the Limits**: Even failures are valuable documentation of platform limitations
+**Push the Limits**: Even failures are valuable documentation of platform limitations
 
-⚡ **Lots of Examples**: Generate 5-15 implementations per theme instead of just one
+**Lots of Examples**: Generate 5-15 implementations per theme instead of just one
 
-🔬 **See How Platforms Compare**: Same prompt, same concept makes for a balanced comparison across platforms
+**See How Platforms Compare**: Same prompt, same concept makes for a balanced comparison across platforms
 
 ---
 
@@ -164,7 +166,7 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 - Simple to fill in - just HTML/Bootstrap
 - Makes results easy to browse and share on social media
 
-**View Day 1**: [maps/01-points/index.html](maps/01-points/index.html)
+**View Day 1**: [https://dannybauman.github.io/30-day-map-challenge-2025/maps/01-points/index.html](https://dannybauman.github.io/30-day-map-challenge-2025/maps/01-points/index.html)
 
 ---
 
