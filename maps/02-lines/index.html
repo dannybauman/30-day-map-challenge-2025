@@ -89,8 +89,16 @@
             <div class="col-md-3">
                 <div class="card text-center stats-card">
                     <div class="card-body">
-                        <h3 class="text-warning">7</h3>
-                        <p class="mb-0">Partial Success</p>
+                        <h3 class="text-warning">6</h3>
+                        <p class="mb-0">Partial Success (60%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center stats-card">
+                    <div class="card-body">
+                        <h3 class="text-danger">1</h3>
+                        <p class="mb-0">Failed (10%)</p>
                     </div>
                 </div>
             </div>
@@ -481,7 +489,7 @@ DELIVERABLES:
             </div>
 
             <!-- Partial Success -->
-            <h3 class="mb-3 mt-5">⚠️ Partial Success (3 platforms)</h3>
+            <h3 class="mb-3 mt-5">⚠️ Partial Success (6 platforms)</h3>
             <div class="row">
                 <!-- ChatGPT Canvas -->
                 <div class="col-md-4 platform-card">
@@ -577,8 +585,8 @@ DELIVERABLES:
                 </div>
             </div>
 
-            <!-- More Partial Success -->
-            <h3 class="mb-3 mt-5">⚠️ Partial Success (continued)</h3>
+            <!-- Failed -->
+            <h3 class="mb-3 mt-5">❌ Failed (1 platform)</h3>
             <div class="row">
                 <!-- Claude Artifacts -->
                 <div class="col-md-3 platform-card">
@@ -747,7 +755,7 @@ DELIVERABLES:
 
                     <p><strong>The Patterns:</strong> <strong>Consistent performers</strong>: Lovable, Bolt.new (Day 1 + Day 2 both successful). <strong>Consistent partial success</strong>: Claude Artifacts, Gemini Canvas (sandbox too restrictive, Day 1 + Day 2 = Grade D consistently due to CSP/CORS). <strong>Unreliable</strong>: Google AI Studio (Day 1 worked, Day 2 error), Firebase Studio (interesting debugging but couldn't deliver). <strong>Dark horse</strong>: MagicPatterns (delivered #1 result despite being lesser-known).</p>
 
-                    <p><strong>Day 1 vs Day 2:</strong> Day 1 had 73% success rate with a ~500KB dataset. Day 2 had 30% full success (60% usable) with a 91MB dataset. Partial success rate is 70% (7 platforms) vs. Day 1's 27% (3 platforms). The conclusion is clear: larger datasets + geometry calculations created a bigger challenge, separating robust platforms from fragile ones. Day 2 was more discriminating in identifying truly capable platforms.</p>
+                    <p><strong>Day 1 vs Day 2:</strong> Day 1 had 73% success rate with a ~500KB dataset. Day 2 had 30% full success (60% usable) with a 91MB dataset. Partial success rate is 60% (6 platforms) vs. Day 1's 27% (3 platforms). One complete failure (Google AI Studio - no code generated). The conclusion is clear: larger datasets + geometry calculations created a bigger challenge, separating robust platforms from fragile ones. Day 2 was more discriminating in identifying truly capable platforms.</p>
 
                     <p><strong>Looking ahead:</strong> Day 2 established that performance matters - not just "does it work" but "does it work well". For future days with large datasets or complex calculations, MagicPatterns and Lovable (MapLibre GL) are the top choices. For smaller datasets, the broader field remains viable. But the real lesson: data size and complexity reveal platform robustness in ways that simpler tests don't.</p>
 
