@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-03T04:41:00.228Z",
+  "generatedAt": "2025-11-03T06:25:36.320Z",
   "days": [
     {
       "id": "01-points",
@@ -8,6 +8,14 @@
       "theme": "Points",
       "relativeUrl": "maps/01-points/index.html",
       "readmeUrl": "maps/01-points/README.md"
+    },
+    {
+      "id": "02-lines",
+      "dayNumber": 2,
+      "title": "Day 2: Lines",
+      "theme": "Lines",
+      "relativeUrl": "maps/02-lines/index.html",
+      "readmeUrl": "maps/02-lines/README.md"
     }
   ]
 }
