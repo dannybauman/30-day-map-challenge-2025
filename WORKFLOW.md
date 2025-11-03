@@ -230,7 +230,7 @@ maps/0X-theme/
 - **B (Good)**: Works well, minor issues, responsive
 - **C (OK)**: Usable but significant issues (performance, UX problems)
 - **D (Poor)**: Major functionality broken but some elements work (e.g., UI works but map doesn't load)
-- **Note**: Even CSP/CORS failures that generate UI get Grade D (Partial Success), not F. Grade F is reserved for truly unusable (rare).
+- **Note**: Even CSP/CORS failures that generate UI/legends get Grade D (Partial Success), not F. Grade F is reserved for when no code is generated at all (platform errors that prevent any output - rare).
 
 **Platform Colors** (consistent across all days - use Day 1 as source of truth):
 - **Lovable**: `bg-info` (blue)

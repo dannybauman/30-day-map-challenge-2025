@@ -116,10 +116,11 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 - Errors now hidden from users (just spinner)
 - Day 1 + Day 2 both failed identically
 
-#### Google AI Studio (Grade D)
+#### Google AI Studio (Grade F - no code generated)
 - Internal platform error: "An internal error occurred"
-- Never generated any code
+- Never generated any code - completely unusable
 - Day 1 worked, Day 2 broken - reliability concern
+- **Grade F justification**: Unlike Claude/Gemini which generated UI/legends, Google AI Studio generated nothing
 
 #### Firebase Studio (Grade D)
 - Stuck at "Starting app"

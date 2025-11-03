@@ -227,7 +227,7 @@ Why I chose it:
 - **B (Good)**: Works well, minor issues, responsive
 - **C (OK)**: Usable but significant issues (performance, UX problems)
 - **D (Poor)**: Major functionality broken but some elements work (e.g., UI works but map doesn't load)
-- **Note**: Even CSP/CORS failures that generate UI get Grade D (Partial Success), not F. Be consistent but fair - if it generates something useful, it's at least D.
+- **Note**: Even CSP/CORS failures that generate UI/legends get Grade D (Partial Success), not F. Grade F is reserved for when no code is generated at all (platform errors that prevent any output). Be consistent but fair - if it generates something useful, it's at least D.
 
 **Platform Colors** (use Day 1 as source of truth - must match across all days):
 - See `maps/01-points/index.html` for complete color scheme

@@ -42,10 +42,10 @@
 - **Mobile Check:** ✅ UI responsive but map still black
 - **Live URL:** https://v0-portland-street-map.vercel.app/
 
-#### ⚠️ Google AI Studio Apps
+#### ❌ Google AI Studio Apps
 - **Launch Time:** [Launched]
-- **Status:** ⚠️ Partial Success (platform error)
-- **Notes:** Platform error: "An internal error occurred." Clicked Retry, same error. Never generated any code. Day 1 worked fine, Day 2 broken - reliability concern.
+- **Status:** ❌ Failed (platform error - no code generated)
+- **Notes:** Platform error: "An internal error occurred." Clicked Retry, same error. Never generated any code - completely unusable. Day 1 worked fine, Day 2 broken - reliability concern.
 - **Screenshot:** ✅ screenshot.png (shows error message)
 - **Mobile Check:** N/A (never generated code)
 - **Live URL:** N/A
@@ -113,7 +113,7 @@
 ## Key Observations
 
 ### What Worked ✅
-- **MagicPatterns dominated**: Fastest loading, best performance, best legend design, excellent mobile UX
+- **MagicPatterns won**: Fastest loading, best performance, best legend design, excellent mobile UX
 - **Circular legends superior**: Bolt.new and MagicPatterns' circular color wheels were far more intuitive than linear legends for directional data
 - **Data loading mostly successful**: 6/10 platforms successfully fetched and displayed 91MB Overpass API data
 - **Mobile responsive design**: Most successful platforms adapted well to mobile viewports
@@ -166,18 +166,19 @@
 | ChatGPT Canvas | C (slow) | B | C+ |
 | Bolt.new | B | B | B |
 | V0.dev | D (black map) | D (black map) | D |
-| Google AI Studio | D (error) | D (no code) | D |
+| Google AI Studio | F (error) | F (no code) | F |
 | Firebase Studio | D (no start) | D (no start) | D |
 | Claude Artifacts | D (CSP) | D (CSP) | D |
 | Gemini Canvas | D (CORS) | D (CORS) | D |
 | MagicPatterns | A | A | **A** ⭐ |
 | Base44 | B | D (legend issue) | C |
 
-**Rating Scale:** A (Excellent) / B (Good) / C (OK) / D (Poor)
+**Rating Scale:** A (Excellent) / B (Good) / C (OK) / D (Poor) / F (Broken - no code generated)
 
 **Key:**
 - **A (Excellent)**: Fast, beautiful, fully functional, great mobile UX
 - **B (Good)**: Works well, minor issues, responsive
 - **C (OK)**: Usable but significant issues (performance, UX problems)
 - **D (Poor)**: Major functionality broken but some elements work (e.g., UI works but map doesn't load)
+- **F (Broken)**: No code generated, platform error, completely unusable (rare)
 
