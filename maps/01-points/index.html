@@ -63,7 +63,7 @@
         <div class="container">
             <h1>Day 1: Points</h1>
             <p class="lead">Global Earthquakes - Last 30 Days</p>
-            <p><strong>Date:</strong> November 1, 2025 | <strong>Status:</strong> <span class="badge bg-success">Complete</span> | <strong>By:</strong> Danny Bauman</p>
+            <p><strong>Date:</strong> November 1, 2025 | <strong>By:</strong> Danny Bauman</p>
         </div>
     </div>
 
@@ -103,6 +103,64 @@
                 </div>
             </div>
         </div>
+
+        <!-- Ideation Phase -->
+        <section class="mb-5">
+            <h2 class="mb-4">Ideation Phase</h2>
+            <p class="lead">I asked three AI platforms for Day 1 "Points" theme concept ideas. All three delivered good suggestions:</p>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">
+                            <strong>ChatGPT Concept</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5>Skyfall Constellations</h5>
+                            <p class="small">Meteorite landings as glowing "stars" on dark basemap, clustering by mass. Night-sky aesthetic.</p>
+                            <p class="small"><strong>Data:</strong> NASA Meteorite Landings (50K+ points)</p>
+                            <p class="small mb-0"><strong>Why interesting:</strong> Artistic "space" theme, cluster visualization, performance test with many points</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 concept-chosen" style="border-color: #fd7e14;">
+                        <div class="card-header text-white" style="background-color: #fd7e14;">
+                            <strong>Claude Concept ⭐ Chosen</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5>Global Earthquakes</h5>
+                            <p class="small">30 days of earthquakes, points sized by magnitude and colored by depth. Reveals "Ring of Fire" pattern.</p>
+                            <p class="small"><strong>Data:</strong> USGS Earthquake API (8K-10K points)</p>
+                            <p class="small mb-0"><strong>Why chosen:</strong> Most reliable data source, universal GeoJSON support, best chance of success across all platforms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header" style="background-color: #4285f4; color: white;">
+                            <strong>Gemini Concept</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5>Cosmic Sightings</h5>
+                            <p class="small">UFO sightings as glowing points with "sci-fi HUD" aesthetic. Tests artistic interpretation.</p>
+                            <p class="small"><strong>Data:</strong> NUFORC Database (CSV)</p>
+                            <p class="small mb-0"><strong>Why interesting:</strong> Tests artistic prompting, custom styling, CSV parsing, high shareability</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <strong>💡 Interesting Pattern:</strong> All three AI platforms (ChatGPT, Claude, and Gemini) <em>also</em> suggested an earthquake map as one of their ideas! This must not be a coincidence, there must be something about my initial prompt or context that led all three to recognize earthquakes as an ideal "Points" theme. This gave me a nudge in choosing the earthquake concept.
+            </div>
+
+            <div class="alert alert-info">
+                <strong>Decision:</strong> I chose the Earthquake concept for Day 1 to maximize my chances of success. The USGS API is solid, GeoJSON works everywhere, and the visualization requirements are clear. But I hope to build the other two concepts sometime, they both sound fun.
+            </div>
+        </section>
 
         <!-- Process Timeline -->
         <section class="mb-5 process-section">
@@ -174,7 +232,7 @@
                             <span class="lane-label">Human</span>
                             <h4>Launch & Supervision</h4>
                             <ul>
-                                <li>Opened eleven platforms, pasted the identical brief, and tracked runtimes in `LAUNCH-TRACKER.md`.</li>
+                                <li>Opened eleven platforms, pasted the identical brief, and tracked runtimes in <code>LAUNCH-TRACKER.md</code>.</li>
                                 <li>Monitored progress, captured screenshots, and halted runs that were hitting known CORS walls.</li>
                                 <li>Logged which iterations needed retries so they could be documented honestly.</li>
                             </ul>
@@ -246,64 +304,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Ideation Phase -->
-        <section class="mb-5">
-            <h2 class="mb-4">Ideation Phase</h2>
-            <p class="lead">I asked three AI platforms for Day 1 (Points theme) concept ideas. All three delivered excellent suggestions:</p>
-
-            <div class="row g-3 mb-4">
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-success text-white">
-                            <strong>ChatGPT Concept</strong>
-                        </div>
-                        <div class="card-body">
-                            <h5>"Skyfall Constellations"</h5>
-                            <p class="small">Meteorite landings as glowing "stars" on dark basemap, clustering by mass. Night-sky aesthetic.</p>
-                            <p class="small"><strong>Data:</strong> NASA Meteorite Landings (50K+ points)</p>
-                            <p class="small mb-0"><strong>Why interesting:</strong> Artistic "space" theme, cluster visualization, performance test with many points</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 concept-chosen" style="border-color: #fd7e14;">
-                        <div class="card-header text-white" style="background-color: #fd7e14;">
-                            <strong>Claude Concept ⭐ Chosen</strong>
-                        </div>
-                        <div class="card-body">
-                            <h5>"Global Earthquakes"</h5>
-                            <p class="small">30 days of earthquakes, points sized by magnitude and colored by depth. Reveals "Ring of Fire" pattern.</p>
-                            <p class="small"><strong>Data:</strong> USGS Earthquake API (8K-10K points)</p>
-                            <p class="small mb-0"><strong>Why chosen:</strong> Most reliable data source, universal GeoJSON support, best chance of success across all platforms</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-header" style="background-color: #4285f4; color: white;">
-                            <strong>Gemini Concept</strong>
-                        </div>
-                        <div class="card-body">
-                            <h5>"Cosmic Sightings"</h5>
-                            <p class="small">UFO sightings as glowing points with "sci-fi HUD" aesthetic. Tests artistic interpretation.</p>
-                            <p class="small"><strong>Data:</strong> NUFORC Database (CSV)</p>
-                            <p class="small mb-0"><strong>Why interesting:</strong> Tests artistic prompting, custom styling, CSV parsing, high shareability</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="alert alert-success">
-                <strong>💡 Interesting Pattern:</strong> All three AI platforms (ChatGPT, Claude, and Gemini) <em>also</em> suggested an earthquake map as one of their ideas! This wasn't a coincidence—there must be something about my initial prompt or context that led all three to recognize earthquakes as an ideal "Points" theme. This convergence gave me extra confidence in choosing the earthquake concept.
-            </div>
-
-            <div class="alert alert-info">
-                <strong>Decision:</strong> I chose the Earthquake concept for Day 1 to maximize my chances of success. The USGS API is rock-solid, GeoJSON works everywhere, and the visualization requirements are clear. But I hope to build the other two concepts sometime, they both sound fun.
             </div>
         </section>
 

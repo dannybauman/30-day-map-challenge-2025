@@ -103,6 +103,59 @@
             </div>
         </div>
 
+        <!-- Ideation Phase -->
+        <section class="mb-5">
+            <h2 class="mb-4">Ideation Phase</h2>
+            <p>Asked 3 AI models for map concepts. Here's what they suggested:</p>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- Note: Add "concept-chosen" class to the card div of whichever concept was chosen -->
+                    <div class="card">
+                        <div class="card-header text-white" style="background-color: #fd7e14;">
+                            <strong>Claude.ai (Sonnet 4.5)</strong>
+                        </div>
+                        <div class="card-body">
+                            <p><small>{{CLAUDE_IDEA}}</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-success text-white">
+                            <strong>ChatGPT (o3)</strong>
+                        </div>
+                        <div class="card-body">
+                            <p><small>{{CHATGPT_IDEA}}</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-info text-white">
+                            <strong>Gemini (2.5 Pro)</strong>
+                        </div>
+                        <div class="card-body">
+                            <p><small>{{GEMINI_IDEA}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chosen Concept -->
+        <section class="mb-5">
+            <h2 class="mb-4">Chosen Concept</h2>
+            <div class="card border-primary">
+                <div class="card-body">
+                    <h4>{{CONCEPT_TITLE}}</h4>
+                    <p>{{CONCEPT_DESCRIPTION}}</p>
+                    <p><strong>Data Source:</strong> {{DATA_SOURCE}}</p>
+                    <p><strong>Why chosen:</strong> {{WHY_CHOSEN}}</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Process Timeline -->
         <section class="mb-5 process-section">
             <h2 class="mb-4">Process Timeline</h2>
@@ -204,59 +257,6 @@
                             {{AI_DOCUMENTATION}}
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ideation Phase -->
-        <section class="mb-5">
-            <h2 class="mb-4">Ideation Phase</h2>
-            <p>Asked 3 AI models for map concepts. Here's what they suggested:</p>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <!-- Note: Add "concept-chosen" class to the card div of whichever concept was chosen -->
-                    <div class="card">
-                        <div class="card-header text-white" style="background-color: #fd7e14;">
-                            <strong>Claude.ai (Sonnet 4.5)</strong>
-                        </div>
-                        <div class="card-body">
-                            <p><small>{{CLAUDE_IDEA}}</small></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header bg-success text-white">
-                            <strong>ChatGPT (o3)</strong>
-                        </div>
-                        <div class="card-body">
-                            <p><small>{{CHATGPT_IDEA}}</small></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header bg-info text-white">
-                            <strong>Gemini (2.5 Pro)</strong>
-                        </div>
-                        <div class="card-body">
-                            <p><small>{{GEMINI_IDEA}}</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Chosen Concept -->
-        <section class="mb-5">
-            <h2 class="mb-4">Chosen Concept</h2>
-            <div class="card border-primary">
-                <div class="card-body">
-                    <h4>{{CONCEPT_TITLE}}</h4>
-                    <p>{{CONCEPT_DESCRIPTION}}</p>
-                    <p><strong>Data Source:</strong> {{DATA_SOURCE}}</p>
-                    <p><strong>Why chosen:</strong> {{WHY_CHOSEN}}</p>
                 </div>
             </div>
         </section>
