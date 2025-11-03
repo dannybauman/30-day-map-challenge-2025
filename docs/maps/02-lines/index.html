@@ -89,8 +89,16 @@
             <div class="col-md-3">
                 <div class="card text-center stats-card">
                     <div class="card-body">
-                        <h3 class="text-warning">3</h3>
-                        <p class="mb-0">Partial Success</p>
+                        <h3 class="text-warning">6</h3>
+                        <p class="mb-0">Partial Success (60%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center stats-card">
+                    <div class="card-body">
+                        <h3 class="text-danger">1</h3>
+                        <p class="mb-0">Failed (10%)</p>
                     </div>
                 </div>
             </div>
@@ -111,7 +119,7 @@
 
             <div class="row g-3 mb-4">
                 <div class="col-md-4">
-                    <div class="card h-100">
+                    <div class="card h-100 concept-chosen" style="border-color: #fd7e14;">
                         <div class="card-header bg-success text-white">
                             <strong>ChatGPT Concept ⭐ Chosen</strong>
                         </div>
@@ -126,7 +134,7 @@
 
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <div class="card-header bg-info text-white">
+                        <div class="card-header text-white" style="background-color: #fd7e14;">
                             <strong>Claude Concept</strong>
                         </div>
                         <div class="card-body">
@@ -380,17 +388,17 @@ DELIVERABLES:
                 <!-- MagicPatterns - Clear Winner -->
                 <div class="col-md-12 platform-card">
                     <div class="card h-100">
-                        <div class="card-header d-flex justify-content-between align-items-center status-winner text-white">
-                            <strong>⭐ MagicPatterns - BEST OVERALL</strong>
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #9b59b6; color: white;">
+                            <strong>⭐ MagicPatterns - Best Overall</strong>
                             <span class="badge bg-light text-dark">Success</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
-                                <div class="col-7">
+                                <div class="col-8">
                                     <img src="magicpatterns/screenshot.png" alt="MagicPatterns desktop" class="img-fluid screenshot-desktop">
                                     <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
                                 </div>
-                                <div class="col-5">
+                                <div class="col-4">
                                     <img src="magicpatterns/screenshot-mobile.png" alt="MagicPatterns mobile" class="img-fluid screenshot-mobile">
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
@@ -425,6 +433,8 @@ DELIVERABLES:
                                 <div class="col-7">
                                     <img src="lovable/screenshot.png" alt="Lovable desktop" class="img-fluid screenshot-desktop">
                                     <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                    <img src="lovable/screenshot-tooltip-issue.png" alt="Lovable tooltip issue" class="img-fluid screenshot-desktop mt-2">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop - Tooltip Issue</strong></small>
                                 </div>
                                 <div class="col-5">
                                     <img src="lovable/screenshot-mobile.png" alt="Lovable mobile" class="img-fluid screenshot-mobile">
@@ -481,7 +491,7 @@ DELIVERABLES:
             </div>
 
             <!-- Partial Success -->
-            <h3 class="mb-3 mt-5">⚠️ Partial Success (3 platforms)</h3>
+            <h3 class="mb-3 mt-5">⚠️ Partial Success (6 platforms)</h3>
             <div class="row">
                 <!-- ChatGPT Canvas -->
                 <div class="col-md-4 platform-card">
@@ -502,7 +512,7 @@ DELIVERABLES:
                                 </div>
                             </div>
                             <p><strong>Quality:</strong> <span class="rating-c">C+</span></p>
-                            <p class="mb-2 small">Initial data load error, used "Fix Bug" button. After fix, EXTREMELY SLUGGISH - took ~1 minute to show data after map appeared. Pan/zoom very slow (~10 sec). Console shows CSP violations but map eventually rendered with colors. Leaflet performance issues with large dataset.</p>
+                            <p class="mb-2 small">Initial data load error, used "Fix Bug" button. After fix, extremely sluggish - took ~1 minute to show data after map appeared. Pan/zoom very slow (~10 sec). Console shows CSP violations but map eventually rendered with colors. Leaflet performance issues with large dataset.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Responsive but same performance issues.</p>
                             <p class="small"><strong>AI role:</strong> "Fix Bug" button resolved initial error, but performance remained poor.</p>
                             <p class="small"><strong>Human tweaks:</strong> Required patience - waited ~1 minute for data to appear.</p>
@@ -577,8 +587,8 @@ DELIVERABLES:
                 </div>
             </div>
 
-            <!-- Failures -->
-            <h3 class="mb-3 mt-5">❌ Complete Failures (4 platforms)</h3>
+            <!-- More Partial Success -->
+            <h3 class="mb-3 mt-5">⚠️ Partial Success (continued)</h3>
             <div class="row">
                 <!-- Claude Artifacts -->
                 <div class="col-md-3 platform-card">
@@ -593,7 +603,7 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Desktop/Mobile</small>
                                 </div>
                             </div>
-                            <p class="small"><strong>Quality:</strong> <span class="rating-f">F</span></p>
+                            <p class="small"><strong>Quality:</strong> <span class="rating-d">D</span></p>
                             <p class="small"><strong>Issue:</strong> CSP/CORS violations prevent external library loading</p>
                             <p class="small"><strong>Time:</strong> ~15 min (3 fix attempts)</p>
                             <p class="small">Same issue as Day 1 - cannot load Leaflet. Tried 3 different approaches, all blocked by CSP. Generated nice UI/legends but no map. Platform limitation, not code quality.</p>
@@ -618,37 +628,13 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Desktop/Mobile</small>
                                 </div>
                             </div>
-                            <p class="small"><strong>Quality:</strong> <span class="rating-f">F</span></p>
+                            <p class="small"><strong>Quality:</strong> <span class="rating-d">D</span></p>
                             <p class="small"><strong>Issue:</strong> Similar to Claude - CORS policy blocks MapLibre GL</p>
                             <p class="small"><strong>Time:</strong> ~15 min</p>
                             <p class="small">Same issue as Day 1 - cannot load MapLibre GL. Tried "Fix error" button 3x, all blocked by CORS. Generated beautiful color wheel legend but no map loads. Errors now hidden from users (just shows spinner).</p>
                             <div class="d-flex gap-2">
                                 <a href="https://gemini.google.com/share/3b970078b72c" class="btn btn-sm btn-outline-warning btn-sm" target="_blank">Live Demo</a>
                                 <a href="gemini/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Google AI Studio -->
-                <div class="col-md-3 platform-card">
-                    <div class="card h-100">
-                        <div class="card-header" style="background-color: #34a853; color: white;">
-                            <strong>Google AI Studio</strong>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-3 mb-2">
-                                <div class="col-12">
-                                    <img src="google-ai-studio/screenshot.png" alt="Google AI Studio error" class="img-fluid">
-                                    <small class="text-muted d-block text-center mt-1">Error Screen</small>
-                                </div>
-                            </div>
-                            <p class="small"><strong>Quality:</strong> <span class="rating-f">F</span></p>
-                            <p class="small"><strong>Issue:</strong> Internal platform error</p>
-                            <p class="small">Platform error: "An internal error occurred." Clicked Retry, same error. Never generated any code. Complete system failure. Day 1 worked fine, Day 2 broken - reliability concern.</p>
-                            <p class="small"><strong>Mobile:</strong> N/A (never generated code)</p>
-                            <div class="d-flex gap-2">
-                                <a href="google-ai-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
                             </div>
                         </div>
                     </div>
@@ -663,16 +649,45 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-3 mb-2">
                                 <div class="col-12">
-                                    <img src="firebase-studio/screenshot.png" alt="Firebase Studio debugging" class="img-fluid">
-                                    <small class="text-muted d-block text-center mt-1">Debugging Screen</small>
+                                    <img src="firebase-studio/screenshot.png" alt="Firebase Studio" class="img-fluid">
+                                    <small class="text-muted d-block text-center mt-1">Desktop/Mobile</small>
                                 </div>
                             </div>
-                            <p class="small"><strong>Quality:</strong> <span class="rating-f">F</span></p>
-                            <p class="small"><strong>Issue:</strong> Stuck on "Starting app"</p>
-                            <p class="small">Autonomous "Investigate" debugging! AI found: 91MB Overpass data exceeds Next.js 2MB cache limit. Proposed fixes but couldn't resolve. Stuck at "Starting app". Impressive debugging feature but failed to deliver. Required Gemini API key.</p>
+                            <p class="small"><strong>Quality:</strong> <span class="rating-d">D</span></p>
+                            <p class="small"><strong>Issue:</strong> Stuck at "Starting app" - autonomous debugging identified Next.js 2MB cache limit</p>
+                            <p class="small"><strong>Time:</strong> ~20 min (including debugging)</p>
+                            <p class="small">App stuck at startup. Autonomous debugging feature identified typo (crossorigin vs crossOrigin) and critical issue: 91MB Overpass API data exceeds Next.js's 2MB caching limit. Proposed fix (disable caching) but still couldn't start. Valuable debugging insights even if delivery failed.</p>
                             <p class="small"><strong>Mobile:</strong> N/A (never started)</p>
                             <div class="d-flex gap-2">
                                 <a href="firebase-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Failed -->
+            <h3 class="mb-3 mt-5">❌ Failed (1 platform)</h3>
+            <div class="row">
+                <!-- Google AI Studio -->
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header" style="background-color: #34a853; color: white;">
+                            <strong>Google AI Studio</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-2">
+                                <div class="col-12">
+                                    <img src="google-ai-studio/screenshot.png" alt="Google AI Studio error" class="img-fluid">
+                                    <small class="text-muted d-block text-center mt-1">Error Screen</small>
+                                </div>
+                            </div>
+                            <p class="small"><strong>Quality:</strong> <span class="rating-f">F</span></p>
+                            <p class="small"><strong>Issue:</strong> Internal platform error - no code generated</p>
+                            <p class="small">Platform error: "An internal error occurred." Clicked Retry, same error. Never generated any code - completely unusable. Day 1 worked fine, Day 2 broken - reliability concern.</p>
+                            <p class="small"><strong>Mobile:</strong> N/A (never generated code)</p>
+                            <div class="d-flex gap-2">
+                                <a href="google-ai-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
                             </div>
                         </div>
                     </div>
@@ -687,7 +702,7 @@ DELIVERABLES:
             <div class="insight-box">
                 <h5>✅ What Worked</h5>
                 <ul>
-                    <li><strong>MagicPatterns dominated</strong>: Fastest loading, best performance, best legend design, strong mobile UX</li>
+                    <li><strong>MagicPatterns won</strong>: Fastest loading, best performance, best legend design, strong mobile UX</li>
                     <li><strong>Circular legends superior</strong>: Bolt.new and MagicPatterns' circular color wheels were far more intuitive than linear legends for directional data</li>
                     <li><strong>Data loading mostly successful</strong>: 6/10 platforms successfully fetched and displayed 91MB Overpass API data</li>
                     <li><strong>Mobile responsive design</strong>: Most successful platforms adapted well to mobile viewports</li>
@@ -699,7 +714,7 @@ DELIVERABLES:
                 <h5>❌ What Didn't Work</h5>
                 <ul>
                     <li><strong>Large dataset performance</strong>: 91MB of Portland street data caused sluggishness across most platforms (ChatGPT Canvas took ~1 min to render)</li>
-                    <li><strong>CSP/CORS sandbox restrictions</strong>: Claude Artifacts and Gemini Canvas continue to fail on external library/data loading (Day 1 + Day 2 = 0% success)</li>
+                    <li><strong>CSP/CORS sandbox restrictions</strong>: Claude Artifacts and Gemini Canvas continue to struggle with external library/data loading (Day 1 + Day 2 = Grade D consistently)</li>
                     <li><strong>Platform reliability issues</strong>: Google AI Studio had internal error, Firebase Studio couldn't start app</li>
                     <li><strong>Rendering failures</strong>: V0.dev's map rendering still problematic (black screen, same as Day 1)</li>
                     <li><strong>Legend UX problems</strong>: Base44's incorrect color mapping and non-collapsible mobile legend made the map nearly unusable on phones</li>
@@ -745,9 +760,9 @@ DELIVERABLES:
 
                     <p><strong>The Mobile Reality Check:</strong> Base44's non-collapsible mobile legend taking >50% of the screen shows how critical mobile UX is. Despite solid technical execution, the map was nearly unusable on phones. MagicPatterns' mobile experience was strong - another reason it won Day 2.</p>
 
-                    <p><strong>The Patterns:</strong> <strong>Consistent performers</strong>: Lovable, Bolt.new (Day 1 + Day 2 both successful). <strong>Consistent failures</strong>: Claude Artifacts, Gemini Canvas (sandbox too restrictive, Day 1 + Day 2 = 0% success). <strong>Unreliable</strong>: Google AI Studio (Day 1 worked, Day 2 error), Firebase Studio (interesting debugging but failed delivery). <strong>Dark horse</strong>: MagicPatterns (delivered #1 result despite being lesser-known).</p>
+                    <p><strong>The Patterns:</strong> <strong>Consistent performers</strong>: Lovable, Bolt.new (Day 1 + Day 2 both successful). <strong>Consistent partial success</strong>: Claude Artifacts, Gemini Canvas (sandbox too restrictive, Day 1 + Day 2 = Grade D consistently due to CSP/CORS). <strong>Unreliable</strong>: Google AI Studio (Day 1 worked, Day 2 error), Firebase Studio (interesting debugging but couldn't deliver). <strong>Dark horse</strong>: MagicPatterns (delivered #1 result despite being lesser-known).</p>
 
-                    <p><strong>Day 1 vs Day 2:</strong> Day 1 had 73% success rate with a ~500KB dataset. Day 2 had 30% full success (60% usable) with a 91MB dataset. The conclusion is clear: larger datasets + geometry calculations created a bigger challenge, separating robust platforms from fragile ones. Day 2 was more discriminating in identifying truly capable platforms.</p>
+                    <p><strong>Day 1 vs Day 2:</strong> Day 1 had 73% success rate with a ~500KB dataset. Day 2 had 30% full success (60% usable) with a 91MB dataset. Partial success rate is 60% (6 platforms) vs. Day 1's 27% (3 platforms). One complete failure (Google AI Studio - no code generated). The conclusion is clear: larger datasets + geometry calculations created a bigger challenge, separating robust platforms from fragile ones. Day 2 was more discriminating in identifying truly capable platforms.</p>
 
                     <p><strong>Looking ahead:</strong> Day 2 established that performance matters - not just "does it work" but "does it work well". For future days with large datasets or complex calculations, MagicPatterns and Lovable (MapLibre GL) are the top choices. For smaller datasets, the broader field remains viable. But the real lesson: data size and complexity reveal platform robustness in ways that simpler tests don't.</p>
 
