@@ -585,8 +585,8 @@ DELIVERABLES:
                 </div>
             </div>
 
-            <!-- Failed -->
-            <h3 class="mb-3 mt-5">❌ Failed (1 platform)</h3>
+            <!-- More Partial Success -->
+            <h3 class="mb-3 mt-5">⚠️ Partial Success (continued)</h3>
             <div class="row">
                 <!-- Claude Artifacts -->
                 <div class="col-md-3 platform-card">
@@ -638,8 +638,37 @@ DELIVERABLES:
                     </div>
                 </div>
 
-                <!-- Google AI Studio -->
+                <!-- Firebase Studio -->
                 <div class="col-md-3 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header" style="background-color: #ff6d00; color: white;">
+                            <strong>Firebase Studio</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-2">
+                                <div class="col-12">
+                                    <img src="firebase-studio/screenshot.png" alt="Firebase Studio" class="img-fluid">
+                                    <small class="text-muted d-block text-center mt-1">Desktop/Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small"><strong>Quality:</strong> <span class="rating-d">D</span></p>
+                            <p class="small"><strong>Issue:</strong> Stuck at "Starting app" - autonomous debugging identified Next.js 2MB cache limit</p>
+                            <p class="small"><strong>Time:</strong> ~20 min (including debugging)</p>
+                            <p class="small">App stuck at startup. Autonomous debugging feature identified typo (crossorigin vs crossOrigin) and critical issue: 91MB Overpass API data exceeds Next.js's 2MB caching limit. Proposed fix (disable caching) but still couldn't start. Valuable debugging insights even if delivery failed.</p>
+                            <p class="small"><strong>Mobile:</strong> N/A (never started)</p>
+                            <div class="d-flex gap-2">
+                                <a href="firebase-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Failed -->
+            <h3 class="mb-3 mt-5">❌ Failed (1 platform)</h3>
+            <div class="row">
+                <!-- Google AI Studio -->
+                <div class="col-md-4 platform-card">
                     <div class="card h-100">
                         <div class="card-header" style="background-color: #34a853; color: white;">
                             <strong>Google AI Studio</strong>
@@ -657,30 +686,6 @@ DELIVERABLES:
                             <p class="small"><strong>Mobile:</strong> N/A (never generated code)</p>
                             <div class="d-flex gap-2">
                                 <a href="google-ai-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Firebase Studio -->
-                <div class="col-md-3 platform-card">
-                    <div class="card h-100">
-                        <div class="card-header" style="background-color: #ff6d00; color: white;">
-                            <strong>Firebase Studio</strong>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-3 mb-2">
-                                <div class="col-12">
-                                    <img src="firebase-studio/screenshot.png" alt="Firebase Studio debugging" class="img-fluid">
-                                    <small class="text-muted d-block text-center mt-1">Debugging Screen</small>
-                                </div>
-                            </div>
-                            <p class="small"><strong>Quality:</strong> <span class="rating-d">D</span></p>
-                            <p class="small"><strong>Issue:</strong> Stuck on "Starting app"</p>
-                            <p class="small">Autonomous "Investigate" debugging! AI found: 91MB Overpass data exceeds Next.js 2MB cache limit. Proposed fixes but couldn't resolve. Stuck at "Starting app". Impressive debugging feature but failed to deliver. Required Gemini API key.</p>
-                            <p class="small"><strong>Mobile:</strong> N/A (never started)</p>
-                            <div class="d-flex gap-2">
-                                <a href="firebase-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
                             </div>
                         </div>
                     </div>
