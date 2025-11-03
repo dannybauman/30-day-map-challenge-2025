@@ -106,12 +106,12 @@
         <!-- Ideation Phase -->
         <section class="mb-5">
             <h2 class="mb-4">Ideation Phase</h2>
-            <p>Asked 3 AI models for map concepts. Here's what they suggested:</p>
+            <p class="lead">I asked three AI platforms for Day {{DAY_NUMBER}} "{{THEME}}" theme concept ideas. All three delivered solid suggestions:</p>
 
-            <div class="row">
+            <div class="row g-3 mb-4">
                 <div class="col-md-4">
-                    <!-- Note: Add "concept-chosen" class to the card div of whichever concept was chosen -->
-                    <div class="card">
+                    <!-- Note: Add "concept-chosen" class and style="border-color: #fd7e14;" to the card div of whichever concept was chosen -->
+                    <div class="card h-100">
                         <div class="card-header text-white" style="background-color: #fd7e14;">
                             <strong>Claude.ai (Sonnet 4.5)</strong>
                         </div>
@@ -121,9 +121,9 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-header bg-success text-white">
-                            <strong>ChatGPT (o3)</strong>
+                            <strong>ChatGPT (GPT-5 Thinking)</strong>
                         </div>
                         <div class="card-body">
                             <p><small>{{CHATGPT_IDEA}}</small></p>
@@ -131,8 +131,8 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header bg-info text-white">
+                    <div class="card h-100">
+                        <div class="card-header" style="background-color: #4285f4; color: white;">
                             <strong>Gemini (2.5 Pro)</strong>
                         </div>
                         <div class="card-body">
@@ -276,6 +276,20 @@
         <!-- Platform Results -->
         <section class="mb-5">
             <h2 class="mb-4">Platform Results</h2>
+
+            <!--
+                PLATFORM COLOR SCHEME (Consistent across all days):
+                - Lovable: bg-info (blue)
+                - ChatGPT Canvas: bg-success (green)
+                - Bolt.new: bg-primary (blue)
+                - Firebase Studio: #ff6d00 (orange)
+                - Base44: #7c3aed (purple)
+                - MagicPatterns: #9b59b6 (purple/violet)
+                - Google AI Studio: #34a853 (green)
+                - Claude Artifacts: bg-warning (yellow/orange)
+                - Gemini Canvas: bg-warning (yellow/orange)
+                - V0.dev: bg-warning (yellow/orange)
+            -->
 
             <!-- Winners -->
             <h3 class="mb-3">🏆 Top Performers</h3>
