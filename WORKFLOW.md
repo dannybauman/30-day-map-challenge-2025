@@ -90,11 +90,12 @@ Here's my refined process after completing Day 1.
 
 **Optional (when time allows)**:
 5. Create platform-specific READMEs
-6. Create `index.html` page
-7. Write `DAY-X-SUMMARY.md` for deeper analysis
+6. Write `DAY-X-SUMMARY.md` for deeper analysis
 
-### Phase 7: HTML Page
+### Phase 7: HTML Page (REQUIRED)
 **Duration**: 20-25 minutes
+
+**Note:** The HTML showcase page is a **required deliverable** for each day. "Platform testing complete" means all platforms have been tested, but the day is not complete until the HTML page is generated.
 
 **Step 1: Capture Screenshots** (10 min):
 - **Desktop**: Resize to 1440x900, capture → `screenshot.png`
@@ -171,11 +172,13 @@ maps/0X-theme/
 | Review & iterate | 20-30 min | 55 min |
 | Human QA & sign-off | 5-10 min | 65 min |
 | Documentation | 15 min | 80 min |
-| HTML page | 10 min | 90 min |
-| **Total** | **~90 min** | |
+| HTML page (REQUIRED) | 20-25 min | 105 min |
+| **Total** | **~105 min** | |
 
-**Speed mode** (just essentials): ~65 min
-**Full mode** (with HTML page): ~90 min
+**Speed mode** (platform testing only, skip HTML): ~80 min
+**Full mode** (with required HTML page): ~105 min
+
+**Note:** HTML page is required for each day. If time is limited, platform testing can be done in one session and HTML page generation in a separate session.
 
 ---
 
