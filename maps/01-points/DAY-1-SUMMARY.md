@@ -29,21 +29,21 @@
 ### 🥇 Top 3 (Ranked by Overall Performance)
 
 **🥇 #1 - Lovable**
-**Why**: Best mobile experience, excellent responsive design, strong tooltips - best overall balance
+**Why**: Best mobile experience, excellent responsive design, good tooltips - best overall balance
 - Time: ~5 min
 - Quality: **A**
 - **Mobile**: Excellent responsive design
 - [Live Demo](https://quake-viz-com.lovable.app)
 
 **🥈 #2 - ChatGPT Canvas (GPT-5 Thinking)**
-**Why**: Best desktop UI polish, good permission model, strong tooltips
+**Why**: Best desktop UI polish, good permission model, good tooltips
 - Time: ~5 min
 - Quality: **A**
 - **Mobile**: OK but imbalanced header and overlapping elements
 - [Live Demo](https://chatgpt.com/canvas/shared/6906d4f356ec81918cddaa043840c0f8)
 
 **🥉 #3 - Bolt.new**
-**Why**: Best data handling, strong stats display, robust implementation
+**Why**: Best data handling, solid stats display, robust implementation
 - Time: ~5 min
 - Quality: **A**
 - Shows 7,734 earthquakes with max mag 7.6, avg depth 21km
@@ -53,7 +53,7 @@
 ### Strong Contenders
 
 **Base44** 📊 Best Stats Dashboard
-- Clean dark theme with strong visuals
+- Clean dark theme with good visuals
 - Comprehensive stats (7,729 total, max mag 7.6, updated time)
 - Minor bug: Avg Depth shows 0.0km
 - [Live Demo](https://seismic-watch-361323d1.base44.app/)

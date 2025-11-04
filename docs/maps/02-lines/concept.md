@@ -178,7 +178,7 @@
 **Difficulty:** Medium
 
 **Why it tests AI platforms well:**
-- Excellent test of handling complex, multi-file data schema
+- Good test of handling complex, multi-file data schema
 - Must understand GTFS (General Transit Feed Specification) schema
 - Parse: `routes.txt` (route color/name), `trips.txt` (link routes to shapes), `shapes.txt` (line coordinates)
 - Tests deep data processing and precise data-driven styling

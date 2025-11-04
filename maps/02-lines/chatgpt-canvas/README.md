@@ -74,7 +74,7 @@
 | Fix UX | "Fix Bug" button | "Fix Bug" button |
 | Final Status | Success | Success |
 | Performance | Good | Poor/sluggish |
-| UI Polish | Excellent | Excellent |
+| UI Polish | Strong | Strong |
 | Mobile | Overlapping UI | Good layout |
 | Quality | A | B+ (performance issues) |
 
@@ -102,7 +102,7 @@
 ## Notes
 
 - **Geometry calculations worked:** Successfully computed bearing for each street segment
-- **HSL color scale perfect:** The rainbow effect is exactly as specified
+- **HSL color scale accurate:** The rainbow effect matches the specification
 - **One-way arrows implemented:** Optional feature that was requested
 - **Control panel extras:** Went beyond prompt with opacity slider and toggles
 
@@ -124,7 +124,7 @@ Both show the rainbow street network, though mobile performance is also sluggish
 ## Rating
 
 **Quality: B+**
-- Concept execution: A (perfect rainbow visualization)
+- Concept execution: A (accurate rainbow visualization)
 - Performance: C (very slow)
 - UI/UX: A (controls, legend, layout)
 - Reliability: B (needed multiple attempts)

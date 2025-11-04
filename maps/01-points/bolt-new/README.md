@@ -26,7 +26,7 @@
 - UI slightly more generic/Tailwind-template feel
 
 ### Technical Notes
-- Excellent Leaflet implementation
+- Strong Leaflet implementation
 - Strong data processing and stats calculation
 - Good error handling for edge cases
 - Full-stack deployment included
@@ -38,9 +38,9 @@
 - Average depth: 21km
 - Last 24 hours: 178 earthquakes
 
-### Rating: **A** (Excellent)
+### Rating: **A** (Strong)
 
-**Verdict**: Excellent data-focused implementation. While ChatGPT Canvas had better UI polish, Bolt.new excelled at data handling and analytics. Good for applications where robust data display matters most.
+**Verdict**: Strong data-focused implementation. While ChatGPT Canvas had better UI polish, Bolt.new performed well at data handling and analytics. Good for applications where robust data display matters most.
 
 ### Recommendation
 **Best For**:

@@ -35,7 +35,7 @@
 | MagicPatterns (Tailwind) | ✅ Success | ~5 min | Works well! Similar to Lovable/Bolt designs | ✅ | ✅ |
 | MagicPatterns (Chakra) | ✅ Success | ~5 min | Works! Same as Tailwind version but Chakra UI | ✅ | ✅ |
 | Firebase Studio | ✅ Success | ~15 min | Works after API key setup! Required Gemini + Google Maps keys. Full VS Code editor to fix Maps key. Google Maps basemap (bland). | ✅ | ✅ |
-| Base44 | ✅ Success | ~5 min | Works! Gorgeous dark theme, best stats dashboard. Avg Depth bug (0.0km). Tooltips not as good as top 3. | ✅ | ✅ |
+| Base44 | ✅ Success | ~5 min | Works! Clean dark theme, best stats dashboard. Avg Depth bug (0.0km). Tooltips not as good as top 3. | ✅ | ✅ |
 | Gemini Pro 2.5 | ⚠️ Partial | ~15 min | Similar to Claude - UI shows but data loading issues | ✅ | ✅ |
 
 **Status Legend:**
@@ -69,14 +69,14 @@
 **Failed:** 0 (0%)
 
 **Top 3 (Ranked by Overall Performance):**
-- **#1 - Lovable** - Best mobile experience, excellent responsive design, strong tooltips - best overall
-- **#2 - ChatGPT Canvas** - Best desktop UI polish, excellent permission model, great tooltips (mobile has issues)
-- **#3 - Bolt.new** - Best data handling, excellent stats display, great tooltips (mobile space issues)
+- **#1 - Lovable** - Best mobile experience, excellent responsive design, good tooltips - best overall
+- **#2 - ChatGPT Canvas** - Best desktop UI polish, good permission model, great tooltips (mobile has issues)
+- **#3 - Bolt.new** - Best data handling, solid stats display, great tooltips (mobile space issues)
 
 **Strong Contenders:**
 - **Base44** - Best stats dashboard, top-tier visual design (dark theme winner)
-- **Firebase Studio** - Full VS Code editor (killer feature for developers)
-- **MagicPatterns** - Excellent surprise performer (both variants)
+- **Firebase Studio** - Full VS Code editor (standout feature for developers)
+- **MagicPatterns** - Solid surprise performer (both variants)
 
 **Human Review Log:**
 - Approved ChatGPT Canvas' external data request prompt and captured a screenshot of the permission UX.

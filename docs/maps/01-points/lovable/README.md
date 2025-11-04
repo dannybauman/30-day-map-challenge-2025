@@ -30,7 +30,7 @@
 - Responsive layout
 - Clear visual hierarchy
 
-### Rating: **A** (Excellent)
+### Rating: **A** (Strong)
 
 **Verdict**: Lovable delivered exactly what was asked for with speed and style. Very similar quality to Bolt.new but with slightly more modern aesthetic. Great choice for fast, clean implementations.
 
@@ -42,7 +42,7 @@
 - When you want it done right, quickly
 
 **Avoid For**:
-- Nothing yet - exceeded expectations
+- Nothing yet - performed well
 
 ---
 

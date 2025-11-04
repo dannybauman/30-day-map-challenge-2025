@@ -26,7 +26,7 @@
 - 📉 Sandbox restrictions similar to Claude
 
 ### Technical Notes
-- Gemini chat model is excellent for ideation
+- Gemini chat model is good for ideation
 - But Gemini Artifacts has similar sandbox limitations as Claude
 - External API calls problematic
 - Would need embedded data approach

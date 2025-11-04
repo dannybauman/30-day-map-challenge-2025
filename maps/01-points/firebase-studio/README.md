@@ -11,7 +11,7 @@
 - **Chat**: https://studio.firebase.google.com/studio-5411671878 (requires login)
 
 ### What Worked
-- 🔑 **Excellent API key UX** - Prompted with special input box for Gemini API key
+- 🔑 **Strong API key UX** - Prompted with special input box for Gemini API key
 - 💻 **Full VS Code editor** - Can switch to browser-based VS Code for manual fixes
 - 🗺️ **Google Maps integration** - Uses Google Maps basemap
 - 🔥 **Firebase backend** - Full Firebase integration available
@@ -27,7 +27,7 @@
 ### API Key Management
 Firebase Studio has an innovative approach to API key management:
 
-1. **Gemini API Key** (excellent UX):
+1. **Gemini API Key** (good UX):
    - Chat prompted with special input box
    - Clear instructions
    - Good security practice
@@ -68,7 +68,7 @@ This is a **major advantage** - you get both AI code gen AND full IDE access.
 - **API Key UX**: **B** - Gemini key prompt is great, Maps key missing is bad
 - **Code Editor**: **B** - Full VS Code in browser is incredible but setup complexity
 - **Design**: **B** - Functional but bland Google Maps default styling
-- **Responsive**: ✅ Excellent - works great on mobile
+- **Responsive**: ✅ Good - works well on mobile
 
 ## Key Takeaways
 
@@ -109,5 +109,5 @@ This is a **major advantage** - you get both AI code gen AND full IDE access.
 
 ---
 
-**Verdict**: Firebase Studio is powerful but has friction. The full VS Code editor is a killer feature for complex projects, but the API key requirements make it slower than competitors for quick prototypes. **Use it when you need Firebase's ecosystem, not for rapid experimentation.**
+**Verdict**: Firebase Studio is powerful but has friction. The full VS Code editor is a standout feature for complex projects, but the API key requirements make it slower than competitors for quick prototypes. **Use it when you need Firebase's ecosystem, not for rapid experimentation.**
 

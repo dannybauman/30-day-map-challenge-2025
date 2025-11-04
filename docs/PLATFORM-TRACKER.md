@@ -28,9 +28,9 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 ### Basic Mapping
 **Points, Lines, Polygons**
 - 🥇 ChatGPT Canvas, Bolt.new, Lovable (three-way tie)
-  - **ChatGPT**: Best UI polish, good permission model, strong tooltips
-  - **Bolt**: Best data handling & stats display, strong tooltips
-  - **Lovable**: Fast, clean, strong tooltips
+  - **ChatGPT**: Best UI polish, good permission model, good tooltips
+  - **Bolt**: Best data handling & stats display, solid tooltips
+  - **Lovable**: Fast, clean, good tooltips
 - Strong Contenders: Base44 (best stats dashboard), Firebase Studio (full VS Code editor)
 
 **Notes**: *After Day 1 (Points) - Top 3 are equally strong with different specialties. ChatGPT has cleanest UI, Bolt has best data handling, Lovable has great speed. Base44 excels at stats dashboards.*
@@ -255,10 +255,10 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 ### Firebase Studio
 **Successes**:
-- 🔥 **Full VS Code editor in browser** - killer feature!
+- 🔥 **Full VS Code editor in browser** - standout feature
 - Seamless switch between AI generation and code editing
 - Firebase backend integration ready (hosting, auth, database)
-- Excellent API key UX for Gemini key (special prompt box)
+- Good API key UX for Gemini key (special prompt box)
 - Google Maps integration
 - Production-ready Firebase hosting
 
@@ -332,7 +332,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 #### Platform-Specific
 - **ChatGPT Canvas**: Prompt will ask for permission before external fetches - this is normal
 - **Bolt.new**: Can handle complex stats and analytics - lean into data-heavy features
-- **Base44**: Excellent for stats dashboards - verify calculations!
+- **Base44**: Good for stats dashboards - verify calculations!
 - **Firebase Studio**: Be ready with API keys (Gemini + Google Maps), use code editor for fixes
 - **V0.dev**: May need iteration - be prepared to refine
 - **Claude/Gemini Artifacts**: Struggled with external APIs, but were close - use embedded data instead when possible
@@ -366,16 +366,16 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 **Top Performers** (three-way tie):
 1. ChatGPT Canvas - Best UI polish, great tooltips
-2. Bolt.new - Best data handling, excellent tooltips
-3. Lovable - Fast, clean, excellent tooltips
+2. Bolt.new - Best data handling, solid tooltips
+3. Lovable - Fast, clean, good tooltips
 
 **Strong Contenders**:
 - Base44 - Best stats dashboard, top-tier visual design
-- Firebase Studio - Full VS Code editor (killer feature)
-- MagicPatterns - Surprise excellent performance
+- Firebase Studio - Full VS Code editor (standout feature)
+- MagicPatterns - Surprise solid performance
 
 **Biggest Surprises**:
-- MagicPatterns performed excellently (both variants)
+- MagicPatterns performed well (both variants)
 - Google AI Studio delivered quietly solid implementation
 - Claude & Gemini Artifacts struggled with external APIs (but were close - UI worked, just API issues)
 
@@ -422,7 +422,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 *Platform that got better over time*: TBD
 
 ### Biggest Surprise
-**MagicPatterns** - Exceeded expectations with both variants working perfectly
+**MagicPatterns** - Performed well with both variants working
 
 ---
 
@@ -432,7 +432,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 - **Quick prototypes**: Bolt.new, Lovable, or MagicPatterns (~5 min)
 - **Production-ready**: ChatGPT Canvas (best polish)
 - **Beautiful design**: ChatGPT Canvas, Lovable
-- **Complex data**: Bolt.new (excellent stats/analytics)
+- **Complex data**: Bolt.new (solid stats/analytics)
 - **3D visualization**: TBD
 - **Learning/experimentation**: Multiple platforms (this project!)
 

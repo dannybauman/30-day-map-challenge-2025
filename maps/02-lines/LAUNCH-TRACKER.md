@@ -13,7 +13,7 @@
 #### ✅ Lovable
 - **Launch Time:** [Launched]
 - **Status:** ✅ Success (with tooltip bug)
-- **Notes:** One-shot success! Beautiful rainbow visualization, excellent loading UX (~10 sec with status message). MapLibre GL = good performance. BUT: Tooltip bug (light text on white, don't hide - artifact visible in screenshot). Linear legend instead of circular (less intuitive for directions).
+- **Notes:** One-shot success! Beautiful rainbow visualization, strong loading UX (~10 sec with status message). MapLibre GL = good performance. BUT: Tooltip bug (light text on white, don't hide - artifact visible in screenshot). Linear legend instead of circular (less intuitive for directions).
 - **Screenshot:** ✅ screenshot.png (shows tooltip artifact), screenshot-mobile.png
 - **Mobile Check:** ✅ Good responsive design
 - **Live URL:** https://portland-hue-lines.lovable.app
@@ -29,7 +29,7 @@
 #### ✅ Bolt.new
 - **Launch Time:** [Launched]
 - **Status:** ✅ Success
-- **Notes:** One-shot success! **Circular color wheel legend** (perfect for directional data!). Beautiful rainbow viz, good zoom level. Performance sluggish (~10 sec lag on pan/zoom) - same Leaflet issue as ChatGPT. Clean UI, mobile responsive.
+- **Notes:** One-shot success! **Circular color wheel legend** (ideal for directional data). Beautiful rainbow viz, good zoom level. Performance sluggish (~10 sec lag on pan/zoom) - same Leaflet issue as ChatGPT. Clean UI, mobile responsive.
 - **Screenshot:** ✅ screenshot.png, screenshot-mobile.png
 - **Mobile Check:** ✅ Good - legend works well
 - **Live URL:** https://street-orientation-r-fc5r.bolt.host/
@@ -85,7 +85,7 @@
 #### ✅ MagicPatterns
 - **Launch Time:** [Launched]
 - **Status:** ⭐ **BEST OVERALL** - Excellent Success
-- **Notes:** **Winner for Day 2!** Fastest data loading (quickest of all). Most performant pan/zoom (~1-2 sec lag, better than all others). **Best legend UI** - beautiful circular color wheel. Excellent mobile responsive. All features work. Only minor issues: zoom buttons overlay header slightly, tooltip contrast could be better. Zero human intervention needed. Superior out-of-the-box quality.
+- **Notes:** **Winner for Day 2!** Fastest data loading (quickest of all). Most performant pan/zoom (~1-2 sec lag, better than all others). **Best legend UI** - clean circular color wheel. Excellent mobile responsive. All features work. Only minor issues: zoom buttons overlay header slightly, tooltip contrast could be better. Zero human intervention needed. Superior out-of-the-box quality.
 - **Screenshot:** ✅ screenshot.png, screenshot-mobile.png
 - **Mobile Check:** ⭐ Excellent - best mobile experience
 - **Live URL:** https://project-portland-street-orientation-rainbow-map-450.magicpatterns.app/
@@ -173,10 +173,10 @@
 | MagicPatterns | A | A | **A** ⭐ |
 | Base44 | B | D (legend issue) | C |
 
-**Rating Scale:** A (Excellent) / B (Good) / C (OK) / D (Poor) / F (Broken - no code generated)
+**Rating Scale:** A (Strong) / B (Good) / C (OK) / D (Poor) / F (Broken - no code generated)
 
 **Key:**
-- **A (Excellent)**: Fast, beautiful, fully functional, great mobile UX
+- **A (Strong)**: Fast, clean, fully functional, great mobile UX
 - **B (Good)**: Works well, minor issues, responsive
 - **C (OK)**: Usable but significant issues (performance, UX problems)
 - **D (Poor)**: Major functionality broken but some elements work (e.g., UI works but map doesn't load)

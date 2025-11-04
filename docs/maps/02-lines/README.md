@@ -73,7 +73,7 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 - Live: https://portland-hue-lines.lovable.app
 
 #### Bolt.new (Grade B)
-- Excellent circular legend, good UI
+- Effective circular legend, good UI
 - Performance: Sluggish pan/zoom (~10 sec lag)
 - Mobile responsive
 - Live: https://street-orientation-r-fc5r.bolt.host/

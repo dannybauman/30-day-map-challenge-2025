@@ -106,7 +106,7 @@
 ## Key Learnings
 
 ### 🎯 Responsive Design is Solved
-Modern AI code gen platforms using Tailwind CSS provide excellent responsive design by default. No need to explicitly ask for mobile support - it just works!
+Modern AI code gen platforms using Tailwind CSS provide good responsive design by default. No need to explicitly ask for mobile support - it just works!
 
 ### 📱 Mobile Testing is Quick & Valuable
 - Takes 5-10 minutes to capture both sizes
@@ -147,7 +147,7 @@ Modern AI code gen platforms using Tailwind CSS provide excellent responsive des
 5. Simple structure, easy to update
 
 ### Platform Expectations
-- **Tailwind platforms**: Expect excellent mobile
+- **Tailwind platforms**: Expect good mobile
 - **Failed platforms**: Skip mobile testing
 - **Login-required**: Note mobile not tested
 

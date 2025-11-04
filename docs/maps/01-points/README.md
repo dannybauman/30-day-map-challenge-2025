@@ -74,19 +74,19 @@
 1. **🥇 Lovable** - Best overall (mobile + desktop balance)
    - Live: https://quake-viz-com.lovable.app
    - Time: ~5 min
-   - Notes: Best mobile experience, excellent responsive design, strong tooltips. Fast, clean, one-shot success.
+   - Notes: Best mobile experience, solid responsive design, good tooltips. Fast, clean, one-shot success.
    - Human review: Captured desktop/mobile screenshots and noted legend wording to polish later.
 
 2. **🥈 ChatGPT Canvas (GPT-5 Thinking)** - Best desktop UI
    - Live: https://chatgpt.com/canvas/shared/6906d4f356ec81918cddaa043840c0f8
    - Time: ~5 min
-   - Notes: Best UI polish, smooth interactions, asks permission before external data fetch. Strong tooltips. Mobile has overlapping elements.
+   - Notes: Best UI polish, smooth interactions, asks permission before external data fetch. Good tooltips. Mobile has overlapping elements.
    - Human review: Approved the external fetch dialog and logged the mobile overlap issue for a future fix.
 
 3. **🥉 Bolt.new** - Best data handling
    - Live: https://global-earthquakes-l-5bh2.bolt.host
    - Time: ~5 min
-   - Notes: Best data handling. Shows actual stats (7,734 earthquakes, max mag 7.6, avg depth 21km). Strong tooltips, robust implementation. Mobile legend takes up too much space.
+   - Notes: Best data handling. Shows actual stats (7,734 earthquakes, max mag 7.6, avg depth 21km). Solid tooltips, robust implementation. Mobile legend takes up too much space.
    - Human review: Flagged the oversized mobile legend for future iteration.
 
 4. **Google AI Studio Apps**
@@ -112,7 +112,7 @@
 8. **Base44** 📊 Best Stats Dashboard
    - Live: https://seismic-watch-361323d1.base44.app/
    - Time: ~5 min
-   - Notes: Clean dark theme with strong visuals. **Best stats dashboard** (7,729 total, max mag 7.6, updated time). Minor bug: Avg Depth shows 0.0km (should be ~21km). Tooltips not as good as top 3.
+   - Notes: Clean dark theme with good visuals. **Best stats dashboard** (7,729 total, max mag 7.6, updated time). Minor bug: Avg Depth shows 0.0km (should be ~21km). Tooltips not as good as top 3.
 
 ---
 
@@ -145,12 +145,12 @@ None! All platforms produced at least a partial implementation.
 
 ### 🏆 Top 3 (Ranked by Overall Performance)
 
-🥇 **#1 - Lovable** - Best mobile experience, excellent responsive design, strong tooltips - best overall balance
+🥇 **#1 - Lovable** - Best mobile experience, solid responsive design, good tooltips - best overall balance
 🥈 **#2 - ChatGPT Canvas** - Best desktop UI polish, good permission model (mobile has overlapping elements)
 🥉 **#3 - Bolt.new** - Best data handling & stats display (mobile legend takes up too much space)
 
 **Strong Contenders:**
-- Base44 - Best stats dashboard, strong visual design
+- Base44 - Best stats dashboard, good visual design
 - Firebase Studio - Most full-featured code editor (VS Code in browser), though Bolt/Lovable also have code editing
 - MagicPatterns (both variants) - Solid performance
 - Google AI Studio - Solid dark horse contender

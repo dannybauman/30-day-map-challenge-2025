@@ -128,9 +128,9 @@ maps/01-points/
 - Added responsive design ratings to each platform
 
 **Mobile Responsive Findings**:
-- ✅ **Bolt.new**: Excellent - sidebar collapses into stacked layout, stats remain visible
+- ✅ **Bolt.new**: Good - sidebar collapses into stacked layout, stats remain visible
 - ✅ **Lovable**: Great - clean single-column design, legend stays accessible
-- ✅ **MagicPatterns**: Excellent - legend becomes floating overlay, very usable
+- ✅ **MagicPatterns**: Good - legend becomes floating overlay, very usable
 - ✅ **V0.dev**: Good - despite missing basemap, legend stacks nicely
 
 **Key Insight**: All platforms that succeeded with desktop also handled mobile well! This suggests modern AI code gen tools are defaulting to responsive frameworks (Tailwind, etc.) which is great.

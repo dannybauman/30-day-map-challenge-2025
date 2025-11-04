@@ -11,7 +11,7 @@ All 4 platforms that provided working implementations were tested for mobile res
 
 ## Platform Results
 
-### 🥇 Bolt.new - **A** (Excellent)
+### 🥇 Bolt.new - **A** (Strong)
 **Desktop**: Full sidebar with legend, stats, and description
 **Mobile**: Sidebar stacks vertically above map, stats bar moves to bottom overlay
 
@@ -70,7 +70,7 @@ All 4 platforms that provided working implementations were tested for mobile res
 ## Key Findings
 
 ### ✅ Universal Success
-**All platforms that worked on desktop also worked on mobile.** This is excellent news!
+**All platforms that worked on desktop also worked on mobile.** This is good news!
 
 ### 🎯 Modern Frameworks Win
 All successful platforms used:
@@ -97,7 +97,7 @@ Tailwind's mobile-first approach means responsive design comes "for free" when A
 
 | Platform | Desktop | Mobile | Responsive | Notes |
 |----------|---------|--------|------------|-------|
-| **Bolt.new** | **A** | **A** | ✅ Excellent | Stats bar overlay is brilliant |
+| **Bolt.new** | **A** | **A** | ✅ Good | Stats bar overlay works well |
 | **Lovable** | **A** | **A** | ✅ Great | Simple, clean, functional |
 | **MagicPatterns** | **B** | **B** | ✅ Good | Floating legend is clever |
 | **V0.dev** | **B** | **A** | ✅ Good | Broken basemap, but layout works |

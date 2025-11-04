@@ -9,7 +9,7 @@
 
 ## Result
 
-**Success!** Lovable delivered a beautiful, working rainbow street map on the first try with excellent loading UX.
+**Success!** Lovable delivered a clean, working rainbow street map on the first try with good loading UX.
 
 ### What It Generated
 
@@ -19,7 +19,7 @@
 - MapLibre GL rendering (good performance)
 - Clean dark theme
 
-✅ **Excellent loading UX:**
+✅ **Good loading UX:**
 - Loading spinner with informative status message
 - "Fetching Portland data from OpenStreetMap..."
 - Loaded in ~10 seconds
@@ -71,7 +71,7 @@ This is a significant UX issue that makes the map frustrating to use despite the
 ## Strengths
 
 1. **One-shot success** - Worked perfectly on first try
-2. **Excellent loading UX** - Best loading experience across all platforms
+2. **Good loading UX** - Best loading experience across all platforms
 3. **Fast load time** - ~10 seconds to full render
 4. **Beautiful visualization** - Rainbow effect is stunning
 5. **MapLibre GL** - Good performance, smooth interactions
@@ -95,7 +95,7 @@ This is a significant UX issue that makes the map frustrating to use despite the
 |--------|----------------|---------------|
 | Initial Success | ✅ One-shot | ✅ One-shot |
 | Load Time | ~5 min | ~10 sec |
-| Performance | Excellent | Excellent |
+| Performance | Strong | Strong |
 | Mobile | Best in class | Good |
 | Tooltips | Strong | Broken |
 | Overall | A | A- (tooltip issue) |
@@ -132,7 +132,7 @@ The visualization perfectly achieves the goal of revealing Portland's "grid vs. 
 
 ## Notes
 
-- **Loading UX is best across all platforms** - Spinner + status message is perfect
+- **Loading UX is best across all platforms** - Spinner + status message works well
 - **Tooltip issue is fixable** - Just needs darker background and proper hide/show logic
 - **Legend could be improved** - Circular color wheel would be more intuitive
 - **Performance is good** - MapLibre GL handles the rendering better than Leaflet

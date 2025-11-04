@@ -72,7 +72,7 @@ Despite the loading errors, Gemini created:
 |--------|----------------|---------------|
 | Error | CSP/CORS violations | CSP/CORS violations |
 | Attempts | 3 | 3 |
-| UI Generated | ✅ Good | ✅ Excellent (best legend) |
+| UI Generated | ✅ Good | ✅ Strong (best legend) |
 | Map Loading | ❌ Failed | ❌ Failed |
 | Error Visibility | Shown | Hidden (spinner only) |
 | Final Status | Partial Success (D) | Failed |
