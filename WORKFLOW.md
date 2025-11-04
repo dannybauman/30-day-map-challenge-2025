@@ -65,6 +65,7 @@ Here's my refined process after completing Day 1.
 2. Note which worked/failed in LAUNCH-TRACKER
 3. **Document human interventions** - if you provide feedback or ask questions during platform testing, log it
 4. Iterate 1-2 times on partial successes
+   - **Note**: Some platforms may regress after fixes (e.g., map disappears after attempt to fix) - document this in LAUNCH-TRACKER
 5. Manually confirm data accuracy (spot-check API responses, units, legends)
 6. Apply human tweaks (copy edits, accessibility fixes, visual polish) — log each change
 7. Save links to live demos
