@@ -58,6 +58,7 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 10. **Avoid em dashes**: Use regular dashes (-) or colons (:) instead of em dashes (—)
 11. **Avoid aggressive language**: Use "asked for" or "requested" instead of "demanded" or "insisted". Use "required" instead of "forced" when describing what happened.
 12. **Avoid jargon**: Use plain language instead of technical terms. "Administrative boundaries" → "boring rectangular shapes" or "state outlines". Describe what things actually are, not their technical category.
+13. **Use numerals instead of written numbers**: Prefer "3", "10", "11" instead of "three", "ten", "eleven" unless there's a specific reason (e.g., proper nouns, beginning of sentences where it reads better, or idiomatic expressions). "3 AI platforms" not "three AI platforms". "11 different outputs" not "eleven different outputs".
 
 ## Examples
 

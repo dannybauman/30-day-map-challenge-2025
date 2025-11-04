@@ -40,7 +40,7 @@
 
 ### Rating: **B** (Good)
 
-**Verdict**: V0.dev got partway there but fell short of platforms like ChatGPT Canvas and Bolt.new. The colored points work, but without a basemap, it's hard to see geographic patterns. Required iteration where others succeeded in one shot.
+**Verdict**: V0.dev got partway there but fell short of platforms like ChatGPT Canvas and Bolt.new. The colored points work, but without a basemap, it's hard to see geographic patterns. Required iteration where others succeeded in 1 shot.
 
 ### Recommendation
 **Best For**:

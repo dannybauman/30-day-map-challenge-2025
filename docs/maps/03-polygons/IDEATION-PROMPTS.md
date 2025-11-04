@@ -1,13 +1,13 @@
 # Day 3: Polygons - Ideation Prompt
 
-**Date:** November 3, 2025  
+**Date:** November 3, 2025
 **Theme:** Polygons - Area features (regions, land use, boundaries). Use fills, patterns, choropleths.
 
 **Attribution:**
 - **Human (Danny)**: Strategic direction, prompt constraints, emphasis on interesting polygon shapes vs administrative boundaries, **decision to use unified prompt across all platforms (ensures fair comparison)**, concept selection criteria
 - **AI (Cursor)**: Crafted unified prompt template, formatted prompt, documentation structure
 
-**Human Direction:** 
+**Human Direction:**
 - Smaller embedded datasets (avoid external APIs)
 - **CRITICAL: The polygons must have interesting, organic shapes themselves - NOT just rectangular administrative boundaries (states, countries, counties)**
 - **CRITICAL: Prefer useful boundaries people haven't thought of before - novel, meaningful ways to divide space**
@@ -21,7 +21,7 @@
 
 ## Unified Ideation Prompt
 
-**Use this EXACT prompt for all three platforms (Claude, ChatGPT, Gemini) to ensure fair comparison:**
+**Use this EXACT prompt for all 3 platforms (Claude, ChatGPT, Gemini) to ensure fair comparison:**
 
 ```
 Today's #30DayMapChallenge theme is: POLYGONS

@@ -1,6 +1,6 @@
 # Day 3: Polygons - Ideation Responses
 
-**Date:** November 3, 2025  
+**Date:** November 3, 2025
 **Theme:** Polygons - Area features (regions, land use, boundaries). Use fills, patterns, choropleths.
 
 **Attribution:**
@@ -136,7 +136,7 @@
 - **CRITICAL: Prefer useful boundaries people haven't thought of before - novel, meaningful ways to divide space that aren't usually mapped**
 - Examples: topography/contour lines/elevation bands, water bodies, watershed boundaries, tree canopy coverage, urban heat islands, noise zones, accessibility zones, etc.
 
-**Result:** Prompts updated and re-sent to all three platforms for Round 2.
+**Result:** Prompts updated and re-sent to all 3 platforms for Round 2.
 
 ---
 
@@ -345,8 +345,8 @@
 
 ## Concept Selection
 
-**Selected Concept:** Airport Noise Footprint (PDX)  
-**Selected By:** Human (Danny)  
+**Selected Concept:** Airport Noise Footprint (PDX)
+**Selected By:** Human (Danny)
 **Selection Date:** November 3, 2025
 
 **Rationale:**
