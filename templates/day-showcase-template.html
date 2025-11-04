@@ -320,6 +320,26 @@
             <div class="row">
                 <!-- Repeat for each successful platform -->
                 <!--
+                    PLATFORM CARD STRUCTURE EXAMPLE:
+                    <div class="col-md-4 platform-card">
+                        <div class="card h-100">
+                            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #9b59b6; color: white;">
+                                <strong>Platform Name</strong>
+                                <span class="badge grade-a">Grade A</span>
+                            </div>
+                            <div class="card-body">
+                                <!-- Screenshots, content, buttons -->
+                            </div>
+                        </div>
+                    </div>
+
+                    GRADE BADGE NOTES:
+                    - Always in card-header upper right: <span class="badge grade-X">Grade X</span>
+                    - Use grade-a, grade-b, grade-c-plus, grade-c, grade-c-minus, grade-d, or grade-f
+                    - NO Quality field in card-body - Grade badge replaces it
+                    - Partial success cards: bg-warning text-dark header with grade badge
+                    - Failed cards: bg-danger text-white header with grade badge
+
                     SCREENSHOT SIZING GUIDE:
                     - Single winner (full width col-md-12): Use col-8 for desktop, col-4 for mobile
                     - Multiple winners (col-md-6): Use col-7 for desktop, col-5 for mobile (already appropriately sized)
@@ -331,12 +351,26 @@
             <!-- Partial Success -->
             <h3 class="mb-3 mt-5">⚠️ Partial Success</h3>
             <div class="row">
+                <!--
+                    PARTIAL SUCCESS EXAMPLE:
+                    <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                        <strong>Platform Name</strong>
+                        <span class="badge grade-c-plus">Grade C+ (Mock data)</span>
+                    </div>
+                -->
                 {{PARTIAL_CARDS}}
             </div>
 
             <!-- Failed Attempts -->
             <h3 class="mb-3 mt-5">❌ Failed Attempts</h3>
             <div class="row">
+                <!--
+                    FAILED ATTEMPT EXAMPLE:
+                    <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
+                        <strong>Platform Name</strong>
+                        <span class="badge grade-d">Grade D (Blocked)</span>
+                    </div>
+                -->
                 {{FAILED_CARDS}}
             </div>
         </section>
