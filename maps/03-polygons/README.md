@@ -95,6 +95,20 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Second full success for Day 3!**
 - **See:** `bolt-new/README.md` for full details
 
+#### Firebase Studio (Grade B)
+- **Status:** ✅ Full Success (**FIRST PLATFORM TO USE REAL DATA!**)
+- **Data Handling:** ✅ **SUCCESS - Real data download and processing!**
+- **Major Achievement:** First platform to successfully use real PDX noise contour data!
+- **Process:**
+  1. Initial: Had a few back and forths fixing errors, required Google Maps API key (manual `.env.local` file creation - not user friendly)
+  2. Mock data phase: Eventually got map and mock data visuals working
+  3. Real data phase: User asked to use real data, platform successfully downloaded and processed real data
+- **Result:** Map and UI look nice, legend has working checkboxes, tooltip looks slick, real PDX noise contours displayed correctly
+- **Minor UX Issues:** Zoom not working (feels locked), layering tooltip issue (hover only shows 65 dB tooltip, not 68 dB underneath)
+- **User Assessment:** "solid grade B because even if there were a few errors, if it got real data on the map, that's big"
+- **Live URL:** https://9000-firebase-studio-1762220213064.cluster-gxm4gzz4s5b6guuwopayrdh3h4.cloudworkstations.dev/?embedded=0&monospaceUid=791225 (requires authentication)
+- **See:** `firebase-studio/README.md` for full details
+
 ---
 
 ### ⚠️ Partial Success (6 platforms)
