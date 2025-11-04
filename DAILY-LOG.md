@@ -8,7 +8,7 @@ Quick tracker for daily progress. One line per day with key stats.
 |-----|------|-------|--------|---------------------|------------|------|-------|
 | 1 | Nov 1 | Points | ✅ | 11 | 8 | ~1.5 hrs | Earthquake map. Top 3: ChatGPT, Bolt, Lovable. Base44 best stats. Human check: approved fetch prompt, captured screenshots, logged mobile/legend issues. |
 | 2 | Nov 2 | Lines | ⏳ | - | - | - | |
-| 3 | Nov 3 | Polygons | 🚧 | 2 | 0 (2 partial) | ~30 min | Airport Noise Footprint (PDX). Testing in progress. Claude Artifacts: Grade D (CSP/CORS, same as Day 1/2). ChatGPT Canvas: Grade C/C+ (mock data, multiple fixes needed). Data handling test: Neither attempted real data download. |
+| 3 | Nov 3 | Polygons | 🚧 | 3 | 0 (3 partial) | ~45 min | Airport Noise Footprint (PDX). Testing in progress. Claude Artifacts: Grade D (CSP/CORS, same as Day 1/2). ChatGPT Canvas: Grade C/C+ (mock data, multiple fixes needed). Gemini Canvas: Grade D (UI OK, map/data rendering failed, regression after fixes). Data handling test: None attempted real data download. |
 | 4 | Nov 4 | My Data | ⏳ | - | - | - | |
 | 5 | Nov 5 | Earth | ⏳ | - | - | - | |
 | 6 | Nov 6 | Dimensions | ⏳ | - | - | - | |

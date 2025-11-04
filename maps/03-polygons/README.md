@@ -72,9 +72,9 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ## Platform Results
 
-**Total Platforms Tested:** 2/10 (In Progress)
+**Total Platforms Tested:** 3/10 (In Progress)
 
-### ⚠️ Partial Success (2 platforms)
+### ⚠️ Partial Success (3 platforms)
 
 #### ChatGPT Canvas (Grade C/C+)
 - **Status:** ⚠️ Partial Success (Eventual Success with Mock Data)
@@ -98,6 +98,19 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Data Handling:** Could not test (blocked before data processing)
 
 **See:** `claude-artifacts/README.md` for full details
+
+#### Gemini Canvas (Grade D)
+- **Status:** ⚠️ Partial Success (same as Day 1 & Day 2)
+- **Issue:** UI generated but data visualization didn't work, map tiles missing
+- **Attempts:**
+  1. Initial: UI OK, but data visualization failed, map tiles missing
+  2. User feedback → Platform fix attempt → Still missing tiles, visualization not working
+  3. User feedback → User fix attempt → Map doesn't show at all (regression)
+- **Result:** Map disappeared entirely after fixes (worse than initial)
+- **Pattern:** Consistent limitation across Day 1, Day 2, Day 3 - UI works, map/data rendering fails
+- **Live URL:** https://gemini.google.com/share/908ebfdc84ed
+- **Data Handling:** Could not test (visualization failed before data could be verified)
+- **See:** `gemini-canvas/README.md` for full details
 
 ---
 
@@ -124,6 +137,13 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Said it would do mock data first, then user could provide real GeoJSON
 - This reveals platform preference for easier path (synthetic) over testing GIS data handling
 
+**Gemini Canvas:**
+- Could not test data handling (visualization failed before data could be verified)
+- UI generated but data visualization never worked
+- Map tiles missing (CSP/CORS or network restrictions)
+- Attempts to fix resulted in regression (map disappeared entirely)
+- Consistent pattern: Day 1, Day 2, Day 3 all show same issues - UI works, map/data rendering fails
+
 ---
 
 ## Human Interventions & Decisions
@@ -141,22 +161,22 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ## Next Steps
 
-**Remaining Platforms to Test (8/10):**
+**Remaining Platforms to Test (7/10):**
 1. Bolt.new
 2. Lovable
 3. MagicPatterns
 4. Google AI Studio Apps
 5. V0.dev
-6. Google Gemini Canvas
-7. Firebase Studio
-8. Base44
+6. Firebase Studio
+7. Base44
 
-**Completed (2/10):**
+**Completed (3/10):**
 - ✅ Claude Artifacts (Grade D - CSP/CORS)
 - ✅ ChatGPT Canvas (Grade C/C+ - mock data)
+- ✅ Gemini Canvas (Grade D - UI OK, map/data rendering failed)
 
 **Tasks:**
-1. Continue testing remaining 8 platforms
+1. Continue testing remaining 7 platforms
 2. Observe which platforms can handle GIS data processing (LineString→Polygon conversion)
 3. Document data handling approaches (download vs. synthetic vs. embedded)
 4. Capture screenshots for all platforms
@@ -179,10 +199,11 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 **AI (Claude, ChatGPT, Gemini):**
 - Generated all concept ideas using unified prompt (Round 1: 6 ideas, Round 2: 6 ideas after human redirection)
 
-**AI (ChatGPT Canvas, Claude Artifacts):**
+**AI (ChatGPT Canvas, Claude Artifacts, Gemini Canvas):**
 - Generated code and UI implementations
 - ChatGPT Canvas: Created mock data implementation (did not attempt real data download)
 - Claude Artifacts: Generated UI/legends (blocked by CSP/CORS from rendering map)
+- Gemini Canvas: Generated UI but map/data rendering failed (consistent with Day 1 & Day 2)
 
 **AI (Cursor):**
 - Logged ideation responses and organized content
@@ -200,9 +221,10 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - `data/DATA-PREPARATION.md` - Data source and processing details
 - `claude-artifacts/README.md` - Claude Artifacts specific notes
 - `chatgpt-canvas/README.md` - ChatGPT Canvas specific notes
+- `gemini-canvas/README.md` - Gemini Canvas specific notes
 
 ---
 
 **Last Updated:** November 3, 2025  
-**Status:** Testing in progress (2/10 platforms completed)
+**Status:** Testing in progress (3/10 platforms completed)
 

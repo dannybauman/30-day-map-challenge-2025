@@ -17,7 +17,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 | Firebase Studio | 1 | 1 | 0 | 0 | 100% | 15 min |
 | V0.dev | 1 | 0 | 1 | 0 | 0% | 10 min |
 | Claude Artifacts | 3 | 0 | 3 | 0 | 0% | 15 min |
-| Gemini | 1 | 0 | 1 | 0 | 0% | 15 min |
+| Gemini | 3 | 0 | 3 | 0 | 0% | 15 min |
 | Cursor | 0 | 0 | 0 | 0 | -- | -- |
 | Windsurf | 0 | 0 | 0 | 0 | -- | -- |
 

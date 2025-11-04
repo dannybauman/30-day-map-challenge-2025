@@ -51,17 +51,36 @@
 - **Grade:** C/C+ (Partial Success - Works but with mock data and intermittent errors)
 - **Data Handling:** ⚠️ Did not attempt real data download/processing (chose mock data instead)
 
+#### ⚠️ Gemini Canvas
+- **Launch Time:** November 3, 2025
+- **Status:** ⚠️ Partial Success (Grade D - same as Day 1 & Day 2)
+- **Notes:**
+  - Similar to Claude Artifacts - UI showed up mostly OK but data visualization didn't work
+  - Map tiles missing
+  - **Multiple iterations required:**
+    1. Initial: UI showed up mostly OK, but data visualization didn't work, map tiles missing
+    2. **Human intervention:** User said "the data visualization didn't work, and some of the map tiles are missing" → Platform attempted fix → Shows different base map, still missing tiles, visualization still not working
+    3. **Human intervention:** User said "basically same problems, not fixed. just shows a different base map, still missing tiles, not sure about the visualization" → User tried one more fix → Map doesn't show at all (regression)
+  - **Final state:** Map doesn't show at all after fixes (worse than initial)
+  - **Consistent pattern**: Day 1, Day 2, Day 3 all show same issues - UI works, map/data rendering fails
+  - **Data handling test:** Could not test (visualization failed before data could be verified)
+- **Screenshot:** ⚠️ Screenshots needed (desktop, mobile)
+- **Mobile Check:** N/A (map doesn't show)
+- **Live URL:** https://gemini.google.com/share/908ebfdc84ed
+- **Grade:** D (Partial Success - UI generated but map/data rendering failed, consistent with Day 1 & Day 2)
+
 ---
 
 ## Platform Testing Summary
 
-**Total Platforms Tested:** 2/10 (Claude Artifacts, ChatGPT Canvas)
+**Total Platforms Tested:** 3/10 (Claude Artifacts, ChatGPT Canvas, Gemini Canvas)
 
 **Status Breakdown:**
 - ✅ Full Success: 0
-- ⚠️ Partial Success: 2
+- ⚠️ Partial Success: 3
   - Claude Artifacts - Grade D (UI/legends, no map)
   - ChatGPT Canvas - Grade C/C+ (Mock data, works after fixes)
+  - Gemini Canvas - Grade D (UI OK, map/data rendering failed)
 - ❌ Failure: 0
 
 **Patterns Observed:**
@@ -79,6 +98,13 @@
 - Intermittent error screen still appears
 - Eventually works but with synthetic data, not real PDX contours
 
+**Gemini Canvas:**
+- **Data handling test result:** Could not test (visualization failed before data could be verified)
+- UI generated but data visualization never worked
+- Map tiles missing (CSP/CORS or network restrictions)
+- Attempts to fix resulted in regression (map disappeared entirely)
+- Consistent pattern: Day 1, Day 2, Day 3 all show same issues - UI works, map/data rendering fails
+
 ---
 
 ## Notes for HTML Page (Future)
@@ -88,10 +114,12 @@
 1. **Platform Colors** (from Day 1/2):
    - ChatGPT Canvas: `bg-success` (green)
    - Claude Artifacts: `bg-warning` (yellow/orange)
+   - Gemini Canvas: `bg-warning` (yellow/orange) - same as Claude
 
 2. **Screenshot Requirements:**
    - **ChatGPT Canvas**: Desktop and mobile showing map with mock data, error screen screenshot available
    - **Claude Artifacts**: Desktop and mobile showing UI/legends but black/empty map area
+   - **Gemini Canvas**: Desktop and mobile showing UI but missing map tiles or empty map (screenshots needed)
 
 3. **Content to Include:**
    - **ChatGPT Canvas**: Note that it chose mock data over real data download, required multiple "Fix Bug" iterations, intermittent error screen
@@ -99,12 +127,16 @@
    - **Claude Artifacts**: Note consistent limitation across 3 days (Day 1, Day 2, Day 3)
    - **Claude Artifacts**: Document that UI/legends are generated (shows AI capability)
    - **Claude Artifacts**: Mention user's observation about security/permissions being potentially positive
-   - **Grades**: ChatGPT Canvas: C/C+ (Partial Success - works but with mock data), Claude Artifacts: D (Partial Success - consistent with Day 1 & Day 2)
+   - **Gemini Canvas**: Note consistent limitation across 3 days (Day 1, Day 2, Day 3) - UI works, map/data rendering fails
+   - **Gemini Canvas**: Document regression issue (attempts to fix made it worse - map disappeared entirely)
+   - **Gemini Canvas**: Data handling test: Could not test (visualization failed)
+   - **Grades**: ChatGPT Canvas: C/C+ (Partial Success - works but with mock data), Claude Artifacts: D (Partial Success - consistent with Day 1 & Day 2), Gemini Canvas: D (Partial Success - consistent with Day 1 & Day 2)
 
 4. **Data Handling Test Results:**
    - **ChatGPT Canvas**: Did NOT attempt real data download/processing (chose mock data instead)
    - **Claude Artifacts**: Could not test data handling (blocked before data processing)
-   - Both platforms reveal they prefer easier paths (synthetic/embedded) over testing GIS data handling
+   - **Gemini Canvas**: Could not test data handling (visualization failed before data could be verified)
+   - All platforms reveal they prefer easier paths (synthetic/embedded) over testing GIS data handling, or are blocked by sandbox restrictions
 
 ---
 
