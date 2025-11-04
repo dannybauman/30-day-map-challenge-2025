@@ -114,7 +114,6 @@
                     <div class="card-body">
                         <h3 class="text-info">{{TIME_SPENT}}</h3>
                         <p class="mb-0">Time Invested</p>
-                        <small class="text-muted">(approx)</small>
                     </div>
                 </div>
             </div>
@@ -123,10 +122,17 @@
         <!-- Ideation Phase -->
         <!--
             IDEATION FORMAT GUIDANCE:
+            - Always order: ChatGPT, Claude, Gemini
+            - Always colors: ChatGPT (green bg-success), Claude (orange #fd7e14), Gemini (blue #4285f4)
+            - Chosen concept gets class "concept-chosen" with border: 2px solid [platform color]
+            - ChatGPT chosen: border: 2px solid #198754
+            - Claude chosen: border: 2px solid #fd7e14
+            - Gemini chosen: border: 2px solid #4285f4
             - {{IDEATION_SUMMARY}} should be a short paragraph in your voice summarizing the multi-step back-and-forth.
             - {{IDEATION_PIVOTS}} is a list (3-5 bullets) calling out the key directions YOU pushed for (edits, constraints, vetoes).
             - The concept cards can hold either direct quotes or condensed summaries from each platform.
-            - Add "concept-chosen" + style border highlight to whichever platform inspired the final pick.
+            - Use "prompt" not "brief" in all text
+            - Avoid em dashes (—) and semi-colons (;) and most symbols, if needed use regular dashes with spaces when appropriate ( - ) or colons (:)
         -->
         <section class="mb-5">
             <h2 class="mb-4">Ideation Phase</h2>
@@ -134,7 +140,7 @@
 
             <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Where I Redirected The Brief</h5>
+                    <h5 class="card-title">Where I Redirected The Prompt</h5>
                     <ul class="small mb-0">
                         {{IDEATION_PIVOTS}}
                     </ul>
@@ -143,19 +149,7 @@
 
             <div class="row g-3 mb-4">
                 <div class="col-md-4">
-                    <!-- Claude card (use concept-chosen class if selected) -->
-                    <div class="card h-100">
-                        <div class="card-header text-white" style="background-color: #fd7e14;">
-                            <strong>Claude.ai (Sonnet 4.5)</strong>
-                        </div>
-                        <div class="card-body">
-                            <p class="small mb-2">{{CLAUDE_IDEA}}</p>
-                            <p class="small mb-0 text-muted">{{CLAUDE_NOTE}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <!-- ChatGPT card -->
+                    <!-- ChatGPT card (use concept-chosen class if selected, border: 2px solid #198754;) -->
                     <div class="card h-100">
                         <div class="card-header bg-success text-white">
                             <strong>ChatGPT (GPT-5 Thinking)</strong>
@@ -167,7 +161,19 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <!-- Gemini card -->
+                    <!-- Claude card (use concept-chosen class if selected, border: 2px solid #fd7e14;) -->
+                    <div class="card h-100">
+                        <div class="card-header text-white" style="background-color: #fd7e14;">
+                            <strong>Claude.ai (Sonnet 4.5)</strong>
+                        </div>
+                        <div class="card-body">
+                            <p class="small mb-2">{{CLAUDE_IDEA}}</p>
+                            <p class="small mb-0 text-muted">{{CLAUDE_NOTE}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- Gemini card (use concept-chosen class if selected, border: 2px solid #4285f4;) -->
                     <div class="card h-100">
                         <div class="card-header" style="background-color: #4285f4; color: white;">
                             <strong>Gemini (2.5 Pro)</strong>
