@@ -333,7 +333,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
 
             <!-- Winners -->
             <h3 class="mb-3">🏆 Full Success</h3>
-            <p class="small text-muted mb-4">Only Firebase Studio cleared every requirement and shipped the real contours.</p>
+            <p class="small text-muted mb-4">Only Firebase Studio cleared every requirement and delivered the real contours.</p>
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-xl-8 platform-card">
                     <div class="card h-100">
@@ -578,7 +578,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                             <p class="small mb-2"><strong>State of play:</strong> Rendered a tidy shell, but tiles never loaded even after multiple auto-fix passes.</p>
                             <ul class="small mb-3 ps-3">
                                 <li>Never cleared the CSP/tile restriction that blocked Days 1 and 2.</li>
-                                <li>Auto-fix swapped basemaps but still shipped blank canvases.</li>
+                                <li>Auto-fix swapped basemaps but still rendered blank canvases.</li>
                                 <li>Regressed after the third attempt: the map container disappeared.</li>
                             </ul>
                             <div class="d-flex flex-wrap gap-2">
@@ -739,7 +739,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                                 <span class="lane-label">Me</span>
                                 <h4>Prompt Crafting</h4>
                                 <ul>
-                                    <li>Merged the chosen concept into the implementation template with an explicit “no Mapbox keys” rule.</li>
+                                    <li>Merged the chosen concept into the implementation template with a "no Mapbox keys" rule.</li>
                                     <li>Added a strict data acquisition order (real → alternate → synthetic) so comparisons stay fair.</li>
                                     <li>Logged the raw BTAA download inside <code>data/</code> and documented processing expectations.</li>
                                 </ul>
@@ -851,7 +851,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                 <ul>
                     <li>Firebase Studio finally pulled the real PDX Part 150 contours: first genuine data ingestion of the challenge.</li>
                     <li>MagicPatterns, Bolt.new, and Base44 all fell back to synthetic petals gracefully while keeping UI polish high.</li>
-                    <li>Cross-platform legends and toggles matured; three partial builds shipped usable layer control without prompting.</li>
+                    <li>Cross-platform legends and toggles got better; three partial builds generated usable layer control without prompting.</li>
                 </ul>
             </div>
 
@@ -877,8 +877,8 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                 <h5>📚 Lessons for Next Time</h5>
                 <ul>
                     <li>Include ready-to-embed GeoJSON for the next run so sandboxed platforms can still prove rendering chops.</li>
-                    <li>Keep MapLibre/OSM as the default callout in every prompt to avoid Mapbox gating wins.</li>
-                    <li>Document data-handling expectations early: platforms default to mock data unless explicitly pushed.</li>
+                    <li>Keep MapLibre/OSM as the default callout in every prompt to avoid Mapbox blocking issues.</li>
+                    <li>Document data-handling expectations early: platforms default to mock data unless directly asked for real data.</li>
                 </ul>
             </div>
         </section>
@@ -889,7 +889,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
             <div class="card">
                 <div class="card-body">
                     <p>Day 3 felt like the inflection point: the concept required every platform to grapple with real GIS workflows instead of canned CSVs. Watching Firebase Studio grind through the API-key setup and still emerge with live PDX contours was the highlight: it proves the pipeline can work when the tooling cooperates. At the same time, the consistency of the partials tells its own story: if a platform leaned on mock data on Day 1 or got blocked by CSP on Day 2, it behaved the exact same way here. Those patterns are now "known unknowns" we can design around.</p>
-                    <p>For future days, I'm gonna get the data to work better, maybe upload it myself, so even the sandboxed tools can show what they would do with the real data. I'm also rewriting the base prompt to not use Mapbox outright: no more getting stuck on token dialogs. The experiment continues to validate the parallel approach: multiple working prototypes in ~60 minutes, plus a clearer picture of where the human still needs to steer.</p>
+                    <p>For future days, I'm gonna get the data to work better, maybe upload it myself, so even the sandboxed tools can show what they would do with the real data. I'm also rewriting the base prompt to not use Mapbox: no more getting stuck on token dialogs. The experiment continues to validate the parallel approach: multiple working prototypes in ~60 minutes, plus a clearer picture of where the human needs to guide.</p>
                 </div>
             </div>
         </section>

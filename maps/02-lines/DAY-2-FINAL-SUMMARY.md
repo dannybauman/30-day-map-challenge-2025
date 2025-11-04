@@ -145,7 +145,7 @@ Partial successes are recorded because the UI exists, but each requires manual f
 ## 🎓 LESSONS FOR FUTURE DAYS
 
 1. **Data size matters** - Consider dataset size impact on platform performance
-2. **Circular legends for directional data** - Should be explicitly requested in prompts
+2. **Circular legends for directional data** - Should be directly requested in prompts
 3. **Mobile responsiveness** - Most platforms handled well when prompted
 4. **Performance testing critical** - Not just "does it work" but "does it work well"
 5. **Patience required** - Don't assume failure immediately (ChatGPT Canvas example)

@@ -182,8 +182,8 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 
 ### 💡 For Future Days
 - Consider **data size** when choosing concepts - smaller datasets may allow more platforms to succeed
-- **Circular legends** should be explicitly requested in prompts for directional data
-- **Mobile responsiveness** needs explicit prompt emphasis (most platforms got this right)
+- **Circular legends** should be directly requested in prompts for directional data
+- **Mobile responsiveness** needs clear prompt emphasis (most platforms got this right)
 - **Performance testing** should be part of evaluation - not just "does it work" but "does it work well"
 - **Patience required** for slower platforms (don't assume failure at first glance)
 

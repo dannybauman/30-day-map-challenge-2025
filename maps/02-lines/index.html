@@ -758,8 +758,8 @@ DELIVERABLES:
                 <h5>📚 Lessons for Next Time</h5>
                 <ul>
                     <li><strong>Data size matters</strong>: Consider dataset size impact on platform performance - 91MB challenged many platforms</li>
-                    <li><strong>Circular legends for directional data</strong>: Should be explicitly requested in prompts for compass bearing visualizations</li>
-                    <li><strong>Mobile responsiveness needs explicit emphasis</strong>: Most platforms got this right when prompted</li>
+                    <li><strong>Circular legends for directional data</strong>: Should be directly requested in prompts for compass bearing visualizations</li>
+                    <li><strong>Mobile responsiveness needs clear emphasis</strong>: Most platforms got this right when prompted</li>
                     <li><strong>Performance testing critical</strong>: Not just "does it work" but "does it work well" - MagicPatterns vs. ChatGPT Canvas shows huge variance</li>
                     <li><strong>Patience required</strong>: Don't assume failure immediately - ChatGPT Canvas took ~1 minute to render</li>
                     <li><strong>MapLibre GL outperformed Leaflet</strong>: For large datasets, MapLibre GL (Lovable, MagicPatterns) performed better than Leaflet (ChatGPT Canvas, Bolt.new)</li>
@@ -778,7 +778,7 @@ DELIVERABLES:
 
                     <p><strong>The Big Challenge:</strong> The 91MB dataset exposed platform weaknesses. ChatGPT Canvas took ~1 minute to render data (initially appeared broken). Bolt.new and ChatGPT Canvas both had sluggish pan/zoom (~10 sec lag). Firebase Studio's autonomous debugging identified the Next.js 2MB cache limit issue but couldn't resolve it. Only MagicPatterns and Lovable (both using MapLibre GL) handled the large dataset smoothly.</p>
 
-                    <p><strong>The Legend Insight:</strong> Circular legends (Bolt.new, MagicPatterns) were far more intuitive than linear gradients or 4-square compass roses for directional data. This makes sense - compass bearings are cyclical (0° = 360°), and a circular color wheel visually represents that relationship. For future days with directional data, circular legends should be explicitly requested.</p>
+                    <p><strong>The Legend Insight:</strong> Circular legends (Bolt.new, MagicPatterns) were far more intuitive than linear gradients or 4-square compass roses for directional data. This makes sense - compass bearings are cyclical (0° = 360°), and a circular color wheel visually represents that relationship. For future days with directional data, circular legends should be directly requested.</p>
 
                     <p><strong>The Mobile Reality Check:</strong> Base44's non-collapsible mobile legend taking >50% of the screen shows how critical mobile UX is. Despite solid technical execution, the map was nearly unusable on phones. MagicPatterns' mobile experience was strong - another reason it won Day 2.</p>
 

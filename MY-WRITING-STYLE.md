@@ -33,6 +33,10 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 - "novel" (sounds hype-y; use "interesting", "useful", or "creative")
 - "drove" (use "guided", "led", or "directed" instead)
 - "nailed" (too confident; use "did well", "performed well", "worked well", or "got it right" instead)
+- "matured" (too formal/hype-y; use "got better", "improved", or "were designed better" instead)
+- "shipped" (too techie; use "released", "created", "built", or "completed" instead)
+- "gating" (too techie/jargon-y; use "blocking", "limiting", or "restricting" instead)
+- "explicitly" (too formal; use "directly", "clearly", or just remove if not needed)
 
 ## Punctuation Guidelines
 
