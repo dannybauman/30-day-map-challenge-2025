@@ -137,7 +137,7 @@ Tailwind's mobile-first approach means responsive design comes "for free" when A
 
 ## Bottom Line
 
-**Mobile responsive design is a solved problem** for modern AI code generation platforms. Every platform using Tailwind CSS handled mobile beautifully without being explicitly asked to do so.
+**Mobile responsive design is a solved problem** for modern AI code generation platforms. Every platform using Tailwind CSS handled mobile beautifully without being asked to do so.
 
 This is **great news** for the rest of the 30-day challenge - we can trust that successful desktop implementations will also work on mobile.
 
