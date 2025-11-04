@@ -30,6 +30,8 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 - Multiple exclamation marks (!!)
 - Excessive parenthetical asides
 - ALL CAPS (be careful - use sparingly, only for emphasis when needed)
+- "novel" (sounds hype-y; use "interesting", "useful", or "creative")
+- "drove" (use "guided", "led", or "directed" instead)
 
 ## Punctuation Guidelines
 
