@@ -149,6 +149,19 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Data Handling:** Could not test (blocked by Mapbox API key requirement)
 - **See:** `lovable/README.md` for full details
 
+#### V0.dev (Grade D)
+- **Status:** ⚠️ Partial Success (same as Day 1 & Day 2)
+- **Issue:** Base map doesn't render, only mock visuals visible
+- **Attempts:**
+  1. Initial: Error on first load
+  2. User clicked auto-fix → Mock visuals displayed but no base map
+- **Result:** UI generated with legend and controls, but base map doesn't render
+- **UX Issue:** Legend checkboxes appear clickable but don't do anything (confusing/unimplemented)
+- **Pattern:** Consistent limitation across Day 1, Day 2, Day 3 - map rendering issues
+- **Live URL:** https://v0-pdx-airport-noise-map.vercel.app/
+- **Data Handling:** Could not directly download data, used mock data
+- **See:** `v0-dev/README.md` for full details
+
 ---
 
 ## Key Observations (In Progress)
