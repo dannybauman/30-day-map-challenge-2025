@@ -161,6 +161,8 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 - Quick stats and platform comparison
 - Ideation concepts from each AI
 - Platform results with live demo links
+- AI Collaboration Snapshot (summary of where human guided vs. where AI accelerated)
+- Process Timeline (detailed play-by-play, collapsed by default)
 - Key insights and lessons learned
 - Editorial thoughts
 

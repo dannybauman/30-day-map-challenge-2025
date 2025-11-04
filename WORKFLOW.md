@@ -205,7 +205,8 @@ maps/0X-theme/
      - Three platform cards, highlighting which concept won
    - Chosen concept (title, why it mattered, data source)
    - Platform results (winners + partials, desktop/mobile screenshots)
-   - Collaboration snapshot (two quick lists: where you drove vs. where AI accelerated)
+   - AI Collaboration Snapshot (two quick lists: where you drove vs. where AI accelerated - summary of Process Timeline)
+   - Process Timeline (detailed play-by-play, collapsed by default)
    - Key insights + lessons, then the editorial wrap-up
 
 3. **Follow the design system**:
@@ -217,9 +218,9 @@ maps/0X-theme/
    - Gap spacing: `g-3` for screenshot rows
    - Bold desktop labels, regular mobile labels
    - Consistent header colors (see DOCUMENTATION-GUIDE.md)
-   - Fill the new collaboration snapshot with concise bullets (3-4 max each column)
+   - **AI Collaboration Snapshot**: Place BEFORE Process Timeline, fill with concise bullets (3-4 max each column) summarizing the Process Timeline content
    - Leave the timeline collapsed by default; only expand it while proofreading
-   - Timeline labels should read “Me” and “AI” (never “Human”)
+   - Timeline labels should read "Me" and "AI" (never "Human")
    - See `/maps/01-points/DESIGN-SYSTEM-UPDATE.md` for complete details
 
 4. **Test locally**:
