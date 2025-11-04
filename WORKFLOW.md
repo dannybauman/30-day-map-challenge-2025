@@ -103,7 +103,7 @@ Here's my refined process after completing Day 1.
 - Wait 5+ seconds for content to load
 - Watch for & approve permission dialogs!
 - Tests responsive design quality
-- **Note**: Can automate with Cursor or Playwright browser tools
+- **Note**: Can automate with Cursor or Playwright browser tools. A screenshot script is available in `scripts/` for capturing showcase page screenshots (workaround until better tooling is available).
 
 **Step 2: Create HTML** (10-15 min):
 1. Copy `templates/day-showcase-template.html` → `index.html`

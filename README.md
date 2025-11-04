@@ -2,9 +2,9 @@
 
 Live site: [https://dannybauman.github.io/30-day-map-challenge-2025/](https://dannybauman.github.io/30-day-map-challenge-2025/)
 
-![Day 1 HTML page - Top](maps/01-points/html-screenshot-top.png)
+![Day 1 HTML page - Top](screenshots/day1-top.png)
 
-![Day 1 HTML page - Top 3 Results](maps/01-points/html-screenshot-top3.png)
+![Day 1 HTML page - Top 3 Results](screenshots/day1-top3.png)
 
 ## Project Overview
 
@@ -240,6 +240,9 @@ Paste prompt in each → Click generate → Move to next
 - Create the new HTML page at `maps/<day-slug>/index.html` (using `templates/day-showcase-template.html`).
 - Ensure the `<script>` tag at the end of the page has `data-day="<day-slug>"`, `data-manifest="../../days.json"`, and `data-base-path="../../"` so navigation works locally and in production.
 - Re-run `node scripts/build-site.mjs` after adding or updating any day so the manifest, docs build, and navigation stay in sync.
+
+### Updating screenshots
+- Screenshots for the main README can be updated using the screenshot script in `scripts/` (workaround until better automation tooling is available). The script captures screenshots from the live GitHub Pages site to ensure all features load correctly.
 
 ---
 
