@@ -160,6 +160,12 @@ maps/0X-theme/
 └── PLATFORM-TRACKER.md          # Running comparison
 ```
 
+**Important Note on `docs/` folder:**
+- The `docs/` folder is **auto-generated** by the build script (`scripts/build-site.mjs`)
+- When making updates, **only edit files in `maps/`** (the source files)
+- Never manually edit files in `docs/` - they will be overwritten by the build script
+- Run `node scripts/build-site.mjs` to regenerate `docs/` after making changes to source files
+
 ---
 
 ## Time Budget (Refined)
