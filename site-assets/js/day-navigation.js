@@ -40,71 +40,7 @@
                 return;
             }
 
-            const card = document.createElement('div');
-            card.className = 'card shadow-sm';
-
-            const body = document.createElement('div');
-            body.className = 'card-body';
-            card.appendChild(body);
-
-            const heading = document.createElement('h5');
-            heading.className = 'card-title';
-            heading.textContent = '#30DayMapChallenge Navigator';
-            body.appendChild(heading);
-
-            const description = document.createElement('p');
-            description.className = 'card-text text-muted';
-            description.textContent = 'Jump to another day or review previous pages.';
-            body.appendChild(description);
-
-            const formWrapper = document.createElement('div');
-            formWrapper.className = 'row align-items-center g-2';
-            body.appendChild(formWrapper);
-
-            const selectCol = document.createElement('div');
-            selectCol.className = 'col-lg-8';
-            formWrapper.appendChild(selectCol);
-
-            const select = document.createElement('select');
-            select.className = 'form-select';
-            select.setAttribute('aria-label', 'Select map day');
-            selectCol.appendChild(select);
-
-            const placeholderOption = document.createElement('option');
-            placeholderOption.value = '';
-            placeholderOption.textContent = 'Select a day...';
-            placeholderOption.disabled = true;
-            select.appendChild(placeholderOption);
-
-            days.forEach((day) => {
-                if (!day || !day.id || !day.relativeUrl) {
-                    return;
-                }
-                const option = document.createElement('option');
-                option.value = buildUrl(day.relativeUrl);
-                option.textContent = day.title || day.id;
-                if (day.id === currentDay) {
-                    option.selected = true;
-                    placeholderOption.disabled = true;
-                }
-                select.appendChild(option);
-            });
-
-            if (!select.value) {
-                select.selectedIndex = 0;
-            }
-
-            select.addEventListener('change', (event) => {
-                const url = event.target.value;
-                if (url) {
-                    window.location.href = url;
-                }
-            });
-
-            const buttonsCol = document.createElement('div');
-            buttonsCol.className = 'col-lg-4 d-flex justify-content-lg-end gap-2';
-            formWrapper.appendChild(buttonsCol);
-
+            const isTopNav = targetSelector === '[data-day-nav-top]';
             const daysById = days.reduce((acc, day) => {
                 if (day && day.id) {
                     acc[day.id] = day;
@@ -131,55 +67,199 @@
                 return button;
             };
 
-            buttonsCol.appendChild(createNavButton('← Previous', prevId));
-            buttonsCol.appendChild(createNavButton('Next →', nextId));
+            if (isTopNav) {
+                // Compact top navigation bar
+                const navBar = document.createElement('nav');
+                navBar.className = 'day-nav-top sticky-top bg-white shadow-sm';
+                navBar.style.zIndex = '1030';
+                navBar.style.padding = '8px 0';
 
-            const list = document.createElement('ul');
-            list.className = 'list-group list-group-flush mt-3';
-            days.forEach((day) => {
-                if (!day || !day.id || !day.relativeUrl) {
-                    return;
+                const navContainer = document.createElement('div');
+                navContainer.className = 'container';
+                navBar.appendChild(navContainer);
+
+                const navWrapper = document.createElement('div');
+                navWrapper.className = 'd-flex align-items-center justify-content-between gap-2 flex-wrap';
+                navContainer.appendChild(navWrapper);
+
+                // Left: Previous/Next buttons
+                const navButtons = document.createElement('div');
+                navButtons.className = 'd-flex gap-2';
+                navButtons.appendChild(createNavButton('← Prev', prevId));
+                navButtons.appendChild(createNavButton('Next →', nextId));
+                navWrapper.appendChild(navButtons);
+
+                // Center: Current day indicator
+                const dayIndicator = document.createElement('div');
+                dayIndicator.className = 'text-center flex-grow-1';
+                const currentDayObj = daysById[currentDay];
+                if (currentDayObj) {
+                    const dayText = document.createElement('span');
+                    dayText.className = 'text-muted small';
+                    dayText.textContent = currentDayObj.title || `Day ${currentIndex + 1} of ${days.length}`;
+                    dayIndicator.appendChild(dayText);
+                } else {
+                    dayIndicator.textContent = `Day ${currentIndex + 1} of ${days.length}`;
+                    dayIndicator.className += ' text-muted small';
                 }
-                const item = document.createElement('li');
-                item.className = 'list-group-item d-flex justify-content-between align-items-center';
+                navWrapper.appendChild(dayIndicator);
 
-                const titleWrapper = document.createElement('div');
-                titleWrapper.innerHTML = `<strong>${day.title || day.id}</strong>`;
-                if (day.theme) {
-                    const theme = document.createElement('div');
-                    theme.className = 'small text-muted';
-                    theme.textContent = day.theme;
-                    titleWrapper.appendChild(theme);
-                }
-                item.appendChild(titleWrapper);
+                // Right: Day selector dropdown
+                const selectWrapper = document.createElement('div');
+                selectWrapper.style.minWidth = '200px';
+                const select = document.createElement('select');
+                select.className = 'form-select form-select-sm';
+                select.setAttribute('aria-label', 'Select map day');
+                selectWrapper.appendChild(select);
 
-                if (day.status) {
-                    const badge = document.createElement('span');
-                    badge.className = 'badge bg-secondary';
-                    badge.textContent = day.status;
-                    item.appendChild(badge);
-                }
+                const placeholderOption = document.createElement('option');
+                placeholderOption.value = '';
+                placeholderOption.textContent = 'Jump to day...';
+                placeholderOption.disabled = true;
+                select.appendChild(placeholderOption);
 
-                const targetUrl = buildUrl(day.relativeUrl);
-                item.addEventListener('click', () => {
-                    window.location.href = targetUrl;
+                days.forEach((day) => {
+                    if (!day || !day.id || !day.relativeUrl) {
+                        return;
+                    }
+                    const option = document.createElement('option');
+                    option.value = buildUrl(day.relativeUrl);
+                    option.textContent = day.title || day.id;
+                    if (day.id === currentDay) {
+                        option.selected = true;
+                        placeholderOption.disabled = true;
+                    }
+                    select.appendChild(option);
                 });
-                item.tabIndex = 0;
-                item.addEventListener('keydown', (event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        window.location.href = targetUrl;
+
+                select.addEventListener('change', (event) => {
+                    const url = event.target.value;
+                    if (url) {
+                        window.location.href = url;
                     }
                 });
-                item.style.cursor = 'pointer';
 
-                list.appendChild(item);
-            });
+                navWrapper.appendChild(selectWrapper);
 
-            body.appendChild(list);
+                container.innerHTML = '';
+                container.appendChild(navBar);
+            } else {
+                // Full bottom navigation card (existing behavior)
+                const card = document.createElement('div');
+                card.className = 'card shadow-sm';
 
-            container.innerHTML = '';
-            container.appendChild(card);
+                const body = document.createElement('div');
+                body.className = 'card-body';
+                card.appendChild(body);
+
+                const heading = document.createElement('h5');
+                heading.className = 'card-title';
+                heading.textContent = '#30DayMapChallenge Navigator';
+                body.appendChild(heading);
+
+                const description = document.createElement('p');
+                description.className = 'card-text text-muted';
+                description.textContent = 'Jump to another day or review previous pages.';
+                body.appendChild(description);
+
+                const formWrapper = document.createElement('div');
+                formWrapper.className = 'row align-items-center g-2';
+                body.appendChild(formWrapper);
+
+                const selectCol = document.createElement('div');
+                selectCol.className = 'col-lg-8';
+                formWrapper.appendChild(selectCol);
+
+                const select = document.createElement('select');
+                select.className = 'form-select';
+                select.setAttribute('aria-label', 'Select map day');
+                selectCol.appendChild(select);
+
+                const placeholderOption = document.createElement('option');
+                placeholderOption.value = '';
+                placeholderOption.textContent = 'Select a day...';
+                placeholderOption.disabled = true;
+                select.appendChild(placeholderOption);
+
+                days.forEach((day) => {
+                    if (!day || !day.id || !day.relativeUrl) {
+                        return;
+                    }
+                    const option = document.createElement('option');
+                    option.value = buildUrl(day.relativeUrl);
+                    option.textContent = day.title || day.id;
+                    if (day.id === currentDay) {
+                        option.selected = true;
+                        placeholderOption.disabled = true;
+                    }
+                    select.appendChild(option);
+                });
+
+                if (!select.value) {
+                    select.selectedIndex = 0;
+                }
+
+                select.addEventListener('change', (event) => {
+                    const url = event.target.value;
+                    if (url) {
+                        window.location.href = url;
+                    }
+                });
+
+                const buttonsCol = document.createElement('div');
+                buttonsCol.className = 'col-lg-4 d-flex justify-content-lg-end gap-2';
+                formWrapper.appendChild(buttonsCol);
+
+                buttonsCol.appendChild(createNavButton('← Previous', prevId));
+                buttonsCol.appendChild(createNavButton('Next →', nextId));
+
+                const list = document.createElement('ul');
+                list.className = 'list-group list-group-flush mt-3';
+                days.forEach((day) => {
+                    if (!day || !day.id || !day.relativeUrl) {
+                        return;
+                    }
+                    const item = document.createElement('li');
+                    item.className = 'list-group-item d-flex justify-content-between align-items-center';
+
+                    const titleWrapper = document.createElement('div');
+                    titleWrapper.innerHTML = `<strong>${day.title || day.id}</strong>`;
+                    if (day.theme) {
+                        const theme = document.createElement('div');
+                        theme.className = 'small text-muted';
+                        theme.textContent = day.theme;
+                        titleWrapper.appendChild(theme);
+                    }
+                    item.appendChild(titleWrapper);
+
+                    if (day.status) {
+                        const badge = document.createElement('span');
+                        badge.className = 'badge bg-secondary';
+                        badge.textContent = day.status;
+                        item.appendChild(badge);
+                    }
+
+                    const targetUrl = buildUrl(day.relativeUrl);
+                    item.addEventListener('click', () => {
+                        window.location.href = targetUrl;
+                    });
+                    item.tabIndex = 0;
+                    item.addEventListener('keydown', (event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            window.location.href = targetUrl;
+                        }
+                    });
+                    item.style.cursor = 'pointer';
+
+                    list.appendChild(item);
+                });
+
+                body.appendChild(list);
+
+                container.innerHTML = '';
+                container.appendChild(card);
+            }
         })
         .catch((error) => {
             handleError('Failed to load day navigation.', error);
