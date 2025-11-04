@@ -162,151 +162,6 @@
             </div>
         </section>
 
-        <!-- Process Timeline -->
-        <section class="mb-5 process-section">
-            <h2 class="mb-4">Process Timeline</h2>
-            <p class="text-muted">Left lane = human-led work. Right lane = AI-generated output. Every step is logged so the human/AI collaboration stays transparent.</p>
-            <div class="contribution-legend mb-4">
-                <span class="badge bg-primary me-2">Human</span>
-                <span class="badge badge-ai">AI</span>
-            </div>
-
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Ideation Vetting</h4>
-                            <ul>
-                                <li>Reviewed each model’s suggestions for feasibility and personal project goals.</li>
-                                <li>Noted the USGS feed as a reliable, widely supported source for this experiment.</li>
-                                <li>Chose the earthquake concept because it aligned with personal research goals and challenge spirit.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Model Suggestions</h4>
-                            <ul>
-                                <li>Claude, ChatGPT, and Gemini proposed six distinct point-map concepts in minutes.</li>
-                                <li>All three independently surfaced an earthquake map, signalling a strong shared candidate.</li>
-                                <li>Cursor summarized the chosen idea into a concise brief ready for prompting.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Prompt Crafting</h4>
-                            <ul>
-                                <li>Customized the implementation template with the exact data fields, visual goals, and usability constraints.</li>
-                                <li>Added notes about tooltip copy tone and responsive expectations before sharing with any platform.</li>
-                                <li>Double-checked that the prompt clearly called for attribution and hover details.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Prompt Drafts</h4>
-                            <ul>
-                                <li>Cursor expanded the human bullet points into a clean, platform-agnostic brief.</li>
-                                <li>AI tooling suggested additional UX polish (e.g., legend, permission handling) that stayed in the final prompt.</li>
-                                <li>Auto-formatted the text so it could be pasted without manual cleanup.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Launch & Supervision</h4>
-                            <ul>
-                                <li>Opened eleven platforms, pasted the identical brief, and tracked runtimes in <code>LAUNCH-TRACKER.md</code>.</li>
-                                <li>Monitored progress, captured screenshots, and halted runs that were hitting known CORS walls.</li>
-                                <li>Logged which iterations needed retries so they could be documented honestly.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Generated Outputs</h4>
-                            <ul>
-                                <li>Produced eleven codebases (eight production-ready, three partial) covering diverse UI stacks.</li>
-                                <li>Supplied default styling, Leaflet integrations, and data-fetching logic for each deployment.</li>
-                                <li>Provided auto-fix suggestions when runtime errors surfaced (e.g., V0.dev quick repair).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>QA & Edits</h4>
-                            <ul>
-                                <li>Logged mobile overlaps, legend clutter, and missing basemaps for follow-up fixes.</li>
-                                <li>Captured console and permission prompts from partial/failing runs.</li>
-                                <li>Triggered quick auto-fixes (like V0’s one-click repair) and noted remaining gaps.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>AI Fixes & Suggestions</h4>
-                            <ul>
-                                <li>Generated proposed fixes for console warnings and offered alternative radius calculations.</li>
-                                <li>Highlighted potential accessibility tweaks (contrast, tooltip delays) for manual review.</li>
-                                <li>Supplied alternate color scales that were evaluated before selecting the human-picked palette.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Documentation & Storytelling</h4>
-                            <ul>
-                                <li>Wrote comparisons, insights, and editorial commentary across the README and HTML page.</li>
-                                <li>Captured and organized screenshots alongside the standard attribution text from the prompt template.</li>
-                                <li>Shaped the narrative for social sharing while noting where AI assistance began and ended.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Supporting Assets</h4>
-                            <ul>
-                                <li>Drafted bullet-point summaries that were edited into the final insights sections.</li>
-                                <li>Suggested layout tweaks (two-column timeline, card hierarchy) implemented with human refinements.</li>
-                                <li>Generated boilerplate navigation markup to keep the day pages consistent.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Implementation Prompt -->
         <section class="mb-5">
             <h2 class="mb-4">Implementation Prompt</h2>
@@ -715,6 +570,151 @@ DELIVERABLES:
                                 <a href="https://v0-earthquake-visualization-map.vercel.app/" class="btn btn-sm btn-outline-warning btn-sm" target="_blank">Live Demo</a>
                                 <a href="v0-dev/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="mb-5 process-section">
+            <h2 class="mb-4">Process Timeline</h2>
+            <p class="text-muted">Left lane = human-led work. Right lane = AI-generated output. Every step is logged so the human/AI collaboration stays transparent.</p>
+            <div class="contribution-legend mb-4">
+                <span class="badge bg-primary me-2">Human</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Ideation Vetting</h4>
+                            <ul>
+                                <li>Reviewed each model's suggestions for feasibility and personal project goals.</li>
+                                <li>Noted the USGS feed as a reliable, widely supported source for this experiment.</li>
+                                <li>Chose the earthquake concept because it aligned with personal research goals and challenge spirit.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            <ul>
+                                <li>Claude, ChatGPT, and Gemini proposed six distinct point-map concepts in minutes.</li>
+                                <li>All three independently surfaced an earthquake map, signalling a strong shared candidate.</li>
+                                <li>Cursor summarized the chosen idea into a concise brief ready for prompting.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Prompt Crafting</h4>
+                            <ul>
+                                <li>Customized the implementation template with the exact data fields, visual goals, and usability constraints.</li>
+                                <li>Added notes about tooltip copy tone and responsive expectations before sharing with any platform.</li>
+                                <li>Double-checked that the prompt clearly called for attribution and hover details.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Prompt Drafts</h4>
+                            <ul>
+                                <li>Cursor expanded the human bullet points into a clean, platform-agnostic brief.</li>
+                                <li>AI tooling suggested additional UX polish (e.g., legend, permission handling) that stayed in the final prompt.</li>
+                                <li>Auto-formatted the text so it could be pasted without manual cleanup.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Launch & Supervision</h4>
+                            <ul>
+                                <li>Opened eleven platforms, pasted the identical brief, and tracked runtimes in <code>LAUNCH-TRACKER.md</code>.</li>
+                                <li>Monitored progress, captured screenshots, and halted runs that were hitting known CORS walls.</li>
+                                <li>Logged which iterations needed retries so they could be documented honestly.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Generated Outputs</h4>
+                            <ul>
+                                <li>Produced eleven codebases (eight production-ready, three partial) covering diverse UI stacks.</li>
+                                <li>Supplied default styling, Leaflet integrations, and data-fetching logic for each deployment.</li>
+                                <li>Provided auto-fix suggestions when runtime errors surfaced (e.g., V0.dev quick repair).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>QA & Edits</h4>
+                            <ul>
+                                <li>Logged mobile overlaps, legend clutter, and missing basemaps for follow-up fixes.</li>
+                                <li>Captured console and permission prompts from partial/failing runs.</li>
+                                <li>Triggered quick auto-fixes (like V0's one-click repair) and noted remaining gaps.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>AI Fixes & Suggestions</h4>
+                            <ul>
+                                <li>Generated proposed fixes for console warnings and offered alternative radius calculations.</li>
+                                <li>Highlighted potential accessibility tweaks (contrast, tooltip delays) for manual review.</li>
+                                <li>Supplied alternate color scales that were evaluated before selecting the human-picked palette.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-connector">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Human</span>
+                            <h4>Documentation & Storytelling</h4>
+                            <ul>
+                                <li>Wrote comparisons, insights, and editorial commentary across the README and HTML page.</li>
+                                <li>Captured and organized screenshots alongside the standard attribution text from the prompt template.</li>
+                                <li>Shaped the narrative for social sharing while noting where AI assistance began and ended.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Supporting Assets</h4>
+                            <ul>
+                                <li>Drafted bullet-point summaries that were edited into the final insights sections.</li>
+                                <li>Suggested layout tweaks (two-column timeline, card hierarchy) implemented with human refinements.</li>
+                                <li>Generated boilerplate navigation markup to keep the day pages consistent.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

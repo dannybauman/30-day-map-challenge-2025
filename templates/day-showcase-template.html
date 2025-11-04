@@ -121,7 +121,7 @@
         </div>
 
         <!-- Ideation Phase -->
-        <!-- 
+        <!--
             NOTE: Extract concepts from IDEATION-RESPONSES.md - pick the best/favorite concept from each platform's response.
             Each platform typically provides 2-5 ideas; show ONE concept per platform in these cards.
             Mark the chosen concept with class="concept-chosen" and style="border-color: #fd7e14;"
@@ -178,6 +178,56 @@
                     <p><strong>Data Source:</strong> {{DATA_SOURCE}}</p>
                     <p><strong>Why chosen:</strong> {{WHY_CHOSEN}}</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- Implementation Prompt -->
+        <section class="mb-5">
+            <h2 class="mb-4">Implementation Prompt</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p><small>Used the same prompt across all platforms:</small></p>
+                    <pre class="bg-light p-3" style="max-height: 300px; overflow-y: auto;"><code>{{IMPLEMENTATION_PROMPT}}</code></pre>
+                    <a href="IMPLEMENTATION-PROMPT.md" class="btn btn-sm btn-outline-primary">View Full Prompt</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Results -->
+        <section class="mb-5">
+            <h2 class="mb-4">Platform Results</h2>
+
+            <!--
+                PLATFORM COLOR SCHEME (Consistent across all days):
+                - Lovable: bg-info (blue)
+                - ChatGPT Canvas: bg-success (green)
+                - Bolt.new: bg-primary (blue)
+                - Firebase Studio: #ff6d00 (orange)
+                - Base44: #7c3aed (purple)
+                - MagicPatterns: #9b59b6 (purple/violet)
+                - Google AI Studio: #34a853 (green)
+                - Claude Artifacts: bg-warning (yellow/orange)
+                - Gemini Canvas: bg-warning (yellow/orange)
+                - V0.dev: bg-warning (yellow/orange)
+            -->
+
+            <!-- Winners -->
+            <h3 class="mb-3">🏆 Top Performers</h3>
+            <div class="row">
+                <!-- Repeat for each successful platform -->
+                <!--
+                    SCREENSHOT SIZING GUIDE:
+                    - Single winner (full width col-md-12): Use col-8 for desktop, col-4 for mobile
+                    - Multiple winners (col-md-6): Use col-7 for desktop, col-5 for mobile (already appropriately sized)
+                    - The goal: mobile screenshot shouldn't be too large when winner takes full width
+                -->
+                {{PLATFORM_CARDS}}
+            </div>
+
+            <!-- Partial Success -->
+            <h3 class="mb-3 mt-5">⚠️ Partial Success</h3>
+            <div class="row">
+                {{PARTIAL_CARDS}}
             </div>
         </section>
 
@@ -283,56 +333,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Implementation Prompt -->
-        <section class="mb-5">
-            <h2 class="mb-4">Implementation Prompt</h2>
-            <div class="card">
-                <div class="card-body">
-                    <p><small>Used the same prompt across all platforms:</small></p>
-                    <pre class="bg-light p-3" style="max-height: 300px; overflow-y: auto;"><code>{{IMPLEMENTATION_PROMPT}}</code></pre>
-                    <a href="IMPLEMENTATION-PROMPT.md" class="btn btn-sm btn-outline-primary">View Full Prompt</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Platform Results -->
-        <section class="mb-5">
-            <h2 class="mb-4">Platform Results</h2>
-
-            <!--
-                PLATFORM COLOR SCHEME (Consistent across all days):
-                - Lovable: bg-info (blue)
-                - ChatGPT Canvas: bg-success (green)
-                - Bolt.new: bg-primary (blue)
-                - Firebase Studio: #ff6d00 (orange)
-                - Base44: #7c3aed (purple)
-                - MagicPatterns: #9b59b6 (purple/violet)
-                - Google AI Studio: #34a853 (green)
-                - Claude Artifacts: bg-warning (yellow/orange)
-                - Gemini Canvas: bg-warning (yellow/orange)
-                - V0.dev: bg-warning (yellow/orange)
-            -->
-
-            <!-- Winners -->
-            <h3 class="mb-3">🏆 Top Performers</h3>
-            <div class="row">
-                <!-- Repeat for each successful platform -->
-                <!--
-                    SCREENSHOT SIZING GUIDE:
-                    - Single winner (full width col-md-12): Use col-8 for desktop, col-4 for mobile
-                    - Multiple winners (col-md-6): Use col-7 for desktop, col-5 for mobile (already appropriately sized)
-                    - The goal: mobile screenshot shouldn't be too large when winner takes full width
-                -->
-                {{PLATFORM_CARDS}}
-            </div>
-
-            <!-- Partial Success -->
-            <h3 class="mb-3 mt-5">⚠️ Partial Success</h3>
-            <div class="row">
-                {{PARTIAL_CARDS}}
             </div>
         </section>
 
