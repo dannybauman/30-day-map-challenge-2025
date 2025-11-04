@@ -72,9 +72,9 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ## Platform Results
 
-**Total Platforms Tested:** 3/10 (In Progress)
+**Total Platforms Tested:** 4/10 (In Progress)
 
-### ⚠️ Partial Success (3 platforms)
+### ⚠️ Partial Success (4 platforms)
 
 #### ChatGPT Canvas (Grade C/C+)
 - **Status:** ⚠️ Partial Success (Eventual Success with Mock Data)
@@ -112,6 +112,20 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Data Handling:** Could not test (visualization failed before data could be verified)
 - **See:** `gemini-canvas/README.md` for full details
 
+#### Lovable (Grade D)
+- **Status:** ⚠️ Partial Success (Mapbox API key requirement)
+- **Issue:** UI generated but Mapbox API key required, token validation failed
+- **Attempts:**
+  1. Initial: UI generated, Mapbox token dialog appeared
+  2. User provided API key → Map didn't show
+  3. Platform attempted automatic fix → Better error message about token
+  4. User gave up after token validation error
+- **Result:** UI visible but map blocked by Mapbox API key requirement
+- **Key Learning:** Mapbox requires API keys (may need paid account), creates barrier for testing - **avoid Mapbox in future prompts**
+- **Live URL:** https://pdx-noise-petals.lovable.app
+- **Data Handling:** Could not test (blocked by Mapbox API key requirement)
+- **See:** `lovable/README.md` for full details
+
 ---
 
 ## Key Observations (In Progress)
@@ -144,6 +158,13 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Attempts to fix resulted in regression (map disappeared entirely)
 - Consistent pattern: Day 1, Day 2, Day 3 all show same issues - UI works, map/data rendering fails
 
+**Lovable:**
+- Could not test data handling (blocked by Mapbox API key requirement)
+- UI generated successfully with legend and data attribution
+- **Key Learning:** Mapbox requires API keys (may need paid account for production), creates barrier for testing
+- **Recommendation:** Avoid Mapbox in future prompts, use alternative basemaps (OpenStreetMap, MapLibre, etc.)
+- Automatic fix feature worked to improve error messages
+
 ---
 
 ## Human Interventions & Decisions
@@ -152,32 +173,34 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 1. **Data handling test approach**: Decided to provide data source URLs instead of pre-processed data to test platform capabilities (see `IMPLEMENTATION-PROMPT.md`)
 2. **Claude Artifacts testing**: Provided feedback during testing, recognizing security/permissions aspect as potentially positive
 3. **Gemini Canvas testing**: Provided feedback on data visualization and map tile issues, attempted additional fixes
+4. **Lovable testing**: Provided Mapbox API key but gave up after token validation error, noted learning to avoid Mapbox in future prompts
 
 **Human Feedback During Testing:**
 - **Claude Artifacts:** Asked about alternative approaches when first error occurred, provided feedback on second attempt, made observation about security/permissions being potentially positive
 - **ChatGPT Canvas:** Provided feedback on mock data usage and intermittent errors
 - **Gemini Canvas:** Reported "the data visualization didn't work, and some of the map tiles are missing", then "basically same problems, not fixed. just shows a different base map, still missing tiles, not sure about the visualization", attempted one more fix which resulted in regression (map disappeared)
+- **Lovable:** Reported "after pasting the mapbox api key, the dialog disappeared but the map didn't show", clicked automatic fix button, then gave up after token validation error: "I thought [token] is valid but I'm not paying, not sure, so i gave up. in the future maybe no mapbox?"
 
 ---
 
 ## Next Steps
 
-**Remaining Platforms to Test (7/10):**
+**Remaining Platforms to Test (6/10):**
 1. Bolt.new
-2. Lovable
-3. MagicPatterns
-4. Google AI Studio Apps
-5. V0.dev
-6. Firebase Studio
-7. Base44
+2. MagicPatterns
+3. Google AI Studio Apps
+4. V0.dev
+5. Firebase Studio
+6. Base44
 
-**Completed (3/10):**
+**Completed (4/10):**
 - ✅ Claude Artifacts (Grade D - CSP/CORS)
 - ✅ ChatGPT Canvas (Grade C/C+ - mock data)
 - ✅ Gemini Canvas (Grade D - UI OK, map/data rendering failed)
+- ✅ Lovable (Grade D - Mapbox API key requirement)
 
 **Tasks:**
-1. Continue testing remaining 7 platforms
+1. Continue testing remaining 6 platforms
 2. Observe which platforms can handle GIS data processing (LineString→Polygon conversion)
 3. Document data handling approaches (download vs. synthetic vs. embedded)
 4. Capture screenshots for all platforms
@@ -205,6 +228,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - ChatGPT Canvas: Created mock data implementation (did not attempt real data download)
 - Claude Artifacts: Generated UI/legends (blocked by CSP/CORS from rendering map)
 - Gemini Canvas: Generated UI but map/data rendering failed (consistent with Day 1 & Day 2)
+- Lovable: Generated UI successfully but map blocked by Mapbox API key requirement
 
 **AI (Cursor):**
 - Logged ideation responses and organized content
@@ -223,9 +247,10 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - `claude-artifacts/README.md` - Claude Artifacts specific notes
 - `chatgpt-canvas/README.md` - ChatGPT Canvas specific notes
 - `gemini-canvas/README.md` - Gemini Canvas specific notes
+- `lovable/README.md` - Lovable specific notes
 
 ---
 
 **Last Updated:** November 3, 2025  
-**Status:** Testing in progress (3/10 platforms completed)
+**Status:** Testing in progress (4/10 platforms completed)
 

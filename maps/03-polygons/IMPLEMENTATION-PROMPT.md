@@ -197,6 +197,27 @@ DATA PREPARATION NOTES:
 
 ---
 
+## Lesson: Avoid Mapbox for Rapid Testing
+
+**Issue:** Lovable (Day 3) required Mapbox API key, which blocked testing. User's token may have been invalid or required paid account.
+
+**Recommendation:**
+- **Avoid Mapbox** in future implementation prompts
+- **Use alternative basemaps** that don't require API keys:
+  - OpenStreetMap (via Leaflet, MapLibre GL JS)
+  - MapLibre GL JS (open source, no API key required)
+  - CartoDB Positron / Dark Matter (free, no API key)
+  - Stamen maps (free, no API key)
+- **If Mapbox is needed:** Specify in prompt that platform should use free alternatives to avoid API key barriers
+
+**Why this matters:**
+- Mapbox API keys create barriers for rapid testing
+- Free tokens may not work for production use
+- Alternative basemaps work just as well for most mapping projects
+- Keeps testing workflow smooth and unblocked
+
+---
+
 ## Data Sources to Check
 
 1. **FAA Part 150 Noise Exposure Maps**: https://www.faa.gov/airports/environmental/airport_noise/noise_exposure_maps/

@@ -69,18 +69,39 @@
 - **Live URL:** https://gemini.google.com/share/908ebfdc84ed
 - **Grade:** D (Partial Success - UI generated but map/data rendering failed, consistent with Day 1 & Day 2)
 
+#### ⚠️ Lovable
+- **Launch Time:** November 3, 2025
+- **Status:** ⚠️ Partial Success (Grade D - Mapbox API key requirement)
+- **Notes:**
+  - UI generated successfully with legend and data attribution
+  - **Mapbox API key required** - dialog appeared requesting Mapbox token
+  - **User provided API key** but map didn't show after dialog disappeared
+  - **Multiple iterations:**
+    1. Initial: UI generated, Mapbox token dialog appeared
+    2. **User feedback:** "after pasting the mapbox api key, the dialog disappeared but the map didn't show" → Platform attempted automatic fix
+    3. **User action:** Clicked button to "try to fix automatically by Lovable" → Better error message about Mapbox token
+    4. **User decision:** "I thought [token] is valid but I'm not paying, not sure, so i gave up" - Token validation error
+  - **Final state:** UI visible but map blocked by Mapbox API key requirement
+  - **Key Learning:** Mapbox requires API keys (may need paid account for production), creates barrier for testing - **avoid Mapbox in future prompts**
+  - **Data handling test:** Could not test (blocked by Mapbox API key requirement)
+- **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows UI with Mapbox Token Required dialog and legend
+- **Mobile Check:** ✅ Responsive (UI visible, map blocked)
+- **Live URL:** https://pdx-noise-petals.lovable.app
+- **Grade:** D (Partial Success - UI generated but map blocked by Mapbox API key requirement)
+
 ---
 
 ## Platform Testing Summary
 
-**Total Platforms Tested:** 3/10 (Claude Artifacts, ChatGPT Canvas, Gemini Canvas)
+**Total Platforms Tested:** 4/10 (Claude Artifacts, ChatGPT Canvas, Gemini Canvas, Lovable)
 
 **Status Breakdown:**
 - ✅ Full Success: 0
-- ⚠️ Partial Success: 3
+- ⚠️ Partial Success: 4
   - Claude Artifacts - Grade D (UI/legends, no map)
   - ChatGPT Canvas - Grade C/C+ (Mock data, works after fixes)
   - Gemini Canvas - Grade D (UI OK, map/data rendering failed)
+  - Lovable - Grade D (UI generated but map blocked by Mapbox API key requirement)
 - ❌ Failure: 0
 
 **Patterns Observed:**
@@ -104,6 +125,13 @@
 - Map tiles missing (CSP/CORS or network restrictions)
 - Attempts to fix resulted in regression (map disappeared entirely)
 - Consistent pattern: Day 1, Day 2, Day 3 all show same issues - UI works, map/data rendering fails
+
+**Lovable:**
+- **Data handling test result:** Could not test (blocked by Mapbox API key requirement)
+- UI generated successfully with legend and data attribution
+- **Key Learning:** Mapbox requires API keys (may need paid account for production), creates barrier for testing
+- **Recommendation:** Avoid Mapbox in future prompts, use alternative basemaps (OpenStreetMap, MapLibre, etc.)
+- Automatic fix feature worked to improve error messages
 
 ---
 
