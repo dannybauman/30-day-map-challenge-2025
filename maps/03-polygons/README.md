@@ -72,9 +72,9 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ## Platform Results
 
-**Total Platforms Tested:** 5/10 (In Progress)
+**Total Platforms Tested:** 6/10 (In Progress)
 
-### ✅ Full Success (1 platform)
+### ✅ Full Success (2 platforms)
 
 #### MagicPatterns (Grade B)
 - **Status:** ✅ Full Success (Works well with mock data)
@@ -84,6 +84,16 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Live URL:** https://project-pdx-noise-contour-map-520.magicpatterns.app
 - **First full success for Day 3!**
 - **See:** `magicpatterns/README.md` for full details
+
+#### Bolt.new (Grade B)
+- **Status:** ✅ Full Success (Works well with mock data)
+- **Data Handling:** ⚠️ Could not get real data, but successfully created mock data
+- **Result:** Map works well overall, visuals worked well, good coloring
+- **User Note:** "it worked well, a graded B, although it also couldn't get real data, so it mocked data. the visuals worked well on the map, in the right PDX location, good coloring. the legend is almost great but has one text element where the word wrapping isn't right so it widens the legend way too big"
+- **Minor Issue:** Legend text wrapping problem widens legend too much
+- **Live URL:** https://pdx-airport-noise-fo-bk07.bolt.host
+- **Second full success for Day 3!**
+- **See:** `bolt-new/README.md` for full details
 
 ---
 
@@ -190,6 +200,16 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Legend with checkbox controls for different noise levels (68 dB, 65 dB, 55 dB DNL)
 - **Platform limitation:** User reached free tier limit (for today?) and couldn't follow up with more changes
 
+**Bolt.new:**
+- Could not get real data, but successfully created mock data
+- Map works well overall with mock data
+- **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
+- Visuals worked well with good coloring
+- **Second full success for Day 3!**
+- **Consistent performance:** Day 1 success, Day 3 success
+- **Minor UX issue:** Legend has one text element where word wrapping isn't right, widens the legend too much
+- Map tiles load correctly (OpenStreetMap via Leaflet)
+
 ---
 
 ## Human Interventions & Decisions
@@ -210,22 +230,22 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ## Next Steps
 
-**Remaining Platforms to Test (5/10):**
-1. Bolt.new
-2. Google AI Studio Apps
-3. V0.dev
-4. Firebase Studio
-5. Base44
+**Remaining Platforms to Test (4/10):**
+1. Google AI Studio Apps
+2. V0.dev
+3. Firebase Studio
+4. Base44
 
-**Completed (5/10):**
+**Completed (6/10):**
 - ✅ Claude Artifacts (Grade D - CSP/CORS)
 - ✅ ChatGPT Canvas (Grade C/C+ - mock data)
 - ✅ Gemini Canvas (Grade D - UI OK, map/data rendering failed)
 - ✅ Lovable (Grade D - Mapbox API key requirement)
 - ✅ MagicPatterns (Grade B - Full Success! Works well with mock data)
+- ✅ Bolt.new (Grade B - Full Success! Works well with mock data, minor legend text wrapping issue)
 
 **Tasks:**
-1. Continue testing remaining 5 platforms
+1. Continue testing remaining 4 platforms
 2. Observe which platforms can handle GIS data processing (LineString→Polygon conversion)
 3. Document data handling approaches (download vs. synthetic vs. embedded)
 4. Capture screenshots for all platforms
@@ -255,6 +275,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Gemini Canvas: Generated UI but map/data rendering failed (consistent with Day 1 & Day 2)
 - Lovable: Generated UI successfully but map blocked by Mapbox API key requirement
 - MagicPatterns: Generated working map with mock data (first full success for Day 3!)
+- Bolt.new: Generated working map with mock data (second full success for Day 3!)
 
 **AI (Cursor):**
 - Logged ideation responses and organized content
@@ -275,9 +296,10 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - `gemini-canvas/README.md` - Gemini Canvas specific notes
 - `lovable/README.md` - Lovable specific notes
 - `magicpatterns/README.md` - MagicPatterns specific notes
+- `bolt-new/README.md` - Bolt.new specific notes
 
 ---
 
 **Last Updated:** November 3, 2025  
-**Status:** Testing in progress (5/10 platforms completed)
+**Status:** Testing in progress (6/10 platforms completed)
 

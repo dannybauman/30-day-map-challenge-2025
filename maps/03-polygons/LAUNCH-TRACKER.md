@@ -111,15 +111,36 @@
 - **Live URL:** https://project-pdx-noise-contour-map-520.magicpatterns.app
 - **Grade:** B (Full Success - Works well with mock data, minor limitation: couldn't pull from real data source)
 
+#### ✅ Bolt.new
+- **Launch Time:** November 3, 2025
+- **Status:** ✅ Full Success (Grade B)
+- **Notes:**
+  - **Data handling test:** Could not get real data, but successfully created mock data
+  - Map works well overall
+  - Visuals worked well on the map
+  - Right PDX location (correctly identified airport)
+  - Good coloring
+  - **User feedback:** "it worked well, a graded B, although it also couldn't get real data, so it mocked data. the visuals worked well on the map, in the right PDX location, good coloring. the legend is almost great but has one text element where the word wrapping isn't right so it widens the legend way too big"
+  - **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
+  - **Minor UX issue:** Legend has one text element where word wrapping isn't right, widens the legend too much
+  - **Data attribution:** "Representative noise contours" (mock data)
+  - **Second full success for Day 3!**
+  - **Consistent performance:** Day 1 success, Day 3 success
+- **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows working map with legend (text wrapping issue visible)
+- **Mobile Check:** ✅ Responsive (map and UI work well)
+- **Live URL:** https://pdx-airport-noise-fo-bk07.bolt.host
+- **Grade:** B (Full Success - Works well with mock data, minor UX issue: legend text wrapping)
+
 ---
 
 ## Platform Testing Summary
 
-**Total Platforms Tested:** 5/10 (Claude Artifacts, ChatGPT Canvas, Gemini Canvas, Lovable, MagicPatterns)
+**Total Platforms Tested:** 6/10 (Claude Artifacts, ChatGPT Canvas, Gemini Canvas, Lovable, MagicPatterns, Bolt.new)
 
 **Status Breakdown:**
-- ✅ Full Success: 1
+- ✅ Full Success: 2
   - MagicPatterns - Grade B (Works well with mock data)
+  - Bolt.new - Grade B (Works well with mock data, minor legend text wrapping issue)
 - ⚠️ Partial Success: 4
   - Claude Artifacts - Grade D (UI/legends, no map)
   - ChatGPT Canvas - Grade C/C+ (Mock data, works after fixes)
@@ -164,6 +185,16 @@
 - User notes: Could potentially upload data or try another approach, but satisfied with result
 - Map tiles load correctly (OpenStreetMap via Leaflet)
 - Legend with checkbox controls for different noise levels
+
+**Bolt.new:**
+- **Data handling test result:** Could not get real data, but successfully created mock data
+- Map works well overall with mock data
+- **Second full success for Day 3!**
+- **Consistent performance:** Day 1 success, Day 3 success
+- **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
+- Visuals worked well with good coloring
+- **Minor UX issue:** Legend has one text element where word wrapping isn't right, widens the legend too much
+- Map tiles load correctly (OpenStreetMap via Leaflet)
 
 ---
 
