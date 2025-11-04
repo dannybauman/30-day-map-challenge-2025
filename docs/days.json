@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-04T02:13:58.047Z",
+  "generatedAt": "2025-11-04T05:46:57.538Z",
   "days": [
     {
       "id": "01-points",
@@ -16,6 +16,15 @@
       "theme": "Lines",
       "relativeUrl": "maps/02-lines/index.html",
       "readmeUrl": "maps/02-lines/README.md"
+    },
+    {
+      "id": "03-polygons",
+      "dayNumber": 3,
+      "title": "Day 3: Polygons",
+      "theme": "Polygons",
+      "status": "Complete",
+      "relativeUrl": "maps/03-polygons/index.html",
+      "readmeUrl": "maps/03-polygons/README.md"
     }
   ]
 }

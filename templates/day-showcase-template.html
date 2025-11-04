@@ -29,7 +29,7 @@
             .process-connector::after { display: block; }
         }
         .contribution-legend .badge { font-size: 0.8rem; }
-        .badge-ai { background: #6f42c1; }
+        .badge-ai { background: #6f42c1; color: #fff; }
 
         /* Color System for Platform Status */
         .status-winner { background: linear-gradient(135deg, #198754 0%, #20c997 100%); }
@@ -122,46 +122,59 @@
 
         <!-- Ideation Phase -->
         <!--
-            NOTE: Extract concepts from IDEATION-RESPONSES.md - pick the best/favorite concept from each platform's response.
-            Each platform typically provides 2-5 ideas; show ONE concept per platform in these cards.
-            Mark the chosen concept with class="concept-chosen" and style="border-color: #fd7e14;"
+            IDEATION FORMAT GUIDANCE:
+            - {{IDEATION_SUMMARY}} should be a short paragraph in your voice summarizing the multi-step back-and-forth.
+            - {{IDEATION_PIVOTS}} is a list (3-5 bullets) calling out the key directions YOU pushed for (edits, constraints, vetoes).
+            - The concept cards can hold either direct quotes or condensed summaries from each platform.
+            - Add "concept-chosen" + style border highlight to whichever platform inspired the final pick.
         -->
         <section class="mb-5">
             <h2 class="mb-4">Ideation Phase</h2>
-            <p class="lead">I asked three AI platforms for Day {{DAY_NUMBER}} "{{THEME}}" theme concept ideas. All three delivered solid suggestions:</p>
+            <p class="lead">{{IDEATION_SUMMARY}}</p>
+
+            <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Where I Redirected The Brief</h5>
+                    <ul class="small mb-0">
+                        {{IDEATION_PIVOTS}}
+                    </ul>
+                </div>
+            </div>
 
             <div class="row g-3 mb-4">
                 <div class="col-md-4">
-                    <!-- Note: Add "concept-chosen" class and style="border-color: #fd7e14;" to the card div of whichever concept was chosen -->
-                    <!-- Extract from IDEATION-RESPONSES.md - Claude: Orange (#fd7e14) -->
+                    <!-- Claude card (use concept-chosen class if selected) -->
                     <div class="card h-100">
                         <div class="card-header text-white" style="background-color: #fd7e14;">
                             <strong>Claude.ai (Sonnet 4.5)</strong>
                         </div>
                         <div class="card-body">
-                            <p><small>{{CLAUDE_IDEA}}</small></p>
+                            <p class="small mb-2">{{CLAUDE_IDEA}}</p>
+                            <p class="small mb-0 text-muted">{{CLAUDE_NOTE}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <!-- Extract from IDEATION-RESPONSES.md - ChatGPT: Green (bg-success) -->
+                    <!-- ChatGPT card -->
                     <div class="card h-100">
                         <div class="card-header bg-success text-white">
                             <strong>ChatGPT (GPT-5 Thinking)</strong>
                         </div>
                         <div class="card-body">
-                            <p><small>{{CHATGPT_IDEA}}</small></p>
+                            <p class="small mb-2">{{CHATGPT_IDEA}}</p>
+                            <p class="small mb-0 text-muted">{{CHATGPT_NOTE}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <!-- Extract from IDEATION-RESPONSES.md - Gemini: Blue (#4285f4) -->
+                    <!-- Gemini card -->
                     <div class="card h-100">
                         <div class="card-header" style="background-color: #4285f4; color: white;">
                             <strong>Gemini (2.5 Pro)</strong>
                         </div>
                         <div class="card-body">
-                            <p><small>{{GEMINI_IDEA}}</small></p>
+                            <p class="small mb-2">{{GEMINI_IDEA}}</p>
+                            <p class="small mb-0 text-muted">{{GEMINI_NOTE}}</p>
                         </div>
                     </div>
                 </div>
@@ -231,105 +244,149 @@
             </div>
         </section>
 
+        <!-- Collaboration Snapshot -->
+        <!--
+            TIP: Summarize the overall division of labor at a glance.
+            - {{SNAPSHOT_ME}} → 3-4 bullets on where you took the wheel (ideation pivots, data prep, QA calls).
+            - {{SNAPSHOT_AI}} → 3-4 bullets on notable AI assists (code generation, fixes, analysis).
+        -->
+        <section class="mb-5">
+            <h2 class="mb-4">Collaboration Snapshot</h2>
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <strong>Where I Drove</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                {{SNAPSHOT_ME}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header badge-ai text-white">
+                            <strong>Where AI Accelerated</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                {{SNAPSHOT_AI}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Process Timeline -->
         <section class="mb-5 process-section">
-            <h2 class="mb-4">Process Timeline</h2>
-            <p class="text-muted">Left lane = human-led work. Right lane = AI-generated output. Every step is logged to show how the human/AI partnership unfolded.</p>
-            <div class="contribution-legend mb-4">
-                <span class="badge bg-primary me-2">Human</span>
-                <span class="badge badge-ai">AI</span>
+            <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
+                <h2 class="mb-0">Process Timeline</h2>
+                <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
+                    Show Timeline
+                </button>
             </div>
+            <p class="text-muted mb-3">Left lane = Me. Right lane = AI. Expand when you want the play-by-play.</p>
 
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Ideation Vetting</h4>
-                            {{HUMAN_IDEATION}}
+            <div class="collapse" id="processTimeline">
+                <div class="contribution-legend mb-4">
+                    <span class="badge bg-primary me-2">Me</span>
+                    <span class="badge badge-ai">AI</span>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Ideation Vetting</h4>
+                                {{HUMAN_IDEATION}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Model Suggestions</h4>
-                            {{AI_IDEATION}}
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Model Suggestions</h4>
+                                {{AI_IDEATION}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Prompt Crafting</h4>
-                            {{HUMAN_PROMPT}}
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Prompt Crafting</h4>
+                                {{HUMAN_PROMPT}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Prompt Drafts</h4>
-                            {{AI_PROMPT}}
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Prompt Drafts</h4>
+                                {{AI_PROMPT}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Launch & Supervision</h4>
-                            {{HUMAN_IMPLEMENTATION}}
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Launch & Supervision</h4>
+                                {{HUMAN_IMPLEMENTATION}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Generated Outputs</h4>
-                            {{AI_IMPLEMENTATION}}
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Generated Outputs</h4>
+                                {{AI_IMPLEMENTATION}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>QA & Edits</h4>
-                            {{HUMAN_QA}}
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>QA & Edits</h4>
+                                {{HUMAN_QA}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>AI Fixes & Suggestions</h4>
-                            {{AI_QA}}
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>AI Fixes & Suggestions</h4>
+                                {{AI_QA}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Documentation & Storytelling</h4>
-                            {{HUMAN_DOCUMENTATION}}
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Documentation & Storytelling</h4>
+                                {{HUMAN_DOCUMENTATION}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Supporting Assets</h4>
-                            {{AI_DOCUMENTATION}}
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Supporting Assets</h4>
+                                {{AI_DOCUMENTATION}}
+                            </div>
                         </div>
                     </div>
                 </div>

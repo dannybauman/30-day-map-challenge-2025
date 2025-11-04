@@ -193,11 +193,14 @@ maps/0X-theme/
 
 2. **Fill in the key sections**:
    - Stats (platforms, success rate, time)
-   - Ideation ideas (brief 1-2 sentences each)
-   - Chosen concept
-   - Platform results (use platform-card-snippet.html)
-   - Key insights
-   - Your editorial thoughts
+   - Ideation recap:
+     - Narrative paragraph capturing the back-and-forth
+     - Bullet list of the pivots where you redirected the AI
+     - Three platform cards, highlighting which concept won
+   - Chosen concept (title, why it mattered, data source)
+   - Platform results (winners + partials, desktop/mobile screenshots)
+   - Collaboration snapshot (two quick lists: where you drove vs. where AI accelerated)
+   - Key insights + lessons, then the editorial wrap-up
 
 3. **Follow the design system**:
    - **Screenshot sizing (important!)**:
@@ -208,6 +211,9 @@ maps/0X-theme/
    - Gap spacing: `g-3` for screenshot rows
    - Bold desktop labels, regular mobile labels
    - Consistent header colors (see DOCUMENTATION-GUIDE.md)
+   - Fill the new collaboration snapshot with concise bullets (3-4 max each column)
+   - Leave the timeline collapsed by default; only expand it while proofreading
+   - Timeline labels should read “Me” and “AI” (never “Human”)
    - See `/maps/01-points/DESIGN-SYSTEM-UPDATE.md` for complete details
 
 4. **Test locally**:
@@ -219,6 +225,8 @@ maps/0X-theme/
 
 **Do**:
 - ✅ Quick visual summary of the day
+- ✅ Call out where you (the human) redirected or corrected the AI
+- ✅ Use the collaboration snapshot + timeline to show the Me/AI split at a glance
 - ✅ Links to all live demos
 - ✅ Key insights and learning
 - ✅ Your honest opinion/editorial

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3: Polygons | #30DayMapChallenge 2025</title>
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px 0; background: #f8f9fa; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0; margin-bottom: 40px; }
+        .platform-card { margin-bottom: 30px; }
+        .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .screenshot-desktop { border: 2px solid #495057; }
+        .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        .badge-custom { font-size: 0.9rem; }
+        .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
+        .process-section .row { align-items: stretch; }
+        .process-card { background: #fff; border-radius: 12px; border-left: 4px solid #0d6efd; padding: 20px; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); position: relative; }
+        .process-card.ai { border-left-color: #6f42c1; }
+        .process-card .lane-label { position: absolute; top: -14px; left: 16px; background: #0d6efd; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .process-card.ai .lane-label { background: #6f42c1; }
+        .process-card h3, .process-card h4, .process-card h5 { margin-top: 12px; }
+        .process-card ul { padding-left: 18px; }
+        .process-connector { position: relative; padding-top: 20px; margin-bottom: 40px; }
+        .process-connector::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(180deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)); display: none; }
+        @media (min-width: 992px) {
+            .process-connector::after { display: block; }
+        }
+        .contribution-legend .badge { font-size: 0.8rem; }
+        .badge-ai { background: #6f42c1; color: #fff; }
+
+        /* Color System for Platform Status */
+        .status-winner { background: linear-gradient(135deg, #198754 0%, #20c997 100%); }
+        .status-strong { background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%); }
+        .status-good { background: linear-gradient(135deg, #0dcaf0 0%, #20c997 100%); }
+        .status-partial { background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); }
+        .status-failed { background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%); }
+
+        /* Rating Tier System */
+        .rating-s { background-color: #FFD700; color: #000; font-weight: bold; padding: 4px 8px; border-radius: 4px; }
+        .rating-a { background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-b { background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-c { background-color: #fd7e14; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-d { background-color: #ff4500; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-f { background-color: #dc3545; color: white; padding: 4px 8px; border-radius: 4px; }
+
+        /* Chosen Concept Highlighting */
+        .concept-chosen {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #fd7e14 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+
+    <!--
+        GRADING CRITERIA (Consistent across all days):
+
+        A (Strong): Fast, clean, fully functional, great mobile UX
+        B (Good): Works well, minor issues, responsive
+        C (OK): Usable but significant issues (performance, UX problems)
+        D (Poor / Partial Success): Major functionality broken but some elements work (e.g., UI works but map doesn't load)
+        F (Failed): No code generated at all (platform error, completely unusable - rare)
+
+        Important distinction:
+        - Grade D (Partial Success): Even CSP/CORS failures that generate UI/legends get Grade D, not F.
+          If it generates something useful, it's at least D.
+        - Grade F (Failed): Reserved for when no code is generated at all (platform errors that prevent any output).
+
+        Be consistent but fair - if it generates something useful, it's at least D.
+    -->
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Day 3: Polygons</h1>
+            <p class="lead">Airport Noise Footprint (PDX)</p>
+            <p><strong>Date:</strong> November 3, 2025 | <strong>Status:</strong> <span class="badge bg-success">Complete</span></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Quick Stats -->
+        <div class="row mb-5 g-3">
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-primary">10</h3>
+                        <p class="mb-0">Platforms Tested</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">4</h3>
+                        <p class="mb-0">Full Success (40%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-warning">6</h3>
+                        <p class="mb-0">Partial Success (60%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-info">~1.8 hrs</h3>
+                        <p class="mb-0">Time Invested</p>
+                        <small class="text-muted">(approx)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ideation Phase -->
+        <!--
+            Narrative format: start with a summary paragraph, follow with the pivot list, then platform cards.
+        -->
+        <section class="mb-5">
+            <h2 class="mb-4">Ideation Phase</h2>
+            <p class="lead">Round 1 was a miss—every model handed me administrative boundaries—so I halted the run, rewrote the brief around organic “invisible” polygons, and re-launched. The second wave finally delivered noise petals, watershed mosaics, and canopy ideas worth pursuing.</p>
+
+            <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Where I Redirected The Brief</h5>
+                    <ul class="small mb-0">
+                        <li>Called out the first batch for being too administrative and demanded organic shapes with human impact.</li>
+                        <li>Added explicit constraints about novel boundaries plus lightweight, embeddable datasets.</li>
+                        <li>Selected the airport-noise petals once I verified the FAA/BTAA data was readily downloadable.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header text-white" style="background-color: #fd7e14;">
+                            <strong>Claude.ai (Sonnet 4.5)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Urban Acoustic Zones</h5>
+                            <p class="small mb-2">Break Portland into sensory pockets—quiet parks, freight corridors, nightlife clusters—so sound becomes a boundary.</p>
+                            <p class="small mb-0 text-muted">Helped me articulate “noise petals,” even though it leaned on fully synthetic data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 concept-chosen" style="border-color: #fd7e14;">
+                        <div class="card-header bg-success text-white">
+                            <strong>ChatGPT (GPT-5 Thinking) ⭐ Chosen</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Airport Noise Footprint (PDX)</h5>
+                            <p class="small mb-2">Visualize the 60/65/70 dB Day-Night Average Sound Level lobes around PDX as translucent flight-path petals.</p>
+                            <p class="small mb-0 text-muted">Nailed the “small dataset, high impact” brief and pointed straight to the FAA/BTAA sources.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header" style="background-color: #4285f4; color: white;">
+                            <strong>Gemini (2.5 Pro)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">River's Reach Watershed Mosaic</h5>
+                            <p class="small mb-2">Stack nested drainage basins to show how a river system branches like a living organism.</p>
+                            <p class="small mb-0 text-muted">Reinforced the “invisible natural systems” angle as a strong alternate if noise petals fell through.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chosen Concept -->
+        <section class="mb-5">
+            <h2 class="mb-4">Chosen Concept</h2>
+            <div class="card border-primary">
+                <div class="card-body">
+                    <h4>Airport Noise Footprint (PDX)</h4>
+                    <p>Day-Night Average Sound Level (DNL) contours around Portland International Airport, rendered as translucent lobes that mirror the flight paths slicing across northeast Portland.</p>
+                    <p><strong>Data Source:</strong> PDX Part 150 Noise Exposure Map contours via BTAA Geoportal (with synthetic fallback if download fails)</p>
+                    <p><strong>Why chosen:</strong> Organic, high-impact polygons that make an invisible quality-of-life boundary visible, while keeping the dataset small enough for every platform to attempt.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Prompt -->
+        <section class="mb-5">
+            <h2 class="mb-4">Implementation Prompt</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p><small>Used the same prompt across all platforms:</small></p>
+                    <pre class="bg-light p-3" style="max-height: 300px; overflow-y: auto;"><code>PROJECT: #30DayMapChallenge 2025 — Day 3 (POLYGONS)
+
+CONCEPT:
+Airport Noise Footprint (PDX). Render the 60/65/70 dB Day-Night Average Sound Level (DNL) contours as translucent, patterned petals that radiate from Portland International Airport.
+
+LOCATION:
+PDX (45.5898° N, -122.5951° W) with ~10–15 km radius coverage.
+
+VISUAL REQUIREMENTS:
+- Interactive web map with modern, responsive layout.
+- Each contour band gets a distinct fill (pattern/gradient) with opacity 0.3–0.6 and thin outline.
+- Include title, legend, attribution, and optional toggles for each DNL band.
+
+DATA FLOW:
+1. Try downloading the PDX Part 150 contours from https://geo.btaa.org/catalog/e6b6fe6c6a6840a096f89f6be703dc64_144.
+2. If that fails, attempt the City of Portland overlay guide (PDF/GIS) at https://www.portland.gov/ppd/.../download.
+3. If both fail, synthesize 3–4 organic polygons centered on PDX with dnl values [70, 65, 60] and believable flight-path lobes.
+
+IMPLEMENTATION NOTES:
+- Convert shapefiles to GeoJSON, clip to the study area, and simplify &lt; 100 KB.
+- Final GeoJSON must expose properties.dnl (number) and properties.level (label).
+- Use basemaps that do not require API keys (Leaflet + OSM, MapLibre, CartoDB, etc.).
+- Tooltips: show dnl level, short description, and reminder that DNL is 24-hour averaged noise.
+- Optional: checkbox toggles per contour and an airport marker.
+
+DELIVERABLE:
+One-page HTML/JS map that runs without a build step.</code></pre>
+                    <a href="IMPLEMENTATION-PROMPT.md" class="btn btn-sm btn-outline-primary">View Full Prompt</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Results -->
+        <section class="mb-5">
+            <h2 class="mb-4">Platform Results</h2>
+
+            <!--
+                PLATFORM COLOR SCHEME (Consistent across all days):
+                - Lovable: bg-info (blue)
+                - ChatGPT Canvas: bg-success (green)
+                - Bolt.new: bg-primary (blue)
+                - Firebase Studio: #ff6d00 (orange)
+                - Base44: #7c3aed (purple)
+                - MagicPatterns: #9b59b6 (purple/violet)
+                - Google AI Studio: #34a853 (green)
+                - Claude Artifacts: bg-warning (yellow/orange)
+                - Gemini Canvas: bg-warning (yellow/orange)
+                - V0.dev: bg-warning (yellow/orange)
+            -->
+
+            <!-- Winners -->
+            <h3 class="mb-3">🏆 Top Performers</h3>
+            <div class="row">
+                <!-- Repeat for each successful platform -->
+                <!--
+                    SCREENSHOT SIZING GUIDE:
+                    - Single winner (full width col-md-12): Use col-8 for desktop, col-4 for mobile
+                    - Multiple winners (col-md-6): Use col-7 for desktop, col-5 for mobile (already appropriately sized)
+                    - The goal: mobile screenshot shouldn't be too large when winner takes full width
+                -->
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #9b59b6; color: #fff;">
+                            <strong>MagicPatterns</strong>
+                            <span class="badge bg-light text-dark">Grade B</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="magicpatterns/screenshot.png" alt="MagicPatterns desktop map" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="magicpatterns/screenshot-mobile.png" alt="MagicPatterns mobile map" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>Why it worked:</strong> Tight mock-data petals, tidy legend toggles, and a polished layout around the airport.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Fell back to synthetic contours when the BTAA download stalled.</li>
+                                <li>Layer checkboxes make it easy to isolate the 70/65/60 dB rings.</li>
+                                <li>Hit the free-tier edit cap right after shipping—final build captured here.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="magicpatterns/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-primary" href="https://project-pdx-noise-contour-map-520.magicpatterns.app" target="_blank" rel="noopener">Live demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+                            <strong>Bolt.new</strong>
+                            <span class="badge bg-light text-dark">Grade B</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="bolt-new/screenshot.png" alt="Bolt.new desktop map" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="bolt-new/screenshot-mobile.png" alt="Bolt.new mobile map" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>Why it worked:</strong> Clean Leaflet implementation, believable synthetic data, and thoughtful color assignments.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Generated contours in-place when external fetch attempts were blocked.</li>
+                                <li>Legend wrapping is the only blemish—easy human fix for the next pass.</li>
+                                <li>PDX marker and copy land exactly where they should.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="bolt-new/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-primary" href="https://pdx-airport-noise-fo-bk07.bolt.host" target="_blank" rel="noopener">Live demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ff6d00; color: #fff;">
+                            <strong>Firebase Studio</strong>
+                            <span class="badge bg-light text-dark">Grade B</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="firebase-studio/screenshot.png" alt="Firebase Studio desktop map" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="firebase-studio/screenshot-mobile.png" alt="Firebase Studio mobile map (auth screen)" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>Why it worked:</strong> First platform this week to actually download, process, and render the real PDX contours.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Required a manual `.env.local` step but rewarded the effort with live data.</li>
+                                <li>Legend toggles and tooltips feel production-ready—only zoom needs love.</li>
+                                <li>Screenshots show the auth wall; the deployed build renders the real polygons behind it.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="firebase-studio/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-primary" href="https://9000-firebase-studio-1762220213064.cluster-gxm4gzz4s5b6guuwopayrdh3h4.cloudworkstations.dev/?embedded=0&amp;monospaceUid=791225" target="_blank" rel="noopener">Workspace link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #7c3aed; color: #fff;">
+                            <strong>Base44</strong>
+                            <span class="badge bg-light text-dark">Grade B</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="base44/screenshot.png" alt="Base44 desktop map" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="base44/screenshot-mobile.png" alt="Base44 mobile map" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>Why it worked:</strong> Smooth mock contours, good color ramps, and a tidy interface ready for a real dataset upload.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Couldn’t reach the BTAA download, but offered an upload slot for proper GeoJSON.</li>
+                                <li>Only issue: missing airport icon asset—an easy manual patch.</li>
+                                <li>Keeps the focus on the petals with generous padding around the airport.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="base44/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-primary" href="https://pdx-noise-mapper-4c3df656.base44.app/" target="_blank" rel="noopener">Live demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partial Success -->
+            <h3 class="mb-3 mt-5">⚠️ Partial Success</h3>
+            <div class="row">
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-success text-white">
+                            <strong>ChatGPT Canvas</strong>
+                            <span class="badge bg-light text-dark">Grade C+</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="chatgpt-canvas/screenshot.png" alt="ChatGPT Canvas desktop mock map" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="chatgpt-canvas/screenshot-mobile.png" alt="ChatGPT Canvas mobile mock map" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>State of play:</strong> Ships a working map, but only after three "Fix bug" cycles and a synthetic dataset fallback.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Refused to download the Part 150 contours—mock GeoJSON only.</li>
+                                <li>Native SVG patterns replaced a broken leaflet.pattern import.</li>
+                                <li>Intermittent "Cannot preview your code" modal still pops (see error screenshot).</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="chatgpt-canvas/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-outline-secondary" href="chatgpt-canvas/screenshot-error.png" target="_blank" rel="noopener">Error view</a>
+                                <a class="btn btn-sm btn-success" href="https://chatgpt.com/canvas/shared/69097755f178819197f69e04646c287c" target="_blank" rel="noopener">Canvas share</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>Claude Artifacts</strong>
+                            <span class="badge bg-dark text-white">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="claude-artifacts/screenshot.png" alt="Claude Artifacts desktop UI without map" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="claude-artifacts/screenshot-mobile.png" alt="Claude Artifacts mobile UI without map" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>State of play:</strong> UI and legend render, but sandbox restrictions block Leaflet, Mapbox GL, and any external script.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Errors: <code>L is not defined</code> and <code>mapboxgl is not defined</code>.</li>
+                                <li>Same CSP wall as Days 1 and 2—consistent pattern confirmed.</li>
+                                <li>Would need embedded data + pure Canvas/SVG renderer to progress.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="claude-artifacts/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-warning" href="https://claude.ai/public/artifacts/32b539ac-e024-47cd-9b8d-1b3be4f8c0eb" target="_blank" rel="noopener">Artifact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>Gemini Canvas</strong>
+                            <span class="badge bg-dark text-white">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="gemini-canvas/screenshot.png" alt="Gemini Canvas UI with missing tiles" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="gemini-canvas/screenshot-mobile.png" alt="Gemini Canvas mobile with blank map" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>State of play:</strong> UI scaffold is there, but tile loads fail and each fix attempt made the map regress further.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Started with partial tiles, ended with a blank map.</li>
+                                <li>No chance to validate data handling—the visualization never rendered.</li>
+                                <li>Mirrors the Day 1 &amp; 2 behavior exactly.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="gemini-canvas/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-warning" href="https://gemini.google.com/share/908ebfdc84ed" target="_blank" rel="noopener">Canvas share</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-info text-white">
+                            <strong>Lovable</strong>
+                            <span class="badge bg-dark text-white">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="lovable/screenshot.png" alt="Lovable desktop Mapbox token prompt" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="lovable/screenshot-mobile.png" alt="Lovable mobile Mapbox token prompt" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>State of play:</strong> UI looks great, but Mapbox token validation blocked the basemap even after supplying a key.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Auto-fix improved the error message but not the outcome.</li>
+                                <li>Confirms Mapbox prompts are a steep barrier during rapid testing.</li>
+                                <li>Next run will insist on MapLibre or OSM tiles.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="lovable/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-info" href="https://pdx-noise-petals.lovable.app" target="_blank" rel="noopener">Live shell</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>V0.dev</strong>
+                            <span class="badge bg-dark text-white">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="v0-dev/screenshot.png" alt="V0.dev desktop mock contours without basemap" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="v0-dev/screenshot-mobile.png" alt="V0.dev mobile mock contours without basemap" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>State of play:</strong> Auto-fix cleared the initial error, but the basemap never rendered—only synthetic petals float on gray.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Mock data path matched Day 1 and Day 2 outcomes.</li>
+                                <li>Legend checkboxes look interactive but lack wiring, which is confusing.</li>
+                                <li>Needs a manual Leaflet tile include to unlock the full map.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="v0-dev/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-warning" href="https://v0-pdx-airport-noise-map.vercel.app/" target="_blank" rel="noopener">Live shell</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #34a853; color: #fff;">
+                            <strong>Google AI Studio Apps</strong>
+                            <span class="badge bg-dark text-white">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="google-ai-studio/screenshot.png" alt="Google AI Studio blank desktop page" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="google-ai-studio/screenshot-mobile.png" alt="Google AI Studio blank mobile page" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p class="small mb-2"><strong>State of play:</strong> Auto-Fix moved it past the Day 2 crash, but it still renders only the page title—no map, no data.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>Represents progress (Grade F → Grade D) even if the canvas is still blank.</li>
+                                <li>Console remains empty; the UI shell just never mounts the map.</li>
+                                <li>Needs tighter error surfacing before it’s viable for demos.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-sm btn-outline-secondary" href="google-ai-studio/README.md">Case notes</a>
+                                <a class="btn btn-sm btn-success" href="https://pdx-airport-noise-footprint-903076358991.us-west1.run.app/" target="_blank" rel="noopener">Live shell</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaboration Snapshot -->
+        <section class="mb-5">
+            <h2 class="mb-4">Collaboration Snapshot</h2>
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <strong>Where I Drove</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                <li>Redrafted the ideation brief after Round 1 to insist on organic, human-impact boundaries.</li>
+                                <li>Set the “real data first, synthetic second” launch order and shared the BTAA/FAA sources.</li>
+                                <li>Manually verified Firebase Studio’s contours and logged every platform’s sticking point.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header badge-ai text-white">
+                            <strong>Where AI Accelerated</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                <li>ChatGPT surfaced the winning concept plus actionable data pointers.</li>
+                                <li>MagicPatterns, Bolt.new, Firebase Studio, and Base44 spun up workable canvases in minutes.</li>
+                                <li>Auto-fix routines highlighted Mapbox tokens, tile blocks, and missing scripts before I dug in.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="mb-5 process-section">
+            <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
+                <h2 class="mb-0">Process Timeline</h2>
+                <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
+                    Show Timeline
+                </button>
+            </div>
+            <p class="text-muted mb-3">Left lane = Me. Right lane = AI. Expand when you want the play-by-play.</p>
+
+            <div class="collapse" id="processTimeline">
+                <div class="contribution-legend mb-4">
+                    <span class="badge bg-primary me-2">Me</span>
+                    <span class="badge badge-ai">AI</span>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Ideation Vetting</h4>
+                                <ul>
+                                    <li>Rejected Round 1 ideas that leaned on administrative borders and rewrote the brief to demand organic shapes.</li>
+                                    <li>Added constraints about invisible-yet-useful boundaries plus small embedded datasets to keep platforms honest.</li>
+                                    <li>Chose the PDX noise footprint concept and gathered local context for the airport corridor.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Model Suggestions</h4>
+                                <ul>
+                                    <li>Claude offered “Urban Acoustic Zones,” sketching synthetic sound petals across the city.</li>
+                                    <li>ChatGPT recommended the airport DNL contours and listed the FAA/BTAA data sources.</li>
+                                    <li>Gemini proposed the watershed mosaic and canopy map as backup organic polygon stories.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Prompt Crafting</h4>
+                                <ul>
+                                    <li>Merged the chosen concept into the implementation template with an explicit “no Mapbox keys” rule.</li>
+                                    <li>Added a strict data acquisition order (real → alternate → synthetic) so comparisons stay fair.</li>
+                                    <li>Logged the raw BTAA download inside <code>data/</code> and documented processing expectations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Prompt Drafts</h4>
+                                <ul>
+                                    <li>Cursor expanded the bullet list into a clean, copy-pasteable specification for every platform.</li>
+                                    <li>AI emphasized tooltip copy, pattern fills, and the need for contour toggles.</li>
+                                    <li>Generated the fallback messaging that tells platforms how to synthesize believable petals.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Launch & Supervision</h4>
+                                <ul>
+                                    <li>Launched ten platforms back-to-back, tracking each run inside <code>LAUNCH-TRACKER.md</code>.</li>
+                                    <li>Monitored whether teams attempted real downloads or bailed to synthetic data.</li>
+                                    <li>Captured 1440×900 and 393×852 screenshots once each build stabilized.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Generated Outputs</h4>
+                                <ul>
+                                    <li>Generated ten distinct builds—four production-ready and six partial UI shells.</li>
+                                    <li>Auto-drafted legends, toggles, and synthetic noise petals when real data was out of reach.</li>
+                                    <li>Pushed inline fixes (ChatGPT’s pattern swap, V0’s auto-repair) without human edits.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>QA & Edits</h4>
+                                <ul>
+                                    <li>Validated Firebase Studio’s contours against the downloaded GeoJSON to confirm the real-data win.</li>
+                                    <li>Flagged legend wrapping, missing basemaps, and Mapbox token blockers for follow-up.</li>
+                                    <li>Recorded grades in the README series and kept platform color assignments consistent.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>AI Fixes & Suggestions</h4>
+                                <ul>
+                                    <li>ChatGPT Canvas kept offering “Fix bug” routines until the mock data rendered.</li>
+                                    <li>Lovable, V0.dev, and AI Studio surfaced auto-fix buttons with detailed error summaries.</li>
+                                    <li>Platforms annotated consoles with missing library/token messages for rapid triage.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Documentation & Storytelling</h4>
+                                <ul>
+                                    <li>Updated Day 3 README, Launch Tracker, and per-platform logs with data-handling outcomes.</li>
+                                    <li>Highlighted the first real-data ingestion success and repeated the “avoid Mapbox” rule for Day 4.</li>
+                                    <li>Built this showcase page to match the Day 1/Day 2 design system for continuity.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Supporting Assets</h4>
+                                <ul>
+                                    <li>Cursor summarized ideation rounds and rationales so the highlight copy dropped in quickly.</li>
+                                    <li>Platform exports preserved console output, iteration history, and deployment URLs.</li>
+                                    <li>AI assisted in tightening bullets into share-ready language during review.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insights -->
+        <section class="mb-5">
+            <h2 class="mb-4">Key Insights</h2>
+
+            <div class="insight-box">
+                <h5>✅ What Worked</h5>
+                <ul>
+                    <li>Firebase Studio finally pulled the real PDX Part 150 contours—first genuine data ingestion of the challenge.</li>
+                    <li>MagicPatterns, Bolt.new, and Base44 all fell back to synthetic petals gracefully while keeping UI polish high.</li>
+                    <li>Cross-platform legends and toggles matured; three winners shipped usable layer control without prompting.</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>❌ What Didn't</h5>
+                <ul>
+                    <li>Mapbox token prompts halted Lovable despite valid creds—API keys remain a blocker for rapid testing.</li>
+                    <li>Claude and Gemini still hit the same CSP/tile restrictions from Days 1–2, leaving maps blank.</li>
+                    <li>ChatGPT Canvas refused to fetch the real data even after multiple retries, sticking with mock GeoJSON.</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>🎉 Surprises</h5>
+                <ul>
+                    <li>Firebase’s browser IDE was clunky to prep, but the payoff—real data on-screen—made the API-key dance worth it.</li>
+                    <li>Base44 politely offered an upload slot for cleaned GeoJSON, hinting at an easy handoff when we pre-process later.</li>
+                    <li>Google AI Studio moved from total failure to at least rendering the shell, even if the map still never loads.</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>📚 Lessons for Next Time</h5>
+                <ul>
+                    <li>Include ready-to-embed GeoJSON for the next run so sandboxed platforms can still prove rendering chops.</li>
+                    <li>Keep MapLibre/OSM as the default callout in every prompt to avoid Mapbox gating wins.</li>
+                    <li>Document data-handling expectations early—platforms default to mock data unless explicitly pushed.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Editorial -->
+        <section class="mb-5">
+            <h2 class="mb-4">Editorial</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>Day 3 felt like the inflection point: the concept forced every platform to grapple with real GIS workflows instead of canned CSVs. Watching Firebase Studio grind through the API-key setup and still emerge with live PDX contours was the highlight—it proves the pipeline can work when the tooling cooperates. At the same time, the consistency of the partials tells its own story: if a platform leaned on mock data on Day 1 or got blocked by CSP on Day 2, it behaved the exact same way here. Those patterns are now “known unknowns” we can design around.</p>
+                    <p>Heading into Day 4, I’m carving out time to pre-process the BTAA download into an embedded GeoJSON so even the sandboxed tools can show what they would do with the real shapes. I’m also rewriting the base prompt to ban Mapbox outright—no more getting stuck on token dialogs. The experiment continues to validate the parallel approach: multiple working prototypes in ~100 minutes, plus a clear picture of where the human still needs to steer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full Documentation Link -->
+        <section class="mb-5">
+            <div class="alert alert-info">
+                <h5>📚 Want More Details?</h5>
+                <p class="mb-2">This showcase hits the highlights. For the full story, dive into:</p>
+                <ul class="mb-0">
+                    <li><a href="README.md">Day 3 README</a> — Platform-by-platform breakdown</li>
+                    <li><a href="LAUNCH-TRACKER.md">Launch Tracker</a> — Iteration notes &amp; grades</li>
+                    <li><a href="../../PLATFORM-TRACKER.md">Platform Tracker</a> — Rolling comparison across days</li>
+                    <li><a href="IMPLEMENTATION-PROMPT.md">Implementation Prompt</a> — Exact brief each platform received</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Day Navigation -->
+        <section class="mb-5" data-day-nav>
+            <div class="text-center text-muted">Loading day navigator…</div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p><strong>#30DayMapChallenge 2025</strong> | Danny Bauman</p>
+            <p>Day 3 of 30 | Theme: Polygons | 10 Platforms Tested | 40% Full Success</p>
+            <p class="mb-0">
+                <a href="../../README.md" class="text-white">Project Home</a> |
+                <a href="README.md" class="text-white">Day Documentation</a> |
+                <a href="https://github.com/dannyhines/30-day-map-challenge-2025" class="text-white">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Replace DAY_SLUG with the folder name (e.g., 01-points) when generating a new day -->
+    <script src="../../site-assets/js/day-navigation.js" data-day="03-polygons" data-manifest="../../days.json" data-base-path="../../" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
