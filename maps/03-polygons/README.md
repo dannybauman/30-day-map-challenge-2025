@@ -72,7 +72,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ## Platform Results
 
-**Total Platforms Tested:** 6/10 (In Progress)
+**Total Platforms Tested:** 7/10 (In Progress)
 
 ### ✅ Full Success (2 platforms)
 
@@ -97,7 +97,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ---
 
-### ⚠️ Partial Success (4 platforms)
+### ⚠️ Partial Success (5 platforms)
 
 #### ChatGPT Canvas (Grade C/C+)
 - **Status:** ⚠️ Partial Success (Eventual Success with Mock Data)
@@ -210,6 +210,13 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Minor UX issue:** Legend has one text element where word wrapping isn't right, widens the legend too much
 - Map tiles load correctly (OpenStreetMap via Leaflet)
 
+**V0.dev:**
+- Could not directly download data, but successfully created mock data
+- **Major issue:** Base map doesn't render, only mock noise contours visible
+- **UX issue:** Legend checkboxes appear clickable but don't do anything (confusing/unimplemented feature)
+- Auto-fix feature worked to resolve initial error
+- **Consistent pattern:** Day 1, Day 2, Day 3 all show map rendering issues
+
 ---
 
 ## Human Interventions & Decisions
@@ -221,6 +228,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 4. **Lovable testing**: Provided Mapbox API key but gave up after token validation error, noted learning to avoid Mapbox in future prompts
 5. **MagicPatterns testing**: Noted positive observations about correct airport location and checkbox layer toggle feature
 6. **Bolt.new testing**: Noted positive observations about visuals and coloring, minor legend text wrapping issue
+7. **V0.dev testing**: Noted base map doesn't render, legend checkboxes appear functional but don't work
 
 **Human Feedback During Testing:**
 - **Claude Artifacts:** Asked about alternative approaches when first error occurred, provided feedback on second attempt, made observation about security/permissions being potentially positive
@@ -229,27 +237,28 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Lovable:** Reported "after pasting the mapbox api key, the dialog disappeared but the map didn't show", clicked automatic fix button, then gave up after token validation error: "I thought [token] is valid but I'm not paying, not sure, so i gave up. in the future maybe no mapbox?"
 - **MagicPatterns:** Noted "it couldn't pull from the real data source, so it mocked the data, but otherwise it worked well!", "nice that it got the right airport location, just mock sound data", "the checkboxes to show/hide layers is a nice idea too"
 - **Bolt.new:** Noted "it worked well, a graded B, although it also couldn't get real data, so it mocked data. the visuals worked well on the map, in the right PDX location, good coloring. the legend is almost great but has one text element where the word wrapping isn't right so it widens the legend way too big"
+- **V0.dev:** Noted "kinda worked. it can't directly download the data, so it mocked data too. at first load it got an error, i clicked to auto fix, and then it kind of worked where it showed the mocked visuals but not the base map. in the legend it has some checkboxes and seems like click functionality, but it doesn't do anything, so that could have been cool but is confusing"
 
 ---
 
 ## Next Steps
 
-**Remaining Platforms to Test (4/10):**
+**Remaining Platforms to Test (3/10):**
 1. Google AI Studio Apps
-2. V0.dev
-3. Firebase Studio
-4. Base44
+2. Firebase Studio
+3. Base44
 
-**Completed (6/10):**
+**Completed (7/10):**
 - ✅ Claude Artifacts (Grade D - CSP/CORS)
 - ✅ ChatGPT Canvas (Grade C/C+ - mock data)
 - ✅ Gemini Canvas (Grade D - UI OK, map/data rendering failed)
 - ✅ Lovable (Grade D - Mapbox API key requirement)
 - ✅ MagicPatterns (Grade B - Full Success! Works well with mock data)
 - ✅ Bolt.new (Grade B - Full Success! Works well with mock data, minor legend text wrapping issue)
+- ✅ V0.dev (Grade D - Base map doesn't render, consistent with Day 1 & Day 2)
 
 **Tasks:**
-1. Continue testing remaining 4 platforms
+1. Continue testing remaining 3 platforms
 2. Observe which platforms can handle GIS data processing (LineString→Polygon conversion)
 3. Document data handling approaches (download vs. synthetic vs. embedded)
 4. Capture screenshots for all platforms
@@ -280,6 +289,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Lovable: Generated UI successfully but map blocked by Mapbox API key requirement
 - MagicPatterns: Generated working map with mock data (first full success for Day 3!)
 - Bolt.new: Generated working map with mock data (second full success for Day 3!)
+- V0.dev: Generated UI with legend but base map doesn't render (consistent with Day 1 & Day 2)
 
 **AI (Cursor):**
 - Logged ideation responses and organized content
@@ -301,9 +311,10 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - `lovable/README.md` - Lovable specific notes
 - `magicpatterns/README.md` - MagicPatterns specific notes
 - `bolt-new/README.md` - Bolt.new specific notes
+- `v0-dev/README.md` - V0.dev specific notes
 
 ---
 
 **Last Updated:** November 3, 2025  
-**Status:** Testing in progress (6/10 platforms completed)
+**Status:** Testing in progress (7/10 platforms completed)
 

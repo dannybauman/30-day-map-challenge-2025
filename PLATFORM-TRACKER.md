@@ -15,7 +15,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 | MagicPatterns | 3 | 3 | 0 | 0 | 100% | 5 min |
 | Google AI Studio | 1 | 1 | 0 | 0 | 100% | 5 min |
 | Firebase Studio | 1 | 1 | 0 | 0 | 100% | 15 min |
-| V0.dev | 1 | 0 | 1 | 0 | 0% | 10 min |
+| V0.dev | 3 | 0 | 3 | 0 | 0% | 10 min |
 | Claude Artifacts | 3 | 0 | 3 | 0 | 0% | 15 min |
 | Gemini | 3 | 0 | 3 | 0 | 0% | 15 min |
 | Cursor | 0 | 0 | 0 | 0 | -- | -- |

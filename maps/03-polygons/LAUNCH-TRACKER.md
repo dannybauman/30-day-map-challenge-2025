@@ -131,21 +131,39 @@
 - **Live URL:** https://pdx-airport-noise-fo-bk07.bolt.host
 - **Grade:** B (Full Success - Works well with mock data, minor UX issue: legend text wrapping)
 
+#### ⚠️ V0.dev
+- **Launch Time:** November 3, 2025
+- **Status:** ⚠️ Partial Success (Grade D - same as Day 1 & Day 2)
+- **Notes:**
+  - **Data handling test:** Could not directly download data, so it mocked data
+  - **Initial error:** Error on first load, user clicked auto-fix button
+  - **After auto-fix:** Mock visuals displayed but no base map renders
+  - **Major issue:** Base map doesn't render, only mock noise contours visible
+  - **UX issue:** Legend checkboxes appear clickable but don't do anything (confusing/unimplemented feature)
+  - **User feedback:** "kinda worked. it can't directly download the data, so it mocked data too. at first load it got an error, i clicked to auto fix, and then it kind of worked where it showed the mocked visuals but not the base map. in the legend it has some checkboxes and seems like click functionality, but it doesn't do anything, so that could have been cool but is confusing"
+  - **Data attribution:** "Data: Representative noise contours based on Part 150 Noise Exposure Map concepts" (mock data)
+  - **Consistent pattern:** Day 1, Day 2, Day 3 all show map rendering issues
+- **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows UI with legend and controls, but no base map visible
+- **Mobile Check:** N/A (base map doesn't render)
+- **Live URL:** https://v0-pdx-airport-noise-map.vercel.app/
+- **Grade:** D (Partial Success - UI generated but base map doesn't render, consistent with Day 1 & Day 2)
+
 ---
 
 ## Platform Testing Summary
 
-**Total Platforms Tested:** 6/10 (Claude Artifacts, ChatGPT Canvas, Gemini Canvas, Lovable, MagicPatterns, Bolt.new)
+**Total Platforms Tested:** 7/10 (Claude Artifacts, ChatGPT Canvas, Gemini Canvas, Lovable, MagicPatterns, Bolt.new, V0.dev)
 
 **Status Breakdown:**
 - ✅ Full Success: 2
   - MagicPatterns - Grade B (Works well with mock data)
   - Bolt.new - Grade B (Works well with mock data, minor legend text wrapping issue)
-- ⚠️ Partial Success: 4
+- ⚠️ Partial Success: 5
   - Claude Artifacts - Grade D (UI/legends, no map)
   - ChatGPT Canvas - Grade C/C+ (Mock data, works after fixes)
   - Gemini Canvas - Grade D (UI OK, map/data rendering failed)
   - Lovable - Grade D (UI generated but map blocked by Mapbox API key requirement)
+  - V0.dev - Grade D (UI generated but base map doesn't render)
 - ❌ Failure: 0
 
 **Patterns Observed:**
@@ -195,6 +213,13 @@
 - Visuals worked well with good coloring
 - **Minor UX issue:** Legend has one text element where word wrapping isn't right, widens the legend too much
 - Map tiles load correctly (OpenStreetMap via Leaflet)
+
+**V0.dev:**
+- **Data handling test result:** Could not directly download data, but successfully created mock data
+- **Major issue:** Base map doesn't render, only mock noise contours visible
+- **UX issue:** Legend checkboxes appear clickable but don't do anything (confusing/unimplemented feature)
+- Auto-fix feature worked to resolve initial error
+- **Consistent pattern:** Day 1, Day 2, Day 3 all show map rendering issues
 
 ---
 
