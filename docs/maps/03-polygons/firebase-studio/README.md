@@ -1,8 +1,8 @@
 # Firebase Studio - Day 3: Polygons
 
-**Platform:** Firebase Studio  
-**Date:** November 3, 2025  
-**Concept:** Airport Noise Footprint (PDX)  
+**Platform:** Firebase Studio
+**Date:** November 3, 2025
+**Concept:** Airport Noise Footprint (PDX)
 **Status:** ✅ Full Success (Grade B)
 
 ---
@@ -96,16 +96,15 @@
 
 ## Screenshots
 
-**Status:** ⚠️ Screenshots captured but show auth error (URL requires authentication)
-- Desktop screenshot: `screenshot.png` (1440x900) - Shows auth error page
-- Mobile screenshot: `screenshot-mobile.png` (393x852) - Shows auth error page
-- **Note:** Live URL requires authentication to access. User confirmed map shows real PDX noise contours, legend with checkboxes, and working tooltips.
+**Status:** ✅ Screenshots updated
+- Desktop screenshot: `screenshot.png` (1440x900) - Shows PDX noise contours map
+- Mobile screenshot: `screenshot-mobile.png` (393x852) - Shows mobile view of map
 
 ---
 
 ## Live URL
 
-**Deployed code:** https://9000-firebase-studio-1762220213064.cluster-gxm4gzz4s5b6guuwopayrdh3h4.cloudworkstations.dev/?embedded=0&monospaceUid=791225
+**Deployed code:** https://studio--studio-2544507104-44b1b.us-central1.hosted.app/
 
 ---
 

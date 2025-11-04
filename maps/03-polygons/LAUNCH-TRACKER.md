@@ -1,7 +1,7 @@
 # Day 3: Polygons - Launch Tracker
 
-**Concept:** Airport Noise Footprint (PDX) - PDX Airport Noise Contours  
-**Start Time:** November 3, 2025  
+**Concept:** Airport Noise Footprint (PDX) - PDX Airport Noise Contours
+**Start Time:** November 3, 2025
 **Theme:** Polygons - Area features (regions, land use, boundaries). Use fills, patterns, choropleths.
 
 ---
@@ -10,10 +10,10 @@
 
 ### Claude Artifacts
 
-#### ⚠️ Claude Artifacts
+#### ❌ Claude Artifacts
 - **Launch Time:** November 3, 2025
-- **Status:** ⚠️ Partial Success (CSP/CORS - same as Day 1 & Day 2)
-- **Notes:** 
+- **Status:** ❌ Failed (CSP/CORS wall blocked map tiles)
+- **Notes:**
   - Same issue as Day 1 and Day 2 - cannot load external libraries (Leaflet, Mapbox GL JS)
   - Tried 3 different approaches:
     1. Initial attempt with Leaflet → `Uncaught ReferenceError: L is not defined`
@@ -26,7 +26,7 @@
 - **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows UI/legends but no map (empty map area)
 - **Mobile Check:** N/A (no map loads)
 - **Live URL:** https://claude.ai/public/artifacts/32b539ac-e024-47cd-9b8d-1b3be4f8c0eb
-- **Grade:** D (Partial Success - UI generated but map blocked by sandbox)
+- **Grade:** D (Failed - UI only, no map due to sandbox)
 
 #### ⚠️ ChatGPT Canvas (GPT-5 Thinking)
 - **Launch Time:** November 3, 2025
@@ -51,9 +51,9 @@
 - **Grade:** C/C+ (Partial Success - Works but with mock data and intermittent errors)
 - **Data Handling:** ⚠️ Did not attempt real data download/processing (chose mock data instead)
 
-#### ⚠️ Gemini Canvas
+#### ❌ Gemini Canvas
 - **Launch Time:** November 3, 2025
-- **Status:** ⚠️ Partial Success (Grade D - same as Day 1 & Day 2)
+- **Status:** ❌ Failed (Tiles never loaded)
 - **Notes:**
   - Similar to Claude Artifacts - UI showed up mostly OK but data visualization didn't work
   - Map tiles missing
@@ -67,11 +67,11 @@
 - **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows UI with map iframe but map tiles/data visualization issues
 - **Mobile Check:** N/A (map doesn't show)
 - **Live URL:** https://gemini.google.com/share/908ebfdc84ed
-- **Grade:** D (Partial Success - UI generated but map/data rendering failed, consistent with Day 1 & Day 2)
+- **Grade:** D (Failed - UI only, tiles blocked)
 
-#### ⚠️ Lovable
+#### ❌ Lovable
 - **Launch Time:** November 3, 2025
-- **Status:** ⚠️ Partial Success (Grade D - Mapbox API key requirement)
+- **Status:** ❌ Failed (Mapbox token wall)
 - **Notes:**
   - UI generated successfully with legend and data attribution
   - **Mapbox API key required** - dialog appeared requesting Mapbox token
@@ -87,11 +87,11 @@
 - **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows UI with Mapbox Token Required dialog and legend
 - **Mobile Check:** ✅ Responsive (UI visible, map blocked)
 - **Live URL:** https://pdx-noise-petals.lovable.app
-- **Grade:** D (Partial Success - UI generated but map blocked by Mapbox API key requirement)
+- **Grade:** D (Failed - Mapbox token requirement)
 
-#### ✅ MagicPatterns
+#### ⚠️ MagicPatterns
 - **Launch Time:** November 3, 2025
-- **Status:** ✅ Full Success (Grade B)
+- **Status:** ⚠️ Partial Success (Mock data only)
 - **Notes:**
   - **Data handling test:** Could not pull from real data source, but successfully created mock data
   - Map works well overall
@@ -103,17 +103,16 @@
   - **User observation:** "nice that it got the right airport location, just mock sound data" - Platform correctly identified PDX airport location, only used mock data for noise contours
   - **User observation:** "the checkboxes to show/hide layers is a nice idea too" - Positive UX feature
   - **Data attribution:** "Data: Representative noise contours" (mock data)
-  - **First full success for Day 3!**
   - **Consistent performance:** Day 2 winner, Day 3 success
   - **Platform limitation:** User reached free tier limit (for today?) and couldn't follow up with more changes
 - **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows working map with legend and checkbox controls
 - **Mobile Check:** ✅ Responsive (map and UI work well)
 - **Live URL:** https://project-pdx-noise-contour-map-520.magicpatterns.app
-- **Grade:** B (Full Success - Works well with mock data, minor limitation: couldn't pull from real data source)
+- **Grade:** B (Mock data only; UI is polished)
 
-#### ✅ Bolt.new
+#### ⚠️ Bolt.new
 - **Launch Time:** November 3, 2025
-- **Status:** ✅ Full Success (Grade B)
+- **Status:** ⚠️ Partial Success (Mock data only)
 - **Notes:**
   - **Data handling test:** Could not get real data, but successfully created mock data
   - Map works well overall
@@ -124,12 +123,11 @@
   - **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
   - **Minor UX issue:** Legend has one text element where word wrapping isn't right, widens the legend too much
   - **Data attribution:** "Representative noise contours" (mock data)
-  - **Second full success for Day 3!**
   - **Consistent performance:** Day 1 success, Day 3 success
 - **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows working map with legend (text wrapping issue visible)
 - **Mobile Check:** ✅ Responsive (map and UI work well)
 - **Live URL:** https://pdx-airport-noise-fo-bk07.bolt.host
-- **Grade:** B (Full Success - Works well with mock data, minor UX issue: legend text wrapping)
+- **Grade:** B (Mock data only; legend text wrapping needs polish)
 
 #### ⚠️ V0.dev
 - **Launch Time:** November 3, 2025
@@ -148,9 +146,9 @@
 - **Live URL:** https://v0-pdx-airport-noise-map.vercel.app/
 - **Grade:** D (Partial Success - UI generated but base map doesn't render, consistent with Day 1 & Day 2)
 
-#### ⚠️ Google AI Studio Apps
+#### ❌ Google AI Studio Apps
 - **Launch Time:** November 3, 2025
-- **Status:** ⚠️ Partial Success (Grade D - improved from Day 2's Grade F)
+- **Status:** ❌ Failed (Blank screen despite auto-fix)
 - **Notes:**
   - **Data handling test:** Could not test (map/data never rendered)
   - **Progress:** Got further than Day 2 (which was Grade F - no code generated)
@@ -163,7 +161,7 @@
 - **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows page with title but no content (blank screen - white or black)
 - **Mobile Check:** N/A (no map/data rendered)
 - **Live URL:** https://pdx-airport-noise-footprint-903076358991.us-west1.run.app/
-- **Grade:** D (Partial Success - Page title visible but map/data don't render, improved from Day 2's Grade F)
+- **Grade:** D (Failed - blank canvas despite progress)
 
 #### ✅ Firebase Studio
 - **Launch Time:** November 3, 2025
@@ -180,15 +178,15 @@
     - Zoom not working (feels locked to a zoom, but shouldn't be)
     - Layering tooltip issue: Hover only shows 65 dB tooltip, not 68 dB underneath
   - **User assessment:** "solid grade B because even if there were a few errors, if it got real data on the map, that's big"
-  - **Comparison:** MagicPatterns & Bolt.new used mock data (Grade B), Firebase Studio used real data (Grade B) - **This is the differentiating factor!**
-- **Screenshot:** ⚠️ Screenshots captured but show auth error (URL requires authentication)
-- **Mobile Check:** N/A (requires auth, but user confirmed it works)
-- **Live URL:** https://9000-firebase-studio-1762220213064.cluster-gxm4gzz4s5b6guuwopayrdh3h4.cloudworkstations.dev/?embedded=0&monospaceUid=791225 (requires authentication)
+  - **Comparison:** MagicPatterns & Bolt.new used mock data (Grade C+), Firebase Studio used real data (Grade B) - **This is the differentiating factor!**
+- **Screenshot:** ✅ Screenshots updated (desktop and mobile)
+- **Mobile Check:** ✅ Mobile screenshot captured
+- **Live URL:** https://studio--studio-2544507104-44b1b.us-central1.hosted.app/
 - **Grade:** B (Full Success - **FIRST PLATFORM TO USE REAL DATA!** Minor UX issues don't detract from major achievement)
 
-#### ✅ Base44
+#### ⚠️ Base44
 - **Launch Time:** November 3, 2025
-- **Status:** ✅ Full Success (Grade B - Works well with mock data)
+- **Status:** ⚠️ Partial Success (Mock data, ready for upload)
 - **Notes:**
   - **Data handling test:** Could not download real data from URLs, but platform indicated it could use real data if uploaded
   - **Map and UI:** Work well
@@ -198,11 +196,11 @@
   - **User decision:** Decided to stop here (good stopping point)
   - **Minor issue:** Missing/broken image for airport icon
   - **User feedback:** "worked well. map and UI and visuals, but it was also mock data, it said it couldn't do real data. it could if i uploaded it, which seemed easy, but i'll stop here. oh there was a missing/broken image for the airport icon, not bad"
-  - **Comparison:** Similar to MagicPatterns and Bolt.new - used mock data (Grade B), but platform indicated alternative method (upload) was available
+  - **Comparison:** Similar to MagicPatterns and Bolt.new - used mock data (Grade C+), but platform indicated alternative method (upload) was available
 - **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows map with mock data, UI, and legend (missing airport icon image visible)
 - **Mobile Check:** N/A (user decided to stop here)
 - **Live URL:** https://pdx-noise-mapper-4c3df656.base44.app/
-- **Grade:** B (Full Success - Works well with mock data, minor airport icon image issue)
+- **Grade:** B (Mock data only; missing airport icon)
 
 ---
 
@@ -211,19 +209,19 @@
 **Total Platforms Tested:** 10/10 (Claude Artifacts, ChatGPT Canvas, Gemini Canvas, Lovable, MagicPatterns, Bolt.new, V0.dev, Google AI Studio Apps, Firebase Studio, Base44) ✅ **COMPLETE!**
 
 **Status Breakdown:**
-- ✅ Full Success: 4
-  - MagicPatterns - Grade B (Works well with mock data)
-  - Bolt.new - Grade B (Works well with mock data, minor legend text wrapping issue)
+- ✅ Full Success: 1
   - Firebase Studio - Grade B (Works well with **REAL DATA!** First platform to successfully use real data, minor UX issues)
-  - Base44 - Grade B (Works well with mock data, minor airport icon image issue)
-- ⚠️ Partial Success: 6
-  - Claude Artifacts - Grade D (UI/legends, no map)
-  - ChatGPT Canvas - Grade C/C+ (Mock data, works after fixes)
-  - Gemini Canvas - Grade D (UI OK, map/data rendering failed)
-  - Lovable - Grade D (UI generated but map blocked by Mapbox API key requirement)
+- ⚠️ Partial Success: 5
+  - MagicPatterns - Grade C+ (Works well with mock data)
+  - Bolt.new - Grade C+ (Works well with mock data, minor legend text wrapping issue)
+  - Base44 - Grade C+ (Works well with mock data, minor airport icon image issue)
+  - ChatGPT Canvas - Grade C- (Mock data, works after fixes)
   - V0.dev - Grade D (UI generated but base map doesn't render)
-  - Google AI Studio Apps - Grade D (Page title visible but map/data don't render, improved from Day 2's Grade F)
-- ❌ Failure: 0
+- ❌ Failure: 4
+  - Claude Artifacts - Grade D (UI/legends, no map)
+  - Gemini Canvas - Grade D (UI OK, map/data rendering failed)
+  - Lovable - Grade D (UI generated but Mapbox token blocked the map)
+  - Google AI Studio Apps - Grade D (Page title visible but map/data never render)
 
 **Patterns Observed:**
 
@@ -257,7 +255,6 @@
 **MagicPatterns:**
 - **Data handling test result:** Could not pull from real data source, but successfully created mock data
 - Map works well overall with mock data
-- **First full success for Day 3!**
 - **Consistent performance:** Day 2 winner, Day 3 success
 - User notes: Could potentially upload data or try another approach, but satisfied with result
 - Map tiles load correctly (OpenStreetMap via Leaflet)
@@ -266,7 +263,6 @@
 **Bolt.new:**
 - **Data handling test result:** Could not get real data, but successfully created mock data
 - Map works well overall with mock data
-- **Second full success for Day 3!**
 - **Consistent performance:** Day 1 success, Day 3 success
 - **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
 - Visuals worked well with good coloring
@@ -299,7 +295,7 @@
 - **Map and UI:** Look nice, legend has working checkboxes, tooltip looks slick
 - **Minor UX issues:** Zoom not working, layering tooltip issue (hover only shows 65 dB tooltip, not 68 dB underneath)
 - **User assessment:** "solid grade B because even if there were a few errors, if it got real data on the map, that's big"
-- **Comparison:** MagicPatterns & Bolt.new used mock data (Grade B), Firebase Studio used real data (Grade B) - **This is the differentiating factor!**
+- **Comparison:** MagicPatterns & Bolt.new used mock data (Grade C+), Firebase Studio used real data (Grade B) - **This is the differentiating factor!**
 
 **Base44:**
 - **Data handling test result:** Could not download real data from URLs, but platform indicated it could use real data if uploaded
@@ -310,7 +306,7 @@
 - **User decision:** Decided to stop here (good stopping point)
 - **Minor issue:** Missing/broken image for airport icon
 - **User assessment:** "worked well" - satisfied with result
-- **Comparison:** Similar to MagicPatterns and Bolt.new - used mock data (Grade B), but platform indicated alternative method (upload) was available
+- **Comparison:** Similar to MagicPatterns and Bolt.new - used mock data (Grade C+), but platform indicated alternative method (upload) was available
 
 ---
 
@@ -348,4 +344,3 @@
 ---
 
 **Last Updated:** November 3, 2025
-

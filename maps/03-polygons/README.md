@@ -1,8 +1,8 @@
 # Day 3: Polygons - Airport Noise Footprint (PDX)
 
-**Theme:** Polygons - Area features (regions, land use, boundaries)  
-**Concept:** Airport Noise Footprint (PDX) - PDX Airport Noise Contours  
-**Date:** November 3, 2025  
+**Theme:** Polygons - Area features (regions, land use, boundaries)
+**Concept:** Airport Noise Footprint (PDX) - PDX Airport Noise Contours
+**Date:** November 3, 2025
 **Status:** 🔄 In Progress
 
 ---
@@ -34,13 +34,13 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ## Data Source
 
-**Primary:** Big Ten Academic Alliance Geoportal  
-**URL:** https://geo.btaa.org/catalog/e6b6fe6c6a6840a096f89f6be703dc64_144  
+**Primary:** Big Ten Academic Alliance Geoportal
+**URL:** https://geo.btaa.org/catalog/e6b6fe6c6a6840a096f89f6be703dc64_144
 **Dataset:** "Airport Noise DNLS 65 and 68 [Oregon--Portland]"
 
 **Raw Data:** `data/pdx_noise_raw.geojson` (50 KB, 6 LineString features)
 - 68 DNL: 2 LineString features
-- 65 DNL: 3 LineString features  
+- 65 DNL: 3 LineString features
 - 55 DNL: 1 LineString feature
 
 **Processing Needed:**
@@ -71,29 +71,9 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 ---
 
 ## Platform Results
-
 **Total Platforms Tested:** 10/10 ✅ **COMPLETE!**
 
-### ✅ Full Success (4 platforms)
-
-#### MagicPatterns (Grade B)
-- **Status:** ✅ Full Success (Works well with mock data)
-- **Data Handling:** ⚠️ Could not pull from real data source, but successfully created mock data
-- **Result:** Map works well overall, UI functional and responsive
-- **User Note:** "i can probably upload the data or maybe it could try another way, but we'll call this a success with a B rating"
-- **Live URL:** https://project-pdx-noise-contour-map-520.magicpatterns.app
-- **First full success for Day 3!**
-- **See:** `magicpatterns/README.md` for full details
-
-#### Bolt.new (Grade B)
-- **Status:** ✅ Full Success (Works well with mock data)
-- **Data Handling:** ⚠️ Could not get real data, but successfully created mock data
-- **Result:** Map works well overall, visuals worked well, good coloring
-- **User Note:** "it worked well, a graded B, although it also couldn't get real data, so it mocked data. the visuals worked well on the map, in the right PDX location, good coloring. the legend is almost great but has one text element where the word wrapping isn't right so it widens the legend way too big"
-- **Minor Issue:** Legend text wrapping problem widens legend too much
-- **Live URL:** https://pdx-airport-noise-fo-bk07.bolt.host
-- **Second full success for Day 3!**
-- **See:** `bolt-new/README.md` for full details
+### ✅ Full Success (1 platform)
 
 #### Firebase Studio (Grade B)
 - **Status:** ✅ Full Success (**FIRST PLATFORM TO USE REAL DATA!**)
@@ -106,11 +86,13 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Result:** Map and UI look nice, legend has working checkboxes, tooltip looks slick, real PDX noise contours displayed correctly
 - **Minor UX Issues:** Zoom not working (feels locked), layering tooltip issue (hover only shows 65 dB tooltip, not 68 dB underneath)
 - **User Assessment:** "solid grade B because even if there were a few errors, if it got real data on the map, that's big"
-- **Live URL:** https://9000-firebase-studio-1762220213064.cluster-gxm4gzz4s5b6guuwopayrdh3h4.cloudworkstations.dev/?embedded=0&monospaceUid=791225 (requires authentication)
+- **Live URL:** https://studio--studio-2544507104-44b1b.us-central1.hosted.app/
 - **See:** `firebase-studio/README.md` for full details
 
-#### Base44 (Grade B)
-- **Status:** ✅ Full Success (Works well with mock data)
+### ⚠️ Partial Success (5 platforms)
+
+#### Base44 (Grade C+)
+- **Status:** ⚠️ Partial Success (Mock data, ready for upload)
 - **Data Handling:** ⚠️ Could not download real data from URLs, but platform indicated it could use real data if uploaded
 - **Result:** Map and UI and visuals work well
 - **Minor Issue:** Missing/broken image for airport icon
@@ -119,61 +101,30 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **See:** `base44/README.md` for full details
 
 ---
-
-### ⚠️ Partial Success (6 platforms)
-
-#### ChatGPT Canvas (Grade C/C+)
-- **Status:** ⚠️ Partial Success (Eventual Success with Mock Data)
+#### Bolt.new (Grade C+)
+- **Status:** ⚠️ Partial Success (Mock data only)
+- **Data Handling:** ⚠️ Could not get real data, but successfully created mock data
+- **Result:** Map works well overall, visuals worked well, good coloring
+- **User Note:** "it worked well, a graded B, although it also couldn't get real data, so it mocked data. the visuals worked well on the map, in the right PDX location, good coloring. the legend is almost great but has one text element where the word wrapping isn't right so it widens the legend way too big"
+- **Minor Issue:** Legend text wrapping problem widens legend too much
+- **Live URL:** https://pdx-airport-noise-fo-bk07.bolt.host
+- **See:** `bolt-new/README.md` for full details
+#### ChatGPT Canvas (Grade C-)
+- **Status:** ⚠️ Partial Success (Mock data after auto-fix)
 - **Data Handling:** ⚠️ Did NOT attempt real data download/processing - chose mock data instead
 - **Issues:** Multiple "Fix Bug" iterations required, intermittent error screen
 - **Result:** Map works with synthetic contours, but did not test GIS data handling
 - **Live URL:** https://chatgpt.com/canvas/shared/69097755f178819197f69e04646c287c
 - **See:** `chatgpt-canvas/README.md` for full details
-
-#### Claude Artifacts (Grade D)
-- **Status:** ⚠️ Partial Success (CSP/CORS - same as Day 1 & Day 2)
-- **Issue:** Cannot load external libraries (Leaflet, Mapbox GL JS)
-- **Attempts:** 
-  1. Leaflet → `Uncaught ReferenceError: L is not defined`
-  2. Leaflet fix attempt → Same error
-  3. Mapbox GL JS → `Uncaught ReferenceError: mapboxgl is not defined`
-- **Result:** UI/legends generated but no map renders
-- **Pattern:** Consistent limitation across Day 1, Day 2, Day 3
-- **User Observation:** "funny thing is, that's probably good to have more locked down security and permissions, who knows"
-- **Live URL:** https://claude.ai/public/artifacts/32b539ac-e024-47cd-9b8d-1b3be4f8c0eb
-- **Data Handling:** Could not test (blocked before data processing)
-
-**See:** `claude-artifacts/README.md` for full details
-
-#### Gemini Canvas (Grade D)
-- **Status:** ⚠️ Partial Success (same as Day 1 & Day 2)
-- **Issue:** UI generated but data visualization didn't work, map tiles missing
-- **Attempts:**
-  1. Initial: UI OK, but data visualization failed, map tiles missing
-  2. User feedback → Platform fix attempt → Still missing tiles, visualization not working
-  3. User feedback → User fix attempt → Map doesn't show at all (regression)
-- **Result:** Map disappeared entirely after fixes (worse than initial)
-- **Pattern:** Consistent limitation across Day 1, Day 2, Day 3 - UI works, map/data rendering fails
-- **Live URL:** https://gemini.google.com/share/908ebfdc84ed
-- **Data Handling:** Could not test (visualization failed before data could be verified)
-- **See:** `gemini-canvas/README.md` for full details
-
-#### Lovable (Grade D)
-- **Status:** ⚠️ Partial Success (Mapbox API key requirement)
-- **Issue:** UI generated but Mapbox API key required, token validation failed
-- **Attempts:**
-  1. Initial: UI generated, Mapbox token dialog appeared
-  2. User provided API key → Map didn't show
-  3. Platform attempted automatic fix → Better error message about token
-  4. User gave up after token validation error
-- **Result:** UI visible but map blocked by Mapbox API key requirement
-- **Key Learning:** Mapbox requires API keys (may need paid account), creates barrier for testing - **avoid Mapbox in future prompts**
-- **Live URL:** https://pdx-noise-petals.lovable.app
-- **Data Handling:** Could not test (blocked by Mapbox API key requirement)
-- **See:** `lovable/README.md` for full details
-
+#### MagicPatterns (Grade C+)
+- **Status:** ⚠️ Partial Success (Mock data only)
+- **Data Handling:** ⚠️ Could not pull from real data source, but successfully created mock data
+- **Result:** Map works well overall, UI functional and responsive
+- **User Note:** "i can probably upload the data or maybe it could try another way, but we'll call this a success with a B rating"
+- **Live URL:** https://project-pdx-noise-contour-map-520.magicpatterns.app
+- **See:** `magicpatterns/README.md` for full details
 #### V0.dev (Grade D)
-- **Status:** ⚠️ Partial Success (same as Day 1 & Day 2)
+- **Status:** ⚠️ Partial Success (UI only; basemap missing)
 - **Issue:** Base map doesn't render, only mock visuals visible
 - **Attempts:**
   1. Initial: Error on first load
@@ -185,8 +136,36 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Data Handling:** Could not directly download data, used mock data
 - **See:** `v0-dev/README.md` for full details
 
+### ❌ Failed (4 platforms)
+
+#### Claude Artifacts (Grade D)
+- **Status:** ❌ Failed (CSP sandbox blocked map tiles)
+- **Issue:** Cannot load external libraries (Leaflet, Mapbox GL JS)
+- **Attempts:**
+  1. Leaflet → `Uncaught ReferenceError: L is not defined`
+  2. Leaflet fix attempt → Same error
+  3. Mapbox GL JS → `Uncaught ReferenceError: mapboxgl is not defined`
+- **Result:** UI/legends generated but no map renders
+- **Pattern:** Consistent limitation across Day 1, Day 2, Day 3
+- **User Observation:** "funny thing is, that's probably good to have more locked down security and permissions, who knows"
+- **Live URL:** https://claude.ai/public/artifacts/32b539ac-e024-47cd-9b8d-1b3be4f8c0eb
+- **Data Handling:** Could not test (blocked before data processing)
+
+**See:** `claude-artifacts/README.md` for full details
+#### Gemini Canvas (Grade D)
+- **Status:** ❌ Failed (Tiles never loaded)
+- **Issue:** UI generated but data visualization didn't work, map tiles missing
+- **Attempts:**
+  1. Initial: UI OK, but data visualization failed, map tiles missing
+  2. User feedback → Platform fix attempt → Still missing tiles, visualization not working
+  3. User feedback → User fix attempt → Map doesn't show at all (regression)
+- **Result:** Map disappeared entirely after fixes (worse than initial)
+- **Pattern:** Consistent limitation across Day 1, Day 2, Day 3 - UI works, map/data rendering fails
+- **Live URL:** https://gemini.google.com/share/908ebfdc84ed
+- **Data Handling:** Could not test (visualization failed before data could be verified)
+- **See:** `gemini-canvas/README.md` for full details
 #### Google AI Studio Apps (Grade D)
-- **Status:** ⚠️ Partial Success (improved from Day 2's Grade F)
+- **Status:** ❌ Failed (Blank screen despite auto-fix)
 - **Issue:** Page title visible but no map or data, just blank screen (white or black)
 - **Attempts:**
   1. Initial: Got further than Day 2
@@ -197,6 +176,19 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Live URL:** https://pdx-airport-noise-footprint-903076358991.us-west1.run.app/
 - **Data Handling:** Could not test (map/data never rendered)
 - **See:** `google-ai-studio/README.md` for full details
+#### Lovable (Grade D)
+- **Status:** ❌ Failed (Mapbox token wall)
+- **Issue:** UI generated but Mapbox API key required, token validation failed
+- **Attempts:**
+  1. Initial: UI generated, Mapbox token dialog appeared
+  2. User provided API key → Map didn't show
+  3. Platform attempted automatic fix → Better error message about token
+  4. User gave up after token validation error
+- **Result:** UI visible but map blocked by Mapbox API key requirement
+- **Key Learning:** Mapbox requires API keys (may need paid account), creates barrier for testing - **avoid Mapbox in future prompts**
+- **Live URL:** https://pdx-noise-petals.lovable.app
+- **Data Handling:** Could not test (blocked by Mapbox API key requirement)
+- **See:** `lovable/README.md` for full details
 
 ---
 
@@ -242,7 +234,6 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Map works well overall with mock data
 - **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
 - **Positive UX feature:** Checkboxes to show/hide layers - nice interactive feature allowing users to toggle individual noise contour layers
-- **First full success for Day 3!**
 - **Consistent performance:** Day 2 winner, Day 3 success
 - User notes: Could potentially upload data or try another approach, but satisfied with result
 - Map tiles load correctly (OpenStreetMap via Leaflet)
@@ -254,7 +245,6 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Map works well overall with mock data
 - **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
 - Visuals worked well with good coloring
-- **Second full success for Day 3!**
 - **Consistent performance:** Day 1 success, Day 3 success
 - **Minor UX issue:** Legend has one text element where word wrapping isn't right, widens the legend too much
 - Map tiles load correctly (OpenStreetMap via Leaflet)
@@ -334,7 +324,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 **Completed (10/10):**
 - ✅ Claude Artifacts (Grade D - CSP/CORS)
-- ✅ ChatGPT Canvas (Grade C/C+ - mock data)
+- ✅ ChatGPT Canvas (Grade C- - mock data)
 - ✅ Gemini Canvas (Grade D - UI OK, map/data rendering failed)
 - ✅ Lovable (Grade D - Mapbox API key requirement)
 - ✅ MagicPatterns (Grade B - Full Success! Works well with mock data)
@@ -374,8 +364,8 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Claude Artifacts: Generated UI/legends (blocked by CSP/CORS from rendering map)
 - Gemini Canvas: Generated UI but map/data rendering failed (consistent with Day 1 & Day 2)
 - Lovable: Generated UI successfully but map blocked by Mapbox API key requirement
-- MagicPatterns: Generated working map with mock data (first full success for Day 3!)
-- Bolt.new: Generated working map with mock data (second full success for Day 3!)
+- MagicPatterns: Generated working map with mock data (partial success)
+- Bolt.new: Generated working map with mock data (partial success)
 - V0.dev: Generated UI with legend but base map doesn't render (consistent with Day 1 & Day 2)
 - Google AI Studio Apps: Generated page with title but map/data don't render (improved from Day 2's Grade F)
 - Firebase Studio: Generated working map with **REAL DATA!** First platform to successfully download and process real PDX noise contour data
@@ -408,7 +398,6 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ---
 
-**Last Updated:** November 3, 2025  
-**Status:** ✅ Platform Testing Complete! (10/10 platforms tested)  
+**Last Updated:** November 3, 2025
+**Status:** ✅ Platform Testing Complete! (10/10 platforms tested)
 **Next:** HTML showcase page generation (Phase 7 - required)
-
