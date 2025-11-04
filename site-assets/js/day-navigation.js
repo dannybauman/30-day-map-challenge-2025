@@ -89,22 +89,10 @@
                 navButtons.appendChild(createNavButton('Next →', nextId));
                 navWrapper.appendChild(navButtons);
 
-                // Center: Current day indicator
-                const dayIndicator = document.createElement('div');
-                dayIndicator.className = 'text-center flex-grow-1';
-                const currentDayObj = daysById[currentDay];
-                if (currentDayObj) {
-                    const dayText = document.createElement('span');
-                    dayText.className = 'text-muted small';
-                    dayText.textContent = currentDayObj.title || `Day ${currentIndex + 1} of ${days.length}`;
-                    dayIndicator.appendChild(dayText);
-                } else {
-                    dayIndicator.textContent = `Day ${currentIndex + 1} of ${days.length}`;
-                    dayIndicator.className += ' text-muted small';
-                }
-                navWrapper.appendChild(dayIndicator);
-
-                // Right: Day selector dropdown
+                // Right: Day selector dropdown (spacer div to push it right)
+                const spacer = document.createElement('div');
+                spacer.className = 'flex-grow-1';
+                navWrapper.appendChild(spacer);
                 const selectWrapper = document.createElement('div');
                 selectWrapper.style.minWidth = '200px';
                 const select = document.createElement('select');
