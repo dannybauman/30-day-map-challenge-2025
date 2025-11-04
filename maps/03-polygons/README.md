@@ -109,6 +109,15 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Live URL:** https://9000-firebase-studio-1762220213064.cluster-gxm4gzz4s5b6guuwopayrdh3h4.cloudworkstations.dev/?embedded=0&monospaceUid=791225 (requires authentication)
 - **See:** `firebase-studio/README.md` for full details
 
+#### Base44 (Grade B)
+- **Status:** ✅ Full Success (Works well with mock data)
+- **Data Handling:** ⚠️ Could not download real data from URLs, but platform indicated it could use real data if uploaded
+- **Result:** Map and UI and visuals work well
+- **Minor Issue:** Missing/broken image for airport icon
+- **User Note:** "worked well. map and UI and visuals, but it was also mock data, it said it couldn't do real data. it could if i uploaded it, which seemed easy, but i'll stop here. oh there was a missing/broken image for the airport icon, not bad"
+- **Live URL:** https://pdx-noise-mapper-4c3df656.base44.app/
+- **See:** `base44/README.md` for full details
+
 ---
 
 ### ⚠️ Partial Success (6 platforms)
