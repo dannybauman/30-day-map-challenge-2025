@@ -32,6 +32,7 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 - ALL CAPS (be careful - use sparingly, only for emphasis when needed)
 - "novel" (sounds hype-y; use "interesting", "useful", or "creative")
 - "drove" (use "guided", "led", or "directed" instead)
+- "nailed" (too confident; use "did well", "performed well", "worked well", or "got it right" instead)
 
 ## Punctuation Guidelines
 
@@ -76,6 +77,9 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 
 **Before**: "Round 1 was a miss: every model handed me administrative boundaries."
 **After**: "Round 1 was a miss: every model gave me basic shapes like state outlines."
+
+**Before**: "Nailed the 'small dataset, high impact' prompt and pointed straight to the FAA/BTAA sources."
+**After**: "Did well with the 'small dataset, high impact' prompt and pointed straight to the FAA/BTAA sources."
 
 ## Why This Matters
 
