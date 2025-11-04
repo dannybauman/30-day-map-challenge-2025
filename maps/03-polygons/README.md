@@ -219,12 +219,16 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 2. **Claude Artifacts testing**: Provided feedback during testing, recognizing security/permissions aspect as potentially positive
 3. **Gemini Canvas testing**: Provided feedback on data visualization and map tile issues, attempted additional fixes
 4. **Lovable testing**: Provided Mapbox API key but gave up after token validation error, noted learning to avoid Mapbox in future prompts
+5. **MagicPatterns testing**: Noted positive observations about correct airport location and checkbox layer toggle feature
+6. **Bolt.new testing**: Noted positive observations about visuals and coloring, minor legend text wrapping issue
 
 **Human Feedback During Testing:**
 - **Claude Artifacts:** Asked about alternative approaches when first error occurred, provided feedback on second attempt, made observation about security/permissions being potentially positive
 - **ChatGPT Canvas:** Provided feedback on mock data usage and intermittent errors
 - **Gemini Canvas:** Reported "the data visualization didn't work, and some of the map tiles are missing", then "basically same problems, not fixed. just shows a different base map, still missing tiles, not sure about the visualization", attempted one more fix which resulted in regression (map disappeared)
 - **Lovable:** Reported "after pasting the mapbox api key, the dialog disappeared but the map didn't show", clicked automatic fix button, then gave up after token validation error: "I thought [token] is valid but I'm not paying, not sure, so i gave up. in the future maybe no mapbox?"
+- **MagicPatterns:** Noted "it couldn't pull from the real data source, so it mocked the data, but otherwise it worked well!", "nice that it got the right airport location, just mock sound data", "the checkboxes to show/hide layers is a nice idea too"
+- **Bolt.new:** Noted "it worked well, a graded B, although it also couldn't get real data, so it mocked data. the visuals worked well on the map, in the right PDX location, good coloring. the legend is almost great but has one text element where the word wrapping isn't right so it widens the legend way too big"
 
 ---
 
