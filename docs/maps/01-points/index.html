@@ -33,6 +33,80 @@
         .contribution-legend .badge { font-size: 0.8rem; }
         .badge-ai { background: #6f42c1; }
 
+        /* Timeline Button Styling */
+        .timeline-toggle-wrapper {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        .timeline-toggle-btn {
+            min-width: 200px;
+            padding: 12px 32px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .timeline-toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        .timeline-toggle-btn:hover::before {
+            left: 100%;
+        }
+        .timeline-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Collapsed Content Teaser */
+        .process-section {
+            position: relative;
+        }
+        .process-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(180deg, rgba(248, 249, 250, 0) 0%, rgba(248, 249, 250, 0.7) 50%, rgba(248, 249, 250, 1) 100%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+        }
+        /* Show gradient fade when timeline is collapsed */
+        .process-section:has(#processTimeline:not(.show))::after {
+            opacity: 1;
+        }
+        /* Fallback for browsers without :has() support */
+        @supports not selector(:has(*)) {
+            .process-section::after {
+                opacity: 1;
+            }
+        }
+        /* Subtle pulse animation on button when timeline is collapsed */
+        @keyframes subtle-pulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 4px 16px rgba(13, 110, 253, 0.2);
+            }
+        }
+        .process-section:has(#processTimeline:not(.show)) .timeline-toggle-btn {
+            animation: subtle-pulse 3s ease-in-out infinite;
+        }
+
         /* Color System for Platform Status */
         .status-winner { background: linear-gradient(135deg, #198754 0%, #20c997 100%); }
         .status-strong { background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%); }
