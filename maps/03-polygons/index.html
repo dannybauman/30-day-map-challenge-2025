@@ -112,7 +112,16 @@
         .status-partial { background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); }
         .status-failed { background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%); }
 
-        /* Rating Tier System */
+        /* Grade Color System - Consistent across all days */
+        .grade-a { background-color: #28a745; color: white; font-weight: 500; }
+        .grade-b { background-color: #007bff; color: white; font-weight: 500; }
+        .grade-c-plus { background-color: #ffc107; color: #000; font-weight: 500; }
+        .grade-c { background-color: #fd7e14; color: white; font-weight: 500; }
+        .grade-c-minus { background-color: #fd7e14; color: white; font-weight: 500; opacity: 0.85; }
+        .grade-d { background-color: #ff4500; color: white; font-weight: 500; }
+        .grade-f { background-color: #dc3545; color: white; font-weight: 500; }
+
+        /* Legacy rating classes for backward compatibility */
         .rating-s { background-color: #FFD700; color: #000; font-weight: bold; padding: 4px 8px; border-radius: 4px; }
         .rating-a { background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; }
         .rating-b { background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; }
@@ -330,7 +339,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ff6d00; color: #fff;">
                             <strong>Firebase Studio</strong>
-                            <span class="badge bg-light text-dark">Grade B</span>
+                            <span class="badge grade-b">Grade B</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -366,7 +375,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
                             <strong>MagicPatterns</strong>
-                            <span class="badge bg-dark text-white">Grade B (Mock data)</span>
+                            <span class="badge grade-c-plus">Grade C+ (Mock data)</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -396,7 +405,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
                             <strong>Bolt.new</strong>
-                            <span class="badge bg-dark text-white">Grade B (Mock data)</span>
+                            <span class="badge grade-c-plus">Grade C+ (Mock data)</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -426,7 +435,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
                             <strong>Base44</strong>
-                            <span class="badge bg-dark text-white">Grade B (Mock data)</span>
+                            <span class="badge grade-c-plus">Grade C+ (Mock data)</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -456,7 +465,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
                             <strong>ChatGPT Canvas</strong>
-                            <span class="badge bg-dark text-white">Grade C (Mock data)</span>
+                            <span class="badge grade-c-minus">Grade C- (Mock data)</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -478,7 +487,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                             <div class="d-flex flex-wrap gap-2">
                                 <a class="btn btn-sm btn-outline-secondary" href="chatgpt-canvas/README.md">Details</a>
                                 <a class="btn btn-sm btn-outline-secondary" href="chatgpt-canvas/screenshot-error.png" target="_blank" rel="noopener">Error view</a>
-                                <a class="btn btn-sm btn-outline-secondary" href="https://chatgpt.com/canvas/shared/69097755f178819197f69e04646c287c" target="_blank" rel="noopener">Canvas share</a>
+                                <a class="btn btn-sm btn-primary" href="https://chatgpt.com/canvas/shared/69097755f178819197f69e04646c287c" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -487,7 +496,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
                             <strong>V0.dev</strong>
-                            <span class="badge bg-dark text-white">Grade D (No basemap)</span>
+                            <span class="badge grade-d">Grade D (No basemap)</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -523,7 +532,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
                             <strong>Claude Artifacts</strong>
-                            <span class="badge bg-light text-dark">Grade D (Blocked)</span>
+                            <span class="badge grade-d">Grade D (Blocked)</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -544,7 +553,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                             </ul>
                             <div class="d-flex flex-wrap gap-2">
                                 <a class="btn btn-sm btn-outline-secondary" href="claude-artifacts/README.md">Details</a>
-                                <a class="btn btn-sm btn-outline-secondary" href="https://claude.ai/public/artifacts/32b539ac-e024-47cd-9b8d-1b3be4f8c0eb" target="_blank" rel="noopener">Artifact</a>
+                                <a class="btn btn-sm btn-primary" href="https://claude.ai/public/artifacts/32b539ac-e024-47cd-9b8d-1b3be4f8c0eb" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -553,7 +562,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
                             <strong>Gemini Canvas</strong>
-                            <span class="badge bg-light text-dark">Grade D (Blank)</span>
+                            <span class="badge grade-d">Grade D (Blank)</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -574,7 +583,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                             </ul>
                             <div class="d-flex flex-wrap gap-2">
                                 <a class="btn btn-sm btn-outline-secondary" href="gemini-canvas/README.md">Details</a>
-                                <a class="btn btn-sm btn-outline-secondary" href="https://gemini.google.com/share/908ebfdc84ed" target="_blank" rel="noopener">Canvas share</a>
+                                <a class="btn btn-sm btn-primary" href="https://gemini.google.com/share/908ebfdc84ed" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -583,7 +592,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
                             <strong>Lovable</strong>
-                            <span class="badge bg-light text-dark">Grade D (Token wall)</span>
+                            <span class="badge grade-d">Grade D (Token wall)</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -613,7 +622,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
                             <strong>Google AI Studio Apps</strong>
-                            <span class="badge bg-light text-dark">Grade F (Blank)</span>
+                            <span class="badge grade-f">Grade F (Blank)</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -642,9 +651,9 @@ One-page HTML/JS map that runs without a build step.</code></pre>
             </div>
         </section>
 
-        <!-- Collaboration Snapshot -->
+        <!-- AI Collaboration Snapshot -->
         <section class="mb-5">
-            <h2 class="mb-4">Collaboration Snapshot</h2>
+            <h2 class="mb-4">AI Collaboration Snapshot</h2>
             <div class="row g-3">
                 <div class="col-lg-6">
                     <div class="card h-100 border-primary">
@@ -653,9 +662,10 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                         </div>
                         <div class="card-body">
                             <ul class="small mb-0">
-                                <li>Redrafted the ideation prompt after Round 1 to ask for human-impact boundaries with more interesting shapes.</li>
-                                <li>Set the “real data first, synthetic second” launch order and shared the BTAA/FAA sources.</li>
-                                <li>Manually verified Firebase Studio’s contours and logged every platform’s sticking point.</li>
+                                <li>Rejected Round 1's basic state and country outlines, then redirected all models toward organic shapes and useful boundaries that don't get mapped often.</li>
+                                <li>Set the "real data first, synthetic second" launch order and shared the BTAA/FAA sources.</li>
+                                <li>Verified Firebase Studio's contours and logged where each platform got stuck.</li>
+                                <li>Tried fixing errors on all platforms that didn't work, testing different approaches and debugging strategies.</li>
                             </ul>
                         </div>
                     </div>
@@ -667,9 +677,10 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                         </div>
                         <div class="card-body">
                             <ul class="small mb-0">
-                                <li>ChatGPT surfaced the winning concept plus actionable data pointers.</li>
-                                <li>MagicPatterns, Bolt.new, Firebase Studio, and Base44 spun up workable canvases in minutes.</li>
-                                <li>Auto-fix routines highlighted Mapbox tokens, tile blocks, and missing scripts before I dug in.</li>
+                                <li>ChatGPT suggested the Airport Noise Footprint concept in Round 2 and pointed to specific data sources.</li>
+                                <li>MagicPatterns, Bolt.new, Firebase Studio, and Base44 generated working maps with mock data quickly.</li>
+                                <li>Firebase Studio downloaded and processed real PDX noise contour data when asked, making it the first platform to use real data.</li>
+                                <li>Auto-fix features on ChatGPT Canvas, V0.dev, and Google AI Studio cleared initial errors, though some platforms still couldn't render maps.</li>
                             </ul>
                         </div>
                     </div>
@@ -685,6 +696,12 @@ One-page HTML/JS map that runs without a build step.</code></pre>
             <div class="contribution-legend mb-3">
                 <span class="badge bg-primary me-2">Me</span>
                 <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="timeline-toggle-wrapper">
+                <button class="btn btn-outline-secondary timeline-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
+                    Show Timeline
+                </button>
             </div>
 
             <div class="process-connector mb-3">
@@ -705,19 +722,13 @@ One-page HTML/JS map that runs without a build step.</code></pre>
                             <span class="lane-label">AI</span>
                             <h4>Model Suggestions</h4>
                             <ul>
-                                <li>Claude offered “Urban Acoustic Zones,” sketching synthetic sound petals across the city.</li>
+                                <li>Claude offered "Urban Acoustic Zones," sketching synthetic sound petals across the city.</li>
                                 <li>ChatGPT recommended the airport DNL contours and listed the FAA/BTAA data sources.</li>
                                 <li>Gemini proposed the watershed mosaic and canopy map as backup irregular polygon stories.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="timeline-toggle-wrapper">
-                <button class="btn btn-outline-secondary timeline-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
-                    Show Timeline
-                </button>
             </div>
 
             <div class="collapse" id="processTimeline">
@@ -878,7 +889,7 @@ One-page HTML/JS map that runs without a build step.</code></pre>
             <div class="card">
                 <div class="card-body">
                     <p>Day 3 felt like the inflection point: the concept required every platform to grapple with real GIS workflows instead of canned CSVs. Watching Firebase Studio grind through the API-key setup and still emerge with live PDX contours was the highlight: it proves the pipeline can work when the tooling cooperates. At the same time, the consistency of the partials tells its own story: if a platform leaned on mock data on Day 1 or got blocked by CSP on Day 2, it behaved the exact same way here. Those patterns are now "known unknowns" we can design around.</p>
-                    <p>Heading into Day 4, I'm carving out time to pre-process the BTAA download into an embedded GeoJSON so even the sandboxed tools can show what they would do with the real shapes. I'm also rewriting the base prompt to ban Mapbox outright: no more getting stuck on token dialogs. The experiment continues to validate the parallel approach: multiple working prototypes in ~100 minutes, plus a clear picture of where the human still needs to steer.</p>
+                    <p>For future days, I'm gonna get the data to work better, maybe upload it myself, so even the sandboxed tools can show what they would do with the real data. I'm also rewriting the base prompt to not use Mapbox outright: no more getting stuck on token dialogs. The experiment continues to validate the parallel approach: multiple working prototypes in ~60 minutes, plus a clearer picture of where the human still needs to steer.</p>
                 </div>
             </div>
         </section>

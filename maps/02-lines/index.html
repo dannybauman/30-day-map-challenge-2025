@@ -40,7 +40,16 @@
         .status-partial { background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); }
         .status-failed { background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%); }
 
-        /* Rating Tier System */
+        /* Grade Color System - Consistent across all days */
+        .grade-a { background-color: #28a745; color: white; font-weight: 500; }
+        .grade-b { background-color: #007bff; color: white; font-weight: 500; }
+        .grade-c-plus { background-color: #ffc107; color: #000; font-weight: 500; }
+        .grade-c { background-color: #fd7e14; color: white; font-weight: 500; }
+        .grade-c-minus { background-color: #fd7e14; color: white; font-weight: 500; opacity: 0.85; }
+        .grade-d { background-color: #ff4500; color: white; font-weight: 500; }
+        .grade-f { background-color: #dc3545; color: white; font-weight: 500; }
+
+        /* Legacy rating classes for backward compatibility */
         .rating-s { background-color: #FFD700; color: #000; font-weight: bold; padding: 4px 8px; border-radius: 4px; }
         .rating-a { background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; }
         .rating-b { background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; }
@@ -563,6 +572,12 @@ DELIVERABLES:
                 <span class="badge badge-ai">AI</span>
             </div>
 
+            <div class="timeline-toggle-wrapper">
+                <button class="btn btn-outline-secondary timeline-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
+                    Show Timeline
+                </button>
+            </div>
+
             <div class="process-connector mb-3">
                 <div class="row g-4">
                     <div class="col-lg-6">
@@ -588,12 +603,6 @@ DELIVERABLES:
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="text-end mb-3">
-                <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
-                    Show Timeline
-                </button>
             </div>
 
             <div class="collapse" id="processTimeline">

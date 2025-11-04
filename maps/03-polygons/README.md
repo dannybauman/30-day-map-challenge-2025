@@ -294,15 +294,16 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 **Key Human Decisions:**
 1. **Data handling test approach**: Decided to provide data source URLs instead of pre-processed data to test platform capabilities (see `IMPLEMENTATION-PROMPT.md`)
-2. **Claude Artifacts testing**: Provided feedback during testing, recognizing security/permissions aspect as potentially positive
-3. **Gemini Canvas testing**: Provided feedback on data visualization and map tile issues, attempted additional fixes
-4. **Lovable testing**: Provided Mapbox API key but gave up after token validation error, noted learning to avoid Mapbox in future prompts
-5. **MagicPatterns testing**: Noted positive observations about correct airport location and checkbox layer toggle feature
-6. **Bolt.new testing**: Noted positive observations about visuals and coloring, minor legend text wrapping issue
-7. **V0.dev testing**: Noted base map doesn't render, legend checkboxes appear functional but don't work
-8. **Google AI Studio Apps testing**: Noted got further than Day 2 but still no map/data, just black screen
-9. **Firebase Studio testing**: Noted real data success, minor UX issues (zoom, layering tooltip), solid grade B
-10. **Base44 testing**: Noted worked well with mock data, platform indicated upload method available, minor airport icon image issue
+2. **Error fixing attempts**: Went through and tried fixing errors on all platforms that didn't work, attempting different approaches and debugging strategies
+3. **Claude Artifacts testing**: Provided feedback during testing, recognizing security/permissions aspect as potentially positive
+4. **Gemini Canvas testing**: Provided feedback on data visualization and map tile issues, attempted additional fixes
+5. **Lovable testing**: Provided Mapbox API key but gave up after token validation error, noted learning to avoid Mapbox in future prompts
+6. **MagicPatterns testing**: Noted positive observations about correct airport location and checkbox layer toggle feature
+7. **Bolt.new testing**: Noted positive observations about visuals and coloring, minor legend text wrapping issue
+8. **V0.dev testing**: Noted base map doesn't render, legend checkboxes appear functional but don't work
+9. **Google AI Studio Apps testing**: Noted got further than Day 2 but still no map/data, just black screen
+10. **Firebase Studio testing**: Noted real data success, minor UX issues (zoom, layering tooltip), solid grade B
+11. **Base44 testing**: Noted worked well with mock data, platform indicated upload method available, minor airport icon image issue
 
 **Human Feedback During Testing:**
 - **Claude Artifacts:** Asked about alternative approaches when first error occurred, provided feedback on second attempt, made observation about security/permissions being potentially positive
