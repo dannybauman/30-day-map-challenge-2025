@@ -23,6 +23,9 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 - "exceeded expectations" (AI-sounding)
 - "breakthrough" (too grandiose)
 - "brief" (use "prompt" instead - sounds more natural)
+- "administrative" (too jargon-y - use "basic", "conventional", "rectangular shapes", "state outlines" instead)
+- "halted" (too formal - use "stopped" instead)
+- "pursuing" (too formal - use "trying" instead)
 - "demanded", "insisted", "forced" (too aggressive - use "asked for", "requested", "required" instead)
 - Multiple exclamation marks (!!)
 - Excessive parenthetical asides
@@ -47,6 +50,7 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 9. **Use "prompt" not "brief"**: "rewrote the prompt" not "rewrote the brief"
 10. **Avoid em dashes**: Use regular dashes (-) or colons (:) instead of em dashes (—)
 11. **Avoid aggressive language**: Use "asked for" or "requested" instead of "demanded" or "insisted". Use "required" instead of "forced" when describing what happened.
+12. **Avoid jargon**: Use plain language instead of technical terms. "Administrative boundaries" → "boring rectangular shapes" or "state outlines". Describe what things actually are, not their technical category.
 
 ## Examples
 
@@ -68,9 +72,11 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 **Before**: "The concept forced every platform to grapple with real GIS workflows."
 **After**: "The concept required every platform to grapple with real GIS workflows."
 
+**Before**: "Round 1 was a miss: every model handed me administrative boundaries."
+**After**: "Round 1 was a miss: every model gave me basic shapes like state outlines."
+
 ## Why This Matters
 
 AI-generated text often sounds overly enthusiastic and unnatural, using the same excited words repeatedly. This makes documentation less credible and harder to trust.
 
 Use varied, specific language that focuses on what actually happened rather than how you felt about it. Let the results speak for themselves.
-

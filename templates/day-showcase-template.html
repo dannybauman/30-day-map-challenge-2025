@@ -288,39 +288,40 @@
 
         <!-- Process Timeline -->
         <section class="mb-5 process-section">
-            <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
-                <h2 class="mb-0">Process Timeline</h2>
+            <h2 class="mb-3">Process Timeline</h2>
+            <p class="text-muted mb-3">Left lane = Me. Right lane = AI. Expand when you want the play-by-play.</p>
+
+            <div class="contribution-legend mb-3">
+                <span class="badge bg-primary me-2">Me</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="process-connector mb-3">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Me</span>
+                            <h4>Ideation Vetting</h4>
+                            {{HUMAN_IDEATION}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            {{AI_IDEATION}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-end mb-3">
                 <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
                     Show Timeline
                 </button>
             </div>
-            <p class="text-muted mb-3">Left lane = Me. Right lane = AI. Expand when you want the play-by-play.</p>
 
             <div class="collapse" id="processTimeline">
-                <div class="contribution-legend mb-4">
-                    <span class="badge bg-primary me-2">Me</span>
-                    <span class="badge badge-ai">AI</span>
-                </div>
-
-                <div class="process-connector">
-                    <div class="row g-4">
-                        <div class="col-lg-6">
-                            <div class="process-card">
-                                <span class="lane-label">Me</span>
-                                <h4>Ideation Vetting</h4>
-                                {{HUMAN_IDEATION}}
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="process-card ai">
-                                <span class="lane-label">AI</span>
-                                <h4>Model Suggestions</h4>
-                                {{AI_IDEATION}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="process-connector">
                     <div class="row g-4">
                         <div class="col-lg-6">

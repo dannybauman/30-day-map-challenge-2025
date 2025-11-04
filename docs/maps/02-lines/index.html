@@ -119,7 +119,7 @@
 
             <div class="row g-3 mb-4">
                 <div class="col-md-4">
-                    <div class="card h-100 concept-chosen" style="border-color: #fd7e14;">
+                    <div class="card h-100 concept-chosen" style="border: 2px solid #198754;">
                         <div class="card-header bg-success text-white">
                             <strong>ChatGPT Concept ⭐ Chosen</strong>
                         </div>
@@ -443,7 +443,6 @@ DELIVERABLES:
             </div>
 
             <!-- Partial Success Continued -->
-            <h3 class="mb-3 mt-5">⚠️ Partial Success (continued - 3 platforms)</h3>
             <div class="row">
                 <!-- Claude Artifacts -->
                 <div class="col-md-3 platform-card">
@@ -556,18 +555,19 @@ DELIVERABLES:
 
         <!-- Process Timeline -->
         <section class="mb-5 process-section">
-            <h2 class="mb-4">Process Timeline</h2>
-            <p class="text-muted">Left lane = human-led work. Right lane = AI-generated output. Every step is logged so the human/AI collaboration stays transparent.</p>
-            <div class="contribution-legend mb-4">
-                <span class="badge bg-primary me-2">Human</span>
+            <h2 class="mb-3">Process Timeline</h2>
+            <p class="text-muted mb-3">Left lane = Me. Right lane = AI. Expand when you want the play-by-play.</p>
+
+            <div class="contribution-legend mb-3">
+                <span class="badge bg-primary me-2">Me</span>
                 <span class="badge badge-ai">AI</span>
             </div>
 
-            <div class="process-connector">
+            <div class="process-connector mb-3">
                 <div class="row g-4">
                     <div class="col-lg-6">
                         <div class="process-card">
-                            <span class="lane-label">Human</span>
+                            <span class="lane-label">Me</span>
                             <h4>Ideation Vetting</h4>
                             <ul>
                                 <li>Reviewed each model's suggestions for feasibility and technical requirements.</li>
@@ -590,114 +590,123 @@ DELIVERABLES:
                 </div>
             </div>
 
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Prompt Crafting</h4>
-                            <ul>
-                                <li>Customized the implementation template with Portland bounding box and specific HSL color requirements.</li>
-                                <li>Added mobile responsiveness emphasis to the prompt (briefly referenced, letting platforms handle details).</li>
-                                <li>Specified bearing calculation formula and circular legend preference for directional data.</li>
-                            </ul>
+            <div class="text-end mb-3">
+                <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
+                    Show Timeline
+                </button>
+            </div>
+
+            <div class="collapse" id="processTimeline">
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Prompt Crafting</h4>
+                                <ul>
+                                    <li>Customized the implementation template with Portland bounding box and specific HSL color requirements.</li>
+                                    <li>Added mobile responsiveness emphasis to the prompt (briefly referenced, letting platforms handle details).</li>
+                                    <li>Specified bearing calculation formula and circular legend preference for directional data.</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Prompt Drafts</h4>
-                            <ul>
-                                <li>Cursor expanded bullet points into a detailed, platform-agnostic implementation brief.</li>
-                                <li>Structured prompt with clear sections: Visual, Data, Functionality, Technical requirements.</li>
-                                <li>Included specific Overpass API query format and bearing calculation details.</li>
-                            </ul>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Prompt Drafts</h4>
+                                <ul>
+                                    <li>Cursor expanded bullet points into a detailed, platform-agnostic implementation brief.</li>
+                                    <li>Structured the prompt with clear sections: Visual, Data, Functionality, Technical requirements.</li>
+                                    <li>Included specific Overpass API query format and bearing calculation details.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Launch & Supervision</h4>
-                            <ul>
-                                <li>Opened ten platforms, pasted the identical brief, and tracked results in <code>LAUNCH-TRACKER.md</code>.</li>
-                                <li>Monitored data loading times and noted performance differences (ChatGPT Canvas took ~1 minute).</li>
-                                <li>Captured screenshots for desktop and mobile, noting legend implementations and UX issues.</li>
-                            </ul>
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Launch &amp; Supervision</h4>
+                                <ul>
+                                    <li>Opened ten platforms, pasted the identical brief, and tracked results in <code>LAUNCH-TRACKER.md</code>.</li>
+                                    <li>Monitored data loading times and noted performance differences (ChatGPT Canvas took ~1 minute).</li>
+                                    <li>Captured screenshots for desktop and mobile, noting legend implementations and UX issues.</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Generated Outputs</h4>
-                            <ul>
-                                <li>Produced ten codebases (three production-ready, three partial, four failures) covering diverse stacks.</li>
-                                <li>Supplied MapLibre GL and Leaflet integrations with bearing calculations and HSL color mapping.</li>
-                                <li>Implemented various legend designs: circular (best), linear, and 4-square compass roses.</li>
-                            </ul>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Generated Outputs</h4>
+                                <ul>
+                                    <li>Produced ten codebases (three production-ready, three partial, four failures) covering diverse stacks.</li>
+                                    <li>Supplied MapLibre GL and Leaflet integrations with bearing calculations and HSL color mapping.</li>
+                                    <li>Implemented various legend designs: circular (best), linear, and 4-square compass roses.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>QA & Analysis</h4>
-                            <ul>
-                                <li>Evaluated legend designs and noted circular color wheels were far more intuitive than linear.</li>
-                                <li>Tested mobile responsiveness and identified issues (Base44's non-collapsible legend, tooltip contrast).</li>
-                                <li>Compared performance: MagicPatterns fastest, ChatGPT Canvas slowest (~1 min load).</li>
-                            </ul>
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>QA &amp; Analysis</h4>
+                                <ul>
+                                    <li>Evaluated legend designs and noted circular color wheels were far more intuitive than linear.</li>
+                                    <li>Tested mobile responsiveness and identified issues (Base44's non-collapsible legend, tooltip contrast).</li>
+                                    <li>Compared performance: MagicPatterns fastest, ChatGPT Canvas slowest (~1 min load).</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>AI Fixes & Suggestions</h4>
-                            <ul>
-                                <li>ChatGPT Canvas's "Fix Bug" button resolved initial data load error.</li>
-                                <li>Firebase Studio's autonomous debugging diagnosed 91MB data exceeding Next.js 2MB cache limit.</li>
-                                <li>Platforms attempted various fixes for CSP/CORS issues but couldn't overcome sandbox restrictions.</li>
-                            </ul>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>AI Fixes &amp; Suggestions</h4>
+                                <ul>
+                                    <li>ChatGPT Canvas's "Fix Bug" button resolved the initial data load error.</li>
+                                    <li>Firebase Studio's autonomous debugging diagnosed 91MB data exceeding Next.js 2MB cache limit.</li>
+                                    <li>Platforms attempted various fixes for CSP/CORS issues but couldn't overcome sandbox restrictions.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Human</span>
-                            <h4>Documentation & Storytelling</h4>
-                            <ul>
-                                <li>Wrote platform comparisons, key insights, and editorial commentary across README and HTML page.</li>
-                                <li>Captured and organized screenshots alongside platform-specific notes and live URLs.</li>
-                                <li>Documented the performance variance and legend design patterns that emerged.</li>
-                            </ul>
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Documentation &amp; Storytelling</h4>
+                                <ul>
+                                    <li>Wrote platform comparisons, key insights, and editorial commentary across README and HTML page.</li>
+                                    <li>Captured and organized screenshots alongside platform-specific notes and live URLs.</li>
+                                    <li>Documented the performance variance and legend design patterns that emerged.</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Supporting Assets</h4>
-                            <ul>
-                                <li>Drafted platform summaries and insights sections based on human observations.</li>
-                                <li>Structured documentation following Day 1's format for consistency.</li>
-                                <li>Generated this HTML showcase page following Day 1's design system.</li>
-                            </ul>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Supporting Assets</h4>
+                                <ul>
+                                    <li>Drafted platform summaries and insights sections based on human observations.</li>
+                                    <li>Structured documentation following Day 1's format for consistency.</li>
+                                    <li>Generated this HTML showcase page following Day 1's design system.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Key Insights -->
         <section class="mb-5">
