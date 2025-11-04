@@ -43,6 +43,7 @@
 - UI works well
 - Mock data visualized properly
 - User satisfied with result
+- **Positive UX feature:** Checkboxes to show/hide layers (68 dB, 65 dB, 55 dB DNL) - allows users to toggle individual noise contour layers
 
 **Limitation:**
 - Could not pull from real data source (BTAA Geoportal or City of Portland URLs)
@@ -63,6 +64,7 @@
 - Map works well despite using mock data
 - User satisfied with result (Grade B)
 - **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
+- **Positive UX feature:** Checkboxes to show/hide layers - nice interactive feature allowing users to toggle individual noise contour layers
 - Potential improvement: User could upload data or platform could try another approach
 - **Platform Limitation:** User reached free tier limit (for today?) and couldn't follow up with more changes
 - **Note:** Free tier limits may restrict iterations or testing on the same day

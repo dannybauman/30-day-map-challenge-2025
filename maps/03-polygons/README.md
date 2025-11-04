@@ -182,11 +182,12 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Could not pull from real data source, but successfully created mock data
 - Map works well overall with mock data
 - **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
+- **Positive UX feature:** Checkboxes to show/hide layers - nice interactive feature allowing users to toggle individual noise contour layers
 - **First full success for Day 3!**
 - **Consistent performance:** Day 2 winner, Day 3 success
 - User notes: Could potentially upload data or try another approach, but satisfied with result
 - Map tiles load correctly (OpenStreetMap via Leaflet)
-- Legend with checkbox controls for different noise levels
+- Legend with checkbox controls for different noise levels (68 dB, 65 dB, 55 dB DNL)
 - **Platform limitation:** User reached free tier limit (for today?) and couldn't follow up with more changes
 
 ---
