@@ -63,11 +63,12 @@ Here's my refined process after completing Day 1.
 
 1. Check results every 5-10 minutes
 2. Note which worked/failed in LAUNCH-TRACKER
-3. Iterate 1-2 times on partial successes
-4. Manually confirm data accuracy (spot-check API responses, units, legends)
-5. Apply human tweaks (copy edits, accessibility fixes, visual polish) — log each change
-6. Save links to live demos
-7. Note key observations
+3. **Document human interventions** - if you provide feedback or ask questions during platform testing, log it
+4. Iterate 1-2 times on partial successes
+5. Manually confirm data accuracy (spot-check API responses, units, legends)
+6. Apply human tweaks (copy edits, accessibility fixes, visual polish) — log each change
+7. Save links to live demos
+8. Note key observations
 
 ### Phase 5: Human QA & Sign-off
 **Duration**: 5-10 minutes
@@ -100,6 +101,7 @@ Here's my refined process after completing Day 1.
 - Wait 5+ seconds for content to load
 - Watch for & approve permission dialogs!
 - Tests responsive design quality
+- **Note**: Can automate with Cursor or Playwright browser tools
 
 **Step 2: Create HTML** (10-15 min):
 1. Copy `templates/day-showcase-template.html` → `index.html`
@@ -285,5 +287,5 @@ maps/0X-theme/
 
 ---
 
-**Last Updated**: November 2, 2025 (Post Day 1)
-**Status**: Ready for Day 2
+**Last Updated**: November 3, 2025 (Post Day 2, updated Day 3)
+**Status**: Ready for Day 3+
