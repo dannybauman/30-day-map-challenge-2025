@@ -220,13 +220,6 @@
                     }
                     item.appendChild(titleWrapper);
 
-                    if (day.status) {
-                        const badge = document.createElement('span');
-                        badge.className = 'badge bg-secondary';
-                        badge.textContent = day.status;
-                        item.appendChild(badge);
-                    }
-
                     const targetUrl = buildUrl(day.relativeUrl);
                     item.addEventListener('click', () => {
                         window.location.href = targetUrl;
