@@ -151,11 +151,12 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 **Key Human Decisions:**
 1. **Data handling test approach**: Decided to provide data source URLs instead of pre-processed data to test platform capabilities (see `IMPLEMENTATION-PROMPT.md`)
 2. **Claude Artifacts testing**: Provided feedback during testing, recognizing security/permissions aspect as potentially positive
+3. **Gemini Canvas testing**: Provided feedback on data visualization and map tile issues, attempted additional fixes
 
 **Human Feedback During Testing:**
-- Asked Claude Artifacts about alternative approaches when first error occurred
-- Provided feedback on second attempt
-- Made observation about security/permissions being potentially positive
+- **Claude Artifacts:** Asked about alternative approaches when first error occurred, provided feedback on second attempt, made observation about security/permissions being potentially positive
+- **ChatGPT Canvas:** Provided feedback on mock data usage and intermittent errors
+- **Gemini Canvas:** Reported "the data visualization didn't work, and some of the map tiles are missing", then "basically same problems, not fixed. just shows a different base map, still missing tiles, not sure about the visualization", attempted one more fix which resulted in regression (map disappeared)
 
 ---
 
