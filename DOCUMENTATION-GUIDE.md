@@ -79,9 +79,11 @@ maps/0X-theme/
 ```
 maps/0X-theme/
 ├── README.md                    # Essential
+├── IDEATION-PROMPTS.md          # Prompts sent to AI platforms
+├── IDEATION-RESPONSES.md        # Full responses from Claude, ChatGPT, Gemini (source for HTML ideation section)
 ├── IMPLEMENTATION-PROMPT.md     # Essential
 ├── LAUNCH-TRACKER.md            # Essential
-└── index.html                   # Recommended
+└── index.html                   # Recommended (extract concepts from IDEATION-RESPONSES.md)
 ```
 **Time**: 30 minutes
 
@@ -190,6 +192,7 @@ Never use `other-platforms/` or loose .md files.
    This tests responsive design quality!
 
 2. **Fill in actual content** (10 min):
+   - **Extract ideation concepts from `IDEATION-RESPONSES.md`** - pick the best/favorite concept from each platform's response (one concept per platform)
    - Use the real data, not template placeholders
    - Include actual stats (platforms tested, success rate, time)
    - Add real platform results with live demo links

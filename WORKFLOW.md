@@ -11,14 +11,26 @@ Here's my refined process after completing Day 1.
 ### Phase 1: Ideation (Web LLMs)
 **Duration**: 5-10 minutes
 
-1. Get ideation prompts from templates
-2. Paste into web versions:
+1. Get ideation prompt from templates (or `maps/0X-theme/IDEATION-PROMPTS.md`)
+   - **IMPORTANT: Use the SAME prompt for all 3 platforms** - this ensures fair comparison
+   - The prompt should be identical across Claude, ChatGPT, and Gemini
+2. Paste the **same prompt** into web versions:
    - Claude.ai (Anthropic Claude Sonnet 4.5)
    - ChatGPT (OpenAI GPT-5 Thinking)
    - Gemini (Google Gemini 2.5 Pro)
-3. Review 6 ideas (2 from each)
-4. Pick the best idea
-5. Paste chosen concept into Cursor
+3. Review 6 ideas (2 from each platform)
+4. **Paste back full outputs from all 3 platforms into Cursor**
+5. Cursor logs all ideas to `maps/0X-theme/IDEATION-RESPONSES.md`
+   - **If iteration needed**: Log as "Round 1", document human feedback, then "Round 2" with new responses
+6. Cursor helps analyze and choose the best concept
+
+**Note on Iterations/Redos (All Phases):**
+- If any phase needs to be redone, document it clearly:
+  - **Ideation**: Log as "Round 1", document human feedback, then "Round 2" with new responses
+  - **Implementation**: Log iteration attempts in `LAUNCH-TRACKER.md` with retry counts
+  - **Platform Launch**: Track retry attempts per platform in `LAUNCH-TRACKER.md`
+- This documents the iterative process and shows how human direction improves results
+- Always preserve original attempts alongside new ones to show progression
 
 ### Phase 2: Implementation Prep (Cursor)
 **Duration**: 5 minutes
@@ -91,14 +103,16 @@ Here's my refined process after completing Day 1.
 
 **Step 2: Create HTML** (10-15 min):
 1. Copy `templates/day-showcase-template.html` → `index.html`
-2. Fill with REAL data (not placeholders)
-3. Include desktop & mobile screenshots side-by-side
-4. Comment on responsive design
-5. Keep times approximate (~1.5 hrs, not 87 min)
-6. Keep it simple and easy to update later
+2. **Extract ideation concepts from `IDEATION-RESPONSES.md`** - pick the best/favorite concept from each platform's response to show in the ideation cards
+3. Fill with REAL data (not placeholders)
+4. Include desktop & mobile screenshots side-by-side
+5. Comment on responsive design
+6. Keep times approximate (~1.5 hrs, not 87 min)
+7. Keep it simple and easy to update later
 
 **What to include**:
 - Quick stats (platforms tested, success rate)
+- **Ideation concepts** (extracted from `IDEATION-RESPONSES.md` - one concept per platform)
 - Chosen concept & why
 - Platform results with BOTH screenshots
 - Responsive design ratings
@@ -119,9 +133,10 @@ Here's my refined process after completing Day 1.
 ```
 maps/0X-theme/
 ├── README.md                    # Main day overview
-├── IMPLEMENTATION-PROMPT.md     # The prompt used
-├── LAUNCH-TRACKER.md            # Quick results table
-└── concept.md                   # Chosen concept (optional)
+├── IDEATION-PROMPTS.md          # The prompts sent to AI platforms
+├── IDEATION-RESPONSES.md        # Full responses from Claude, ChatGPT, Gemini (logged)
+├── IMPLEMENTATION-PROMPT.md     # The prompt used for implementation
+└── LAUNCH-TRACKER.md            # Quick results table
 ```
 
 ### Nice-to-Have (Time Permitting)

@@ -25,16 +25,19 @@ Instead of building 1 map per day, my hope is to easily build like 10-20! I'll u
 ### To Vibe Code or Not To Vibe Code
 For this I'll mostly be vibe coding with minimal care for code quality or longevity, which is NOT right for most projects. I'm treating this as a rapid prototyping lab to watch how well AI-assisted development performs in between the human craft steps.
 
-My earlier code of conduct note is my guardrail: I only publish work I personally guide, I cite every dataset and call out every AI-assisted contribution, and I log when AI shortcuts actually cost more than they save. Documenting those wins and misses should make it easier for anyone to decide what tools deserve their time.
+My earlier code of conduct note is my guardrail: I only publish work I personally guide, I cite every dataset and call out each AI-assisted contribution, and I talk about when AI shortcuts cost more than they save. Documenting those wins and misses should make it easier for anyone to decide what tools deserve their time.
 
 Vibe coding is just one way to use AI to help write software. People are inventing new workflows daily, from exploratory prototypes to deep, targeted engineering. My goal here is to surface the useful patterns, flag the dead ends, and keep the focus on the human creativity that makes the challenge magical.
 
 ### The Workflow
 
 **Phase 1: Ideation & Concept Selection**
-- Prompt ChatGPT, Claude, and Gemini models with the daily theme
-- Review generated concepts, pick 1-2 best ideas
-- Draft one implementation prompt
+- Use the SAME ideation prompt for all 3 platforms (ensures fair comparison)
+- Prompt ChatGPT, Claude, and Gemini models with the identical daily theme prompt
+- Paste back full outputs from all 3 platforms into Cursor
+- Cursor logs all ideas and helps analyze/choose the best concept
+- If iteration needed: Document Round 1, human feedback, Round 2 (preserves progression)
+- Draft one implementation prompt based on chosen concept
 - Add any theme-specific data requirements
 
 **Phase 2: Parallel Platform Launch**
@@ -175,8 +178,10 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 ### Step-by-Step Process
 
 **Step 1: Ideation**
-- Ask Claude, ChatGPT, and Gemini for 2 ideas for the current day's map theme
-- Review results, pick best idea(s)
+- Use the SAME ideation prompt for Claude, ChatGPT, and Gemini (ensures fair comparison)
+- Ask each platform for 2 ideas for the current day's map theme
+- Paste back full outputs from all 3 platforms into Cursor
+- Cursor logs all ideas (including iterations if needed) and helps choose the best concept
 
 **Step 2: Prompt Preparation**
 - Open `implementation-base.txt` template

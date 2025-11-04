@@ -126,35 +126,26 @@ Pick the BEST one based on:
 
 ---
 
-#### Step 3: Paste Back to Cursor
+#### Step 3: Paste Back All Ideation Responses to Cursor
 
-Come back here and paste your chosen concept. I'll then help you:
-1. Craft the perfect implementation prompt
-2. Prepare it for all platforms
-3. Guide you through the launch
+Come back here and paste the **full outputs from all 3 platforms** (Claude, ChatGPT, Gemini). I'll:
+1. Log all ideas to `maps/0X-theme/IDEATION-RESPONSES.md`
+2. Help you analyze and choose the best concept
+3. Then craft the perfect implementation prompt
+4. Prepare it for all platforms
+5. Guide you through the launch
 
 ---
 
 ## 📋 What to Paste Back
 
-Format:
-```
-CHOSEN CONCEPT:
+**Paste the complete responses from all 3 platforms:**
 
-Title: [concept title]
+- Claude.ai's full response (2 ideas)
+- ChatGPT's full response (2 ideas)  
+- Gemini's full response (2 ideas)
 
-Description: [2-3 sentence description]
-
-Data Source: [specific source with URL if available]
-
-Difficulty: [Easy/Medium/Hard]
-
-Source: [Claude/ChatGPT/Gemini]
-
-Why I chose it:
-- [reason 1]
-- [reason 2]
-```
+I'll organize them in the documentation and help you choose the best one.
 
 ---
 
@@ -163,7 +154,7 @@ Why I chose it:
 ```
 ✅ 0:00-0:05   Repository setup (done!)
 📋 0:05-0:15   Get ideation from web LLMs (← YOU ARE HERE)
-🔙 0:15-0:20   Paste chosen concept back to Cursor
+🔙 0:15-0:20   Paste all 3 full responses back to Cursor, Cursor logs and helps choose
 🛠️  0:20-0:25   Cursor helps craft implementation prompt
 🚀 0:25-0:30   Launch across all platforms
 🔄 0:30-0:50   Review & iterate
@@ -179,13 +170,13 @@ Why I chose it:
    - ChatGPT (chat.openai.com)
    - Gemini (gemini.google.com)
 
-2. **Paste the prompts** (see above)
+2. **Paste the SAME prompt** into all three platforms (ensures fair comparison)
 
 3. **Review the 6 concepts** they give you
 
-4. **Pick your favorite** and paste it back here in Cursor
+4. **Paste all 3 full responses back here** (Claude, ChatGPT, Gemini)
 
-5. **I'll take it from there** and help you prep for implementation!
+5. **I'll log them and help you choose** the best concept, then prep for implementation!
 
 6. **Before sharing anything publicly**, run a human QA pass:
    - Verify the dataset terms of use and attribution text.
