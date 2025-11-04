@@ -20,7 +20,7 @@
 
 **The Surprises**: MagicPatterns, Base44, and Firebase Studio all performed well
 
-**The Learning**: The real success: Previously, it would take me way longer to build worse versions of any of these maps. Now, I built 11 in one sitting. Plus a custom page to talk about it. And this is just the starting point.
+**The Learning**: The real success: Previously, it would take me way longer to build worse versions of any of these maps. Now, I built a bunch in one sitting. Plus a custom page to talk about it. And this is just the starting point.
 
 ---
 
@@ -120,7 +120,7 @@
 
 ### The Big Learning
 
-> **The real success:** Previously, it would take me WAY longer to build WORSE versions of ANY of these maps. Now, I built 11 in one sitting. Plus a custom page to talk about it. And this is just the starting point.
+> **The real success:** Previously, it would take me WAY longer to build WORSE versions of ANY of these maps. Now, I built a bunch in one sitting. Plus a custom page to talk about it. And this is just the starting point.
 
 Most platforms delivered functional, interactive maps from a single prompt**. Bolt, Lovable, MagicPatterns, and Base44 all generated working implementations in ~5 minutes with zero iteration. That's 11 different interactive maps created in one session. Previously, I might not have been able to build even one of these from scratch. That's the real win.
 

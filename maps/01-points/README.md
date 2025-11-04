@@ -182,7 +182,7 @@ None! All platforms produced at least a partial implementation.
 
 ### The Big Learning
 
-> **The real success:** Previously, it would take me way longer to build worse versions of any of these maps. Now, I built 11 in one sitting. Plus a custom page to talk about it. And this is just the starting point.
+> **The real success:** Previously, it would take me way longer to build worse versions of any of these maps. Now, I built a bunch in one sitting. Plus a custom page to talk about it. And this is just the starting point.
 
 The parallel testing revealed something useful: **most platforms delivered functional, interactive maps from a single prompt**. Bolt, Lovable, MagicPatterns, and Base44 all generated working implementations in ~5 minutes with zero iteration. That's 11 different interactive maps created in one session. Previously, I might not have been able to build even one of these from scratch. That's the real win.
 

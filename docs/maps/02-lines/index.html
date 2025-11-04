@@ -116,6 +116,7 @@
 
         /* Grade Color System - Consistent across all days */
         .grade-a { background-color: #28a745; color: white; font-weight: 500; }
+        .grade-b-plus { background-color: #0d6efd; color: white; font-weight: 500; }
         .grade-b { background-color: #007bff; color: white; font-weight: 500; }
         .grade-c-plus { background-color: #ffc107; color: #000; font-weight: 500; }
         .grade-c { background-color: #fd7e14; color: white; font-weight: 500; }
@@ -358,6 +359,38 @@ DELIVERABLES:
             <!-- Full Success -->
             <h3 class="mb-3 mt-5">✅ Full Success (2 more platforms)</h3>
             <div class="row">
+                <!-- Bolt.new -->
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+                            <strong>Bolt.new</strong>
+                            <span class="badge grade-b-plus">Grade B+</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="bolt-new/screenshot.png" alt="Bolt.new desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="bolt-new/screenshot-mobile.png" alt="Bolt.new mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~5 min</p>
+                            <p><strong>Specialty:</strong> Circular legend, good UI</p>
+                            <p class="mb-2 small">Circular color wheel legend (good for directional data). Clean UI, good zoom level. Performance sluggish (~10 sec lag on pan/zoom) - same Leaflet issue as ChatGPT Canvas.</p>
+                            <p class="mb-2 small"><strong>Mobile:</strong> Good - legend works well on mobile.</p>
+                            <p class="small"><strong>AI role:</strong> Generated circular legend and Leaflet implementation with bearing calculations.</p>
+                            <p class="small"><strong>Human tweaks:</strong> None - worked as expected.</p>
+                            <div class="d-flex gap-2">
+                                <a href="bolt-new/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
+                                <a class="btn btn-sm btn-primary" href="https://street-orientation-r-fc5r.bolt.host/" target="_blank">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Lovable -->
                 <div class="col-md-6 platform-card">
                     <div class="card h-100">
@@ -387,38 +420,6 @@ DELIVERABLES:
                             <div class="d-flex gap-2">
                                 <a href="lovable/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
                                 <a class="btn btn-sm btn-primary" href="https://portland-hue-lines.lovable.app" target="_blank">Live Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bolt.new -->
-                <div class="col-md-6 platform-card">
-                    <div class="card h-100">
-                        <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
-                            <strong>Bolt.new</strong>
-                            <span class="badge grade-b">Grade B</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-3 mb-3">
-                                <div class="col-7">
-                                    <img src="bolt-new/screenshot.png" alt="Bolt.new desktop" class="img-fluid screenshot-desktop">
-                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
-                                </div>
-                                <div class="col-5">
-                                    <img src="bolt-new/screenshot-mobile.png" alt="Bolt.new mobile" class="img-fluid screenshot-mobile">
-                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
-                                </div>
-                            </div>
-                            <p><strong>Time:</strong> ~5 min</p>
-                            <p><strong>Specialty:</strong> Circular legend, good UI</p>
-                            <p class="mb-2 small">Circular color wheel legend (good for directional data). Clean UI, good zoom level. Performance sluggish (~10 sec lag on pan/zoom) - same Leaflet issue as ChatGPT Canvas.</p>
-                            <p class="mb-2 small"><strong>Mobile:</strong> Good - legend works well on mobile.</p>
-                            <p class="small"><strong>AI role:</strong> Generated circular legend and Leaflet implementation with bearing calculations.</p>
-                            <p class="small"><strong>Human tweaks:</strong> None - worked as expected.</p>
-                            <div class="d-flex gap-2">
-                                <a href="bolt-new/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
-                                <a class="btn btn-sm btn-primary" href="https://street-orientation-r-fc5r.bolt.host/" target="_blank">Live Demo</a>
                             </div>
                         </div>
                     </div>
