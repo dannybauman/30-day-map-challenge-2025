@@ -64,7 +64,7 @@
   - **Final state:** Map doesn't show at all after fixes (worse than initial)
   - **Consistent pattern**: Day 1, Day 2, Day 3 all show same issues - UI works, map/data rendering fails
   - **Data handling test:** Could not test (visualization failed before data could be verified)
-- **Screenshot:** ⚠️ Screenshots needed (desktop, mobile)
+- **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows UI with map iframe but map tiles/data visualization issues
 - **Mobile Check:** N/A (map doesn't show)
 - **Live URL:** https://gemini.google.com/share/908ebfdc84ed
 - **Grade:** D (Partial Success - UI generated but map/data rendering failed, consistent with Day 1 & Day 2)
@@ -119,7 +119,7 @@
 2. **Screenshot Requirements:**
    - **ChatGPT Canvas**: Desktop and mobile showing map with mock data, error screen screenshot available
    - **Claude Artifacts**: Desktop and mobile showing UI/legends but black/empty map area
-   - **Gemini Canvas**: Desktop and mobile showing UI but missing map tiles or empty map (screenshots needed)
+   - **Gemini Canvas**: Desktop and mobile showing UI with map iframe but missing map tiles/data visualization issues
 
 3. **Content to Include:**
    - **ChatGPT Canvas**: Note that it chose mock data over real data download, required multiple "Fix Bug" iterations, intermittent error screen

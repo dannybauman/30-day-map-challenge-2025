@@ -95,9 +95,9 @@
 
 ## Screenshots
 
-**Status:** ⚠️ Screenshots needed
-- Desktop screenshot (when available)
-- Mobile screenshot (when available)
+**Status:** ✅ Screenshots captured
+- Desktop screenshot: `screenshot.png` (1440x900)
+- Mobile screenshot: `screenshot-mobile.png` (393x852)
 
 ---
 
