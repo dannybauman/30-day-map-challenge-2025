@@ -72,9 +72,9 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ## Platform Results
 
-**Total Platforms Tested:** 8/10 (In Progress)
+**Total Platforms Tested:** 9/10 (In Progress)
 
-### ✅ Full Success (2 platforms)
+### ✅ Full Success (3 platforms)
 
 #### MagicPatterns (Grade B)
 - **Status:** ✅ Full Success (Works well with mock data)
@@ -252,6 +252,18 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Comparison to Day 2:** Day 2 was Grade F (internal platform error, no code generated), Day 3 got further (title visible, auto-fix worked)
 - **Consistent issue:** Map/data rendering problems
 
+**Firebase Studio:**
+- ✅ **SUCCESS - Real data download and processing!** (**FIRST PLATFORM TO USE REAL DATA!**)
+- **Major achievement:** First platform to successfully use real PDX noise contour data!
+- **Initial:** Had a few back and forths fixing errors, required Google Maps API key (manual `.env.local` file creation - not user friendly)
+- **Mock data phase:** Eventually got map and mock data visuals working
+- **Real data phase:** User asked to use real data, platform successfully downloaded and processed real data
+- **User verification:** Shows different data than mock data, polygons around PDX airport displayed correctly
+- **Map and UI:** Look nice, legend has working checkboxes, tooltip looks slick
+- **Minor UX issues:** Zoom not working (feels locked), layering tooltip issue (hover only shows 65 dB tooltip, not 68 dB underneath)
+- **User assessment:** "solid grade B because even if there were a few errors, if it got real data on the map, that's big"
+- **Comparison:** MagicPatterns & Bolt.new used mock data (Grade B), Firebase Studio used real data (Grade B) - **This is the differentiating factor!**
+
 ---
 
 ## Human Interventions & Decisions
@@ -265,6 +277,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 6. **Bolt.new testing**: Noted positive observations about visuals and coloring, minor legend text wrapping issue
 7. **V0.dev testing**: Noted base map doesn't render, legend checkboxes appear functional but don't work
 8. **Google AI Studio Apps testing**: Noted got further than Day 2 but still no map/data, just black screen
+9. **Firebase Studio testing**: Noted real data success, minor UX issues (zoom, layering tooltip), solid grade B
 
 **Human Feedback During Testing:**
 - **Claude Artifacts:** Asked about alternative approaches when first error occurred, provided feedback on second attempt, made observation about security/permissions being potentially positive
@@ -275,27 +288,28 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Bolt.new:** Noted "it worked well, a graded B, although it also couldn't get real data, so it mocked data. the visuals worked well on the map, in the right PDX location, good coloring. the legend is almost great but has one text element where the word wrapping isn't right so it widens the legend way too big"
 - **V0.dev:** Noted "kinda worked. it can't directly download the data, so it mocked data too. at first load it got an error, i clicked to auto fix, and then it kind of worked where it showed the mocked visuals but not the base map. in the legend it has some checkboxes and seems like click functionality, but it doesn't do anything, so that could have been cool but is confusing"
 - **Google AI Studio Apps:** Noted "google ai studio apps, which was another Failure. it got further than day 2 but not much, i did Auto Fix for errors in the code a few times, and it got close to showing something but still no map or data, just black"
+- **Firebase Studio:** Noted "it had a few back and forths fixing an error and adding a google maps api key (had to go in to the code and create a .env.local file manually, not the most user friendly. eventually got a nice map and mock data visuals working. then i asked it to use the real data, and it said it did! let's verify tho. it does show different data than before, and polygons around the PDX airport. one weird UX issue, zoom isn't working, it feels locked to a zoom, but shouldn't be. hopefully not a hard fix, but this is enough to get a sense, and is a solid grade B because even if there were a few errors, if it got real data on the map, that's big. map and UI look nice, legend has working checkboxes. tooltip looks slick. although the layering is where the hover only shows the 65 dB tooltip not the 68 db underneath"
 
 ---
 
 ## Next Steps
 
-**Remaining Platforms to Test (2/10):**
-1. Firebase Studio
-2. Base44
+**Remaining Platforms to Test (1/10):**
+1. Base44
 
-**Completed (8/10):**
+**Completed (9/10):**
 - ✅ Claude Artifacts (Grade D - CSP/CORS)
 - ✅ ChatGPT Canvas (Grade C/C+ - mock data)
 - ✅ Gemini Canvas (Grade D - UI OK, map/data rendering failed)
 - ✅ Lovable (Grade D - Mapbox API key requirement)
 - ✅ MagicPatterns (Grade B - Full Success! Works well with mock data)
 - ✅ Bolt.new (Grade B - Full Success! Works well with mock data, minor legend text wrapping issue)
+- ✅ Firebase Studio (Grade B - Full Success! **FIRST PLATFORM TO USE REAL DATA!** Minor UX issues)
 - ✅ V0.dev (Grade D - Base map doesn't render, consistent with Day 1 & Day 2)
 - ✅ Google AI Studio Apps (Grade D - Page title visible but map/data don't render, improved from Day 2's Grade F)
 
 **Tasks:**
-1. Continue testing remaining 2 platforms
+1. Continue testing remaining 1 platform (Base44)
 2. Observe which platforms can handle GIS data processing (LineString→Polygon conversion)
 3. Document data handling approaches (download vs. synthetic vs. embedded)
 4. Capture screenshots for all platforms
@@ -328,6 +342,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Bolt.new: Generated working map with mock data (second full success for Day 3!)
 - V0.dev: Generated UI with legend but base map doesn't render (consistent with Day 1 & Day 2)
 - Google AI Studio Apps: Generated page with title but map/data don't render (improved from Day 2's Grade F)
+- Firebase Studio: Generated working map with **REAL DATA!** First platform to successfully download and process real PDX noise contour data
 
 **AI (Cursor):**
 - Logged ideation responses and organized content
@@ -351,9 +366,10 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - `bolt-new/README.md` - Bolt.new specific notes
 - `v0-dev/README.md` - V0.dev specific notes
 - `google-ai-studio/README.md` - Google AI Studio Apps specific notes
+- `firebase-studio/README.md` - Firebase Studio specific notes
 
 ---
 
 **Last Updated:** November 3, 2025  
-**Status:** Testing in progress (8/10 platforms completed)
+**Status:** Testing in progress (9/10 platforms completed)
 

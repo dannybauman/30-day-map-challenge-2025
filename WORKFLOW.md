@@ -240,8 +240,9 @@ maps/0X-theme/
 7. **HTML page** - makes sharing results much easier
 8. **Avoid Mapbox in prompts** - Requires API keys (may need paid account), creates barrier for testing. Use alternatives: OpenStreetMap (via Leaflet), MapLibre GL JS, CartoDB Positron/Dark Matter, Stamen maps
 9. **Free tier limits** - Some platforms (e.g., MagicPatterns) have daily free tier limits that may restrict iterations or testing on the same day
-10. **Data handling test results** - Most platforms (MagicPatterns, Bolt.new, V0.dev) couldn't download real data but successfully created mock data as fallback
+10. **Data handling test results** - Most platforms (MagicPatterns, Bolt.new, V0.dev) couldn't download real data but successfully created mock data as fallback. **Firebase Studio (Day 3) was the FIRST platform to successfully use real data!**
 11. **Consistent platform patterns** - V0.dev (Day 1, 2, 3: map rendering issues), Google AI Studio Apps (Day 2: Grade F, Day 3: Grade D - improved but still blank page), Claude Artifacts (Day 1, 2, 3: CSP/CORS), Gemini Canvas (Day 1, 2, 3: UI works but map/data rendering fails)
+12. **API key barriers** - Firebase Studio (Day 3) required manual `.env.local` file creation for Google Maps API key - not user friendly, but platform successfully handled real data once configured
 
 ---
 
