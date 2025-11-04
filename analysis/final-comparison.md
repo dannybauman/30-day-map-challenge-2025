@@ -339,5 +339,5 @@ Use this table to choose the right platform for your geospatial project:
 
 ---
 
-*Thank you for following this journey through AI-powered cartography!* 🗺️🤖✨
+*Thank you for following this journey through AI-assisted cartography!* 🗺️🤖✨
 

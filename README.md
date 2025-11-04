@@ -1,4 +1,4 @@
-# 30-Day Map Challenge 2025: AI-Powered Mapping Experiment
+# 30-Day Map Challenge 2025: AI Mapping Experiment
 
 Live site: [https://dannybauman.github.io/30-day-map-challenge-2025/](https://dannybauman.github.io/30-day-map-challenge-2025/)
 
@@ -25,7 +25,7 @@ Instead of building 1 map per day, my hope is to easily build like 10-20! I'll u
 ### To Vibe Code or Not To Vibe Code
 For this I'll mostly be vibe coding with minimal care for code quality or longevity, which is NOT right for most projects. I'm treating this as a rapid prototyping lab to watch how well AI-assisted development performs in between the human craft steps.
 
-My earlier code of conduct note is my guardrail: I only ship work I personally guide, I cite every dataset and call out every AI-based contribution, and I log when AI shortcuts actually cost more than they save. Documenting those wins and misses should make it easier for anyone to decide what tools deserve their time.
+My earlier code of conduct note is my guardrail: I only ship work I personally guide, I cite every dataset and call out every AI-assisted contribution, and I log when AI shortcuts actually cost more than they save. Documenting those wins and misses should make it easier for anyone to decide what tools deserve their time.
 
 Vibe coding is just one way to use AI to help write software. People are inventing new workflows daily, from exploratory prototypes to deep, targeted engineering. My goal here is to surface the useful patterns, flag the dead ends, and keep the focus on the human creativity that makes the challenge magical.
 
@@ -91,7 +91,7 @@ Vibe coding is just one way to use AI to help write software. People are inventi
 
 **Tier 2 - Full-Stack & Advanced**
 - **Lovable** - Full apps with multiple pages
-- **Cursor** - AI powered IDE, new features added frequently
+- **Cursor** - AI-assisted IDE, new features added frequently
 - **Windsurf** - Agentic coding, good for complex builds
 
 **Tier 3 - Specialized Tools**
