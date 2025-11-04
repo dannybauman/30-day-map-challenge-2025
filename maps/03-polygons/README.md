@@ -72,7 +72,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ## Platform Results
 
-**Total Platforms Tested:** 7/10 (In Progress)
+**Total Platforms Tested:** 8/10 (In Progress)
 
 ### ✅ Full Success (2 platforms)
 
@@ -97,7 +97,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 ---
 
-### ⚠️ Partial Success (5 platforms)
+### ⚠️ Partial Success (6 platforms)
 
 #### ChatGPT Canvas (Grade C/C+)
 - **Status:** ⚠️ Partial Success (Eventual Success with Mock Data)
@@ -161,6 +161,19 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **Live URL:** https://v0-pdx-airport-noise-map.vercel.app/
 - **Data Handling:** Could not directly download data, used mock data
 - **See:** `v0-dev/README.md` for full details
+
+#### Google AI Studio Apps (Grade D)
+- **Status:** ⚠️ Partial Success (improved from Day 2's Grade F)
+- **Issue:** Page title visible but no map or data, just black screen
+- **Attempts:**
+  1. Initial: Got further than Day 2
+  2. User clicked Auto Fix multiple times → Got close to showing something but still no map or data
+- **Result:** Page title "PDX Airport Noise Footprint" visible but no content rendered
+- **User Assessment:** "another Failure" but acknowledges progress beyond Day 2
+- **Pattern:** Day 2 was Grade F (no code generated), Day 3 got further (title visible, auto-fix worked)
+- **Live URL:** https://pdx-airport-noise-footprint-903076358991.us-west1.run.app/
+- **Data Handling:** Could not test (map/data never rendered)
+- **See:** `google-ai-studio/README.md` for full details
 
 ---
 
@@ -230,6 +243,15 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Auto-fix feature worked to resolve initial error
 - **Consistent pattern:** Day 1, Day 2, Day 3 all show map rendering issues
 
+**Google AI Studio Apps:**
+- Could not test data handling (map/data never rendered)
+- **Progress:** Got further than Day 2 (which was Grade F - no code generated)
+- **Multiple iterations:** User clicked Auto Fix for errors multiple times
+- **Final state:** Page title visible but no map or data, just black screen
+- **User assessment:** "another Failure" but acknowledges progress beyond Day 2
+- **Comparison to Day 2:** Day 2 was Grade F (internal platform error, no code generated), Day 3 got further (title visible, auto-fix worked)
+- **Consistent issue:** Map/data rendering problems
+
 ---
 
 ## Human Interventions & Decisions
@@ -242,6 +264,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 5. **MagicPatterns testing**: Noted positive observations about correct airport location and checkbox layer toggle feature
 6. **Bolt.new testing**: Noted positive observations about visuals and coloring, minor legend text wrapping issue
 7. **V0.dev testing**: Noted base map doesn't render, legend checkboxes appear functional but don't work
+8. **Google AI Studio Apps testing**: Noted got further than Day 2 but still no map/data, just black screen
 
 **Human Feedback During Testing:**
 - **Claude Artifacts:** Asked about alternative approaches when first error occurred, provided feedback on second attempt, made observation about security/permissions being potentially positive
@@ -251,17 +274,17 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - **MagicPatterns:** Noted "it couldn't pull from the real data source, so it mocked the data, but otherwise it worked well!", "nice that it got the right airport location, just mock sound data", "the checkboxes to show/hide layers is a nice idea too"
 - **Bolt.new:** Noted "it worked well, a graded B, although it also couldn't get real data, so it mocked data. the visuals worked well on the map, in the right PDX location, good coloring. the legend is almost great but has one text element where the word wrapping isn't right so it widens the legend way too big"
 - **V0.dev:** Noted "kinda worked. it can't directly download the data, so it mocked data too. at first load it got an error, i clicked to auto fix, and then it kind of worked where it showed the mocked visuals but not the base map. in the legend it has some checkboxes and seems like click functionality, but it doesn't do anything, so that could have been cool but is confusing"
+- **Google AI Studio Apps:** Noted "google ai studio apps, which was another Failure. it got further than day 2 but not much, i did Auto Fix for errors in the code a few times, and it got close to showing something but still no map or data, just black"
 
 ---
 
 ## Next Steps
 
-**Remaining Platforms to Test (3/10):**
-1. Google AI Studio Apps
-2. Firebase Studio
-3. Base44
+**Remaining Platforms to Test (2/10):**
+1. Firebase Studio
+2. Base44
 
-**Completed (7/10):**
+**Completed (8/10):**
 - ✅ Claude Artifacts (Grade D - CSP/CORS)
 - ✅ ChatGPT Canvas (Grade C/C+ - mock data)
 - ✅ Gemini Canvas (Grade D - UI OK, map/data rendering failed)
@@ -269,9 +292,10 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - ✅ MagicPatterns (Grade B - Full Success! Works well with mock data)
 - ✅ Bolt.new (Grade B - Full Success! Works well with mock data, minor legend text wrapping issue)
 - ✅ V0.dev (Grade D - Base map doesn't render, consistent with Day 1 & Day 2)
+- ✅ Google AI Studio Apps (Grade D - Page title visible but map/data don't render, improved from Day 2's Grade F)
 
 **Tasks:**
-1. Continue testing remaining 3 platforms
+1. Continue testing remaining 2 platforms
 2. Observe which platforms can handle GIS data processing (LineString→Polygon conversion)
 3. Document data handling approaches (download vs. synthetic vs. embedded)
 4. Capture screenshots for all platforms
@@ -303,6 +327,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - MagicPatterns: Generated working map with mock data (first full success for Day 3!)
 - Bolt.new: Generated working map with mock data (second full success for Day 3!)
 - V0.dev: Generated UI with legend but base map doesn't render (consistent with Day 1 & Day 2)
+- Google AI Studio Apps: Generated page with title but map/data don't render (improved from Day 2's Grade F)
 
 **AI (Cursor):**
 - Logged ideation responses and organized content
@@ -325,9 +350,10 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - `magicpatterns/README.md` - MagicPatterns specific notes
 - `bolt-new/README.md` - Bolt.new specific notes
 - `v0-dev/README.md` - V0.dev specific notes
+- `google-ai-studio/README.md` - Google AI Studio Apps specific notes
 
 ---
 
 **Last Updated:** November 3, 2025  
-**Status:** Testing in progress (7/10 platforms completed)
+**Status:** Testing in progress (8/10 platforms completed)
 

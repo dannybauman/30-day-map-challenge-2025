@@ -13,7 +13,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 | Lovable | 2 | 1 | 1 | 0 | 50% | 5-10 min |
 | Base44 | 1 | 1 | 0 | 0 | 100% | 5 min |
 | MagicPatterns | 3 | 3 | 0 | 0 | 100% | 5 min |
-| Google AI Studio | 1 | 1 | 0 | 0 | 100% | 5 min |
+| Google AI Studio | 2 | 1 | 1 | 0 | 50% | 5-10 min |
 | Firebase Studio | 1 | 1 | 0 | 0 | 100% | 15 min |
 | V0.dev | 3 | 0 | 3 | 0 | 0% | 10 min |
 | Claude Artifacts | 3 | 0 | 3 | 0 | 0% | 15 min |
