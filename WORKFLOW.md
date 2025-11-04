@@ -48,15 +48,15 @@ Here's my refined process after completing Day 1.
 3. Hit generate on all
 4. Let them cook while you take a break ☕
 
-**Recommended platforms** (based on Day 1):
+**Recommended platforms** (based on Day 1 & Day 3):
 - ✅ ChatGPT Canvas (reliable)
-- ✅ Bolt.new (great data handling)
-- ✅ Lovable (fast & clean)
-- ✅ MagicPatterns (versatile)
-- ✅ Google AI Studio Apps (solid)
-- ⚠️ V0.dev (may need iteration)
-- ⚠️ Google Gemini Canvas (errors with external APIs, but was close)
-- ⚠️ Claude Artifacts (errors with external APIs, but was close)
+- ✅ Bolt.new (great data handling, consistent success)
+- ✅ Lovable (fast & clean, but avoid Mapbox - use alternative basemaps)
+- ✅ MagicPatterns (versatile, consistent success, watch for free tier limits)
+- ⚠️ Google AI Studio Apps (improved from Day 2, but still map rendering issues)
+- ⚠️ V0.dev (consistent map rendering issues across all days)
+- ⚠️ Google Gemini Canvas (errors with external APIs, consistent UI works but map/data rendering fails)
+- ⚠️ Claude Artifacts (errors with external APIs, consistent CSP/CORS limitation)
 
 ### Phase 4: Review & Iterate
 **Duration**: 20-30 minutes
@@ -229,15 +229,19 @@ maps/0X-theme/
 
 ---
 
-## Key Learnings from Day 1 & Day 2
+## Key Learnings from Day 1, Day 2 & Day 3
 
 1. **Parallel testing works!** - 10-11 platforms in 90-120 minutes
 2. **ChatGPT Canvas, Bolt.new, Lovable, MagicPatterns** - most reliable
-3. **Claude/Gemini Artifacts** - struggled with external APIs (CSP/CORS) - consistent partial success (Grade D)
+3. **Claude/Gemini Artifacts** - struggled with external APIs (CSP/CORS) - consistent partial success (Grade D) across all 3 days
 4. **Grading consistency**: All platforms get at least Grade D (Partial Success) - even CSP/CORS failures generate UI/legends. Grade F reserved only for truly unusable (rare).
 5. **Platform colors**: Consistent across days - use Day 1 as source of truth for all platform header colors
 6. **Documentation time** - took longer than expected (~30 min)
 7. **HTML page** - makes sharing results much easier
+8. **Avoid Mapbox in prompts** - Requires API keys (may need paid account), creates barrier for testing. Use alternatives: OpenStreetMap (via Leaflet), MapLibre GL JS, CartoDB Positron/Dark Matter, Stamen maps
+9. **Free tier limits** - Some platforms (e.g., MagicPatterns) have daily free tier limits that may restrict iterations or testing on the same day
+10. **Data handling test results** - Most platforms (MagicPatterns, Bolt.new, V0.dev) couldn't download real data but successfully created mock data as fallback
+11. **Consistent platform patterns** - V0.dev (Day 1, 2, 3: map rendering issues), Google AI Studio Apps (Day 2: Grade F, Day 3: Grade D - improved but still blank page), Claude Artifacts (Day 1, 2, 3: CSP/CORS), Gemini Canvas (Day 1, 2, 3: UI works but map/data rendering fails)
 
 ---
 

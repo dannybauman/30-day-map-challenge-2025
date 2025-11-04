@@ -90,7 +90,7 @@
 **Status:** ✅ Screenshots captured
 - Desktop screenshot: `screenshot.png` (1440x900)
 - Mobile screenshot: `screenshot-mobile.png` (393x852)
-- Screenshots show page with title but no content (black screen)
+- Screenshots show page with title but no content (blank screen - white or black)
 
 ---
 

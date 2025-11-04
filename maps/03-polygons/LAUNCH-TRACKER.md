@@ -155,12 +155,12 @@
   - **Data handling test:** Could not test (map/data never rendered)
   - **Progress:** Got further than Day 2 (which was Grade F - no code generated)
   - **Multiple iterations:** User clicked Auto Fix for errors in the code multiple times
-  - **Final state:** Page title "PDX Airport Noise Footprint" visible but no map or data, just black screen
+  - **Final state:** Page title "PDX Airport Noise Footprint" visible but no map or data, just blank screen (white or black)
   - **User feedback:** "google ai studio apps, which was another Failure. it got further than day 2 but not much, i did Auto Fix for errors in the code a few times, and it got close to showing something but still no map or data, just black"
   - **User assessment:** "another Failure" but acknowledges progress beyond Day 2
   - **Comparison to Day 2:** Day 2 was Grade F (internal platform error, no code generated), Day 3 got further (title visible, auto-fix worked)
   - **Consistent issue:** Map/data rendering problems
-- **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows page with title but no content (black screen)
+- **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows page with title but no content (blank screen - white or black)
 - **Mobile Check:** N/A (no map/data rendered)
 - **Live URL:** https://pdx-airport-noise-footprint-903076358991.us-west1.run.app/
 - **Grade:** D (Partial Success - Page title visible but map/data don't render, improved from Day 2's Grade F)
@@ -243,7 +243,7 @@
 - **Data handling test result:** Could not test (map/data never rendered)
 - **Progress:** Got further than Day 2 (which was Grade F - no code generated)
 - **Multiple iterations:** User clicked Auto Fix for errors multiple times
-- **Final state:** Page title visible but no map or data, just black screen
+- **Final state:** Page title visible but no map or data, just blank screen (white or black)
 - **User assessment:** "another Failure" but acknowledges progress beyond Day 2
 - **Comparison to Day 2:** Day 2 was Grade F (internal platform error, no code generated), Day 3 got further (title visible, auto-fix worked)
 - **Consistent issue:** Map/data rendering problems

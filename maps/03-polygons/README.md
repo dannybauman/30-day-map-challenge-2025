@@ -164,7 +164,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 
 #### Google AI Studio Apps (Grade D)
 - **Status:** ⚠️ Partial Success (improved from Day 2's Grade F)
-- **Issue:** Page title visible but no map or data, just black screen
+- **Issue:** Page title visible but no map or data, just blank screen (white or black)
 - **Attempts:**
   1. Initial: Got further than Day 2
   2. User clicked Auto Fix multiple times → Got close to showing something but still no map or data
@@ -247,7 +247,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - Could not test data handling (map/data never rendered)
 - **Progress:** Got further than Day 2 (which was Grade F - no code generated)
 - **Multiple iterations:** User clicked Auto Fix for errors multiple times
-- **Final state:** Page title visible but no map or data, just black screen
+- **Final state:** Page title visible but no map or data, just blank screen (white or black)
 - **User assessment:** "another Failure" but acknowledges progress beyond Day 2
 - **Comparison to Day 2:** Day 2 was Grade F (internal platform error, no code generated), Day 3 got further (title visible, auto-fix worked)
 - **Consistent issue:** Map/data rendering problems
