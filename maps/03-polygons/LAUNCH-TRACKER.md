@@ -99,6 +99,7 @@
   - Legend with checkbox controls for different noise levels (68 dB, 65 dB, 55 dB DNL)
   - Map tiles load correctly (OpenStreetMap via Leaflet)
   - **User feedback:** "it couldn't pull from the real data source, so it mocked the data, but otherwise it worked well! i can probably upload the data or maybe it could try another way, but we'll call this a success with a B rating"
+  - **User observation:** "nice that it got the right airport location, just mock sound data" - Platform correctly identified PDX airport location, only used mock data for noise contours
   - **Data attribution:** "Data: Representative noise contours" (mock data)
   - **First full success for Day 3!**
   - **Consistent performance:** Day 2 winner, Day 3 success

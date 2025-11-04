@@ -32,6 +32,7 @@
 **Data Handling Capability:** ⚠️ Could not pull from real data source, but successfully created mock data
 - User notes: "i can probably upload the data or maybe it could try another way"
 - Platform fallback to mock data worked well
+- **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
 
 ---
 
@@ -55,11 +56,13 @@
 **User (Danny) feedback:**
 - "it couldn't pull from the real data source, so it mocked the data, but otherwise it worked well!"
 - "i can probably upload the data or maybe it could try another way, but we'll call this a success with a B rating"
+- "nice that it got the right airport location, just mock sound data"
 
 **User Analysis:**
 - Platform successfully handled the limitation by creating mock data
 - Map works well despite using mock data
 - User satisfied with result (Grade B)
+- **Positive observation:** Platform correctly identified PDX airport location - only used mock data for noise contours themselves
 - Potential improvement: User could upload data or platform could try another approach
 - **Platform Limitation:** User reached free tier limit (for today?) and couldn't follow up with more changes
 - **Note:** Free tier limits may restrict iterations or testing on the same day
