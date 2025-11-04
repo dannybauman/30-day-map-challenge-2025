@@ -1,17 +1,17 @@
 # MagicPatterns - Day 3: Polygons
 
-**Platform:** MagicPatterns  
-**Date:** November 3, 2025  
-**Concept:** Airport Noise Footprint (PDX)  
-**Status:** ✅ Full Success (Grade B)
+**Platform:** MagicPatterns
+**Date:** November 3, 2025
+**Concept:** Airport Noise Footprint (PDX)
+**Status:** ✅ Success (Grade B)
 
 ---
 
 ## Result
 
-**Grade:** B (Full Success)
+**Grade:** B (Success)
 
-**Why Full Success:**
+**Why Success:**
 - Map works well overall
 - Used mock data (couldn't pull from real data source)
 - User notes: "it couldn't pull from the real data source, so it mocked the data, but otherwise it worked well!"
@@ -97,7 +97,7 @@
 
 ## Grade Justification
 
-**Grade B (Full Success):**
+**Grade B (Success):**
 - Map works well overall
 - UI functional and responsive
 - Mock data visualization successful

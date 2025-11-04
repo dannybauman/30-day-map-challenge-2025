@@ -64,7 +64,7 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 
 ---
 
-### ✅ Full Success (3 platforms)
+### ✅ Success (3 platforms)
 
 #### Lovable (Grade B)
 - Clean UI, good performance, one-shot success
@@ -138,7 +138,7 @@ Color-code every street in Portland by its compass bearing (0-360°) using a ful
 
 | Category | Count | Percentage |
 |----------|-------|------------|
-| Full Success | 3 | 30% |
+| Success | 3 | 30% |
 | Partial Success | 6 | 60% |
 | Complete Failure | 1 | 10% |
 | **Usable** | **3** | **30%** |

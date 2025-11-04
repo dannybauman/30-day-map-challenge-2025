@@ -1,17 +1,17 @@
 # Bolt.new - Day 3: Polygons
 
-**Platform:** Bolt.new  
-**Date:** November 3, 2025  
-**Concept:** Airport Noise Footprint (PDX)  
-**Status:** ✅ Full Success (Grade B)
+**Platform:** Bolt.new
+**Date:** November 3, 2025
+**Concept:** Airport Noise Footprint (PDX)
+**Status:** ✅ Success (Grade B)
 
 ---
 
 ## Result
 
-**Grade:** B (Full Success)
+**Grade:** B (Success)
 
-**Why Full Success:**
+**Why Success:**
 - Map works well overall
 - Visuals worked well on the map
 - Right PDX location (correctly identified airport)
@@ -92,7 +92,7 @@
 
 ## Grade Justification
 
-**Grade B (Full Success):**
+**Grade B (Success):**
 - Map works well overall
 - Visuals worked well with good coloring
 - Right PDX location (correctly identified airport)

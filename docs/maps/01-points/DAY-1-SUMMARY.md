@@ -136,7 +136,7 @@ This is just a starting point. Use quick AI generation as your rapid prototyping
 |--------|-------|
 | Total Platforms Tested | 11 |
 | Unique Implementations | 11 |
-| Full Successes | 8 (73%) |
+| Successes | 8 (73%) |
 | Partial Successes | 3 (27%) |
 | Complete Failures | 0 (0%) |
 | Average Time (Success) | ~7 min |

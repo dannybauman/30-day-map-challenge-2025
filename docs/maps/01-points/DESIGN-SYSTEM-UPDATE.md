@@ -78,7 +78,7 @@ For variety and brand recognition, we use custom colors for individual platforms
 
 ## Layout Structure
 
-### Full Success Platforms (Top 3)
+### Success Platforms (Top 3)
 ```html
 <div class="col-md-4 platform-card">  <!-- 3 columns layout -->
     <div class="card h-100">
