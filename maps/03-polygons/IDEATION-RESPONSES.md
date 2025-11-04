@@ -313,4 +313,46 @@
 
 ---
 
-**Next Step:** Human review and selection of final concept (human decision).
+## Human Review of Round 2 Concepts
+
+*[Human (Danny) voice-transcribed feedback on Round 2 concepts]*
+
+### Claude Concepts
+
+**Urban Acoustic Zones:**
+- "Cool, so the Urban Acoustic Zones is a good idea too. I like that it's different sound environments which is useful and then it could be interesting to see as long as that data set is available. So if there is an available data set for Portland like near me that'd be cool."
+
+**Watershed Boundaries (River Basins):**
+- "And then for the straightforward watershed boundaries, that's a nice one that sounds pretty good, I think pretty classic and maybe will be a good way to explore that type of map."
+
+### ChatGPT Concepts
+
+**Airport Noise Footprint (PDX):**
+- "Nice. The airport noise footprint of PDX Airport is a good idea. It seems cool. It seems visual. It seems useful and doable. So I'm liking that."
+
+**Hypsometric Elevation Bands — Mount Hood:**
+- "And then for number two, the Mount Hood one sounds really cool too. So actually, my only suggestion is maybe a different mountain, even Mount St. Helens. And with that, maybe a cool idea is actually that it could be the before and after the eruption since Mount St. Helens had an epic eruption. So I think it would be cool to kind of have the polygons where it could somehow, like maybe on hover or button click or something, it would build up the prior elevation with polygons somehow and then show where it was afterwards. I don't know about a time lapse. That's probably too complicated. So probably something simple enough and not too many polygons."
+
+### Gemini Concepts
+
+**River's Reach: A Watershed Mosaic:**
+- "For the first idea for the rivers reach, that's a cool idea. We already saw a watershed one from Claude so nice that they both came to that and that there's a good data source for that and that. This one is about nested basins so that I guess might be interesting and not be the choropleth more like a mosaic. So that actually sounds interesting because I feel like the choropleths are more common."
+
+**Urban Green Lungs: Tree Canopy Coverage:**
+- "For the second idea, the urban green lungs, that's nice because it's the tree canopy and should be pretty cool to see if that data is available, especially for maybe local areas like either Portland or somewhere specifically very stark differences that might be interesting."
+
+---
+
+## Concept Selection
+
+**Selected Concept:** Airport Noise Footprint (PDX)  
+**Selected By:** Human (Danny)  
+**Selection Date:** November 3, 2025
+
+**Rationale:**
+- Human feedback: "Nice. The airport noise footprint of PDX Airport is a good idea. It seems cool. It seems visual. It seems useful and doable. So I'm liking that."
+- Fits all constraints: organic lobed shapes, novel boundary, small dataset (3-6 polygons), embedded data, simple implementation
+- Visual appeal: organic "petal" shapes extending from airport along flight paths
+- Practical utility: reveals an invisible but important boundary affecting quality of life
+
+**Implementation Prompt:** See `IMPLEMENTATION-PROMPT.md`
