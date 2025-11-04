@@ -61,6 +61,8 @@
 - Map works well despite using mock data
 - User satisfied with result (Grade B)
 - Potential improvement: User could upload data or platform could try another approach
+- **Platform Limitation:** User reached free tier limit (for today?) and couldn't follow up with more changes
+- **Note:** Free tier limits may restrict iterations or testing on the same day
 
 ---
 
@@ -76,6 +78,15 @@
 ## Live URL
 
 **Deployed code:** https://project-pdx-noise-contour-map-520.magicpatterns.app
+
+---
+
+## Platform Limitations
+
+**Free Tier Limits:**
+- User reached free tier limit (for today?) and couldn't follow up with more changes
+- This may restrict iterations or testing on the same day
+- **Note for future:** Consider free tier limits when planning multiple iterations or testing multiple platforms
 
 ---
 

@@ -186,6 +186,7 @@ Visualize the Day-Night Average Sound Level (DNL) noise contours around Portland
 - User notes: Could potentially upload data or try another approach, but satisfied with result
 - Map tiles load correctly (OpenStreetMap via Leaflet)
 - Legend with checkbox controls for different noise levels
+- **Platform limitation:** User reached free tier limit (for today?) and couldn't follow up with more changes
 
 ---
 

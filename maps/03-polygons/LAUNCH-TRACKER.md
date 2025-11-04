@@ -102,6 +102,7 @@
   - **Data attribution:** "Data: Representative noise contours" (mock data)
   - **First full success for Day 3!**
   - **Consistent performance:** Day 2 winner, Day 3 success
+  - **Platform limitation:** User reached free tier limit (for today?) and couldn't follow up with more changes
 - **Screenshot:** ✅ screenshot.png (desktop), screenshot-mobile.png (mobile) - Shows working map with legend and checkbox controls
 - **Mobile Check:** ✅ Responsive (map and UI work well)
 - **Live URL:** https://project-pdx-noise-contour-map-520.magicpatterns.app
