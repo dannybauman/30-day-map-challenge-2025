@@ -219,6 +219,7 @@ This is a classic "heatmap" of your personal movement, but with crucial privacy 
   2. *Personal Heatlines* (ChatGPT Concept 2) remains a second-choice visualization if I have time to process runs from another region.  
   3. *Activity Shell* (Gemini Concept 2) is a fallback hexbin option.
 - **Data handling plan:** Raw Takeout/GPX exports stay inside the root `private-data/` directory (gitignored). Processing scripts output sanitized data into `maps/04-my-data/data/` so only filtered GeoJSON/CSV files reach version control. Every dataset must strip my home ZIP before it leaves `private-data/`.
+- **Dataset status:** Generated `disney-park-visits.geojson` v1 (7 visits across 2 Anaheim parks) using the new `build-disney-park-visits.mjs` script; ready for platform prompts.
 
 ---
 
