@@ -1,0 +1,10 @@
+{
+  "type": "FeatureCollection",
+  "features": [],
+  "meta": {
+    "generated_at": "TODO",
+    "total_visits": 0,
+    "unique_parks": 0,
+    "note": "Run maps/04-my-data/scripts/build-disney-park-visits.mjs after placing Timeline exports in private-data/."
+  }
+}

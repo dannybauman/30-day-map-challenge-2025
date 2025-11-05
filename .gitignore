@@ -83,3 +83,6 @@ credentials/
 *.key
 *.pem
 
+# Private raw datasets (keep documentation files only)
+private-data/*
+!private-data/README.md
