@@ -1,7 +1,7 @@
 # Day 4: My Data – Disney Park Visit Mix
 
-**Date:** November 4, 2025  
-**Theme:** My Data (personal dataset storytelling)  
+**Date:** November 4, 2025
+**Theme:** My Data (personal dataset storytelling)
 **Status:** ✅ Phase 6 Complete - Ready for Phase 7 (HTML Generation)
 
 ## Concept
