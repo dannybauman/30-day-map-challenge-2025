@@ -133,6 +133,7 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
   - Firebase Studio & MagicPatterns only allow images at first, GeoJSON later
 - Reviewed the generated GeoJSON to ensure only filtered waypoints are published (no raw traces, home/work excluded).
 - **Screenshot capture:** Captured desktop (1440x900) and mobile (393x852) screenshots for all platforms. For platforms requiring scrolling to see map (Lovable, Base44, MagicPatterns), captured additional mobile screenshots showing map view (`screenshot-mobile-map.png`) alongside original top-view (`screenshot-mobile.png`).
+- **Additional platforms tested:** ChatGPT Canvas, Claude Artifacts, and Gemini Canvas all attempted to load GeoJSON inline but struggled with large inline data. ChatGPT loaded data but couldn't display on map, Claude's output kept stopping and asking to continue, Gemini showed minimal UI but couldn't load data or map. All graded D (Partial Success) - generated code structure but couldn't complete data visualization.
 
 ## Key Learnings
 
@@ -141,3 +142,4 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 - **GPS waypoint visualization reveals movement patterns:** Individual GPS waypoints (vs. aggregated visits) create a dense point cloud showing actual movement paths within parks, providing much richer visualization than single points per visit.
 - **Platform deployment can introduce errors:** Bolt.new worked perfectly in development but failed on deployment (data loading error). This highlights the importance of testing deployed versions, not just development previews.
 - **Heatmap option adds value:** Base44's heatmap toggle was a nice addition that platforms didn't explicitly request, showing how AI platforms can add thoughtful features beyond requirements.
+- **Inline data limitations:** ChatGPT Canvas, Claude Artifacts, and Gemini Canvas all struggled with large inline GeoJSON data. ChatGPT loaded data but couldn't render on map, Claude's output kept stopping due to large inline data, Gemini failed to load data entirely. This reinforces the importance of file upload capabilities vs. inline data embedding for large datasets.
