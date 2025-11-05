@@ -26,12 +26,12 @@
 
 | Platform | Status | Time Spent | Notes | Screenshot | Code Saved | Grade |
 |----------|--------|------------|-------|------------|------------|-------|
-| Lovable | ✅ Success | ~5 min | Works great on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. UI takes up a lot of page (need to scroll for map). | ⬜ | ⬜ | B |
-| Bolt.new | ⚠️ Partial | ~5 min | Worked great in dev: nice two-column layout, stats work, extra clustering toggle feature. Deployed but data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. | ⬜ | ⬜ | B- |
+| Lovable | ✅ Success | ~5 min | Works great on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. UI takes up a lot of page (need to scroll for map). | ✅ | ⬜ | B |
+| Bolt.new | ⚠️ Partial | ~5 min | Worked great in dev: nice two-column layout, stats work, extra clustering toggle feature. Deployed but data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. | ✅ | ⬜ | B- |
 | Google AI Studio | ❌ Failed | ~10 min | Errors prevented getting to a map. Tried Auto Fix 3 times, still no luck. No deployed code. | ✅ | ⬜ | F |
-| Base44 | ✅ Success | ~5 min | Maybe one of the best! Nice visuals (left sidebar stats/info, main panel map). Clustering AND heatmap option (nice touch!). No file upload in initial prompt, but uploaded .txt after it started. | ⬜ | ⬜ | B |
-| Firebase Studio | ⚠️ Partial | ~15 min | Multiple JSON errors needed fixing (3 attempts). Had to switch to code mode, create .env.local, add Google Maps API key, upload GeoJSON. UI shows but data doesn't load correctly, map points hard to see. Barely any colors in sidebar. | ⬜ | ⬜ | C- |
-| MagicPatterns | ⚠️ Partial | ~5 min | Works mostly, looks pretty good (nice sidebar + main panel). Only shows 5 points when there should be 118. Could quickly go up to B+ if waypoint loading issue is fixed. | ⬜ | ⬜ | B- |
+| Base44 | ✅ Success | ~5 min | Maybe one of the best! Nice visuals (left sidebar stats/info, main panel map). Clustering AND heatmap option (nice touch!). No file upload in initial prompt, but uploaded .txt after it started. | ✅ | ⬜ | B |
+| Firebase Studio | ⚠️ Partial | ~15 min | Multiple JSON errors needed fixing (3 attempts). Had to switch to code mode, create .env.local, add Google Maps API key, upload GeoJSON. UI shows but data doesn't load correctly, map points hard to see. Barely any colors in sidebar. | ✅ | ⬜ | C- |
+| MagicPatterns | ⚠️ Partial | ~5 min | Works mostly, looks pretty good (nice sidebar + main panel). Only shows 5 points when there should be 118. Could quickly go up to B+ if waypoint loading issue is fixed. | ✅ | ⬜ | B- |
 
 **Status Legend:**
 - ⬜ Not Started

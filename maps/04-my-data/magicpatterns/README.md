@@ -1,7 +1,7 @@
 # MagicPatterns - Day 4 Implementation
 
-**Status:** ⚠️ Partial Success  
-**Grade:** B- (Partial Success)  
+**Status:** ⚠️ Partial Success
+**Grade:** B- (Partial Success)
 **Deployed URL:** https://project-disney-park-visits-map-198.magicpatterns.app/
 
 ## Results
@@ -26,7 +26,7 @@
   - Looks pretty good
   - Nice layout (sidebar + main panel)
   - Stats display correctly
-  
+
 - **Issues:**
   - Only 5 waypoints showing instead of 118
   - Something about waypoint loading didn't fully work
