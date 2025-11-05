@@ -27,7 +27,7 @@
 | Platform | Status | Time Spent | Notes | Screenshot | Code Saved | Grade |
 |----------|--------|------------|-------|------------|------------|-------|
 | Lovable | ✅ Success | ~5 min | Works great on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. UI takes up a lot of page (need to scroll for map). | ⬜ | ⬜ | B |
-| Bolt.new | ⚠️ Partial | ~5 min | Worked great in dev: nice two-column layout, stats work, extra clustering toggle feature. Deployed but data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. | ⬜ | ⬜ | D |
+| Bolt.new | ⚠️ Partial | ~5 min | Worked great in dev: nice two-column layout, stats work, extra clustering toggle feature. Deployed but data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. | ⬜ | ⬜ | B- |
 | Google AI Studio | ⬜ Not Started | - | Using .txt version (doesn't support .geojson) | - | - | - |
 
 **Status Legend:**
@@ -59,7 +59,7 @@
 
 ### Bolt.new
 - **Status:** ⚠️ Partial Success
-- **Grade:** D (Partial Success)
+- **Grade:** B- (Partial Success - worked almost all the way)
 - **Time:** ~5 min
 - **Deployed URL:** https://my-disney-park-movem-zgf4.bolt.host
 - **File Format:** Used `.txt` version (platform doesn't support `.geojson`)

@@ -271,25 +271,25 @@ function extractFromTimelineObjects(list) {
     // Extract placeVisits (one point per named place visit)
     const placeVisit = obj.placeVisit;
     if (placeVisit) {
-      const place = placeVisit.location ?? {};
-      const { lat, lng } = parseLatLng({
-        latitudeE7: place.latitudeE7,
-        longitudeE7: place.longitudeE7,
-        latitude: place.latitude,
-        longitude: place.longitude,
-      });
+    const place = placeVisit.location ?? {};
+    const { lat, lng } = parseLatLng({
+      latitudeE7: place.latitudeE7,
+      longitudeE7: place.longitudeE7,
+      latitude: place.latitude,
+      longitude: place.longitude,
+    });
 
-      const startTs = parseTimestamp(placeVisit.duration?.startTimestampMs);
-      const endTs = parseTimestamp(placeVisit.duration?.endTimestampMs);
-      const record = makeVisitRecord({
-        lat,
-        lng,
-        name: place.name,
-        startTs,
-        endTs,
-      });
-      if (record) {
-        visits.push(record);
+    const startTs = parseTimestamp(placeVisit.duration?.startTimestampMs);
+    const endTs = parseTimestamp(placeVisit.duration?.endTimestampMs);
+    const record = makeVisitRecord({
+      lat,
+      lng,
+      name: place.name,
+      startTs,
+      endTs,
+    });
+    if (record) {
+      visits.push(record);
       }
     }
 
@@ -477,7 +477,7 @@ function extractFromSemanticSegments(segments) {
     // Extract timelinePath waypoints (all GPS points along movement paths)
     if (segment.timelinePath) {
       extractTimelinePath(segment.timelinePath, segmentStartTs, segmentEndTs);
-    }
+        }
 
     // Extract activity start/end locations
     if (segment.activity) {
@@ -512,8 +512,8 @@ function filterVisits(visits, config) {
 
     filtered.push({
       ...visit,
-      parkId: park.id,
-      parkName: park.name,
+        parkId: park.id,
+        parkName: park.name,
     });
   }
 

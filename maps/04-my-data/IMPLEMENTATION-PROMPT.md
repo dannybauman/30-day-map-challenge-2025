@@ -1,7 +1,7 @@
 # Day 4 Implementation Prompt
 
-**Theme:** My Data  
-**Concept:** Disney Park Visit Mix  
+**Theme:** My Data
+**Concept:** Disney Park Visit Mix
 **Dataset:** `data/disney-park-visits.geojson` (118 individual GPS waypoints showing actual movement paths within Disney parks)
 
 ---
@@ -19,13 +19,13 @@ Each point represents one GPS waypoint from my actual movement within the parks.
 {
   "type": "FeatureCollection",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": { 
-        "type": "Point", 
+  {
+    "type": "Feature",
+      "geometry": {
+        "type": "Point",
         "coordinates": [ -117.9084221, 33.8075887 ]
       },
-      "properties": {
+    "properties": {
         "id": 1,
         "park_id": "dlp-disneyland",
         "park_name": "Disneyland Park (Anaheim)",
@@ -47,7 +47,7 @@ Each point represents one GPS waypoint from my actual movement within the parks.
         "park_id": "dlp-disneyland",
         "park_name": "Disneyland Park (Anaheim)",
         "visit_count": 109,
-        "unique_visit_days": 4,
+      "unique_visit_days": 4,
         "first_visit": "2025-09-02T19:21:00.000Z",
         "last_visit": "2025-09-05T17:53:00.000Z",
         "total_hours": 38.57

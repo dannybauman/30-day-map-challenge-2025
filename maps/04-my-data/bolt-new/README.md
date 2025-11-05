@@ -1,7 +1,7 @@
 # Bolt.new - Day 4 Implementation
 
 **Status:** ⚠️ Partial Success  
-**Grade:** D (Partial Success)  
+**Grade:** B- (Partial Success - worked almost all the way)
 **Deployed URL:** https://my-disney-park-movem-zgf4.bolt.host
 
 ## Results
@@ -34,7 +34,7 @@
   - Nice two-column layout
   - Extra feature: clustering toggle (good UX addition)
   - Stats display correctly
-  
+
 - **Issues:**
   - Data loading fails on deployment
   - Error suggests JSON parsing issue (likely file path or MIME type issue)
