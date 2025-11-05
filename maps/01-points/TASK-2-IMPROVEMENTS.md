@@ -81,7 +81,7 @@ Implemented a consistent color system:
    - V0.dev ✓
 
 #### Documentation
-✅ `/maps/01-points/DESIGN-SYSTEM-UPDATE.md` - Complete design system guide
+✅ `DESIGN-SYSTEM.md` - Complete design system guide
 ✅ `/DOCUMENTATION-GUIDE.md` - Added design system section
 ✅ `/WORKFLOW.md` - Updated showcase section with design references
 
@@ -149,7 +149,7 @@ When creating HTML showcases for Days 2-30, follow these rules:
 ## 📚 Documentation
 
 All design system details documented in:
-- `/maps/01-points/DESIGN-SYSTEM-UPDATE.md` - Complete guide
+- `DESIGN-SYSTEM.md` - Complete guide
 - `/DOCUMENTATION-GUIDE.md` - Quick reference
 - `/WORKFLOW.md` - Integration into daily workflow
 
@@ -167,4 +167,3 @@ For Day 2 and beyond:
 **Quality**: ⭐⭐⭐⭐⭐ (Much better than before!)
 **Impact**: All 11 Day 1 platforms + templates for future days
 **Time Invested**: ~15 min (great ROI for 30 days of consistency!)
-

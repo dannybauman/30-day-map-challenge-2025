@@ -87,6 +87,7 @@ Here's my refined process after completing Day 1.
 3. Update `PLATFORM-TRACKER.md` stats
 4. Update `maps/0X-theme/LAUNCH-TRACKER.md`
 5. Add the “Human review” note + attribution details to each doc
+6. Cross-check `DOCUMENTATION-GUIDE.md` for the latest required content and structure before wrapping
 
 **Optional (when time allows)**:
 5. Create platform-specific READMEs
@@ -113,6 +114,7 @@ Here's my refined process after completing Day 1.
 5. Comment on responsive design
 6. Keep times approximate (~1.5 hrs, not 87 min)
 7. Keep it simple and easy to update later
+8. Before publishing, review `DESIGN-SYSTEM.md` to ensure layout, styling, and grade badges match the current standards
 
 **What to include**:
 - Quick stats (platforms tested, success rate)
@@ -221,7 +223,7 @@ maps/0X-theme/
    - **AI Collaboration Snapshot**: Place BEFORE Process Timeline, fill with concise bullets (3-4 max each column) summarizing the Process Timeline content
    - Leave the timeline collapsed by default; only expand it while proofreading
    - Timeline labels should read "Me" and "AI" (never "Human")
-   - See `/maps/01-points/DESIGN-SYSTEM-UPDATE.md` for complete details
+   - See `DESIGN-SYSTEM.md` for complete details
 
 4. **Test locally**:
    ```bash

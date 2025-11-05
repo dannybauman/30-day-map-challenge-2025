@@ -217,7 +217,7 @@ Never use `other-platforms/` or loose .md files.
 - Capture when map is fully rendered
 - Both sizes test responsive design quality!
 
-**Design System (Updated Nov 2, 2025):**
+**Design System (Updated Nov 4, 2025):**
 - **Desktop/Mobile ratio**: Use `col-7` / `col-5` (desktop larger, mobile smaller)
 - **CSS classes**: Add `.screenshot-desktop` and `.screenshot-mobile`
 - **Gap spacing**: Use `g-3` for screenshot rows
@@ -227,7 +227,7 @@ Never use `other-platforms/` or loose .md files.
   - Strong: Custom brand colors (e.g., Firebase orange, Base44 purple)
   - Partial: `bg-warning` (yellow/orange)
   - Failed: `bg-danger` (red)
-- See `/maps/01-points/DESIGN-SYSTEM-UPDATE.md` for full details!
+- See `DESIGN-SYSTEM.md` for the full, consolidated guide.
 
 ### What to Include
 
