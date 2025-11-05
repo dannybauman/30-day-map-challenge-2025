@@ -1,7 +1,7 @@
 # Claude Artifacts - Day 4: My Data
 
-**Status:** ⚠️ Partial Success (Grade D)  
-**Time:** ~15 minutes  
+**Status:** ⚠️ Partial Success (Grade D)
+**Time:** ~15 minutes
 **Shared URL:** https://claude.ai/public/artifacts/cfa10548-8b32-4a19-a33c-4286c29c78b1
 
 ## Result

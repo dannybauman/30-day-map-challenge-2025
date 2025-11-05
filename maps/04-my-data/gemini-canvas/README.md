@@ -1,7 +1,7 @@
 # Gemini Canvas - Day 4: My Data
 
-**Status:** ⚠️ Partial Success (Grade D)  
-**Time:** ~15 minutes  
+**Status:** ⚠️ Partial Success (Grade D)
+**Time:** ~15 minutes
 **Shared URL:** https://gemini.google.com/share/47b10c6d5a96
 
 ## Result

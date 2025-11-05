@@ -1,7 +1,7 @@
 # ChatGPT Canvas - Day 4: My Data
 
-**Status:** ⚠️ Partial Success (Grade D)  
-**Time:** ~15 minutes  
+**Status:** ⚠️ Partial Success (Grade D)
+**Time:** ~15 minutes
 **Shared URL:** https://chatgpt.com/canvas/shared/690bc8d900048191b01db468789b6c49
 
 ## Result
