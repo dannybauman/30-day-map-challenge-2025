@@ -28,6 +28,16 @@ Extract all GPS waypoints from my Google Maps Timeline exports to visualize actu
 5. Excludes any waypoints within exclusion circles (home/work).
 6. Writes GeoJSON with one Point per GPS waypoint at actual coordinates.
 
+## Platform file format notes
+
+When uploading the GeoJSON file to AI development platforms:
+- **Lovable**: Supports `.geojson` file uploads directly ✅
+- **Bolt.new**: Does NOT support `.geojson` file uploads ❌
+  - Workaround: Convert to `.txt` or embed GeoJSON inline in JavaScript
+- **Other platforms**: Test file upload support before proceeding
+
+The GeoJSON file can be used directly in code by loading it as JSON or embedding it inline if needed.
+
 ## Timeline data coverage
 
 - **Date range:** May 23, 2025 to November 4, 2025

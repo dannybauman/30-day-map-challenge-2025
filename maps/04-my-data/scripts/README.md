@@ -26,6 +26,16 @@ node maps/04-my-data/scripts/build-disney-park-visits.mjs
 
 Raw exports stay inside `private-data/`; only the filtered GeoJSON is committed.
 
+## Platform Upload Notes
+
+When uploading the generated GeoJSON to AI development platforms:
+- **Lovable**: Supports `.geojson` file uploads directly ✅
+- **Bolt.new**: Does NOT support `.geojson` file uploads ❌
+  - Workaround: Convert to `.txt` extension or embed GeoJSON inline in JavaScript
+- **Other platforms**: Check file upload support for `.geojson` files
+
+The GeoJSON file can be used directly in code by loading it as JSON or embedding it inline if needed.
+
 ## Timeline Format Support
 
 The script handles Google Timeline `semanticSegments` format:
