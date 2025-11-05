@@ -1,6 +1,6 @@
 # Day 4: My Data - Ideation Prompt
 
-**Date:** November 4, 2025  
+**Date:** November 4, 2025
 **Theme:** My Data - Map something personal using your own dataset (GPS traces, commute data, unique logs).
 
 **Attribution:**

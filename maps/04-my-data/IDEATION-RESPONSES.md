@@ -1,6 +1,6 @@
 # Day 4: My Data - Ideation Responses
 
-**Date:** November 4, 2025  
+**Date:** November 4, 2025
 **Theme:** My Data - Personal dataset storytelling.
 
 > **Status:** Pending. Paste the full outputs from Claude, ChatGPT, and Gemini below once you run the unified prompt in each platform.
@@ -214,9 +214,9 @@ This is a classic "heatmap" of your personal movement, but with crucial privacy 
 ## Human Selection & Direction
 
 - **Chosen concept:** *Disney Park Visit Mix* (pivot). Use Google Timeline exports (or Strava traces from trip days) and filter to the Disney parks I’ve actually visited. Aggregate visits per park (simple counts + total time), drop anything near my home ZIP, and publish a sanitized point GeoJSON that highlights which parks/lands pulled me in most often.
-- **Alternates kept in scope:**  
-  1. *My Coffee Geography* (Claude Concept 2) is still viable for a later map if I focus on a travel city.  
-  2. *Personal Heatlines* (ChatGPT Concept 2) remains a second-choice visualization if I have time to process runs from another region.  
+- **Alternates kept in scope:**
+  1. *My Coffee Geography* (Claude Concept 2) is still viable for a later map if I focus on a travel city.
+  2. *Personal Heatlines* (ChatGPT Concept 2) remains a second-choice visualization if I have time to process runs from another region.
   3. *Activity Shell* (Gemini Concept 2) is a fallback hexbin option.
 - **Data handling plan:** Raw Takeout/GPX exports stay inside the root `private-data/` directory (gitignored). Processing scripts output sanitized data into `maps/04-my-data/data/` so only filtered GeoJSON/CSV files reach version control. Every dataset must strip my home ZIP before it leaves `private-data/`.
 - **Dataset status:** Generated `disney-park-visits.geojson` v1 (7 visits across 2 Anaheim parks) using the new `build-disney-park-visits.mjs` script; ready for platform prompts.

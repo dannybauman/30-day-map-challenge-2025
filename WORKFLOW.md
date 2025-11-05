@@ -119,6 +119,8 @@ Here's my refined process after completing Day 1.
 6. Keep times approximate (~1.5 hrs, not 87 min)
 7. Keep it simple and easy to update later
 8. Before publishing, review `DESIGN-SYSTEM.md` to ensure layout, styling, and grade badges match the current standards
+9. Reuse the color palette already defined in the template—new callouts should lean on existing gradients/badge styles instead of bespoke colors.
+10. In the body copy, refer to logs and summaries generically (e.g., “documentation” or “project log”) rather than surfacing raw filenames.
 
 **What to include**:
 - Quick stats (platforms tested, success rate)
