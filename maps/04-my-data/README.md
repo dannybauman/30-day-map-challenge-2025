@@ -100,6 +100,24 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 - **Time:** ~5 minutes
 - **Notes:** Works mostly, looks pretty good (nice sidebar + main panel). Only shows 5 points when there should be 118. Could quickly go up to B+ if waypoint loading issue is fixed.
 
+### ChatGPT Canvas
+- **Status:** ⚠️ Partial Success (Grade D)
+- **Shared URL:** https://chatgpt.com/canvas/shared/690bc8d900048191b01db468789b6c49
+- **Time:** ~15 minutes
+- **Notes:** Couldn't load data all the way. Loaded data inline but couldn't show it on the map. Tried auto-fix errors a few times, didn't work. Same pattern as Day 2 - data processing issues with large inline GeoJSON.
+
+### Claude Artifacts
+- **Status:** ⚠️ Partial Success (Grade D)
+- **Shared URL:** https://claude.ai/public/artifacts/cfa10548-8b32-4a19-a33c-4286c29c78b1
+- **Time:** ~15 minutes
+- **Notes:** Couldn't load data fully. Kept stopping output and asking if I wanted to continue (was putting GeoJSON inline). Tried auto-fix errors a few times, didn't work. Same CSP/CORS pattern as Days 1-3, but also had output interruption issues with large inline data.
+
+### Gemini Canvas
+- **Status:** ⚠️ Partial Success (Grade D)
+- **Shared URL:** https://gemini.google.com/share/47b10c6d5a96
+- **Time:** ~15 minutes
+- **Notes:** Showed a bit of UI but not much else. Couldn't load data or map. Tried auto-fix errors a few times, didn't work. Similar to Day 2 - UI works but map/data rendering fails.
+
 ## Human notes
 
 - Confirmed Claude's "Shadow Calendar" suggestion was not a map and redirected it.
