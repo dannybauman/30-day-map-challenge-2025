@@ -32,9 +32,9 @@
 | Base44 | ✅ Success | ~5 min | Maybe one of the best! Nice visuals (left sidebar stats/info, main panel map). Clustering AND heatmap option (nice touch!). No file upload in initial prompt, but uploaded .txt after it started. | ✅ | ⬜ | B |
 | Firebase Studio | ⚠️ Partial | ~15 min | Multiple JSON errors needed fixing (3 attempts). Had to switch to code mode, create .env.local, add Google Maps API key, upload GeoJSON. UI shows but data doesn't load correctly, map points hard to see. Barely any colors in sidebar. | ✅ | ⬜ | C- |
 | MagicPatterns | ⚠️ Partial | ~5 min | Works mostly, looks pretty good (nice sidebar + main panel). Only shows 5 points when there should be 118. Could quickly go up to B+ if waypoint loading issue is fixed. | ✅ | ⬜ | B- |
-| ChatGPT Canvas | ⚠️ Partial | ~15 min | Couldn't load data all the way. Loaded data inline but couldn't show it on the map. Tried auto-fix errors a few times, didn't work. | ⬜ | ⬜ | D |
-| Claude Artifacts | ⚠️ Partial | ~15 min | Couldn't load data fully. Kept stopping output and asking if I wanted to continue (was putting GeoJSON inline). Tried auto-fix errors a few times, didn't work. | ⬜ | ⬜ | D |
-| Gemini Canvas | ⚠️ Partial | ~15 min | Showed a bit of UI but not much else. Couldn't load data or map. Tried auto-fix errors a few times, didn't work. | ⬜ | ⬜ | D |
+| ChatGPT Canvas | ⚠️ Partial | ~15 min | Couldn't load data all the way. Loaded data inline but couldn't show it on the map. Tried auto-fix errors a few times, didn't work. UI shows correctly with stats/controls, but map tiles blocked by network permissions. | ✅ | ⬜ | D |
+| Claude Artifacts | ⚠️ Partial | ~15 min | Couldn't load data fully. Kept stopping output and asking if I wanted to continue (was putting GeoJSON inline). Tried auto-fix errors a few times, didn't work. UI shows correctly with stats, but map/data loading error. | ✅ | ⬜ | D |
+| Gemini Canvas | ⚠️ Partial | ~15 min | Showed a bit of UI but not much else. Couldn't load data or map. Tried auto-fix errors a few times, didn't work. Requires sign-in to view shared content. | ✅ | ⬜ | D |
 
 **Status Legend:**
 - ⬜ Not Started
