@@ -16,8 +16,8 @@
 ✅ Screenshot all attempts (success or failure)
 ✅ Download code from successful implementations
 ✅ Document results in table below
-⬜ Create platform subfolder structure
-⬜ Update README.md with results
+✅ Create platform subfolder structure
+✅ Update README.md with results
 ```
 
 ---
@@ -140,9 +140,12 @@
 ## Human Notes
 
 - **Platform file format limitations discovered:**
-  - Lovable: Supports `.geojson` file uploads ✅
+  - Lovable: Supports `.geojson` file uploads ✅ (in initial prompt)
   - Bolt.new: Does NOT support `.geojson` file uploads ❌ (workaround: use `.txt` version)
   - Google AI Studio: Does NOT support `.geojson` file uploads ❌ (workaround: use `.txt` version)
+  - Base44: No file upload in initial prompt ❌ (can upload `.txt` after generation starts)
+  - Firebase Studio: Only allows images at first ❌ (can provide GeoJSON later in code mode)
+  - MagicPatterns: Only allows images at first ❌ (can provide GeoJSON later)
 - **Data preparation:** Successfully extracted 118 GPS waypoints from Google Timeline export
 - **Script updates:** Changed from aggregated visits to individual GPS waypoints for better visualization
 
