@@ -72,8 +72,10 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 - **Time:** ~5 minutes
 - **Notes:** Worked great in development! Nice two-column layout, stats work, extra clustering toggle feature. Deployed but has data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. Assumed fixable.
 
-### Other Platforms
-- **Google AI Studio:** Testing with `.txt` version (doesn't support `.geojson`)
+### Google AI Studio
+- **Status:** ❌ Failed (Grade F)
+- **Time:** ~10 minutes
+- **Notes:** Errors prevented getting to a map. Tried Auto Fix 3 times, still no luck. No deployed code. Screenshot shows dev version with errors.
 
 ## Human notes
 

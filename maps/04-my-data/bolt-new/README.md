@@ -1,6 +1,6 @@
 # Bolt.new - Day 4 Implementation
 
-**Status:** ⚠️ Partial Success  
+**Status:** ⚠️ Partial Success
 **Grade:** B- (Partial Success - worked almost all the way)
 **Deployed URL:** https://my-disney-park-movem-zgf4.bolt.host
 

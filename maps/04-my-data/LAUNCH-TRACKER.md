@@ -28,7 +28,7 @@
 |----------|--------|------------|-------|------------|------------|-------|
 | Lovable | ✅ Success | ~5 min | Works great on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. UI takes up a lot of page (need to scroll for map). | ⬜ | ⬜ | B |
 | Bolt.new | ⚠️ Partial | ~5 min | Worked great in dev: nice two-column layout, stats work, extra clustering toggle feature. Deployed but data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. | ⬜ | ⬜ | B- |
-| Google AI Studio | ⬜ Not Started | - | Using .txt version (doesn't support .geojson) | - | - | - |
+| Google AI Studio | ❌ Failed | ~10 min | Errors prevented getting to a map. Tried Auto Fix 3 times, still no luck. No deployed code. | ✅ | ⬜ | F |
 
 **Status Legend:**
 - ⬜ Not Started
@@ -73,6 +73,18 @@
   - Tried to fix but ran out of tokens
   - Error suggests JSON parsing issue (likely file path or MIME type issue)
   - Assumed fixable with more tokens/iteration
+
+### Google AI Studio
+- **Status:** ❌ Failed
+- **Grade:** F (Failed)
+- **Time:** ~10 min
+- **Deployed URL:** None (errors prevented deployment)
+- **File Format:** Used `.txt` version (platform doesn't support `.geojson`)
+- **Notes:**
+  - Errors prevented getting to a map
+  - Tried Auto Fix 3 times, still errors
+  - No deployed code available
+  - Screenshot shows dev version with errors
 
 ---
 
