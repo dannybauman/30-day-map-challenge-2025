@@ -31,8 +31,12 @@ Raw exports stay inside `private-data/`; only the filtered GeoJSON is committed.
 When uploading the generated GeoJSON to AI development platforms:
 - **Lovable**: Supports `.geojson` file uploads directly ✅
 - **Bolt.new**: Does NOT support `.geojson` file uploads ❌
-  - Workaround: Convert to `.txt` extension or embed GeoJSON inline in JavaScript
+  - Workaround: Use `.txt` version or embed GeoJSON inline in JavaScript
+- **Google AI Studio**: Does NOT support `.geojson` file uploads ❌
+  - Workaround: Use `.txt` version or embed GeoJSON inline in JavaScript
 - **Other platforms**: Check file upload support for `.geojson` files
+
+**Note:** A `.txt` version of the GeoJSON file is available at `data/disney-park-visits.txt` for platforms that don't support `.geojson` uploads.
 
 The GeoJSON file can be used directly in code by loading it as JSON or embedding it inline if needed.
 
