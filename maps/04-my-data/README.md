@@ -115,3 +115,11 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
   - Firebase Studio & MagicPatterns only allow images at first, GeoJSON later
 - Reviewed the generated GeoJSON to ensure only filtered waypoints are published (no raw traces, home/work excluded).
 - **Screenshot capture:** Captured desktop (1440x900) and mobile (393x852) screenshots for all platforms. For platforms requiring scrolling to see map (Lovable, Base44, MagicPatterns), captured additional mobile screenshots showing map view (`screenshot-mobile-map.png`) alongside original top-view (`screenshot-mobile.png`).
+
+## Key Learnings
+
+- **File upload workflows vary significantly:** Each platform has different file upload capabilities (Lovable supports `.geojson` directly, Bolt.new requires `.txt`, Base44/Firebase/MagicPatterns have multi-step upload processes). This discovery is important for future days with data files.
+- **Personal data privacy is manageable:** Successfully filtered Google Timeline data to exclude home/work locations while preserving park visit waypoints. The script extracts only filtered, public-safe waypoints for visualization.
+- **GPS waypoint visualization reveals movement patterns:** Individual GPS waypoints (vs. aggregated visits) create a dense point cloud showing actual movement paths within parks, providing much richer visualization than single points per visit.
+- **Platform deployment can introduce errors:** Bolt.new worked perfectly in development but failed on deployment (data loading error). This highlights the importance of testing deployed versions, not just development previews.
+- **Heatmap option adds value:** Base44's heatmap toggle was a nice addition that platforms didn't explicitly request, showing how AI platforms can add thoughtful features beyond requirements.
