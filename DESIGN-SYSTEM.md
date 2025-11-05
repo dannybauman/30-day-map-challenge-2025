@@ -1,6 +1,6 @@
 # Design System & Visual Standards
 
-**Last Updated:** November 4, 2025  
+**Last Updated:** November 4, 2025
 **Source Docs Consolidated:** `maps/01-points/DESIGN-SYSTEM-UPDATE.md`, `maps/01-points/TASK-2-IMPROVEMENTS.md`, `maps/01-points/MOBILE-RESPONSIVE-NOTES.md`, `maps/01-points/FIXES-APPLIED.md`, `DOCUMENTATION-GUIDE.md`, `WORKFLOW.md`, Day 2 design notes.
 
 This guide centralizes every design decision that shaped the day showcase pages and platform cards. Treat it as the single reference for layout, styling, and visual QA as we progress through the 30 Day Map Challenge.
