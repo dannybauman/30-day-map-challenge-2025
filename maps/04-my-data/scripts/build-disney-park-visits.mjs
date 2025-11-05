@@ -122,43 +122,181 @@ function isInsideExclusion(lat, lng, exclusionCircles) {
   });
 }
 
-function formatIsoDate(timestampMs) {
-  if (!timestampMs) return null;
-  const date = new Date(Number(timestampMs));
-  if (Number.isNaN(date.getTime())) return null;
-  return date.toISOString().slice(0, 10);
+function parseLatLng(value) {
+  if (!value) return { lat: null, lng: null };
+  if (typeof value === 'string') {
+    const cleaned = value.replace(/\u00b0/g, '').split(',');
+    if (cleaned.length === 2) {
+      const lat = Number(cleaned[0].trim());
+      const lng = Number(cleaned[1].trim());
+      if (Number.isFinite(lat) && Number.isFinite(lng)) {
+        return { lat, lng };
+      }
+    }
+  }
+  if (typeof value === 'object') {
+    const latCandidate =
+      value.latitudeE7 ?? value.latitude ?? value.lat ?? null;
+    const lngCandidate =
+      value.longitudeE7 ?? value.longitude ?? value.lng ?? null;
+    if (latCandidate != null && lngCandidate != null) {
+      const lat =
+        Math.abs(latCandidate) > 180 ? latCandidate / 1e7 : Number(latCandidate);
+      const lng =
+        Math.abs(lngCandidate) > 180 ? lngCandidate / 1e7 : Number(lngCandidate);
+      if (Number.isFinite(lat) && Number.isFinite(lng)) {
+        return { lat, lng };
+      }
+    }
+  }
+  return { lat: null, lng: null };
 }
 
-function durationHours(duration) {
-  const start = Number(duration?.startTimestampMs);
-  const end = Number(duration?.endTimestampMs);
-  if (!Number.isFinite(start) || !Number.isFinite(end)) return 0;
-  if (end <= start) return 0;
-  const hours = (end - start) / (1000 * 60 * 60);
+function parseTimestamp(value) {
+  if (value == null) {
+    return { date: null, iso: null, day: null, ms: null };
+  }
+
+  let date;
+  if (typeof value === 'number') {
+    date = new Date(value);
+  } else if (typeof value === 'string') {
+    const numeric = Number(value);
+    if (!Number.isNaN(numeric) && value.trim() !== '') {
+      date = new Date(numeric);
+    }
+    if (!date || Number.isNaN(date.getTime())) {
+      date = new Date(value);
+    }
+  } else {
+    return { date: null, iso: null, day: null, ms: null };
+  }
+
+  if (Number.isNaN(date.getTime())) {
+    return { date: null, iso: null, day: null, ms: null };
+  }
+
+  const iso = date.toISOString();
+  return {
+    date,
+    iso,
+    day: iso.slice(0, 10),
+    ms: date.getTime(),
+  };
+}
+
+function durationHoursFromTimestamps(startTs, endTs) {
+  if (!startTs?.ms || !endTs?.ms) return 0;
+  if (endTs.ms <= startTs.ms) return 0;
+  const hours = (endTs.ms - startTs.ms) / (1000 * 60 * 60);
   return Math.round(hours * 100) / 100;
 }
 
-function extractPlaceVisits(data) {
-  const list = Array.isArray(data.timelineObjects)
-    ? data.timelineObjects
-    : data;
+function makeVisitRecord({ lat, lng, name, startTs, endTs }) {
+  if (lat == null || lng == null) return null;
+  return {
+    lat,
+    lng,
+    name: name ?? null,
+    startIso: startTs?.iso ?? null,
+    endIso: endTs?.iso ?? null,
+    dateKey: startTs?.day ?? null,
+    durationHours: durationHoursFromTimestamps(startTs, endTs),
+  };
+}
 
-  if (!Array.isArray(list)) {
-    throw new Error('Unrecognized timeline format. Expected timelineObjects[].');
+function extractFromTimelineObjects(list) {
+  const visits = [];
+  for (const obj of list) {
+    const placeVisit = obj.placeVisit;
+    if (!placeVisit) continue;
+    const place = placeVisit.location ?? {};
+    const { lat, lng } = parseLatLng({
+      latitudeE7: place.latitudeE7,
+      longitudeE7: place.longitudeE7,
+      latitude: place.latitude,
+      longitude: place.longitude,
+    });
+
+    const startTs = parseTimestamp(placeVisit.duration?.startTimestampMs);
+    const endTs = parseTimestamp(placeVisit.duration?.endTimestampMs);
+    const record = makeVisitRecord({
+      lat,
+      lng,
+      name: place.name,
+      startTs,
+      endTs,
+    });
+    if (record) {
+      visits.push(record);
+    }
+  }
+  return visits;
+}
+
+function extractFromSemanticSegments(segments) {
+  const visits = [];
+
+  const collectVisit = (visit, segmentStartTs, segmentEndTs) => {
+    if (!visit) return;
+    const top = visit.topCandidate ?? {};
+    const location = top.placeLocation ?? {};
+    const { lat, lng } = parseLatLng(
+      location.latLng
+        ? location.latLng
+        : {
+            latitudeE7: location.latitudeE7,
+            longitudeE7: location.longitudeE7,
+            latitude: location.latitude,
+            longitude: location.longitude,
+          }
+    );
+
+    const startTs = visit.startTime
+      ? parseTimestamp(visit.startTime)
+      : segmentStartTs;
+    const endTs = visit.endTime ? parseTimestamp(visit.endTime) : segmentEndTs;
+
+    const record = makeVisitRecord({
+      lat,
+      lng,
+      name: null,
+      startTs,
+      endTs,
+    });
+    if (record) {
+      visits.push(record);
+    }
+  };
+
+  for (const segment of segments) {
+    const segmentStartTs = parseTimestamp(segment.startTime);
+    const segmentEndTs = parseTimestamp(segment.endTime);
+    if (segment.visit) {
+      collectVisit(segment.visit, segmentStartTs, segmentEndTs);
+    }
+    if (Array.isArray(segment.timelinePath)) {
+      for (const item of segment.timelinePath) {
+        if (item.visit) {
+          collectVisit(item.visit, segmentStartTs, segmentEndTs);
+        }
+      }
+    }
   }
 
-  return list
-    .filter((obj) => obj.placeVisit)
-    .map((obj) => {
-      const place = obj.placeVisit?.location ?? {};
-      return {
-        name: place.name ?? 'Unnamed Place',
-        lat: place.latitudeE7 != null ? place.latitudeE7 / 1e7 : null,
-        lng: place.longitudeE7 != null ? place.longitudeE7 / 1e7 : null,
-        duration: obj.placeVisit?.duration ?? {},
-      };
-    })
-    .filter((visit) => visit.lat != null && visit.lng != null);
+  return visits;
+}
+
+function extractPlaceVisits(data) {
+  if (Array.isArray(data?.timelineObjects)) {
+    return extractFromTimelineObjects(data.timelineObjects);
+  }
+  if (Array.isArray(data?.semanticSegments)) {
+    return extractFromSemanticSegments(data.semanticSegments);
+  }
+  throw new Error(
+    'Unrecognized timeline format. Expected timelineObjects[] or semanticSegments[].'
+  );
 }
 
 function aggregateVisits(visits, config) {
@@ -172,8 +310,9 @@ function aggregateVisits(visits, config) {
     }
 
     const key = park.id;
-    const visitDate = formatIsoDate(visit.duration?.startTimestampMs);
-    const visitDuration = durationHours(visit.duration);
+    const visitDate = visit.dateKey ?? null;
+    const visitDuration = visit.durationHours ?? 0;
+    const startStamp = visit.startIso ?? visitDate ?? null;
 
     if (!buckets.has(key)) {
       buckets.set(key, {
@@ -182,8 +321,8 @@ function aggregateVisits(visits, config) {
         displayPoint: park.displayPoint,
         count: 0,
         totalHours: 0,
-        firstVisit: visitDate,
-        lastVisit: visitDate,
+        firstVisit: startStamp,
+        lastVisit: startStamp,
         daySet: new Set(),
         sampleNames: new Set(),
       });
@@ -195,11 +334,13 @@ function aggregateVisits(visits, config) {
 
     if (visitDate) {
       bucket.daySet.add(visitDate);
-      if (!bucket.firstVisit || visitDate < bucket.firstVisit) {
-        bucket.firstVisit = visitDate;
+    }
+    if (startStamp) {
+      if (!bucket.firstVisit || startStamp < bucket.firstVisit) {
+        bucket.firstVisit = startStamp;
       }
-      if (!bucket.lastVisit || visitDate > bucket.lastVisit) {
-        bucket.lastVisit = visitDate;
+      if (!bucket.lastVisit || startStamp > bucket.lastVisit) {
+        bucket.lastVisit = startStamp;
       }
     }
 

@@ -1,10 +1,52 @@
 {
   "type": "FeatureCollection",
-  "features": [],
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.918976,
+          33.812511
+        ]
+      },
+      "properties": {
+        "id": 1,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_count": 6,
+        "unique_visit_days": 3,
+        "first_visit": "2025-09-02T22:26:10.000Z",
+        "last_visit": "2025-09-04T19:53:43.000Z",
+        "total_hours": 38.57,
+        "sample_places": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.918877,
+          33.807711
+        ]
+      },
+      "properties": {
+        "id": 2,
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_count": 1,
+        "unique_visit_days": 1,
+        "first_visit": "2025-09-02T22:26:10.000Z",
+        "last_visit": "2025-09-02T22:26:10.000Z",
+        "total_hours": 1.79,
+        "sample_places": []
+      }
+    }
+  ],
   "meta": {
-    "generated_at": "TODO",
-    "total_visits": 0,
-    "unique_parks": 0,
-    "note": "Run maps/04-my-data/scripts/build-disney-park-visits.mjs after placing Timeline exports in private-data/."
+    "generated_at": "2025-11-05T04:26:58.452Z",
+    "total_visits": 7,
+    "unique_parks": 2
   }
 }
