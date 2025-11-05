@@ -66,8 +66,13 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 - **Time:** ~5 minutes (first attempt)
 - **Notes:** Worked on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. Minor issue: UI takes up a lot of page space (need to scroll for map).
 
+### Bolt.new
+- **Status:** ⚠️ Partial Success (Grade D)
+- **Deployed URL:** https://my-disney-park-movem-zgf4.bolt.host
+- **Time:** ~5 minutes
+- **Notes:** Worked great in development! Nice two-column layout, stats work, extra clustering toggle feature. Deployed but has data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. Assumed fixable.
+
 ### Other Platforms
-- **Bolt.new:** Testing with `.txt` version (doesn't support `.geojson`)
 - **Google AI Studio:** Testing with `.txt` version (doesn't support `.geojson`)
 
 ## Human notes

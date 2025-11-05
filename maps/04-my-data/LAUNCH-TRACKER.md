@@ -27,7 +27,7 @@
 | Platform | Status | Time Spent | Notes | Screenshot | Code Saved | Grade |
 |----------|--------|------------|-------|------------|------------|-------|
 | Lovable | ✅ Success | ~5 min | Works great on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. UI takes up a lot of page (need to scroll for map). | ⬜ | ⬜ | B |
-| Bolt.new | ⬜ Not Started | - | Using .txt version (doesn't support .geojson) | - | - | - |
+| Bolt.new | ⚠️ Partial | ~5 min | Worked great in dev: nice two-column layout, stats work, extra clustering toggle feature. Deployed but data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. | ⬜ | ⬜ | D |
 | Google AI Studio | ⬜ Not Started | - | Using .txt version (doesn't support .geojson) | - | - | - |
 
 **Status Legend:**
@@ -56,6 +56,23 @@
   - Minor issue: UI takes up a lot of page space, need to scroll down to see map
   - Responsive design works
   - All features functional
+
+### Bolt.new
+- **Status:** ⚠️ Partial Success
+- **Grade:** D (Partial Success)
+- **Time:** ~5 min
+- **Deployed URL:** https://my-disney-park-movem-zgf4.bolt.host
+- **File Format:** Used `.txt` version (platform doesn't support `.geojson`)
+- **Notes:**
+  - Worked great in development
+  - Nice two-column layout (stats/overview on left, map on right)
+  - Stats display correctly
+  - Extra feature: Clustering toggle checkbox (Enable/Disable Clustering)
+  - **Deployment issue:** Data loading error (`Uncaught SyntaxError: Unexpected token '<'`)
+  - UI renders correctly on deployment but no data loads
+  - Tried to fix but ran out of tokens
+  - Error suggests JSON parsing issue (likely file path or MIME type issue)
+  - Assumed fixable with more tokens/iteration
 
 ---
 
