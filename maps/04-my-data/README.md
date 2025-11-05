@@ -77,6 +77,24 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 - **Time:** ~10 minutes
 - **Notes:** Errors prevented getting to a map. Tried Auto Fix 3 times, still no luck. No deployed code. Screenshot shows dev version with errors.
 
+### Base44
+- **Status:** ✅ Success (Grade B)
+- **Deployed URL:** https://disney-park-paths-0af5726d.base44.app/
+- **Time:** ~5 minutes
+- **Notes:** Maybe one of the best! Nice visuals (left sidebar stats/info, main panel map). Clustering AND heatmap option (nice touch!). No file upload in initial prompt, but uploaded .txt after it started.
+
+### Firebase Studio
+- **Status:** ⚠️ Partial Success (Grade C-)
+- **Deployed URL:** https://studio--studio-5686587708-3c211.us-central1.hosted.app/
+- **Time:** ~15 minutes
+- **Notes:** Multiple JSON errors needed fixing (3 attempts). Had to switch to code mode, create .env.local, add Google Maps API key, upload GeoJSON. UI shows but data doesn't load correctly, map points hard to see. Barely any colors in sidebar.
+
+### MagicPatterns
+- **Status:** ⚠️ Partial Success (Grade B-)
+- **Deployed URL:** https://project-disney-park-visits-map-198.magicpatterns.app/
+- **Time:** ~5 minutes
+- **Notes:** Works mostly, looks pretty good (nice sidebar + main panel). Only shows 5 points when there should be 118. Could quickly go up to B+ if waypoint loading issue is fixed.
+
 ## Human notes
 
 - Confirmed Claude's "Shadow Calendar" suggestion was not a map and redirected it.

@@ -1,7 +1,7 @@
 # Google AI Studio - Day 4 Implementation
 
-**Status:** ❌ Failed  
-**Grade:** F (Failed)  
+**Status:** ❌ Failed
+**Grade:** F (Failed)
 **Deployed URL:** None (errors prevented deployment)
 
 ## Results
