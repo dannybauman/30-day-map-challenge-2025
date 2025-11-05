@@ -31,12 +31,17 @@ Extract all GPS waypoints from my Google Maps Timeline exports to visualize actu
 ## Platform file format notes
 
 When uploading the GeoJSON file to AI development platforms:
-- **Lovable**: Supports `.geojson` file uploads directly ✅
+- **Lovable**: Supports `.geojson` file uploads directly ✅ (in initial prompt)
 - **Bolt.new**: Does NOT support `.geojson` file uploads ❌
   - Workaround: Use `.txt` version or embed GeoJSON inline in JavaScript
 - **Google AI Studio**: Does NOT support `.geojson` file uploads ❌
   - Workaround: Use `.txt` version or embed GeoJSON inline in JavaScript
-- **Other platforms**: Test file upload support before proceeding
+- **Base44**: No file upload option in initial prompt ❌
+  - Workaround: Can upload `.txt` file after generation starts
+- **Firebase Studio**: Only allows attaching images at first ❌
+  - Workaround: Can provide GeoJSON later in code mode
+- **MagicPatterns**: Only allows attaching images at first ❌
+  - Workaround: Can provide GeoJSON later after generation
 
 **Note:** A `.txt` version of the GeoJSON file is available at `data/disney-park-visits.txt` for platforms that don't support `.geojson` uploads.
 
