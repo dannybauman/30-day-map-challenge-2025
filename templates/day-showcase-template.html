@@ -467,6 +467,15 @@
                     - Single winner (full width col-md-12): Use col-8 for desktop, col-4 for mobile
                     - Multiple winners (col-md-6): Use col-7 for desktop, col-5 for mobile (already appropriately sized)
                     - The goal: mobile screenshot shouldn't be too large when winner takes full width
+                    
+                    MULTIPLE SCREENSHOTS:
+                    - When capturing additional screenshots (e.g., scrolled mobile view, tooltip issues):
+                      - Desktop: Add <img> tags stacked in desktop column with mt-2 spacing
+                      - Mobile: Add <img> tags stacked in mobile column with mt-2 spacing
+                      - Example: <img src="platform/screenshot.png" class="screenshot-desktop">
+                                <img src="platform/screenshot-issue.png" class="screenshot-desktop mt-2">
+                                <small>Desktop - Issue Description</small>
+                    - Each screenshot should have descriptive alt text and caption
                 -->
                 {{PLATFORM_CARDS}}
             </div>

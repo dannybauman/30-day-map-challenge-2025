@@ -62,7 +62,12 @@ If an update is necessary, adjust the template first, then re-run the build or p
 ## 4. Responsive & Screenshot Standards
 
 - **Capture workflow:** Desktop at 1440×900 (`screenshot.png`), mobile at 393×852 (`screenshot-mobile.png`). Wait five seconds for assets to resolve; accept permission prompts before capturing.
-- **Folder naming:** Each platform gets a folder (`chatgpt-canvas/`, `bolt-new/`, etc.) with `README.md`, `screenshot.png`, and (when captured) `screenshot-mobile.png`.
+- **Multiple screenshots:** When capturing additional screenshots for specific features or issues:
+  - **Desktop**: Use naming pattern `screenshot-{description}.png` (e.g., `screenshot-tooltip-issue.png`)
+  - **Mobile**: Use naming pattern `screenshot-mobile-{description}.png` (e.g., `screenshot-mobile-map.png` for scrolled view showing map)
+  - **HTML inclusion**: Stack multiple screenshots in the same column (desktop screenshots in desktop column, mobile in mobile column) with `mt-2` spacing between them
+  - **Example pattern** (from Day 2 Lovable): Desktop column shows two stacked images (main + tooltip issue), mobile column shows one
+- **Folder naming:** Each platform gets a folder (`chatgpt-canvas/`, `bolt-new/`, etc.) with `README.md`, `screenshot.png`, and (when captured) `screenshot-mobile.png`. Additional screenshots follow the naming patterns above.
 - **Testing checklist:** Resize manually or use responsive dev tools to confirm:
   1. Sidebar elements stack cleanly.
   2. Legends remain readable and do not consume >50% width on mobile.

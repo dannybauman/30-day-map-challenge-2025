@@ -104,6 +104,10 @@ Here's my refined process after completing Day 1.
 - Wait 5+ seconds for content to load
 - Watch for & approve permission dialogs!
 - Tests responsive design quality
+- **Multiple screenshots**: When needed, capture additional screenshots:
+  - Desktop: Add `screenshot-{description}.png` (e.g., `screenshot-tooltip-issue.png`) for specific issues or features
+  - Mobile: Add `screenshot-mobile-{description}.png` (e.g., `screenshot-mobile-map.png`) for different views (e.g., scrolled to show map)
+  - Include all screenshots in HTML - stack multiple desktop screenshots in the desktop column, multiple mobile in mobile column
 - **Note**: Can automate with Cursor or Playwright browser tools. A screenshot script is available in `scripts/` for capturing showcase page screenshots (workaround until better tooling is available).
 
 **Step 2: Create HTML** (10-15 min):
