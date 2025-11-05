@@ -114,3 +114,4 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
   - Base44 has no file upload in initial prompt but can upload after generation starts
   - Firebase Studio & MagicPatterns only allow images at first, GeoJSON later
 - Reviewed the generated GeoJSON to ensure only filtered waypoints are published (no raw traces, home/work excluded).
+- **Screenshot capture:** Captured desktop (1440x900) and mobile (393x852) screenshots for all platforms. For platforms requiring scrolling to see map (Lovable, Base44, MagicPatterns), captured additional mobile screenshots showing map view (`screenshot-mobile-map.png`) alongside original top-view (`screenshot-mobile.png`).

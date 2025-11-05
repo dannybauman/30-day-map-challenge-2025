@@ -9,12 +9,12 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 | Platform | Attempts | Success | Partial | Failed | Success % | Avg Time |
 |----------|----------|---------|---------|--------|-----------|----------|
 | ChatGPT Canvas | 2 | 1 | 1 | 0 | 50% | 5-10 min |
-| Bolt.new | 3 | 2 | 1 | 0 | 67% | 5 min |
-| Lovable | 3 | 2 | 1 | 0 | 67% | 5-10 min |
-| Base44 | 2 | 2 | 0 | 0 | 100% | 5 min |
-| MagicPatterns | 4 | 3 | 1 | 0 | 75% | 5 min |
-| Firebase Studio | 3 | 2 | 1 | 0 | 67% | 15 min |
-| Google AI Studio | 3 | 1 | 1 | 1 | 33% | 5-10 min |
+| Bolt.new | 4 | 2 | 2 | 0 | 50% | 5 min |
+| Lovable | 4 | 3 | 1 | 0 | 75% | 5-10 min |
+| Base44 | 3 | 3 | 0 | 0 | 100% | 5 min |
+| MagicPatterns | 5 | 3 | 2 | 0 | 60% | 5 min |
+| Firebase Studio | 4 | 2 | 2 | 0 | 50% | 15 min |
+| Google AI Studio | 4 | 1 | 1 | 2 | 25% | 5-10 min |
 | V0.dev | 3 | 0 | 3 | 0 | 0% | 10 min |
 | Claude Artifacts | 3 | 0 | 3 | 0 | 0% | 15 min |
 | Gemini | 3 | 0 | 3 | 0 | 0% | 15 min |
