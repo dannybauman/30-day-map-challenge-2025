@@ -6,20 +6,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.918976,
-          33.812511
+          -117.9084221,
+          33.8075887
         ]
       },
       "properties": {
         "id": 1,
         "park_id": "dlp-disneyland",
         "park_name": "Disneyland Park (Anaheim)",
-        "visit_count": 6,
-        "unique_visit_days": 3,
-        "first_visit": "2025-09-02T22:26:10.000Z",
-        "last_visit": "2025-09-04T19:53:43.000Z",
-        "total_hours": 38.57,
-        "sample_places": []
+        "visit_date": "2025-09-05",
+        "start_time": "2025-09-05T17:53:00.000Z",
+        "end_time": "2025-09-05T17:53:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
       }
     },
     {
@@ -27,26 +26,2365 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -117.918877,
-          33.807711
+          -117.915098,
+          33.8090509
         ]
       },
       "properties": {
         "id": 2,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-05",
+        "start_time": "2025-09-05T01:02:00.000Z",
+        "end_time": "2025-09-05T01:02:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9186734,
+          33.8089228
+        ]
+      },
+      "properties": {
+        "id": 3,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-05",
+        "start_time": "2025-09-05T00:54:14.000Z",
+        "end_time": "2025-09-05T00:54:14.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9186734,
+          33.8089228
+        ]
+      },
+      "properties": {
+        "id": 4,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-05",
+        "start_time": "2025-09-05T00:54:00.000Z",
+        "end_time": "2025-09-05T00:54:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9188586,
+          33.8091803
+        ]
+      },
+      "properties": {
+        "id": 5,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-05",
+        "start_time": "2025-09-05T00:53:00.000Z",
+        "end_time": "2025-09-05T00:53:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9168688,
+          33.8069569
+        ]
+      },
+      "properties": {
+        "id": 6,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-05",
+        "start_time": "2025-09-05T00:33:00.000Z",
+        "end_time": "2025-09-05T00:33:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9190173,
+          33.8063309
+        ]
+      },
+      "properties": {
+        "id": 7,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T23:53:00.000Z",
+        "end_time": "2025-09-04T23:53:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9231596,
+          33.8057237
+        ]
+      },
+      "properties": {
+        "id": 8,
         "park_id": "dlp-california-adventure",
         "park_name": "Disney California Adventure",
-        "visit_count": 1,
-        "unique_visit_days": 1,
-        "first_visit": "2025-09-02T22:26:10.000Z",
-        "last_visit": "2025-09-02T22:26:10.000Z",
-        "total_hours": 1.79,
-        "sample_places": []
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T23:00:00.000Z",
+        "end_time": "2025-09-04T23:00:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9206243,
+          33.8061117
+        ]
+      },
+      "properties": {
+        "id": 9,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T21:45:00.000Z",
+        "end_time": "2025-09-04T21:45:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9225202,
+          33.80378
+        ]
+      },
+      "properties": {
+        "id": 10,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T21:34:00.000Z",
+        "end_time": "2025-09-04T21:34:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.920525,
+          33.8051535
+        ]
+      },
+      "properties": {
+        "id": 11,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T21:04:00.000Z",
+        "end_time": "2025-09-04T21:04:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9232525,
+          33.8036006
+        ]
+      },
+      "properties": {
+        "id": 12,
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T20:55:00.000Z",
+        "end_time": "2025-09-04T20:55:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9206039,
+          33.8047245
+        ]
+      },
+      "properties": {
+        "id": 13,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T20:38:00.000Z",
+        "end_time": "2025-09-04T20:38:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.920932,
+          33.8074955
+        ]
+      },
+      "properties": {
+        "id": 14,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T19:54:00.000Z",
+        "end_time": "2025-09-04T19:54:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9199281,
+          33.8062236
+        ]
+      },
+      "properties": {
+        "id": 15,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T19:53:43.000Z",
+        "end_time": "2025-09-05T00:54:14.000Z",
+        "duration_hours": 5.01,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9212071,
+          33.8073351
+        ]
+      },
+      "properties": {
+        "id": 16,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T19:45:00.000Z",
+        "end_time": "2025-09-04T19:45:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9223137,
+          33.8061938
+        ]
+      },
+      "properties": {
+        "id": 17,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T19:35:00.000Z",
+        "end_time": "2025-09-04T19:35:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9229511,
+          33.8061702
+        ]
+      },
+      "properties": {
+        "id": 18,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T19:16:00.000Z",
+        "end_time": "2025-09-04T19:16:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9232148,
+          33.8059526
+        ]
+      },
+      "properties": {
+        "id": 19,
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T19:03:00.000Z",
+        "end_time": "2025-09-04T19:03:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9231969,
+          33.8060791
+        ]
+      },
+      "properties": {
+        "id": 20,
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T18:54:00.000Z",
+        "end_time": "2025-09-04T18:54:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9223715,
+          33.806227
+        ]
+      },
+      "properties": {
+        "id": 21,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T18:44:00.000Z",
+        "end_time": "2025-09-04T18:44:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9223021,
+          33.8059843
+        ]
+      },
+      "properties": {
+        "id": 22,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T18:33:00.000Z",
+        "end_time": "2025-09-04T18:33:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9218351,
+          33.806165
+        ]
+      },
+      "properties": {
+        "id": 23,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T18:31:00.000Z",
+        "end_time": "2025-09-04T18:31:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9197318,
+          33.8059884
+        ]
+      },
+      "properties": {
+        "id": 24,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T18:02:00.000Z",
+        "end_time": "2025-09-04T18:02:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9178062,
+          33.8076756
+        ]
+      },
+      "properties": {
+        "id": 25,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T17:38:00.000Z",
+        "end_time": "2025-09-04T17:38:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9172376,
+          33.8083615
+        ]
+      },
+      "properties": {
+        "id": 26,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T17:26:00.000Z",
+        "end_time": "2025-09-04T17:26:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9211276,
+          33.8087406
+        ]
+      },
+      "properties": {
+        "id": 27,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T17:23:00.000Z",
+        "end_time": "2025-09-04T17:23:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9171046,
+          33.8078201
+        ]
+      },
+      "properties": {
+        "id": 28,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T17:19:00.000Z",
+        "end_time": "2025-09-04T17:19:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9211382,
+          33.8087232
+        ]
+      },
+      "properties": {
+        "id": 29,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T17:18:00.000Z",
+        "end_time": "2025-09-04T17:18:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9189742,
+          33.8120918
+        ]
+      },
+      "properties": {
+        "id": 30,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T17:17:41.000Z",
+        "end_time": "2025-09-04T17:26:05.000Z",
+        "duration_hours": 0.14,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.917114,
+          33.8064293
+        ]
+      },
+      "properties": {
+        "id": 31,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T17:10:00.000Z",
+        "end_time": "2025-09-04T17:10:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9171149,
+          33.8067066
+        ]
+      },
+      "properties": {
+        "id": 32,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T16:56:00.000Z",
+        "end_time": "2025-09-04T16:56:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9177239,
+          33.8074828
+        ]
+      },
+      "properties": {
+        "id": 33,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T16:45:00.000Z",
+        "end_time": "2025-09-04T16:45:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9178774,
+          33.8073996
+        ]
+      },
+      "properties": {
+        "id": 34,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T16:29:00.000Z",
+        "end_time": "2025-09-04T16:29:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9177516,
+          33.807497
+        ]
+      },
+      "properties": {
+        "id": 35,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T16:19:00.000Z",
+        "end_time": "2025-09-04T16:19:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9183032,
+          33.8077015
+        ]
+      },
+      "properties": {
+        "id": 36,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T16:16:00.000Z",
+        "end_time": "2025-09-04T16:16:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9182795,
+          33.8076909
+        ]
+      },
+      "properties": {
+        "id": 37,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T16:11:00.000Z",
+        "end_time": "2025-09-04T16:11:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9183295,
+          33.8076756
+        ]
+      },
+      "properties": {
+        "id": 38,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T16:08:00.000Z",
+        "end_time": "2025-09-04T16:08:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9180282,
+          33.8073171
+        ]
+      },
+      "properties": {
+        "id": 39,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T16:05:00.000Z",
+        "end_time": "2025-09-04T16:05:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9188595,
+          33.8076877
+        ]
+      },
+      "properties": {
+        "id": 40,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T15:55:00.000Z",
+        "end_time": "2025-09-04T15:55:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9203836,
+          33.8084444
+        ]
+      },
+      "properties": {
+        "id": 41,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T15:32:00.000Z",
+        "end_time": "2025-09-04T15:32:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9203762,
+          33.8085362
+        ]
+      },
+      "properties": {
+        "id": 42,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T15:29:00.000Z",
+        "end_time": "2025-09-04T15:29:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9200345,
+          33.8082055
+        ]
+      },
+      "properties": {
+        "id": 43,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T15:22:00.000Z",
+        "end_time": "2025-09-04T15:22:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9207647,
+          33.8055452
+        ]
+      },
+      "properties": {
+        "id": 44,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T15:03:00.000Z",
+        "end_time": "2025-09-04T15:03:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9188586,
+          33.806607
+        ]
+      },
+      "properties": {
+        "id": 45,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T15:00:00.000Z",
+        "end_time": "2025-09-04T15:00:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9194546,
+          33.8070442
+        ]
+      },
+      "properties": {
+        "id": 46,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:50:00.000Z",
+        "end_time": "2025-09-04T14:50:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9194239,
+          33.8070037
+        ]
+      },
+      "properties": {
+        "id": 47,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:35:00.000Z",
+        "end_time": "2025-09-04T14:35:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9190865,
+          33.8089805
+        ]
+      },
+      "properties": {
+        "id": 48,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:31:00.000Z",
+        "end_time": "2025-09-04T14:31:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9182313,
+          33.8095279
+        ]
+      },
+      "properties": {
+        "id": 49,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:14:00.000Z",
+        "end_time": "2025-09-04T14:14:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9182313,
+          33.8095279
+        ]
+      },
+      "properties": {
+        "id": 50,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:14:00.000Z",
+        "end_time": "2025-09-04T14:14:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9219861,
+          33.8111372
+        ]
+      },
+      "properties": {
+        "id": 51,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:14:00.000Z",
+        "end_time": "2025-09-05T00:54:14.000Z",
+        "duration_hours": 10.67,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.915258,
+          33.809303
+        ]
+      },
+      "properties": {
+        "id": 52,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:09:00.000Z",
+        "end_time": "2025-09-04T14:09:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9142095,
+          33.8093098
+        ]
+      },
+      "properties": {
+        "id": 53,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:07:34.000Z",
+        "end_time": "2025-09-04T14:07:34.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9185244,
+          33.8196579
+        ]
+      },
+      "properties": {
+        "id": 54,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:06:00.000Z",
+        "end_time": "2025-09-04T14:06:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9156952,
+          33.8144391
+        ]
+      },
+      "properties": {
+        "id": 55,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T14:06:00.000Z",
+        "end_time": "2025-09-04T14:06:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9151433,
+          33.8090852
+        ]
+      },
+      "properties": {
+        "id": 56,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T03:06:00.000Z",
+        "end_time": "2025-09-04T03:06:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9171081,
+          33.8099385
+        ]
+      },
+      "properties": {
+        "id": 57,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T03:05:00.000Z",
+        "end_time": "2025-09-04T03:05:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9187588,
+          33.8092647
+        ]
+      },
+      "properties": {
+        "id": 58,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T02:55:19.000Z",
+        "end_time": "2025-09-04T02:55:19.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9189629,
+          33.8109506
+        ]
+      },
+      "properties": {
+        "id": 59,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T02:55:00.000Z",
+        "end_time": "2025-09-04T02:55:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.919279,
+          33.8117733
+        ]
+      },
+      "properties": {
+        "id": 60,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T02:48:00.000Z",
+        "end_time": "2025-09-04T02:48:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9217944,
+          33.8113853
+        ]
+      },
+      "properties": {
+        "id": 61,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T02:35:00.000Z",
+        "end_time": "2025-09-04T02:35:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9182523,
+          33.8147
+        ]
+      },
+      "properties": {
+        "id": 62,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T01:43:00.000Z",
+        "end_time": "2025-09-04T01:43:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9209052,
+          33.8112536
+        ]
+      },
+      "properties": {
+        "id": 63,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T01:18:00.000Z",
+        "end_time": "2025-09-04T01:18:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9189785,
+          33.8113115
+        ]
+      },
+      "properties": {
+        "id": 64,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T00:30:00.000Z",
+        "end_time": "2025-09-04T00:30:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9205821,
+          33.8125353
+        ]
+      },
+      "properties": {
+        "id": 65,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-04",
+        "start_time": "2025-09-04T00:24:00.000Z",
+        "end_time": "2025-09-04T00:24:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9228759,
+          33.8148748
+        ]
+      },
+      "properties": {
+        "id": 66,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T23:58:00.000Z",
+        "end_time": "2025-09-03T23:58:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9225034,
+          33.8128333
+        ]
+      },
+      "properties": {
+        "id": 67,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T23:41:00.000Z",
+        "end_time": "2025-09-03T23:41:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9209159,
+          33.8113773
+        ]
+      },
+      "properties": {
+        "id": 68,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T22:07:00.000Z",
+        "end_time": "2025-09-03T22:07:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9177875,
+          33.8126523
+        ]
+      },
+      "properties": {
+        "id": 69,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T20:59:00.000Z",
+        "end_time": "2025-09-03T20:59:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9195457,
+          33.8115171
+        ]
+      },
+      "properties": {
+        "id": 70,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T20:19:00.000Z",
+        "end_time": "2025-09-03T20:19:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.922929,
+          33.8123266
+        ]
+      },
+      "properties": {
+        "id": 71,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T19:31:00.000Z",
+        "end_time": "2025-09-03T19:31:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9203233,
+          33.812038
+        ]
+      },
+      "properties": {
+        "id": 72,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:49:00.000Z",
+        "end_time": "2025-09-03T18:49:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9189742,
+          33.8120918
+        ]
+      },
+      "properties": {
+        "id": 73,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:48:48.000Z",
+        "end_time": "2025-09-04T02:55:19.000Z",
+        "duration_hours": 8.11,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.920151,
+          33.8124883
+        ]
+      },
+      "properties": {
+        "id": 74,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:41:00.000Z",
+        "end_time": "2025-09-03T18:41:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9201491,
+          33.8124866
+        ]
+      },
+      "properties": {
+        "id": 75,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:32:00.000Z",
+        "end_time": "2025-09-03T18:32:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.919969,
+          33.8125642
+        ]
+      },
+      "properties": {
+        "id": 76,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:19:00.000Z",
+        "end_time": "2025-09-03T18:19:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.91984,
+          33.8126258
+        ]
+      },
+      "properties": {
+        "id": 77,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:16:00.000Z",
+        "end_time": "2025-09-03T18:16:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.920651,
+          33.8117241
+        ]
+      },
+      "properties": {
+        "id": 78,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:13:00.000Z",
+        "end_time": "2025-09-03T18:13:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9212489,
+          33.8110729
+        ]
+      },
+      "properties": {
+        "id": 79,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:10:00.000Z",
+        "end_time": "2025-09-03T18:10:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9212539,
+          33.811082
+        ]
+      },
+      "properties": {
+        "id": 80,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:05:00.000Z",
+        "end_time": "2025-09-03T18:05:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9209118,
+          33.8111632
+        ]
+      },
+      "properties": {
+        "id": 81,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:01:00.000Z",
+        "end_time": "2025-09-03T18:01:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9209118,
+          33.8111632
+        ]
+      },
+      "properties": {
+        "id": 82,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T18:00:00.000Z",
+        "end_time": "2025-09-03T18:00:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9239848,
+          33.8098542
+        ]
+      },
+      "properties": {
+        "id": 83,
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:57:00.000Z",
+        "end_time": "2025-09-03T17:57:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9217879,
+          33.8110358
+        ]
+      },
+      "properties": {
+        "id": 84,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:48:00.000Z",
+        "end_time": "2025-09-03T17:48:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9206903,
+          33.8113264
+        ]
+      },
+      "properties": {
+        "id": 85,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:41:00.000Z",
+        "end_time": "2025-09-03T17:41:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9203597,
+          33.8111744
+        ]
+      },
+      "properties": {
+        "id": 86,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:38:00.000Z",
+        "end_time": "2025-09-03T17:38:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9206894,
+          33.8087318
+        ]
+      },
+      "properties": {
+        "id": 87,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:35:00.000Z",
+        "end_time": "2025-09-03T17:35:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9210556,
+          33.8089637
+        ]
+      },
+      "properties": {
+        "id": 88,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:32:00.000Z",
+        "end_time": "2025-09-03T17:32:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.921213,
+          33.8104923
+        ]
+      },
+      "properties": {
+        "id": 89,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:25:00.000Z",
+        "end_time": "2025-09-03T17:25:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.920394,
+          33.8114542
+        ]
+      },
+      "properties": {
+        "id": 90,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:13:00.000Z",
+        "end_time": "2025-09-03T17:13:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9204097,
+          33.8120238
+        ]
+      },
+      "properties": {
+        "id": 91,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:07:00.000Z",
+        "end_time": "2025-09-03T17:07:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9205265,
+          33.812399
+        ]
+      },
+      "properties": {
+        "id": 92,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T17:01:00.000Z",
+        "end_time": "2025-09-03T17:01:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9208307,
+          33.814187
+        ]
+      },
+      "properties": {
+        "id": 93,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T16:54:00.000Z",
+        "end_time": "2025-09-03T16:54:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9215723,
+          33.8151862
+        ]
+      },
+      "properties": {
+        "id": 94,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T16:41:00.000Z",
+        "end_time": "2025-09-03T16:41:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9213334,
+          33.8151322
+        ]
+      },
+      "properties": {
+        "id": 95,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T16:33:00.000Z",
+        "end_time": "2025-09-03T16:33:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9227031,
+          33.8140695
+        ]
+      },
+      "properties": {
+        "id": 96,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T16:23:00.000Z",
+        "end_time": "2025-09-03T16:23:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9229352,
+          33.8142605
+        ]
+      },
+      "properties": {
+        "id": 97,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T16:03:00.000Z",
+        "end_time": "2025-09-03T16:03:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9220258,
+          33.8142166
+        ]
+      },
+      "properties": {
+        "id": 98,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T15:48:00.000Z",
+        "end_time": "2025-09-03T15:48:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9180121,
+          33.8133731
+        ]
+      },
+      "properties": {
+        "id": 99,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T15:40:00.000Z",
+        "end_time": "2025-09-03T15:40:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9174397,
+          33.8133389
+        ]
+      },
+      "properties": {
+        "id": 100,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T15:29:00.000Z",
+        "end_time": "2025-09-03T15:29:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.917298,
+          33.8116852
+        ]
+      },
+      "properties": {
+        "id": 101,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T15:24:00.000Z",
+        "end_time": "2025-09-03T15:24:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9173448,
+          33.8111517
+        ]
+      },
+      "properties": {
+        "id": 102,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T15:14:00.000Z",
+        "end_time": "2025-09-03T15:14:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9173779,
+          33.8113052
+        ]
+      },
+      "properties": {
+        "id": 103,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T15:08:00.000Z",
+        "end_time": "2025-09-03T15:08:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9169896,
+          33.8113376
+        ]
+      },
+      "properties": {
+        "id": 104,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T15:03:00.000Z",
+        "end_time": "2025-09-03T15:03:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9189865,
+          33.8105149
+        ]
+      },
+      "properties": {
+        "id": 105,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T14:33:00.000Z",
+        "end_time": "2025-09-03T14:33:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9176151,
+          33.8092523
+        ]
+      },
+      "properties": {
+        "id": 106,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T14:04:05.000Z",
+        "end_time": "2025-09-03T14:04:05.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9176151,
+          33.8092523
+        ]
+      },
+      "properties": {
+        "id": 107,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T14:04:05.000Z",
+        "end_time": "2025-09-03T14:04:05.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9219861,
+          33.8111372
+        ]
+      },
+      "properties": {
+        "id": 108,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T14:04:05.000Z",
+        "end_time": "2025-09-04T02:55:19.000Z",
+        "duration_hours": 12.85,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9176151,
+          33.8092523
+        ]
+      },
+      "properties": {
+        "id": 109,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T14:04:00.000Z",
+        "end_time": "2025-09-03T14:04:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9150316,
+          33.8085333
+        ]
+      },
+      "properties": {
+        "id": 110,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T13:59:00.000Z",
+        "end_time": "2025-09-03T13:59:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9173779,
+          33.8163786
+        ]
+      },
+      "properties": {
+        "id": 111,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T13:55:00.000Z",
+        "end_time": "2025-09-03T13:55:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9235672,
+          33.8091201
+        ]
+      },
+      "properties": {
+        "id": 112,
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T00:14:00.000Z",
+        "end_time": "2025-09-03T00:14:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9235672,
+          33.8091201
+        ]
+      },
+      "properties": {
+        "id": 113,
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_date": "2025-09-03",
+        "start_time": "2025-09-03T00:13:30.000Z",
+        "end_time": "2025-09-03T00:13:30.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9220556,
+          33.8087258
+        ]
+      },
+      "properties": {
+        "id": 114,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-02",
+        "start_time": "2025-09-02T22:53:00.000Z",
+        "end_time": "2025-09-02T22:53:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9219861,
+          33.8111372
+        ]
+      },
+      "properties": {
+        "id": 115,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-02",
+        "start_time": "2025-09-02T22:26:10.000Z",
+        "end_time": "2025-09-03T00:13:30.000Z",
+        "duration_hours": 1.79,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9237869,
+          33.8097925
+        ]
+      },
+      "properties": {
+        "id": 116,
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_date": "2025-09-02",
+        "start_time": "2025-09-02T22:26:10.000Z",
+        "end_time": "2025-09-03T00:13:30.000Z",
+        "duration_hours": 1.79,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9234906,
+          33.8070566
+        ]
+      },
+      "properties": {
+        "id": 117,
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_date": "2025-09-02",
+        "start_time": "2025-09-02T22:17:00.000Z",
+        "end_time": "2025-09-02T22:17:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9094191,
+          33.8103725
+        ]
+      },
+      "properties": {
+        "id": 118,
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_date": "2025-09-02",
+        "start_time": "2025-09-02T19:21:00.000Z",
+        "end_time": "2025-09-02T19:21:00.000Z",
+        "duration_hours": 0,
+        "place_name": null
       }
     }
   ],
   "meta": {
-    "generated_at": "2025-11-05T04:26:58.452Z",
-    "total_visits": 7,
-    "unique_parks": 2
+    "generated_at": "2025-11-05T20:53:34.906Z",
+    "total_visits": 118,
+    "unique_parks": 2,
+    "park_summary": [
+      {
+        "park_id": "dlp-disneyland",
+        "park_name": "Disneyland Park (Anaheim)",
+        "visit_count": 109,
+        "unique_visit_days": 4,
+        "first_visit": "2025-09-02T19:21:00.000Z",
+        "last_visit": "2025-09-05T17:53:00.000Z",
+        "total_hours": 38.57
+      },
+      {
+        "park_id": "dlp-california-adventure",
+        "park_name": "Disney California Adventure",
+        "visit_count": 9,
+        "unique_visit_days": 3,
+        "first_visit": "2025-09-02T22:17:00.000Z",
+        "last_visit": "2025-09-04T23:00:00.000Z",
+        "total_hours": 1.79
+      }
+    ]
   }
 }

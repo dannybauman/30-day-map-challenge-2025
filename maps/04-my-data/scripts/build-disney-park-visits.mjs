@@ -3,8 +3,8 @@
 /**
  * Day 4 – My Data
  * ----------------
- * Aggregates Disney park visits from Google Maps Timeline exports and produces a
- * privacy-safe GeoJSON with one point per park and visit statistics.
+ * Extracts all GPS waypoints from Disney park visits in Google Maps Timeline exports
+ * and produces a privacy-safe GeoJSON with one point per GPS waypoint at actual locations.
  *
  * Input (configure below):
  *   private-data/google-takeout/location-history/*.json
@@ -14,11 +14,13 @@
  *
  * Workflow:
  *   1. Load Semantic Location History JSON exports.
- *   2. Identify placeVisit entries that land inside the configured park bounds.
- *   3. Drop anything that overlaps a sensitive exclusion circle (home/work).
- *   4. Count visits per park, track distinct visit days, and total dwell time.
- *   5. Emit a GeoJSON FeatureCollection with one point per park (predefined
- *      display coordinates – no raw visit coordinates are stored).
+ *   2. Extract placeVisit entries (named place visits) and activitySegment waypoints
+ *      (all GPS points along movement paths).
+ *   3. Filter waypoints that land inside configured park bounds (global Disney parks).
+ *   4. Drop anything that overlaps a sensitive exclusion circle (home/work).
+ *   5. Create one GeoJSON Point per waypoint at actual GPS coordinates.
+ *   6. Include waypoint metadata (park, timestamp, place name if available).
+ *   7. Calculate summary statistics per park in the meta section.
  *
  * Usage:
  *   node maps/04-my-data/scripts/build-disney-park-visits.mjs
@@ -26,6 +28,9 @@
  * Notes:
  *   - Update CONFIG before running (input files, exclusion circles, park list).
  *   - The script only writes sanitized outputs; raw exports stay in private-data/.
+ *   - Each GPS waypoint becomes a Point feature, creating a dense point cloud showing
+ *     actual movement paths within parks, not just named place visits.
+ *   - Includes all global Disney parks; parks you haven't visited will simply have no points.
  */
 
 import { readFile, writeFile } from 'node:fs/promises';
@@ -46,6 +51,7 @@ const CONFIG = {
     // { lat: 00.000, lng: -00.000, radiusKm: 1.0 },
   ],
   parks: [
+    // Anaheim, California, USA
     {
       id: 'dlp-disneyland',
       name: 'Disneyland Park (Anaheim)',
@@ -58,6 +64,7 @@ const CONFIG = {
       bounds: { minLat: 33.803, maxLat: 33.817, minLng: -117.924, maxLng: -117.910 },
       displayPoint: { lat: 33.807711, lng: -117.918877 },
     },
+    // Walt Disney World, Florida, USA
     {
       id: 'wdw-magic-kingdom',
       name: 'Magic Kingdom',
@@ -82,7 +89,46 @@ const CONFIG = {
       bounds: { minLat: 28.348, maxLat: 28.370, minLng: -81.609, maxLng: -81.578 },
       displayPoint: { lat: 28.3574, lng: -81.5907 },
     },
-    // Add additional parks you have visited.
+    // Disneyland Paris, France
+    {
+      id: 'dlp-paris-disneyland',
+      name: 'Disneyland Park (Paris)',
+      bounds: { minLat: 48.865, maxLat: 48.880, minLng: 2.777, maxLng: 2.800 },
+      displayPoint: { lat: 48.8725, lng: 2.7886 },
+    },
+    {
+      id: 'dlp-paris-walt-disney-studios',
+      name: 'Walt Disney Studios Park',
+      bounds: { minLat: 48.860, maxLat: 48.875, minLng: 2.777, maxLng: 2.800 },
+      displayPoint: { lat: 48.8675, lng: 2.7886 },
+    },
+    // Tokyo Disney Resort, Japan
+    {
+      id: 'tdr-tokyo-disneyland',
+      name: 'Tokyo Disneyland',
+      bounds: { minLat: 35.627, maxLat: 35.640, minLng: 139.875, maxLng: 139.890 },
+      displayPoint: { lat: 35.6335, lng: 139.8825 },
+    },
+    {
+      id: 'tdr-tokyo-disney-sea',
+      name: 'Tokyo DisneySea',
+      bounds: { minLat: 35.625, maxLat: 35.638, minLng: 139.875, maxLng: 139.890 },
+      displayPoint: { lat: 35.6315, lng: 139.8825 },
+    },
+    // Shanghai Disney Resort, China
+    {
+      id: 'sdr-shanghai-disneyland',
+      name: 'Shanghai Disneyland',
+      bounds: { minLat: 31.140, maxLat: 31.155, minLng: 121.655, maxLng: 121.675 },
+      displayPoint: { lat: 31.1475, lng: 121.665 },
+    },
+    // Hong Kong Disneyland Resort
+    {
+      id: 'hkdr-hong-kong-disneyland',
+      name: 'Hong Kong Disneyland',
+      bounds: { minLat: 22.308, maxLat: 22.322, minLng: 114.037, maxLng: 114.052 },
+      displayPoint: { lat: 22.315, lng: 114.0445 },
+    },
   ],
 };
 
@@ -205,30 +251,97 @@ function makeVisitRecord({ lat, lng, name, startTs, endTs }) {
   };
 }
 
+function makeWaypointRecord({ lat, lng, timestamp }) {
+  if (lat == null || lng == null) return null;
+  const ts = parseTimestamp(timestamp);
+  return {
+    lat,
+    lng,
+    name: null,
+    startIso: ts?.iso ?? null,
+    endIso: ts?.iso ?? null,
+    dateKey: ts?.day ?? null,
+    durationHours: 0,
+  };
+}
+
 function extractFromTimelineObjects(list) {
   const visits = [];
   for (const obj of list) {
+    // Extract placeVisits (one point per named place visit)
     const placeVisit = obj.placeVisit;
-    if (!placeVisit) continue;
-    const place = placeVisit.location ?? {};
-    const { lat, lng } = parseLatLng({
-      latitudeE7: place.latitudeE7,
-      longitudeE7: place.longitudeE7,
-      latitude: place.latitude,
-      longitude: place.longitude,
-    });
+    if (placeVisit) {
+      const place = placeVisit.location ?? {};
+      const { lat, lng } = parseLatLng({
+        latitudeE7: place.latitudeE7,
+        longitudeE7: place.longitudeE7,
+        latitude: place.latitude,
+        longitude: place.longitude,
+      });
 
-    const startTs = parseTimestamp(placeVisit.duration?.startTimestampMs);
-    const endTs = parseTimestamp(placeVisit.duration?.endTimestampMs);
-    const record = makeVisitRecord({
-      lat,
-      lng,
-      name: place.name,
-      startTs,
-      endTs,
-    });
-    if (record) {
-      visits.push(record);
+      const startTs = parseTimestamp(placeVisit.duration?.startTimestampMs);
+      const endTs = parseTimestamp(placeVisit.duration?.endTimestampMs);
+      const record = makeVisitRecord({
+        lat,
+        lng,
+        name: place.name,
+        startTs,
+        endTs,
+      });
+      if (record) {
+        visits.push(record);
+      }
+    }
+
+    // Extract waypoints from activity segments (all GPS points along movement paths)
+    const activitySegment = obj.activitySegment;
+    if (activitySegment) {
+      const startTs = parseTimestamp(activitySegment.duration?.startTimestampMs);
+      const endTs = parseTimestamp(activitySegment.duration?.endTimestampMs);
+      const waypointPath = activitySegment.waypointPath ?? [];
+
+      if (waypointPath.length > 0) {
+        // Calculate time step for interpolation if we have start/end times
+        const duration = (startTs?.ms && endTs?.ms) ? (endTs.ms - startTs.ms) : 0;
+        const timeStep = duration > 0 ? duration / Math.max(1, waypointPath.length - 1) : 0;
+
+        for (let i = 0; i < waypointPath.length; i++) {
+          const waypoint = waypointPath[i];
+
+          // Try multiple field name variations for lat/lng
+          const { lat, lng } = parseLatLng({
+            latitudeE7: waypoint.latE7 ?? waypoint.latitudeE7,
+            longitudeE7: waypoint.lngE7 ?? waypoint.longitudeE7,
+            latitude: waypoint.lat ?? waypoint.latitude,
+            longitude: waypoint.lng ?? waypoint.longitude,
+            lat: waypoint.lat,
+            lng: waypoint.lng,
+          });
+
+          if (lat != null && lng != null) {
+            // Use waypoint's timestamp if available, otherwise interpolate
+            let waypointTimestamp = null;
+            if (waypoint.timestampMs || waypoint.timestamp) {
+              waypointTimestamp = waypoint.timestampMs ?? waypoint.timestamp;
+            } else if (startTs?.ms && timeStep > 0) {
+              waypointTimestamp = startTs.ms + i * timeStep;
+            } else if (startTs?.ms) {
+              waypointTimestamp = startTs.ms;
+            }
+
+            if (waypointTimestamp) {
+              const record = makeWaypointRecord({
+                lat,
+                lng,
+                timestamp: waypointTimestamp,
+              });
+              if (record) {
+                visits.push(record);
+              }
+            }
+          }
+        }
+      }
     }
   }
   return visits;
@@ -269,18 +382,106 @@ function extractFromSemanticSegments(segments) {
     }
   };
 
+  // Extract waypoints from timelinePath (all GPS points along movement paths)
+  const extractTimelinePath = (timelinePath, segmentStartTs, segmentEndTs) => {
+    if (!Array.isArray(timelinePath)) return;
+
+    for (const item of timelinePath) {
+      // Extract point from timelinePath item
+      if (item.point) {
+        // point is a string like "33.8142605°, -117.9229352°"
+        const { lat, lng } = parseLatLng(item.point);
+        const pointTime = item.time ? parseTimestamp(item.time) : segmentStartTs;
+
+        if (lat != null && lng != null && pointTime?.ms) {
+          const record = makeWaypointRecord({
+            lat,
+            lng,
+            timestamp: pointTime.ms,
+          });
+          if (record) {
+            visits.push(record);
+          }
+        }
+      }
+
+      // Also check for visit objects nested in timelinePath
+      if (item.visit) {
+        collectVisit(item.visit, segmentStartTs, segmentEndTs);
+      }
+    }
+  };
+
+  // Extract points from activity start/end locations
+  const extractActivity = (activity, segmentStartTs, segmentEndTs) => {
+    if (!activity) return;
+
+    // Extract start location
+    if (activity.start?.latLng) {
+      const { lat, lng } = parseLatLng(activity.start.latLng);
+      if (lat != null && lng != null && segmentStartTs?.ms) {
+        const record = makeWaypointRecord({
+          lat,
+          lng,
+          timestamp: segmentStartTs.ms,
+        });
+        if (record) {
+          visits.push(record);
+        }
+      }
+    }
+
+    // Extract end location
+    if (activity.end?.latLng) {
+      const { lat, lng } = parseLatLng(activity.end.latLng);
+      if (lat != null && lng != null && segmentEndTs?.ms) {
+        const record = makeWaypointRecord({
+          lat,
+          lng,
+          timestamp: segmentEndTs.ms,
+        });
+        if (record) {
+          visits.push(record);
+        }
+      }
+    }
+
+    // Extract parking location if available
+    if (activity.parking?.location?.latLng) {
+      const { lat, lng } = parseLatLng(activity.parking.location.latLng);
+      const parkingTime = activity.parking.startTime
+        ? parseTimestamp(activity.parking.startTime)
+        : segmentEndTs;
+      if (lat != null && lng != null && parkingTime?.ms) {
+        const record = makeWaypointRecord({
+          lat,
+          lng,
+          timestamp: parkingTime.ms,
+        });
+        if (record) {
+          visits.push(record);
+        }
+      }
+    }
+  };
+
   for (const segment of segments) {
     const segmentStartTs = parseTimestamp(segment.startTime);
     const segmentEndTs = parseTimestamp(segment.endTime);
+
+    // Extract visit entries (named place visits)
     if (segment.visit) {
       collectVisit(segment.visit, segmentStartTs, segmentEndTs);
     }
-    if (Array.isArray(segment.timelinePath)) {
-      for (const item of segment.timelinePath) {
-        if (item.visit) {
-          collectVisit(item.visit, segmentStartTs, segmentEndTs);
-        }
-      }
+
+    // Extract timelinePath waypoints (all GPS points along movement paths)
+    if (segment.timelinePath) {
+      extractTimelinePath(segment.timelinePath, segmentStartTs, segmentEndTs);
+    }
+
+    // Extract activity start/end locations
+    if (segment.activity) {
+      extractActivity(segment.activity, segmentStartTs, segmentEndTs);
     }
   }
 
@@ -299,8 +500,8 @@ function extractPlaceVisits(data) {
   );
 }
 
-function aggregateVisits(visits, config) {
-  const buckets = new Map();
+function filterVisits(visits, config) {
+  const filtered = [];
 
   for (const visit of visits) {
     const park = matchPark(visit.lat, visit.lng, config.parks);
@@ -309,80 +510,89 @@ function aggregateVisits(visits, config) {
       continue;
     }
 
-    const key = park.id;
-    const visitDate = visit.dateKey ?? null;
-    const visitDuration = visit.durationHours ?? 0;
-    const startStamp = visit.startIso ?? visitDate ?? null;
-
-    if (!buckets.has(key)) {
-      buckets.set(key, {
-        parkId: park.id,
-        parkName: park.name,
-        displayPoint: park.displayPoint,
-        count: 0,
-        totalHours: 0,
-        firstVisit: startStamp,
-        lastVisit: startStamp,
-        daySet: new Set(),
-        sampleNames: new Set(),
-      });
-    }
-
-    const bucket = buckets.get(key);
-    bucket.count += 1;
-    bucket.totalHours += visitDuration;
-
-    if (visitDate) {
-      bucket.daySet.add(visitDate);
-    }
-    if (startStamp) {
-      if (!bucket.firstVisit || startStamp < bucket.firstVisit) {
-        bucket.firstVisit = startStamp;
-      }
-      if (!bucket.lastVisit || startStamp > bucket.lastVisit) {
-        bucket.lastVisit = startStamp;
-      }
-    }
-
-    if (visit.name) {
-      bucket.sampleNames.add(visit.name);
-    }
+    filtered.push({
+      ...visit,
+      parkId: park.id,
+      parkName: park.name,
+    });
   }
 
-  return Array.from(buckets.values());
+  return filtered;
 }
 
-function buildFeatureCollection(groups) {
-  const totalVisits = groups.reduce((sum, item) => sum + item.count, 0);
+function buildFeatureCollection(filteredVisits) {
+  // Sort by timestamp (most recent first)
+  const sorted = filteredVisits.sort((a, b) => {
+    const aTime = a.startIso || a.dateKey || '';
+    const bTime = b.startIso || b.dateKey || '';
+    return bTime.localeCompare(aTime);
+  });
 
-  const features = groups
-    .sort((a, b) => b.count - a.count)
-    .map((group, index) => ({
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [group.displayPoint.lng, group.displayPoint.lat],
-      },
-      properties: {
-        id: index + 1,
-        park_id: group.parkId,
-        park_name: group.parkName,
-        visit_count: group.count,
-        unique_visit_days: group.daySet.size,
-        first_visit: group.firstVisit,
-        last_visit: group.lastVisit,
-        total_hours: Math.round(group.totalHours * 100) / 100,
-        sample_places: Array.from(group.sampleNames).slice(0, 5),
-      },
-    }));
+  const features = sorted.map((visit, index) => ({
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [visit.lng, visit.lat],
+    },
+    properties: {
+      id: index + 1,
+      park_id: visit.parkId,
+      park_name: visit.parkName,
+      visit_date: visit.dateKey || null,
+      start_time: visit.startIso || null,
+      end_time: visit.endIso || null,
+      duration_hours: visit.durationHours || 0,
+      place_name: visit.name || null,
+    },
+  }));
+
+  // Calculate summary stats
+  const parkStats = new Map();
+  for (const visit of filteredVisits) {
+    if (!parkStats.has(visit.parkId)) {
+      parkStats.set(visit.parkId, {
+        parkId: visit.parkId,
+        parkName: visit.parkName,
+        visitCount: 0,
+        uniqueDays: new Set(),
+        totalHours: 0,
+        firstVisit: visit.startIso || visit.dateKey || null,
+        lastVisit: visit.startIso || visit.dateKey || null,
+      });
+    }
+    const stats = parkStats.get(visit.parkId);
+    stats.visitCount += 1;
+    if (visit.dateKey) {
+      stats.uniqueDays.add(visit.dateKey);
+    }
+    stats.totalHours += visit.durationHours || 0;
+    const visitTime = visit.startIso || visit.dateKey || null;
+    if (visitTime) {
+      if (!stats.firstVisit || visitTime < stats.firstVisit) {
+        stats.firstVisit = visitTime;
+      }
+      if (!stats.lastVisit || visitTime > stats.lastVisit) {
+        stats.lastVisit = visitTime;
+      }
+    }
+  }
 
   return {
     type: 'FeatureCollection',
     features,
     meta: {
       generated_at: new Date().toISOString(),
-      total_visits: totalVisits,
-      unique_parks: groups.length,
+      total_visits: filteredVisits.length,
+      unique_parks: parkStats.size,
+      park_summary: Array.from(parkStats.values()).map((stats) => ({
+        park_id: stats.parkId,
+        park_name: stats.parkName,
+        visit_count: stats.visitCount,
+        unique_visit_days: stats.uniqueDays.size,
+        first_visit: stats.firstVisit,
+        last_visit: stats.lastVisit,
+        total_hours: Math.round(stats.totalHours * 100) / 100,
+      })),
     },
   };
 }
@@ -407,20 +617,24 @@ async function main() {
   const visits = await readAllVisits(CONFIG.inputFiles);
   console.log(`Total place visits loaded: ${visits.length}`);
 
-  const grouped = aggregateVisits(visits, CONFIG);
+  const filteredVisits = filterVisits(visits, CONFIG);
 
-  if (grouped.length === 0) {
+  if (filteredVisits.length === 0) {
     console.warn('No Disney park visits matched the filters. Adjust CONFIG and try again.');
     return;
   }
 
-  const featureCollection = buildFeatureCollection(grouped);
+  const featureCollection = buildFeatureCollection(filteredVisits);
   await writeFile(CONFIG.outputFile, JSON.stringify(featureCollection, null, 2));
 
   console.log(`Sanitized GeoJSON written to ${CONFIG.outputFile}`);
   console.log(
-    `Summary: ${featureCollection.meta.total_visits} visits across ${featureCollection.meta.unique_parks} parks`
+    `Summary: ${featureCollection.meta.total_visits} individual visits across ${featureCollection.meta.unique_parks} parks`
   );
+  console.log(`Park summary:`);
+  featureCollection.meta.park_summary.forEach((park) => {
+    console.log(`  - ${park.park_name}: ${park.visit_count} visits, ${park.unique_visit_days} unique days, ${park.total_hours} hours`);
+  });
 }
 
 main().catch((err) => {
