@@ -58,6 +58,18 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 - **Visit period:** September 2-5, 2025
 - **Data density:** Point cloud showing actual movement paths within parks
 
+## Platform Results
+
+### Lovable
+- **Status:** ✅ Success (Grade B)
+- **Deployed URL:** https://disneymap-trails.lovable.app
+- **Time:** ~5 minutes (first attempt)
+- **Notes:** Worked on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. Minor issue: UI takes up a lot of page space (need to scroll for map).
+
+### Other Platforms
+- **Bolt.new:** Testing with `.txt` version (doesn't support `.geojson`)
+- **Google AI Studio:** Testing with `.txt` version (doesn't support `.geojson`)
+
 ## Human notes
 
 - Confirmed Claude's "Shadow Calendar" suggestion was not a map and redirected it.
@@ -66,4 +78,5 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 - **Timeline format:** Verified script handles Google Timeline `semanticSegments` format with `timelinePath` arrays containing string coordinates like `"33.8142605°, -117.9229352°"`.
 - **Data discovery:** Only Anaheim parks appear in current export (May-Nov 2025 date range). Japan and Disney World visits (if before May 2025) would need separate timeline exports.
 - **Park bounds:** Verified bounds for all global Disney parks; script ready to process any parks when data becomes available.
+- **Platform file formats:** Discovered Lovable supports `.geojson` directly, but Bolt.new and Google AI Studio require `.txt` version.
 - Reviewed the generated GeoJSON to ensure only filtered waypoints are published (no raw traces, home/work excluded).
