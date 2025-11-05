@@ -74,7 +74,7 @@
 
 ---
 
-Both concepts ship as self-contained HTML files with embedded data, work across all platforms, and clearly communicate "this is MY movement/behavior data" without compromising your privacy. The Shadow Calendar is more unusual and thought-provoking; Coffee Geography is immediately relatable and visually satisfying.
+Both concepts are created as self-contained HTML files with embedded data, work across all platforms, and clearly communicate "this is MY movement/behavior data" without compromising your privacy. The Shadow Calendar is more unusual and thought-provoking; Coffee Geography is immediately relatable and visually satisfying.
 
 ---
 

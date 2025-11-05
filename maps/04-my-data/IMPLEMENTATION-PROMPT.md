@@ -11,7 +11,7 @@ Project: 30-Day Map Challenge 2025 – Day 4 "My Data"
 Theme: Personal dataset visualization
 
 Context:
-I collected my own Google Maps Timeline exports, filtered them to extract all GPS waypoints within Disney parks I've actually visited (currently Anaheim Disneyland parks), removed anything near my home/work locations, and created a point cloud showing my actual movement paths. The sanitized dataset ships with the project as `data/disney-park-visits.geojson`.
+I collected my own Google Maps Timeline exports, filtered them to extract all GPS waypoints within Disney parks I've actually visited (currently Anaheim Disneyland parks), removed anything near my home/work locations, and created a point cloud showing my actual movement paths. The sanitized dataset is included with the project as `data/disney-park-visits.geojson`.
 
 Dataset shape (FeatureCollection of 118 points):
 Each point represents one GPS waypoint from my actual movement within the parks.

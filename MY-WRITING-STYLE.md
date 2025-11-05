@@ -34,7 +34,9 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 - "drove" (use "guided", "led", or "directed" instead)
 - "nailed" (too confident; use "did well", "performed well", "worked well", or "got it right" instead)
 - "matured" (too formal/hype-y; use "got better", "improved", or "were designed better" instead)
-- "shipped" (too techie; use "released", "created", "built", or "completed" instead)
+- "shipped" (too techie; use "released", "created", "built", "published", "launched", "made", or "completed" instead)
+- "ship" (use "publish", "create", "launch", "build", or "make" instead)
+- "rock-solid" (use "solid" instead)
 - "gating" (too techie/jargon-y; use "blocking", "limiting", or "restricting" instead)
 - "explicitly" (too formal; use "directly", "clearly", or just remove if not needed)
 

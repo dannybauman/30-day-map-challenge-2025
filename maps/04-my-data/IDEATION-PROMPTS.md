@@ -45,7 +45,7 @@ For each concept include:
 
 Constraints:
 - Target prepared dataset size <= 1 MB.
-- No live API calls; everything ships with the project.
+- No live API calls; everything is included with the project.
 - Achievable in ~1 hour per platform.
 - Must clearly signal the "My Data" theme to viewers.
 - Include at least one concrete privacy safeguard per concept.

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4: My Data | #30DayMapChallenge 2025</title>
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 0 0 20px 0; background: #f8f9fa; }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .container {
+            position: relative;
+        }
+        .hero .row {
+            margin: 0;
+        }
+        .hero .col-lg-7 {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-image-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 42%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1;
+        }
+        .hero-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 991px) {
+            .hero {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 0;
+            }
+            .hero .container {
+                order: 1;
+                padding-bottom: 0;
+            }
+            .hero-image-wrapper {
+                position: relative;
+                order: 2;
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 1rem;
+            }
+            .hero-image {
+                width: 100%;
+                height: auto;
+                max-height: 400px;
+                object-fit: contain;
+            }
+        }
+        .platform-card { margin-bottom: 30px; }
+        .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .screenshot-desktop { border: 2px solid #495057; }
+        .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        .badge-custom { font-size: 0.9rem; }
+        .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
+        .process-section .row { align-items: stretch; }
+        .process-card { background: #fff; border-radius: 12px; border-left: 4px solid #0d6efd; padding: 20px; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); position: relative; }
+        .process-card.ai { border-left-color: #6f42c1; }
+        .process-card .lane-label { position: absolute; top: -14px; left: 16px; background: #0d6efd; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .process-card.ai .lane-label { background: #6f42c1; }
+        .process-card h3, .process-card h4, .process-card h5 { margin-top: 12px; }
+        .process-card ul { padding-left: 18px; }
+        .process-connector { position: relative; padding-top: 20px; margin-bottom: 40px; }
+        .process-connector::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(180deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)); display: none; }
+        @media (min-width: 992px) {
+            .process-connector::after { display: block; }
+        }
+        .contribution-legend .badge { font-size: 0.8rem; }
+        .badge-ai { background: #6f42c1; color: #fff; }
+
+        /* Timeline Button Styling */
+        .timeline-toggle-wrapper {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        .timeline-toggle-btn {
+            min-width: 200px;
+            padding: 12px 32px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .timeline-toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        .timeline-toggle-btn:hover::before {
+            left: 100%;
+        }
+        .timeline-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Collapsed Content Teaser */
+        .process-section {
+            position: relative;
+        }
+        .process-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(180deg, rgba(248, 249, 250, 0) 0%, rgba(248, 249, 250, 0.7) 50%, rgba(248, 249, 250, 1) 100%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+        }
+        /* Show gradient fade when timeline is collapsed */
+        .process-section:has(#processTimeline:not(.show))::after {
+            opacity: 1;
+        }
+        /* Fallback for browsers without :has() support */
+        @supports not selector(:has(*)) {
+            .process-section::after {
+                opacity: 1;
+            }
+        }
+        /* Subtle pulse animation on button when timeline is collapsed */
+        @keyframes subtle-pulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 4px 16px rgba(13, 110, 253, 0.2);
+            }
+        }
+        .process-section:has(#processTimeline:not(.show)) .timeline-toggle-btn {
+            animation: subtle-pulse 3s ease-in-out infinite;
+        }
+
+        /* Color System for Platform Status */
+        .status-winner { background: linear-gradient(135deg, #198754 0%, #20c997 100%); }
+        .status-strong { background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%); }
+        .status-good { background: linear-gradient(135deg, #0dcaf0 0%, #20c997 100%); }
+        .status-partial { background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%); }
+        .status-failed { background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%); }
+
+        /* Grade Color System - Consistent across all days */
+        .grade-a { background-color: #28a745; color: white; font-weight: 500; }
+        .grade-b-plus { background-color: #0d6efd; color: white; font-weight: 500; }
+        .grade-b { background-color: #007bff; color: white; font-weight: 500; }
+        .grade-c-plus { background-color: #ffc107; color: #000; font-weight: 500; }
+        .grade-c { background-color: #fd7e14; color: white; font-weight: 500; }
+        .grade-c-minus { background-color: #fd7e14; color: white; font-weight: 500; opacity: 0.85; }
+        .grade-d { background-color: #ff4500; color: white; font-weight: 500; }
+        .grade-f { background-color: #dc3545; color: white; font-weight: 500; }
+
+        /* Legacy rating classes for backward compatibility */
+        .rating-s { background-color: #FFD700; color: #000; font-weight: bold; padding: 4px 8px; border-radius: 4px; }
+        .rating-a { background-color: #28a745; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-b { background-color: #007bff; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-c { background-color: #fd7e14; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-d { background-color: #ff4500; color: white; padding: 4px 8px; border-radius: 4px; }
+        .rating-f { background-color: #dc3545; color: white; padding: 4px 8px; border-radius: 4px; }
+
+        /* Chosen Concept Highlighting */
+        .concept-chosen {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #fd7e14 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        /* Navigation Card Responsive Styling */
+        [data-day-nav] .card {
+            max-width: 100%;
+        }
+        @media (min-width: 768px) {
+            [data-day-nav] .card {
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        [data-day-nav] .list-group-item {
+            padding: 0.75rem 1rem;
+        }
+        @media (max-width: 767px) {
+            [data-day-nav] .list-group-item {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Footer Responsive Styling */
+        footer {
+            font-size: 0.9rem;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 767px) {
+            footer {
+                padding: 20px 0;
+                font-size: 0.85rem;
+            }
+            footer p {
+                margin-bottom: 0.75rem;
+            }
+            footer p:last-child {
+                line-height: 1.6;
+            }
+            footer a {
+                display: inline-block;
+                margin: 0 0.25rem;
+            }
+        }
+    </style>
+
+    <!--
+        GRADING CRITERIA (Consistent across all days):
+
+        A (Strong): Fast, clean, fully functional, great mobile UX
+        B (Good): Works well, minor issues, responsive
+        C (OK): Usable but significant issues (performance, UX problems)
+        D (Poor / Partial Success): Major functionality broken but some elements work (e.g., UI works but map doesn't load)
+        F (Failed): No code generated at all (platform error, completely unusable - rare)
+
+        Important distinction:
+        - Grade D (Partial Success): Even CSP/CORS failures that generate UI/legends get Grade D, not F.
+          If it generates something useful, it's at least D.
+        - Grade F (Failed): Reserved for when no code is generated at all (platform errors that prevent any output).
+
+        Be consistent but fair - if it generates something useful, it's at least D.
+    -->
+</head>
+<body>
+    <!-- Top Day Navigation -->
+    <section data-day-nav-top>
+        <div class="text-center text-muted py-2">Loading navigation…</div>
+    </section>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-image-wrapper">
+            <img src="base44/screenshot.png" alt="Base44 map showing Disney park waypoints, heatmap toggle, and sidebar stats" class="hero-image">
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1>Day 4: My Data</h1>
+                    <p class="lead">Disney Park Visit Mix (118 GPS waypoints)</p>
+                    <p><strong>Date:</strong> November 4–5, 2025 | <strong>By:</strong> Danny Bauman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Quick Stats -->
+        <div class="row mb-5 g-3">
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-primary">9</h3>
+                        <p class="mb-0">Platforms Tested</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">2</h3>
+                        <p class="mb-0">Success (22%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-warning">6</h3>
+                        <p class="mb-0">Partial Success (67%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-danger">1</h3>
+                        <p class="mb-0">Failed (11%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-info">~80 min</h3>
+                        <p class="mb-0">Time Invested</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ideation Phase -->
+        <!--
+            Narrative format: start with a summary paragraph, follow with the pivot list, then platform cards.
+        -->
+        <section class="mb-5">
+            <h2 class="mb-4">Ideation Phase</h2>
+            <p class="lead">Day 4 bled into the morning of Day 5 because I wanted the dataset to be solid before I asked nine AI platforms to remix it. Claude, ChatGPT, and Gemini each pitched privacy-first takes on personal data, but most were either abstract or too general. After pushing them to stay lightweight and anonymized, I pivoted toward a concept anchored in the sanitized Disney park waypoints I had already prepared.</p>
+
+            <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">How I Redirected the Prompt</h5>
+                    <ul class="small mb-0">
+                        <li>Asked every model for personal-data ideas that could be created as small GeoJSON/CSV files so each platform could ingest them without network tricks.</li>
+                        <li>Reinforced the privacy guardrails logged in README + LAUNCH-TRACKER: remove home/work, quantize coordinates, and keep attribution crystal clear.</li>
+                        <li>Pivoted once I confirmed the Disney waypoint script produced a 118-point dataset that felt personal but still publishable.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+                <div class="col">
+                    <div class="card h-100 concept-chosen" style="border: 2px solid #198754;">
+                        <div class="card-header bg-success text-white">
+                            <strong>Human Pivot ⭐ Chosen</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Disney Park Visit Mix</h5>
+                            <p class="small mb-2">Sanitized 118 GPS waypoints from my Google Timeline to show how I actually moved through Disneyland and Disney California Adventure.</p>
+                            <p class="small mb-0 text-muted">Grounded in my own dataset while respecting the privacy guardrails called out in README.md and LAUNCH-TRACKER.md.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header text-white" style="background-color: #6f42c1;">
+                            <strong>Claude.ai (Sonnet 4.5)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">My Coffee Geography</h5>
+                            <p class="small mb-2">Cluster every cafe visit into “routine,” “exploring,” and “traveling” zones after blurring exact locations.</p>
+                            <p class="small mb-0 text-muted">Kept on the backlog as a travel-day follow-up; reminded me to keep future uploads lightweight and anonymized.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header text-white" style="background-color: #10a37f;">
+                            <strong>ChatGPT (GPT-5 Thinking)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Personal Heatlines</h5>
+                            <p class="small mb-2">Merge run + walk traces into thicker, brighter lines while clipping anything near home or work.</p>
+                            <p class="small mb-0 text-muted">Great safety net if the waypoint map stalled—shows how to publish a line density map without leaking anchors.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header text-white" style="background-color: #4285f4;">
+                            <strong>Gemini (2.5 Pro)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Activity Shell Hex Grid</h5>
+                            <p class="small mb-2">Hexbin the GPS archive, then delete the most-visited cells so the “shell” of everyday travel becomes the headline.</p>
+                            <p class="small mb-0 text-muted">A solid fallback if I needed more abstraction—turns privacy deletions into a storytelling focal point.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chosen Concept -->
+        <section class="mb-5">
+            <h2 class="mb-4">Chosen Concept</h2>
+            <div class="card border-primary">
+                <div class="card-body">
+                    <h4>Disney Park Visit Mix</h4>
+                    <p>A point-cloud map of every GPS waypoint I recorded inside Disneyland Park and Disney California Adventure during my September 2025 trip—118 sanitized coordinates showing actual movement paths.</p>
+                    <p><strong>Data source:</strong> Google Maps Timeline export processed by `build-disney-park-visits.mjs` (home/work waypoints removed, parks filtered, metadata summarized).</p>
+                    <p><strong>Why chosen:</strong> Feels unmistakably "my data," honors the privacy guardrails laid out in README + LAUNCH-TRACKER, and is created as a lightweight GeoJSON that all platforms can load offline.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Prompt -->
+        <section class="mb-5">
+            <h2 class="mb-4">Implementation Prompt</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p><small>Used the same prompt across all platforms:</small></p>
+                    <pre class="bg-light p-3" style="max-height: 300px; overflow-y: auto;"><code>Project: 30-Day Map Challenge 2025 – Day 4 &quot;My Data&quot;
+Theme: Personal dataset visualization
+
+Context:
+I collected my own Google Maps Timeline exports, filtered them to extract all GPS waypoints within Disney parks I&#x27;ve actually visited (currently Anaheim Disneyland parks), removed anything near my home/work locations, and created a point cloud showing my actual movement paths. The sanitized dataset ships with the project as `data/disney-park-visits.geojson`.
+
+Dataset shape (FeatureCollection of 118 points):
+Each point represents one GPS waypoint from my actual movement within the parks.
+
+{
+  &quot;type&quot;: &quot;FeatureCollection&quot;,
+  &quot;features&quot;: [
+  {
+    &quot;type&quot;: &quot;Feature&quot;,
+      &quot;geometry&quot;: {
+        &quot;type&quot;: &quot;Point&quot;,
+        &quot;coordinates&quot;: [ -117.9084221, 33.8075887 ]
+      },
+    &quot;properties&quot;: {
+        &quot;id&quot;: 1,
+        &quot;park_id&quot;: &quot;dlp-disneyland&quot;,
+        &quot;park_name&quot;: &quot;Disneyland Park (Anaheim)&quot;,
+        &quot;visit_date&quot;: &quot;2025-09-05&quot;,
+        &quot;start_time&quot;: &quot;2025-09-05T17:53:00.000Z&quot;,
+        &quot;end_time&quot;: &quot;2025-09-05T17:53:00.000Z&quot;,
+        &quot;duration_hours&quot;: 0,
+        &quot;place_name&quot;: null
+      }
+    },
+    … 117 more waypoints …
+  ],
+  &quot;meta&quot;: {
+    &quot;generated_at&quot;: &quot;2025-11-05T20:53:34.906Z&quot;,
+    &quot;total_visits&quot;: 118,
+    &quot;unique_parks&quot;: 2,
+    &quot;park_summary&quot;: [
+      {
+        &quot;park_id&quot;: &quot;dlp-disneyland&quot;,
+        &quot;park_name&quot;: &quot;Disneyland Park (Anaheim)&quot;,
+        &quot;visit_count&quot;: 109,
+      &quot;unique_visit_days&quot;: 4,
+        &quot;first_visit&quot;: &quot;2025-09-02T19:21:00.000Z&quot;,
+        &quot;last_visit&quot;: &quot;2025-09-05T17:53:00.000Z&quot;,
+        &quot;total_hours&quot;: 38.57
+      },
+      {
+        &quot;park_id&quot;: &quot;dlp-california-adventure&quot;,
+        &quot;park_name&quot;: &quot;Disney California Adventure&quot;,
+        &quot;visit_count&quot;: 9,
+        &quot;unique_visit_days&quot;: 3,
+        &quot;first_visit&quot;: &quot;2025-09-02T22:17:00.000Z&quot;,
+        &quot;last_visit&quot;: &quot;2025-09-04T23:00:00.000Z&quot;,
+        &quot;total_hours&quot;: 1.79
+      }
+    ]
+  }
+}
+
+Goal:
+Build a responsive web page that visualizes this GPS waypoint dataset as an interactive map showing my actual movement paths within Disney parks. Use point clustering or heatmap visualization to show density patterns, and display aggregated stats per park.
+
+Must have:
+1. Load the GeoJSON directly from `data/disney-park-visits.geojson` (no external APIs).
+2. Map (Leaflet or MapLibre GL JS) centered on Disneyland with automatic bounds fitting to all waypoints.
+3. Point visualization: Use clustering (e.g., Leaflet.markercluster) or heatmap (e.g., Leaflet.heat) to show density of waypoints. Individual waypoints should be visible when zoomed in.
+4. Color-code points by park: Different colors for each park (use `properties.park_id` or `properties.park_name`).
+5. Tooltip or popup per waypoint when clicked (showing individual waypoint info):
+   - Park name (`park_name`)
+   - Visit date (`visit_date`)
+   - Time (`start_time` formatted nicely)
+   - Place name (`place_name` if available)
+6. Sidebar or header summary using `meta.park_summary`:
+   - Total parks visited (`unique_parks`)
+   - Total waypoints (`total_visits`)
+   - Most-visited park (from `park_summary`, highest `visit_count`)
+   - Total hours across all parks (sum of `total_hours` from `park_summary`)
+   - Per-park breakdown: List each park with visit count, unique days, and total hours
+7. &quot;My Data, My Rules&quot; style callout that states the data is personal GPS waypoints, filtered to remove home/work locations, showing actual movement paths within parks.
+8. Clean mobile layout (sidebar should stack below the map; clustering/heatmap controls readable under 400 px width).
+9. Friendly colour palette that feels on-theme for Disney (think soft blues/purples/golds) while keeping WCAG contrast for text.
+10. Plain HTML/CSS/JS (no frameworks other than the mapping library). Keep the codebase simple because multiple AI platforms will iterate on it.
+
+Nice to have (if time permits):
+- Toggle between clustering view and individual points view.
+- Toggle between color-by-park and color-by-density.
+- Show time-based animation (play through waypoints chronologically).
+- Highlight waypoints from most-visited park with special styling.
+
+Deliverables:
+- `index.html`, `style.css`, `script.js` (or a single HTML file with embedded CSS/JS).
+- All assets self-contained so I can zip the folder and re-upload elsewhere.
+- Include the GeoJSON file in the same folder as `data/disney-park-visits.geojson`.
+- Tested in a modern desktop browser; ensure hover/tap interactions work.
+
+Reminder:
+Do not add any new external API calls or analytics. Everything must work completely offline with the bundled GeoJSON file. The GeoJSON file includes 118 individual GPS waypoints, so use clustering or heatmap visualization to handle the density effectively.</code></pre>
+                    <a href="IMPLEMENTATION-PROMPT.md" class="btn btn-sm btn-outline-primary">View Full Prompt</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Results -->
+        <section class="mb-5">
+            <h2 class="mb-4">Platform Results</h2>
+
+            <h3 class="mb-3">🏆 Success</h3>
+            <p class="small text-muted mb-4">Two platforms created the Disney waypoint experience without hand-holding.</p>
+            <div class="row g-4">
+                <div class="col-lg-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ff4f87; color: #fff;">
+                            <strong>Lovable</strong>
+                            <span class="badge grade-b">Grade B</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="lovable/screenshot.png" alt="Lovable desktop layout with stats sidebar and Disneyland waypoint map" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="lovable/screenshot-mobile.png" alt="Lovable mobile view showing stats column" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                    <img src="lovable/screenshot-mobile-map.png" alt="Lovable mobile map view after scrolling past stats" class="img-fluid screenshot-mobile mt-2">
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Uploaded the GeoJSON directly and rendered all 118 waypoints on the very first attempt.</li>
+                                <li>Stats sidebar pulls from <code>meta.park_summary</code>, and clusters stay responsive as you zoom.</li>
+                                <li>Main tradeoff: the stats column dominates the first screen, so the map sits just below the fold.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Verified every waypoint, color-by-park styling, and cluster drill-down before capturing both mobile views.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="lovable/README.md">Details</a>
+                                <a class="btn btn-sm btn-primary" href="https://disneymap-trails.lovable.app" target="_blank" rel="noopener">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #2b7fff; color: #fff;">
+                            <strong>Base44</strong>
+                            <span class="badge grade-b">Grade B</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="base44/screenshot.png" alt="Base44 desktop map with heatmap toggle and stats sidebar" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="base44/screenshot-mobile.png" alt="Base44 mobile view highlighting the stats column" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                    <img src="base44/screenshot-mobile-map.png" alt="Base44 mobile heatmap view after toggling the overlay" class="img-fluid screenshot-mobile mt-2">
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>No upload slot at first, but it ingested the <code>.txt</code> fallback once I added it mid-build.</li>
+                                <li>Clustering and heatmap toggles make the dense Fantasyland points digestible while keeping California Adventure distinct.</li>
+                                <li>Sidebar narrative mirrors the README breakdown with accurate park totals, hours, and visit counts.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Exercised both toggles, cross-checked park summaries with the script output, and captured the heatmap mobile view.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="base44/README.md">Details</a>
+                                <a class="btn btn-sm btn-primary" href="https://disney-park-paths-0af5726d.base44.app/" target="_blank" rel="noopener">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mb-3 mt-5">⚠️ Partial Success</h3>
+            <p class="small text-muted mb-4">Six platforms generated useful shells but stumbled on data loading or completeness.</p>
+            <div class="row g-4">
+                <div class="col-lg-6 col-xl-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>Bolt.new</strong>
+                            <span class="badge grade-b">Grade B-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="bolt-new/screenshot.png" alt="Bolt.new desktop view with stats and map layout" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="bolt-new/screenshot-mobile.png" alt="Bolt.new mobile layout showing empty map frame" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Development preview nailed the two-column layout plus the clustering toggle.</li>
+                                <li>Deployed build throws <code>Unexpected token '&lt;'</code> while fetching the <code>.txt</code> data file.</li>
+                                <li>Likely a MIME/content-type mismatch that needs one more iteration.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Logged the console error, captured the empty deployment, and noted the fix needs more tokens.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="bolt-new/README.md">Details</a>
+                                <a class="btn btn-sm btn-outline-primary" href="https://my-disney-park-movem-zgf4.bolt.host" target="_blank" rel="noopener">Deployed (data error)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>MagicPatterns</strong>
+                            <span class="badge grade-b">Grade B-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="magicpatterns/screenshot.png" alt="MagicPatterns desktop layout with sidebar and limited points" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="magicpatterns/screenshot-mobile.png" alt="MagicPatterns mobile overview" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                    <img src="magicpatterns/screenshot-mobile-map.png" alt="MagicPatterns mobile map zoomed to five visible waypoints" class="img-fluid screenshot-mobile mt-2">
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Uploaded the GeoJSON after generation started and got the full UI scaffold.</li>
+                                <li>Only five of 118 points render, hinting at an early exit in the streaming parser.</li>
+                                <li>Legend, stats, and styling are ready once the data pipeline is corrected.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Confirmed the full file is available in dev tools; the render loop stops after five features.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="magicpatterns/README.md">Details</a>
+                                <a class="btn btn-sm btn-outline-primary" href="https://project-disney-park-visits-map-198.magicpatterns.app/" target="_blank" rel="noopener">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>Firebase Studio</strong>
+                            <span class="badge grade-c-minus">Grade C-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="firebase-studio/screenshot.png" alt="Firebase Studio desktop UI without visible markers" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="firebase-studio/screenshot-mobile.png" alt="Firebase Studio mobile view showing blank map" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Three rounds of JSON fixes finally cleared the syntax errors.</li>
+                                <li>Markers still never appear, even though the GeoJSON loads in the network tab.</li>
+                                <li>Requires <code>.env.local</code> plus a Google Maps key, which adds friction for the next retry.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Confirmed the waypoints are present in memory but not rendered; logged the styling and deployment notes.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="firebase-studio/README.md">Details</a>
+                                <a class="btn btn-sm btn-outline-primary" href="https://studio--studio-5686587708-3c211.us-central1.hosted.app/" target="_blank" rel="noopener">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>ChatGPT Canvas</strong>
+                            <span class="badge grade-d">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="chatgpt-canvas/screenshot.png" alt="ChatGPT Canvas desktop output with map shell" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="chatgpt-canvas/screenshot-mobile.png" alt="ChatGPT Canvas mobile view showing blocked tiles" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Inline data load succeeded but Leaflet never rendered tiles or points.</li>
+                                <li>Multiple auto-fix passes kept tweaking fetch logic without improving output.</li>
+                                <li>Same permissions wall we hit on earlier days when Canvas needs external tiles.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Documented the blocked network requests and saved the shell for reference.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="chatgpt-canvas/README.md">Details</a>
+                                <a class="btn btn-sm btn-outline-primary" href="https://chatgpt.com/canvas/shared/690bc8d900048191b01db468789b6c49" target="_blank" rel="noopener">Canvas Artifact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>Claude Artifacts</strong>
+                            <span class="badge grade-d">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="claude-artifacts/screenshot.png" alt="Claude Artifacts desktop UI with empty map" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="claude-artifacts/screenshot-mobile.png" alt="Claude Artifacts mobile view showing partial UI" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Attempted to stream the full GeoJSON inline but the output kept pausing for confirmation.</li>
+                                <li>Even after continuing, markers never render and the legend stays empty.</li>
+                                <li>Same CSP limitations that blocked map tiles on earlier days.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Captured the interrupted outputs and noted the inline data ceiling.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="claude-artifacts/README.md">Details</a>
+                                <a class="btn btn-sm btn-outline-primary" href="https://claude.ai/public/artifacts/cfa10548-8b32-4a19-a33c-4286c29c78b1" target="_blank" rel="noopener">Artifact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>Gemini Canvas</strong>
+                            <span class="badge grade-d">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="gemini-canvas/screenshot.png" alt="Gemini Canvas desktop UI with minimal content" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="gemini-canvas/screenshot-mobile.png" alt="Gemini Canvas mobile layout" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Generated a minimal UI shell but never loaded the GeoJSON.</li>
+                                <li>Auto-fix attempts cycled through fetch rewrites without surfacing the map.</li>
+                                <li>Requires sign-in to view the shared canvas, mirroring the friction noted in LAUNCH-TRACKER.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Logged the access friction and the missing map so we can compare with future Gemini releases.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="gemini-canvas/README.md">Details</a>
+                                <a class="btn btn-sm btn-outline-primary" href="https://gemini.google.com/share/47b10c6d5a96" target="_blank" rel="noopener">Canvas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mb-3 mt-5">❌ Failed</h3>
+            <p class="small text-muted mb-4">One platform never moved past build errors, even after three auto-fix attempts.</p>
+            <div class="row g-4">
+                <div class="col-lg-6 col-xl-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
+                            <strong>Google AI Studio</strong>
+                            <span class="badge grade-f">Grade F</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="google-ai-studio/screenshot.png" alt="Google AI Studio error screen" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5 d-flex">
+                                    <div class="border rounded w-100 d-flex align-items-center justify-content-center bg-light text-center p-3">
+                                        <p class="small mb-0 text-muted">No mobile capture<br>(build never progressed)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Three auto-fix attempts failed to resolve the initial build errors.</li>
+                                <li>Never reached a point where the map rendered or data loaded.</li>
+                                <li>Logged as a full failure so we remember the limitations next time we need AI Studio.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Captured the dev error screen and noted the retry pattern in LAUNCH-TRACKER.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="google-ai-studio/README.md">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-5 process-section">
+            <h2 class="mb-4">Process Timeline</h2>
+            <p class="lead">Day 4 stretched across two mornings: November 4 was all about cleaning my Google Timeline export, while November 5 handled the multi-platform launches and documentation. Here is how the work split between human guardrails and AI support.</p>
+
+            <div class="contribution-legend mb-3">
+                <span class="badge bg-primary me-2">Me</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="timeline-toggle-wrapper">
+                <button class="btn btn-outline-secondary timeline-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
+                    Show Timeline
+                </button>
+            </div>
+
+            <div class="process-connector mb-3">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Me</span>
+                            <h4>Data Sanitation & Concept Pivot</h4>
+                            <ul>
+                                <li>Filtered the Google Timeline export to 118 in-park waypoints and verified home/work scrubbing before publishing.</li>
+                                <li>Pivoted from abstract ideation concepts to the Disney park visit mix once the sanitized dataset looked solid.</li>
+                                <li>Documented the Day 4 → Day 5 spillover in README.md and LAUNCH-TRACKER.md so the timeline stays transparent.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            <ul>
+                                <li>Claude, ChatGPT, and Gemini each pitched privacy-first personal-data maps that framed the guardrails.</li>
+                                <li>Cursor distilled those responses into the ideation digest and helped compare alternates for later days.</li>
+                                <li>AI checkpoints kept nudging the prompt toward lightweight, embeddable datasets instead of API-dependent flows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse" id="processTimeline">
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Dataset Build (Nov 4)</h4>
+                                <ul>
+                                    <li>Ran <code>build-disney-park-visits.mjs</code> to extract waypoints, drop sensitive buffers, and write both GeoJSON and <code>.txt</code> formats.</li>
+                                    <li>Cross-checked park summaries against travel notes to ensure metadata matched reality.</li>
+                                    <li>Staged sanitized files in <code>maps/04-my-data/data/</code> and locked down private exports inside <code>private-data/</code>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Assistive Scripts</h4>
+                                <ul>
+                                    <li>Cursor linted the dataset diff and confirmed no home/work coordinates leaked into the public file.</li>
+                                    <li>LLM suggestions reinforced the need for both GeoJSON and plain-text fallbacks for picky platforms.</li>
+                                    <li>Auto-generated README stubs for each platform folder so I could capture findings quickly.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Prompt Crafting (Nov 4 evening)</h4>
+                                <ul>
+                                    <li>Updated the Day 4 implementation prompt with clustering requirements, color-by-park rules, and the &ldquo;My Data, My Rules&rdquo; callout.</li>
+                                    <li>Added explicit instructions to load <code>data/disney-park-visits.geojson</code> locally without external APIs.</li>
+                                    <li>Flagged accessibility and mobile layout needs so every platform knew to support 393 px widths.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Prompt Polish</h4>
+                                <ul>
+                                    <li>Cursor formatted the specification, escaping inline JSON and tightening the acceptance criteria.</li>
+                                    <li>ChatGPT suggested clearer copy for the privacy callout and the park summary sidebar.</li>
+                                    <li>Claude flagged places to mention the <code>.txt</code> fallback so upload-constrained platforms still had a path.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Launch & Supervision (Nov 5)</h4>
+                                <ul>
+                                    <li>Ran nine platforms back-to-back, logging status, grades, and retries in <code>LAUNCH-TRACKER.md</code>.</li>
+                                    <li>Uploaded GeoJSON or <code>.txt</code> variants by hand wherever the platform lacked a direct file slot.</li>
+                                    <li>Captured desktop plus mobile screenshots, including extra scrolled views for Lovable, Base44, and MagicPatterns.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Generated Outputs</h4>
+                                <ul>
+                                    <li>Produced two fully working builds, six partial shells, and one failure against the shared prompt.</li>
+                                    <li>Auto-fix loops tried to repair deployment errors (Bolt.new, Firebase Studio) and inline data issues (ChatGPT, Claude, Gemini).</li>
+                                    <li>Lovable and Base44 added thoughtful extras like clustering toggles and heatmaps without additional direction.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>QA & Documentation (Nov 5)</h4>
+                                <ul>
+                                    <li>Verified all 118 waypoints render correctly in the two successful builds and noted gaps in each partial.</li>
+                                    <li>Logged the cross-day completion note in README.md, DAILY-LOG.md, and the process docs.</li>
+                                    <li>Built this showcase page to match the design system before copying it to <code>docs/</code>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Supporting Assets</h4>
+                                <ul>
+                                    <li>Cursor helped summarize per-platform READMEs so the analysis blocks dropped in quickly.</li>
+                                    <li>LLMs reformatted the timeline notes and ensured the privacy guardrail language stayed consistent across docs.</li>
+                                    <li>Auto-generated link check reminders so the final HTML references the right screenshot paths.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Key Insights -->
+        <section class="mb-5">
+            <h2 class="mb-4">Key Insights</h2>
+
+            <div class="insight-box">
+                <h5>✅ What Worked</h5>
+                <ul>
+                    <li>Lovable loaded the GeoJSON on the first try and surfaced my park stats without any manual edits.</li>
+                    <li>Base44 added clustering and a heatmap toggle, giving a richer look at the Fantasyland density.</li>
+                    <li>Keeping both GeoJSON and <code>.txt</code> copies ready meant every platform had a viable upload path.</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>❌ What Didn't</h5>
+                <ul>
+                    <li>Bolt.new’s deployment broke on the data fetch even though the dev preview was perfect.</li>
+                    <li>Firebase Studio, ChatGPT Canvas, Claude Artifacts, and Gemini Canvas all struggled with inline GeoJSON or blocked tiles.</li>
+                    <li>Google AI Studio never pushed past build errors despite three auto-fix attempts.</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>🎉 Surprises</h5>
+                <ul>
+                    <li>Base44 quietly offered a mid-build upload slot; once I dropped the <code>.txt</code> file, everything snapped into place.</li>
+                    <li>MagicPatterns looked production-ready even though it only rendered five points—UI polish is there, data loop just needs a fix.</li>
+                    <li>The extra mobile screenshots (map-after-scroll) made it obvious where UI takes over the hero area.</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>📚 Lessons for Next Time</h5>
+                <ul>
+                    <li>Create multiple data formats and mention them explicitly in the prompt; it saves time when platforms gate file types.</li>
+                    <li>Document cross-day spillovers immediately so future readers understand why a day finished late.</li>
+                    <li>Keep nudging prompts toward offline basemaps—sandboxed tools still balk when external tiles or API keys are required.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Editorial -->
+        <section class="mb-5">
+            <h2 class="mb-4">Editorial</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p>Day 4 was the first time the challenge spilled into the next morning, and the slowdown was worth it. Sanitizing the Google Timeline export, double-checking every waypoint, and documenting the privacy guardrails took longer than the actual platform runs. Once the dataset felt safe, Lovable and Base44 proved that a clean personal dataset can turn into a polished experience in minutes, while the partials showed exactly where inline data pipelines still fall apart.</p>
+                    <p>The big lesson: always create multiple file formats and be ready to hand platforms their data on a platter. GeoJSON worked out of the box for Lovable, the <code>.txt</code> mirror saved Bolt.new and Base44, and the per-platform README trail makes the cross-day timeline transparent. Going forward I'll keep logging these spillovers, keep the prompt focused on offline assets, and keep nudging AI tools toward privacy-respecting storytelling.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full Documentation Link -->
+        <section class="mb-5">
+            <div class="alert alert-info">
+                <h5>More Details?</h5>
+                <p class="mb-2">This showcase hits the highlights. For the full story, dive into:</p>
+                <ul class="mb-0">
+                    <li><a href="README.md">Day 4 README</a> - Platform-by-platform breakdown</li>
+                    <li><a href="LAUNCH-TRACKER.md">Launch Tracker</a> - Iteration notes &amp; grades</li>
+                    <li><a href="../../PLATFORM-TRACKER.md">Platform Tracker</a> - Rolling comparison across days</li>
+                    <li><a href="IMPLEMENTATION-PROMPT.md">Implementation Prompt</a> - Exact prompt each platform received</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Day Navigation -->
+        <section class="mb-5" data-day-nav>
+            <div class="text-center text-muted">Loading day navigator…</div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p><strong>#30DayMapChallenge 2025</strong> | Danny Bauman</p>
+            <p>Day 4 of 30 | Theme: My Data | 9 Platforms Tested | 22% Success</p>
+            <p class="mb-0">
+                <a href="../../README.md" class="text-white">Project Home</a> |
+                <a href="README.md" class="text-white">Day Documentation</a> |
+                <a href="https://github.com/dannyhines/30-day-map-challenge-2025" class="text-white">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Replace DAY_SLUG with the folder name (e.g., 01-points) when generating a new day -->
+    <!-- Top navigation script -->
+    <script src="../../site-assets/js/day-navigation.js" data-day="04-my-data" data-target="[data-day-nav-top]" data-manifest="../../days.json" data-base-path="../../" defer></script>
+    <!-- Bottom navigation script -->
+    <script src="../../site-assets/js/day-navigation.js" data-day="04-my-data" data-target="[data-day-nav]" data-manifest="../../days.json" data-base-path="../../" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
