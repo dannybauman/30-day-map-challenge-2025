@@ -337,14 +337,14 @@
         -->
         <section class="mb-5">
             <h2 class="mb-4">Ideation Phase</h2>
-            <p class="lead">Day 4 bled into the morning of Day 5 because I wanted the dataset to be solid before I asked nine AI platforms to remix it. Claude, ChatGPT, and Gemini each pitched privacy-first takes on personal data, but most were either abstract or too general. After pushing them to stay lightweight and anonymized, I pivoted toward a concept anchored in the sanitized Disney park waypoints I had already prepared.</p>
+            <p class="lead">Day 4 spilled over into the morning of Day 5 because I wanted the dataset to be solid before I asked nine AI platforms to remix it. Claude, ChatGPT, and Gemini each pitched privacy-first takes on personal data, but most were either abstract or too general. After pushing them to stay lightweight and anonymized, I pivoted toward a concept anchored in the sanitized Disney park waypoints.</p>
 
             <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
                 <div class="card-body">
                     <h5 class="card-title">How I Redirected the Prompt</h5>
                     <ul class="small mb-0">
                         <li>Asked every model for personal-data ideas that could be created as small GeoJSON/CSV files so each platform could ingest them without network tricks.</li>
-                        <li>Reinforced the privacy guardrails logged in README + LAUNCH-TRACKER: remove home/work, quantize coordinates, and keep attribution crystal clear.</li>
+                        <li>Reinforced the privacy guardrails: remove home/work, quantize coordinates, and keep attribution crystal clear.</li>
                         <li>Pivoted once I confirmed the Disney waypoint script produced a 118-point dataset that felt personal but still publishable.</li>
                     </ul>
                 </div>
@@ -353,13 +353,13 @@
             <div class="row g-3 mb-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
                 <div class="col">
                     <div class="card h-100 concept-chosen" style="border: 2px solid #198754;">
-                        <div class="card-header bg-success text-white">
-                            <strong>Human Pivot ⭐ Chosen</strong>
+                        <div class="card-header text-white" style="background: linear-gradient(135deg, #ff9f1c 0%, #ff6f61 100%);">
+                            <strong>My Idea ⭐ Chosen</strong>
                         </div>
                         <div class="card-body">
                             <h5 class="mb-2">Disney Park Visit Mix</h5>
                             <p class="small mb-2">Sanitized 118 GPS waypoints from my Google Timeline to show how I actually moved through Disneyland and Disney California Adventure.</p>
-                            <p class="small mb-0 text-muted">Grounded in my own dataset while respecting the privacy guardrails called out in README.md and LAUNCH-TRACKER.md.</p>
+                            <p class="small mb-0 text-muted">Grounded in my own dataset while respecting the same privacy guardrails I used during prep.</p>
                         </div>
                     </div>
                 </div>
@@ -410,7 +410,25 @@
                     <h4>Disney Park Visit Mix</h4>
                     <p>A point-cloud map of every GPS waypoint I recorded inside Disneyland Park and Disney California Adventure during my September 2025 trip—118 sanitized coordinates showing actual movement paths.</p>
                     <p><strong>Data source:</strong> Google Maps Timeline export processed by `build-disney-park-visits.mjs` (home/work waypoints removed, parks filtered, metadata summarized).</p>
-                    <p><strong>Why chosen:</strong> Feels unmistakably "my data," honors the privacy guardrails laid out in README + LAUNCH-TRACKER, and is created as a lightweight GeoJSON that all platforms can load offline.</p>
+                    <p><strong>Why chosen:</strong> Feels unmistakably "my data," honors the privacy guardrails established during prep, and is packaged as a lightweight GeoJSON that all platforms can load offline.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Notes -->
+        <section class="mb-5">
+            <h2 class="mb-4">Implementation Notes</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="h5 mb-3">How `build-disney-park-visits.mjs` came together</h4>
+                    <p class="mb-3">Most of Nov 4 was spent steering AI while it wrote the Node script that produces the sanitized dataset. My role was defining the constraints; the model handled the plumbing once I described the workflow.</p>
+                    <ul class="mb-3">
+                        <li><strong>Parsing:</strong> Load the Google Timeline JSON, extract <code>placeVisit</code> and <code>timelinePath</code> entries, and convert each <code>latitudeE7/longitudeE7</code> pair into decimal degrees.</li>
+                        <li><strong>Filtering:</strong> Keep only points inside the Disney park polygons, drop anything inside the exclusion circles around sensitive locations, and round coordinates to keep noise down.</li>
+                        <li><strong>Aggregation:</strong> Build the <code>meta.park_summary</code> array so every platform can surface visit counts, unique days, and total hours without extra code.</li>
+                        <li><strong>Output:</strong> Write both <code>data/disney-park-visits.geojson</code> and a plain-text mirror for platforms that refuse GeoJSON uploads.</li>
+                    </ul>
+                    <p class="mb-0 text-muted">That extra scripting pass is what pushed Day 4 into Day 5, but it meant every AI platform received the same clean, privacy-safe dataset.</p>
                 </div>
             </div>
         </section>
@@ -531,6 +549,38 @@ Do not add any new external API calls or analytics. Everything must work complet
             <div class="row g-4">
                 <div class="col-lg-6 platform-card">
                     <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #2b7fff; color: #fff;">
+                            <strong>Base44</strong>
+                            <span class="badge grade-a">Grade A-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="base44/screenshot.png" alt="Base44 desktop map with heatmap toggle and stats sidebar" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="base44/screenshot-mobile.png" alt="Base44 mobile view highlighting the stats column" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                    <img src="base44/screenshot-mobile-map.png" alt="Base44 mobile heatmap view after toggling the overlay" class="img-fluid screenshot-mobile mt-2">
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>No upload slot at first, but it happily ingested the <code>.txt</code> fallback once I added it mid-build.</li>
+                                <li>Clustering and heatmap toggles make the dense Fantasyland points digestible while keeping California Adventure distinct.</li>
+                                <li>Sidebar copy lines up with the scripted park totals, hours, and unique-day counts.</li>
+                                <li>Only quirk: on mobile you scroll past the stats before the map comes into view.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Exercised both toggles, compared stats to the script output, and grabbed the extra mobile heatmap capture.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <a class="btn btn-sm btn-outline-secondary" href="base44/README.md">Details</a>
+                                <a class="btn btn-sm btn-primary" href="https://disney-park-paths-0af5726d.base44.app/" target="_blank" rel="noopener">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 platform-card">
+                    <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ff4f87; color: #fff;">
                             <strong>Lovable</strong>
                             <span class="badge grade-b">Grade B</span>
@@ -549,44 +599,13 @@ Do not add any new external API calls or analytics. Everything must work complet
                             </div>
                             <ul class="small mb-3 ps-3">
                                 <li>Uploaded the GeoJSON directly and rendered all 118 waypoints on the very first attempt.</li>
-                                <li>Stats sidebar pulls from <code>meta.park_summary</code>, and clusters stay responsive as you zoom.</li>
+                                <li>Clusters stay responsive as you zoom, and the park summary sidebar comes straight from <code>meta.park_summary</code>.</li>
                                 <li>Main tradeoff: the stats column dominates the first screen, so the map sits just below the fold.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Verified every waypoint, color-by-park styling, and cluster drill-down before capturing both mobile views.</p>
                             <div class="d-flex flex-wrap gap-2 mt-3">
                                 <a class="btn btn-sm btn-outline-secondary" href="lovable/README.md">Details</a>
                                 <a class="btn btn-sm btn-primary" href="https://disneymap-trails.lovable.app" target="_blank" rel="noopener">Live Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 platform-card">
-                    <div class="card h-100">
-                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #2b7fff; color: #fff;">
-                            <strong>Base44</strong>
-                            <span class="badge grade-b">Grade B</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-3 mb-3">
-                                <div class="col-7">
-                                    <img src="base44/screenshot.png" alt="Base44 desktop map with heatmap toggle and stats sidebar" class="img-fluid screenshot-desktop">
-                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
-                                </div>
-                                <div class="col-5">
-                                    <img src="base44/screenshot-mobile.png" alt="Base44 mobile view highlighting the stats column" class="img-fluid screenshot-mobile">
-                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
-                                    <img src="base44/screenshot-mobile-map.png" alt="Base44 mobile heatmap view after toggling the overlay" class="img-fluid screenshot-mobile mt-2">
-                                </div>
-                            </div>
-                            <ul class="small mb-3 ps-3">
-                                <li>No upload slot at first, but it ingested the <code>.txt</code> fallback once I added it mid-build.</li>
-                                <li>Clustering and heatmap toggles make the dense Fantasyland points digestible while keeping California Adventure distinct.</li>
-                                <li>Sidebar narrative mirrors the README breakdown with accurate park totals, hours, and visit counts.</li>
-                            </ul>
-                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Exercised both toggles, cross-checked park summaries with the script output, and captured the heatmap mobile view.</p>
-                            <div class="d-flex flex-wrap gap-2 mt-3">
-                                <a class="btn btn-sm btn-outline-secondary" href="base44/README.md">Details</a>
-                                <a class="btn btn-sm btn-primary" href="https://disney-park-paths-0af5726d.base44.app/" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -838,7 +857,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                             <ul>
                                 <li>Filtered the Google Timeline export to 118 in-park waypoints and verified home/work scrubbing before publishing.</li>
                                 <li>Pivoted from abstract ideation concepts to the Disney park visit mix once the sanitized dataset looked solid.</li>
-                                <li>Documented the Day 4 → Day 5 spillover in README.md and LAUNCH-TRACKER.md so the timeline stays transparent.</li>
+                                <li>Recorded the Day 4 → Day 5 spillover in the project logs so the timeline stays transparent.</li>
                             </ul>
                         </div>
                     </div>
@@ -877,7 +896,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <ul>
                                     <li>Cursor linted the dataset diff and confirmed no home/work coordinates leaked into the public file.</li>
                                     <li>LLM suggestions reinforced the need for both GeoJSON and plain-text fallbacks for picky platforms.</li>
-                                    <li>Auto-generated README stubs for each platform folder so I could capture findings quickly.</li>
+                                    <li>Auto-generated per-platform note stubs so I could capture findings quickly.</li>
                                 </ul>
                             </div>
                         </div>
@@ -918,7 +937,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <span class="lane-label">Me</span>
                                 <h4>Launch & Supervision (Nov 5)</h4>
                                 <ul>
-                                    <li>Ran nine platforms back-to-back, logging status, grades, and retries in <code>LAUNCH-TRACKER.md</code>.</li>
+                                    <li>Ran nine platforms back-to-back, logging status, grades, and retries in the launch tracker.</li>
                                     <li>Uploaded GeoJSON or <code>.txt</code> variants by hand wherever the platform lacked a direct file slot.</li>
                                     <li>Captured desktop plus mobile screenshots, including extra scrolled views for Lovable, Base44, and MagicPatterns.</li>
                                 </ul>
@@ -946,7 +965,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <h4>QA & Documentation (Nov 5)</h4>
                                 <ul>
                                     <li>Verified all 118 waypoints render correctly in the two successful builds and noted gaps in each partial.</li>
-                                    <li>Logged the cross-day completion note in README.md, DAILY-LOG.md, and the process docs.</li>
+                                    <li>Logged the cross-day completion note across the public progress logs.</li>
                                     <li>Built this showcase page to match the design system before copying it to <code>docs/</code>.</li>
                                 </ul>
                             </div>
@@ -956,7 +975,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <span class="lane-label">AI</span>
                                 <h4>Supporting Assets</h4>
                                 <ul>
-                                    <li>Cursor helped summarize per-platform READMEs so the analysis blocks dropped in quickly.</li>
+                                    <li>Cursor helped summarize the per-platform notes so the analysis blocks dropped in quickly.</li>
                                     <li>LLMs reformatted the timeline notes and ensured the privacy guardrail language stayed consistent across docs.</li>
                                     <li>Auto-generated link check reminders so the final HTML references the right screenshot paths.</li>
                                 </ul>
@@ -1015,7 +1034,7 @@ Do not add any new external API calls or analytics. Everything must work complet
             <div class="card">
                 <div class="card-body">
                     <p>Day 4 was the first time the challenge spilled into the next morning, and the slowdown was worth it. Sanitizing the Google Timeline export, double-checking every waypoint, and documenting the privacy guardrails took longer than the actual platform runs. Once the dataset felt safe, Lovable and Base44 proved that a clean personal dataset can turn into a polished experience in minutes, while the partials showed exactly where inline data pipelines still fall apart.</p>
-                    <p>The big lesson: always create multiple file formats and be ready to hand platforms their data on a platter. GeoJSON worked out of the box for Lovable, the <code>.txt</code> mirror saved Bolt.new and Base44, and the per-platform README trail makes the cross-day timeline transparent. Going forward I'll keep logging these spillovers, keep the prompt focused on offline assets, and keep nudging AI tools toward privacy-respecting storytelling.</p>
+                    <p>The big lesson: always create multiple file formats and be ready to hand platforms their data on a platter. GeoJSON worked out of the box for Lovable, the <code>.txt</code> mirror saved Bolt.new and Base44, and the per-platform writeups keep the cross-day timeline transparent. Going forward I'll keep logging these spillovers, keep the prompt focused on offline assets, and keep nudging AI tools toward privacy-respecting storytelling.</p>
                 </div>
             </div>
         </section>
@@ -1026,7 +1045,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                 <h5>More Details?</h5>
                 <p class="mb-2">This showcase hits the highlights. For the full story, dive into:</p>
                 <ul class="mb-0">
-                    <li><a href="README.md">Day 4 README</a> - Platform-by-platform breakdown</li>
+                    <li><a href="README.md">Day 4 Documentation</a> - Platform-by-platform breakdown</li>
                     <li><a href="LAUNCH-TRACKER.md">Launch Tracker</a> - Iteration notes &amp; grades</li>
                     <li><a href="../../PLATFORM-TRACKER.md">Platform Tracker</a> - Rolling comparison across days</li>
                     <li><a href="IMPLEMENTATION-PROMPT.md">Implementation Prompt</a> - Exact prompt each platform received</li>
