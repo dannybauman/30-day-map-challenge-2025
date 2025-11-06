@@ -8,6 +8,8 @@ Here's my refined process after completing Day 1.
 
 ## Refined Daily Process (Based on Day 1)
 
+**Before starting any day:** Review `MY-WRITING-STYLE.md` to refresh on language guidelines and avoid overly formal or technical phrasing.
+
 ### Phase 1: Ideation (Web LLMs)
 **Duration**: 5-10 minutes
 

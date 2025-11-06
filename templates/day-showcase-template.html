@@ -76,6 +76,12 @@
         .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .screenshot-desktop { border: 2px solid #495057; }
         .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        /* Multiple mobile screenshots - make them smaller to fit */
+        .screenshot-mobile-multiple {
+            max-height: 200px;
+            width: auto;
+            object-fit: contain;
+        }
         .badge-custom { font-size: 0.9rem; }
         .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
@@ -334,12 +340,14 @@
         <!-- Ideation Phase -->
         <!--
             IDEATION FORMAT GUIDANCE:
-            - Always order: ChatGPT, Claude, Gemini
-            - Always colors: ChatGPT (green bg-success), Claude (orange #fd7e14), Gemini (blue #4285f4)
+            - Always order: ChatGPT, Claude, Gemini (or "My Idea" if present, then ChatGPT, Claude, Gemini)
+            - Always colors: ChatGPT (green bg-success or #198754), Claude (orange #fd7e14), Gemini (blue #4285f4)
+            - "My Idea" section: Use gradient background (linear-gradient(135deg, #20c997 0%, #17a2b8 100%)) with border: 2px solid #20c997
             - Chosen concept gets class "concept-chosen" with border: 2px solid [platform color]
             - ChatGPT chosen: border: 2px solid #198754
             - Claude chosen: border: 2px solid #fd7e14
             - Gemini chosen: border: 2px solid #4285f4
+            - "My Idea" chosen: border: 2px solid #20c997
             - {{IDEATION_SUMMARY}} should be a short paragraph in your voice summarizing the multi-step back-and-forth.
             - {{IDEATION_PIVOTS}} is a list (3-5 bullets) calling out the key directions YOU pushed for (edits, constraints, vetoes).
             - The concept cards can hold either direct quotes or condensed summaries from each platform.
@@ -359,39 +367,57 @@
                 </div>
             </div>
 
-            <div class="row g-3 mb-4">
-                <div class="col-md-4">
+            <div class="row g-3 mb-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+                <!-- Optional: "My Idea" card (only if present) -->
+                <!--
+                <div class="col">
+                    <div class="card h-100 concept-chosen" style="border: 2px solid #20c997;">
+                        <div class="card-header text-white" style="background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);">
+                            <strong>My Idea ⭐ Chosen</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">{{MY_IDEA_TITLE}}</h5>
+                            <p class="small mb-2">{{MY_IDEA_DESCRIPTION}}</p>
+                            <p class="small mb-0 text-muted">{{MY_IDEA_NOTE}}</p>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <div class="col">
                     <!-- ChatGPT card (use concept-chosen class if selected, border: 2px solid #198754;) -->
                     <div class="card h-100">
                         <div class="card-header bg-success text-white">
                             <strong>ChatGPT (GPT-5 Thinking)</strong>
                         </div>
                         <div class="card-body">
-                            <p class="small mb-2">{{CHATGPT_IDEA}}</p>
+                            <h5 class="mb-2">{{CHATGPT_IDEA}}</h5>
+                            <p class="small mb-2">{{CHATGPT_DESCRIPTION}}</p>
                             <p class="small mb-0 text-muted">{{CHATGPT_NOTE}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col">
                     <!-- Claude card (use concept-chosen class if selected, border: 2px solid #fd7e14;) -->
                     <div class="card h-100">
                         <div class="card-header text-white" style="background-color: #fd7e14;">
                             <strong>Claude.ai (Sonnet 4.5)</strong>
                         </div>
                         <div class="card-body">
-                            <p class="small mb-2">{{CLAUDE_IDEA}}</p>
+                            <h5 class="mb-2">{{CLAUDE_IDEA}}</h5>
+                            <p class="small mb-2">{{CLAUDE_DESCRIPTION}}</p>
                             <p class="small mb-0 text-muted">{{CLAUDE_NOTE}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col">
                     <!-- Gemini card (use concept-chosen class if selected, border: 2px solid #4285f4;) -->
                     <div class="card h-100">
-                        <div class="card-header" style="background-color: #4285f4; color: white;">
+                        <div class="card-header text-white" style="background-color: #4285f4;">
                             <strong>Gemini (2.5 Pro)</strong>
                         </div>
                         <div class="card-body">
-                            <p class="small mb-2">{{GEMINI_IDEA}}</p>
+                            <h5 class="mb-2">{{GEMINI_IDEA}}</h5>
+                            <p class="small mb-2">{{GEMINI_DESCRIPTION}}</p>
                             <p class="small mb-0 text-muted">{{GEMINI_NOTE}}</p>
                         </div>
                     </div>

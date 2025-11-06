@@ -1,13 +1,29 @@
 # Design System & Visual Standards
 
-**Last Updated:** November 4, 2025
-**Source Docs Consolidated:** `maps/01-points/DESIGN-SYSTEM-UPDATE.md`, `maps/01-points/TASK-2-IMPROVEMENTS.md`, `maps/01-points/MOBILE-RESPONSIVE-NOTES.md`, `maps/01-points/FIXES-APPLIED.md`, `DOCUMENTATION-GUIDE.md`, `WORKFLOW.md`, Day 2 design notes.
+**Last Updated:** November 5, 2025
+**Source Docs Consolidated:** `maps/01-points/DESIGN-SYSTEM-UPDATE.md`, `maps/01-points/TASK-2-IMPROVEMENTS.md`, `maps/01-points/MOBILE-RESPONSIVE-NOTES.md`, `maps/01-points/FIXES-APPLIED.md`, `DOCUMENTATION-GUIDE.md`, `WORKFLOW.md`, Day 2 design notes, Day 4 color standardization.
 
 This guide centralizes every design decision that shaped the day showcase pages and platform cards. Treat it as the single reference for layout, styling, and visual QA as we progress through the 30 Day Map Challenge.
 
 ---
 
-## 1. Layout Foundations
+## 1. Ideation Section Color Standards
+
+- **Consistent platform colors:** Always use the same colors for each AI platform across all days:
+  - **ChatGPT**: Green - use `bg-success` Bootstrap class or `#198754` hex color
+  - **Claude**: Orange - use `#fd7e14` hex color
+  - **Gemini**: Blue - use `#4285f4` hex color
+- **"My Idea" section** (when present): Use gradient background `linear-gradient(135deg, #20c997 0%, #17a2b8 100%)` with border `2px solid #20c997`
+- **Chosen concept highlighting**: Add `concept-chosen` class with border matching the platform color:
+  - ChatGPT chosen: `border: 2px solid #198754`
+  - Claude chosen: `border: 2px solid #fd7e14`
+  - Gemini chosen: `border: 2px solid #4285f4`
+  - "My Idea" chosen: `border: 2px solid #20c997`
+- **Layout**: When 4 cards are present (My Idea + 3 platforms), use `row-cols-1 row-cols-md-2 row-cols-lg-4` for responsive grid. When only 3 cards, use `col-md-4` for each.
+
+---
+
+## 2. Layout Foundations
 
 - **Screenshot grid:** Use a Bootstrap row with `g-3`. Standard cards place desktop in `col-7` and mobile in `col-5`, with the desktop caption wrapped in `<strong>`. If a single winner spans the full width, follow the template guidance (`col-8` desktop, `col-4` mobile).
 - **Spacing:** Screenshot captions stay `mt-1`. Section wrappers in the template rely on `mb-5`; keep that value unless a layout change requires something tighter.
@@ -17,7 +33,7 @@ This guide centralizes every design decision that shaped the day showcase pages 
 
 ---
 
-## 2. CSS Components
+## 3. CSS Components
 
 All custom styles live in `templates/day-showcase-template.html`. When verifying a page, confirm these definitions are present (and do not re-declare them per day):
 
@@ -50,7 +66,7 @@ If an update is necessary, adjust the template first, then re-run the build or p
 
 ---
 
-## 3. Grade & Color System
+## 4. Grade & Color System
 
 - **Grade badges:** Every platform card uses the `grade-*` badge classes defined in the template (`Grade A`, `Grade B+`, … `Grade F`). Do not reintroduce the older “Quality” field or `rating-*` spans.
 - **Header colors:** Full successes can keep brand colors or gradients (e.g., Lovable `bg-info`, Bolt.new `bg-primary`, MagicPatterns `#9b59b6`). Partial successes default to `bg-warning text-dark`; failures default to `bg-danger text-white`.
@@ -59,14 +75,16 @@ If an update is necessary, adjust the template first, then re-run the build or p
 
 ---
 
-## 4. Responsive & Screenshot Standards
+## 5. Responsive & Screenshot Standards
 
 - **Capture workflow:** Desktop at 1440×900 (`screenshot.png`), mobile at 393×852 (`screenshot-mobile.png`). Wait five seconds for assets to resolve; accept permission prompts before capturing.
 - **Multiple screenshots:** When capturing additional screenshots for specific features or issues:
   - **Desktop**: Use naming pattern `screenshot-{description}.png` (e.g., `screenshot-tooltip-issue.png`)
   - **Mobile**: Use naming pattern `screenshot-mobile-{description}.png` (e.g., `screenshot-mobile-map.png` for scrolled view showing map)
   - **HTML inclusion**: Stack multiple screenshots in the same column (desktop screenshots in desktop column, mobile in mobile column) with `mt-2` spacing between them
+  - **Multiple mobile screenshots**: When there are multiple mobile screenshots (e.g., top view + scrolled map view), add the `screenshot-mobile-multiple` class to each mobile image. This limits their height to 200px while maintaining aspect ratio, preventing the container from extending too far. Single mobile screenshots should NOT use this class.
   - **Example pattern** (from Day 2 Lovable): Desktop column shows two stacked images (main + tooltip issue), mobile column shows one
+  - **Example pattern** (from Day 4 Base44/Lovable): Mobile column shows two stacked images (stats view + map view), both with `screenshot-mobile-multiple` class
 - **Folder naming:** Each platform gets a folder (`chatgpt-canvas/`, `bolt-new/`, etc.) with `README.md`, `screenshot.png`, and (when captured) `screenshot-mobile.png`. Additional screenshots follow the naming patterns above.
 - **Testing checklist:** Resize manually or use responsive dev tools to confirm:
   1. Sidebar elements stack cleanly.
@@ -77,7 +95,7 @@ If an update is necessary, adjust the template first, then re-run the build or p
 
 ---
 
-## 5. Visualization Patterns to Prioritize
+## 6. Visualization Patterns to Prioritize
 
 - **Legends:** For directional datasets (e.g., Day 2 street bearings), request circular legends explicitly. Linear gradients or four-square compass cards performed worse in usability tests.
 - **Performance cues:** Record when pan/zoom drops below acceptable smoothness (≈10s lag). ChatGPT Canvas and Bolt.new slowed under large payloads; note that in the platform cards so readers know when patience is required.
@@ -86,7 +104,7 @@ If an update is necessary, adjust the template first, then re-run the build or p
 
 ---
 
-## 6. Day Page Checklist
+## 7. Day Page Checklist
 
 Before publishing a new day:
 
@@ -100,7 +118,7 @@ Before publishing a new day:
 
 ---
 
-## 7. Keeping the System Healthy
+## 8. Keeping the System Healthy
 
 - **Single source of truth:** This document replaces `maps/01-points/DESIGN-SYSTEM-UPDATE.md`; retire that file in day folders going forward.
 - **Change log:** When the design system shifts, add a dated, bullet-style summary at the top of this file and reference the affected templates.

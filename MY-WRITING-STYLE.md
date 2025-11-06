@@ -39,6 +39,8 @@ Guidelines for writing natural, professional documentation that avoids overly ex
 - "rock-solid" (use "solid" instead)
 - "gating" (too techie/jargon-y; use "blocking", "limiting", or "restricting" instead)
 - "explicitly" (too formal; use "directly", "clearly", or just remove if not needed)
+- "sanitized" (too formal/technical; use "cleaned", "selected", "processed", or another more casual but accurate word for it)
+- "digestible" (for data/visualizations; use "understandable", "easy to see", "clear", or "readable" instead)
 
 ## Punctuation Guidelines
 

@@ -76,6 +76,12 @@
         .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .screenshot-desktop { border: 2px solid #495057; }
         .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        /* Multiple mobile screenshots - make them smaller to fit */
+        .screenshot-mobile-multiple {
+            max-height: 200px;
+            width: auto;
+            object-fit: contain;
+        }
         .badge-custom { font-size: 0.9rem; }
         .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
@@ -324,7 +330,7 @@
             <div class="col-6 col-sm-4 col-md">
                 <div class="card text-center h-100">
                     <div class="card-body">
-                        <h3 class="text-info">~80 min</h3>
+                        <h3 class="text-info">~2 hrs</h3>
                         <p class="mb-0">Time Invested</p>
                     </div>
                 </div>
@@ -352,32 +358,32 @@
 
             <div class="row g-3 mb-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
                 <div class="col">
-                    <div class="card h-100 concept-chosen" style="border: 2px solid #198754;">
-                        <div class="card-header text-white" style="background: linear-gradient(135deg, #ff9f1c 0%, #ff6f61 100%);">
+                    <div class="card h-100 concept-chosen" style="border: 2px solid #20c997;">
+                        <div class="card-header text-white" style="background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);">
                             <strong>My Idea ⭐ Chosen</strong>
                         </div>
                         <div class="card-body">
                             <h5 class="mb-2">Disney Park Visit Mix</h5>
-                            <p class="small mb-2">Sanitized 118 GPS waypoints from my Google Timeline to show how I actually moved through Disneyland and Disney California Adventure.</p>
+                            <p class="small mb-2">Cleaned 118 GPS waypoints from my Google Timeline to show how I actually moved through Disneyland and Disney California Adventure.</p>
                             <p class="small mb-0 text-muted">Grounded in my own dataset while respecting the same privacy guardrails I used during prep.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <div class="card-header text-white" style="background-color: #6f42c1;">
+                        <div class="card-header text-white" style="background-color: #fd7e14;">
                             <strong>Claude.ai (Sonnet 4.5)</strong>
                         </div>
                         <div class="card-body">
                             <h5 class="mb-2">My Coffee Geography</h5>
-                            <p class="small mb-2">Cluster every cafe visit into “routine,” “exploring,” and “traveling” zones after blurring exact locations.</p>
+                            <p class="small mb-2">Cluster every cafe visit into "routine," "exploring," and "traveling" zones after blurring exact locations.</p>
                             <p class="small mb-0 text-muted">Kept on the backlog as a travel-day follow-up; reminded me to keep future uploads lightweight and anonymized.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <div class="card-header text-white" style="background-color: #10a37f;">
+                        <div class="card-header bg-success text-white">
                             <strong>ChatGPT (GPT-5 Thinking)</strong>
                         </div>
                         <div class="card-body">
@@ -394,7 +400,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="mb-2">Activity Shell Hex Grid</h5>
-                            <p class="small mb-2">Hexbin the GPS archive, then delete the most-visited cells so the “shell” of everyday travel becomes the headline.</p>
+                            <p class="small mb-2">Hexbin the GPS archive, then delete the most-visited cells so the "shell" of everyday travel becomes the headline.</p>
                             <p class="small mb-0 text-muted">A solid fallback if I needed more abstraction—turns privacy deletions into a storytelling focal point.</p>
                         </div>
                     </div>
@@ -408,7 +414,7 @@
             <div class="card border-primary">
                 <div class="card-body">
                     <h4>Disney Park Visit Mix</h4>
-                    <p>A point-cloud map of every GPS waypoint I recorded inside Disneyland Park and Disney California Adventure during my September 2025 trip—118 sanitized coordinates showing actual movement paths.</p>
+                    <p>A point-cloud map of every GPS waypoint I recorded inside Disneyland Park and Disney California Adventure during my September 2025 trip—118 cleaned coordinates showing actual movement paths.</p>
                     <p><strong>Data source:</strong> Google Maps Timeline export processed by `build-disney-park-visits.mjs` (home/work waypoints removed, parks filtered, metadata summarized).</p>
                     <p><strong>Why chosen:</strong> Feels unmistakably "my data," honors the privacy guardrails established during prep, and is packaged as a lightweight GeoJSON that all platforms can load offline.</p>
                 </div>
@@ -421,7 +427,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="h5 mb-3">How `build-disney-park-visits.mjs` came together</h4>
-                    <p class="mb-3">Most of Nov 4 was spent steering AI while it wrote the Node script that produces the sanitized dataset. My role was defining the constraints; the model handled the plumbing once I described the workflow.</p>
+                    <p class="mb-3">Most of Nov 4 was spent steering AI while it wrote the Node script that produces the cleaned dataset. My role was defining the constraints; the model handled the plumbing once I described the workflow.</p>
                     <ul class="mb-3">
                         <li><strong>Parsing:</strong> Load the Google Timeline JSON, extract <code>placeVisit</code> and <code>timelinePath</code> entries, and convert each <code>latitudeE7/longitudeE7</code> pair into decimal degrees.</li>
                         <li><strong>Filtering:</strong> Keep only points inside the Disney park polygons, drop anything inside the exclusion circles around sensitive locations, and round coordinates to keep noise down.</li>
@@ -544,34 +550,34 @@ Do not add any new external API calls or analytics. Everything must work complet
         <section class="mb-5">
             <h2 class="mb-4">Platform Results</h2>
 
-            <h3 class="mb-3">🏆 Success</h3>
-            <p class="small text-muted mb-4">Two platforms created the Disney waypoint experience without hand-holding.</p>
-            <div class="row g-4">
-                <div class="col-lg-6 platform-card">
+            <!-- Winner -->
+            <h3 class="mb-3">🏆 Winner: Base44</h3>
+            <p class="text-muted">Ranked considering functionality, mobile UX, and feature completeness - the complete package matters!</p>
+            <div class="row">
+                <!-- Base44 - Clear Winner -->
+                <div class="col-md-12 platform-card">
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #2b7fff; color: #fff;">
-                            <strong>Base44</strong>
+                            <strong>⭐ Base44 - Best Overall</strong>
                             <span class="badge grade-a">Grade A-</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
-                                <div class="col-7">
+                                <div class="col-8">
                                     <img src="base44/screenshot.png" alt="Base44 desktop map with heatmap toggle and stats sidebar" class="img-fluid screenshot-desktop">
                                     <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
                                 </div>
-                                <div class="col-5">
-                                    <img src="base44/screenshot-mobile.png" alt="Base44 mobile view highlighting the stats column" class="img-fluid screenshot-mobile">
+                                <div class="col-4">
+                                    <img src="base44/screenshot-mobile.png" alt="Base44 mobile view highlighting the stats column" class="img-fluid screenshot-mobile screenshot-mobile-multiple">
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
-                                    <img src="base44/screenshot-mobile-map.png" alt="Base44 mobile heatmap view after toggling the overlay" class="img-fluid screenshot-mobile mt-2">
+                                    <img src="base44/screenshot-mobile-map.png" alt="Base44 mobile heatmap view after toggling the overlay" class="img-fluid screenshot-mobile screenshot-mobile-multiple mt-2">
                                 </div>
                             </div>
-                            <ul class="small mb-3 ps-3">
-                                <li>No upload slot at first, but it happily ingested the <code>.txt</code> fallback once I added it mid-build.</li>
-                                <li>Clustering and heatmap toggles make the dense Fantasyland points digestible while keeping California Adventure distinct.</li>
-                                <li>Sidebar copy lines up with the scripted park totals, hours, and unique-day counts.</li>
-                                <li>Only quirk: on mobile you scroll past the stats before the map comes into view.</li>
-                            </ul>
-                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Exercised both toggles, compared stats to the script output, and grabbed the extra mobile heatmap capture.</p>
+                            <p><strong>Time:</strong> ~5 min</p>
+                            <p><strong>Why Winner:</strong> Clustering and heatmap toggles make the dense Fantasyland points easy to see while keeping California Adventure distinct. Sidebar copy lines up with the scripted park totals, hours, and unique-day counts. No upload slot at first, but it happily ingested the <code>.txt</code> fallback once I added it mid-build.</p>
+                            <p class="mb-2 small"><strong>Mobile:</strong> Good responsive design - only quirk: on mobile you scroll past the stats before the map comes into view.</p>
+                            <p class="small"><strong>AI role:</strong> Generated the full layout with clustering, heatmap toggle, and stats sidebar in 1 pass.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Exercised both toggles, compared stats to the script output, and grabbed the extra mobile heatmap capture.</p>
                             <div class="d-flex flex-wrap gap-2 mt-3">
                                 <a class="btn btn-sm btn-outline-secondary" href="base44/README.md">Details</a>
                                 <a class="btn btn-sm btn-primary" href="https://disney-park-paths-0af5726d.base44.app/" target="_blank" rel="noopener">Live Demo</a>
@@ -579,6 +585,11 @@ Do not add any new external API calls or analytics. Everything must work complet
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Success -->
+            <h3 class="mb-3 mt-5">✅ Success (1 more platform)</h3>
+            <div class="row g-4">
                 <div class="col-lg-6 platform-card">
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ff4f87; color: #fff;">
@@ -592,9 +603,9 @@ Do not add any new external API calls or analytics. Everything must work complet
                                     <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
                                 </div>
                                 <div class="col-5">
-                                    <img src="lovable/screenshot-mobile.png" alt="Lovable mobile view showing stats column" class="img-fluid screenshot-mobile">
+                                    <img src="lovable/screenshot-mobile.png" alt="Lovable mobile view showing stats column" class="img-fluid screenshot-mobile screenshot-mobile-multiple">
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
-                                    <img src="lovable/screenshot-mobile-map.png" alt="Lovable mobile map view after scrolling past stats" class="img-fluid screenshot-mobile mt-2">
+                                    <img src="lovable/screenshot-mobile-map.png" alt="Lovable mobile map view after scrolling past stats" class="img-fluid screenshot-mobile screenshot-mobile-multiple mt-2">
                                 </div>
                             </div>
                             <ul class="small mb-3 ps-3">
