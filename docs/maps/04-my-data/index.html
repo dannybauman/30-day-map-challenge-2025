@@ -343,7 +343,7 @@
         -->
         <section class="mb-5">
             <h2 class="mb-4">Ideation Phase</h2>
-            <p class="lead">Day 4 spilled over into the morning of Day 5 because I wanted the dataset to be solid before I asked the AI platforms to have at it. Claude, ChatGPT, and Gemini each pitched privacy-first takes on personal data, which was nice, but most were either abstract or too general. After pushing them to stay lightweight and not around my home location, I pivoted toward a concept of my trip to Disnelyand!</p>
+            <p class="lead">Day 4 spilled over into Day 5 because I took more time figuring out the idea and dataset before I asked the AI platforms to have at it. Claude, ChatGPT, and Gemini each pitched ideas with privacy-first takes on personal data, which was nice, but most were either abstract or too general. After redirecting them to stay lightweight and not around my home location, I pivoted toward a concept of my trip to Disnelyand!</p>
 
             <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
                 <div class="card-body">
@@ -846,7 +846,7 @@ Do not add any new external API calls or analytics. Everything must work complet
         </section>
         <section class="mb-5 process-section">
             <h2 class="mb-4">Process Timeline</h2>
-            <p class="lead">Day 4 stretched across two mornings: November 4 was all about cleaning my Google Timeline export, while November 5 handled the multi-platform launches and documentation. Here is how the work split between human guardrails and AI support.</p>
+            <p class="lead">Day 4 stretched across two days: November 4 was all about ideating, and finding and cleaning my Google Timeline export. Nov 5 was all about the multi-platform launches and documentation. Here is how the work split between my guidance and AI support.</p>
 
             <div class="contribution-legend mb-3">
                 <span class="badge bg-primary me-2">Me</span>
@@ -877,7 +877,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                             <span class="lane-label">AI</span>
                             <h4>Model Suggestions</h4>
                             <ul>
-                                <li>Claude, ChatGPT, and Gemini each pitched privacy-first personal-data maps that framed the guardrails.</li>
+                                <li>Claude, ChatGPT, and Gemini each pitched ideas for privacy-first personal-data maps that framed the guardrails.</li>
                                 <li>Cursor distilled those responses into the ideation digest and helped compare alternates for later days.</li>
                                 <li>AI checkpoints kept nudging the prompt toward lightweight, embeddable datasets instead of API-dependent flows.</li>
                             </ul>
@@ -892,7 +892,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                         <div class="col-lg-6">
                             <div class="process-card">
                                 <span class="lane-label">Me</span>
-                                <h4>Dataset Build (Nov 4)</h4>
+                                <h4>Dataset Build</h4>
                                 <ul>
                                     <li>Ran <code>build-disney-park-visits.mjs</code> to extract waypoints, drop sensitive buffers, and write both GeoJSON and <code>.txt</code> formats.</li>
                                     <li>Cross-checked park summaries against travel notes to ensure metadata matched reality.</li>
@@ -919,7 +919,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                         <div class="col-lg-6">
                             <div class="process-card">
                                 <span class="lane-label">Me</span>
-                                <h4>Prompt Crafting (Nov 4 evening)</h4>
+                                <h4>Prompt Crafting</h4>
                                 <ul>
                                     <li>Updated the Day 4 implementation prompt with clustering requirements, color-by-park rules, and the &ldquo;My Data, My Rules&rdquo; callout.</li>
                                     <li>Added explicit instructions to load <code>data/disney-park-visits.geojson</code> locally without external APIs.</li>
@@ -946,7 +946,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                         <div class="col-lg-6">
                             <div class="process-card">
                                 <span class="lane-label">Me</span>
-                                <h4>Launch & Supervision (Nov 5)</h4>
+                                <h4>Launch & Supervision</h4>
                                 <ul>
                                     <li>Ran nine platforms back-to-back, logging status, grades, and retries in the launch tracker.</li>
                                     <li>Uploaded GeoJSON or <code>.txt</code> variants by hand wherever the platform lacked a direct file slot.</li>
@@ -973,7 +973,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                         <div class="col-lg-6">
                             <div class="process-card">
                                 <span class="lane-label">Me</span>
-                                <h4>QA & Documentation (Nov 5)</h4>
+                                <h4>QA & Documentation</h4>
                                 <ul>
                                     <li>Verified all 118 waypoints render correctly in the two successful builds and noted gaps in each partial.</li>
                                     <li>Logged the cross-day completion note across the public progress logs.</li>
@@ -1044,8 +1044,8 @@ Do not add any new external API calls or analytics. Everything must work complet
             <h2 class="mb-4">Editorial</h2>
             <div class="card">
                 <div class="card-body">
-                    <p>Day 4 was the first time the challenge spilled into the next morning, and the slowdown was worth it. Sanitizing the Google Timeline export, double-checking every waypoint, and documenting the privacy guardrails took longer than the actual platform runs. Once the dataset felt safe, Lovable and Base44 proved that a clean personal dataset can turn into a polished experience in minutes, while the partials showed exactly where inline data pipelines still fall apart.</p>
-                    <p>The big lesson: always create multiple file formats and be ready to hand platforms their data on a platter. GeoJSON worked out of the box for Lovable, the <code>.txt</code> mirror saved Bolt.new and Base44, and the per-platform writeups keep the cross-day timeline transparent. Going forward I'll keep logging these spillovers, keep the prompt focused on offline assets, and keep nudging AI tools toward privacy-respecting storytelling.</p>
+                    <p>Day 4 was the first time the challenge spilled into the next day, but it's fine, this has been plenty of AI and maps each day. Finding and prepping the Google Timeline export, double-checking data, and documenting the privacy guardrails took longer than the actual platform runs. Once the dataset felt safe, Lovable and Base44 turned that a clean dataset into a polished experience quickly, But the partials showed where inline data pipelines still fall apart.</p>
+                    <p>The lesson: create a private folder (add to .gitignore), and create a common data processing pipeline to import from the private folder and output to day's normal folder in the git repo, in file formats ready to hand platforms their data on a platter. GeoJSON worked out of the box for Lovable, the <code>.txt</code> mirror saved Bolt.new and Base44. Going forward I'll keep nudging AI tools toward interesting and privacy-respecting storytelling.</p>
                 </div>
             </div>
         </section>
