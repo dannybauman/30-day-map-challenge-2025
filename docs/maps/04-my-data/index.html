@@ -449,7 +449,7 @@
 Theme: Personal dataset visualization
 
 Context:
-I collected my own Google Maps Timeline exports, filtered them to extract all GPS waypoints within Disney parks I&#x27;ve actually visited (currently Anaheim Disneyland parks), removed anything near my home/work locations, and created a point cloud showing my actual movement paths. The sanitized dataset is included with the project as `data/disney-park-visits.geojson`.
+I collected my own Google Maps Timeline exports, filtered them to extract all GPS waypoints within Disney parks I&#x27;ve actually visited (currently Anaheim Disneyland parks), removed anything near my home/work locations, and created a point cloud showing my actual movement paths. The cleaned dataset is included with the project as `data/disney-park-visits.geojson`.
 
 Dataset shape (FeatureCollection of 118 points):
 Each point represents one GPS waypoint from my actual movement within the parks.
@@ -550,34 +550,35 @@ Do not add any new external API calls or analytics. Everything must work complet
         <section class="mb-5">
             <h2 class="mb-4">Platform Results</h2>
 
-            <!-- Winner -->
-            <h3 class="mb-3">🏆 Winner: Base44</h3>
-            <p class="text-muted">Ranked considering functionality, mobile UX, and feature completeness - the complete package matters!</p>
-            <div class="row">
-                <!-- Base44 - Clear Winner -->
-                <div class="col-md-12 platform-card">
+            <!-- Success -->
+            <h3 class="mb-3">🏆 Success</h3>
+            <p class="small text-muted mb-4">Two platforms created the Disney waypoint experience without hand-holding.</p>
+            <div class="row g-4">
+                <div class="col-lg-6 platform-card">
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #2b7fff; color: #fff;">
-                            <strong>⭐ Base44 - Best Overall</strong>
+                            <strong>Base44</strong>
                             <span class="badge grade-a">Grade A-</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
-                                <div class="col-8">
+                                <div class="col-7">
                                     <img src="base44/screenshot.png" alt="Base44 desktop map with heatmap toggle and stats sidebar" class="img-fluid screenshot-desktop">
                                     <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-5">
                                     <img src="base44/screenshot-mobile.png" alt="Base44 mobile view highlighting the stats column" class="img-fluid screenshot-mobile screenshot-mobile-multiple">
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                     <img src="base44/screenshot-mobile-map.png" alt="Base44 mobile heatmap view after toggling the overlay" class="img-fluid screenshot-mobile screenshot-mobile-multiple mt-2">
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
-                            <p><strong>Why Winner:</strong> Clustering and heatmap toggles make the dense Fantasyland points easy to see while keeping California Adventure distinct. Sidebar copy lines up with the scripted park totals, hours, and unique-day counts. No upload slot at first, but it happily ingested the <code>.txt</code> fallback once I added it mid-build.</p>
-                            <p class="mb-2 small"><strong>Mobile:</strong> Good responsive design - only quirk: on mobile you scroll past the stats before the map comes into view.</p>
-                            <p class="small"><strong>AI role:</strong> Generated the full layout with clustering, heatmap toggle, and stats sidebar in 1 pass.</p>
-                            <p class="small"><strong>Human tweaks:</strong> Exercised both toggles, compared stats to the script output, and grabbed the extra mobile heatmap capture.</p>
+                            <ul class="small mb-3 ps-3">
+                                <li>No upload slot at first, but it happily ingested the <code>.txt</code> fallback once I added it mid-build.</li>
+                                <li>Clustering and heatmap toggles make the dense Fantasyland points easy to see while keeping California Adventure distinct.</li>
+                                <li>Sidebar copy lines up with the scripted park totals, hours, and unique-day counts.</li>
+                                <li>Only quirk: on mobile you scroll past the stats before the map comes into view.</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Exercised both toggles, compared stats to the script output, and grabbed the extra mobile heatmap capture.</p>
                             <div class="d-flex flex-wrap gap-2 mt-3">
                                 <a class="btn btn-sm btn-outline-secondary" href="base44/README.md">Details</a>
                                 <a class="btn btn-sm btn-primary" href="https://disney-park-paths-0af5726d.base44.app/" target="_blank" rel="noopener">Live Demo</a>
@@ -585,16 +586,11 @@ Do not add any new external API calls or analytics. Everything must work complet
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Success -->
-            <h3 class="mb-3 mt-5">✅ Success (1 more platform)</h3>
-            <div class="row g-4">
                 <div class="col-lg-6 platform-card">
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ff4f87; color: #fff;">
                             <strong>Lovable</strong>
-                            <span class="badge grade-b">Grade B</span>
+                            <span class="badge grade-a">Grade A-</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -609,9 +605,10 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 </div>
                             </div>
                             <ul class="small mb-3 ps-3">
-                                <li>Uploaded the GeoJSON directly and rendered all 118 waypoints on the very first attempt.</li>
+                                <li>Uploaded the GeoJSON directly and rendered all 118 waypoints on the very first attempt—this was a big win.</li>
                                 <li>Clusters stay responsive as you zoom, and the park summary sidebar comes straight from <code>meta.park_summary</code>.</li>
-                                <li>Main tradeoff: the stats column dominates the first screen, so the map sits just below the fold.</li>
+                                <li>Nicely made page and map with clean design.</li>
+                                <li>The stats column appears first on mobile, then the map below—a fine layout choice.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Verified every waypoint, color-by-park styling, and cluster drill-down before capturing both mobile views.</p>
                             <div class="d-flex flex-wrap gap-2 mt-3">
@@ -630,7 +627,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
                             <strong>Bolt.new</strong>
-                            <span class="badge grade-b">Grade B-</span>
+                            <span class="badge grade-c-plus">Grade C+</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -660,7 +657,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
                             <strong>MagicPatterns</strong>
-                            <span class="badge grade-b">Grade B-</span>
+                            <span class="badge grade-c-plus">Grade C+</span>
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
@@ -820,14 +817,9 @@ Do not add any new external API calls or analytics. Everything must work complet
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
-                                <div class="col-7">
+                                <div class="col-12">
                                     <img src="google-ai-studio/screenshot.png" alt="Google AI Studio error screen" class="img-fluid screenshot-desktop">
                                     <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
-                                </div>
-                                <div class="col-5 d-flex">
-                                    <div class="border rounded w-100 d-flex align-items-center justify-content-center bg-light text-center p-3">
-                                        <p class="small mb-0 text-muted">No mobile capture<br>(build never progressed)</p>
-                                    </div>
                                 </div>
                             </div>
                             <ul class="small mb-3 ps-3">
@@ -864,22 +856,22 @@ Do not add any new external API calls or analytics. Everything must work complet
                     <div class="col-lg-6">
                         <div class="process-card">
                             <span class="lane-label">Me</span>
-                            <h4>Data Sanitation & Concept Pivot</h4>
+                            <h4>Ideation Prompt</h4>
                             <ul>
-                                <li>Filtered the Google Timeline export to 118 in-park waypoints and verified home/work scrubbing before publishing.</li>
-                                <li>Pivoted from abstract ideation concepts to the Disney park visit mix once the sanitized dataset looked solid.</li>
-                                <li>Recorded the Day 4 → Day 5 spillover in the project logs so the timeline stays transparent.</li>
+                                <li>Asked Claude, ChatGPT, and Gemini for personal-data map ideas that could work as small GeoJSON/CSV files.</li>
+                                <li>Reinforced privacy guardrails: remove home/work locations, quantize coordinates, keep attribution clear.</li>
+                                <li>Requested lightweight, embeddable datasets that platforms could ingest without network dependencies.</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="process-card ai">
                             <span class="lane-label">AI</span>
-                            <h4>Model Suggestions</h4>
+                            <h4>Model Responses</h4>
                             <ul>
-                                <li>Claude, ChatGPT, and Gemini each pitched ideas for privacy-first personal-data maps that framed the guardrails.</li>
-                                <li>Cursor distilled those responses into the ideation digest and helped compare alternates for later days.</li>
-                                <li>AI checkpoints kept nudging the prompt toward lightweight, embeddable datasets instead of API-dependent flows.</li>
+                                <li>Claude suggested "My Coffee Geography" — clustering cafe visits into routine/exploring/traveling zones.</li>
+                                <li>ChatGPT proposed "Personal Heatlines" — merging run/walk traces with home/work exclusion.</li>
+                                <li>Gemini pitched "Activity Shell Hex Grid" — hexbinning GPS archive with privacy-focused deletions.</li>
                             </ul>
                         </div>
                     </div>
@@ -892,11 +884,65 @@ Do not add any new external API calls or analytics. Everything must work complet
                         <div class="col-lg-6">
                             <div class="process-card">
                                 <span class="lane-label">Me</span>
+                                <h4>Concept Evaluation & Pivot</h4>
+                                <ul>
+                                    <li>Reviewed all three AI suggestions and found them either too abstract or too general.</li>
+                                    <li>Realized I had a perfect dataset: my Google Timeline Disney park visits from September 2025.</li>
+                                    <li>Pivoted to the Disney Park Visit Mix concept — 118 GPS waypoints showing actual movement paths.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Idea Synthesis</h4>
+                                <ul>
+                                    <li>Cursor helped compare the three ideation responses and identify common themes.</li>
+                                    <li>All three models reinforced privacy-first approaches and lightweight data formats.</li>
+                                    <li>Their suggestions validated the approach but didn't match the available dataset.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Data Collection & Cleaning</h4>
+                                <ul>
+                                    <li>Extracted Google Timeline export and filtered for Disney park waypoints only.</li>
+                                    <li>Removed anything near home/work locations and verified privacy guardrails.</li>
+                                    <li>Confirmed the dataset felt personal but still publishable — 118 points from September 2025.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Privacy Validation</h4>
+                                <ul>
+                                    <li>Cursor helped verify no sensitive coordinates leaked into the public dataset.</li>
+                                    <li>LLM suggestions confirmed the privacy guardrails were properly applied.</li>
+                                    <li>AI checkpoints validated the approach matched the ideation guardrails.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
                                 <h4>Dataset Build</h4>
                                 <ul>
                                     <li>Ran <code>build-disney-park-visits.mjs</code> to extract waypoints, drop sensitive buffers, and write both GeoJSON and <code>.txt</code> formats.</li>
                                     <li>Cross-checked park summaries against travel notes to ensure metadata matched reality.</li>
-                                    <li>Staged sanitized files in <code>maps/04-my-data/data/</code> and locked down private exports inside <code>private-data/</code>.</li>
+                                    <li>Staged cleaned files in <code>maps/04-my-data/data/</code> and locked down private exports inside <code>private-data/</code>.</li>
                                 </ul>
                             </div>
                         </div>
@@ -1005,7 +1051,7 @@ Do not add any new external API calls or analytics. Everything must work complet
             <div class="insight-box">
                 <h5>✅ What Worked</h5>
                 <ul>
-                    <li>Lovable loaded the GeoJSON on the first try and surfaced my park stats without any manual edits.</li>
+                    <li>Lovable uploaded the GeoJSON directly and rendered all 118 waypoints on the very first attempt—this was a big win. Clean design and proper data handling.</li>
                     <li>Base44 added clustering and a heatmap toggle, giving a richer look at the Fantasyland density.</li>
                     <li>Keeping both GeoJSON and <code>.txt</code> copies ready meant every platform had a viable upload path.</li>
                 </ul>

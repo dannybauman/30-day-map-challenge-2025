@@ -26,12 +26,12 @@
 
 | Platform | Status | Time Spent | Notes | Screenshot | Code Saved | Grade |
 |----------|--------|------------|-------|------------|------------|-------|
-| Lovable | ✅ Success | ~5 min | Works great on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. UI takes up a lot of page (need to scroll for map). | ✅ | ⬜ | B |
-| Bolt.new | ⚠️ Partial | ~5 min | Worked great in dev: nice two-column layout, stats work, extra clustering toggle feature. Deployed but data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. | ✅ | ⬜ | B- |
+| Lovable | ✅ Success | ~5 min | Works great on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. UI takes up a lot of page (need to scroll for map). | ✅ | ⬜ | A- |
+| Bolt.new | ⚠️ Partial | ~5 min | Worked great in dev: nice two-column layout, stats work, extra clustering toggle feature. Deployed but data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. | ✅ | ⬜ | C+ |
 | Google AI Studio | ❌ Failed | ~10 min | Errors prevented getting to a map. Tried Auto Fix 3 times, still no luck. No deployed code. | ✅ | ⬜ | F |
-| Base44 | ✅ Success | ~5 min | Maybe one of the best! Nice visuals (left sidebar stats/info, main panel map). Clustering AND heatmap option (nice touch!). No file upload in initial prompt, but uploaded .txt after it started. | ✅ | ⬜ | B |
+| Base44 | ✅ Success | ~5 min | Maybe one of the best! Nice visuals (left sidebar stats/info, main panel map). Clustering AND heatmap option (nice touch!). No file upload in initial prompt, but uploaded .txt after it started. | ✅ | ⬜ | A- |
 | Firebase Studio | ⚠️ Partial | ~15 min | Multiple JSON errors needed fixing (3 attempts). Had to switch to code mode, create .env.local, add Google Maps API key, upload GeoJSON. UI shows but data doesn't load correctly, map points hard to see. Barely any colors in sidebar. | ✅ | ⬜ | C- |
-| MagicPatterns | ⚠️ Partial | ~5 min | Works mostly, looks pretty good (nice sidebar + main panel). Only shows 5 points when there should be 118. Could quickly go up to B+ if waypoint loading issue is fixed. | ✅ | ⬜ | B- |
+| MagicPatterns | ⚠️ Partial | ~5 min | Works mostly, looks pretty good (nice sidebar + main panel). Only shows 5 points when there should be 118. Could quickly go up to B+ if waypoint loading issue is fixed. | ✅ | ⬜ | C+ |
 | ChatGPT Canvas | ⚠️ Partial | ~15 min | Couldn't load data all the way. Loaded data inline but couldn't show it on the map. Tried auto-fix errors a few times, didn't work. UI shows correctly with stats/controls, but map tiles blocked by network permissions. | ✅ | ⬜ | D |
 | Claude Artifacts | ⚠️ Partial | ~15 min | Couldn't load data fully. Kept stopping output and asking if I wanted to continue (was putting GeoJSON inline). Tried auto-fix errors a few times, didn't work. UI shows correctly with stats, but map/data loading error. | ✅ | ⬜ | D |
 | Gemini Canvas | ⚠️ Partial | ~15 min | Showed a bit of UI but not much else. Couldn't load data or map. Tried auto-fix errors a few times, didn't work. Requires sign-in to view shared content. | ✅ | ⬜ | D |
@@ -50,7 +50,7 @@
 
 ### Lovable
 - **Status:** ✅ Success
-- **Grade:** B (Good / Full Success)
+- **Grade:** A- (Strong / Full Success)
 - **Time:** ~5 min
 - **Deployed URL:** https://disneymap-trails.lovable.app
 - **File Format:** Used `.geojson` directly (platform supports it)
@@ -65,7 +65,7 @@
 
 ### Bolt.new
 - **Status:** ⚠️ Partial Success
-- **Grade:** B- (Partial Success - worked almost all the way)
+- **Grade:** C+ (Partial Success - worked almost all the way)
 - **Time:** ~5 min
 - **Deployed URL:** https://my-disney-park-movem-zgf4.bolt.host
 - **File Format:** Used `.txt` version (platform doesn't support `.geojson`)
@@ -94,7 +94,7 @@
 
 ### Base44
 - **Status:** ✅ Success
-- **Grade:** B (Good / Full Success)
+- **Grade:** A- (Strong / Full Success)
 - **Time:** ~5 min
 - **Deployed URL:** https://disney-park-paths-0af5726d.base44.app/
 - **File Format:** Used `.txt` version (uploaded after initial prompt)
@@ -127,7 +127,7 @@
 
 ### MagicPatterns
 - **Status:** ⚠️ Partial Success
-- **Grade:** B- (Partial Success)
+- **Grade:** C+ (Partial Success)
 - **Time:** ~5 min
 - **Deployed URL:** https://project-disney-park-visits-map-198.magicpatterns.app/
 - **File Format:** Only allows images at first, provided GeoJSON later

@@ -19,13 +19,13 @@
 
 ## Platform Results Summary
 
-### Full Success (Grade B)
+### Full Success (Grade A-)
 1. **Lovable** - https://disneymap-trails.lovable.app
 2. **Base44** - https://disney-park-paths-0af5726d.base44.app/
 
 ### Partial Success
-3. **Bolt.new** (B-) - https://my-disney-park-movem-zgf4.bolt.host
-4. **MagicPatterns** (B-) - https://project-disney-park-visits-map-198.magicpatterns.app/
+3. **Bolt.new** (C+) - https://my-disney-park-movem-zgf4.bolt.host
+4. **MagicPatterns** (C+) - https://project-disney-park-visits-map-198.magicpatterns.app/
 5. **Firebase Studio** (C-) - https://studio--studio-5686587708-3c211.us-central1.hosted.app/
 6. **ChatGPT Canvas** (D) - https://chatgpt.com/canvas/shared/690bc8d900048191b01db468789b6c49
 7. **Claude Artifacts** (D) - https://claude.ai/public/artifacts/cfa10548-8b32-4a19-a33c-4286c29c78b1
@@ -84,7 +84,7 @@ All platforms have screenshots in `maps/04-my-data/{platform}/`:
 
 ## Important Notes
 
-- **Screenshot sizing:** Use `col-7` for desktop, `col-5` for mobile (multiple winners layout)
+- **Screenshot sizing:** Use `col-7` for desktop, `col-5` for mobile (Success section with 2 platforms layout)
 - **Multiple mobile screenshots:** Stack `screenshot-mobile.png` and `screenshot-mobile-map.png` for Lovable, Base44, MagicPatterns
 - **Platform colors:** Use consistent colors from DESIGN-SYSTEM.md
 - **Times:** Keep approximate (~80 min, not exact minutes)

@@ -67,13 +67,13 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 ## Platform Results
 
 ### Lovable
-- **Status:** ✅ Success (Grade B)
+- **Status:** ✅ Success (Grade A-)
 - **Deployed URL:** https://disneymap-trails.lovable.app
 - **Time:** ~5 minutes (first attempt)
-- **Notes:** Worked on first attempt! Map renders correctly, stats work, good overview/stats/legend UI. Minor issue: UI takes up a lot of page space (need to scroll for map).
+- **Notes:** Worked on first attempt! Uploaded the GeoJSON directly and rendered all 118 waypoints—this was a big win. Map renders correctly, stats work, good overview/stats/legend UI. Nicely made page and map with clean design. The stats column appears first on mobile, then the map below—a fine layout choice.
 
 ### Bolt.new
-- **Status:** ⚠️ Partial Success (Grade B-)
+- **Status:** ⚠️ Partial Success (Grade C+)
 - **Deployed URL:** https://my-disney-park-movem-zgf4.bolt.host
 - **Time:** ~5 minutes
 - **Notes:** Worked great in development! Nice two-column layout, stats work, extra clustering toggle feature. Deployed but has data loading error (SyntaxError: Unexpected token '<'). UI shows but no data. Tried to fix but ran out of tokens. Assumed fixable.
@@ -84,7 +84,7 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 - **Notes:** Errors prevented getting to a map. Tried Auto Fix 3 times, still no luck. No deployed code. Screenshot shows dev version with errors.
 
 ### Base44
-- **Status:** ✅ Success (Grade B)
+- **Status:** ✅ Success (Grade A-)
 - **Deployed URL:** https://disney-park-paths-0af5726d.base44.app/
 - **Time:** ~5 minutes
 - **Notes:** Maybe one of the best! Nice visuals (left sidebar stats/info, main panel map). Clustering AND heatmap option (nice touch!). No file upload in initial prompt, but uploaded .txt after it started.
@@ -96,7 +96,7 @@ The GeoJSON file can be used directly in code by loading it as JSON or embedding
 - **Notes:** Multiple JSON errors needed fixing (3 attempts). Had to switch to code mode, create .env.local, add Google Maps API key, upload GeoJSON. UI shows but data doesn't load correctly, map points hard to see. Barely any colors in sidebar.
 
 ### MagicPatterns
-- **Status:** ⚠️ Partial Success (Grade B-)
+- **Status:** ⚠️ Partial Success (Grade C+)
 - **Deployed URL:** https://project-disney-park-visits-map-198.magicpatterns.app/
 - **Time:** ~5 minutes
 - **Notes:** Works mostly, looks pretty good (nice sidebar + main panel). Only shows 5 points when there should be 118. Could quickly go up to B+ if waypoint loading issue is fixed.
