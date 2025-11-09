@@ -311,13 +311,18 @@
         <!-- Ideation Phase -->
         <section class="mb-5">
             <h2 class="mb-4">Ideation Phase</h2>
-            <p class="lead">Ideation responses and implementation prompt details to be added.</p>
+            <p class="lead">For Day 6, I asked Claude, ChatGPT, and Gemini to propose 3D visualization concepts that emphasize extra dimensions (height, time, multivariate layering) while keeping data lightweight and embeddable. The prompt emphasized that each concept needed a graceful 2D fallback since platforms struggle with expensive WebGL, and everything had to ship as static assets under 1 MB. After reviewing their suggestions, I chose the Population Peaks concept—a honeycomb surface with height encoding population and color encoding density—because it immediately reads as a landscape of global population clusters even when 3D effects fall back to flat rendering.</p>
 
             <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
                 <div class="card-body">
                     <h5 class="card-title">Where I Redirected The Prompt</h5>
                     <ul class="small mb-0">
-                        <li>Details to be added</li>
+                        <li>Emphasized that the concept must involve 3D visualization with height encoding to fit the "Dimensions" theme</li>
+                        <li>Required each AI to propose how to use dimensions (height, depth, elevation) in the map concept</li>
+                        <li>Insisted on lightweight, embeddable data that all coding platforms can load without external APIs</li>
+                        <li>Required graceful 2D fallback if 3D element fails (heatmap, contours, sparkline, etc.)</li>
+                        <li>Kept geometry counts manageable for mobile performance</li>
+                        <li>Preferred reusable global/regional datasets that could work for future days</li>
                     </ul>
                 </div>
             </div>
