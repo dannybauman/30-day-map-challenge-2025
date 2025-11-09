@@ -6,7 +6,7 @@
 
 ## Result
 
-**Grade D (Partial Success):** UI and controls generated, but map visualization failed to render properly. Error message displayed: "Cannot preview your code - An error occured while trying to run Population Peaks — Day 6 (single‑file Html)".
+**Grade D (Partial Success):** UI and controls generated, but map visualization failed to render properly. Error message displayed: "Cannot preview your code - An error occured while trying to run Population Peaks - Day 6 (single-file Html)".
 
 ## Attribution
 
