@@ -158,11 +158,11 @@
 
 ## Summary
 
-- **Total Platforms:** 10
-- **Success:** 2 (20%)
-- **Partial Success:** 6 (60%)
-- **Failed:** 1 (10%)
-- **N/A:** 1 (10%)
+- **Total Platforms:** 9 (tested)
+- **Success:** 2 (22%)
+- **Partial Success:** 6 (67%)
+- **Failed:** 1 (11%)
+- **N/A:** 1 (Bolt.new - not tested due to free tier limit)
 - **Total Time:** ~2 hours
 
 ## Key Observations

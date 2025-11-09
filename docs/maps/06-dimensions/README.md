@@ -26,11 +26,11 @@ A 3D hexagonal visualization showing population peaks across geographic regions,
 
 ## Platform Results
 
-**Total Platforms Tested:** 10
-**Success:** 2 (20%)
-**Partial Success:** 6 (60%)
-**Failed:** 1 (10%)
-**N/A:** 1 (10%)
+**Total Platforms Tested:** 9
+**Success:** 2 (22%)
+**Partial Success:** 6 (67%)
+**Failed:** 1 (11%)
+**N/A:** 1 (Bolt.new - not tested due to free tier limit)
 
 ### ✅ Success (2 platforms)
 
@@ -154,5 +154,5 @@ Exceptions:
 
 ## Notes
 
-Day 6 tested 10 platforms on a 3D population peaks visualization. Lovable and Base44 both achieved Grade B results, with Lovable getting there on the first try. The partial successes showed where platforms struggle: large GeoJSON files, library loading errors, and missing functionality like pan controls. Free tier limits are starting to become a factor, with MagicPatterns and Bolt.new both hitting limits. The consistent failures from Google AI Studio and the thread persistence issue with Gemini Canvas highlight platform reliability concerns.
+Day 6 tested 9 platforms on a 3D population peaks visualization. Lovable and Base44 both achieved Grade B results, with Lovable getting there on the first try. The partial successes showed where platforms struggle: large GeoJSON files, library loading errors, and missing functionality like pan controls. Free tier limits are starting to become a factor, with MagicPatterns and Bolt.new both hitting limits. The consistent failures from Google AI Studio and the thread persistence issue with Gemini Canvas highlight platform reliability concerns.
 
