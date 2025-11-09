@@ -10,11 +10,19 @@ A 3D hexagonal visualization showing population peaks across geographic regions,
 
 ## Dataset
 
-- **Source:** Details to be added
-- **Format:** GeoJSON with population data
+- **Source:** Natural Earth populated places, processed into hexagonal polygons with population data
+- **File:** `data/population_hex_peaks.geojson`
+- **Format:** GeoJSON FeatureCollection with hexagonal polygons
+- **Properties per hex:**
+  - `hex_id`: Unique identifier for the hex
+  - `pop_sum`: Total population (sum of POP_MAX from contributing cities)
+  - `density`: Population per km² inside the hex (precalculated)
+  - `top_city`: Most populous contributing city (metadata for tooltips)
+  - `country`: Dominant country for labeling
+- **Data size:** ≤ 1 MB once embedded (expect ~500–1,000 hexes)
 - **Visual Encoding:**
-  - Height = Total population
-  - Color = Population density per km²
+  - Height = Total population (`pop_sum`)
+  - Color = Population density per km² (`density`)
 
 ## Platform Results
 
