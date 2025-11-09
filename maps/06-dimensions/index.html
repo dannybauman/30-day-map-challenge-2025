@@ -367,10 +367,10 @@
             <h2 class="mb-4">Chosen Concept</h2>
             <div class="card border-primary">
                 <div class="card-body">
-                    <h4>3D Population Peaks Hex Map</h4>
-                    <p>A 3D hexagonal visualization showing population peaks across geographic regions, with height encoding total population and color encoding population density.</p>
-                    <p><strong>Data Source:</strong> Details to be added</p>
-                    <p><strong>Why chosen:</strong> Details to be added</p>
+                    <h4>Population Peaks</h4>
+                    <p>A honeycomb surface where each hex column's height encodes the total population of nearby cities and the fill color conveys population density. The visualization reads as a landscape of global population clusters, even when animations or 3D effects fall back to flat rendering.</p>
+                    <p><strong>Data Source:</strong> Natural Earth populated places, processed into hexagonal polygons with population data (`data/population_hex_peaks.geojson`). Each hex contains properties: `pop_sum` (total population), `density` (population per km²), `top_city` (most populous contributing city), and `country`.</p>
+                    <p><strong>Why chosen:</strong> Emphasizes the third dimension from the moment the page loads - height and color both reinforce the "Dimensions" brief. Provides a clear visual representation of global population distribution through both height encoding and color encoding.</p>
                 </div>
             </div>
         </section>
@@ -381,7 +381,40 @@
             <div class="card">
                 <div class="card-body">
                     <p><small>Used the same prompt across all platforms:</small></p>
-                    <pre class="bg-light p-3" style="max-height: 300px; overflow-y: auto;"><code>Implementation prompt details to be added</code></pre>
+                    <pre class="bg-light p-3" style="max-height: 300px; overflow-y: auto;"><code>PROJECT: #30DayMapChallenge 2025 – Day 6: Dimensions
+
+CONCEPT:
+
+Create "Population Peaks," a honeycomb surface where each hex column's height encodes the total population of nearby cities and the fill color conveys population density. The visualization should immediately read as a landscape of global population clusters, even when animations or 3D effects fall back to flat rendering.
+
+REQUIREMENTS:
+
+Visual:
+- Interactive web-based map with zoom/pan
+- Clean, modern styling that works on both desktop (wide layout) and mobile (single-column layout)
+- Prominent title, subtitle, and legend explaining height + color dimensions
+- Optional subtle animation (e.g., gentle rise on load or looping breathing effect) is encouraged but must degrade gracefully
+
+Data:
+- Embed a single GeoJSON file: `data/population_hex_peaks.geojson`
+- Each feature is a hexagonal polygon with properties: hex_id, pop_sum, density, top_city, country
+- Data size must remain ≤ 1 MB once embedded (expect ~500–1,000 hexes)
+
+Functionality:
+- Map interaction: zoom/pan, hover tooltips, and click summaries (mobile tap friendly)
+- Legend showing how height and color encode variables (include numeric ranges)
+- Provide a quick filter or toggle to highlight top peaks (e.g., top 10 hexes)
+- If animation is implemented, ensure a toggle to pause/disable it
+- Include clear attribution for Natural Earth populated places
+
+Technical:
+- Deliver a single HTML file (can inline CSS/JS or link to bundled assets)
+- Use modern JavaScript (ES6+). Mapping stack options:
+  - Preferred: MapLibre GL JS with `fill-extrusion` (works across most platforms)
+  - Acceptable fallback: Canvas/SVG (D3.js) rendering of hex polygons with faux extrusion shading
+- No build steps—pure static assets. Use CDN-hosted libraries only
+- Ensure mobile responsiveness (stack elements vertically, maintain readable labels)
+- Test data loading synchronously (no fetch from remote URLs; embed via `<script type="application/json">` or inline JS constant)</code></pre>
                     <a href="IMPLEMENTATION-PROMPT.md" class="btn btn-sm btn-outline-primary">View Full Prompt</a>
                 </div>
             </div>
