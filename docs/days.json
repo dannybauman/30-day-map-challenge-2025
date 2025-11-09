@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-06T06:32:59.717Z",
+  "generatedAt": "2025-11-09T02:10:55.114Z",
   "days": [
     {
       "id": "01-points",
@@ -32,6 +32,14 @@
       "theme": "My Data",
       "relativeUrl": "maps/04-my-data/index.html",
       "readmeUrl": "maps/04-my-data/README.md"
+    },
+    {
+      "id": "06-dimensions",
+      "dayNumber": 6,
+      "title": "Day 6: Dimensions",
+      "theme": "Dimensions",
+      "relativeUrl": "maps/06-dimensions/index.html",
+      "readmeUrl": "maps/06-dimensions/README.md"
     }
   ]
 }
