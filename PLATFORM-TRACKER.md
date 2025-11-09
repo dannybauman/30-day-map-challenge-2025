@@ -8,16 +8,16 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 | Platform | Attempts | Success | Partial | Failed | Success % | Avg Time |
 |----------|----------|---------|---------|--------|-----------|----------|
-| ChatGPT Canvas | 3 | 1 | 2 | 0 | 33% | 5-15 min |
-| Bolt.new | 4 | 2 | 2 | 0 | 50% | 5 min |
-| Lovable | 4 | 3 | 1 | 0 | 75% | 5-10 min |
-| Base44 | 3 | 3 | 0 | 0 | 100% | 5 min |
-| MagicPatterns | 5 | 3 | 2 | 0 | 60% | 5 min |
-| Firebase Studio | 4 | 2 | 2 | 0 | 50% | 15 min |
-| Google AI Studio | 4 | 1 | 1 | 2 | 25% | 5-10 min |
-| V0.dev | 3 | 0 | 3 | 0 | 0% | 10 min |
-| Claude Artifacts | 4 | 0 | 4 | 0 | 0% | 15 min |
-| Gemini | 4 | 0 | 4 | 0 | 0% | 15 min |
+| ChatGPT Canvas | 4 | 1 | 3 | 0 | 25% | 5-15 min |
+| Bolt.new | 4 | 2 | 1 | 0 | 50% | 5 min |
+| Lovable | 5 | 4 | 1 | 0 | 80% | 5-10 min |
+| Base44 | 4 | 4 | 0 | 0 | 100% | 5 min |
+| MagicPatterns | 6 | 3 | 3 | 0 | 50% | 5 min |
+| Firebase Studio | 5 | 2 | 3 | 0 | 40% | 15 min |
+| Google AI Studio | 5 | 1 | 1 | 3 | 20% | 5-10 min |
+| V0.dev | 4 | 0 | 4 | 0 | 0% | 10 min |
+| Claude Artifacts | 5 | 0 | 5 | 0 | 0% | 15 min |
+| Gemini | 5 | 0 | 5 | 0 | 0% | 15 min |
 | Cursor | 0 | 0 | 0 | 0 | -- | -- |
 | Windsurf | 0 | 0 | 0 | 0 | -- | -- |
 
