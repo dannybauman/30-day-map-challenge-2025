@@ -4,8 +4,8 @@
 **Theme:** Map from 2125
 
 **Attribution:**
-- **Human (Danny):** Set the creative direction, reviewed all responses, and flagged that concepts requiring manual hand-drawing or extensive external tool usage are not suitable for this project workflow.
-- **AI (Cursor):** Logged all responses and analyzed which concepts require manual work vs. automated data prep.
+- **Human (Danny):** Set the creative direction, reviewed all responses, flagged that concepts requiring manual hand-drawing or extensive external tool usage are not suitable for this project workflow, specified preference for meaningful animation (routes, time-based, or data-driven) rather than decorative effects, reviewed data feasibility from previous days, and decided to proceed with pre-processed data approach (Option 1) to address multiple data source roadblocks.
+- **AI (Cursor):** Logged all responses, analyzed which concepts require manual work vs. automated data prep, compared animation features across viable concepts, analyzed data roadblocks from previous days, and documented feasibility assessment with recommendations.
 
 ---
 
@@ -103,5 +103,79 @@
 
 ---
 
-**Next Step:** Create implementation prompt based on Claude Concept 2: "Climate Migration Flows 2025-2125"
+## Animation Analysis (Based on User Preference)
+
+**User Preference:** Animation that actually means something - either animating over time, or routes, or something meaningful (not just decorative).
+
+### Claude Concept 1: "The Aquapolis Network"
+**Animation Features:**
+- **Time-lapse slider:** Animated transformation from 2025→2125 showing cities gradually "lifting" onto floating platforms as water levels rise
+- **Before/after split-screen effect:** Dramatic visual comparison
+- **Meaningful:** Shows transformation over time, visualizes adaptation to sea-level rise
+
+**Animation Type:** ✅ Time-based (transformation over 100 years)
+
+### Claude Concept 2: "Climate Migration Flows 2025-2125"
+**Animation Features:**
+- **Animated flowing particles along migration routes:** Particles move along flow lines showing direction and intensity of migration
+- **Timeline scrubber:** Animate through time periods (2025→2125)
+- **Meaningful:** The routes themselves ARE the data - particles represent actual migration flows, direction shows source→destination, animation speed could represent flow volume
+
+**Animation Type:** ✅ **Both route-based AND time-based** (particles flowing along routes + timeline scrubber)
+
+### ChatGPT Concept 2: "Coastal Megacities at the Water's Edge"
+**Animation Features:**
+- **Year slider/2-step toggle:** "Now" vs "2125" state change
+- **Ring expansion animation:** Outer rings expand, halos brighten when switching to 2125
+- **Meaningful:** Shows change over time, but less dynamic (more of a state toggle than continuous animation)
+
+**Animation Type:** ✅ Time-based (before/after comparison)
+
+---
+
+## Recommendation Based on Animation Preference
+
+**Best Match: Claude Concept 2 - "Climate Migration Flows 2025-2125"**
+
+**Why it fits your preference:**
+1. **Route animation:** Animated particles flowing along migration routes - the routes are the core data visualization, and the animation shows actual movement/direction
+2. **Time animation:** Timeline scrubber lets you animate through different time periods
+3. **Dual meaningful animation:** Both types you mentioned (routes + time) in one concept
+4. **Data-driven:** Animation speed/intensity can represent actual migration volume data
+5. **Clear storytelling:** The flowing particles make abstract migration data tangible and understandable
+
+**Alternative:** Claude Concept 1 has strong time-based animation (transformation over 100 years) but is more of a before/after comparison than continuous route animation.
+
+---
+
+## Final Concept Selection
+
+**Selected:** Claude Concept 2 - "Climate Migration Flows 2025-2125"
+
+**Decision Date:** November 12, 2025
+
+**Rationale:** Chosen based on user preference for meaningful animation (routes + time-based) and requirement for automated data prep (no manual work). This concept provides both route animation (particles flowing along migration routes) and time animation (timeline scrubber), both of which are data-driven and represent actual migration patterns.
+
+**Data Feasibility Analysis:**
+- Reviewed previous days' data roadblocks (see `DATA-FEASIBILITY-ANALYSIS.md`)
+- Identified that most platforms can't download data from URLs (Day 3 pattern)
+- Multiple data sources (UN, IPCC, ND-GAIN) would likely fail
+- **Solution:** Pre-process all data into single combined dataset (Option 1)
+- Flow lines will be generated algorithmically by platforms (no external data needed for routes)
+
+**Implementation Approach:**
+- Pre-process UN + IPCC + ND-GAIN data into single GeoJSON/CSV
+- Include pre-calculated habitability index per country
+- Provide source/destination pairs for flow lines (platforms generate routes)
+- Some platforms will use real data (Lovable, Bolt.new), others will mock but visualization still works
+
+**Data Preparation Complete:**
+- ✅ Created `build-climate-migration-data.mjs` script
+- ✅ Generated `climate-migration-2125.geojson` (934 KB, 176 countries)
+- ✅ Generated `migration-flows-2125.json` (3.3 KB, 15 flow pairs)
+- ✅ Verified all 22 migration flow countries have real population data
+- ✅ Added fallback estimates for 149 countries without explicit data
+- ✅ Confirmed data format compatibility (GeoJSON, can provide .txt version)
+
+**Next Step:** Create implementation prompt based on Claude Concept 2 with pre-processed data approach
 

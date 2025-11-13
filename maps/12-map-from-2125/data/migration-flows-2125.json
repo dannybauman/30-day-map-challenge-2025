@@ -1,0 +1,137 @@
+[
+  {
+    "source": "BGD",
+    "destination": "IND",
+    "source_name": "Bangladesh",
+    "destination_name": "India",
+    "flow_volume_2125": 50000000,
+    "reason": "coastal_flooding",
+    "region": "South Asia"
+  },
+  {
+    "source": "VNM",
+    "destination": "CHN",
+    "source_name": "Vietnam",
+    "destination_name": "China",
+    "flow_volume_2125": 15000000,
+    "reason": "coastal_flooding",
+    "region": "Southeast Asia"
+  },
+  {
+    "source": "MDV",
+    "destination": "IND",
+    "source_name": "Maldives",
+    "destination_name": "India",
+    "flow_volume_2125": 400000,
+    "reason": "sea_level_rise",
+    "region": "South Asia"
+  },
+  {
+    "source": "TUV",
+    "destination": "NZL",
+    "source_name": "Tuvalu",
+    "destination_name": "New Zealand",
+    "flow_volume_2125": 10000,
+    "reason": "sea_level_rise",
+    "region": "Oceania"
+  },
+  {
+    "source": "KIR",
+    "destination": "AUS",
+    "source_name": "Kiribati",
+    "destination_name": "Australia",
+    "flow_volume_2125": 120000,
+    "reason": "sea_level_rise",
+    "region": "Oceania"
+  },
+  {
+    "source": "EGY",
+    "destination": "DEU",
+    "source_name": "Egypt",
+    "destination_name": "Germany",
+    "flow_volume_2125": 8000000,
+    "reason": "extreme_heat",
+    "region": "North Africa → Europe"
+  },
+  {
+    "source": "NGA",
+    "destination": "CAN",
+    "source_name": "Nigeria",
+    "destination_name": "Canada",
+    "flow_volume_2125": 12000000,
+    "reason": "extreme_heat",
+    "region": "West Africa → North America"
+  },
+  {
+    "source": "ETH",
+    "destination": "SWE",
+    "source_name": "Ethiopia",
+    "destination_name": "Sweden",
+    "flow_volume_2125": 3000000,
+    "reason": "extreme_heat",
+    "region": "East Africa → Europe"
+  },
+  {
+    "source": "PAK",
+    "destination": "RUS",
+    "source_name": "Pakistan",
+    "destination_name": "Russia",
+    "flow_volume_2125": 10000000,
+    "reason": "extreme_heat",
+    "region": "South Asia → Central Asia"
+  },
+  {
+    "source": "IND",
+    "destination": "CAN",
+    "source_name": "India",
+    "destination_name": "Canada",
+    "flow_volume_2125": 25000000,
+    "reason": "extreme_heat",
+    "region": "South Asia → North America"
+  },
+  {
+    "source": "PHL",
+    "destination": "NZL",
+    "source_name": "Philippines",
+    "destination_name": "New Zealand",
+    "flow_volume_2125": 5000000,
+    "reason": "water_stress",
+    "region": "Southeast Asia → Oceania"
+  },
+  {
+    "source": "IDN",
+    "destination": "AUS",
+    "source_name": "Indonesia",
+    "destination_name": "Australia",
+    "flow_volume_2125": 8000000,
+    "reason": "water_stress",
+    "region": "Southeast Asia → Oceania"
+  },
+  {
+    "source": "MEX",
+    "destination": "CAN",
+    "source_name": "Mexico",
+    "destination_name": "Canada",
+    "flow_volume_2125": 15000000,
+    "reason": "water_stress",
+    "region": "North America"
+  },
+  {
+    "source": "BRA",
+    "destination": "ARG",
+    "source_name": "Brazil",
+    "destination_name": "Argentina",
+    "flow_volume_2125": 5000000,
+    "reason": "climate_vulnerability",
+    "region": "South America"
+  },
+  {
+    "source": "CHN",
+    "destination": "RUS",
+    "source_name": "China",
+    "destination_name": "Russia",
+    "flow_volume_2125": 20000000,
+    "reason": "climate_vulnerability",
+    "region": "East Asia → Central Asia"
+  }
+]
