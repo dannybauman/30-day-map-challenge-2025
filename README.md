@@ -118,12 +118,9 @@ Vibe coding is just one way to use AI to help write software. People are inventi
 ├── PLATFORM-TRACKER.md                # Which platforms succeeded per theme
 │
 ├── templates/
-│   ├── idea-prompts/
-│   │   ├── claude-ideation.txt
-│   │   ├── gpt-ideation.txt
-│   │   └── gemini-ideation.txt
+│   ├── ideation-prompt.txt            # Unified prompt for all AI platforms
 │   ├── implementation-base.txt        # Core prompt template
-│   └── daily-doc-template.md          # Fast copy/paste docs
+│   └── day-showcase-template.html     # HTML page template
 │
 ├── maps/
 │   ├── 01-points/

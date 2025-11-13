@@ -1,5 +1,5 @@
-CLAUDE IDEATION PROMPT TEMPLATE
-================================
+UNIFIED IDEATION PROMPT TEMPLATE
+=================================
 
 Today's #30DayMapChallenge theme is: [THEME NAME]
 
@@ -22,6 +22,8 @@ Consider:
 - Data availability (prefer free, accessible sources)
 - Technical feasibility for web-based visualization
 - Creativity within constraints
+- Should work well as web-based interactive map
+- Can be implemented by AI coding platforms
 
 Format your response as a numbered list for easy scanning.
 
