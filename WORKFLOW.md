@@ -17,6 +17,7 @@ Here's my refined process after completing Day 1.
    - **IMPORTANT: Use the SAME prompt for all 3 platforms** - this ensures fair comparison
    - The prompt should be identical across Claude, ChatGPT, and Gemini
    - **Do NOT include internal file structure references** (like `IDEATION-RESPONSES.md` or "HTML showcase page") in the prompt sent to AI platforms - these are workflow details for you, not creative constraints for the AI
+   - **Concepts must NOT require manual work** - no manual hand-drawing, manual creation of data files in text editors, or extensive use of external tools for manual data creation (e.g., manually drawing points/lines in geojson.io). All data prep should be scriptable/automated. The goal is for AI coding platforms to generate everything.
 2. Paste the **same prompt** into web versions:
    - Claude.ai (Anthropic Claude Sonnet 4.5)
    - ChatGPT (OpenAI GPT-5 Thinking)

@@ -13,6 +13,7 @@
 - Keep data lightweight and ready to embed so all coding platforms can load it without external APIs.
 - Highlight why the concept feels futuristic and compelling while still being achievable in ~1 hour per platform.
 - Can use speculative/projected data (climate models, population projections) or creative interpretations of current data to show future states.
+- **IMPORTANT:** Concepts must NOT require manual hand-drawing, manual creation of data files in text editors, or extensive use of external tools like geojson.io for manual data creation. All data prep should be scriptable/automated. The goal is for AI coding platforms to generate everything, not for the human to manually create datasets.
 
 ---
 
@@ -58,6 +59,7 @@ Constraints:
 - Keep geometry counts manageable so mobile performance survives
 - Must clearly signal the "2125" future theme to viewers
 - Can use climate projections, population forecasts, or creative interpretations of current data
+- Data prep must be scriptable/automated - concepts should NOT require manual hand-drawing, manual creation of data files in text editors, or extensive use of external tools for manual data creation (e.g., manually drawing points/lines in geojson.io). All data should be derivable from existing public datasets or algorithmically generated.
 
 Format your response as a numbered list for easy scanning.
 ```
