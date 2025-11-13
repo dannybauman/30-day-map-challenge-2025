@@ -16,6 +16,7 @@ Here's my refined process after completing Day 1.
 1. Get ideation prompt from templates (or `maps/0X-theme/IDEATION-PROMPTS.md`)
    - **IMPORTANT: Use the SAME prompt for all 3 platforms** - this ensures fair comparison
    - The prompt should be identical across Claude, ChatGPT, and Gemini
+   - **Do NOT include internal file structure references** (like `IDEATION-RESPONSES.md` or "HTML showcase page") in the prompt sent to AI platforms - these are workflow details for you, not creative constraints for the AI
 2. Paste the **same prompt** into web versions:
    - Claude.ai (Anthropic Claude Sonnet 4.5)
    - ChatGPT (OpenAI GPT-5 Thinking)
