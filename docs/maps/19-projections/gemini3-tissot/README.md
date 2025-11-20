@@ -60,6 +60,12 @@ An interactive projection comparison tool that uses Tissot's Indicatrix (red cir
 - Added auto-morph animation for continuous playback
 - Polished UI with better spacing and typography
 
+**Post-Deployment Mobile Polish (Additional prompts):**
+- Collapsible projection settings panel on mobile
+- Improved info card layout and visibility
+- Better control placement and touch targets
+- Optimized for one-handed mobile use
+
 ## Key Observations
 
 **Gemini 3 Strengths:**
