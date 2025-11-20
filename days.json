@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-20T06:38:14.880Z",
+  "generatedAt": "2025-11-20T18:01:34.841Z",
   "days": [
     {
       "id": "01-points",
@@ -40,6 +40,14 @@
       "theme": "Dimensions",
       "relativeUrl": "maps/06-dimensions/index.html",
       "readmeUrl": "maps/06-dimensions/README.md"
+    },
+    {
+      "id": "12-map-from-2125",
+      "dayNumber": 12,
+      "title": "Day 12: Map from 2125",
+      "theme": "Map from 2125",
+      "relativeUrl": "maps/12-map-from-2125/index.html",
+      "readmeUrl": "maps/12-map-from-2125/README.md"
     },
     {
       "id": "18-out-of-this-world",
