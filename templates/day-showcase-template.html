@@ -26,6 +26,13 @@
             position: relative;
             z-index: 2;
         }
+        /* Hero Image Wrapper - CRITICAL: Do not modify positioning
+           - Fixed to right 42% of hero section
+           - Use single <img class="hero-image"> for standard days
+           - Custom layouts (e.g. 4-image grid) must respect wrapper constraints:
+             * Stay within width: 42%, height: 100% of hero
+             * Use padding: 1-1.5rem for breathing room
+             * Images use object-fit: contain or cover to fit space */
         .hero-image-wrapper {
             position: absolute;
             top: 0;
@@ -277,6 +284,9 @@
     </section>
 
     <!-- Hero Section -->
+    <!-- CRITICAL: Hero image must fit within hero-image-wrapper (42% width, full height)
+         Standard: Single <img class="hero-image"> for winner screenshot
+         Custom: If using multiple images, create grid/layout that respects wrapper constraints -->
     <div class="hero">
         <div class="hero-image-wrapper">
             <img src="{{WINNER_PLATFORM}}/screenshot.png" alt="{{WINNER_PLATFORM}} - Day {{DAY_NUMBER}} Winner" class="hero-image">
