@@ -8,7 +8,7 @@
 
 ## About Day 18
 
-Day 18 was **not a standard ideation day**. Instead, it was repurposed to document an important platform breakthrough: the release of **Google Gemini 3 Pro** and its exceptional performance in map-making tasks.
+Day 18 was **not a standard ideation day**. Instead, it was repurposed to document an important platform update: the release of **Google Gemini 3 Pro** and its strong performance in map-making tasks.
 
 **Why this matters:**
 - Gemini 3 Pro represents a significant improvement over Gemini 2.5 Pro
@@ -32,7 +32,7 @@ Day 18 was **not a standard ideation day**. Instead, it was repurposed to docume
 **What actually happened:**
 - Danny discovered Gemini 3 Pro was available in Google AI Studio
 - Early tests showed dramatically better results than Gemini 2.5
-- Decision made to document this breakthrough rather than follow standard workflow
+- Decision made to document this platform update rather than follow standard workflow
 - Day 18 became a Gemini 3 platform discovery day
 
 ---
@@ -64,7 +64,7 @@ Instead of formal ideation prompts, Danny worked conversationally with Gemini 3 
 **Inspiration:** Day 1 (Points) earthquake visualization
 **Goal:** Match or exceed best Day 1 implementations
 **Iterations:** ~2-3 prompts from concept to Grade A
-**Result:** ✅ Success - Timeline animation, shaking effect, excellent UX
+**Result:** ✅ Success - Timeline animation, shaking effect, strong UX
 
 ### 2. Global Connections - Arteries of the Sky
 **Inspiration:** Day 6 (Dimensions) alternative concept
@@ -76,7 +76,7 @@ Instead of formal ideation prompts, Danny worked conversationally with Gemini 3 
 **Inspiration:** Day 12 (Map from 2125) recreation
 **Goal:** Choropleth with timeline showing climate migration
 **Iterations:** ~2-3 prompts
-**Result:** ✅ Success - Beautiful visualization, smooth timeline animation
+**Result:** ✅ Success - Clean visualization, smooth timeline animation
 
 ### 4. Cosmic Sightings - UFO HUD
 **Inspiration:** Day 1 (Points) alternative concept
@@ -95,7 +95,7 @@ Instead of formal ideation prompts, Danny worked conversationally with Gemini 3 
 - ❌ Single implementation prompt for multi-platform launch
 
 **Instead, Day 18 documents:**
-- ✅ Gemini 3 platform breakthrough discovery
+- ✅ Gemini 3 platform discovery
 - ✅ Conversational iteration approach with one platform
 - ✅ 4 separate concept implementations
 - ✅ Deployment challenges and patterns

@@ -88,7 +88,7 @@ The morphing animation is smooth enough that it's captivating to watch. People s
 
 **Do Prioritize:**
 - Smooth, mesmerizing morphing (this is the whole point!)
-- Mobile works beautifully
+- Mobile works well
 - Fast load time (CDN data helps)
 - Playback controls (your Day 18 strength)
 - That "wow" moment when projections transform
@@ -104,7 +104,7 @@ Ready to build?
 
 **From Day 18 SeismicWatch success:**
 1. Timeline controls - Play/Reset/Speed implemented smoothly in one iteration
-2. Real-time animation - 7,655 earthquake points performed excellently
+2. Real-time animation - 7,655 earthquake points performed well
 3. Mobile-first - responsive design by default
 4. One-shot quality - Grade A baseline on first try
 

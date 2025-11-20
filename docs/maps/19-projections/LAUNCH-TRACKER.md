@@ -13,8 +13,8 @@ Both visualizations celebrate GIS Day by making projection theory tangible and e
 
 | Platform | Concept | Status | Grade | URL | Mobile | Notes |
 |----------|---------|--------|-------|-----|--------|-------|
-| **Gemini 3 Pro (Google AI Studio)** | Shape Shifter | ✅ Success | A+ | [Live Demo](https://shape-shifter-gis-day-903076358991.us-west1.run.app) | ✅ Excellent | Smooth morphing animations, 6+ projections, speed controls. Working in 3 prompts, polished in ~10 more. Post-deployment: Additional mobile UI refinements. |
-| **Gemini 3 Pro (Google AI Studio)** | Tissot's Lie Detector | ✅ Success | A+ | [Live Demo](https://tissot-s-lie-detector-903076358991.us-west1.run.app) | ✅ Excellent | Accurate Tissot circles, 9 projections, morph + side-by-side modes. Working in 3 prompts, expanded in ~10 more. Post-deployment: Additional mobile UI polish (collapsible settings, improved touch targets). |
+| **Gemini 3 Pro (Google AI Studio)** | Shape Shifter | ✅ Success | A+ | [Live Demo](https://shape-shifter-gis-day-903076358991.us-west1.run.app) | ✅ Strong | Smooth morphing animations, 6+ projections, speed controls. Working in 3 prompts, polished in ~10 more. Post-deployment: Additional mobile UI refinements. |
+| **Gemini 3 Pro (Google AI Studio)** | Tissot's Lie Detector | ✅ Success | A+ | [Live Demo](https://tissot-s-lie-detector-903076358991.us-west1.run.app) | ✅ Strong | Accurate Tissot circles, 9 projections, morph + side-by-side modes. Working in 3 prompts, expanded in ~10 more. Post-deployment: Additional mobile UI polish (collapsible settings, improved touch targets). |
 
 ---
 
@@ -22,7 +22,7 @@ Both visualizations celebrate GIS Day by making projection theory tangible and e
 
 ### Gemini 3 Continues to Dominate
 
-After Day 18's platform breakthrough discovery, Day 19 confirms Gemini 3 Pro in Google AI Studio is the new leader for map-making challenges:
+After Day 18's platform discovery, Day 19 confirms Gemini 3 Pro in Google AI Studio is the new leader for map-making challenges:
 
 1. **Immediate Functionality:** Both concepts worked within 1-3 prompts
 2. **Iterative Polish:** Each follow-up prompt (4-13) added meaningful improvements
@@ -84,7 +84,7 @@ Compare this to Day 17's multi-platform marathon (12+ hours) with mixed results.
 ### What Could Be Improved
 
 **Deployment Gaps:**
-Google AI Studio's preview-to-production gap remains. Both apps work perfectly in preview but required the standard "test in production" verification.
+Google AI Studio's preview-to-production gap remains. Both apps work well in preview but required the standard "test in production" verification.
 
 **Animation Presets:**
 Shape Shifter could benefit from curated "tours" (e.g., "Conformal Tour," "Equal-Area Tour") for guided exploration.
