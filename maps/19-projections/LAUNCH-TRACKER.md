@@ -13,8 +13,8 @@ Both visualizations celebrate GIS Day by making projection theory tangible and e
 
 | Platform | Concept | Status | Grade | URL | Mobile | Notes |
 |----------|---------|--------|-------|-----|--------|-------|
-| **Gemini 3 Pro (Google AI Studio)** | Shape Shifter | ✅ Success | A+ | [Live Demo](https://shape-shifter-gis-day-903076358991.us-west1.run.app) | ✅ Strong | Smooth morphing animations, 6+ projections, speed controls. Working in 3 prompts, polished in ~10 more. Post-deployment: Additional mobile UI refinements. |
-| **Gemini 3 Pro (Google AI Studio)** | Tissot's Lie Detector | ✅ Success | A+ | [Live Demo](https://tissot-s-lie-detector-903076358991.us-west1.run.app) | ✅ Strong | Accurate Tissot circles, 9 projections, morph + side-by-side modes. Working in 3 prompts, expanded in ~10 more. Post-deployment: Additional mobile UI polish (collapsible settings, improved touch targets). |
+| **Gemini 3 Pro (Google AI Studio)** | Shape Shifter | ✅ Success | A | [Live Demo](https://shape-shifter-gis-day-903076358991.us-west1.run.app) | ✅ Strong | Smooth morphing animations, 6+ projections, speed controls. Working in 3 prompts, polished in ~10 more. Post-deployment: Additional mobile UI refinements. |
+| **Gemini 3 Pro (Google AI Studio)** | Tissot's Lie Detector | ✅ Success | A | [Live Demo](https://tissot-s-lie-detector-903076358991.us-west1.run.app) | ✅ Strong | Accurate Tissot circles, 9 projections, morph + side-by-side modes. Working in 3 prompts, expanded in ~10 more. Post-deployment: Additional mobile UI polish (collapsible settings, improved touch targets). |
 
 ---
 

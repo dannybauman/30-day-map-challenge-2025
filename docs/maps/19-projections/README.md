@@ -121,13 +121,13 @@ Both concepts successfully implemented with Gemini 3 Pro in Google AI Studio:
 
 ### Shape Shifter
 - **URL:** https://shape-shifter-gis-day-903076358991.us-west1.run.app
-- **Status:** ✅ Success (Grade A+)
+- **Status:** ✅ Success (Grade A)
 - **Prompts:** Working in 3, polished in ~10 more
 - **Features:** Smooth morphing between 6+ projections with speed controls
 
 ### Tissot's Lie Detector
 - **URL:** https://tissot-s-lie-detector-903076358991.us-west1.run.app
-- **Status:** ✅ Success (Grade A+)
+- **Status:** ✅ Success (Grade A)
 - **Prompts:** Working in 3, expanded to 9 projections in ~10 more
 - **Features:** Morph + side-by-side comparison modes
 
