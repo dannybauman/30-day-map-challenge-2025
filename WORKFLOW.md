@@ -177,6 +177,10 @@ maps/0X-theme/
 - When making updates, **only edit files in `maps/`** (the source files)
 - Never manually edit files in `docs/` - they will be overwritten by the build script
 - Run `node scripts/build-site.mjs` to regenerate `docs/` after making changes to source files
+- **To set a specific day as the homepage**:
+  - **Day number (recommended)**: `node scripts/build-site.mjs 19` (automatically finds `19-projections`)
+  - **Day slug**: `DEFAULT_DAY=19-projections node scripts/build-site.mjs`
+- To switch back to the overview grid, run without arguments: `node scripts/build-site.mjs`
 
 ---
 

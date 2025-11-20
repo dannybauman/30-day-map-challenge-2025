@@ -266,17 +266,37 @@ async function build() {
     await fs.writeFile(manifestPathRoot, manifestJson, 'utf-8');
     await fs.writeFile(manifestPathDocs, manifestJson, 'utf-8');
 
+    // Support both command-line argument (day number) and environment variable (day slug)
+    let defaultDay = null;
+    const dayNumberArg = process.argv[2]?.trim();
     const defaultDaySlug = process.env.DEFAULT_DAY?.trim();
-    let indexHtml;
-    if (defaultDaySlug) {
-        const defaultDay = dayEntries.find((entry) => entry.id === defaultDaySlug);
+
+    if (dayNumberArg) {
+        // Command-line argument: day number (e.g., "19")
+        const dayNum = parseInt(dayNumberArg, 10);
+        if (!isNaN(dayNum)) {
+            defaultDay = dayEntries.find((entry) => entry.dayNumber === dayNum);
+            if (defaultDay) {
+                console.log(`Default day set to Day ${dayNum} ('${defaultDay.id}'). Generating redirect entry page.`);
+            } else {
+                console.warn(`Day ${dayNum} not found in manifest. Using overview index.`);
+            }
+        } else {
+            console.warn(`Invalid day number argument '${dayNumberArg}'. Using overview index.`);
+        }
+    } else if (defaultDaySlug) {
+        // Environment variable: day slug (e.g., "19-projections")
+        defaultDay = dayEntries.find((entry) => entry.id === defaultDaySlug);
         if (defaultDay) {
             console.log(`Default day set to '${defaultDaySlug}'. Generating redirect entry page.`);
-            indexHtml = renderRedirectHtml(defaultDay);
         } else {
             console.warn(`DEFAULT_DAY='${defaultDaySlug}' not found in manifest. Using overview index.`);
-            indexHtml = renderIndexHtml(dayEntries);
         }
+    }
+
+    let indexHtml;
+    if (defaultDay) {
+        indexHtml = renderRedirectHtml(defaultDay);
     } else {
         indexHtml = renderIndexHtml(dayEntries);
     }
