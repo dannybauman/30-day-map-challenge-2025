@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-09T02:22:40.045Z",
+  "generatedAt": "2025-11-20T01:18:29.955Z",
   "days": [
     {
       "id": "01-points",
@@ -40,6 +40,21 @@
       "theme": "Dimensions",
       "relativeUrl": "maps/06-dimensions/index.html",
       "readmeUrl": "maps/06-dimensions/README.md"
+    },
+    {
+      "id": "18-out-of-this-world",
+      "dayNumber": 18,
+      "title": "Day 18: Out of this World → Gemini 3 Breakthrough",
+      "theme": "Out of this World → Gemini 3 Breakthrough",
+      "relativeUrl": "maps/18-out-of-this-world/index.html",
+      "readmeUrl": "maps/18-out-of-this-world/README.md"
+    },
+    {
+      "id": "19-projections",
+      "dayNumber": 19,
+      "title": "Projections: The World is Not a Rectangle",
+      "relativeUrl": "maps/19-projections/index.html",
+      "readmeUrl": "maps/19-projections/README.md"
     }
   ]
 }

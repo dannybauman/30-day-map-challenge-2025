@@ -66,8 +66,6 @@ Constraints:
 
 - Prefer reusable global/regional datasets so Day 5 can reuse prep work if needed
 
-- Assume we'll document the concept selection in IDEATION-RESPONSES.md and summarize it on the HTML showcase page
-
 - Format your response as a numbered list for easy scanning
 ```
 
