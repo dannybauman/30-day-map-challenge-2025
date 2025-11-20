@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { padding: 20px 0; background: #f8f9fa; }
+        body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -532,7 +532,7 @@ Technical:
 
             <!-- Partial Success -->
             <h3 class="mb-3 mt-5">⚠️ Partial Success</h3>
-            <p class="small text-muted mb-4">Two platforms generated working UIs but struggled with the map visualization.</p>
+            <p class="small text-muted mb-4">Four platforms generated working UIs but struggled with proper map visualization or data display.</p>
             <div class="row g-4">
                 <div class="col-lg-6 col-xl-4 platform-card">
                     <div class="card h-100">
@@ -605,14 +605,85 @@ Technical:
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6 col-xl-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>MagicPatterns</strong>
+                            <span class="badge grade-c-minus">Grade C-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-primary" href="https://project-climate-migration-flows-2025-2125-map-462.magicpatterns.app" target="_blank" rel="noopener">Live Demo</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="magicpatterns/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="magicpatterns/screenshot.png" alt="MagicPatterns desktop view" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="magicpatterns/screenshot-mobile.png" alt="MagicPatterns mobile view" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Map isn't showing well (green background)</li>
+                                <li>Data not showing properly</li>
+                                <li>Small animations that don't make sense</li>
+                                <li>Ran out of free tokens to fix</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Map isn't showing well (it's just a green background), data isn't showing properly, just a couple small animations that don't make sense.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>Gemini Canvas</strong>
+                            <span class="badge grade-c-minus">Grade C-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-primary" href="https://gemini.google.com/share/a9a6624694f4" target="_blank" rel="noopener">Chat</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="gemini-canvas/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="gemini-canvas/screenshot.png" alt="Gemini Canvas desktop view" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="gemini-canvas/screenshot-mobile.png" alt="Gemini Canvas mobile view" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <ul class="small mb-3 ps-3">
+                                <li>Map isn't showing well (one background color)</li>
+                                <li>Data not showing, no animation timeline</li>
+                            </ul>
+                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Similar to Magic Patterns, map isn't showing well, data isn't showing, no animation timeline.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Failed -->
             <h3 class="mb-3 mt-5">❌ Failed</h3>
+            <p class="small text-muted mb-4">Two platforms couldn't render the map or data properly, showing only UI shells.</p>
             <div class="row g-4">
                 <div class="col-lg-6 col-xl-4 platform-card">
                     <div class="card h-100">
-                        <div class="card-header d-flex justify-content-between align-items-center bg-success text-white">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
                             <strong>ChatGPT Canvas</strong>
                             <span class="badge grade-d">Grade D</span>
                         </div>
@@ -678,73 +749,6 @@ Technical:
                                 <li>UI looks fine but main map area is empty</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Had a few errors and then couldn't actually display the map or data. UI looks fine.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-4 platform-card">
-                    <div class="card h-100">
-                        <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
-                            <strong>MagicPatterns</strong>
-                            <span class="badge grade-c-minus">Grade C-</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-2 mb-3">
-                                <div class="col-6">
-                                    <a class="btn btn-sm btn-outline-primary" href="https://project-climate-migration-flows-2025-2125-map-462.magicpatterns.app" target="_blank" rel="noopener">Live Demo</a>
-                                </div>
-                                <div class="col-6">
-                                    <a class="btn btn-sm btn-outline-secondary" href="magicpatterns/README.md">Details</a>
-                                </div>
-                            </div>
-
-                            <div class="row g-3 mb-3">
-                                <div class="col-7">
-                                    <img src="magicpatterns/screenshot.png" alt="MagicPatterns desktop view" class="img-fluid screenshot-desktop">
-                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
-                                </div>
-                                <div class="col-5">
-                                    <img src="magicpatterns/screenshot-mobile.png" alt="MagicPatterns mobile view" class="img-fluid screenshot-mobile">
-                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
-                                </div>
-                            </div>
-                            <ul class="small mb-3 ps-3">
-                                <li>Map isn't showing well (green background)</li>
-                                <li>Data not showing properly</li>
-                                <li>Small animations that don't make sense</li>
-                                <li>Ran out of free tokens to fix</li>
-                            </ul>
-                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Map isn't showing well (it's just a green background), data isn't showing properly, just a couple small animations that don't make sense.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-4 platform-card">
-                    <div class="card h-100">
-                        <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
-                            <strong>Gemini Canvas</strong>
-                            <span class="badge grade-c-minus">Grade C-</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-2 mb-3">
-                                <div class="col-6">
-                                    <a class="btn btn-sm btn-outline-primary" href="https://gemini.google.com/share/a9a6624694f4" target="_blank" rel="noopener">Chat</a>
-                                </div>
-                                <div class="col-6">
-                                    <a class="btn btn-sm btn-outline-secondary" href="gemini-canvas/README.md">Details</a>
-                                </div>
-                            </div>
-
-                            <div class="row g-3 mb-3">
-                                <div class="col-12">
-                                    <div class="bg-light text-center p-4 rounded border text-muted">
-                                        Screenshot unavailable (Auth Wall)
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="small mb-3 ps-3">
-                                <li>Map isn't showing well (one background color)</li>
-                                <li>Data not showing, no animation timeline</li>
-                            </ul>
-                            <p class="small text-muted mb-0"><strong>Human QA:</strong> Similar to Magic Patterns, map isn't showing well, data isn't showing, no animation timeline.</p>
                         </div>
                     </div>
                 </div>
