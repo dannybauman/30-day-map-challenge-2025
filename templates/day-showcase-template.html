@@ -486,42 +486,47 @@
                                 <span class="badge grade-a">Grade A</span>
                             </div>
                             <div class="card-body">
-                                <!-- CRITICAL: Button placement order -->
-                                <!-- 1. Basic info (Time, Specialty, Iterations, etc.) -->
-                                <p><strong>Time:</strong> ~5 min</p>
-                                <p><strong>Specialty:</strong> Feature description</p>
-                                
-                                <!-- 2. BUTTONS MUST APPEAR HERE (early, before screenshots/content) -->
-                                <div class="mb-3">
-                                    <a class="btn btn-sm btn-outline-secondary" href="platform/README.md">Details</a>
-                                    <a class="btn btn-sm btn-primary" href="https://example.com" target="_blank" rel="noopener">Live Demo</a>
-                                </div>
-                                
-                                <!-- 3. Screenshots -->
-                                <div class="row g-3 mb-3">
-                                    <div class="col-7">
+                                CRITICAL: Button placement order
+
+                                1. BUTTONS MUST APPEAR HERE (early, before screenshots/content)
+                       <div class="row g-2 mb-3">
+                           <div class="col-6">
+                               <a class="btn btn-sm btn-primary w-100" href="https://example.com" target="_blank" rel="noopener">Live Demo</a>
+                           </div>
+                           <div class="col-6">
+                               <a class="btn btn-sm btn-outline-secondary w-100" href="platform/README.md">Details</a>
+                           </div>
+                       </div>
+                       <!-- ORDER: Live Demo first, then Details/Artifacts/etc. For 1 button: use <div class="col-12">, for 3 buttons: use <div class="col-4"> for each -->
+
+                                2. Screenshots
+                       <div class="row g-3 mb-3">
+                           <div class="col-7">
                                         <img src="platform/screenshot.png" alt="Desktop" class="img-fluid screenshot-desktop">
-                                        <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
-                                    </div>
-                                    <div class="col-5">
+                               <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                           </div>
+                           <div class="col-5">
                                         <img src="platform/screenshot-mobile.png" alt="Mobile" class="img-fluid screenshot-mobile">
-                                        <small class="text-muted d-block text-center mt-1">Mobile</small>
-                                    </div>
-                                </div>
-                                
-                                <!-- 4. Explanatory content (Why Grade, AI role, Human tweaks, etc.) -->
-                                <p class="small"><strong>Why Grade A:</strong> Explanation...</p>
-                                <p class="small"><strong>AI role:</strong> Description...</p>
-                            </div>
+                               <small class="text-muted d-block text-center mt-1">Mobile</small>
+                           </div>
+                       </div>
+                       <div>
+                            3. Basic info (Time, Specialty, Iterations, etc.)
+                            <p><strong>Time:</strong> ~5 min</p>
+                            <p><strong>Specialty:</strong> Feature description</p>
+                        </div>
+                        <div>
+                            4. Explanatory content (Why Grade, AI role, Human tweaks, etc.)
+                            <p class="small"><strong>Why Grade A:</strong> Explanation...</p>
+                            <p class="small"><strong>AI role:</strong> Description...</p>
                         </div>
                     </div>
-                    
+
                     BUTTON PLACEMENT RULES (CRITICAL):
-                    - Buttons MUST appear early: right after basic info (Time/Specialty/Iterations)
-                    - Buttons MUST appear before screenshots and explanatory content
+                    - Buttons MUST appear before screenshots, basic info, and explanatory content
                     - Use consistent wrapper: <div class="mb-3"> around button group
                     - Always include rel="noopener" on external links (target="_blank")
-                    - Button order: Details first, then Live Demo (or Artifacts if applicable)
+                    - Button order: Live Demo (or Artifacts or Canvas if applicable) first, then Details or whatever else
                     - This ensures users can quickly access demos without scrolling
 
                     GRADE BADGE NOTES:
@@ -556,8 +561,7 @@
                 <!--
                     PARTIAL SUCCESS EXAMPLE:
                     <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
-                        <strong>Platform Name</strong>
-                        <span class="badge grade-c-plus">Grade C+ (Mock data)</span>
+                        SIMILAR TO THE SUCCESS EXAMPLE ABOVE
                     </div>
                 -->
                 {{PARTIAL_CARDS}}
@@ -569,8 +573,7 @@
                 <!--
                     FAILED ATTEMPT EXAMPLE:
                     <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
-                        <strong>Platform Name</strong>
-                        <span class="badge grade-d">Grade D (Blocked)</span>
+                        SIMILAR TO THE OTHER EXAMPLES ABOVE
                     </div>
                 -->
                 {{FAILED_CARDS}}
