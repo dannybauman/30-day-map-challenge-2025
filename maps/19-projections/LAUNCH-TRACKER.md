@@ -13,8 +13,8 @@ Both visualizations celebrate GIS Day by making projection theory tangible and e
 
 | Platform | Concept | Status | Grade | URL | Mobile | Notes |
 |----------|---------|--------|-------|-----|--------|-------|
-| **Gemini 3 Pro (Google AI Studio)** | Shape Shifter | ✅ Success | A+ | [Live Demo](https://shape-shifter-gis-day-903076358991.us-west1.run.app) | ✅ Excellent | Smooth morphing animations, 6+ projections, speed controls. Working in 3 prompts, polished in ~10 more. |
-| **Gemini 3 Pro (Google AI Studio)** | Tissot's Lie Detector | ✅ Success | A+ | [Live Demo](https://tissot-s-lie-detector-903076358991.us-west1.run.app) | ✅ Excellent | Accurate Tissot circles, 9 projections, morph + side-by-side modes. Working in 3 prompts, expanded in ~10 more. |
+| **Gemini 3 Pro (Google AI Studio)** | Shape Shifter | ✅ Success | A+ | [Live Demo](https://shape-shifter-gis-day-903076358991.us-west1.run.app) | ✅ Excellent | Smooth morphing animations, 6+ projections, speed controls. Working in 3 prompts, polished in ~10 more. Post-deployment: Additional mobile UI refinements. |
+| **Gemini 3 Pro (Google AI Studio)** | Tissot's Lie Detector | ✅ Success | A+ | [Live Demo](https://tissot-s-lie-detector-903076358991.us-west1.run.app) | ✅ Excellent | Accurate Tissot circles, 9 projections, morph + side-by-side modes. Working in 3 prompts, expanded in ~10 more. Post-deployment: Additional mobile UI polish (collapsible settings, improved touch targets). |
 
 ---
 
@@ -49,11 +49,11 @@ Both visualizations effectively celebrate GIS Day:
 
 ### Time Investment
 
-- **Shape Shifter:** ~1-2 hours (prompt crafting + 13 iterations)
-- **Tissot:** ~1-2 hours (prompt crafting + 13 iterations)
-- **Total:** ~3-4 hours for two fully polished, production-ready visualizations
+- **Shape Shifter:** ~1-2 hours (prompt crafting + 13 iterations) + post-deployment mobile refinements
+- **Tissot:** ~1-2 hours (prompt crafting + 13 iterations) + post-deployment mobile refinements
+- **Total:** ~3-4 hours for two fully polished, production-ready visualizations, plus additional time for mobile UI polish after deployment
 
-Compare this to Day 17's multi-platform marathon (12+ hours) with mixed results. Gemini 3's efficiency is remarkable.
+Compare this to Day 17's multi-platform marathon (12+ hours) with mixed results. Gemini 3's efficiency is remarkable, and the iterative refinement process (including post-deployment fixes) demonstrates the value of testing live deployments on actual mobile devices.
 
 ---
 

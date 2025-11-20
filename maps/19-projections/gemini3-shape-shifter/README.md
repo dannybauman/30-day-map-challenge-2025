@@ -47,6 +47,12 @@ An animated world map that continuously morphs between dramatically different ma
 - Added speed controls and better state management
 - Refined projection descriptions for educational clarity
 
+**Post-Deployment Mobile Polish (Additional prompts):**
+- Improved mobile layout and spacing
+- Better touch target sizes for controls
+- Optimized projection info cards for mobile view
+- Enhanced readability on smaller screens
+
 ## Key Observations
 
 **Gemini 3 Strengths:**
