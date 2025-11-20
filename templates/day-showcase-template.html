@@ -486,10 +486,43 @@
                                 <span class="badge grade-a">Grade A</span>
                             </div>
                             <div class="card-body">
-                                <!-- Screenshots, content, buttons -->
+                                <!-- CRITICAL: Button placement order -->
+                                <!-- 1. Basic info (Time, Specialty, Iterations, etc.) -->
+                                <p><strong>Time:</strong> ~5 min</p>
+                                <p><strong>Specialty:</strong> Feature description</p>
+                                
+                                <!-- 2. BUTTONS MUST APPEAR HERE (early, before screenshots/content) -->
+                                <div class="mb-3">
+                                    <a class="btn btn-sm btn-outline-secondary" href="platform/README.md">Details</a>
+                                    <a class="btn btn-sm btn-primary" href="https://example.com" target="_blank" rel="noopener">Live Demo</a>
+                                </div>
+                                
+                                <!-- 3. Screenshots -->
+                                <div class="row g-3 mb-3">
+                                    <div class="col-7">
+                                        <img src="platform/screenshot.png" alt="Desktop" class="img-fluid screenshot-desktop">
+                                        <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                    </div>
+                                    <div class="col-5">
+                                        <img src="platform/screenshot-mobile.png" alt="Mobile" class="img-fluid screenshot-mobile">
+                                        <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                    </div>
+                                </div>
+                                
+                                <!-- 4. Explanatory content (Why Grade, AI role, Human tweaks, etc.) -->
+                                <p class="small"><strong>Why Grade A:</strong> Explanation...</p>
+                                <p class="small"><strong>AI role:</strong> Description...</p>
                             </div>
                         </div>
                     </div>
+                    
+                    BUTTON PLACEMENT RULES (CRITICAL):
+                    - Buttons MUST appear early: right after basic info (Time/Specialty/Iterations)
+                    - Buttons MUST appear before screenshots and explanatory content
+                    - Use consistent wrapper: <div class="mb-3"> around button group
+                    - Always include rel="noopener" on external links (target="_blank")
+                    - Button order: Details first, then Live Demo (or Artifacts if applicable)
+                    - This ensures users can quickly access demos without scrolling
 
                     GRADE BADGE NOTES:
                     - Always in card-header upper right: <span class="badge grade-X">Grade X</span>
