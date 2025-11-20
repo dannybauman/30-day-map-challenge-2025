@@ -683,7 +683,14 @@ Do not add any new external API calls or analytics. Everything must work complet
                             <span class="badge grade-a">Grade A-</span>
                         </div>
                         <div class="card-body">
-                            
+                            <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <a class="btn btn-sm btn-primary" href="https://disney-park-paths-0af5726d.base44.app/" target="_blank" rel="noopener">Live Demo</a>
+                            </div>
+                            <div class="col-6">
+                                <a class="btn btn-sm btn-outline-secondary" href="base44/README.md">Details</a>
+                            </div>
+                            </div>
 
                             <div class="row g-3 mb-3">
                                 <div class="col-7">
@@ -703,7 +710,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <li>Only quirk: on mobile you scroll past the stats before the map comes into view.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Exercised both toggles, compared stats to the script output, and grabbed the extra mobile heatmap capture.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -734,7 +741,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                     <img src="lovable/screenshot-mobile-map.png" alt="Lovable mobile map view after scrolling past stats" class="img-fluid screenshot-mobile screenshot-mobile-multiple mt-2">
                                 </div>
                             </div>
-                             
+
 
                             <ul class="small mb-3 ps-3">
                                 <li>Uploaded the GeoJSON directly and rendered all 118 waypoints on the very first attempt—this was a big win.</li>
@@ -743,7 +750,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <li>The stats column appears first on mobile, then the map below—a fine layout choice.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Verified every waypoint, color-by-park styling, and cluster drill-down before capturing both mobile views.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -778,7 +785,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                             
+
 
                             <ul class="small mb-3 ps-3">
                                 <li>Development preview nailed the two-column layout plus the clustering toggle.</li>
@@ -786,7 +793,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <li>Likely a MIME/content-type mismatch that needs one more iteration.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Logged the console error, captured the empty deployment, and noted the fix needs more tokens.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -817,7 +824,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                     <img src="magicpatterns/screenshot-mobile-map.png" alt="MagicPatterns mobile map zoomed to five visible waypoints" class="img-fluid screenshot-mobile mt-2">
                                 </div>
                             </div>
-                             
+
 
                             <ul class="small mb-3 ps-3">
                                 <li>Uploaded the GeoJSON after generation started and got the full UI scaffold.</li>
@@ -825,7 +832,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <li>Legend, stats, and styling are ready once the data pipeline is corrected.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Confirmed the full file is available in dev tools; the render loop stops after five features.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -855,7 +862,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                             
+
 
                             <ul class="small mb-3 ps-3">
                                 <li>Three rounds of JSON fixes finally cleared the syntax errors.</li>
@@ -863,7 +870,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <li>Requires <code>.env.local</code> plus a Google Maps key, which adds friction for the next retry.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Confirmed the waypoints are present in memory but not rendered; logged the styling and deployment notes.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -893,7 +900,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                             
+
 
                             <ul class="small mb-3 ps-3">
                                 <li>Inline data load succeeded but Leaflet never rendered tiles or points.</li>
@@ -901,7 +908,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <li>Same permissions wall we hit on earlier days when Canvas needs external tiles.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Documented the blocked network requests and saved the shell for reference.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -931,7 +938,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                             
+
 
                             <ul class="small mb-3 ps-3">
                                 <li>Attempted to stream the full GeoJSON inline but the output kept pausing for confirmation.</li>
@@ -939,7 +946,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <li>Same CSP limitations that blocked map tiles on earlier days.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Captured the interrupted outputs and noted the inline data ceiling.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -969,7 +976,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                             
+
 
                             <ul class="small mb-3 ps-3">
                                 <li>Generated a minimal UI shell but never loaded the GeoJSON.</li>
@@ -977,7 +984,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <li>Requires sign-in to view the shared canvas, mirroring the friction noted in LAUNCH-TRACKER.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Logged the access friction and the missing map so we can compare with future Gemini releases.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -1005,7 +1012,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                     <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
                                 </div>
                             </div>
-                             
+
 
                             <ul class="small mb-3 ps-3">
                                 <li>Three auto-fix attempts failed to resolve the initial build errors.</li>
@@ -1013,7 +1020,7 @@ Do not add any new external API calls or analytics. Everything must work complet
                                 <li>Logged as a full failure so we remember the limitations next time we need AI Studio.</li>
                             </ul>
                             <p class="small text-muted mb-0"><strong>Human QA:</strong> Captured the dev error screen and noted the retry pattern in LAUNCH-TRACKER.</p>
-                            
+
                         </div>
                     </div>
                 </div>
