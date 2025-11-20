@@ -174,7 +174,8 @@
 - Mobile: `gemini3-ai-studio/day18-climate-migration-mobile.png`
 
 **Why Grade B+ (not A):**
-- Minor: Global displacement counter shows "0M" (likely needs user interaction)
+- Grade limited by speculative data approach rather than intensive data science modeling
+- Minor mobile UI issue: control panel overlaps with other UI elements
 - Minor: No animated migration flow lines (was in original Day 12 concept)
 - Minor: Country selection UI present but not fully tested
 - Otherwise: Excellent visualization, smooth animation, great design

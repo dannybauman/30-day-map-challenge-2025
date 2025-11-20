@@ -124,7 +124,8 @@ Day 18 was repurposed from the "Out of this world" theme to document an importan
 - Timeline animation works smoothly
 - Mobile layout adapts well
 - No deployment issues
-- Minor: Displacement counter shows "0M" (likely needs interaction to update)
+- Grade limited by speculative data approach rather than intensive data science modeling
+- Minor mobile UI issue: control panel overlaps with other UI elements
 - Minor: Could benefit from animated migration flow lines (was in original Day 12 concept)
 
 ---
