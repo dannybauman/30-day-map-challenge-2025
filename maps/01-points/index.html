@@ -76,16 +76,16 @@
         .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .screenshot-desktop { border: 2px solid #495057; }
         .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
-        /* Platform Card Button Styling - Tasteful proportions */
+        /* Platform Card Button Styling - Tasteful proportions, left-aligned to match screenshots */
         .platform-card .row.g-2 .col-6,
         .platform-card .row.g-2 .col-4,
         .platform-card .row.g-2 .col-12 {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
         }
         .platform-card .btn {
-            max-width: 200px;
-            padding: 0.5rem 1.25rem;
+            min-width: 140px;
+            padding: 0.5rem 1.5rem;
             font-weight: 500;
             transition: all 0.2s ease;
         }
