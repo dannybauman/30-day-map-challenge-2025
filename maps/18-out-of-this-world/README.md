@@ -243,7 +243,7 @@ Day 18 was repurposed from the "Out of this world" theme to document an importan
 - SeismicWatch: Complete earthquake visualization with timeline animation (Grade A)
 - Climate Migration: Choropleth map with RCP 8.5 scenario visualization (Grade B+)
 - Global Connections: 3D flight visualization (Grade B+)
-- Cosmic Sightings: UFO HUD concept (Grade B+)
+- Cosmic Sightings: UFO HUD concept (Grade B-)
 - All UI components, legends, controls, and responsive layouts
 - Integration with external data sources (USGS, OpenFlights)
 - Service Worker registration and PWA setup
@@ -291,7 +291,7 @@ Day 18 was repurposed from the "Out of this world" theme to document an importan
 | SeismicWatch | Day 1 recreation | ✅ Success | A | Working | Timeline animation, shaking effect |
 | Global Connections | Day 6 alternative | ✅ Success | B+ | Working | 3D flight visualization |
 | Climate Migration | Day 12 recreation | ✅ Success | B+ | Working | Clean choropleth, timeline |
-| Cosmic Sightings | Day 1 alternative | ✅ Success | B+ | Working | UFO HUD interface |
+| Cosmic Sightings | Day 1 alternative | ✅ Success | B- | Working | UFO HUD interface |
 
 **Overall Gemini 3 + AI Studio assessment:**
 - **Success rate:** 100% (4 of 4 successfully deployed)

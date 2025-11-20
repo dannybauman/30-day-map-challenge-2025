@@ -13,7 +13,7 @@
 | 1 | SeismicWatch | Day 1 recreation | ✅ Success | A | ✅ Working | ✅ Strong |
 | 2 | Global Connections | Day 6 alternative | ✅ Success | B+ | ✅ Working | ✅ Strong |
 | 3 | Climate Migration | Day 12 recreation | ✅ Success | B+ | ✅ Working | ✅ Strong |
-| 4 | Cosmic Sightings | Day 1 alternative | ✅ Success | B+ | ✅ Working | ✅ Strong |
+| 4 | Cosmic Sightings | Day 1 alternative | ✅ Success | B- | ✅ Working | ✅ Strong |
 
 **Success Rate:** 100% (4 of 4 successfully deployed)
 **Platform Performance:** All apps working in production
@@ -195,7 +195,7 @@
 
 **Live URL:** https://cosmic-sightings-hud-903076358991.us-west1.run.app/
 
-### Result: ✅ Success (Grade B+)
+### Result: ✅ Success (Grade B-)
 
 **What worked:**
 - 3D Earth globe with UFO sighting locations
@@ -209,7 +209,7 @@
 - Try 1: HUD concept and structure
 - Try 2-4: Multiple attempts with different UFO datasets
 - Try 5+: Refined data loading and visualization
-- **Total:** ~5 prompts to reach Grade B+
+- **Total:** ~5 prompts to reach Grade B-
 
 **Deployment status:** ✅ Working well
 **Mobile status:** ✅ Strong - responsive HUD interface
@@ -229,11 +229,12 @@
 **Screenshots:**
 - Desktop: `gemini3-ai-studio/day18-cosmic-sightings-desktop.png`
 
-**Why Grade B+ (not A):**
-- Data quality varies (UFO datasets less standardized than USGS)
-- Concept is ambitious and works well
+**Why Grade B- (not higher):**
+- Visuals are nice with 3D globe and HUD-style interface
+- Data isn't quite right (UFO datasets less reliable and standardized)
+- 3D visualization works but data quality issues impact overall grade
 - Minor: Some interaction polish could be improved
-- Otherwise: Strong visualization, unique concept, good design
+- Strong visual design but limited by data quality
 
 ---
 
