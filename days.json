@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-20T04:51:31.175Z",
+  "generatedAt": "2025-11-20T05:14:57.061Z",
   "days": [
     {
       "id": "01-points",
@@ -52,7 +52,8 @@
     {
       "id": "19-projections",
       "dayNumber": 19,
-      "title": "Projections: The World is Not a Rectangle",
+      "title": "Day 19: Projections",
+      "theme": "Projections",
       "relativeUrl": "maps/19-projections/index.html",
       "readmeUrl": "maps/19-projections/README.md"
     }

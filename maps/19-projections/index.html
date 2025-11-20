@@ -7,41 +7,82 @@
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { padding: 0 0 20px 0; background: #f8f9fa; }
+        body { padding: 20px 0; background: #f8f9fa; }
         .hero {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 25%, #3949ab 50%, #5e35b1 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 60px 0;
             margin-bottom: 40px;
             position: relative;
             overflow: hidden;
         }
-        .hero::before {
-            content: '';
+        .hero .container {
+            position: relative;
+        }
+        .hero .row {
+            margin: 0;
+        }
+        .hero .col-lg-7 {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-image-wrapper {
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="rgba(255,255,255,0.03)"/></svg>');
-            background-size: 50px 50px;
-            animation: rotateGraticule 60s linear infinite;
-            opacity: 0.3;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 42%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1;
         }
-        @keyframes rotateGraticule {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .hero-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-        .hero .container { position: relative; z-index: 2; }
-        .hero h1 { font-size: 2.5rem; font-weight: 700; }
-        .hero .lead { font-size: 1.2rem; opacity: 0.95; }
-        .hero .badge { font-size: 0.9rem; }
+        @media (max-width: 991px) {
+            .hero {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 0;
+            }
+            .hero .container {
+                order: 1;
+                padding-bottom: 0;
+            }
+            .hero-image-wrapper {
+                position: relative;
+                order: 2;
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 1rem;
+            }
+            .hero-image {
+                width: 100%;
+                height: auto;
+                max-height: 400px;
+                object-fit: contain;
+            }
+        }
         .platform-card { margin-bottom: 30px; }
         .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .screenshot-desktop { border: 2px solid #495057; }
         .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        .screenshot-mobile-multiple {
+            max-height: 200px;
+            width: auto;
+            object-fit: contain;
+        }
         .badge-custom { font-size: 0.9rem; }
-        .insight-box { background: #fff; border-left: 4px solid #3949ab; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
         .process-section .row { align-items: stretch; }
         .process-card { background: #fff; border-radius: 12px; border-left: 4px solid #0d6efd; padding: 20px; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); position: relative; }
@@ -50,6 +91,11 @@
         .process-card.ai .lane-label { background: #6f42c1; }
         .process-card h3, .process-card h4, .process-card h5 { margin-top: 12px; }
         .process-card ul { padding-left: 18px; }
+        .process-connector { position: relative; padding-top: 20px; margin-bottom: 40px; }
+        .process-connector::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(180deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)); display: none; }
+        @media (min-width: 992px) {
+            .process-connector::after { display: block; }
+        }
         .contribution-legend .badge { font-size: 0.8rem; }
         .badge-ai { background: #6f42c1; color: #fff; }
 
@@ -65,12 +111,17 @@
         @keyframes subtle-pulse { 0%, 100% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); } 50% { box-shadow: 0 4px 16px rgba(13, 110, 253, 0.2); } }
         .process-section:has(#processTimeline:not(.show)) .timeline-toggle-btn { animation: subtle-pulse 3s ease-in-out infinite; }
 
+        .grade-a { background-color: #28a745; color: white; font-weight: 500; }
         .grade-a-plus { background-color: #28a745; color: white; font-weight: 500; }
+        .grade-b-plus { background-color: #0d6efd; color: white; font-weight: 500; }
+        .grade-b { background-color: #007bff; color: white; font-weight: 500; }
+        .grade-c-plus { background-color: #ffc107; color: #000; font-weight: 500; }
+        .grade-c { background-color: #fd7e14; color: white; font-weight: 500; }
+        .grade-c-minus { background-color: #fd7e14; color: white; font-weight: 500; opacity: 0.85; }
+        .grade-d { background-color: #ff4500; color: white; font-weight: 500; }
+        .grade-f { background-color: #dc3545; color: white; font-weight: 500; }
+        
         .concept-chosen { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1); border: 2px solid #fd7e14 !important; transform: translateY(-2px); transition: all 0.3s ease; }
-
-        .concept-card { background: white; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
-        .concept-card h5 { color: #3949ab; margin-bottom: 10px; }
-        .concept-card .badge { margin-right: 8px; }
 
         [data-day-nav] .card { max-width: 100%; }
         @media (min-width: 768px) { [data-day-nav] .card { max-width: 800px; margin-left: auto; margin-right: auto; } }
@@ -94,50 +145,509 @@
     </section>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <div class="hero">
+        <div class="hero-image-wrapper">
+            <img src="gemini3-shape-shifter/shape-shifter-desktop.png" alt="Shape Shifter - Day 19 Winner" class="hero-image">
+        </div>
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p class="mb-2"><span class="badge bg-light text-dark">Day 19</span> <span class="badge bg-warning text-dark">GIS Day</span></p>
-                    <h1>Projections: The World is Not a Rectangle</h1>
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1>Day 19: Projections</h1>
                     <p class="lead">Two interactive visualizations showing how map projections warp the world: smooth morphing animations and distortion patterns.</p>
-                    <p><strong>Platform:</strong> Gemini 3 Pro (Google AI Studio) × 2 concepts | <strong>Time:</strong> ~30 mins total</p>
-                    <p><strong>Grade:</strong> <span class="badge grade-a-plus">A+</span> for both</p>
+                    <p><strong>Date:</strong> November 19, 2025 | <strong>By:</strong> Danny Bauman</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Quick Stats -->
-    <section class="container my-4">
-        <div class="row text-center">
-            <div class="col-md-3 col-6 mb-3">
-                <h3 class="text-primary mb-0">2</h3>
-                <small class="text-muted">Concepts Built</small>
+    <div class="container">
+        <!-- Quick Stats -->
+        <div class="row mb-5 g-3">
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-primary">1</h3>
+                        <p class="mb-0">Platform Tested</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3 col-6 mb-3">
-                <h3 class="text-primary mb-0">1</h3>
-                <small class="text-muted">Platform Used</small>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">2</h3>
+                        <p class="mb-0">Success (100%)</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3 col-6 mb-3">
-                <h3 class="text-primary mb-0">15</h3>
-                <small class="text-muted">Total Projections</small>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-warning">0</h3>
+                        <p class="mb-0">Partial (0%)</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3 col-6 mb-3">
-                <h3 class="text-primary mb-0">~30 mins</h3>
-                <small class="text-muted">Total Time</small>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-danger">0</h3>
+                        <p class="mb-0">Failed (0%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-info">~30 mins</h3>
+                        <p class="mb-0">Time Invested</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- Ideation Section -->
-    <section class="container my-5">
-        <h2>Ideation: 6 Concepts for GIS Day</h2>
-        <p class="text-muted">Asked Claude, ChatGPT, and Gemini 3 for projection visualizations that would be "meaningful, not just cool." Got 6 solid ideas—morphing animations, distortion comparisons, educational dashboards.</p>
+        <!-- Ideation Phase -->
+        <section class="mb-5">
+            <h2 class="mb-4">Ideation Phase</h2>
+            <p class="lead">Asked Claude, ChatGPT, and Gemini 3 for projection visualizations that would be "meaningful, not just cool." Got 6 solid ideas—morphing animations, distortion comparisons, educational dashboards.</p>
 
-        <div class="row mt-4">
-            <div class="col-lg-4 mb-4">
-                <div class="concept-card concept-chosen">
+            <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Where I Redirected The Prompt</h5>
+                    <ul class="small mb-0">
+                        <li>Pushed for "meaningful animation" requirement (not just decoration)</li>
+                        <li>Selected 2 complementary concepts instead of testing 8-12 platforms</li>
+                        <li>Chose transformation + distortion (Shape Shifter + Tissot) to cover different aspects</li>
+                        <li>Set success criteria: working in 3 prompts, then iterate</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="col">
+                    <div class="card bg-success text-white">
+                        <div class="card-header">
+                            <strong>ChatGPT (GPT-5 Thinking)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Unfolded Earth</h5>
+                            <p class="small mb-2">Butterfly atlas where the world unfolds/refolds between Equal Earth and Waterman-style projection. Continents bend and hinge like origami.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white" style="background-color: #fd7e14;">
+                        <div class="card-header">
+                            <strong>Claude.ai (Sonnet 4.5)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Projection Metamorphosis</h5>
+                            <p class="small mb-2">Animated morphing between 6+ unusual projections (Waterman Butterfly, Dymaxion, Peirce Quincuncial) with smooth D3 interpolation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card concept-chosen text-white" style="background-color: #4285f4; border: 2px solid #fd7e14 !important;">
+                        <div class="card-header">
+                            <strong>Gemini (3 Pro) ⭐ Chosen</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Shape Shifter + Tissot</h5>
+                            <p class="small mb-2">Morphing animation between projections + interactive distortion comparison with Tissot circles. Two complementary concepts covering transformation and distortion.</p>
+                            <p class="small mb-0"><em>Why chosen: The morphing IS the math—not decoration, actual transformation. Plus distortion made visible.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chosen Concept -->
+        <section class="mb-5">
+            <h2 class="mb-4">Chosen Concept</h2>
+            <div class="card border-primary">
+                <div class="card-body">
+                    <h4>Dual Projection Visualizations</h4>
+                    <p><strong>Shape Shifter:</strong> Animated morphing between unusual projections (Equirectangular → Mollweide → Berghaus Star → Sinusoidal). Graticule bends with landmasses to show the transformation.</p>
+                    <p><strong>Tissot's Lie Detector:</strong> Interactive Mercator vs Equal Area comparison with Tissot's Indicatrix circles showing distortion. Morph slider + side-by-side modes.</p>
+                    <p><strong>Data Source:</strong> Natural Earth 110m data from world-atlas CDN, graticules generated with D3</p>
+                    <p><strong>Why chosen:</strong> Instead of testing 8-12 platforms with one concept, Day 19 tried whether Gemini 3 could handle two different challenges: complex animations (Shape Shifter) and educational precision (Tissot). Better test of versatility than spreading thin across weaker platforms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Results -->
+        <section class="mb-5">
+            <h2 class="mb-4">Platform Results</h2>
+
+            <h3 class="mb-3">🏆 Success</h3>
+            <p class="small text-muted mb-4">Both concepts working in 3 prompts, polished in ~8 more. 100% success rate.</p>
+            <div class="row">
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #4285f4; color: white;">
+                            <strong>Gemini 3 Pro – Shape Shifter</strong>
+                            <span class="badge grade-a-plus">Grade A+</span>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Status:</strong> Working in 3 prompts, polished in ~8 more</p>
+                            <p><strong>URL:</strong> <a href="https://shape-shifter-gis-day-903076358991.us-west1.run.app" target="_blank">Live Demo</a></p>
+                            
+                            <p><strong>What Works:</strong></p>
+                            <ul class="small">
+                                <li>Smooth morphing between 6+ projections</li>
+                                <li>Graticule deforms with landmasses</li>
+                                <li>Animation controls: Play/Pause, Reset, Skip, Speed (0.5x-5x)</li>
+                                <li>Real-time projection labels with descriptions</li>
+                                <li>Dark theme with cyan accents</li>
+                            </ul>
+
+                            <div class="row g-2 mt-3">
+                                <div class="col-7">
+                                    <img src="gemini3-shape-shifter/shape-shifter-desktop.png" alt="Shape Shifter Desktop" class="screenshot-desktop mb-2">
+                                    <small class="d-block"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="gemini3-shape-shifter/shape-shifter-mobile.png" alt="Shape Shifter Mobile" class="screenshot-mobile mb-2">
+                                    <small class="d-block">Mobile</small>
+                                </div>
+                            </div>
+
+                            <p class="text-muted small mt-3"><strong>Note:</strong> Post-deployment mobile refinements included better touch targets and improved projection info card layouts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #4285f4; color: white;">
+                            <strong>Gemini 3 Pro – Tissot's Lie Detector</strong>
+                            <span class="badge grade-a-plus">Grade A+</span>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Status:</strong> Working in 3 prompts, expanded to 9 projections in ~8 more</p>
+                            <p><strong>URL:</strong> <a href="https://tissot-s-lie-detector-903076358991.us-west1.run.app" target="_blank">Live Demo</a></p>
+                            
+                            <p><strong>What Works:</strong></p>
+                            <ul class="small">
+                                <li>Grid of Tissot circles overlaid on world map</li>
+                                <li>9 projections: Mercator, Equal Earth, Natural Earth, Equirectangular, Mollweide, Robinson, Winkel Tripel, Sinusoidal, Orthographic</li>
+                                <li>Two view modes: Morph (slider blend) and Side-by-Side</li>
+                                <li>Auto-morph animation option</li>
+                                <li>Educational descriptions for each projection</li>
+                            </ul>
+
+                            <div class="row g-2 mt-3">
+                                <div class="col-7">
+                                    <img src="gemini3-tissot/tissot-desktop.png" alt="Tissot Desktop" class="screenshot-desktop mb-2">
+                                    <small class="d-block"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="gemini3-tissot/tissot-mobile.png" alt="Tissot Mobile" class="screenshot-mobile mb-2">
+                                    <small class="d-block">Mobile</small>
+                                </div>
+                            </div>
+
+                            <p class="text-muted small mt-3"><strong>Note:</strong> Post-deployment mobile refinements added collapsible "Projection Settings" panel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Collaboration Snapshot -->
+        <section class="mb-5">
+            <h2 class="mb-4">AI Collaboration Snapshot</h2>
+            <p class="text-muted mb-4">Quick summary of the Me/AI split on Day 19:</p>
+        
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <strong>Where I Guided</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                <li>Set "meaningful animation" requirement (not decoration)</li>
+                                <li>Selected 2 complementary concepts (transformation + distortion)</li>
+                                <li>Chose dual-concept strategy over multi-platform testing</li>
+                                <li>Tested on actual devices, requested mobile refinements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header badge-ai text-white">
+                            <strong>Where AI Accelerated</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                <li>Gemini 3: Generated 6 solid projection concepts</li>
+                                <li>Gemini 3: Built both working implementations in 3 prompts each</li>
+                                <li>Gemini 3: Expanded features through 8+ iteration prompts per concept</li>
+                                <li>Cursor: Documented results, captured screenshots, updated project files</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="mb-5 process-section">
+            <h2 class="mb-3">Process Timeline</h2>
+            <p class="text-muted mb-3">Left lane = Me. Right lane = AI. Expand when you want the play-by-play.</p>
+
+            <div class="contribution-legend mb-3">
+                <span class="badge bg-primary me-2">Me</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="timeline-toggle-wrapper">
+                <button class="btn btn-outline-secondary timeline-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
+                    Show Timeline
+                </button>
+            </div>
+
+            <div class="process-connector mb-3">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Me</span>
+                            <h4>Ideation Vetting</h4>
+                            <ul>
+                                <li>Created ideation prompt emphasizing "meaningful animation" and GIS Day celebration</li>
+                                <li>Requested concepts from Claude, ChatGPT, and Gemini 3</li>
+                                <li>Reviewed 6 concepts (2 from each platform)</li>
+                                <li>Selected 2 Gemini 3 concepts as complementary pair</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            <ul>
+                                <li>Claude: Projection Metamorphosis (6+ unusual projections) + Distortion Dashboard (2×2 grid)</li>
+                                <li>ChatGPT: Unfolded Earth (butterfly atlas) + Mercator's Big Lie (split-screen with Tissot)</li>
+                                <li>Gemini 3: Shape Shifter (morphing animation) + Tissot's Lie Detector (distortion comparison)</li>
+                                <li>Cursor: Logged all responses to IDEATION-RESPONSES.md</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse" id="processTimeline">
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Prompt Crafting</h4>
+                                <ul>
+                                    <li>Created 2 implementation prompts optimized for Gemini 3 Pro</li>
+                                    <li>Emphasized D3 projection expertise and CDN data loading</li>
+                                    <li>Set success criteria: working in 3 prompts, then iterate</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Prompt Drafts</h4>
+                                <ul>
+                                    <li>Cursor: Created IMPLEMENTATION-PROMPT.md (Shape Shifter)</li>
+                                    <li>Cursor: Created IMPLEMENTATION-PROMPT-TISSOT.md (Tissot)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Launch & Supervision</h4>
+                                <ul>
+                                    <li>Launched both prompts in Google AI Studio with Gemini 3 Pro</li>
+                                    <li>Both concepts working within 3 prompts</li>
+                                    <li>Guided refinements through ~8 prompts each</li>
+                                    <li>Deployed both apps, tested on mobile devices</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Generated Outputs</h4>
+                                <ul>
+                                    <li>Gemini 3: Generated both working visualizations in 3 prompts each</li>
+                                    <li>Gemini 3: Correctly implemented D3 projection interpolation and Tissot circles</li>
+                                    <li>Gemini 3: Added features, expanded projection libraries through iteration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>QA & Edits</h4>
+                                <ul>
+                                    <li>Tested both apps on actual mobile devices</li>
+                                    <li>Requested post-deployment mobile refinements</li>
+                                    <li>Shape Shifter: Better touch targets, improved info cards</li>
+                                    <li>Tissot: Collapsible settings panel for mobile</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>AI Fixes & Suggestions</h4>
+                                <ul>
+                                    <li>Gemini 3: Implemented mobile refinements (collapsible panels, better touch targets)</li>
+                                    <li>Gemini 3: Fixed mobile UI issues in 2-3 prompts per app</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Documentation & Storytelling</h4>
+                                <ul>
+                                    <li>Updated LAUNCH-TRACKER with results for both apps</li>
+                                    <li>Documented dual-concept strategy decision</li>
+                                    <li>Captured mobile refinements process</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Supporting Assets</h4>
+                                <ul>
+                                    <li>Cursor: Captured screenshots for both apps (desktop + mobile)</li>
+                                    <li>Cursor: Updated documentation and created platform READMEs</li>
+                                    <li>Cursor: Generated HTML showcase page</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insights -->
+        <section class="mb-5">
+            <h2 class="mb-4">Key Insights</h2>
+
+            <div class="insight-box">
+                <h5>✅ What Worked</h5>
+                <ul>
+                    <li><strong>Fast initial results:</strong> Both concepts working in 3 prompts</li>
+                    <li><strong>Iterative polish:</strong> Each follow-up prompt added useful improvements</li>
+                    <li><strong>Technical accuracy:</strong> Projection math, D3 usage, and animation interpolation all correct</li>
+                    <li><strong>Feature expansion:</strong> Easy to add projections, view modes, and controls through iteration</li>
+                    <li><strong>Dual-concept efficiency:</strong> Way faster than multi-platform testing (30 mins vs Day 17's 12+ hours)</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>❌ What Didn't</h5>
+                <ul>
+                    <li><strong>Preview-to-production gap:</strong> Always verify in production, not just preview</li>
+                    <li><strong>Initial mobile UX:</strong> Both needed post-deployment refinements for touch targets and layout</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>🎉 Surprises</h5>
+                <ul>
+                    <li><strong>All apps working:</strong> 100% success rate, all 4 implementations deployed successfully</li>
+                    <li><strong>Meaningful animation achieved:</strong> Morphing IS the math—visualizes actual transformation, not decoration</li>
+                    <li><strong>Strategy shift worked:</strong> 2 concepts with 1 strong platform tested versatility better than 1 concept across 8-12 platforms</li>
+                    <li><strong>Gemini 3 performance:</strong> Consistent strong results across complex animations and educational precision</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>📚 Lessons for Next Time</h5>
+                <ul>
+                    <li><strong>Dual-concept approach:</strong> Works well when platform is proven—tests versatility efficiently</li>
+                    <li><strong>Mobile testing matters:</strong> Test on real devices, not just desktop browser dev tools</li>
+                    <li><strong>Post-deployment iteration:</strong> Gemini 3 handles mobile fixes quickly (2-3 prompts)</li>
+                    <li><strong>D3 projection handling:</strong> Gemini 3 handles complex D3 code correctly (interpolation, Tissot circles)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Editorial -->
+        <section class="mb-5">
+            <h2 class="mb-4">Editorial</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h4>GIS Day With Working Math</h4>
+                    <p>Day 19 was GIS Day, so projections felt right. But I wanted the visualization to actually <em>show</em> the math, not just talk about it.</p>
+
+                    <p>Shape Shifter does this—the morphing animation <em>is</em> the transformation process. You watch Equirectangular bend into Mollweide, and the graticule lines show how the projection math warps coordinates. It's not decoration. The animation is the concept.</p>
+
+                    <p>Tissot's Lie Detector takes the opposite approach. Instead of showing transformation, it reveals distortion. Those red circles look perfect when you generate them as actual circles on the globe. Put them through Mercator, and they stretch into massive ellipses near the poles. The geometry doesn't lie.</p>
+
+                    <p>The dual-concept strategy worked better than I expected. Instead of testing one concept across 8-12 platforms (the usual approach), I tested whether Gemini 3 could handle two very different challenges. Turns out it could—both working in 3 prompts, polished in ~8 more. Total time: 30 minutes.</p>
+
+                    <p>This is where Gemini 3 in AI Studio earns its spot as a Tier 1 platform. After Day 18's discovery that it suddenly works well for maps, Day 19 confirmed it. Fast initial results, clean D3 implementation, smooth animations, and mobile-responsive by default. The iteration loop is quick—each prompt adds something useful.</p>
+
+                    <p>Both apps needed mobile fixes after deployment (touch targets, collapsible panels), but Gemini 3 implemented those in 2-3 prompts each. The preview-to-production gap is still there (always verify in production), but when it works, it works well.</p>
+
+                    <p>GIS Day deserved maps that actually show the technical side of cartography. These two do that—one through transformation, one through distortion. The math made visible.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day Navigation -->
+        <section class="mb-5" data-day-nav>
+            <div class="text-center text-muted">Loading day navigator…</div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p><strong>#30DayMapChallenge 2025</strong></p>
+            <p>Day 19 of 30 | Theme: Projections</p>
+            <p class="mb-0">
+                <a href="../../README.md" class="text-white">Project Home</a> |
+                <a href="README.md" class="text-white">Day Documentation</a> |
+                <a href="https://github.com/yourusername/30-day-map-challenge-2025" class="text-white">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Day Navigation Script -->
+    <script src="../../site-assets/js/day-navigation.js"
+            data-current-day="19"
+            data-day-title="Projections"
+            data-prev-day="18"
+            data-prev-title="Out of this World"
+            data-next-day="20"
+            data-next-title="Water">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
                     <div class="mb-2">
                         <span class="badge" style="background: #fd7e14;">Chosen</span>
                         <span class="badge bg-secondary">Gemini 3</span>
@@ -195,341 +705,6 @@
             </div>
         </div>
 
-        <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
-            <div class="card-body">
-                <h5 class="card-title">Where I Redirected The Prompt</h5>
-                <ul class="small mb-0">
-                    <li>Pushed for "meaningful animation" requirement (not just decoration)</li>
-                    <li>Selected 2 complementary concepts instead of testing 8-12 platforms</li>
-                    <li>Chose transformation + distortion (Shape Shifter + Tissot) to cover different aspects</li>
-                    <li>Set success criteria: working in 3 prompts, then iterate</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Implementation Results -->
-    <section class="container my-5">
-        <h2>Implementation 1: Shape Shifter</h2>
-        <div class="row platform-card">
-            <div class="col-lg-8">
-                <h4>Gemini 3 Pro – Google AI Studio</h4>
-                <p><span class="badge grade-a-plus">Grade: A+</span> <span class="badge bg-success">✓ Deployed</span> <span class="badge bg-success">✓ Mobile</span></p>
-                <p><strong>Status:</strong> Working in 3 prompts, polished in ~8 more</p>
-                <p><strong>URL:</strong> <a href="https://shape-shifter-gis-day-903076358991.us-west1.run.app" target="_blank">shape-shifter-gis-day-903076358991.us-west1.run.app</a></p>
-
-                <p><strong>What Works:</strong></p>
-                <ul>
-                    <li>Smooth morphing between 6+ projections (Equirectangular, Mollweide, Berghaus Star, Sinusoidal)</li>
-                    <li>Graticule deforms along with landmasses</li>
-                    <li>Animation controls: Play/Pause, Reset, Skip, Speed (0.5x-5x)</li>
-                    <li>Real-time projection labels with educational descriptions</li>
-                    <li>Dark theme with cyan accents</li>
-                </ul>
-
-                <p><strong>Technical Stack:</strong></p>
-                <ul>
-                    <li>D3.js (d3-geo, d3-geo-projection) for projection interpolation</li>
-                    <li>Natural Earth 110m land data from world-atlas CDN</li>
-                    <li>SVG rendering with smooth transitions</li>
-                    <li>Mobile-responsive layout</li>
-                </ul>
-
-                <p class="text-muted"><strong>Note:</strong> Post-deployment mobile refinements included better touch targets and improved projection info card layouts.</p>
-            </div>
-            <div class="col-lg-4">
-                <img src="gemini3-shape-shifter/shape-shifter-desktop.png" alt="Shape Shifter Desktop" class="screenshot-desktop mb-3">
-                <img src="gemini3-shape-shifter/shape-shifter-mobile.png" alt="Shape Shifter Mobile" class="screenshot-mobile" style="max-width: 200px;">
-            </div>
-        </div>
-
-        <h2 class="mt-5">Implementation 2: Tissot's Lie Detector</h2>
-        <div class="row platform-card">
-            <div class="col-lg-8">
-                <h4>Gemini 3 Pro – Google AI Studio</h4>
-                <p><span class="badge grade-a-plus">Grade: A+</span> <span class="badge bg-success">✓ Deployed</span> <span class="badge bg-success">✓ Mobile</span></p>
-                <p><strong>Status:</strong> Working in 3 prompts, expanded to 9 projections in ~8 more</p>
-                <p><strong>URL:</strong> <a href="https://tissot-s-lie-detector-903076358991.us-west1.run.app" target="_blank">tissot-s-lie-detector-903076358991.us-west1.run.app</a></p>
-
-                <p><strong>What Works:</strong></p>
-                <ul>
-                    <li>Grid of Tissot circles overlaid on world map</li>
-                    <li>9 projections: Mercator, Equal Earth, Natural Earth, Equirectangular, Mollweide, Robinson, Winkel Tripel, Sinusoidal, Orthographic</li>
-                    <li>Two view modes: Morph (slider blend) and Side-by-Side comparison</li>
-                    <li>Auto-morph animation option</li>
-                    <li>Educational descriptions for each projection</li>
-                </ul>
-
-                <p><strong>Technical Stack:</strong></p>
-                <ul>
-                    <li>D3.js with extended d3-geo-projection library</li>
-                    <li>Natural Earth 110m countries data from world-atlas CDN</li>
-                    <li>SVG rendering with interpolation for morph mode</li>
-                    <li>Collapsible mobile controls</li>
-                </ul>
-
-                <p class="text-muted"><strong>Note:</strong> Post-deployment mobile refinements added collapsible "Projection Settings" panel and better one-handed mobile use.</p>
-            </div>
-            <div class="col-lg-4">
-                <img src="gemini3-tissot/tissot-desktop.png" alt="Tissot Desktop" class="screenshot-desktop mb-3">
-                <img src="gemini3-tissot/tissot-mobile.png" alt="Tissot Mobile" class="screenshot-mobile" style="max-width: 200px;">
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Collaboration Snapshot -->
-    <section class="container my-5">
-        <h2 class="mb-4">AI Collaboration Snapshot</h2>
-        <p class="text-muted mb-4">Quick summary of the Me/AI split on Day 19:</p>
-        
-        <div class="row g-3">
-            <div class="col-lg-6">
-                <div class="card h-100 border-primary">
-                    <div class="card-header bg-primary text-white">
-                        <strong>Where I Guided</strong>
-                    </div>
-                    <div class="card-body">
-                        <ul class="small mb-0">
-                            <li>Set "meaningful animation" requirement (not decoration)</li>
-                            <li>Selected 2 complementary concepts (transformation + distortion)</li>
-                            <li>Chose dual-concept strategy over multi-platform testing</li>
-                            <li>Tested on actual devices, requested mobile refinements</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-header badge-ai text-white">
-                        <strong>Where AI Accelerated</strong>
-                    </div>
-                    <div class="card-body">
-                        <ul class="small mb-0">
-                            <li>Gemini 3: Generated 6 solid projection concepts</li>
-                            <li>Gemini 3: Built both working implementations in 3 prompts each</li>
-                            <li>Gemini 3: Expanded features through 8+ iteration prompts per concept</li>
-                            <li>Cursor: Documented results, captured screenshots, updated project files</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Timeline -->
-    <section class="container process-section my-5">
-        <h2 class="mb-3">Process Timeline</h2>
-        <p class="text-muted mb-3">Left lane = Me. Right lane = AI. Expand when you want the play-by-play.</p>
-
-        <div class="contribution-legend mb-3">
-            <span class="badge bg-primary me-2">Me</span>
-            <span class="badge badge-ai">AI</span>
-        </div>
-
-        <div class="timeline-toggle-wrapper">
-            <button class="btn btn-outline-secondary timeline-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
-                Show Timeline
-            </button>
-        </div>
-
-        <div class="process-connector mb-3">
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="process-card">
-                        <span class="lane-label">Me</span>
-                        <h4>Ideation Vetting</h4>
-                        <ul>
-                            <li>Created ideation prompt emphasizing "meaningful animation" and GIS Day celebration</li>
-                            <li>Requested concepts from Claude, ChatGPT, and Gemini 3</li>
-                            <li>Reviewed 6 concepts (2 from each platform)</li>
-                            <li>Selected 2 Gemini 3 concepts as complementary pair</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="process-card ai">
-                        <span class="lane-label">AI</span>
-                        <h4>Model Suggestions</h4>
-                        <ul>
-                            <li>Claude: Projection Metamorphosis (6+ unusual projections) + Distortion Dashboard (2×2 grid)</li>
-                            <li>ChatGPT: Unfolded Earth (butterfly atlas) + Mercator's Big Lie (split-screen with Tissot)</li>
-                            <li>Gemini 3: Shape Shifter (morphing animation) + Tissot's Lie Detector (distortion comparison)</li>
-                            <li>Cursor: Logged all responses to IDEATION-RESPONSES.md</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="collapse" id="processTimeline">
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Me</span>
-                            <h4>Prompt Crafting</h4>
-                            <ul>
-                                <li>Created 2 implementation prompts optimized for Gemini 3 Pro</li>
-                                <li>Emphasized D3 projection expertise and CDN data loading</li>
-                                <li>Set success criteria: working in 3 prompts, then iterate</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Prompt Drafts</h4>
-                            <ul>
-                                <li>Cursor: Created IMPLEMENTATION-PROMPT.md (Shape Shifter)</li>
-                                <li>Cursor: Created IMPLEMENTATION-PROMPT-TISSOT.md (Tissot)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Me</span>
-                            <h4>Launch & Supervision</h4>
-                            <ul>
-                                <li>Launched both prompts in Google AI Studio with Gemini 3 Pro</li>
-                                <li>Both concepts working within 3 prompts</li>
-                                <li>Guided refinements through ~8 prompts each</li>
-                                <li>Deployed both apps, tested on mobile devices</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Generated Outputs</h4>
-                            <ul>
-                                <li>Gemini 3: Generated both working visualizations in 3 prompts each</li>
-                                <li>Gemini 3: Correctly implemented D3 projection interpolation and Tissot circles</li>
-                                <li>Gemini 3: Added features, expanded projection libraries through iteration</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Me</span>
-                            <h4>QA & Edits</h4>
-                            <ul>
-                                <li>Tested both apps on actual mobile devices</li>
-                                <li>Requested post-deployment mobile refinements</li>
-                                <li>Shape Shifter: Better touch targets, improved info cards</li>
-                                <li>Tissot: Collapsible settings panel for mobile</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>AI Fixes & Suggestions</h4>
-                            <ul>
-                                <li>Gemini 3: Implemented mobile refinements (collapsible panels, better touch targets)</li>
-                                <li>Gemini 3: Fixed mobile UI issues in 2-3 prompts per app</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="process-connector">
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="process-card">
-                            <span class="lane-label">Me</span>
-                            <h4>Documentation & Storytelling</h4>
-                            <ul>
-                                <li>Updated LAUNCH-TRACKER with results for both apps</li>
-                                <li>Documented dual-concept strategy decision</li>
-                                <li>Captured mobile refinements process</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="process-card ai">
-                            <span class="lane-label">AI</span>
-                            <h4>Supporting Assets</h4>
-                            <ul>
-                                <li>Cursor: Captured screenshots for both apps (desktop + mobile)</li>
-                                <li>Cursor: Updated documentation and created platform READMEs</li>
-                                <li>Cursor: Generated HTML showcase page</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Insights -->
-    <section class="container my-5">
-        <h2>Key Insights</h2>
-
-        <div class="insight-box">
-            <h5>Gemini 3 Still Working Well</h5>
-            <p>After Day 18's platform discovery, Day 19 confirms Gemini 3 Pro works well for map challenges:</p>
-            <ul>
-                <li><strong>Fast initial results:</strong> Both concepts working in 3 prompts</li>
-                <li><strong>Iterative polish:</strong> Each follow-up prompt added useful improvements</li>
-                <li><strong>Technical accuracy:</strong> Projection math, D3 usage, and animation interpolation all correct</li>
-                <li><strong>Feature expansion:</strong> Easy to add projections, view modes, and controls through iteration</li>
-            </ul>
-        </div>
-
-        <div class="insight-box">
-            <h5>Meaningful Animation</h5>
-            <p>Hit the goal of "meaningful animation" (not just decoration):</p>
-            <ul>
-                <li><strong>Shape Shifter:</strong> Morphing IS the math—visualizes actual transformation process</li>
-                <li><strong>Tissot:</strong> "Breathing circles" reveal distortion during projection transitions</li>
-                <li>Both make invisible mathematics visible</li>
-            </ul>
-        </div>
-
-        <div class="insight-box">
-            <h5>Strategy Shift</h5>
-            <p>Dual-concept approach worked well:</p>
-            <ul>
-                <li>2 concepts with 1 strong platform vs 1 concept across 8-12 platforms</li>
-                <li>Tests versatility: complex animations + educational precision</li>
-                <li>Way faster: ~30 mins total vs Day 17's 12+ hours</li>
-                <li>Better success rate: 2/2 Grade A+ vs mixed results from multi-platform testing</li>
-            </ul>
-        </div>
-
-        <div class="insight-box">
-            <h5>Post-Deployment Iteration</h5>
-            <p>Testing on real devices showed mobile UX issues:</p>
-            <ul>
-                <li>Shape Shifter: Needed better touch targets and info card layouts</li>
-                <li>Tissot: Added collapsible settings panel for cleaner mobile interface</li>
-                <li>Gemini 3 implemented fixes quickly (2-3 prompts per app)</li>
-                <li>Preview-to-production gap remains (works in preview, verify in production)</li>
-            </ul>
-        </div>
-
-        <div class="insight-box">
-            <h5>D3 Projection Handling</h5>
-            <p>Technical notes on what worked well:</p>
-            <ul>
-                <li>Correct use of <code>d3.geoProjection()</code> and projection interpolation</li>
-                <li>Smooth transitions between projection states</li>
-                <li>CDN-hosted world-atlas data loaded without issues</li>
-                <li>SVG rendering performed well on mobile (no dropped frames)</li>
-            </ul>
-        </div>
-    </section>
 
     <!-- Editorial -->
     <section class="container my-5">
