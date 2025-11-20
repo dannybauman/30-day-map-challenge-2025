@@ -83,6 +83,23 @@
         .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .screenshot-desktop { border: 2px solid #495057; }
         .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        /* Platform Card Button Styling - Tasteful proportions */
+        .platform-card .row.g-2 .col-6,
+        .platform-card .row.g-2 .col-4,
+        .platform-card .row.g-2 .col-12 {
+            display: flex;
+            justify-content: center;
+        }
+        .platform-card .btn {
+            max-width: 200px;
+            padding: 0.5rem 1.25rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .platform-card .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
         /* Multiple mobile screenshots - make them smaller to fit */
         .screenshot-mobile-multiple {
             max-height: 200px;
@@ -491,13 +508,15 @@
                                 1. BUTTONS MUST APPEAR HERE (early, before screenshots/content)
                        <div class="row g-2 mb-3">
                            <div class="col-6">
-                               <a class="btn btn-sm btn-primary w-100" href="https://example.com" target="_blank" rel="noopener">Live Demo</a>
+                               <a class="btn btn-sm btn-primary" href="https://example.com" target="_blank" rel="noopener">Live Demo</a>
                            </div>
                            <div class="col-6">
-                               <a class="btn btn-sm btn-outline-secondary w-100" href="platform/README.md">Details</a>
+                               <a class="btn btn-sm btn-outline-secondary" href="platform/README.md">Details</a>
                            </div>
                        </div>
-                       <!-- ORDER: Live Demo first, then Details/Artifacts/etc. For 1 button: use <div class="col-12">, for 3 buttons: use <div class="col-4"> for each -->
+                       <!-- ORDER: Live Demo first, then Details/Artifacts/etc. 
+                            Buttons are centered with max-width for tasteful proportions (see CSS).
+                            For 1 button: use <div class="col-12">, for 3 buttons: use <div class="col-4"> for each -->
 
                                 2. Screenshots
                        <div class="row g-3 mb-3">

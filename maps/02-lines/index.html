@@ -76,6 +76,23 @@
         .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .screenshot-desktop { border: 2px solid #495057; }
         .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        /* Platform Card Button Styling - Tasteful proportions */
+        .platform-card .row.g-2 .col-6,
+        .platform-card .row.g-2 .col-4,
+        .platform-card .row.g-2 .col-12 {
+            display: flex;
+            justify-content: center;
+        }
+        .platform-card .btn {
+            max-width: 200px;
+            padding: 0.5rem 1.25rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .platform-card .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
         .badge-custom { font-size: 0.9rem; }
         .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
@@ -453,7 +470,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <a class="btn btn-sm btn-primary w-100" href="https://project-portland-street-orientation-rainbow-map-450.magicpatterns.app/" target="_blank" rel="noopener">Live Demo</a>
+                                <a class="btn btn-sm btn-primary" href="https://project-portland-street-orientation-rainbow-map-450.magicpatterns.app/" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                             <div class="col-6">
                                 <a href="magicpatterns/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
@@ -493,7 +510,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <a class="btn btn-sm btn-primary w-100" href="https://street-orientation-r-fc5r.bolt.host/" target="_blank" rel="noopener">Live Demo</a>
+                                <a class="btn btn-sm btn-primary" href="https://street-orientation-r-fc5r.bolt.host/" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                             <div class="col-6">
                                 <a href="bolt-new/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
@@ -530,7 +547,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <a class="btn btn-sm btn-primary w-100" href="https://portland-hue-lines.lovable.app" target="_blank" rel="noopener">Live Demo</a>
+                                <a class="btn btn-sm btn-primary" href="https://portland-hue-lines.lovable.app" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                             <div class="col-6">
                                 <a href="lovable/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
@@ -573,7 +590,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <a class="btn btn-sm btn-primary w-100" href="https://chatgpt.com/canvas/shared/6908395f84ec8191b7d57c4c883d5354" target="_blank" rel="noopener">Live Demo</a>
+                                <a class="btn btn-sm btn-primary" href="https://chatgpt.com/canvas/shared/6908395f84ec8191b7d57c4c883d5354" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                             <div class="col-6">
                                 <a href="chatgpt-canvas/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
@@ -608,7 +625,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <a href="https://portland-street-atlas-3ab01ba5.base44.app/" class="btn btn-sm btn-primary w-100" target="_blank" rel="noopener">Live Demo</a>
+                                <a href="https://portland-street-atlas-3ab01ba5.base44.app/" class="btn btn-sm btn-primary" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                             <div class="col-6">
                                 <a href="base44/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
@@ -643,7 +660,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <a class="btn btn-sm btn-primary w-100" href="https://v0-portland-street-map.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
+                                <a class="btn btn-sm btn-primary" href="https://v0-portland-street-map.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                             <div class="col-6">
                                 <a href="v0-dev/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
@@ -681,7 +698,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <a class="btn btn-sm btn-primary w-100" href="https://claude.ai/public/artifacts/f6ba0dae-3ad2-4c9d-bb2c-9d2f4eb812cd" target="_blank" rel="noopener">Live Demo</a>
+                                <a class="btn btn-sm btn-primary" href="https://claude.ai/public/artifacts/f6ba0dae-3ad2-4c9d-bb2c-9d2f4eb812cd" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                             <div class="col-6">
                                 <a href="claude-artifacts/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
@@ -711,7 +728,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <a class="btn btn-sm btn-primary w-100" href="https://gemini.google.com/share/3b970078b72c" target="_blank" rel="noopener">Live Demo</a>
+                                <a class="btn btn-sm btn-primary" href="https://gemini.google.com/share/3b970078b72c" target="_blank" rel="noopener">Live Demo</a>
                             </div>
                             <div class="col-6">
                                 <a href="gemini/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
@@ -741,7 +758,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-12">
-                                <a href="firebase-studio/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
+                                <a href="firebase-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
                             </div>
                             </div>
 
@@ -774,7 +791,7 @@ DELIVERABLES:
                         <div class="card-body">
                             <div class="row g-2 mb-3">
                             <div class="col-12">
-                                <a href="google-ai-studio/README.md" class="btn btn-sm btn-outline-secondary w-100">Details</a>
+                                <a href="google-ai-studio/README.md" class="btn btn-sm btn-outline-secondary">Details</a>
                             </div>
                             </div>
 
