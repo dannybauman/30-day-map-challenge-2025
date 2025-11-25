@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 24: Places and their names | #30DayMapChallenge 2025</title>
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 0 0 20px 0; background: #f8f9fa; }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .container {
+            position: relative;
+        }
+        .hero .row {
+            margin: 0;
+        }
+        .hero .col-lg-7 {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-image-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 42%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1;
+        }
+        .hero-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 991px) {
+            .hero {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 0;
+            }
+            .hero .container {
+                order: 1;
+                padding-bottom: 0;
+            }
+            .hero-image-wrapper {
+                position: relative;
+                order: 2;
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 1rem;
+            }
+            .hero-image {
+                width: 100%;
+                height: auto;
+                max-height: 400px;
+                object-fit: contain;
+            }
+        }
+        .platform-card { margin-bottom: 30px; }
+        .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .screenshot-desktop { border: 2px solid #495057; }
+        .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        .platform-card .row.g-2 .col-6,
+        .platform-card .row.g-2 .col-4,
+        .platform-card .row.g-2 .col-12 {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .platform-card .row.g-2 .col-6:nth-child(2) {
+            justify-content: flex-end;
+        }
+        .platform-card .row.g-2 .col-4 {
+            justify-content: center;
+        }
+        .platform-card .btn-primary {
+            min-width: 140px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .platform-card .btn-outline-secondary {
+            min-width: 120px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .platform-card .btn-outline-primary {
+            min-width: 140px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .platform-card .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        @media (max-width: 576px) {
+            .platform-card .row.g-2 {
+                flex-direction: column;
+            }
+            .platform-card .row.g-2 .col-6,
+            .platform-card .row.g-2 .col-4,
+            .platform-card .row.g-2 .col-12 {
+                width: 100%;
+                max-width: 100%;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+            }
+            .platform-card .row.g-2 .col-6:last-child,
+            .platform-card .row.g-2 .col-4:last-child {
+                margin-bottom: 0;
+            }
+            .platform-card .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+        @media (min-width: 577px) and (max-width: 768px) {
+            .platform-card .row.g-2 .col-4 .btn {
+                min-width: 110px;
+                padding: 0.5rem 1rem;
+            }
+        }
+        .badge-custom { font-size: 0.9rem; }
+        .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
+        .process-section .row { align-items: stretch; }
+        .process-card { background: #fff; border-radius: 12px; border-left: 4px solid #0d6efd; padding: 20px; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); position: relative; }
+        .process-card.ai { border-left-color: #6f42c1; }
+        .process-card .lane-label { position: absolute; top: -14px; left: 16px; background: #0d6efd; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .process-card.ai .lane-label { background: #6f42c1; }
+        .process-card h3, .process-card h4, .process-card h5 { margin-top: 12px; }
+        .process-card ul { padding-left: 18px; }
+        .process-connector { position: relative; padding-top: 20px; margin-bottom: 40px; }
+        .process-connector::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(180deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)); display: none; }
+        @media (min-width: 992px) {
+            .process-connector::after { display: block; }
+        }
+        .contribution-legend .badge { font-size: 0.8rem; }
+        .badge-ai { background: #6f42c1; color: #fff; }
+
+        .timeline-toggle-wrapper {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        .timeline-toggle-btn {
+            min-width: 200px;
+            padding: 12px 32px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .timeline-toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        .timeline-toggle-btn:hover::before {
+            left: 100%;
+        }
+        .timeline-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .process-section {
+            position: relative;
+        }
+        .process-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(180deg, rgba(248, 249, 250, 0) 0%, rgba(248, 249, 250, 0.7) 50%, rgba(248, 249, 250, 1) 100%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+        }
+        .process-section:has(#processTimeline:not(.show))::after {
+            opacity: 1;
+        }
+        @supports not selector(:has(*)) {
+            .process-section::after {
+                opacity: 1;
+            }
+        }
+        @keyframes subtle-pulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 4px 16px rgba(13, 110, 253, 0.2);
+            }
+        }
+        .process-section:has(#processTimeline:not(.show)) .timeline-toggle-btn {
+            animation: subtle-pulse 3s ease-in-out infinite;
+        }
+
+        .grade-a { background-color: #28a745; color: white; font-weight: 500; }
+        .grade-b-plus { background-color: #0d6efd; color: white; font-weight: 500; }
+        .grade-b { background-color: #007bff; color: white; font-weight: 500; }
+        .grade-b-minus { background-color: #6c8ec7; color: white; font-weight: 500; }
+        .grade-c-plus { background-color: #ffc107; color: #000; font-weight: 500; }
+        .grade-c { background-color: #fd7e14; color: white; font-weight: 500; }
+        .grade-c-minus { background-color: #fd7e14; color: white; font-weight: 500; opacity: 0.85; }
+        .grade-d { background-color: #ff4500; color: white; font-weight: 500; }
+        .grade-f { background-color: #dc3545; color: white; font-weight: 500; }
+
+        .concept-chosen {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #198754 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        [data-day-nav] .card {
+            max-width: 100%;
+        }
+        @media (min-width: 768px) {
+            [data-day-nav] .card {
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        [data-day-nav] .list-group-item {
+            padding: 0.75rem 1rem;
+        }
+        @media (max-width: 767px) {
+            [data-day-nav] .list-group-item {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        footer {
+            font-size: 0.9rem;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 767px) {
+            footer {
+                padding: 20px 0;
+                font-size: 0.85rem;
+            }
+            footer p {
+                margin-bottom: 0.75rem;
+            }
+            footer p:last-child {
+                line-height: 1.6;
+            }
+            footer a {
+                display: inline-block;
+                margin: 0 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Day Navigation -->
+    <section data-day-nav-top>
+        <div class="text-center text-muted py-2">Loading navigation…</div>
+    </section>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-image-wrapper">
+            <img src="google-ai-studio/google-ai-studio-screenshot.png" alt="Google AI Studio - Day 24 Winner" class="hero-image">
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1>Day 24: Places and their names</h1>
+                    <p class="lead">An interactive map displaying major world cities with labels in multiple languages, showcasing how place names appear in different scripts and cultures.</p>
+                    <p><strong>Date:</strong> November 24, 2025 | <strong>By:</strong> Danny Bauman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Quick Stats -->
+        <div class="row mb-5 g-3">
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-primary">6</h3>
+                        <p class="mb-0">Platforms Tested</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">4</h3>
+                        <p class="mb-0">Success (67%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-warning">2</h3>
+                        <p class="mb-0">Partial Success (33%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-danger">0</h3>
+                        <p class="mb-0">Failed (0%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-info">~1 hour</h3>
+                        <p class="mb-0">Time Invested</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ideation Phase -->
+        <section class="mb-5">
+            <h2 class="mb-4">Ideation Phase</h2>
+            <p class="lead">For Day 24's "Places and their names" theme, I asked Claude, ChatGPT, and Gemini for concepts focused on toponymy—fonts, label placement, languages, and name meanings. All three models provided creative and straightforward options. ChatGPT's "Multilingual City Labels Map" won out for its simplicity, visual appeal, and direct connection to the theme.</p>
+
+            <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Where I Redirected The Prompt</h5>
+                    <ul class="small mb-0">
+                        <li>Emphasized toponymy focus (fonts, labels, languages, meanings) rather than just place name data</li>
+                        <li>Selected the straightforward multilingual approach over literal translation or suffix pattern concepts</li>
+                        <li>Chose concept that works well across platforms without requiring complex data processing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+                <div class="col">
+                    <div class="card h-100 concept-chosen">
+                        <div class="card-header bg-success text-white">
+                            <strong>ChatGPT (GPT-5 Thinking) ⭐ Chosen</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Multilingual City Labels Map</h5>
+                            <p class="small mb-2">Interactive map displaying major world cities with labels in multiple languages (English, local, French, Arabic). Users switch between languages to see how place names appear in different scripts.</p>
+                            <p class="small mb-0 text-muted">Chosen: Simple yet visually compelling, works well across platforms, directly addresses toponymy theme.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header text-white" style="background-color: #fd7e14;">
+                            <strong>Claude.ai (Sonnet 4.5)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Lost in Translation</h5>
+                            <p class="small mb-2">Map where place names are replaced with literal English translations (e.g., "Black Pool" for Blackpool, "Island of Seals" for Reykjavik), revealing hidden descriptive poetry in toponyms.</p>
+                            <p class="small mb-0 text-muted">Creative approach with etymological focus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header text-white" style="background-color: #4285f4;">
+                            <strong>Gemini (3 Pro)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">The Literal Earth</h5>
+                            <p class="small mb-2">Map where city names are replaced with literal translations (e.g., "Place of the Wild Onion" for Chicago, "Eastern Capital" for Tokyo), forcing viewers to rediscover geography through language.</p>
+                            <p class="small mb-0 text-muted">Similar to Claude's concept, focused on literal meanings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chosen Concept -->
+        <section class="mb-5">
+            <h2 class="mb-4">Chosen Concept</h2>
+            <div class="card border-primary">
+                <div class="card-body">
+                    <h4>Multilingual City Labels Map</h4>
+                    <p>An interactive map displaying major world cities with labels in multiple languages (English, local language, and chosen secondary languages like French or Arabic). Users can switch between languages to see how place names appear in different scripts and cultures.</p>
+                    <p><strong>Data Source:</strong> OpenStreetMap via Overpass API (attempted but all platforms fell back to embedded hardcoded data due to API issues)</p>
+                    <p><strong>Why chosen:</strong> Simple yet visually compelling, works well across platforms, and directly addresses the toponymy theme. The multilingual aspect showcases how the same places are named differently across cultures, making it a good fit for demonstrating fonts, label placement, and script diversity.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Prompt -->
+        <section class="mb-5">
+            <h2 class="mb-4">Implementation Prompt</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p><small>Used the same prompt across all platforms:</small></p>
+                    <pre class="bg-light p-3" style="max-height: 300px; overflow-y: auto;"><code>PROJECT: Single-page Leaflet map that displays major world cities with multilingual name variants. No backend.
+
+CORE OBJECTIVES:
+- Render ~50–100 city points with multiple name fields (default/local, English, French, Arabic or similar).
+- Let users switch or cycle visible label languages (toggle or per-city tooltip).
+- Keep UI minimal, legible, mobile-friendly; right-to-left labels render correctly when Arabic is active.
+
+DATA REQUIREMENTS:
+- Prefer live Overpass fetch for name, name:en, name:fr, name:ar (or similar). If Overpass fails or CORS blocks, skip live fetch and use the embedded fallback without throwing errors.
+- Fallback: embedded GeoJSON sample with fields: name_default, name_local, name_en, name_fr, name_ar, lat, lon, population?, source.
+- Fabricated translations are allowed but must be marked "ai-generated" in source. Surface that note in the UI footer.
+
+MAP IMPLEMENTATION:
+- Use Leaflet + a free, key-less basemap (OSM/Carto Positron). No Mapbox or paid services.
+- Labels via L.divIcon (or equivalent) with subtle color variation by language; include legend chips keyed to language colors.
+- Global language switch; optional tooltip cycling through all available names.
+- Prevent clutter at low zoom: cluster or hide labels below a set zoom threshold.
+- Attribution: include basemap + OSM credit in the footer.</code></pre>
+                    <a href="IMPLEMENTATION-PROMPT.md" class="btn btn-sm btn-outline-primary">View Full Prompt</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Results -->
+        <section class="mb-5">
+            <h2 class="mb-4">Platform Results</h2>
+
+            <!-- Success -->
+            <h3 class="mb-3">🏆 Success</h3>
+            <p class="small text-muted mb-4">Four platforms successfully created working multilingual city label maps, with Google AI Studio standing out for its advanced features including generative AI calligraphy art.</p>
+            <div class="row">
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #4285f4; color: white;">
+                            <strong>Google AI Studio Apps</strong>
+                            <span class="badge grade-a">Grade A-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-primary" href="https://polyglot-atlas-903076358991.us-west1.run.app/" target="_blank" rel="noopener">Live Demo</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="google-ai-studio/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="google-ai-studio/google-ai-studio-screenshot.png" alt="Google AI Studio Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="google-ai-studio/google-ai-studio-screenshot-mobile.png" alt="Google AI Studio Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~20 min</p>
+                            <p><strong>Specialty:</strong> Generative AI calligraphy art, country masking with textures, dual-source data, intelligent caching, spatial deduplication</p>
+                            <p class="small"><strong>Why Grade A-:</strong> Strong implementation that went beyond the basic requirements. Built sophisticated map with dual-source data handling, generative AI calligraphy art for cities (using Gemini's built-in API), country masking with Natural Earth GeoJSON and SVG patterns, intelligent caching with JPEG compression, and spatial deduplication. Required minimal fixes, mostly feature additions like more cities/languages and image generation refinement. The image generation feature is unique to Gemini and showcases its built-in API key access for dynamic requests.</p>
+                            <p class="small"><strong>AI role:</strong> Generated complete implementation including advanced features. Handled complex country masking, caching logic, and Gemini API integration for calligraphy art generation.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Added more cities and languages, refined prompts for image generation, implemented country masking feature, tested and verified image generation for multiple cities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #4285f4; color: white;">
+                            <strong>Gemini Canvas</strong>
+                            <span class="badge grade-b">Grade B</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-primary" href="https://gemini.google.com/share/cb1d48328092" target="_blank" rel="noopener">Canvas</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="gemini-canvas/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="gemini-canvas/gemini-canvas-screenshot.png" alt="Gemini Canvas Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="gemini-canvas/gemini-canvas-screenshot-mobile.png" alt="Gemini Canvas Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~15 min</p>
+                            <p><strong>Specialty:</strong> Solid first-try implementation, clean UI</p>
+                            <p class="small"><strong>Why Grade B:</strong> Worked first try, solid implementation with clean UI. Added more cities and languages per request without issues. Nothing special but reliable and functional.</p>
+                            <p class="small"><strong>AI role:</strong> Generated working map on first attempt, expanded city and language sets when requested.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Asked to add more cities and languages, which it did successfully.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #7c3aed; color: white;">
+                            <strong>Base44</strong>
+                            <span class="badge grade-b-minus">Grade B-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-primary" href="https://global-explorer-36a0a439.base44.app/" target="_blank" rel="noopener">Live Demo</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="base44/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="base44/base44-screenshot.png" alt="Base44 Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="base44/base44-screenshot-mobile.png" alt="Base44 Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~20 min</p>
+                            <p><strong>Specialty:</strong> Good first-try implementation</p>
+                            <p class="small"><strong>Why Grade B-:</strong> Did pretty well on its first try. Minor UI issues with city icons (weird ovals) and one unclickable UI element, but overall functional and clean.</p>
+                            <p class="small"><strong>AI role:</strong> Generated working map implementation on first attempt.</p>
+                            <p class="small"><strong>Human tweaks:</strong> None - worked well enough without intervention.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #000; color: white;">
+                            <strong>V0.dev</strong>
+                            <span class="badge grade-c">Grade C</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-primary" href="https://v0-multilingual-city-map.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="v0-dev/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="v0-dev/v0-screenshot.png" alt="V0.dev Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="v0-dev/v0-screenshot-mobile.png" alt="V0.dev Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~25 min</p>
+                            <p><strong>Specialty:</strong> Usable after fixes</p>
+                            <p class="small"><strong>Why Grade C:</strong> Did ok but not great. Had a couple errors that needed auto-fixing or explicit fixing. Issues with zoom/pan and label placement were fixed, but overall implementation was less polished than others.</p>
+                            <p class="small"><strong>AI role:</strong> Generated initial implementation with some errors, fixed issues when prompted.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Auto-fixed or told it to fix errors, fixed zoom/pan and label placement issues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partial Success -->
+            <h3 class="mb-3 mt-5">⚠️ Partial Success</h3>
+            <p class="small text-muted mb-4">Two platforms got close but had significant issues that prevented full functionality.</p>
+            <div class="row">
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>Claude Artifacts</strong>
+                            <span class="badge grade-c-minus">Grade C-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-primary" href="https://claude.ai/public/artifacts/8c39b4b6-4d17-47d6-adf6-6962b2801013" target="_blank" rel="noopener">Artifact</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="claude-artifacts/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="claude-artifacts/claude-artifacts-screenshot.png" alt="Claude Artifacts Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="claude-artifacts/claude-artifacts-screenshot-mobile.png" alt="Claude Artifacts Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~20 min</p>
+                            <p><strong>Specialty:</strong> Basic functionality worked initially</p>
+                            <p class="small"><strong>Why Grade C-:</strong> Basic functionality worked, but got stuck at loading when trying to fetch data from API. The fallback to embedded data should have worked but the loading state never resolved.</p>
+                            <p class="small"><strong>AI role:</strong> Generated basic implementation but struggled with API data fetching logic.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Attempted to get it to fetch data from API, but it got stuck in loading state.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>ChatGPT Canvas</strong>
+                            <span class="badge grade-d">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-primary" href="https://chatgpt.com/canvas/shared/6925523b9c648191b6185f39cfd408ee" target="_blank" rel="noopener">Canvas</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="chatgpt-canvas/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="chatgpt-canvas/chatgpt-canvas-screenshot.png" alt="ChatGPT Canvas Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="chatgpt-canvas/chatgpt-canvas-screenshot-mobile.png" alt="ChatGPT Canvas Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~20 min</p>
+                            <p><strong>Specialty:</strong> Got UI up and running</p>
+                            <p class="small"><strong>Why Grade D:</strong> Close to working, got UI up and running, but buggy and eventually started outputting JSON in UI which took over most of the interface. The map functionality was there but the UI corruption made it unusable.</p>
+                            <p class="small"><strong>AI role:</strong> Generated initial UI and map structure but introduced bugs that corrupted the interface.</p>
+                            <p class="small"><strong>Human tweaks:</strong> None - issues appeared after initial generation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Collaboration Snapshot -->
+        <section class="mb-5">
+            <h2 class="mb-4">AI Collaboration Snapshot</h2>
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <strong>Where I Guided</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                <li>Selected multilingual city labels concept over literal translation approaches</li>
+                                <li>Added more cities and languages to Gemini Canvas and AI Studio implementations</li>
+                                <li>Refined prompts for AI Studio's image generation feature</li>
+                                <li>Implemented country masking feature request for AI Studio</li>
+                                <li>Fixed errors and zoom/pan issues in V0.dev</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header badge-ai text-white">
+                            <strong>Where AI Accelerated</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                <li>Google AI Studio: Generated sophisticated implementation with dual-source data, generative AI calligraphy art, country masking, and caching</li>
+                                <li>Gemini Canvas: Created working map on first try, easily expanded cities and languages</li>
+                                <li>Base44: Generated solid implementation on first attempt</li>
+                                <li>All platforms: Successfully handled Overpass API failure and fell back to embedded data gracefully</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="mb-5 process-section">
+            <h2 class="mb-3">Process Timeline</h2>
+            <p class="text-muted mb-3">Left lane = Me. Right lane = AI. Expand when you want the play-by-play.</p>
+
+            <div class="contribution-legend mb-3">
+                <span class="badge bg-primary me-2">Me</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="timeline-toggle-wrapper">
+                <button class="btn btn-outline-secondary timeline-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
+                    Show Timeline
+                </button>
+            </div>
+
+            <div class="process-connector mb-3">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Me</span>
+                            <h4>Ideation Vetting</h4>
+                            <ul>
+                                <li>Created ideation prompt focused on toponymy (fonts, labels, languages, meanings)</li>
+                                <li>Requested 2 concepts per platform (creative + straightforward)</li>
+                                <li>Reviewed responses from Claude, ChatGPT, and Gemini</li>
+                                <li>Selected ChatGPT's "Multilingual City Labels Map" for simplicity and visual appeal</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            <ul>
+                                <li>Claude: "Lost in Translation" (literal meanings) + "What's in a Name?" (suffix patterns)</li>
+                                <li>ChatGPT: "Literal Place-Name Meanings" + "Multilingual City Labels Map" (chosen)</li>
+                                <li>Gemini: "The Literal Earth" (literal translations) + "The War of Suffixes" (suffix patterns)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse" id="processTimeline">
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Prompt Crafting</h4>
+                                <ul>
+                                    <li>Created implementation prompt for multilingual city labels map</li>
+                                    <li>Specified Leaflet.js, embedded data fallback, language switching UI</li>
+                                    <li>Emphasized mobile-friendly design and RTL support for Arabic</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Prompt Drafts</h4>
+                                <ul>
+                                    <li>Cursor: Created IMPLEMENTATION-PROMPT.md with full specifications</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Launch & Supervision</h4>
+                                <ul>
+                                    <li>Launched prompts on 6 platforms simultaneously</li>
+                                    <li>Worked on initial implementations on first day</li>
+                                    <li>Wrapped up next day with fixes and feature additions (mostly AI Studio)</li>
+                                    <li>Added more cities/languages to Gemini Canvas and AI Studio</li>
+                                    <li>Requested image generation and country masking features for AI Studio</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Generated Outputs</h4>
+                                <ul>
+                                    <li>Google AI Studio: Generated sophisticated map with advanced features</li>
+                                    <li>Gemini Canvas: Created working map on first try</li>
+                                    <li>Base44: Solid first-try implementation</li>
+                                    <li>V0.dev: Generated map but with errors needing fixes</li>
+                                    <li>Claude Artifacts: Basic implementation but got stuck on API fetch</li>
+                                    <li>ChatGPT Canvas: Got UI working but introduced bugs</li>
+                                    <li>All platforms: Attempted Overpass API, all fell back to embedded data</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>QA & Edits</h4>
+                                <ul>
+                                    <li>Fixed errors and zoom/pan issues in V0.dev</li>
+                                    <li>Refined image generation prompts for AI Studio</li>
+                                    <li>Tested image generation for multiple cities in AI Studio</li>
+                                    <li>Captured screenshots showing image generation capability</li>
+                                    <li>Graded all implementations based on functionality and polish</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>AI Fixes & Suggestions</h4>
+                                <ul>
+                                    <li>V0.dev: Fixed errors and zoom/pan issues when prompted</li>
+                                    <li>AI Studio: Implemented country masking and refined image generation</li>
+                                    <li>All platforms: Successfully handled Overpass API failure with graceful fallback</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Documentation & Storytelling</h4>
+                                <ul>
+                                    <li>Updated LAUNCH-TRACKER.md with all platform results</li>
+                                    <li>Documented Overpass API failure pattern across all platforms</li>
+                                    <li>Captured screenshots for all working platforms</li>
+                                    <li>Highlighted AI Studio's unique image generation feature</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Supporting Assets</h4>
+                                <ul>
+                                    <li>Cursor: Captured desktop and mobile screenshots for all platforms</li>
+                                    <li>Cursor: Automated image generation clicks for AI Studio screenshots</li>
+                                    <li>Cursor: Updated documentation and created HTML showcase page</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insights -->
+        <section class="mb-5">
+            <h2 class="mb-4">Key Insights</h2>
+
+            <div class="insight-box">
+                <h5>✅ What Worked</h5>
+                <ul>
+                    <li><strong>Google AI Studio performance:</strong> Generated sophisticated implementation with unique features like generative AI calligraphy art, country masking, and intelligent caching</li>
+                    <li><strong>Consistent fallback handling:</strong> All platforms gracefully handled Overpass API failure and fell back to embedded data</li>
+                    <li><strong>Simple concept success:</strong> The multilingual city labels concept worked well across most platforms</li>
+                    <li><strong>Gemini Canvas reliability:</strong> Solid first-try implementation, easy to expand</li>
+                    <li><strong>Base44 consistency:</strong> Another good first-try result, minor UI issues but functional</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>❌ What Didn't</h5>
+                <ul>
+                    <li><strong>Overpass API universal failure:</strong> All platforms attempted Overpass API but none succeeded - curious why even Gemini 3 didn't get it working</li>
+                    <li><strong>ChatGPT Canvas UI corruption:</strong> Started outputting JSON in UI which took over the interface</li>
+                    <li><strong>Claude Artifacts loading state:</strong> Got stuck in loading state when trying to fetch API data</li>
+                    <li><strong>V0.dev initial errors:</strong> Required multiple fixes for errors, zoom/pan, and label positioning</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>🎉 Surprises</h5>
+                <ul>
+                    <li><strong>AI Studio's image generation:</strong> Unique feature only possible with Gemini's built-in API key access - generated calligraphy art for cities</li>
+                    <li><strong>Country masking feature:</strong> AI Studio implemented sophisticated country masking with Natural Earth GeoJSON and SVG patterns</li>
+                    <li><strong>High success rate:</strong> 67% success rate (4/6) despite API failures - good error handling across platforms</li>
+                    <li><strong>Two-day completion:</strong> Work spread over two days allowed for more polish on AI Studio version</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>📚 Lessons for Next Time</h5>
+                <ul>
+                    <li><strong>Overpass API alternatives:</strong> Consider providing pre-processed data or alternative APIs if Overpass consistently fails</li>
+                    <li><strong>AI Studio's unique capabilities:</strong> Leverage Gemini's built-in API for image generation and other advanced features</li>
+                    <li><strong>Error handling matters:</strong> Platforms that gracefully handle API failures score higher than those that get stuck</li>
+                    <li><strong>Simple concepts work:</strong> The straightforward multilingual labels approach worked better than complex data processing</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Editorial -->
+        <section class="mb-5">
+            <h2 class="mb-4">Editorial</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h4>Names Across Cultures</h4>
+                    <p>Day 24's theme "Places and their names" invited us to explore toponymy—the study of place names. It's a theme that touches on fonts, label placement, languages, and the meanings embedded in how we name places. The multilingual city labels concept worked well: simple enough to work across platforms, visually compelling, and directly connected to the theme.</p>
+
+                    <p>What surprised me was the universal failure of the Overpass API. Every platform attempted to fetch multilingual city names from OpenStreetMap's Overpass API, and every platform failed. They all gracefully fell back to embedded data, which is good error handling, but it's curious why even Gemini 3 couldn't get Overpass working. Is it a CORS issue? A query syntax problem? Something else? The consistent failure pattern suggests a systemic issue rather than platform-specific problems.</p>
+
+                    <p>Google AI Studio stood out this day. Not just for getting the core map working (which it did well), but for going beyond the basics with features that showcase what's uniquely possible with Gemini. The generative AI calligraphy art—where clicking on a city generates script art for that city's name—is something only Gemini can do easily because of its built-in API key access. The country masking feature, where generated images fill country shapes as textures, adds a visual layer that makes the map more interesting.</p>
+
+                    <p>The work spread over two days, which allowed for more polish on the AI Studio version. I spent time refining the image generation prompts, testing it on multiple cities, and ensuring the screenshots captured this capability. It's a feature worth highlighting because it demonstrates what's possible when a platform has native access to generative AI capabilities.</p>
+
+                    <p>Four out of six platforms succeeded, which is a strong result. The two partial successes (Claude Artifacts and ChatGPT Canvas) got close but had issues that prevented full functionality. Claude Artifacts got stuck in a loading state when trying to fetch API data, while ChatGPT Canvas introduced bugs that corrupted the interface. The successful platforms all created functional maps, with varying levels of polish. Base44 had minor UI quirks (weird oval icons) and V0.dev needed some fixes, but they all produced working maps.</p>
+
+                    <p>Toponymy is about more than just names—it's about how language shapes our understanding of place. Seeing "Moscow" switch to "Москва" to "Moscou" to "موسكو" as you toggle languages reveals how the same place exists differently in different linguistic contexts. The map becomes a tool for exploring these cultural layers, one language toggle at a time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day Navigation -->
+        <section class="mb-5" data-day-nav>
+            <div class="text-center text-muted">Loading day navigator…</div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p><strong>#30DayMapChallenge 2025</strong></p>
+            <p>Day 24 of 30 | Theme: Places and their names</p>
+            <p class="mb-0">
+                <a href="../../README.md" class="text-white">Project Home</a> |
+                <a href="README.md" class="text-white">Day Documentation</a> |
+                <a href="https://github.com/dannybauman/30-day-map-challenge-2025" class="text-white">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Top navigation script -->
+    <script src="../../site-assets/js/day-navigation.js" data-day="24-places-and-their-names" data-target="[data-day-nav-top]" data-manifest="../../days.json" data-base-path="../../" defer></script>
+    <!-- Bottom navigation script -->
+    <script src="../../site-assets/js/day-navigation.js" data-day="24-places-and-their-names" data-target="[data-day-nav]" data-manifest="../../days.json" data-base-path="../../" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
