@@ -77,9 +77,11 @@ Vibe coding is just one way to use AI to help write software. People are inventi
 ## AI Tools Strategy (Multi-Platform Approach)
 
 ### Ideation Models (Use 3 for variety)
-- **Anthropic Claude Sonnet 4.5**
-- **OpenAI GPT-5 Thinking**
-- **Google Gemini 2.5 Pro**
+- **Anthropic Claude Opus 4.5**
+- **OpenAI GPT-5.1 Thinking**
+- **Google Gemini 3 Pro**
+
+_Note_: These are the current picks because newer versions landed mid-challenge. We adapt to the latest stable options as the 30 days progress to keep comparisons current.
 
 ### Implementation Platforms (Use 5-15 Daily)
 

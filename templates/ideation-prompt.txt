@@ -5,9 +5,9 @@ Today's #30DayMapChallenge theme is: [THEME NAME]
 
 Theme description: [PASTE DESCRIPTION FROM THEMES.MD]
 
-Please give me 5 map concepts for this theme:
-- 3 creative/unusual approaches
-- 2 straightforward/classic approaches
+Please give me 2 map concepts for this theme:
+- 1 creative/unusual approach
+- 1 straightforward/classic approach
 
 For each concept, include:
 1. What the map shows (1-2 sentences)
@@ -26,4 +26,3 @@ Consider:
 - Can be implemented by AI coding platforms
 
 Format your response as a numbered list for easy scanning.
-

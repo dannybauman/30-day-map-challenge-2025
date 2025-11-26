@@ -15,13 +15,15 @@ Here's my refined process after completing Day 1.
 
 1. Get ideation prompt from templates (or `maps/0X-theme/IDEATION-PROMPTS.md`)
    - **IMPORTANT: Use the SAME prompt for all 3 platforms** - this ensures fair comparison
+   - **Prompt always asks for 2 concepts total**: 1 creative/unusual, 1 straightforward/classic
    - The prompt should be identical across Claude, ChatGPT, and Gemini
    - **Do NOT include internal file structure references** (like `IDEATION-RESPONSES.md` or "HTML showcase page") in the prompt sent to AI platforms - these are workflow details for you, not creative constraints for the AI
    - **Concepts must NOT require manual work** - no manual hand-drawing, manual creation of data files in text editors, or extensive use of external tools for manual data creation (e.g., manually drawing points/lines in geojson.io). All data prep should be scriptable/automated. The goal is for AI coding platforms to generate everything.
 2. Paste the **same prompt** into web versions:
-   - Claude.ai (Anthropic Claude Sonnet 4.5)
-   - ChatGPT (OpenAI GPT-5 Thinking)
-   - Gemini (Google Gemini 2.5 Pro)
+   - Claude.ai (Anthropic Claude Opus 4.5)
+   - ChatGPT (OpenAI GPT-5.1 Thinking)
+   - Gemini (Google Gemini 3 Pro)
+   - _Note: Model versions can change during the 30 days as new releases land; we use the latest stable trio to keep comparisons current._
 3. Review 6 ideas (2 from each platform)
 4. **Paste back full outputs from all 3 platforms into Cursor**
 5. Cursor logs all ideas to `maps/0X-theme/IDEATION-RESPONSES.md`

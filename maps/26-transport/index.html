@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 26: Transport | #30DayMapChallenge 2025</title>
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 0 0 20px 0; background: #f8f9fa; }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .container {
+            position: relative;
+        }
+        .hero .row {
+            margin: 0;
+        }
+        .hero .col-lg-7 {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-image-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 42%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1;
+        }
+        .hero-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 991px) {
+            .hero {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 0;
+            }
+            .hero .container {
+                order: 1;
+                padding-bottom: 0;
+            }
+            .hero-image-wrapper {
+                position: relative;
+                order: 2;
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 1rem;
+            }
+            .hero-image {
+                width: 100%;
+                height: auto;
+                max-height: 400px;
+                object-fit: contain;
+            }
+        }
+        .platform-card { margin-bottom: 30px; }
+        .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .screenshot-desktop { border: 2px solid #495057; }
+        .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        .platform-card .row.g-2 .col-6,
+        .platform-card .row.g-2 .col-4,
+        .platform-card .row.g-2 .col-12 {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .platform-card .row.g-2 .col-6:nth-child(2) {
+            justify-content: flex-end;
+        }
+        .platform-card .row.g-2 .col-4 {
+            justify-content: center;
+        }
+        .platform-card .btn-primary {
+            min-width: 140px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .platform-card .btn-outline-secondary {
+            min-width: 120px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .platform-card .btn-outline-primary {
+            min-width: 140px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .platform-card .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        @media (max-width: 576px) {
+            .platform-card .row.g-2 {
+                flex-direction: column;
+            }
+            .platform-card .row.g-2 .col-6,
+            .platform-card .row.g-2 .col-4,
+            .platform-card .row.g-2 .col-12 {
+                width: 100%;
+                max-width: 100%;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+            }
+            .platform-card .row.g-2 .col-6:last-child,
+            .platform-card .row.g-2 .col-4:last-child {
+                margin-bottom: 0;
+            }
+            .platform-card .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+        @media (min-width: 577px) and (max-width: 768px) {
+            .platform-card .row.g-2 .col-4 .btn {
+                min-width: 110px;
+                padding: 0.5rem 1rem;
+            }
+        }
+        .badge-custom { font-size: 0.9rem; }
+        .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
+        footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
+        .process-section .row { align-items: stretch; }
+        .process-card { background: #fff; border-radius: 12px; border-left: 4px solid #0d6efd; padding: 20px; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.08); position: relative; }
+        .process-card.ai { border-left-color: #6f42c1; }
+        .process-card .lane-label { position: absolute; top: -14px; left: 16px; background: #0d6efd; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .process-card.ai .lane-label { background: #6f42c1; }
+        .process-card h3, .process-card h4, .process-card h5 { margin-top: 12px; }
+        .process-card ul { padding-left: 18px; }
+        .process-connector { position: relative; padding-top: 20px; margin-bottom: 40px; }
+        .process-connector::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: linear-gradient(180deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)); display: none; }
+        @media (min-width: 992px) {
+            .process-connector::after { display: block; }
+        }
+        .contribution-legend .badge { font-size: 0.8rem; }
+        .badge-ai { background: #6f42c1; color: #fff; }
+
+        .timeline-toggle-wrapper {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        .timeline-toggle-btn {
+            min-width: 200px;
+            padding: 12px 32px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .timeline-toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        .timeline-toggle-btn:hover::before {
+            left: 100%;
+        }
+        .timeline-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .process-section {
+            position: relative;
+        }
+        .process-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(180deg, rgba(248, 249, 250, 0) 0%, rgba(248, 249, 250, 0.7) 50%, rgba(248, 249, 250, 1) 100%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+        }
+        .process-section:has(#processTimeline:not(.show))::after {
+            opacity: 1;
+        }
+        @supports not selector(:has(*)) {
+            .process-section::after {
+                opacity: 1;
+            }
+        }
+        @keyframes subtle-pulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 4px 16px rgba(13, 110, 253, 0.2);
+            }
+        }
+        .process-section:has(#processTimeline:not(.show)) .timeline-toggle-btn {
+            animation: subtle-pulse 3s ease-in-out infinite;
+        }
+
+        .grade-a { background-color: #28a745; color: white; font-weight: 500; }
+        .grade-b-plus { background-color: #0d6efd; color: white; font-weight: 500; }
+        .grade-b { background-color: #007bff; color: white; font-weight: 500; }
+        .grade-b-minus { background-color: #6c8ec7; color: white; font-weight: 500; }
+        .grade-c-plus { background-color: #ffc107; color: #000; font-weight: 500; }
+        .grade-c { background-color: #fd7e14; color: white; font-weight: 500; }
+        .grade-c-minus { background-color: #fd7e14; color: white; font-weight: 500; opacity: 0.85; }
+        .grade-d { background-color: #ff4500; color: white; font-weight: 500; }
+        .grade-f { background-color: #dc3545; color: white; font-weight: 500; }
+
+        .concept-chosen {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #fd7e14 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        [data-day-nav] .card {
+            max-width: 100%;
+        }
+        @media (min-width: 768px) {
+            [data-day-nav] .card {
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        [data-day-nav] .list-group-item {
+            padding: 0.75rem 1rem;
+        }
+        @media (max-width: 767px) {
+            [data-day-nav] .list-group-item {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        footer {
+            font-size: 0.9rem;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 767px) {
+            footer {
+                padding: 20px 0;
+                font-size: 0.85rem;
+            }
+            footer p {
+                margin-bottom: 0.75rem;
+            }
+            footer p:last-child {
+                line-height: 1.6;
+            }
+            footer a {
+                display: inline-block;
+                margin: 0 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Day Navigation -->
+    <section data-day-nav-top>
+        <div class="text-center text-muted py-2">Loading navigation…</div>
+    </section>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-image-wrapper">
+            <img src="google-ai-studio/screenshot.png" alt="Google AI Studio - Day 26 Winner" class="hero-image">
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1>Day 26: Transport</h1>
+                    <p class="lead">A map showing when parts of a city lose transit access over a 24-hour cycle, revealing transit deserts that form as service stops throughout the day.</p>
+                    <p><strong>Date:</strong> November 26, 2025 | <strong>By:</strong> Danny Bauman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Quick Stats -->
+        <div class="row mb-5 g-3">
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-primary">6</h3>
+                        <p class="mb-0">Platforms Tested</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-success">3</h3>
+                        <p class="mb-0">Success (50%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-warning">3</h3>
+                        <p class="mb-0">Partial Success (50%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-danger">0</h3>
+                        <p class="mb-0">Failed (0%)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="text-info">~1.5 hrs</h3>
+                        <p class="mb-0">Time Invested</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ideation Phase -->
+        <section class="mb-5">
+            <h2 class="mb-4">Ideation Phase</h2>
+            <p class="lead">For Day 26's "Transport" theme, I asked ChatGPT, Claude, and Gemini for concepts focused on transit networks, mobility patterns, and temporal aspects of transportation. All three models provided creative and straightforward options. Claude's "Transit Desert Clock" won out for its strong narrative about temporal inequality and its direct connection to how transit access changes throughout the day.</p>
+
+            <div class="card border-0 border-start border-4 border-primary shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Where I Redirected The Prompt</h5>
+                    <ul class="small mb-0">
+                        <li>Selected Claude's transit desert concept over other approaches (city pulse, network connectivity, vertical mobility)</li>
+                        <li>Chose concept that emphasizes temporal inequality and when communities lose access</li>
+                        <li>Focused on map-first visualization rather than clock-face UI</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4 row-cols-1 row-cols-md-2 row-cols-lg-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">
+                            <strong>ChatGPT (GPT-5 Thinking)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">The City's Pulse: 24 Hours of Movement</h5>
+                            <p class="small mb-2">An animated map visualizing how mobility "breathes" over a day: roads glow brighter during rush hour, rail lines pulse when trains run, and quiet suburbs fade at night.</p>
+                            <p class="small mb-0 text-muted">Creative approach focusing on the rhythm of city movement.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 concept-chosen">
+                        <div class="card-header text-white" style="background-color: #fd7e14;">
+                            <strong>Claude.ai (Sonnet 4.5) ⭐ Chosen</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Transit Desert Clock</h5>
+                            <p class="small mb-2">An animated visualization showing how transit accessibility changes throughout the day. Areas "light up" during service hours and fade to dark during transit deserts, revealing which neighborhoods lose mobility access and when.</p>
+                            <p class="small mb-0 text-muted">Chosen: Strong narrative about temporal inequality, emotionally resonant, works well with GTFS data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header text-white" style="background-color: #4285f4;">
+                            <strong>Gemini (3 Pro)</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="mb-2">Vertical Mobility</h5>
+                            <p class="small mb-2">A map displaying "floating" transport lines (cable cars, chair lifts, gondolas) and steep funicular railways, focusing on how we overcome elevation in mountainous regions or hilly cities.</p>
+                            <p class="small mb-0 text-muted">Creative approach highlighting unique transport infrastructure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chosen Concept -->
+        <section class="mb-5">
+            <h2 class="mb-4">Chosen Concept</h2>
+            <div class="card border-primary">
+                <div class="card-body">
+                    <h4>Transit Desert Clock</h4>
+                    <p>A map-first visualization showing when parts of a city lose transit access over a 24-hour cycle. As the hour slider advances, areas with active service stay lit while areas without service dim and get labeled as "transit deserts." The map reveals temporal inequality and when communities become stranded without transit access.</p>
+                    <p><strong>Data Source:</strong> TriMet GTFS static feed (https://developer.trimet.org/schedule/gtfs.zip) with embedded fallback sample data for offline functionality</p>
+                    <p><strong>Why chosen:</strong> Flips the typical transit map narrative to emphasize temporal inequality. The concept is emotionally resonant, works well with standardized GTFS data, and tells a clear story about when and where communities lose mobility access.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Prompt -->
+        <section class="mb-5">
+            <h2 class="mb-4">Implementation Prompt</h2>
+            <div class="card">
+                <div class="card-body">
+                    <p><small>Used the same prompt across all platforms:</small></p>
+                    <pre class="bg-light p-3" style="max-height: 300px; overflow-y: auto;"><code>We are building the Transit Desert Clock as a map-first experience (no clock-face UI). Keep it fast to load, single-page HTML/CSS/JS, no build steps. Use Leaflet + plain JS. Avoid API keys.
+
+Map shows when parts of a city lose transit access over a 24-hour cycle. Time is the storytelling layer: as the hour slider/animation advances, areas with active service stay lit; areas without service dim and get labeled as "transit deserts."
+
+City: Portland, OR metro (TriMet rail/bus subset). Primary data: GTFS static feed with embedded fallback sample data. Map-first UI with Leaflet basemap, hour slider (0-23) + Play/Pause, desert detection with 800m buffers, metrics panel, stop detail popups, and legend.</code></pre>
+                    <a href="IMPLEMENTATION-PROMPT.md" class="btn btn-sm btn-outline-primary">View Full Prompt</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Results -->
+        <section class="mb-5">
+            <h2 class="mb-4">Platform Results</h2>
+
+            <!-- Success -->
+            <h3 class="mb-3">🏆 Success</h3>
+            <p class="small text-muted mb-4">Three platforms successfully created working transit desert clock visualizations, with Google AI Studio standing out for its advanced features including smooth animations and data persistence.</p>
+            <div class="row">
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #34a853; color: white;">
+                            <strong>Google AI Studio</strong>
+                            <span class="badge grade-a">Grade A-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-primary" href="https://portland-transit-desert-clock-903076358991.us-west1.run.app" target="_blank" rel="noopener">Live Demo</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="google-ai-studio/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="google-ai-studio/screenshot.png" alt="Google AI Studio Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="google-ai-studio/screenshot-mobile.png" alt="Google AI Studio Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~20 min</p>
+                            <p><strong>Specialty:</strong> Smooth animations based on data granularity, GTFS upload support, data caching, visual distinction between active/sleeping/desert zones</p>
+                            <p class="small"><strong>Why Grade A-:</strong> Strong implementation that went beyond basic requirements. Handled complex features like smooth minute-by-minute animations (not just hourly), GTFS zip upload with data persistence after refresh, and clear visual distinction between active stops (green), sleeping stops (red), and desert areas (purple). Required minimal fixes, mostly feature additions and refinements.</p>
+                            <p class="small"><strong>AI role:</strong> Generated complete implementation including advanced animation logic, GTFS parsing, data caching with localStorage, and sophisticated visual styling for different service states.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Fixed color gaps issue, requested GTFS upload functionality, asked for smooth animations based on data granularity, suggested separate color for inactive zones, requested data caching for persistence.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #4285f4; color: white;">
+                            <strong>Gemini Canvas</strong>
+                            <span class="badge grade-b">Grade B</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-primary" href="https://gemini.google.com/share/29557d2f72c0" target="_blank" rel="noopener">Canvas</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="gemini-canvas/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="gemini-canvas/screenshot.png" alt="Gemini Canvas Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="gemini-canvas/screenshot-mobile.png" alt="Gemini Canvas Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~10 min</p>
+                            <p><strong>Specialty:</strong> Reliable first-try success with fallback data, GTFS upload added successfully</p>
+                            <p class="small"><strong>Why Grade B:</strong> Worked first try with fallback data, clean implementation. Successfully added GTFS zip upload functionality when requested. Solid, functional map without major issues.</p>
+                            <p class="small"><strong>AI role:</strong> Generated working map on first attempt, successfully implemented GTFS upload feature when requested.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Requested GTFS zip file upload functionality, which was successfully added.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>v0.dev</strong>
+                            <span class="badge grade-b">Grade B</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-primary" href="https://v0-transit-desert-clock.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="v0-dev/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="v0-dev/screenshot.png" alt="v0.dev Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="v0-dev/screenshot-mobile.png" alt="v0.dev Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~10 min</p>
+                            <p><strong>Specialty:</strong> Good visual distinction between active/inactive/desert zones, GTFS upload added successfully</p>
+                            <p class="small"><strong>Why Grade B:</strong> Worked first try with fallback data. Did a nice job showing active vs inactive vs not covered at all with clear visual distinction. Successfully added GTFS upload functionality when requested.</p>
+                            <p class="small"><strong>AI role:</strong> Generated working map on first attempt with good visual design for service states, successfully implemented GTFS upload when requested.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Requested GTFS zip file upload functionality, which was successfully added.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partial Success -->
+            <h3 class="mb-3 mt-5">⚠️ Partial Success</h3>
+            <p class="small text-muted mb-4">Three platforms got close but had significant issues that prevented full functionality.</p>
+            <div class="row">
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>Claude Artifacts</strong>
+                            <span class="badge grade-c">Grade C</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-primary" href="https://claude.ai/public/artifacts/4fb00173-8f9e-43e7-8361-ac0a9ac95b44" target="_blank" rel="noopener">Artifact</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="claude-artifacts/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="claude-artifacts/screenshot.png" alt="Claude Artifacts Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="claude-artifacts/screenshot-mobile.png" alt="Claude Artifacts Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~20 min</p>
+                            <p><strong>Specialty:</strong> Cool UI design styling choices</p>
+                            <p class="small"><strong>Why Grade C:</strong> Mostly worked but took multiple fixes. Zip file upload doesn't appear in UI despite AI claiming it was fixed. Base map stopped working. Wrong colors for inactive service area. As a positive, it had cool UI design styling choices that stood out.</p>
+                            <p class="small"><strong>AI role:</strong> Generated initial implementation with nice UI styling, but struggled with multiple bugs including base map rendering and zip upload visibility.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Attempted to fix zip file upload, base map bug, and inactive service area colors, but zip upload not visible in UI and base map still broken.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>base44</strong>
+                            <span class="badge grade-c-minus">Grade C-</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-primary" href="https://transit-desert-clock-0d56e6c9.base44.app" target="_blank" rel="noopener">Live Demo</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="base44/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="base44/screenshot.png" alt="base44 Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="base44/screenshot-mobile.png" alt="base44 Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~15 min</p>
+                            <p><strong>Specialty:</strong> Almost worked but had rendering issues</p>
+                            <p class="small"><strong>Why Grade C-:</strong> Almost worked but there's an issue with the map tiles displaying properly, some UI elements overlapping, and not showing the data properly. Close to functional but rendering problems prevent full usability.</p>
+                            <p class="small"><strong>AI role:</strong> Generated implementation but struggled with map tile rendering and UI layout issues.</p>
+                            <p class="small"><strong>Human tweaks:</strong> None - issues were present from initial generation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 platform-card">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                            <strong>ChatGPT Canvas</strong>
+                            <span class="badge grade-d">Grade D</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-primary" href="https://chatgpt.com/canvas/shared/692767f664a88191bc139b8c9f513705" target="_blank" rel="noopener">Canvas</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-sm btn-outline-secondary" href="chatgpt-canvas/README.md">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-7">
+                                    <img src="chatgpt-canvas/screenshot.png" alt="ChatGPT Canvas Desktop" class="img-fluid screenshot-desktop">
+                                    <small class="text-muted d-block text-center mt-1"><strong>Desktop</strong></small>
+                                </div>
+                                <div class="col-5">
+                                    <img src="chatgpt-canvas/screenshot-mobile.png" alt="ChatGPT Canvas Mobile" class="img-fluid screenshot-mobile">
+                                    <small class="text-muted d-block text-center mt-1">Mobile</small>
+                                </div>
+                            </div>
+                            <p><strong>Time:</strong> ~15 min</p>
+                            <p><strong>Specialty:</strong> Got UI up and running</p>
+                            <p class="small"><strong>Why Grade D:</strong> Got a UI up and running, but no data or map, even after a couple tries to fix it. The interface looks complete but the core functionality (map rendering and data display) doesn't work.</p>
+                            <p class="small"><strong>AI role:</strong> Generated UI structure and controls but failed to implement working map rendering or data loading.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Attempted fixes but couldn't get map or data to display.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Collaboration Snapshot -->
+        <section class="mb-5">
+            <h2 class="mb-4">AI Collaboration Snapshot</h2>
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <strong>Where I Guided</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                <li>Selected Claude's transit desert concept over other ideation options</li>
+                                <li>Requested GTFS zip file upload functionality (Gemini, v0, AI Studio)</li>
+                                <li>Asked AI Studio to add smooth animations based on data granularity</li>
+                                <li>Suggested separate color for inactive zones that would later be filled with active color</li>
+                                <li>Requested data caching so uploaded GTFS data persists after refresh</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header badge-ai text-white">
+                            <strong>Where AI Accelerated</strong>
+                        </div>
+                        <div class="card-body">
+                            <ul class="small mb-0">
+                                <li>Google AI Studio: Generated sophisticated implementation with smooth animations, GTFS parsing, and data caching</li>
+                                <li>Gemini Canvas and v0.dev: Created working maps on first try with fallback data</li>
+                                <li>All platforms: Successfully implemented GTFS upload functionality when requested</li>
+                                <li>AI Studio: Handled complex requirements like minute-by-minute animations and localStorage persistence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="mb-5 process-section">
+            <h2 class="mb-3">Process Timeline</h2>
+            <p class="text-muted mb-3">Left lane = Me. Right lane = AI. Expand when you want the play-by-play.</p>
+
+            <div class="contribution-legend mb-3">
+                <span class="badge bg-primary me-2">Me</span>
+                <span class="badge badge-ai">AI</span>
+            </div>
+
+            <div class="timeline-toggle-wrapper">
+                <button class="btn btn-outline-secondary timeline-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#processTimeline" aria-expanded="false" aria-controls="processTimeline">
+                    Show Timeline
+                </button>
+            </div>
+
+            <div class="process-connector mb-3">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="process-card">
+                            <span class="lane-label">Me</span>
+                            <h4>Ideation Vetting</h4>
+                            <ul>
+                                <li>Created ideation prompt focused on transport networks, mobility patterns, and temporal aspects</li>
+                                <li>Requested 2 concepts per platform (creative + straightforward)</li>
+                                <li>Reviewed responses from Claude, ChatGPT, and Gemini</li>
+                                <li>Selected Claude's "Transit Desert Clock" for its strong narrative about temporal inequality</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="process-card ai">
+                            <span class="lane-label">AI</span>
+                            <h4>Model Suggestions</h4>
+                            <ul>
+                                <li>ChatGPT: "The City's Pulse: 24 Hours of Movement" + "How Connected Is Your City?"</li>
+                                <li>Claude: "Transit Desert Clock" (chosen) + "Bike Lane Network Connectivity"</li>
+                                <li>Gemini: "Vertical Mobility" (aerialways/funiculars) + "Rapid Transit Arteries"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse" id="processTimeline">
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Prompt Crafting</h4>
+                                <ul>
+                                    <li>Created implementation prompt for transit desert clock concept</li>
+                                    <li>Specified map-first UI (no clock-face), Leaflet.js, embedded fallback data</li>
+                                    <li>Emphasized Portland metro focus, 800m buffer zones, hour slider with animation</li>
+                                    <li>Included embedded sample data for offline functionality</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Prompt Drafts</h4>
+                                <ul>
+                                    <li>Cursor: Created IMPLEMENTATION-PROMPT.md with full specifications for map-first transit desert visualization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Launch & Supervision</h4>
+                                <ul>
+                                    <li>Launched prompts on 6 platforms simultaneously</li>
+                                    <li>Requested GTFS zip upload functionality for Gemini, v0, and AI Studio</li>
+                                    <li>Asked AI Studio to add smooth animations based on data granularity (not just hourly)</li>
+                                    <li>Suggested separate color for inactive zones that would later be filled with active color</li>
+                                    <li>Requested data caching for AI Studio so uploaded data persists after refresh</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Generated Outputs</h4>
+                                <ul>
+                                    <li>Google AI Studio: Generated sophisticated implementation with advanced features</li>
+                                    <li>Gemini Canvas: Created working map on first try with fallback data</li>
+                                    <li>v0.dev: Generated working map with good visual distinction between service states</li>
+                                    <li>Claude Artifacts: Created implementation but with multiple bugs</li>
+                                    <li>base44: Generated implementation but with map tile rendering issues</li>
+                                    <li>ChatGPT Canvas: Generated UI but no map or data functionality</li>
+                                    <li>All platforms: Attempted GTFS fetch, fell back to embedded sample data</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>QA & Edits</h4>
+                                <ul>
+                                    <li>Fixed color gaps issue in AI Studio implementation</li>
+                                    <li>Attempted to fix zip file upload, base map bug, and inactive service area colors in Claude Artifact (unsuccessful)</li>
+                                    <li>Graded all implementations based on functionality and polish</li>
+                                    <li>Captured screenshots for all platforms (5/6 complete, Claude pending manual capture)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>AI Fixes & Suggestions</h4>
+                                <ul>
+                                    <li>AI Studio: Successfully implemented all requested features (smooth animations, data caching, inactive zone colors)</li>
+                                    <li>Gemini Canvas and v0.dev: Successfully added GTFS upload functionality when requested</li>
+                                    <li>Claude Artifact: Claimed to fix zip upload but it wasn't visible in UI, base map still broken</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-connector">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="process-card">
+                                <span class="lane-label">Me</span>
+                                <h4>Documentation & Storytelling</h4>
+                                <ul>
+                                    <li>Updated LAUNCH-TRACKER.md with all platform results and grades</li>
+                                    <li>Documented human guidance vs AI contributions</li>
+                                    <li>Captured screenshots for 5/6 platforms (Claude blocked by Cloudflare)</li>
+                                    <li>Updated Claude Artifact grade from C+ to C after base map stopped working</li>
+                                    <li>Created HTML showcase page documenting the day's results</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="process-card ai">
+                                <span class="lane-label">AI</span>
+                                <h4>Supporting Assets</h4>
+                                <ul>
+                                    <li>Cursor: Captured desktop and mobile screenshots for all accessible platforms</li>
+                                    <li>Cursor: Updated launch tracker and documentation</li>
+                                    <li>Cursor: Generated HTML showcase page following template structure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insights -->
+        <section class="mb-5">
+            <h2 class="mb-4">Key Insights</h2>
+
+            <div class="insight-box">
+                <h5>✅ What Worked</h5>
+                <ul>
+                    <li><strong>Google AI Studio performance:</strong> Handled complex requirements very well, including smooth minute-by-minute animations, GTFS upload with data persistence, and sophisticated visual styling</li>
+                    <li><strong>First-try success rate:</strong> Gemini Canvas and v0.dev both worked on first try with fallback data, showing reliability</li>
+                    <li><strong>GTFS upload implementation:</strong> Multiple platforms successfully added GTFS zip upload functionality when requested</li>
+                    <li><strong>Visual distinction:</strong> v0.dev and AI Studio did a good job showing clear differences between active, inactive, and desert zones</li>
+                    <li><strong>Fallback data handling:</strong> All platforms gracefully handled GTFS fetch failures and fell back to embedded sample data</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>❌ What Didn't</h5>
+                <ul>
+                    <li><strong>GTFS upload visibility:</strong> Claude Artifact claimed to fix zip upload but it wasn't visible in UI, suggesting disconnect between AI's understanding and actual implementation</li>
+                    <li><strong>Base map rendering:</strong> Claude Artifact's base map stopped working, and base44 had map tile display issues</li>
+                    <li><strong>ChatGPT Canvas data loading:</strong> UI generated but no map or data functionality, even after multiple fix attempts</li>
+                    <li><strong>UI overlap issues:</strong> base44 had problems with UI elements overlapping</li>
+                    <li><strong>File upload limitations:</strong> Automated browser couldn't test file uploads due to security restrictions</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>🎉 Surprises</h5>
+                <ul>
+                    <li><strong>AI Studio's advanced features:</strong> Successfully implemented smooth animations based on data granularity, data caching, and sophisticated visual states - went beyond basic requirements</li>
+                    <li><strong>v0.dev's visual design:</strong> Did a nice job showing active vs inactive vs not covered at all with clear visual distinction</li>
+                    <li><strong>Claude's UI styling:</strong> Despite functional issues, had cool UI design styling choices that stood out</li>
+                    <li><strong>50/50 split:</strong> Exactly half succeeded and half had partial success - no complete failures</li>
+                </ul>
+            </div>
+
+            <div class="insight-box">
+                <h5>📚 Lessons for Next Time</h5>
+                <ul>
+                    <li><strong>AI Studio for complex features:</strong> When you need advanced functionality like data persistence, smooth animations, or complex state management, AI Studio handles it well</li>
+                    <li><strong>Verify AI claims:</strong> When AI says it fixed something, verify it's actually visible/working in the UI (Claude's zip upload example)</li>
+                    <li><strong>File upload testing:</strong> Automated browsers can't test file uploads - need manual testing or alternative approaches</li>
+                    <li><strong>Fallback data is essential:</strong> All platforms needed embedded fallback data since GTFS fetch failed - good to always include</li>
+                    <li><strong>Visual state clarity:</strong> Platforms that clearly distinguished between active/inactive/desert zones scored higher</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Editorial -->
+        <section class="mb-5">
+            <h2 class="mb-4">Editorial</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h4>When the City Sleeps</h4>
+                    <p>Day 26's "Transport" theme invited us to explore mobility, transit networks, and how people move through cities. Claude's "Transit Desert Clock" concept stood out immediately - it flips the typical transit map narrative. Instead of showing where you can go, it reveals when and where communities lose access. The concept is emotionally resonant because it makes temporal inequality visible: as the clock advances, some neighborhoods stay connected while others fade into transit deserts.</p>
+
+                    <p>The implementation challenge was interesting. We needed GTFS data parsing, time-based filtering, buffer calculations for coverage zones, and smooth animations. Google AI Studio handled this very well, going beyond the basics with minute-by-minute animations (not just hourly), data persistence, and sophisticated visual states. It's a reminder that when you need advanced features, some platforms are better equipped than others.</p>
+
+                    <p>What surprised me was the 50/50 split: exactly half the platforms succeeded and half had partial success. No complete failures, which is good, but also no perfect scores. The successful platforms (AI Studio, Gemini Canvas, v0.dev) all created working maps with varying levels of polish. The partial successes (Claude Artifact, base44, ChatGPT Canvas) got close but had issues that prevented full functionality.</p>
+
+                    <p>Claude Artifact was particularly interesting. It had cool UI styling choices that stood out, but it also had multiple bugs. The AI claimed to fix the zip upload, but it wasn't visible in the UI. The base map stopped working. It's a reminder that AI's understanding of "fixed" doesn't always match reality - verification matters.</p>
+
+                    <p>The file upload limitation was a practical issue. Automated browsers can't test file uploads due to security restrictions, so we couldn't verify the GTFS upload functionality in the automated environment. The platforms that added it (Gemini, v0, AI Studio) all claimed it worked, but manual testing would be needed to confirm.</p>
+
+                    <p>Transit deserts are a real problem in many cities. Late-night service cuts leave people stranded. Early-morning gaps mean workers can't get to jobs. The map makes this visible in a way that static transit maps don't. As you scrub through the hours, you see neighborhoods light up and fade out, revealing the temporal geography of access and exclusion.</p>
+
+                    <p>Three out of six platforms succeeded, which is a solid result. AI Studio's implementation stands out for going beyond the requirements, but Gemini Canvas and v0.dev also created functional, usable maps. The partial successes show that the concept is achievable, even if some platforms struggled with the implementation details.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day Navigation -->
+        <section class="mb-5" data-day-nav>
+            <div class="text-center text-muted">Loading day navigator…</div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p><strong>#30DayMapChallenge 2025</strong></p>
+            <p>Day 26 of 30 | Theme: Transport</p>
+            <p class="mb-0">
+                <a href="../../README.md" class="text-white">Project Home</a> |
+                <a href="README.md" class="text-white">Day Documentation</a> |
+                <a href="https://github.com/dannybauman/30-day-map-challenge-2025" class="text-white">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Top navigation script -->
+    <script src="../../site-assets/js/day-navigation.js" data-day="26-transport" data-target="[data-day-nav-top]" data-manifest="../../days.json" data-base-path="../../" defer></script>
+    <!-- Bottom navigation script -->
+    <script src="../../site-assets/js/day-navigation.js" data-day="26-transport" data-target="[data-day-nav]" data-manifest="../../days.json" data-base-path="../../" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

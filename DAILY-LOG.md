@@ -31,7 +31,7 @@ Quick tracker for daily progress. One line per day with key stats.
 | 23 | Nov 23 | Process | ⏳ | - | - | - | |
 | 24 | Nov 24 | Places and their names | ⏳ | - | - | - | |
 | 25 | Nov 25 | Hexagons | ⏳ | - | - | - | |
-| 26 | Nov 26 | Transport | ⏳ | - | - | - | |
+| 26 | Nov 26 | Transport | ✅ | 6 | 3 (3 success, 3 partial) | ~1.5 hrs | Transit Desert Clock. Top performer: Google AI Studio (A-). Strong: Gemini Canvas (B), v0.dev (B). Partial: Claude Artifact (C), base44 (C-), ChatGPT Canvas (D). Human check: requested GTFS uploads, smooth animations, data caching, fixed color gaps. |
 | 27 | Nov 27 | Boundaries | ⏳ | - | - | - | |
 | 28 | Nov 28 | Black | ⏳ | - | - | - | |
 | 29 | Nov 29 | Raster | ⏳ | - | - | - | |
