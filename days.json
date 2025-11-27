@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-25T21:28:39.894Z",
+  "generatedAt": "2025-11-27T00:02:14.839Z",
   "days": [
     {
       "id": "01-points",
@@ -72,6 +72,14 @@
       "theme": "Places and their names",
       "relativeUrl": "maps/24-places-and-their-names/index.html",
       "readmeUrl": "maps/24-places-and-their-names/README.md"
+    },
+    {
+      "id": "26-transport",
+      "dayNumber": 26,
+      "title": "Day 26: Transport",
+      "theme": "Transport",
+      "relativeUrl": "maps/26-transport/index.html",
+      "readmeUrl": "maps/26-transport/README.md"
     }
   ]
 }
