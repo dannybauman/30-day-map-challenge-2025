@@ -60,6 +60,7 @@ Write like you're explaining what happened to someone sitting next to you. Short
 ### Other
 - "rock-solid" (use "solid" instead)
 - "drove" (use "guided", "led", or "directed" instead)
+- "Time Invested" (use "Time" instead - shorter and clearer)
 - Multiple exclamation marks (!!)
 - Excessive parenthetical asides
 - ALL CAPS (be careful - use sparingly, only for emphasis when needed)

@@ -21,7 +21,13 @@ async function ensureDir(dir) {
 }
 
 async function emptyDir(dir) {
-    await fs.rm(dir, { recursive: true, force: true });
+    // Check if directory exists first
+    const exists = await pathExists(dir);
+    if (exists) {
+        // Remove directory and all contents recursively
+        await fs.rm(dir, { recursive: true, force: true });
+    }
+    // Ensure directory exists (create if it doesn't)
     await ensureDir(dir);
 }
 

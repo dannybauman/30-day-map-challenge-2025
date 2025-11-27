@@ -141,7 +141,7 @@ This is just a starting point. Use quick AI generation as your rapid prototyping
 | Complete Failures | 0 (0%) |
 | Average Time (Success) | ~7 min |
 | Average Time (Partial) | ~13 min |
-| Total Time Invested | ~2 hrs |
+| Total Time | ~2 hrs |
 | Fastest Platforms | Bolt/Lovable/MagicPatterns/Base44 (tie at 5 min) |
 | Top 3 (Ranked) | Lovable (#1), ChatGPT Canvas (#2), Bolt.new (#3) |
 | Best Stats Dashboard | Base44 |

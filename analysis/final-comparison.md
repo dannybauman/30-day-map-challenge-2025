@@ -318,7 +318,7 @@ Use this table to choose the right platform for your geospatial project:
 **Completed**: December 1, 2025
 **Total Maps Created**: *TBD*
 **Total Platforms Tested**: *TBD*
-**Total Time Invested**: *TBD hours*
+**Total Time**: *TBD hours*
 **Most Valuable Insight**: *TBD*
 
 ---

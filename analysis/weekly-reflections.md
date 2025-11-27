@@ -189,7 +189,7 @@ Personal observations, insights, and learnings throughout the 30-day challenge.
 - **Total Implementations**: [X]
 - **Platforms Used**: [X]
 - **Success Rate**: [X]%
-- **Total Time Invested**: [X] hours
+- **Total Time**: [X] hours
 
 ### Biggest Wins
 1. *TBD*
