@@ -233,8 +233,8 @@ Paste prompt in each → Click generate → Move to next
   - `npm run build:pages` — render pages to `maps/`.
   - `npm run build:site` — generate `docs/` (copies `maps/`, assets, writes `days.json` and `docs/index.html`).
   - `npm run build:all` — `build:pages` + `build:site` in one step.
-  - Shortcuts: `npm run dev` (alias for `build:pages:check`), `npm run publish` (alias for `build:all`).
-  - Local static server: `npm run dev:server` (defaults to serving `docs/` at http://localhost:8080; pass `--dir .` to serve the repo root).
+  - Shortcuts: `npm run dev` (alias for `build:pages:check` + serve docs), `npm run publish` (build pages + set Day 26 as homepage redirect).
+  - Local static server: `npm run dev:server` (defaults to serving `docs/` at http://localhost:3000; pass `--dir .` to serve the repo root).
 - `docs/index.html` is rebuilt every run with an overview of published days; avoid editing files inside `docs/` by hand.
 - **To set a specific day as the homepage**, use either method:
   - **Day number (recommended)**: `node scripts/build-site.mjs 19` (automatically finds `19-projections`)
@@ -249,7 +249,7 @@ Paste prompt in each → Click generate → Move to next
 ### Adding a new day
 - Create/edit `src/pages/<day-slug>.njk` (front matter + `{% block styles %}` + `{% block body %}`) using the shared layout (`templates/layouts/day.njk` handles nav/footer scripts).
 - Run `npm run build:pages` (or `build:pages:check` for a safe preview) to emit `maps/<day-slug>/index.html`.
-- Run `npm run build:site` after adding or updating any day so the manifest, docs build, and navigation stay in sync.
+- Run `npm run build:site` after adding or updating any day so the manifest, docs build, and navigation stay in sync. Use `DEFAULT_DAY=<slug>` or `node scripts/build-site.mjs <dayNumber>` if you want a different homepage redirect.
 
 ### Updating screenshots
 - Screenshots for the main README can be updated using the screenshot script in `scripts/` (workaround until better automation tooling is available). The script captures screenshots from the live GitHub Pages site to ensure all features load correctly.
