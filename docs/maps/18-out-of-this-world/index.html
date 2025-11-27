@@ -6,7 +6,8 @@
     <title>Day 18: Out of this World → Gemini 3 Level Up | #30DayMapChallenge 2025</title>
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    
+<style>
         body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
             background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc04 100%);
@@ -38,6 +39,14 @@
             padding: 1.5rem;
             z-index: 1;
         }
+        .hero-media-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
         .hero-image-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -53,7 +62,8 @@
             border-radius: 4px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
-        .hero-image {
+        .hero-image,
+        .hero-media {
             max-width: 100%;
             max-height: 100%;
             width: auto;
@@ -80,7 +90,8 @@
                 margin: 0;
                 padding: 1rem;
             }
-            .hero-image {
+            .hero-image,
+            .hero-media {
                 width: 100%;
                 height: auto;
                 max-height: 400px;
@@ -363,9 +374,13 @@ justify-content: center;
                 margin: 0 0.25rem;
             }
         }
-    </style>
+    
+</style>
+
 </head>
-<body>
+<body class="">
+    
+
     <!-- Top Day Navigation -->
     <section data-day-nav-top>
         <div class="text-center text-muted py-2">Loading navigation…</div>
@@ -374,12 +389,15 @@ justify-content: center;
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-image-wrapper">
-            <div class="hero-image-grid">
-                <img src="gemini3-ai-studio/day18-seismicwatch-desktop.png" alt="SeismicWatch - Grade A">
-                <img src="gemini3-ai-studio/day18-global-connections-desktop.png" alt="Global Connections - Grade B+">
-                <img src="gemini3-ai-studio/day18-climate-migration-desktop.png" alt="Climate Migration - Grade B+">
-                <img src="gemini3-ai-studio/day18-cosmic-sightings-desktop.png" alt="Cosmic Sightings - Grade B-">
-            </div>
+            <a href="https://seismicwatch-global-earthquake-map-903076358991.us-west1.run.app/" class="hero-media-link" target="_blank" rel="noopener" aria-label="Open Gemini 3 Pro SeismicWatch live demo">
+                <div class="hero-image-grid">
+                    <img src="gemini3-ai-studio/day18-seismicwatch-desktop.png" alt="SeismicWatch - Grade A">
+                    <img src="gemini3-ai-studio/day18-global-connections-desktop.png" alt="Global Connections - Grade B+">
+                    <img src="gemini3-ai-studio/day18-climate-migration-desktop.png" alt="Climate Migration - Grade B+">
+                    <img src="gemini3-ai-studio/day18-cosmic-sightings-desktop.png" alt="Cosmic Sightings - Grade B-">
+                </div>
+                <span class="visually-hidden">Open Gemini 3 Pro SeismicWatch live demo in a new tab</span>
+            </a>
         </div>
         <div class="container">
             <div class="row align-items-center">
@@ -958,11 +976,10 @@ justify-content: center;
         </div>
     </footer>
 
-    <!-- Top navigation script -->
+
+
     <script src="../../site-assets/js/day-navigation.js" data-day="18-out-of-this-world" data-target="[data-day-nav-top]" data-manifest="../../days.json" data-base-path="../../" defer></script>
-    <!-- Bottom navigation script -->
     <script src="../../site-assets/js/day-navigation.js" data-day="18-out-of-this-world" data-target="[data-day-nav]" data-manifest="../../days.json" data-base-path="../../" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

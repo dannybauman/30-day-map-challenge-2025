@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 24: Places and their names | #30DayMapChallenge 2025</title>
-    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+---
+pageTitle: "Day 24: Places and their names | #30DayMapChallenge 2025"
+daySlug: "24-places-and-their-names"
+basePath: "../../"
+manifestPath: "../../days.json"
+faviconPath: "../../favicon.svg"
+---
+{% extends "layouts/day.njk" %}
+
+{% block styles %}
 <style>
         body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
@@ -305,10 +306,9 @@
         }
     
 </style>
+{% endblock %}
 
-</head>
-<body class="">
-    
+{% block body %}
 
     <!-- Top Day Navigation -->
     <section data-day-nav-top>
@@ -974,10 +974,4 @@ MAP IMPLEMENTATION:
         </div>
     </footer>
 
-
-
-    <script src="../../site-assets/js/day-navigation.js" data-day="24-places-and-their-names" data-target="[data-day-nav-top]" data-manifest="../../days.json" data-base-path="../../" defer></script>
-    <script src="../../site-assets/js/day-navigation.js" data-day="24-places-and-their-names" data-target="[data-day-nav]" data-manifest="../../days.json" data-base-path="../../" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+{% endblock %}

@@ -6,7 +6,8 @@
     <title>Day 1: Points | #30DayMapChallenge 2025</title>
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    
+<style>
         body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -38,7 +39,16 @@
             padding: 1rem;
             z-index: 1;
         }
-        .hero-image {
+        .hero-media-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        .hero-image,
+        .hero-media {
             max-width: 100%;
             max-height: 100%;
             width: auto;
@@ -65,7 +75,8 @@
                 margin: 0;
                 padding: 1rem;
             }
-            .hero-image {
+            .hero-image,
+            .hero-media {
                 width: 100%;
                 height: auto;
                 max-height: 400px;
@@ -325,9 +336,13 @@ justify-content: center;
                 margin: 0 0.25rem;
             }
         }
-    </style>
+    
+</style>
+
 </head>
-<body>
+<body class="">
+    
+
     <!-- Top Day Navigation -->
     <section data-day-nav-top>
         <div class="text-center text-muted py-2">Loading navigation…</div>
@@ -336,7 +351,10 @@ justify-content: center;
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-image-wrapper">
-            <img src="lovable/screenshot.png" alt="Lovable - Day 1 Winner" class="hero-image">
+            <a href="https://quake-viz-com.lovable.app" class="hero-media-link" target="_blank" rel="noopener" aria-label="Open Lovable live demo">
+                <img src="lovable/screenshot.png" alt="Lovable - Day 1 Winner" class="hero-image hero-media">
+                <span class="visually-hidden">Open Lovable live demo in a new tab</span>
+            </a>
         </div>
         <div class="container">
             <div class="row align-items-center">
@@ -547,7 +565,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
                             <p><strong>Specialty:</strong> Best mobile experience, strong tooltips</p>
                             <p class="mb-2 small">Fast, clean design. Good tooltips, one-shot success.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Excellent! Great responsive design - best overall considering mobile performance is crucial.</p>
@@ -584,7 +601,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
                             <p><strong>Specialty:</strong> Best UI polish</p>
                             <p class="mb-2 small">Good permission model for external data, good tooltips, smooth interactions. Most polished overall. See <code>chatgpt-permission-dialog.png</code> for the permission UX.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> OK but imbalanced header and overlapping legend/UI elements.</p>
@@ -621,7 +637,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
                             <p><strong>Specialty:</strong> Best data handling</p>
                             <p class="mb-2 small">Shows 7,734 earthquakes with detailed stats (max mag 7.6, avg depth 21km). Strong tooltips.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Legend takes up half the screen - should be smaller, collapsible, or better use of space.</p>
@@ -663,7 +678,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~15 min (API key setup)</p>
                             <p><strong>Notable Feature:</strong> Full VS Code editor in browser</p>
                             <p class="mb-2 small">Required 2 API keys (Gemini + Google Maps). Good UX for Gemini key prompt. Can switch between AI generation and code editing. Google Maps basemap, bland defaults.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Nice responsive design on mobile.</p>
@@ -700,7 +714,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
                             <p><strong>Specialty:</strong> Best stats dashboard</p>
                             <p class="mb-2 small">Clean dark theme with good visuals. Comprehensive stats (7,729 total, max mag 7.6, updated time). Minor bug: Avg Depth shows 0.0km. Tooltips not as good as top 3.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> OK but legend overlays too much of the map.</p>
@@ -737,7 +750,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
                             <p class="mb-2">Tested 2 variants (Tailwind + Chakra UI) - both worked. Unknown platform, solid performance.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Good - legend overlays well but some UI element overlap.</p>
                             <p class="small"><strong>AI role:</strong> Generated both Tailwind and Chakra implementations with consistent data handling.</p>
@@ -773,7 +785,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
                             <p class="mb-2 small">Quietly delivered solid implementation. Minimal but functional UI.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Good - minimal but works, though a little not fitting and aligned properly.</p>
                             <p class="small"><strong>AI role:</strong> Generated the lightweight Leaflet map, dark theme, and stats footer in 1 pass.</p>
@@ -814,7 +825,6 @@ DELIVERABLES:
                                 </div>
                             </div>
                             <p class="small"><strong>Issue:</strong> Missing basemap - points display without geographic context</p>
-                            <p class="small"><strong>Time:</strong> ~10 min (1 iteration)</p>
                             <p class="small"><strong>Mobile:</strong> Really good responsive design - legend stacks properly, but map area is small (and basemap not working as noted).</p>
                             <p class="small"><strong>AI role:</strong> Rendered the point layer and UI layout after a single quick fix.</p>
                             <p class="small"><strong>Human tweaks:</strong> Triggered the auto-fix and logged the missing basemap for manual coding later.</p>
@@ -850,7 +860,6 @@ DELIVERABLES:
                                 </div>
                             </div>
                             <p class="small"><strong>Issue:</strong> CSP/CORS violations prevent external library loading</p>
-                            <p class="small"><strong>Time:</strong> ~15 min (3 fix attempts)</p>
                             <p class="small"><strong>Mobile:</strong> Good (a bit of overlap in the footer).</p>
                             <p class="small"><strong>AI role:</strong> Produced the interface and attempted Leaflet integration but hit the hosting sandbox limits.</p>
                             <p class="small"><strong>Human tweaks:</strong> Captured the error state and documented how the sandbox blocked the external libraries.</p>
@@ -886,7 +895,6 @@ DELIVERABLES:
                                 </div>
                             </div>
                             <p class="small"><strong>Issue:</strong> Similar to Claude - sandbox restrictions break external APIs</p>
-                            <p class="small"><strong>Time:</strong> ~15 min</p>
                             <p class="small"><strong>Mobile:</strong> Good responsive design.</p>
                             <p class="small"><strong>AI role:</strong> Built the UI shell and attempted fetch calls before sandbox rules blocked execution.</p>
                             <p class="small"><strong>Human tweaks:</strong> Captured the failing requests and noted Gemini's sandbox limitation for future planning.</p>
@@ -1196,9 +1204,9 @@ DELIVERABLES:
         </div>
     </footer>
 
-    <!-- Top navigation script -->
+
+
     <script src="../../site-assets/js/day-navigation.js" data-day="01-points" data-target="[data-day-nav-top]" data-manifest="../../days.json" data-base-path="../../" defer></script>
-    <!-- Bottom navigation script -->
     <script src="../../site-assets/js/day-navigation.js" data-day="01-points" data-target="[data-day-nav]" data-manifest="../../days.json" data-base-path="../../" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

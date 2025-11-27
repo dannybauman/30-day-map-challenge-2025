@@ -7,7 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:pages:check": "node scripts/build-days.mjs --out maps-build",
+    "build:pages": "node scripts/build-days.mjs --out maps",
+    "build:site": "node scripts/build-site.mjs",
+    "build:all": "npm run build:pages && npm run build:site"
   },
   "repository": {
     "type": "git",
@@ -22,6 +26,8 @@
   },
   "homepage": "https://github.com/dannybauman/30-day-map-challenge-2025#readme",
   "dependencies": {
+    "gray-matter": "^4.0.3",
+    "nunjucks": "^3.2.4",
     "playwright": "^1.56.1"
   },
   "devDependencies": {

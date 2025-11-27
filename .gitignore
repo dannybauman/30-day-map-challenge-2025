@@ -32,6 +32,7 @@ build/
 .next/
 out/
 .cache/
+maps-build/
 
 # IDE
 .vscode/

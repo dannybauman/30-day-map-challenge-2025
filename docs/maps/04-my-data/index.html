@@ -6,7 +6,8 @@
     <title>Day 4: My Data | #30DayMapChallenge 2025</title>
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    
+<style>
         body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -38,7 +39,16 @@
             padding: 1rem;
             z-index: 1;
         }
-        .hero-image {
+        .hero-media-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        .hero-image,
+        .hero-media {
             max-width: 100%;
             max-height: 100%;
             width: auto;
@@ -65,7 +75,8 @@
                 margin: 0;
                 padding: 1rem;
             }
-            .hero-image {
+            .hero-image,
+            .hero-media {
                 width: 100%;
                 height: auto;
                 max-height: 400px;
@@ -407,26 +418,13 @@ justify-content: center;
                 margin: 0 0.25rem;
             }
         }
-    </style>
+    
+</style>
 
-    <!--
-        GRADING CRITERIA (Consistent across all days):
-
-        A (Strong): Fast, clean, fully functional, great mobile UX
-        B (Good): Works well, minor issues, responsive
-        C (OK): Usable but significant issues (performance, UX problems)
-        D (Poor / Partial Success): Major functionality broken but some elements work (e.g., UI works but map doesn't load)
-        F (Failed): No code generated at all (platform error, completely unusable - rare)
-
-        Important distinction:
-        - Grade D (Partial Success): Even CSP/CORS failures that generate UI/legends get Grade D, not F.
-          If it generates something useful, it's at least D.
-        - Grade F (Failed): Reserved for when no code is generated at all (platform errors that prevent any output).
-
-        Be consistent but fair - if it generates something useful, it's at least D.
-    -->
 </head>
-<body>
+<body class="">
+    
+
     <!-- Top Day Navigation -->
     <section data-day-nav-top>
         <div class="text-center text-muted py-2">Loading navigation…</div>
@@ -435,7 +433,10 @@ justify-content: center;
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-image-wrapper">
-            <img src="base44/screenshot.png" alt="Base44 map showing Disney park waypoints, heatmap toggle, and sidebar stats" class="hero-image">
+            <a href="https://disney-park-paths-0af5726d.base44.app/" class="hero-media-link" target="_blank" rel="noopener" aria-label="Open Base44 live demo">
+                <img src="base44/screenshot.png" alt="Base44 map showing Disney park waypoints, heatmap toggle, and sidebar stats" class="hero-image hero-media">
+                <span class="visually-hidden">Open Base44 live demo in a new tab</span>
+            </a>
         </div>
         <div class="container">
             <div class="row align-items-center">
@@ -1353,10 +1354,9 @@ Do not add any new external API calls or analytics. Everything must work complet
         </div>
     </footer>
 
-    <!-- Replace DAY_SLUG with the folder name (e.g., 01-points) when generating a new day -->
-    <!-- Top navigation script -->
+
+
     <script src="../../site-assets/js/day-navigation.js" data-day="04-my-data" data-target="[data-day-nav-top]" data-manifest="../../days.json" data-base-path="../../" defer></script>
-    <!-- Bottom navigation script -->
     <script src="../../site-assets/js/day-navigation.js" data-day="04-my-data" data-target="[data-day-nav]" data-manifest="../../days.json" data-base-path="../../" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

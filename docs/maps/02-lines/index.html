@@ -6,7 +6,8 @@
     <title>Day 2: Lines | #30DayMapChallenge 2025</title>
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    
+<style>
         body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -38,7 +39,16 @@
             padding: 1rem;
             z-index: 1;
         }
-        .hero-image {
+        .hero-media-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        .hero-image,
+        .hero-media {
             max-width: 100%;
             max-height: 100%;
             width: auto;
@@ -65,7 +75,8 @@
                 margin: 0;
                 padding: 1rem;
             }
-            .hero-image {
+            .hero-image,
+            .hero-media {
                 width: 100%;
                 height: auto;
                 max-height: 400px;
@@ -325,9 +336,13 @@ justify-content: center;
                 margin: 0 0.25rem;
             }
         }
-    </style>
+    
+</style>
+
 </head>
-<body>
+<body class="">
+    
+
     <!-- Top Day Navigation -->
     <section data-day-nav-top>
         <div class="text-center text-muted py-2">Loading navigation…</div>
@@ -336,7 +351,10 @@ justify-content: center;
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-image-wrapper">
-            <img src="magicpatterns/screenshot.png" alt="MagicPatterns - Day 2 Winner" class="hero-image">
+            <a href="https://project-portland-street-orientation-rainbow-map-450.magicpatterns.app/" class="hero-media-link" target="_blank" rel="noopener" aria-label="Open MagicPatterns live demo">
+                <img src="magicpatterns/screenshot.png" alt="MagicPatterns - Day 2 Winner" class="hero-image hero-media">
+                <span class="visually-hidden">Open MagicPatterns live demo in a new tab</span>
+            </a>
         </div>
         <div class="container">
             <div class="row align-items-center">
@@ -548,7 +566,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
                             <p><strong>Why Winner:</strong> Fastest data loading, best pan/zoom performance (~1-2 sec lag vs. ~10 sec for others), most intuitive circular legend, strong mobile UX. Zero human intervention needed. Superior out-of-the-box quality in every category.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Strong mobile experience - best overall considering mobile performance is crucial.</p>
                             <p class="small"><strong>AI role:</strong> Generated clean MapLibre GL implementation with bearing calculations, circular legend, and responsive design in 1 pass.</p>
@@ -588,7 +605,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
                             <p><strong>Specialty:</strong> Circular legend, good UI</p>
                             <p class="mb-2 small">Circular color wheel legend (good for directional data). Clean UI, good zoom level. Performance sluggish (~10 sec lag on pan/zoom) - same Leaflet issue as ChatGPT Canvas.</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Good - legend works well on mobile.</p>
@@ -627,7 +643,6 @@ DELIVERABLES:
                                     <small class="text-muted d-block text-center mt-1">Mobile</small>
                                 </div>
                             </div>
-                            <p><strong>Time:</strong> ~5 min</p>
                             <p><strong>Specialty:</strong> Clean UI, one-shot success</p>
                             <p class="mb-2 small">Good performance with MapLibre GL. Strong loading UX (~10 sec with status message). BUT: Tooltip bug (light text on white background, visible in screenshot). Linear legend instead of circular (less intuitive for directions).</p>
                             <p class="mb-2 small"><strong>Mobile:</strong> Good responsive design.</p>
@@ -773,7 +788,6 @@ DELIVERABLES:
                                 </div>
                             </div>
                             <p class="small"><strong>Issue:</strong> CSP/CORS violations prevent external library loading</p>
-                            <p class="small"><strong>Time:</strong> ~15 min (3 fix attempts)</p>
                             <p class="small">Same issue as Day 1 - cannot load Leaflet. Tried 3 different approaches, all blocked by CSP. Generated nice UI/legends but no map. Platform limitation, not code quality.</p>
                         </div>
                     </div>
@@ -803,7 +817,6 @@ DELIVERABLES:
                                 </div>
                             </div>
                             <p class="small"><strong>Issue:</strong> Similar to Claude - CORS policy blocks MapLibre GL</p>
-                            <p class="small"><strong>Time:</strong> ~15 min</p>
                             <p class="small">Same issue as Day 1 - cannot load MapLibre GL. Tried "Fix error" button 3x, all blocked by CORS. Generated beautiful color wheel legend but no map loads. Errors now hidden from users (just shows spinner).</p>
                         </div>
                     </div>
@@ -830,7 +843,6 @@ DELIVERABLES:
                                 </div>
                             </div>
                             <p class="small"><strong>Issue:</strong> Stuck at "Starting app" - autonomous debugging identified Next.js 2MB cache limit</p>
-                            <p class="small"><strong>Time:</strong> ~20 min (including debugging)</p>
                             <p class="small">App stuck at startup. Autonomous debugging feature identified typo (crossorigin vs crossOrigin) and critical issue: 91MB Overpass API data exceeds Next.js's 2MB caching limit. Proposed fix (disable caching) but still couldn't start. Valuable debugging insights even if delivery failed.</p>
                             <p class="small"><strong>Mobile:</strong> N/A (never started)</p>
                         </div>
@@ -1172,9 +1184,9 @@ DELIVERABLES:
         </div>
     </footer>
 
-    <!-- Top navigation script -->
+
+
     <script src="../../site-assets/js/day-navigation.js" data-day="02-lines" data-target="[data-day-nav-top]" data-manifest="../../days.json" data-base-path="../../" defer></script>
-    <!-- Bottom navigation script -->
     <script src="../../site-assets/js/day-navigation.js" data-day="02-lines" data-target="[data-day-nav]" data-manifest="../../days.json" data-base-path="../../" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
