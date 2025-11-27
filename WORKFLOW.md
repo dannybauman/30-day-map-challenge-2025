@@ -117,16 +117,16 @@ Here's my refined process after completing Day 1.
 - **Note**: Can automate with Cursor or Playwright browser tools. A screenshot script is available in `scripts/` for capturing showcase page screenshots (workaround until better tooling is available).
 
 **Step 2: Create HTML** (10-15 min):
-1. Copy `templates/day-showcase-template.html` → `index.html`
+1. Edit `src/pages/<day-slug>.njk` (front matter + blocks) instead of hand-editing `maps/<day>/index.html`. The shared layout injects head/nav/footer scripts.
 2. **Extract ideation concepts from `IDEATION-RESPONSES.md`** - pick the best/favorite concept from each platform's response to show in the ideation cards
-3. Fill with REAL data (not placeholders)
-4. Include desktop & mobile screenshots side-by-side
-5. Comment on responsive design
-6. Keep times approximate (~1.5 hrs, not 87 min)
-7. Keep it simple and easy to update later
-8. Before publishing, review `DESIGN-SYSTEM.md` to ensure layout, styling, and grade badges match the current standards
-9. Reuse the color palette already defined in the template—new callouts should lean on existing gradients/badge styles instead of bespoke colors.
-10. In the body copy, refer to logs and summaries generically (e.g., “documentation” or “project log”) rather than surfacing raw filenames.
+3. Fill with REAL data (not placeholders) and include desktop & mobile screenshots side-by-side
+4. Comment on responsive design
+5. Keep times approximate (~1.5 hrs, not 87 min)
+6. Keep it simple and easy to update later
+7. Before publishing, review `DESIGN-SYSTEM.md` to ensure layout, styling, and grade badges match the current standards
+8. Reuse the color palette already defined in the template—new callouts should lean on existing gradients/badge styles instead of bespoke colors.
+9. In the body copy, refer to logs and summaries generically (e.g., “documentation” or “project log”) rather than surfacing raw filenames.
+10. Build pages with `npm run build:pages` (or `npm run build:pages:check` to output to `maps-build/` for diffing). Then run `npm run build:site` to regenerate `docs/`/`days.json`.
 
 **What to include**:
 - Quick stats (platforms tested, success rate)

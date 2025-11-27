@@ -226,9 +226,13 @@ Paste prompt in each → Click generate → Move to next
 ## Deployment & Hosting
 
 ### Build the public site
-- Requires Node.js 18+ (no other dependencies).
-- Run `node scripts/build-site.mjs` to generate the deployable site in `docs/`.
-- The script copies each `maps/<day>` directory (with an `index.html`) into `docs/maps/`, publishes shared assets to `docs/site-assets/`, and emits a `days.json` manifest used by the day selector.
+- Requires Node.js 18+.
+- Pages are authored in `src/pages/<day>.njk` and built into `maps/` via Nunjucks.
+- Build commands:
+  - `npm run build:pages:check` — render pages to `maps-build/` for safe diffing.
+  - `npm run build:pages` — render pages to `maps/`.
+  - `npm run build:site` — generate `docs/` (copies `maps/`, assets, writes `days.json` and `docs/index.html`).
+  - `npm run build:all` — `build:pages` + `build:site` in one step.
 - `docs/index.html` is rebuilt every run with an overview of published days; avoid editing files inside `docs/` by hand.
 - **To set a specific day as the homepage**, use either method:
   - **Day number (recommended)**: `node scripts/build-site.mjs 19` (automatically finds `19-projections`)
@@ -241,9 +245,9 @@ Paste prompt in each → Click generate → Move to next
 - The generated site uses relative paths, so it works at both `https://<user>.github.io/<repo>/` and local `file://` previews.
 
 ### Adding a new day
-- Create the new HTML page at `maps/<day-slug>/index.html` (using `templates/day-showcase-template.html`).
-- Ensure the `<script>` tag at the end of the page has `data-day="<day-slug>"`, `data-manifest="../../days.json"`, and `data-base-path="../../"` so navigation works locally and in production.
-- Re-run `node scripts/build-site.mjs` after adding or updating any day so the manifest, docs build, and navigation stay in sync.
+- Create/edit `src/pages/<day-slug>.njk` (front matter + `{% block styles %}` + `{% block body %}`) using the shared layout (`templates/layouts/day.njk` handles nav/footer scripts).
+- Run `npm run build:pages` (or `build:pages:check` for a safe preview) to emit `maps/<day-slug>/index.html`.
+- Run `npm run build:site` after adding or updating any day so the manifest, docs build, and navigation stay in sync.
 
 ### Updating screenshots
 - Screenshots for the main README can be updated using the screenshot script in `scripts/` (workaround until better automation tooling is available). The script captures screenshots from the live GitHub Pages site to ensure all features load correctly.
