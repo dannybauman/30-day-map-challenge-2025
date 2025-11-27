@@ -11,7 +11,9 @@
     "build:pages:check": "node scripts/build-days.mjs --out maps-build",
     "build:pages": "node scripts/build-days.mjs --out maps",
     "build:site": "node scripts/build-site.mjs",
-    "build:all": "npm run build:pages && npm run build:site"
+    "build:all": "npm run build:pages && npm run build:site",
+    "dev": "npm run build:pages:check",
+    "publish": "npm run build:all"
   },
   "repository": {
     "type": "git",
