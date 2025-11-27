@@ -31,7 +31,7 @@
 | Gemini Canvas | ✅ Success | B | ~10 min | Did fine, worked the first try with fallback data. Asked it to allow uploading of GTFS zip data and that worked | ⬜ | ⬜ |
 | v0.dev | ✅ Success | B | ~10 min | Did fine, worked the first try with fallback data. Asked it to allow uploading of GTFS zip data and that worked. Did a nice job showing active vs inactive vs not covered at all | ⬜ | ⬜ |
 | base44 | ⚠️ Partial | C- | ~15 min | Almost worked, but there's an issue with the map tiles displaying properly, some UI elements overlapping, and not showing the data properly | ⬜ | ⬜ |
-| Google AI Studio | ✅ Success | A- | ~20 min | Did an excellent job. Little hiccup with it showing some gaps in the colors, but after easily fixing that and asking to allow uploading of GTFS zip data, then asked it to make more smooth animations for not just each hour but based on the granularity of the data, and it did that well. It didn't do this on its own but another platform had the idea of showing a separate color for inactive zones that would later be filled in with the active color, so asked this to do it too and it did. Also asked it to cache the user uploaded data so it can be there after refresh, and it did | ⬜ | ⬜ |
+| Google AI Studio | ✅ Success | A- | ~20 min | Did a good job. Little hiccup with it showing some gaps in the colors, but after easily fixing that and asking to allow uploading of GTFS zip data, then asked it to make more smooth animations for not just each hour but based on the granularity of the data, and it did that well. It didn't do this on its own but another platform had the idea of showing a separate color for inactive zones that would later be filled in with the active color, so asked this to do it too and it did. Also asked it to cache the user uploaded data so it can be there after refresh, and it did | ⬜ | ⬜ |
 
 **Status Legend:**
 - ⬜ Not Started
@@ -62,7 +62,7 @@
 **Failed:** 1 (17%)
 
 **Top Performer:**
-- **Google AI Studio (A-)** - Excellent implementation with smooth animations, GTFS upload support, data caching, and good visual distinction between active/inactive/desert zones
+- **Google AI Studio (A-)** - Strong implementation with smooth animations, GTFS upload support, data caching, and good visual distinction between active/inactive/desert zones
 
 **Strong Performers:**
 - **Gemini Canvas (B)** - Worked first try with fallback data, GTFS upload added successfully
@@ -85,7 +85,7 @@
 - Suggested showing separate color for inactive zones that would later be filled with active color (AI Studio)
 - Requested data caching so uploaded GTFS data persists after refresh (AI Studio)
 - Fixed color gaps issue in AI Studio implementation
-- Attempted to fix zip file upload, base map bug, and inactive service area colors in Claude Artifact (zip upload not visible in UI, base map still broken)
+- Tried fixing zip file upload, base map bug, and inactive service area colors in Claude Artifact (zip upload not visible in UI, base map still broken)
 
 ### AI Contributions:
 - Initial implementation of transit desert clock concept
@@ -110,7 +110,7 @@
 - Data not displaying properly (ChatGPT, base44)
 
 **Platform Strengths:**
-- **Google AI Studio**: Excellent at handling complex requirements, smooth animations, data persistence
+- **Google AI Studio**: Strong at handling complex requirements, smooth animations, data persistence
 - **Gemini Canvas**: Reliable first-try success with fallback data
 - **v0.dev**: Good visual distinction between different service states
 - **Claude Artifact**: Strong UI design styling choices

@@ -34,7 +34,7 @@ A map-first visualization showing when parts of a city lose transit access over 
 
 ## Human Review
 
-Work completed in one session (~45 mins). All platforms received the same implementation prompt. Human guidance included: requesting GTFS zip file upload functionality (Gemini, v0, AI Studio), asking AI Studio to add smooth animations based on data granularity, suggesting separate color for inactive zones, and requesting data caching for persistence. Fixed color gaps issue in AI Studio. Attempted to fix issues in Claude Artifact (zip upload, base map, colors) but zip upload not visible in UI and base map still broken.
+Work completed in one session (~45 mins). All platforms received the same implementation prompt. Human guidance included: requesting GTFS zip file upload functionality (Gemini, v0, AI Studio), asking AI Studio to add smooth animations based on data granularity, suggesting separate color for inactive zones, and requesting data caching for persistence. Fixed color gaps issue in AI Studio. Tried fixing issues in Claude Artifact (zip upload, base map, colors) but zip upload not visible in UI and base map still broken.
 
 ## Files
 
