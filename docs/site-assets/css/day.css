@@ -47,6 +47,13 @@ body { padding: 0 0 20px 0; background: #f8f9fa; }
     border-radius: 0 8px 8px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+.hero-media-link:hover .hero-image,
+.hero-media-link:hover .hero-media,
+.hero-media-link:hover .hero-image-grid img {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 @media (max-width: 991px) {
     .hero {
         display: flex;
