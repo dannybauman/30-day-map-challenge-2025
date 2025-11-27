@@ -14,7 +14,7 @@
     "build:all": "npm run build:pages && npm run build:site",
     "dev": "npm run build:pages:check",
     "publish": "npm run build:all",
-    "dev:server": "node scripts/dev-server.mjs --dir . --port 8080"
+    "dev:server": "node scripts/dev-server.mjs --port 8080"
   },
   "repository": {
     "type": "git",
