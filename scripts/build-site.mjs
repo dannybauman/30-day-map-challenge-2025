@@ -285,7 +285,11 @@ async function build() {
 
     // Support both command-line argument (day number) and environment variable (day slug)
     let defaultDay = null;
-    const dayNumberArg = process.argv[2]?.trim();
+    // Only look for numeric arguments (day numbers), skip flags like --port, --dir, etc.
+    const dayNumberArg = process.argv.slice(2).find(arg => {
+        const num = parseInt(arg, 10);
+        return !isNaN(num) && !arg.startsWith('-');
+    });
     const defaultDaySlug = process.env.DEFAULT_DAY?.trim();
 
     if (dayNumberArg) {
@@ -298,8 +302,6 @@ async function build() {
             } else {
                 console.warn(`Day ${dayNum} not found in manifest. Using overview index.`);
             }
-        } else {
-            console.warn(`Invalid day number argument '${dayNumberArg}'. Using overview index.`);
         }
     } else if (defaultDaySlug) {
         // Environment variable: day slug (e.g., "19-projections")

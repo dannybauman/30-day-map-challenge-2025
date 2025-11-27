@@ -160,9 +160,13 @@ async function rebuildManifest() {
     const buildSite = await import(buildSitePath + '?update=' + Date.now());
     // We'll need to call the manifest building logic
     // For now, just trigger a full manifest rebuild by running build-site
+    // Pass empty env to avoid inheriting process.argv arguments
     const { spawn } = await import('node:child_process');
     return new Promise((resolve) => {
-        const proc = spawn('node', [buildSitePath], { stdio: 'inherit' });
+        const proc = spawn('node', [buildSitePath], { 
+            stdio: 'inherit',
+            env: { ...process.env }
+        });
         proc.on('close', (code) => {
             if (code === 0) {
                 console.log('✓ Rebuilt: manifest and index');
