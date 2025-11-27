@@ -25,7 +25,18 @@ async function emptyDir(dir) {
     const exists = await pathExists(dir);
     if (exists) {
         // Remove directory and all contents recursively
-        await fs.rm(dir, { recursive: true, force: true });
+        // Use maxRetries to handle potential race conditions
+        try {
+            await fs.rm(dir, { recursive: true, force: true, maxRetries: 3 });
+        } catch (err) {
+            // If removal fails, try again after a brief delay
+            if (err.code === 'ENOTEMPTY' || err.code === 'EBUSY') {
+                await new Promise(resolve => setTimeout(resolve, 100));
+                await fs.rm(dir, { recursive: true, force: true, maxRetries: 3 });
+            } else {
+                throw err;
+            }
+        }
     }
     // Ensure directory exists (create if it doesn't)
     await ensureDir(dir);
