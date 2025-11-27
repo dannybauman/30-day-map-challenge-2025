@@ -201,43 +201,6 @@
                 buttonsCol.appendChild(createNavButton('← Previous', prevId));
                 buttonsCol.appendChild(createNavButton('Next →', nextId));
 
-                const list = document.createElement('ul');
-                list.className = 'list-group list-group-flush mt-3';
-                days.forEach((day) => {
-                    if (!day || !day.id || !day.relativeUrl) {
-                        return;
-                    }
-                    const item = document.createElement('li');
-                    item.className = 'list-group-item d-flex justify-content-between align-items-center';
-
-                    const titleWrapper = document.createElement('div');
-                    titleWrapper.innerHTML = `<strong>${day.title || day.id}</strong>`;
-                    if (day.theme) {
-                        const theme = document.createElement('div');
-                        theme.className = 'small text-muted';
-                        theme.textContent = day.theme;
-                        titleWrapper.appendChild(theme);
-                    }
-                    item.appendChild(titleWrapper);
-
-                    const targetUrl = buildUrl(day.relativeUrl);
-                    item.addEventListener('click', () => {
-                        window.location.href = targetUrl;
-                    });
-                    item.tabIndex = 0;
-                    item.addEventListener('keydown', (event) => {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                            event.preventDefault();
-                            window.location.href = targetUrl;
-                        }
-                    });
-                    item.style.cursor = 'pointer';
-
-                    list.appendChild(item);
-                });
-
-                body.appendChild(list);
-
                 container.innerHTML = '';
                 container.appendChild(card);
             }
