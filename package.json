@@ -12,7 +12,7 @@
     "build:pages": "node scripts/build-days.mjs --out maps",
     "build:site": "node scripts/build-site.mjs",
     "build:all": "npm run build:pages && npm run build:site",
-    "dev": "npm run build:pages:check",
+    "dev": "npm run build:pages:check && npm run dev:server -- --port 3000 --dir docs",
     "publish": "npm run build:all",
     "dev:server": "node scripts/dev-server.mjs --port 8080"
   },
