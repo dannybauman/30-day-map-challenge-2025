@@ -128,6 +128,7 @@ Here's my refined process after completing Day 1.
 9. In the body copy, refer to logs and summaries generically (e.g., “documentation” or “project log”) rather than surfacing raw filenames.
 10. Build pages with `npm run build:pages` (or `npm run build:pages:check` to output to `maps-build/` for diffing). Then run `npm run build:site` to regenerate `docs/`/`days.json`.
     - Shortcuts: `npm run dev` → `npm run build:pages:check`, `npm run publish` → `npm run build:all`.
+    - Local server for manual review: `npm run dev:server` (serves repo root at http://localhost:8080 so `maps/` and `docs/` pages resolve assets correctly).
 
 **What to include**:
 - Quick stats (platforms tested, success rate)

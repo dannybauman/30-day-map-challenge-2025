@@ -234,6 +234,7 @@ Paste prompt in each → Click generate → Move to next
   - `npm run build:site` — generate `docs/` (copies `maps/`, assets, writes `days.json` and `docs/index.html`).
   - `npm run build:all` — `build:pages` + `build:site` in one step.
   - Shortcuts: `npm run dev` (alias for `build:pages:check`), `npm run publish` (alias for `build:all`).
+  - Local static server: `npm run dev:server` (serves repo root at http://localhost:8080).
 - `docs/index.html` is rebuilt every run with an overview of published days; avoid editing files inside `docs/` by hand.
 - **To set a specific day as the homepage**, use either method:
   - **Day number (recommended)**: `node scripts/build-site.mjs 19` (automatically finds `19-projections`)
