@@ -26,7 +26,7 @@
 
 | Platform | Status | Grade | Time Spent | Notes | Screenshot | Code Saved |
 |----------|--------|-------|------------|-------|------------|------------|
-| ChatGPT Canvas | ⚠️ Partial | D | ~15 min | Got a UI up and running, but no data or map, even after a couple tries to fix it | ⬜ | ⬜ |
+| ChatGPT Canvas | ❌ Failed | D | ~15 min | Got a UI up and running, but no data or map, even after a couple tries to fix it | ⬜ | ⬜ |
 | Claude Artifact | ⚠️ Partial | C | ~20 min | Mostly worked, but took a few times fixing errors. Zip file upload doesn't appear in UI (AI said it fixed it but it's not visible). Base map stopped working. Wrong colors for inactive service area. As a positive, it had cool UI design styling choices | ⬜ | ⬜ |
 | Gemini Canvas | ✅ Success | B | ~10 min | Did fine, worked the first try with fallback data. Asked it to allow uploading of GTFS zip data and that worked | ⬜ | ⬜ |
 | v0.dev | ✅ Success | B | ~10 min | Did fine, worked the first try with fallback data. Asked it to allow uploading of GTFS zip data and that worked. Did a nice job showing active vs inactive vs not covered at all | ⬜ | ⬜ |
@@ -58,8 +58,8 @@
 
 **Total Platforms Tested:** 6
 **Successful:** 3 (50%)
-**Partial Success:** 3 (50%)
-**Failed:** 0 (0%)
+**Partial Success:** 2 (33%)
+**Failed:** 1 (17%)
 
 **Top Performer:**
 - **Google AI Studio (A-)** - Excellent implementation with smooth animations, GTFS upload support, data caching, and good visual distinction between active/inactive/desert zones
@@ -70,8 +70,10 @@
 
 **Partial Success:**
 - **Claude Artifact (C)** - Required multiple fixes, base map stopped working, zip upload not visible in UI despite AI claiming it was fixed. Nice UI styling choices
-- **ChatGPT Canvas (D)** - UI generated but no data/map functionality
 - **base44 (C-)** - Map tile issues, UI overlap problems, data not displaying properly
+
+**Failed:**
+- **ChatGPT Canvas (D)** - UI generated but no data/map functionality, core features non-functional
 
 ---
 

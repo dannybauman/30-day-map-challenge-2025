@@ -338,16 +338,16 @@
             <div class="col-6 col-sm-4 col-md">
                 <div class="card text-center h-100">
                     <div class="card-body">
-                        <h3 class="text-warning">3</h3>
-                        <p class="mb-0">Partial Success (50%)</p>
+                        <h3 class="text-warning">2</h3>
+                        <p class="mb-0">Partial Success (33%)</p>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md">
                 <div class="card text-center h-100">
                     <div class="card-body">
-                        <h3 class="text-danger">0</h3>
-                        <p class="mb-0">Failed (0%)</p>
+                        <h3 class="text-danger">1</h3>
+                        <p class="mb-0">Failed (17%)</p>
                     </div>
                 </div>
             </div>
@@ -562,7 +562,7 @@ City: Portland, OR metro (TriMet rail/bus subset). Primary data: GTFS static fee
 
             <!-- Partial Success -->
             <h3 class="mb-3 mt-5">⚠️ Partial Success</h3>
-            <p class="small text-muted mb-4">Three platforms got close but had significant issues that prevented full functionality.</p>
+            <p class="small text-muted mb-4">Two platforms got close but had significant issues that prevented full functionality.</p>
             <div class="row">
                 <div class="col-md-6 platform-card">
                     <div class="card h-100">
@@ -633,10 +633,15 @@ City: Portland, OR metro (TriMet rail/bus subset). Primary data: GTFS static fee
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <!-- Failed -->
+            <h3 class="mb-3 mt-5">❌ Failed</h3>
+            <p class="small text-muted mb-4">One platform generated a UI but failed to implement core functionality.</p>
+            <div class="row">
                 <div class="col-md-6 platform-card">
                     <div class="card h-100">
-                        <div class="card-header d-flex justify-content-between align-items-center bg-warning text-dark">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
                             <strong>ChatGPT Canvas</strong>
                             <span class="badge grade-d">Grade D</span>
                         </div>
@@ -904,7 +909,7 @@ City: Portland, OR metro (TriMet rail/bus subset). Primary data: GTFS static fee
                     <li><strong>AI Studio's advanced features:</strong> Successfully implemented smooth animations based on data granularity, data caching, and sophisticated visual states - went beyond basic requirements</li>
                     <li><strong>v0.dev's visual design:</strong> Did a nice job showing active vs inactive vs not covered at all with clear visual distinction</li>
                     <li><strong>Claude's UI styling:</strong> Despite functional issues, had cool UI design styling choices that stood out</li>
-                    <li><strong>50/50 split:</strong> Exactly half succeeded and half had partial success - no complete failures</li>
+                    <li><strong>Mixed results:</strong> 3 succeeded, 2 had partial success, 1 failed - showing varied platform capabilities</li>
                 </ul>
             </div>
 
@@ -930,7 +935,7 @@ City: Portland, OR metro (TriMet rail/bus subset). Primary data: GTFS static fee
 
                     <p>The implementation challenge was interesting. We needed GTFS data parsing, time-based filtering, buffer calculations for coverage zones, and smooth animations. Google AI Studio handled this very well, going beyond the basics with minute-by-minute animations (not just hourly), data persistence, and sophisticated visual states. It's a reminder that when you need advanced features, some platforms are better equipped than others.</p>
 
-                    <p>What surprised me was the 50/50 split: exactly half the platforms succeeded and half had partial success. No complete failures, which is good, but also no perfect scores. The successful platforms (AI Studio, Gemini Canvas, v0.dev) all created working maps with varying levels of polish. The partial successes (Claude Artifact, base44, ChatGPT Canvas) got close but had issues that prevented full functionality.</p>
+                    <p>What surprised me was the mixed results: 3 platforms succeeded, 2 had partial success, and 1 failed. The successful platforms (AI Studio, Gemini Canvas, v0.dev) all created working maps with varying levels of polish. The partial successes (Claude Artifact, base44) got close but had issues that prevented full functionality. ChatGPT Canvas failed to implement core features despite generating a complete-looking UI.</p>
 
                     <p>Claude Artifact was particularly interesting. It had cool UI styling choices that stood out, but it also had multiple bugs. The AI claimed to fix the zip upload, but it wasn't visible in the UI. The base map stopped working. It's a reminder that AI's understanding of "fixed" doesn't always match reality - verification matters.</p>
 
@@ -938,7 +943,7 @@ City: Portland, OR metro (TriMet rail/bus subset). Primary data: GTFS static fee
 
                     <p>Transit deserts are a real problem in many cities. Late-night service cuts leave people stranded. Early-morning gaps mean workers can't get to jobs. The map makes this visible in a way that static transit maps don't. As you scrub through the hours, you see neighborhoods light up and fade out, revealing the temporal geography of access and exclusion.</p>
 
-                    <p>Three out of six platforms succeeded, which is a solid result. AI Studio's implementation stands out for going beyond the requirements, but Gemini Canvas and v0.dev also created functional, usable maps. The partial successes show that the concept is achievable, even if some platforms struggled with the implementation details.</p>
+                    <p>Three out of six platforms succeeded, which is a solid result. AI Studio's implementation stands out for going beyond the requirements, but Gemini Canvas and v0.dev also created functional, usable maps. The partial successes show that the concept is achievable, even if some platforms struggled with the implementation details. The one failure (ChatGPT Canvas) demonstrates that UI generation doesn't guarantee functional code.</p>
                 </div>
             </div>
         </section>

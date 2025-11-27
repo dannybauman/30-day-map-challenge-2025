@@ -8,7 +8,7 @@ Tracking which AI platforms excel at different types of cartographic tasks acros
 
 | Platform | Attempts | Success | Partial | Failed | Success % | Avg Time |
 |----------|----------|---------|---------|--------|-----------|----------|
-| ChatGPT Canvas | 5 | 1 | 4 | 0 | 20% | 5-15 min |
+| ChatGPT Canvas | 5 | 1 | 3 | 1 | 20% | 5-15 min |
 | Bolt.new | 4 | 2 | 1 | 0 | 50% | 5 min |
 | Lovable | 5 | 4 | 1 | 0 | 80% | 5-10 min |
 | Base44 | 5 | 4 | 1 | 0 | 80% | 5 min |

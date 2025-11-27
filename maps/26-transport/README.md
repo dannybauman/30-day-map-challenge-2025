@@ -22,11 +22,11 @@ A map-first visualization showing when parts of a city lose transit access over 
 | v0.dev | B | Success | Worked first try with fallback data. Did a nice job showing active vs inactive vs not covered at all with clear visual distinction. Successfully added GTFS upload functionality. |
 | Claude Artifacts | C | Partial Success | Mostly worked but took multiple fixes. Zip file upload doesn't appear in UI despite AI claiming it was fixed. Base map stopped working. Wrong colors for inactive service area. As a positive, it had cool UI design styling choices. |
 | base44 | C- | Partial Success | Almost worked but there's an issue with the map tiles displaying properly, some UI elements overlapping, and not showing the data properly. |
-| ChatGPT Canvas | D | Partial Success | Got a UI up and running, but no data or map, even after a couple tries to fix it. |
+| ChatGPT Canvas | D | Failed | Got a UI up and running, but no data or map, even after a couple tries to fix it. Core functionality non-functional. |
 
 ## Key Observations
 
-- **50/50 split**: Exactly half the platforms succeeded (3) and half had partial success (3). No complete failures.
+- **Mixed results**: 3 platforms succeeded, 2 had partial success, 1 failed. Shows varied platform capabilities.
 - **Google AI Studio standout**: Handled complex requirements very well, including smooth minute-by-minute animations (not just hourly), GTFS upload with data persistence, and sophisticated visual states. Went beyond basic requirements.
 - **GTFS upload success**: Multiple platforms (Gemini, v0, AI Studio) successfully added GTFS zip upload functionality when requested.
 - **File upload limitations**: Automated browsers can't test file uploads due to security restrictions, so GTFS upload functionality needed manual testing.
