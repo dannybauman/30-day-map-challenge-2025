@@ -11,13 +11,13 @@ An interactive map displaying major world cities with labels in multiple languag
 
 **Why chosen**: Simple yet visually compelling, works well across platforms, and directly addresses the toponymy theme. The multilingual aspect showcases how the same places are named differently across cultures.
 
-**Data source**: OpenStreetMap via Overpass API (attempted but all platforms fell back to embedded hardcoded data due to API issues)
+**Data source**: OpenStreetMap via Overpass API (tried but all platforms fell back to embedded hardcoded data due to API issues)
 
 ## Platform Results
 
 | Platform | Grade | Status | Notes |
 |----------|-------|--------|-------|
-| Google AI Studio Apps | A- | Success | Excellent implementation with dual-source data, generative AI calligraphy art, country masking, caching. Required minimal fixes, mostly feature additions. |
+| Google AI Studio Apps | A- | Success | Strong implementation with dual-source data, generative AI calligraphy art, country masking, caching. Required minimal fixes, mostly feature additions. |
 | Gemini Canvas | B | Success | Worked first try, solid implementation. Added more cities and languages per request. |
 | Base44 | B- | Success | Good first try, minor UI issues with city icons (weird ovals) and one non-clickable element. |
 | V0.dev | C | Success | OK but had errors initially. Fixed zoom/pan and label positioning issues. |
@@ -27,7 +27,7 @@ An interactive map displaying major world cities with labels in multiple languag
 
 ## Key Observations
 
-- **Overpass API issue**: All platforms attempted to use Overpass API but none succeeded - all fell back to hardcoded data. Curious why even Gemini 3 didn't get Overpass working.
+- **Overpass API issue**: All platforms tried Overpass API but none succeeded - all fell back to hardcoded data. Curious why even Gemini 3 didn't get Overpass working.
 - **Google AI Studio standout**: The AI Studio implementation went above and beyond with generative AI features (calligraphy art for cities), country masking with textures, intelligent caching, and spatial deduplication. This was the most sophisticated implementation.
 - **Consistent fallback pattern**: Despite API failures, all platforms successfully created working maps with embedded data, showing good error handling.
 - **UI polish varies**: Base44 had minor visual issues (oval icons), while AI Studio had the most polished and feature-rich interface.

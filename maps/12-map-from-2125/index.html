@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
 <style>
-        body { padding: 0 0 20px 0; background: #f8f9fa; }
+                body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -87,16 +87,18 @@
         .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .screenshot-desktop { border: 2px solid #495057; }
         .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
-        /* Platform Card Button Styling */
+        /* Platform Card Button Styling - Tasteful proportions, left-aligned to match screenshots */
         .platform-card .row.g-2 .col-6,
         .platform-card .row.g-2 .col-4,
         .platform-card .row.g-2 .col-12 {
             display: flex;
             justify-content: flex-start;
         }
+        /* Right-align second button (Details) for 2-button layout */
         .platform-card .row.g-2 .col-6:nth-child(2) {
             justify-content: flex-end;
         }
+        /* Center buttons for 3-button layout */
         .platform-card .row.g-2 .col-4 {
             justify-content: center;
         }
@@ -131,6 +133,7 @@
             transform: translateY(-1px);
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
+        /* Responsive: Stack buttons on mobile */
         @media (max-width: 576px) {
             .platform-card .row.g-2 {
                 flex-direction: column;
@@ -152,17 +155,20 @@
                 max-width: 280px;
             }
         }
+        /* Medium screens: Better spacing for 3 buttons */
         @media (min-width: 577px) and (max-width: 768px) {
             .platform-card .row.g-2 .col-4 .btn {
                 min-width: 110px;
                 padding: 0.5rem 1rem;
             }
         }
+        /* Multiple mobile screenshots - make them smaller to fit */
         .screenshot-mobile-multiple {
             max-height: 200px;
             width: auto;
             object-fit: contain;
         }
+
         .badge-custom { font-size: 0.9rem; }
         .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
@@ -315,7 +321,7 @@
                 margin: 0 0.25rem;
             }
         }
-    
+
 </style>
 
 </head>
@@ -801,7 +807,7 @@ Technical:
                             <ul class="small mb-0">
                                 <li>Claude generated the strong "Climate Migration Flows" concept</li>
                                 <li>Base44 handled the map logic and basic animation structure</li>
-                                <li>Firebase Studio attempted to auto-fix its own errors</li>
+                                <li>Firebase Studio tried auto-fixing its own errors</li>
                             </ul>
                         </div>
                     </div>
@@ -921,7 +927,7 @@ Technical:
                                 <span class="lane-label">AI</span>
                                 <h4>AI Fixes</h4>
                                 <ul>
-                                    <li>Firebase Studio attempted auto-fixes but couldn't fully resolve map rendering</li>
+                                    <li>Firebase Studio tried auto-fixes but couldn't fully resolve map rendering</li>
                                 </ul>
                             </div>
                         </div>

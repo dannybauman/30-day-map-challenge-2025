@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
 <style>
-        body { padding: 0 0 20px 0; background: #f8f9fa; }
+                body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -94,9 +94,8 @@
             display: flex;
             justify-content: flex-start;
         }
-        /* Right-align second button (Details) */
-        .platform-card .row.g-2 .col-6:nth-child(2),
-        .platform-card .row.g-2 .col-4:nth-child(2) {
+        /* Right-align second button (Details) for 2-button layout */
+        .platform-card .row.g-2 .col-6:nth-child(2) {
             justify-content: flex-end;
         }
         /* Center buttons for 3-button layout */
@@ -108,21 +107,19 @@
             padding: 0.5rem 1.5rem;
             font-weight: 500;
             transition: all 0.2s ease;
-
-display: inline-flex;
-align-items: center;
-justify-content: center;
-}
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
         .platform-card .btn-outline-secondary {
             min-width: 120px;
             padding: 0.5rem 1.5rem;
             font-weight: 500;
             transition: all 0.2s ease;
-
-display: inline-flex;
-align-items: center;
-justify-content: center;
-}
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
         .platform-card .btn-outline-primary {
             min-width: 140px;
             padding: 0.5rem 1.5rem;
@@ -165,89 +162,13 @@ justify-content: center;
                 padding: 0.5rem 1rem;
             }
         }
+        /* Multiple mobile screenshots - make them smaller to fit */
         .screenshot-mobile-multiple {
             max-height: 200px;
             width: auto;
             object-fit: contain;
         }
-        /* Platform Card Button Styling - Tasteful proportions, left-aligned to match screenshots */
-        .platform-card .row.g-2 .col-6,
-        .platform-card .row.g-2 .col-4,
-        .platform-card .row.g-2 .col-12 {
-            display: flex;
-            justify-content: flex-start;
-        }
-        /* Right-align second button (Details) */
-        .platform-card .row.g-2 .col-6:nth-child(2),
-        .platform-card .row.g-2 .col-4:nth-child(2) {
-            justify-content: flex-end;
-        }
-        /* Center buttons for 3-button layout */
-        .platform-card .row.g-2 .col-4 {
-            justify-content: center;
-        }
-        .platform-card .btn-primary {
-            min-width: 140px;
-            padding: 0.5rem 1.5rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
 
-display: inline-flex;
-align-items: center;
-justify-content: center;
-}
-        .platform-card .btn-outline-secondary {
-            min-width: 120px;
-            padding: 0.5rem 1.5rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-
-display: inline-flex;
-align-items: center;
-justify-content: center;
-}
-        .platform-card .btn-outline-primary {
-            min-width: 140px;
-            padding: 0.5rem 1.5rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .platform-card .btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-        /* Responsive: Stack buttons on mobile */
-        @media (max-width: 576px) {
-            .platform-card .row.g-2 {
-                flex-direction: column;
-            }
-            .platform-card .row.g-2 .col-6,
-            .platform-card .row.g-2 .col-4,
-            .platform-card .row.g-2 .col-12 {
-                width: 100%;
-                max-width: 100%;
-                justify-content: center;
-                margin-bottom: 0.5rem;
-            }
-            .platform-card .row.g-2 .col-6:last-child,
-            .platform-card .row.g-2 .col-4:last-child {
-                margin-bottom: 0;
-            }
-            .platform-card .btn {
-                width: 100%;
-                max-width: 280px;
-            }
-        }
-        /* Medium screens: Better spacing for 3 buttons */
-        @media (min-width: 577px) and (max-width: 768px) {
-            .platform-card .row.g-2 .col-4 .btn {
-                min-width: 110px;
-                padding: 0.5rem 1rem;
-            }
-        }
         .badge-custom { font-size: 0.9rem; }
         .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }

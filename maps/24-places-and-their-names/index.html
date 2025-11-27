@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
 <style>
-        body { padding: 0 0 20px 0; background: #f8f9fa; }
+                body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -87,15 +87,18 @@
         .platform-card img { width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .screenshot-desktop { border: 2px solid #495057; }
         .screenshot-mobile { border: 2px solid #6c757d; opacity: 0.95; }
+        /* Platform Card Button Styling - Tasteful proportions, left-aligned to match screenshots */
         .platform-card .row.g-2 .col-6,
         .platform-card .row.g-2 .col-4,
         .platform-card .row.g-2 .col-12 {
             display: flex;
             justify-content: flex-start;
         }
+        /* Right-align second button (Details) for 2-button layout */
         .platform-card .row.g-2 .col-6:nth-child(2) {
             justify-content: flex-end;
         }
+        /* Center buttons for 3-button layout */
         .platform-card .row.g-2 .col-4 {
             justify-content: center;
         }
@@ -130,6 +133,7 @@
             transform: translateY(-1px);
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
+        /* Responsive: Stack buttons on mobile */
         @media (max-width: 576px) {
             .platform-card .row.g-2 {
                 flex-direction: column;
@@ -151,12 +155,20 @@
                 max-width: 280px;
             }
         }
+        /* Medium screens: Better spacing for 3 buttons */
         @media (min-width: 577px) and (max-width: 768px) {
             .platform-card .row.g-2 .col-4 .btn {
                 min-width: 110px;
                 padding: 0.5rem 1rem;
             }
         }
+        /* Multiple mobile screenshots - make them smaller to fit */
+        .screenshot-mobile-multiple {
+            max-height: 200px;
+            width: auto;
+            object-fit: contain;
+        }
+
         .badge-custom { font-size: 0.9rem; }
         .insight-box { background: #fff; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 4px; }
         footer { margin-top: 60px; padding: 30px 0; background: #343a40; color: white; }
@@ -303,7 +315,7 @@
                 margin: 0 0.25rem;
             }
         }
-    
+
 </style>
 
 </head>
@@ -434,7 +446,7 @@
                 <div class="card-body">
                     <h4>Multilingual City Labels Map</h4>
                     <p>An interactive map displaying major world cities with labels in multiple languages (English, local language, and chosen secondary languages like French or Arabic). Users can switch between languages to see how place names appear in different scripts and cultures.</p>
-                    <p><strong>Data Source:</strong> OpenStreetMap via Overpass API (attempted but all platforms fell back to embedded hardcoded data due to API issues)</p>
+                    <p><strong>Data Source:</strong> OpenStreetMap via Overpass API (tried but all platforms fell back to embedded hardcoded data due to API issues)</p>
                     <p><strong>Why chosen:</strong> Simple yet visually compelling, works well across platforms, and directly addresses the toponymy theme. The multilingual aspect showcases how the same places are named differently across cultures, making it a good fit for demonstrating fonts, label placement, and script diversity.</p>
                 </div>
             </div>
@@ -647,7 +659,7 @@ MAP IMPLEMENTATION:
                             <p><strong>Specialty:</strong> Basic functionality worked initially</p>
                             <p class="small"><strong>Why Grade C-:</strong> Basic functionality worked, but got stuck at loading when trying to fetch data from API. The fallback to embedded data should have worked but the loading state never resolved.</p>
                             <p class="small"><strong>AI role:</strong> Generated basic implementation but struggled with API data fetching logic.</p>
-                            <p class="small"><strong>Human tweaks:</strong> Attempted to get it to fetch data from API, but it got stuck in loading state.</p>
+                            <p class="small"><strong>Human tweaks:</strong> Tried getting it to fetch data from API, but it got stuck in loading state.</p>
                         </div>
                     </div>
                 </div>
@@ -822,7 +834,7 @@ MAP IMPLEMENTATION:
                                     <li>V0.dev: Generated map but with errors needing fixes</li>
                                     <li>Claude Artifacts: Basic implementation but got stuck on API fetch</li>
                                     <li>ChatGPT Canvas: Got UI working but introduced bugs</li>
-                                    <li>All platforms: Attempted Overpass API, all fell back to embedded data</li>
+                                    <li>All platforms: Tried Overpass API, all fell back to embedded data</li>
                                 </ul>
                             </div>
                         </div>
@@ -906,7 +918,7 @@ MAP IMPLEMENTATION:
             <div class="insight-box">
                 <h5>❌ What Didn't</h5>
                 <ul>
-                    <li><strong>Overpass API universal failure:</strong> All platforms attempted Overpass API but none succeeded - curious why even Gemini 3 didn't get it working</li>
+                    <li><strong>Overpass API universal failure:</strong> All platforms tried Overpass API but none succeeded - curious why even Gemini 3 didn't get it working</li>
                     <li><strong>ChatGPT Canvas UI corruption:</strong> Started outputting JSON in UI which took over the interface</li>
                     <li><strong>Claude Artifacts loading state:</strong> Got stuck in loading state when trying to fetch API data</li>
                     <li><strong>V0.dev initial errors:</strong> Required multiple fixes for errors, zoom/pan, and label positioning</li>
@@ -942,7 +954,7 @@ MAP IMPLEMENTATION:
                     <h4>Names Across Cultures</h4>
                     <p>Day 24's theme "Places and their names" invited us to explore toponymy—the study of place names. It's a theme that touches on fonts, label placement, languages, and the meanings embedded in how we name places. The multilingual city labels concept worked well: simple enough to work across platforms, visually compelling, and directly connected to the theme.</p>
 
-                    <p>What surprised me was the universal failure of the Overpass API. Every platform attempted to fetch multilingual city names from OpenStreetMap's Overpass API, and every platform failed. They all gracefully fell back to embedded data, which is good error handling, but it's curious why even Gemini 3 couldn't get Overpass working. Is it a CORS issue? A query syntax problem? Something else? The consistent failure pattern suggests a systemic issue rather than platform-specific problems.</p>
+                    <p>What surprised me was the universal failure of the Overpass API. Every platform tried fetching multilingual city names from OpenStreetMap's Overpass API, and every platform failed. They all gracefully fell back to embedded data, which is good error handling, but it's curious why even Gemini 3 couldn't get Overpass working. Is it a CORS issue? A query syntax problem? Something else? The consistent failure pattern suggests a systemic issue rather than platform-specific problems.</p>
 
                     <p>Google AI Studio stood out this day. Not just for getting the core map working (which it did well), but for going beyond the basics with features that showcase what's uniquely possible with Gemini. The generative AI calligraphy art—where clicking on a city generates script art for that city's name—is something only Gemini can do easily because of its built-in API key access. The country masking feature, where generated images fill country shapes as textures, adds a visual layer that makes the map more interesting.</p>
 

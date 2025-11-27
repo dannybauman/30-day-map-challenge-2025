@@ -8,9 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
 <style>
-        body { padding: 0 0 20px 0; background: #f8f9fa; }
+                body { padding: 0 0 20px 0; background: #f8f9fa; }
         .hero {
-            background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc04 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 60px 0;
             margin-bottom: 40px;
@@ -36,7 +36,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            padding: 1rem;
             z-index: 1;
         }
         .hero-media-link {
@@ -46,21 +46,6 @@
             width: 100%;
             height: 100%;
             text-decoration: none;
-        }
-        .hero-image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            width: 100%;
-            height: 100%;
-            max-height: 100%;
-        }
-        .hero-image-grid img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 4px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
         .hero-image,
         .hero-media {
@@ -109,9 +94,8 @@
             display: flex;
             justify-content: flex-start;
         }
-        /* Right-align second button (Details) */
-        .platform-card .row.g-2 .col-6:nth-child(2),
-        .platform-card .row.g-2 .col-4:nth-child(2) {
+        /* Right-align second button (Details) for 2-button layout */
+        .platform-card .row.g-2 .col-6:nth-child(2) {
             justify-content: flex-end;
         }
         /* Center buttons for 3-button layout */
@@ -123,21 +107,19 @@
             padding: 0.5rem 1.5rem;
             font-weight: 500;
             transition: all 0.2s ease;
-        
-display: inline-flex;
-align-items: center;
-justify-content: center;
-}
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
         .platform-card .btn-outline-secondary {
             min-width: 120px;
             padding: 0.5rem 1.5rem;
             font-weight: 500;
             transition: all 0.2s ease;
-        
-display: inline-flex;
-align-items: center;
-justify-content: center;
-}
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
         .platform-card .btn-outline-primary {
             min-width: 140px;
             padding: 0.5rem 1.5rem;
@@ -179,6 +161,34 @@ justify-content: center;
                 min-width: 110px;
                 padding: 0.5rem 1rem;
             }
+        }
+        /* Multiple mobile screenshots - make them smaller to fit */
+        .screenshot-mobile-multiple {
+            max-height: 200px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc04 100%);
+        }
+        .hero-image-wrapper {
+            padding: 1.5rem;
+        }
+        .hero-image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+        }
+        .hero-image-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
         .badge-custom { font-size: 0.9rem; }
         .insight-box { background: #fff; border-left: 4px solid #4285f4; padding: 20px; margin: 20px 0; border-radius: 4px; }
@@ -374,7 +384,7 @@ justify-content: center;
                 margin: 0 0.25rem;
             }
         }
-    
+
 </style>
 
 </head>
@@ -691,7 +701,7 @@ justify-content: center;
                                 <li>Recognized Gemini 3 as a platform update worth documenting and decided to repurpose Day 18</li>
                                 <li>Selected 4 test concepts (recreations of Days 1, 6, 12 plus alternative)</li>
                                 <li>Guided 2-3 prompt iterations per successful app (timeline animations, playback controls, shaking effect)</li>
-                                <li>Attempted to debug deployment issues (unsuccessful - infrastructure problem)</li>
+                                <li>Tried debugging deployment issues (unsuccessful - infrastructure problem)</li>
                                 <li>Made strategic decision to elevate Gemini 3 to Tier 1 for remaining days</li>
                             </ul>
                         </div>
@@ -803,7 +813,7 @@ justify-content: center;
                                     <li>SeismicWatch: Requested timeline animation, then playback speeds (1x/5x/10x), then earthquake shaking effect (3 prompts total)</li>
                                     <li>Climate Migration: Asked for timeline slider and methodology button (2-3 prompts)</li>
                                     <li>Global Connections: Prompted to switch from demo to real OpenFlights data, asked about live flight tracking</li>
-                                    <li>Cosmic Sightings: Attempted multiple UFO dataset sources, tried to resolve data quality issues</li>
+                                    <li>Cosmic Sightings: Tried multiple UFO dataset sources, tried to resolve data quality issues</li>
                                 </ul>
                             </div>
                         </div>
@@ -916,7 +926,7 @@ justify-content: center;
                 <h5>🎉 Surprises</h5>
                 <ul>
                     <li><strong>Platform transformation magnitude:</strong> Gemini 2.5 (Grade F) to Gemini 3 (Grade A) is night and day—not incremental</li>
-                    <li><strong>SeismicWatch quality:</strong> Matched the best Day 1 implementations in just 2-3 prompts, exceeded some previous top performers</li>
+                    <li><strong>SeismicWatch quality:</strong> Matched the best Day 1 implementations in just 2-3 prompts, beat some previous top performers</li>
                     <li><strong>Timeline animation ease:</strong> Easier to implement than expected, worked smoothly across implementations</li>
                     <li><strong>All apps working:</strong> 100% success rate, all 4 implementations deployed successfully</li>
                     <li><strong>Free tier generosity:</strong> Significant functionality achieved before hitting API key requirement</li>
@@ -946,7 +956,7 @@ justify-content: center;
 
                     <p>When you're testing 8-12 platforms daily, you develop a sense for incremental progress. Gemini 2.5 in AI Studio was consistently Grade D or F on Days 1-6. Blank pages, rendering failures, basic functionality broken. Then Gemini 3 Pro arrived, and the platform transformed overnight.</p>
 
-                    <p>SeismicWatch was the proof: Grade A on essentially the first try, with timeline animations and earthquake shaking effects added in just 2-3 prompts total. It matched or exceeded the best implementations from ChatGPT Canvas, Bolt.new, and Lovable – platforms I'd spent the challenge praising. The Climate Migration choropleth with its smooth timeline slider reached Grade B+ just as quickly.</p>
+                    <p>SeismicWatch was the proof: Grade A on essentially the first try, with timeline animations and earthquake shaking effects added in just 2-3 prompts total. It matched or beat the best implementations from ChatGPT Canvas, Bolt.new, and Lovable – platforms I'd spent the challenge praising. The Climate Migration choropleth with its smooth timeline slider reached Grade B+ just as quickly.</p>
 
                     <p>All 4 apps successfully deployed and working in production. Implementations ranged from Grade A (SeismicWatch) to Grade B- (Cosmic Sightings), showing strong performance across the board with varying data quality and complexity. The platform performs well across all implementations.</p>
 
