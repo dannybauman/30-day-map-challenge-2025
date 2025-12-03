@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-27T07:16:21.005Z",
+  "generatedAt": "2025-12-03T18:33:54.530Z",
   "days": [
     {
       "id": "01-points",
@@ -80,6 +80,14 @@
       "theme": "Transport",
       "relativeUrl": "maps/26-transport/index.html",
       "readmeUrl": "maps/26-transport/README.md"
+    },
+    {
+      "id": "29-raster",
+      "dayNumber": 29,
+      "title": "Day 29: Raster",
+      "theme": "Raster",
+      "relativeUrl": "maps/29-raster/index.html",
+      "readmeUrl": "maps/29-raster/README.md"
     }
   ]
 }
