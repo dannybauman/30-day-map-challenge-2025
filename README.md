@@ -20,7 +20,7 @@ I approached this with the 30 Day Map Challenge [code of conduct](https://30daym
 
 ### The Multi-Platform Approach
 
-Instead of building 1 map per day, my goal was to easily build like 10-20! I used multiple AI models to help come up with ideas, then chose 1-2 to run through a bunch of AI development platforms simultaneously. This showed a comparison of how different tools handle the same geospatial prototyping task.
+Instead of building 1 map per day, my goal was to easily build like 10-20! That ended up being not quite as easy as expected, but that was what I was hoping to learn. I used multiple AI models to help come up with ideas, then chose 1-2 to run through a bunch of AI development platforms simultaneously. This showed a comparison of how different tools handle the same geospatial prototyping task.
 
 ### To Vibe Code or Not To Vibe Code
 For this I mostly used vibe coding with minimal care for code quality or longevity, which is NOT right for most projects. I treated this as a rapid prototyping lab to watch how well AI-assisted development performs in between the human craft steps.
