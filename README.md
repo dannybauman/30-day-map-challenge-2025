@@ -8,7 +8,7 @@ Live site: [https://dannybauman.github.io/30-day-map-challenge-2025/](https://da
 
 ## Project Overview
 
-For the **[#30DayMapChallenge](https://30daymapchallenge.com/)**, I wanted to use AI as both creative partner and primary developer. The challenge features 30 unique map themes, one per day, and my project explored how top AI models and a variety of AI development platforms could quickly ideate and build map ideas into prototypes. I completed about 10 of the 30 days - I had hoped to do more, but these projects took longer than expected and life got busy. Still, I learned a lot and feel like I could go back and do others more smoothly now with what I've learned. This project provides a November 2025 snapshot of how good these AI tools are for something like this.
+For the **[#30DayMapChallenge](https://30daymapchallenge.com/)**, I wanted to use AI as both creative partner and primary developer. The challenge features 30 unique map themes, one per day, and my project explored how top AI models and a variety of AI development platforms could quickly ideate and build map ideas into prototypes. I completed 11 of the 30 days - I had hoped to do more, but these projects took longer than expected and life got busy. Still, I learned a lot and feel like I could go back and do others more smoothly now with what I've learned. This project provides a November 2025 snapshot of how good these AI tools are for something like this.
 
 **Idea**: Prompt across AI platforms, let them work in parallel, use AI to help journal and report everything.
 
@@ -43,6 +43,7 @@ Vibe coding is just one way to use AI to help write software. People are inventi
 **Phase 2: Parallel Platform Launch**
 - Opened 5-15 AI development platforms in browser tabs (ChatGPT, Claude, Gemini, v0, bolt, lovable, etc.)
 - Copied/pasted same prompt to each platform
+- For days with data files: Uploaded files per platform's requirements (Lovable accepts `.geojson` directly, Bolt.new requires `.txt`, others may need multi-step uploads)
 - Hit GO on all of them simultaneously
 - Let them work in parallel, saw how it went
 
@@ -51,6 +52,7 @@ Vibe coding is just one way to use AI to help write software. People are inventi
 - Fixed errors as needed (sometimes more, sometimes less attempts)
 - Screenshot all attempts, working or not
 - Deployed code if possible for sharing
+- **Important**: Tested deployed versions, not just previews (some platforms work in preview but fail in production due to module loading or dependency issues)
 - Optional: Iterated on promising implementations
 
 **Phase 4: Documentation & Analysis**
@@ -91,7 +93,7 @@ _Note_: These were the picks because newer versions landed mid-challenge. I adap
 - **ChatGPT Canvas** - Chat-based frontend prototypes
 - **Bolt.new** - Full deployments, handles data files well
 - **V0.dev** - Nice UI, design-focused maps
-- **Google AI Studio Apps** - Gemini's larger developer platform, new but promising
+- **Google AI Studio Apps** - Gemini's larger developer platform. **Major update mid-challenge**: Gemini 3 Pro (released Day 18) elevated this from Grade F to Grade A - became one of the most reliable platforms for real data handling and timeline animations
 
 
 **Tier 2 - Full-Stack & Advanced**
@@ -103,6 +105,21 @@ _Note_: These were the picks because newer versions landed mid-challenge. I adap
 - **MagicPatterns** - Tuned well for well-designed prototypes, component libraries, UI systems
 - **Firebase Studio** - Part of a nice big Firebase ecosystem of dev tools
 - **Base 44** - New to me, heard it's good
+
+### Platform Reliability Patterns
+
+**Consistent Performers:**
+- **Lovable, Bolt.new, ChatGPT Canvas** - Reliable across multiple days, generally one-shot or minimal iteration success
+- **Google AI Studio (Gemini 3 Pro)** - After Day 18 upgrade, became Tier 1 with strong real data handling
+
+**Consistent Limitations:**
+- **Claude Artifacts & Gemini Canvas** - CSP/CORS restrictions block external library loading (map rendering fails, but UI/legends generate successfully)
+- **V0.dev** - Consistent map rendering issues across multiple days (UI works, basemap often missing)
+
+**Platform Constraints:**
+- **Free tier limits** - MagicPatterns and Bolt.new hit usage limits during testing (practical constraint to be aware of)
+- **File upload workflows vary** - Platforms handle data files differently (Lovable supports `.geojson` directly, Bolt.new requires `.txt`, others have multi-step processes)
+- **Deployment vs preview gap** - Some platforms work in preview but fail in production deployment (module loading, dependency conflicts)
 
 ---
 
@@ -252,6 +269,8 @@ Pasted prompt in each → Clicked generate → Moved to next
 - Push the updated `docs/` directory whenever you add or edit a day page; GitHub Pages will deploy the latest build automatically.
 - The generated site uses relative paths, so it works at both `https://<user>.github.io/<repo>/` and local `file://` previews.
 
+**Note on platform deployments**: Some AI development platforms have a preview vs. production gap - code may work in preview but fail in deployment due to module loading errors, dependency conflicts, or CDN resource issues. Always test deployed URLs, not just preview links.
+
 ### Adding a new day
 - Create/edit `src/pages/<day-slug>.njk` (front matter + `{% block styles %}` + `{% block body %}`) using the shared layout (`templates/layouts/day.njk` handles nav/footer scripts).
 - Run `npm run build:pages` (or `build:pages:check` for a safe preview) to emit `maps/<day-slug>/index.html`.
@@ -306,7 +325,17 @@ Per the [official challenge](https://30daymapchallenge.com/):
 - **Repository**: https://github.com/dannybauman/30-day-map-challenge-2025
 
 ### Quick Data Sources
-_Note: A comprehensive list of all data sources used across the completed days will be compiled and linked here in the future._
+- Day 1 (Points): USGS Earthquake API `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson` (live GeoJSON).
+- Day 2 (Lines): OpenStreetMap streets via Overpass API for Portland (`45.43,-122.84,45.65,-122.47`, ~91MB response).
+- Day 3 (Polygons): PDX airport noise contours from BTAA Geoportal → `data/pdx_noise_raw.geojson` (LineStrings closed into polygons).
+- Day 4 (My Data): Google Timeline → `maps/04-my-data/scripts/build-disney-park-visits.mjs` emits `data/disney-park-visits.geojson` (and `.txt` upload helper) with 118 park waypoints.
+- Day 6 (Dimensions): Population hex peaks preprocessed from Natural Earth populated places → `data/population_hex_peaks.geojson`.
+- Day 12 (Map from 2125): Prebundled climate habitability + migration flows → `data/climate-migration-2125.geojson` and `data/migration-flows-2125.json`.
+- Day 18 (Out of this World → Gemini 3 level-up set): Mix of live and bundled data per sub-map — SeismicWatch (USGS Earthquake API, last 30 days), Global Connections (OpenFlights Global routes/airports), Climate Migration reuse of `data/climate-migration-2125.geojson` + `data/migration-flows-2125.json`, and Cosmic Sightings using public UFO/UAP sighting datasets (varied quality).
+- Day 19 (Projections): World-atlas TopoJSON from jsdelivr — `world-atlas@2/land-110m.json` (Shape Shifter) and `world-atlas@2/countries-110m.json` (Tissot) plus programmatic graticules/circles.
+- Day 24 (Places and their names): Intended Overpass city labels but all platforms fell back to embedded/hardcoded multilingual city lists (English + local + secondary languages) instead of live API data.
+- Day 26 (Transport): TriMet GTFS static feed `https://developer.trimet.org/schedule/gtfs.zip` with embedded fallback sample for upload/offline runs.
+- Day 29 (Raster): Live precipitation radar ingested per platform; AntiGravity version adds local + Gemini Vision cloud detection before mirroring into inkblots.
 
 ---
 
