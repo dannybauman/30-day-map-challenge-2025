@@ -8,11 +8,11 @@ Live site: [https://dannybauman.github.io/30-day-map-challenge-2025/](https://da
 
 ## Project Overview
 
-For the **[#30DayMapChallenge](https://30daymapchallenge.com/)**, I wanted to use AI as both creative partner and primary developer. 30 unique map themes, one per day, and my project explores how top AI models and a variety of AI-first development platforms can quickly ideate and bulid map ideas into prototypes. And to see a Nov 2025 snapshot of how good these AI tools are for something like this.
+For the **[#30DayMapChallenge](https://30daymapchallenge.com/)**, I wanted to use AI as both creative partner and primary developer. The challenge features 30 unique map themes, one per day, and my project explored how top AI models and a variety of AI development platforms could quickly ideate and build map ideas into prototypes. I completed about 10 of the 30 days - I had hoped to do more, but these projects took longer than expected and life got busy. Still, I learned a lot and feel like I could go back and do others more smoothly now with what I've learned. This project provides a November 2025 snapshot of how good these AI tools are for something like this.
 
 **Idea**: Prompt across AI platforms, let them work in parallel, use AI to help journal and report everything.
 
-I'm approaching this with the 30 Day Map Challenge [code of conduct](https://30daymapchallenge.com/#code-of-conduct) in mind: I'm publishing only my own work, sharing clear data sources, and using AI to evaluate which tools genuinely help human mapmakers instead of letting them replace the creative joy of mapmaking. Huge respect and gratitude to the artists, cartographers, designers, software engineers, storytellers, and everyone else crafting maps without AI - your craft sets the bar and keeps this community grounded in the social and environmental realities that careless AI use can ignore. My goal is to document the good, discard the noise, and feed those lessons back into workflows that stay useful for people.
+I approached this with the 30 Day Map Challenge [code of conduct](https://30daymapchallenge.com/#code-of-conduct) in mind: I published only my own work, shared clear data sources, and used AI to evaluate which tools genuinely help human mapmakers instead of letting them replace the creative joy of mapmaking. Huge respect and gratitude to the artists, cartographers, designers, software engineers, storytellers, and everyone else crafting maps without AI - your craft sets the bar and keeps this community grounded in the social and environmental realities that careless AI use can ignore. My goal was to document the good, discard the noise, and feed those lessons back into workflows that stay useful for people.
 
 ---
 
@@ -20,45 +20,45 @@ I'm approaching this with the 30 Day Map Challenge [code of conduct](https://30d
 
 ### The Multi-Platform Approach
 
-Instead of building 1 map per day, my hope is to easily build like 10-20! I'll use multiple AI models to help come up with ideas, then choose 1-2 to run through a bunch of AI development platforms simultaneously. This way it'll show a comparison on how different tools handle the same geospatial prototyping task.
+Instead of building 1 map per day, my goal was to easily build like 10-20! I used multiple AI models to help come up with ideas, then chose 1-2 to run through a bunch of AI development platforms simultaneously. This showed a comparison of how different tools handle the same geospatial prototyping task.
 
 ### To Vibe Code or Not To Vibe Code
-For this I'll mostly be vibe coding with minimal care for code quality or longevity, which is NOT right for most projects. I'm treating this as a rapid prototyping lab to watch how well AI-assisted development performs in between the human craft steps.
+For this I mostly used vibe coding with minimal care for code quality or longevity, which is NOT right for most projects. I treated this as a rapid prototyping lab to watch how well AI-assisted development performs in between the human craft steps.
 
-My earlier code of conduct note is my guardrail: I only publish work I personally guide, I cite every dataset and call out each AI-assisted contribution, and I talk about when AI shortcuts cost more than they save. Documenting those wins and misses should make it easier for anyone to decide what tools deserve their time.
+My code of conduct note was my guardrail: I only published work I personally guided, I cited every dataset and called out each AI-assisted contribution, and I talked about when AI shortcuts cost more than they saved. Documenting those wins and misses should make it easier for anyone to decide what tools deserve their time.
 
-Vibe coding is just one way to use AI to help write software. People are inventing new workflows daily, from exploratory prototypes to deep, targeted engineering. My goal here is to surface the useful patterns, flag the dead ends, and keep the focus on the human creativity that makes the challenge magical.
+Vibe coding is just one way to use AI to help write software. People are inventing new workflows daily, from exploratory prototypes to deep, targeted engineering. My goal here was to surface the useful patterns, flag the dead ends, and keep the focus on the human creativity that makes the challenge magical.
 
 ### The Workflow
 
 **Phase 1: Ideation & Concept Selection**
-- Use the SAME ideation prompt for all 3 platforms (ensures fair comparison)
-- Prompt ChatGPT, Claude, and Gemini models with the identical daily theme prompt
-- Paste back full outputs from all 3 platforms into Cursor
-- Cursor logs all ideas and helps analyze/choose the best concept
-- If iteration needed: Document Round 1, human feedback, Round 2 (preserves progression)
-- Draft one implementation prompt based on chosen concept
-- Add any theme-specific data requirements
+- Used the SAME ideation prompt for all 3 platforms (ensured fair comparison)
+- Prompted ChatGPT, Claude, and Gemini models with the identical daily theme prompt
+- Pasted back full outputs from all 3 platforms into Cursor
+- Cursor logged all ideas and helped analyze/choose the best concept
+- If iteration needed: Documented Round 1, human feedback, Round 2 (preserved progression)
+- Drafted one implementation prompt based on chosen concept
+- Added any theme-specific data requirements
 
 **Phase 2: Parallel Platform Launch**
-- Open 5-15 AI development platforms in browser tabs (ChatGPT, Claude, Gemini, v0, bolt, lovable, etc.)
-- Copy/paste same prompt to each platform
+- Opened 5-15 AI development platforms in browser tabs (ChatGPT, Claude, Gemini, v0, bolt, lovable, etc.)
+- Copied/pasted same prompt to each platform
 - Hit GO on all of them simultaneously
-- Let them work in parallel, see how it goes
+- Let them work in parallel, saw how it went
 
 **Phase 3: Review & Iteration**
-- Check as they generate results
-- Fix errors up with up to 3 tries max
+- Checked as they generated results
+- Fixed errors as needed (sometimes more, sometimes less attempts)
 - Screenshot all attempts, working or not
-- Deploy code if possible for sharing
-- Optional: Iterate on promising implementations
+- Deployed code if possible for sharing
+- Optional: Iterated on promising implementations
 
 **Phase 4: Documentation & Analysis**
-- Create day folder with subfolders for each platform
-- Document what worked/failed per platform
-- Note patterns, strengths, and failure modes
-- Commit everything with platform comparison notes
-- Create a visual HTML report for each day to share the results and my thoughts
+- Created day folder with subfolders for each platform
+- Documented what worked/failed per platform
+- Noted patterns, strengths, and failure modes
+- Committed everything with platform comparison notes
+- Created a visual HTML report for each day to share the results and my thoughts
 
 ### Why This Approach?
 
@@ -81,7 +81,7 @@ Vibe coding is just one way to use AI to help write software. People are inventi
 - **OpenAI GPT-5.1 Thinking**
 - **Google Gemini 3 Pro**
 
-_Note_: These are the current picks because newer versions landed mid-challenge. We adapt to the latest stable options as the 30 days progress to keep comparisons current.
+_Note_: These were the picks because newer versions landed mid-challenge. I adapted to the latest stable options as the challenge progressed to keep comparisons current.
 
 ### Implementation Platforms (Use 5-15 Daily)
 
@@ -97,15 +97,12 @@ _Note_: These are the current picks because newer versions landed mid-challenge.
 **Tier 2 - Full-Stack & Advanced**
 - **Lovable** - Full apps with multiple pages
 - **Cursor** - AI-assisted IDE, new features added frequently
-- **Windsurf** - Agentic coding, good for complex builds
+- **Google AntiGravity IDE** - Google's new AI-powered IDE (launched during the challenge), downloadable Mac app, works outside browser, good for larger projects with more control
 
 **Tier 3 - Specialized Tools**
 - **MagicPatterns** - Tuned well for well-designed prototypes, component libraries, UI systems
-- **GitHub Spark** - Quick demos with GitHub integration
 - **Firebase Studio** - Part of a nice big Firebase ecosystem of dev tools
-- **Google Sketch** - Quick mockups before coding
 - **Base 44** - New to me, heard it's good
-- **BMAD Method** - Workflow-based approach
 
 ---
 
@@ -119,33 +116,42 @@ _Note_: These are the current picks because newer versions landed mid-challenge.
 ├── THEMES.md                          # All 30 themes + my notes
 ├── PLATFORM-TRACKER.md                # Which platforms succeeded per theme
 │
+├── src/
+│   └── pages/                         # Nunjucks templates for each day
+│       ├── 01-points.njk
+│       ├── 02-lines.njk
+│       └── ... (completed days)
+│
 ├── templates/
+│   ├── layouts/
+│   │   └── day.njk                    # Shared layout template
 │   ├── ideation-prompt.txt            # Unified prompt for all AI platforms
 │   ├── implementation-base.txt        # Core prompt template
-│   └── day-showcase-template.html     # HTML page template
+│   └── day-showcase-template.html     # Legacy HTML template (now using Nunjucks)
 │
-├── maps/
+├── maps/                              # Built pages (generated from src/pages/)
 │   ├── 01-points/
+│   │   ├── index.html                 # Generated from src/pages/01-points.njk
 │   │   ├── README.md                  # Overview + platform comparison
 │   │   ├── concept.md                 # The chosen idea(s)
 │   │   ├── claude-artifacts/
-│   │   │   ├── code.html
+│   │   │   ├── README.md
 │   │   │   └── screenshot.png
 │   │   ├── chatgpt-canvas/
-│   │   │   ├── code.html
+│   │   │   ├── README.md
 │   │   │   └── screenshot.png
 │   │   ├── bolt-new/
-│   │   │   ├── deployed-url.txt
+│   │   │   ├── README.md
 │   │   │   └── screenshot.png
 │   │   ├── v0-dev/
 │   │   ├── lovable/
 │   │   └── (other platforms)
 │   ├── 02-lines/
-│   └── ... (through 30)
+│   └── ... (completed days)
 │
 └── analysis/
     ├── platform-strengths.md          # Which excels at what
-    ├── failure-patterns.md            # Common issues per platform
+    ├── failure-patterns.md             # Common issues per platform
     ├── weekly-reflections.md          # Lessons learned
     └── final-comparison.md            # Month-end platform rankings
 ```
@@ -154,7 +160,7 @@ _Note_: These are the current picks because newer versions landed mid-challenge.
 
 ## HTML Pages for Each Day
 
-Each day includes a simple HTML page (`index.html`) for easy browsing and sharing:
+Each completed day includes an HTML page (`index.html`) for easy browsing and sharing. Pages are built using Nunjucks templates for modularity and consistency:
 
 **What's included:**
 - Quick stats and platform comparison
@@ -165,9 +171,9 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 - Key insights and lessons learned
 - Editorial thoughts
 
-**How to use:**
-- Template: `templates/day-showcase-template.html`
-- Simple to fill in - just HTML/Bootstrap
+**How it works:**
+- Source templates: `src/pages/<day-slug>.njk` (uses shared layout from `templates/layouts/day.njk`)
+- Built pages: `maps/<day-slug>/index.html` (generated via `npm run build:pages`)
 - Makes results easy to browse and share on social media
 
 **View Day 1**: [https://dannybauman.github.io/30-day-map-challenge-2025/maps/01-points/index.html](https://dannybauman.github.io/30-day-map-challenge-2025/maps/01-points/index.html)
@@ -179,18 +185,18 @@ Each day includes a simple HTML page (`index.html`) for easy browsing and sharin
 ### Step-by-Step Process
 
 **Step 1: Ideation**
-- Use the SAME ideation prompt for Claude, ChatGPT, and Gemini (ensures fair comparison)
-- Ask each platform for 2 ideas for the current day's map theme
-- Paste back full outputs from all 3 platforms into Cursor
-- Cursor logs all ideas (including iterations if needed) and helps choose the best concept
+- Used the SAME ideation prompt for Claude, ChatGPT, and Gemini (ensured fair comparison)
+- Asked each platform for 2 ideas for the current day's map theme
+- Pasted back full outputs from all 3 platforms into Cursor
+- Cursor logged all ideas (including iterations if needed) and helped choose the best concept
 
 **Step 2: Prompt Preparation**
-- Open `implementation-base.txt` template
-- Customize with: theme, chosen concept, data source
-- Copy the prompt to clipboard
+- Opened `implementation-base.txt` template
+- Customized with: theme, chosen concept, data source
+- Copied the prompt to clipboard
 
 **Step 3: Parallel Platform Launch**
-Open in separate tabs:
+Opened in separate tabs:
 1. Claude Artifacts (⚠️ struggles with external APIs, but close)
 2. Google Gemini Canvas (⚠️ struggles with external APIs, but was close)
 3. ChatGPT Canvas
@@ -200,26 +206,26 @@ Open in separate tabs:
 7. Lovable
 8. Others...
 
-Paste prompt in each → Click generate → Move to next
+Pasted prompt in each → Clicked generate → Moved to next
 
 **Step 4: Active Monitoring & Iteration**
-- Check as they generate results
-- If one fails early, note what went wrong
-- Record any manual fixes (data cleaning, styling tweaks, bug patches) as you apply them
-- Screenshot everything as you go
+- Checked as they generated results
+- If one failed early, noted what went wrong
+- Recorded any manual fixes (data cleaning, styling tweaks, bug patches) as I applied them
+- Screenshot everything as I went
 
 **Step 5: Collection & Organization**
-- Deploy code if possible
-- Create platform subfolders
-- Save screenshots with consistent naming
-- Create quick list of what worked/failed
+- Deployed code if possible
+- Created platform subfolders
+- Saved screenshots with consistent naming
+- Created quick list of what worked/failed
 
 **Step 6: Documentation**
-- Create main README from template
-- Fill in platform results (names + status + insights)
-- Update DAILY-LOG.md
-- Capture a short “Human review” note that calls out what you verified or edited manually
-- Create `index.html` page for easy sharing
+- Created main README from template
+- Filled in platform results (names + status + insights)
+- Updated DAILY-LOG.md
+- Captured a short “Human review” note that called out what I verified or edited manually
+- Created `index.html` page for easy sharing
 
 ---
 
@@ -258,23 +264,24 @@ Paste prompt in each → Click generate → Move to next
 
 ## Grading Criteria
 
-**Success Grades (A, B, C) - Full Success:**
+**Success Grades (A, B) - Full Success:**
 - **A (Excellent)**: Fast, beautiful, fully functional, great mobile UX. Map renders correctly, all features work, responsive design is strong.
 - **B (Good)**: Works well, minor issues (e.g., tooltip contrast, legend style), responsive. Map is functional and usable.
-- **C (OK)**: Usable but significant issues (performance problems, UX issues like sluggish pan/zoom). Map works but has notable problems.
 
-**Partial Success (Grade D):**
-- Major functionality broken but some elements work. Examples:
+**Partial Success (Grades C, D):**
+- **C (OK)**: Usable but significant issues (performance problems, UX issues like sluggish pan/zoom). Map works but has notable problems.
+- **D (Major Issues)**: Major functionality broken but some elements work. Examples:
   - UI/legends generated but map doesn't load (CSP/CORS issues)
   - Data loads but visualization broken
   - Map loads but interaction doesn't work
-- **Key point**: Even CSP/CORS failures that generate UI/legends get Grade D (Partial Success), not F. If it generates something useful, it's at least D.
+- **Key point**: Even CSP/CORS failures that generate UI/legends get Partial Success (C or D), not F. If it generates something useful, it's at least Partial Success.
 
 **Failed (Grade F):**
-- No code generated at all (platform error, completely unusable - rare). Examples:
+- No meaningful output displayed (or very little). Examples:
   - Platform returns "internal error" and never generates code
   - Platform crashes before any output
-- **Key distinction**: Grade F is reserved for when no code/output is generated at all (platform infrastructure failures), not for code that doesn't work properly.
+  - Code generated but nothing displays (blank page, no map, no UI)
+- **Key distinction**: Grade F is reserved for when there's no meaningful visual output or functionality, not just for code that doesn't work perfectly.
 
 ---
 
@@ -296,13 +303,10 @@ Per the [official challenge](https://30daymapchallenge.com/):
 
 - **Official Challenge**: [30daymapchallenge.com](https://30daymapchallenge.com/)
 - **Hashtag**: #30DayMapChallenge
-- **Repository**: https://github.com/[your-username]/30-day-map-challenge-2025
+- **Repository**: https://github.com/dannybauman/30-day-map-challenge-2025
 
 ### Quick Data Sources
-- [OpenStreetMap](https://www.openstreetmap.org/) + [Overpass API](https://overpass-turbo.eu/)
-- [Natural Earth](https://www.naturalearthdata.com/)
-- [Overture Maps](https://overturemaps.org/)
-- [Free GIS Data](https://freegisdata.rtwilson.com/)
+_Note: A comprehensive list of all data sources used across the completed days will be compiled and linked here in the future._
 
 ---
 
@@ -310,13 +314,13 @@ Per the [official challenge](https://30daymapchallenge.com/):
 
 This is a comparative AI and usability research project within a mapping challenge:
 
-1. **Benchmark**: How well do 3 AI platforms come up with mapping ideas? How do 15+ AI development platforms handle identical geospatial tasks?
-2. **Document**: What patterns emerge in success/failure across tools?
-3. **Share**: Create open-source examples others can learn from
-4. **Learn**: Build intuition for which AI tools excel where
-5. **Contribute**: 100+ map examples to the mapping community
+1. **Benchmark**: How well did 3 AI platforms come up with mapping ideas? How did 15+ AI development platforms handle identical geospatial tasks?
+2. **Document**: What patterns emerged in success/failure across tools?
+3. **Share**: Created open-source examples others can learn from
+4. **Learn**: Built intuition for which AI tools excel where
+5. **Contribute**: Multiple map examples to the mapping community
 
-**The key insight**: Basically, it works! You can quickly ideate and prototype at a fairly high quality level with the help of AI. Each platform has strengths, weaknesses, and quirks, but most of these tools quickly helped me build something cool or interesting or a starting point for something useful.
+**The key insight**: Basically, it worked! I could quickly ideate and prototype at a fairly high quality level with the help of AI. Each platform has strengths, weaknesses, and quirks, but most of these tools quickly helped me build something cool or interesting or a starting point for something useful.
 
 ---
 
